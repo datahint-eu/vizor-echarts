@@ -8,7 +8,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="EChart.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="EChart.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="EChart.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="EChart.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
 

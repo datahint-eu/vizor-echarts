@@ -1,0 +1,61 @@
+﻿@using Microsoft.JSInterop;
+@using System.Text.Json;
+@using Vizor.ECharts.Options;
+
+@inject IJSRuntime jsRuntime
+@implements IAsyncDisposable
+
+<div id="@Id" class="@CssClass" style="@Style" />
+
+@code {
+
+	[Parameter]
+	public string Id { get; set; } = "chart-" + Guid.NewGuid().ToString();
+
+	[Parameter]
+	public string? CssClass { get; set; }
+
+	[Parameter]
+	public string? Style { get; set; }
+
+	[Parameter]
+	public string? Width { get; set; }
+
+	[Parameter]
+	public string? Height { get; set; }
+
+	[Parameter]
+	public string? Theme { get; set; }
+
+	[Parameter, EditorRequired]
+	public ChartOptions Options { get; set; } = default!;
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		// echarts.init the very first time the component is rendered
+
+		if (!firstRender)
+			return;
+
+		if (Options == null)
+			throw new ArgumentException("Options property must be set");
+		if (string.IsNullOrWhiteSpace(Id))
+			throw new ArgumentException("Id property must be set");
+
+		await jsRuntime.InvokeVoidAsync("vizorECharts.initChart",
+			Id,
+			JsonSerializer.Serialize(Options, new JsonSerializerOptions()
+				{
+					PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+				}),
+			Theme,
+			Width,
+			Height
+		);
+	}
+
+	public async ValueTask DisposeAsync()
+	{
+		await jsRuntime.InvokeVoidAsync("vizorECharts.disposeChart", Id);
+	}
+}
