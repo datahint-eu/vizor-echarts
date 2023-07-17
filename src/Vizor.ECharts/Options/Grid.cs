@@ -1,8 +1,4 @@
-﻿using System.ComponentModel;
-using System.Drawing;
-using System;
-
-namespace Vizor.ECharts.Options;
+﻿namespace Vizor.ECharts.Options;
 
 /// <summary>
 /// Drawing grid in rectangular coordinate. In a single grid, at most two X and Y axes each is allowed.

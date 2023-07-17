@@ -57,7 +57,7 @@ public class SelectorConverter : JsonConverter<Selector>
 				writer.WriteEndObject();
 			}
 			writer.WriteEndArray();
-			
+
 		}
 		else if (value.Buttons != null)
 		{

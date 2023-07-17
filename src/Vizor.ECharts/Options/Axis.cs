@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Xml;
-using Microsoft.Extensions.Hosting;
-
-namespace Vizor.ECharts.Options;
+﻿namespace Vizor.ECharts.Options;
 
 /// <summary>
 /// see https://echarts.apache.org/en/option.html#xAxis

@@ -42,7 +42,7 @@ public class Color
 		return new Color($"rgba({(int)r}, {(int)g}, {(int)b}, {a})");
 	}
 
-	public static Color Transparent => new ("transparent");
+	public static Color Transparent => new("transparent");
 }
 
 public class ColorConverter : JsonConverter<Color>

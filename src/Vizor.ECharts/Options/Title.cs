@@ -18,7 +18,7 @@ public class Title
 	public string? Id { get; set; }
 
 	/// <inheritdoc />
-	public bool? Show { get; set; } = true;
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// The main title text, supporting for \n for newlines.

@@ -1,13 +1,6 @@
-﻿using System.Data;
-using System.Globalization;
-using System.Reflection.Emit;
+﻿using System.Globalization;
 using System.Text.Json.Serialization;
-using Microsoft.AspNetCore.Components.RenderTree;
-using System.Xml.Linq;
-using Microsoft.AspNetCore.Hosting.Server;
-using System.Runtime.Intrinsics.X86;
 using Vizor.ECharts.Options.Series;
-using System.ComponentModel;
 
 namespace Vizor.ECharts.Options;
 
