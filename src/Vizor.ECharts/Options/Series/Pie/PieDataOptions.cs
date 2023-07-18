@@ -1,9 +1,4 @@
-﻿using System.Data;
-using System.Runtime.Intrinsics.X86;
-using System.Text;
-using System.Text.Json.Serialization;
-
-namespace Vizor.ECharts.Options.Series.Pie;
+﻿namespace Vizor.ECharts.Options.Series.Pie;
 
 public class PieDataOptions
 	: IZOption
