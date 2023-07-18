@@ -5,24 +5,12 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts.Options.Series.Pie;
 
-public class PieSeriesOptions
+public class PieDataOptions
 	: IZOption
 	, IPositionOption
 	, IWidthHeightOption
 	, IAnimationOption
 {
-	public string Type => "pie";
-
-	/// <summary>
-	/// Component ID, not specified by default. If specified, it can be used to refer the component in option or API.
-	/// </summary>
-	public string? Id { get; set; }
-
-	/// <summary>
-	/// Series name used for displaying in tooltip and filtering with legend.
-	/// </summary>
-	public string? Name { get; set; }
-
 	/// <summary>
 	/// The policy to take color from option.color. Default = data
 	/// </summary>
@@ -183,7 +171,6 @@ public class PieSeriesOptions
 	/// <summary>
 	/// Radius of Pie chart.
 	/// </summary>
-	[JsonConverter(typeof(PieRadiusConverter))]
 	public PieRadius? Radius { get; set; }
 
 	/// <summary>

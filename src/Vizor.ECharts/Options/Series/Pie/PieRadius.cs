@@ -30,7 +30,7 @@ public class PieRadius
 
 public class PieRadiusConverter : JsonConverter<PieRadius>
 {
-    public override PieRadius Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+	public override PieRadius Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         throw new NotImplementedException("Deserialization is not implemented for PieRadius.");
     }

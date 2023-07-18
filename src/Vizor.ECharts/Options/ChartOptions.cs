@@ -57,6 +57,7 @@ public class ChartOptions<TData>
 
 	public Aria? Aria { get; set; }
 
+	[JsonConverter(typeof(ChartSeriesConverterFactory))]
 	public List<IChartSeries<TData>> Series { get; set; } = new();
 
 	/// <summary>

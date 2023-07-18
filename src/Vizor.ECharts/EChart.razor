@@ -58,7 +58,6 @@
 					WriteIndented = true
 #endif
 			};
-		jsonOpts.Converters.Add(new Vizor.ECharts.Options.Series.Pie.PieRadiusConverter());
 
 		var opts = JsonSerializer.Serialize(Options, jsonOpts);
 

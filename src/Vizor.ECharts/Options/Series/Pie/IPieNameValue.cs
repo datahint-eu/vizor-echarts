@@ -3,6 +3,6 @@
 public interface IPieNameValue
 {
 	string? Name { get; set; }
-	PieSeriesOptions? Options { get; set; }
+	PieDataOptions? Options { get; set; }
 	double Value { get; set; }
 }

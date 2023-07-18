@@ -61,6 +61,7 @@ window.vizorECharts = {
 		var chart = echarts.init(document.getElementById(id), theme, { renderer: 'svg', width: width, height: height });
 		chart.showLoading();
 		chart.setOption(JSON.parse(options));
+		chart.hideLoading();
 
 		vizorECharts.charts.push({ id: id, chart: chart });
 	},
@@ -72,7 +73,6 @@ window.vizorECharts = {
 			return;
 		}
 
-		chart.hideLoading();
 		chart.setOption(JSON.parse(options));
 	},
 

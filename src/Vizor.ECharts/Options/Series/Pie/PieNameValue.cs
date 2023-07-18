@@ -10,7 +10,7 @@ public class PieNameValue : IPieNameValue
 
 	public double Value { get; set; }
 
-	public PieSeriesOptions? Options { get; set; }
+	public PieDataOptions? Options { get; set; }
 }
 
 public class PieNameValueConverter : JsonConverter<PieNameValue>
