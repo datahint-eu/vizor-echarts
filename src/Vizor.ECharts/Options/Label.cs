@@ -17,7 +17,10 @@ public class Label
 	/// </summary>
 	public NumberOrString? Precision { get; set; }
 
-	//TODO: formatter
+	/// <summary>
+	/// Formatter is used to format the label content, which supports string template and callback function.
+	/// </summary>
+	public StringOrFunction? Formatter { get; set; }
 
 	/// <summary>
 	/// Distance between label and axis. Default = 3

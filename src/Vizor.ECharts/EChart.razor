@@ -33,9 +33,14 @@
 	[Parameter, EditorRequired]
 	public ChartOptions<TData> Options { get; set; } = default!;
 
-	protected override void OnParametersSet()
+	[Parameter]
+	public FunctionMap? FunctionMap { get; set; }
+
+	protected override Task OnInitializedAsync()
 	{
-		base.OnParametersSet();
+		return base.OnInitializedAsync();
+
+		//TODO: async data loaders
 	}
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -59,13 +64,24 @@
 #endif
 			};
 
-		var opts = JsonSerializer.Serialize(Options, jsonOpts);
+		var chartOpts = JsonSerializer.Serialize(Options, jsonOpts);
 
-		await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, opts, Theme, Width, Height);
+		// Remark: ECharts allows JS functions in the options, which is not allowed by the .NET JSON serializer, even when using Utf8JsonWriter.SkipValidation+JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+		// This forces us to do a 2 stage serialization process with an expensive string search+replace
+		// Another option would be using Newtonsoft.Json, but this would add a dependency that I don't want to add ...
+
+		if (FunctionMap != null)
+			chartOpts = FunctionMap.MapFunctions(chartOpts);
+
+		await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", /*DotNetObjectReference.Create(this),*/ Id, chartOpts, Theme, Width, Height);
 	}
 
 	public async ValueTask DisposeAsync()
 	{
-		await jsRuntime.InvokeVoidAsync("vizorECharts.disposeChart", Id);
+		try
+		{
+			await jsRuntime.InvokeVoidAsync("vizorECharts.disposeChart", Id);
+		}
+		catch { }
 	}
 }

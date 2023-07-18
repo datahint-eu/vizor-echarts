@@ -2,7 +2,7 @@
 @using Vizor.ECharts.Options;
 @using Vizor.ECharts.Options.Series.Pie;
 
-<Vizor.ECharts.EChart TData="PieNameValue" Options="@options" Width="800px" Height="800px" />
+<Vizor.ECharts.EChart TData="PieNameValue" Options="@options" FunctionMap="@functionMap" Width="800px" Height="800px" />
 
 @code {
 
@@ -37,7 +37,7 @@
 					Label = new()
 					{
 						Show = true,
-						//TODO: formatter
+						Formatter = Guid.Parse("5896234a-60c7-4143-bf31-551551bf58fc")
 					},
 					Data = new List<PieNameValue>()
 					{
@@ -66,4 +66,16 @@
 				}
 			}
 	};
+
+	private FunctionMap functionMap = new FunctionMap()
+	{
+		new JavascriptFunction(Guid.Parse("5896234a-60c7-4143-bf31-551551bf58fc"), "function (param) { return param.name + ' (' + param.percent * 2 + '%)'; }")
+	};
+
+	//TODO: ideally, the formatter should also accept
+	[JSInvokable("FormatLabel")]
+	private string FormatLabel(dynamic item)
+	{
+		return $"{item.Name} ({item.percent * 2}%)";
+	}
 }

@@ -11,22 +11,22 @@ public class NumberOrFunction
 		Number = number;
 	}
 
-	public NumberOrFunction(string jsFunction)
+	public NumberOrFunction(Guid functionId)
 	{
-		JsFunction = jsFunction;
+		FunctionId = functionId;
 	}
 
 	public double? Number { get; }
-	public string? JsFunction { get; }
+	public Guid? FunctionId { get; }
 
 	public static implicit operator NumberOrFunction(double number)
 	{
 		return new NumberOrFunction(number);
 	}
 
-	public static implicit operator NumberOrFunction(string jsFunction)
+	public static implicit operator NumberOrFunction(Guid functionId)
 	{
-		return new NumberOrFunction(jsFunction);
+		return new NumberOrFunction(functionId);
 	}
 }
 
@@ -43,9 +43,9 @@ public class NumberOrFunctionConverter : JsonConverter<NumberOrFunction>
 		{
 			writer.WriteNumberValue(value.Number.Value);
 		}
-		else if (value.JsFunction != null)
+		else if (value.FunctionId != null)
 		{
-			writer.WriteRawValue(value.JsFunction);
+			writer.WriteStringValue(value.FunctionId.ToString());
 		}
 	}
 }

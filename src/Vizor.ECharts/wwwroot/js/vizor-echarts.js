@@ -57,13 +57,17 @@ window.vizorECharts = {
 		return null;
 	},
 
-	initChart: function (id, options, theme, width, height) {
+	initChart: function (id, /*blazorComponent,*/ options, theme, width, height) {
 		var chart = echarts.init(document.getElementById(id), theme, { renderer: 'svg', width: width, height: height });
+
+		// we need to use eval instead of JSON.parse, because the options can contain JS functions
+		var parsedOptions = eval('(' + options + ')');
+
 		chart.showLoading();
-		chart.setOption(JSON.parse(options));
+		chart.setOption(parsedOptions);
 		chart.hideLoading();
 
-		vizorECharts.charts.push({ id: id, chart: chart });
+		vizorECharts.charts.push({ id: id, chart: chart/*, blazorComponent: blazorComponent*/ });
 	},
 
 	updateChart: function (id, options) {
@@ -73,7 +77,10 @@ window.vizorECharts = {
 			return;
 		}
 
-		chart.setOption(JSON.parse(options));
+		// we need to use eval instead of JSON.parse, because the options can contain JS functions
+		var parsedOptions = eval('(' + options + ')');
+
+		chart.setOption(parsedOptions);
 	},
 
 	disposeChart: function (id) {
