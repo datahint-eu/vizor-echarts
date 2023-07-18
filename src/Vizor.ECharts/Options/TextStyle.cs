@@ -68,12 +68,8 @@ public class TextStyle
 
 	/// <summary>
 	/// Determine how to display the text when it's overflow. Available when width is set.
-	/// - 'none' [default]
-	/// - 'truncate' Truncate the text and trailing with ellipsis.
-	/// - 'break' Break by word
-	/// - 'breakAll' Break by character.
 	/// </summary>
-	public string? Overflow { get; set; }
+	public Overflow? Overflow { get; set; }
 
 	/// <summary>
 	/// Ellipsis to be displayed when overflow is set to truncate.

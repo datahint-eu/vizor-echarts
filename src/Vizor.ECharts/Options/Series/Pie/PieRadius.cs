@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Vizor.ECharts.Options;
+namespace Vizor.ECharts.Options.Series.Pie;
 
 /// <summary>
 /// Radius of Pie chart. Value can be:

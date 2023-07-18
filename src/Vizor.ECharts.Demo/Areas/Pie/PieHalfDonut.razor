@@ -1,0 +1,42 @@
+﻿@page "/example/pie/half-donut"
+@using Vizor.ECharts.Options;
+@using Vizor.ECharts.Options.Series.Pie;
+
+
+
+<h3>PieHalfDonut</h3>
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=pie-half-donut
+
+	private ChartOptions options = new()
+		{
+			Tooltip = new()
+			{
+				Trigger = TooltipTrigger.Item
+			},
+			Legend = new()
+			{
+				Top = "5%",
+				Left = "center",
+				SelectedMode = SelectionMode.False
+			},
+			Series = new List<Options.Series.IChartSeries>()
+			{
+				new PieSeries()
+				{
+					Name = "Access From",
+					Radius = new PieRadius("40%", "70%"),
+					Center = new PieCenter("50%", "70%"),
+					StartAngle = 180,
+					Label = new()
+					{
+						Show = true,
+						//TODO: formatter
+					}
+					//TODO: data
+				}
+			}
+		};
+}

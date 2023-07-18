@@ -2,11 +2,10 @@
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 
-namespace Vizor.ECharts.Options.Series;
+namespace Vizor.ECharts.Options.Series.Pie;
 
-public class PieSeries
-	: IChartSeries
-	, IZOption
+public class PieSeriesOptions
+	: IZOption
 	, IPositionOption
 	, IWidthHeightOption
 	, IAnimationOption
