@@ -8,3 +8,4 @@ x64/
 [Oo]bj/
 node_modules/
 .vs/
+/src/Vizor.ECharts/package-lock.json
