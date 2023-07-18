@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts.Options.Series.Pie;
 
@@ -182,6 +183,7 @@ public class PieSeriesOptions
 	/// <summary>
 	/// Radius of Pie chart.
 	/// </summary>
+	[JsonConverter(typeof(PieRadiusConverter))]
 	public PieRadius? Radius { get; set; }
 
 	/// <summary>

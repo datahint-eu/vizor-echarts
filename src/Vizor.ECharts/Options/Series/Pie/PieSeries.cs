@@ -1,11 +1,10 @@
-﻿using System.Data;
-using System.Runtime.Intrinsics.X86;
-using System.Text;
+﻿using Vizor.ECharts.Data;
 
 namespace Vizor.ECharts.Options.Series.Pie;
 
-public class PieSeries : PieSeriesOptions
-	, IChartSeries
+public class PieSeries<TData> : PieSeriesOptions
+	, IChartSeries<TData>
+	where TData : class, IPieNameValue
 {
-	//TODO: Data
+	public List<TData> Data { get; set; } = new();
 }

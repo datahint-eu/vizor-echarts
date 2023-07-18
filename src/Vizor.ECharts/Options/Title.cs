@@ -77,7 +77,7 @@ public class Title
 	/// <summary>
 	/// Set this to true to enable triggering events
 	/// </summary>
-	public bool TriggerEvent { get; set; }
+	public bool? TriggerEvent { get; set; }
 
 	/// <inheritdoc />
 	public Padding? Padding { get; set; }

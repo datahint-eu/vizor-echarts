@@ -4,7 +4,7 @@ using Vizor.ECharts.Options.Series;
 
 namespace Vizor.ECharts.Options;
 
-public class ChartOptions
+public class ChartOptions<TData>
 	: IAnimationOption
 {
 	public Title? Title { get; set; }
@@ -57,7 +57,7 @@ public class ChartOptions
 
 	public Aria? Aria { get; set; }
 
-	public List<IChartSeries> Series { get; set; } = new();
+	public List<IChartSeries<TData>> Series { get; set; } = new();
 
 	/// <summary>
 	/// Background color. No background by default.

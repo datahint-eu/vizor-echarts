@@ -1,11 +1,16 @@
-﻿namespace Vizor.ECharts.Options.Series;
+﻿using System.Xml.Linq;
+using Vizor.ECharts.Data;
 
-public class HeatMapSeries : IChartSeries
+namespace Vizor.ECharts.Options.Series;
+
+public class HeatMapSeries<TData> : IChartSeries<TData>
 {
 	public string Type => "heatmap";
 
 	public string? Id { get; set; }
 	public string? Name { get; set; }
+
+	public List<TData> Data { get; set; } = new();
 
 	//TODO
 }

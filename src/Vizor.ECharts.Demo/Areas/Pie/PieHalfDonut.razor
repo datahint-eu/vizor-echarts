@@ -2,29 +2,33 @@
 @using Vizor.ECharts.Options;
 @using Vizor.ECharts.Options.Series.Pie;
 
-
-
-<h3>PieHalfDonut</h3>
+<Vizor.ECharts.EChart TData="PieNameValue" Options="@options" Width="400px" Height="400px" />
 
 @code {
 
 	// see https://echarts.apache.org/examples/en/editor.html?c=pie-half-donut
 
-	private ChartOptions options = new()
+	private ChartOptions<PieNameValue> options = new()
+	{
+		Title = new()
 		{
-			Tooltip = new()
+			Text = "Referer of a Website",
+			SubText = "Fake Data",
+			Left = "center"
+		},
+		Tooltip = new()
+		{
+			Trigger = TooltipTrigger.Item
+		},
+		Legend = new()
+		{
+			Top = "5%",
+			Left = "center",
+			SelectedMode = SelectionMode.False
+		},
+		Series = new()
 			{
-				Trigger = TooltipTrigger.Item
-			},
-			Legend = new()
-			{
-				Top = "5%",
-				Left = "center",
-				SelectedMode = SelectionMode.False
-			},
-			Series = new List<Options.Series.IChartSeries>()
-			{
-				new PieSeries()
+				new PieSeries<PieNameValue>()
 				{
 					Name = "Access From",
 					Radius = new PieRadius("40%", "70%"),
@@ -34,9 +38,32 @@
 					{
 						Show = true,
 						//TODO: formatter
+					},
+					Data = new List<PieNameValue>()
+					{
+						new() { Value = 1048, Name = "Search Engine" },
+						new() { Value = 735, Name = "Direct" },
+						new() { Value = 580, Name = "Email" },
+						new() { Value = 484, Name = "Union Ads" },
+						new() { Value = 300, Name = "Video Ads" },
+						new() {
+							// make an record to fill the bottom 50%
+							Value = 1048 + 735 + 580 + 484 + 300,
+							Options = new()
+							{
+								ItemStyle = new()
+								{
+									Color = new("none"),
+									//TODO: decal
+								},
+								Label = new()
+								{
+									Show = false
+								}
+							}
+						}
 					}
-					//TODO: data
 				}
 			}
-		};
+	};
 }

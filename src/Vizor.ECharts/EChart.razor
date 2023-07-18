@@ -2,10 +2,13 @@
 @using System.Text.Json;
 @using Vizor.ECharts.Options;
 
+@typeparam TData
+@namespace Vizor.ECharts
+
 @inject IJSRuntime jsRuntime
 @implements IAsyncDisposable
 
-<div id="@Id" class="@CssClass" style="@Style" />
+<div id="@Id" class="@CssClass" style="@Style"></div>
 
 @code {
 
@@ -28,7 +31,12 @@
 	public string? Theme { get; set; }
 
 	[Parameter, EditorRequired]
-	public ChartOptions Options { get; set; } = default!;
+	public ChartOptions<TData> Options { get; set; } = default!;
+
+	protected override void OnParametersSet()
+	{
+		base.OnParametersSet();
+	}
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
@@ -42,16 +50,19 @@
 		if (string.IsNullOrWhiteSpace(Id))
 			throw new ArgumentException("Id property must be set");
 
-		await jsRuntime.InvokeVoidAsync("vizorECharts.initChart",
-			Id,
-			JsonSerializer.Serialize(Options, new JsonSerializerOptions()
-				{
-					PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-				}),
-			Theme,
-			Width,
-			Height
-		);
+		var jsonOpts = new JsonSerializerOptions()
+			{
+				PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+				DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+#if DEBUG
+					WriteIndented = true
+#endif
+			};
+		jsonOpts.Converters.Add(new Vizor.ECharts.Options.Series.Pie.PieRadiusConverter());
+
+		var opts = JsonSerializer.Serialize(Options, jsonOpts);
+
+		await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, opts, Theme, Width, Height);
 	}
 
 	public async ValueTask DisposeAsync()

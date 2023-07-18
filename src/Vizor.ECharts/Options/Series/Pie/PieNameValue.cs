@@ -4,7 +4,7 @@ using System.Text.Json;
 namespace Vizor.ECharts.Options.Series.Pie;
 
 [JsonConverter(typeof(PieNameValueConverter))]
-public class PieNameValue
+public class PieNameValue : IPieNameValue
 {
 	public string? Name { get; set; }
 
