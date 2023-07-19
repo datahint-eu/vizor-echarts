@@ -1,7 +1,4 @@
-﻿using Vizor.ECharts.Enums;
-using Vizor.ECharts.Types;
-
-namespace Vizor.ECharts.Options;
+﻿namespace Vizor.ECharts.Options;
 
 /// <summary>
 /// See https://echarts.apache.org/en/option.html#grid.tooltip.axisPointer.label

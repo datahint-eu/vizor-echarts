@@ -7,4 +7,6 @@ internal class ArrayType : IPropertyType
 	}
 
 	public string Name => "array";
+
+	public string DotNetType => "List<object>";
 }

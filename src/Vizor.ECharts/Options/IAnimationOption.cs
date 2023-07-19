@@ -1,5 +1,4 @@
-﻿using Vizor.ECharts.Enums;
-using Vizor.ECharts.Types;
+﻿using Vizor.ECharts;
 
 namespace Vizor.ECharts.Options;
 

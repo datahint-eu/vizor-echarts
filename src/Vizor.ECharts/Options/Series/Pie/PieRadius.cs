@@ -1,6 +1,5 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using Vizor.ECharts.Types;
 
 namespace Vizor.ECharts.Options.Series.Pie;
 

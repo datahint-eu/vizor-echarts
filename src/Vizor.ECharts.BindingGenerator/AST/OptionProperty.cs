@@ -8,7 +8,7 @@ internal class OptionProperty
 
 	public required string Name { get; set; }
 
-	public required string SerializedName { get; set; }
+	public required string PropertyName { get; set; }
 
 	public string? Description { get; set; }
 
@@ -18,7 +18,7 @@ internal class OptionProperty
 
 	public string[]? EnumOptions { get; set; }
 
-	public IPropertyType? Type { get; set; }
+	public IPropertyType? MappedType { get; set; }
 
 	public void RemoveType(string name)
 	{

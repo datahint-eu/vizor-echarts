@@ -1,13 +1,14 @@
 ﻿using System.Text.Json;
 using System.Xml.Linq;
-using Vizor.ECharts.Enums;
-using Vizor.ECharts.Types;
+using Vizor.ECharts;
 
 namespace Vizor.ECharts.BindingGenerator.AST;
 
 internal class Parser
 {
 	private Dictionary<string, Dictionary<string, MappedEnumType>> enumTypesMappedByName = new();
+
+	private Dictionary<string, ObjectType> generatedTypes = new();
 
 	public Parser()
 	{
@@ -85,6 +86,8 @@ internal class Parser
 		AddMappedEnumType(new MappedEnumType("layout", typeof(HorizontalOrVertical)), "parallel");
 	}
 
+	public IReadOnlyDictionary<string, ObjectType> GeneratedTypes => generatedTypes;
+
 	private void AddMappedEnumType(MappedEnumType mappedType, params string[]? specificObjectTypes)
 	{
 		if (!enumTypesMappedByName.TryGetValue(mappedType.Name, out var typeDict))
@@ -118,6 +121,7 @@ internal class Parser
 			}
 		}
 
+		generatedTypes.Add("", objType); // we don't want to use the root type for lookup purposes
 		return objType;
 	}
 
@@ -128,8 +132,8 @@ internal class Parser
 		var optProp = new OptionProperty()
 		{
 			Parent = parent,
-			Name = Helper.ToClassName(prop.Name),
-			SerializedName = prop.Name
+			Name = prop.Name,
+			PropertyName = Helper.ToClassName(prop.Name)
 		};
 
 		if (prop.Value.TryGetProperty("description", out var descProp))
@@ -195,7 +199,7 @@ internal class Parser
 		}
 
 		// at this point we can decide how to map the type
-		optProp.Type = MapType(parent, optProp, prop);
+		optProp.MappedType = MapType(parent, optProp, prop);
 
 		//TODO: items
 
@@ -206,7 +210,15 @@ internal class Parser
 	{
 		//Console.WriteLine($"OBJECT {prop.Name}");
 
-		var objType = new ObjectType(prop.Name);
+		// try looking up previously defined types with the same name
+		if (generatedTypes.TryGetValue(prop.Name, out var objType))
+		{
+			return objType;
+		}
+
+		// create a new type
+		objType = new ObjectType(prop.Name);
+		generatedTypes.Add(prop.Name, objType);
 
 		if (prop.Value.TryGetProperty("properties", out var childProps))
 		{
@@ -215,6 +227,11 @@ internal class Parser
 				//TODO: skip data for now
 				if (childProp.Name == "data")
 					continue;
+
+				//TODO:
+				if (childProp.Name == "<style_name>")
+					continue;
+				
 
 				objType.Properties.Add(ParseProperty(objType, childProp));
 			}

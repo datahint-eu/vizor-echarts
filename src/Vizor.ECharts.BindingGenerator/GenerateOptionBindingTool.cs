@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Nodes;
 using Vizor.ECharts.BindingGenerator.AST;
+using Vizor.ECharts.BindingGenerator.Generators;
 
 namespace Vizor.ECharts.BindingGenerator;
 
@@ -20,6 +21,12 @@ internal class GenerateOptionBindingTool
 			return 1;
 		}
 
+		var generatedOptionsDir = Path.Combine(options.OutputDirectory, "Generated"); //TODO
+		if (!Directory.Exists(generatedOptionsDir))
+		{
+			Directory.CreateDirectory(generatedOptionsDir);
+		}
+
 		var jsonOptions = new JsonDocumentOptions
 		{
 			CommentHandling = JsonCommentHandling.Skip,
@@ -31,24 +38,14 @@ internal class GenerateOptionBindingTool
 		var parser = new Parser();
 		var chartOptions = parser.ParseRoot(optionElem);
 
-		/*
+		Console.WriteLine($"{parser.GeneratedTypes.Count} types will be generated");
+
+		foreach (var objType in parser.GeneratedTypes.Values)
 		{
-			// Access the root element
-			JsonElement root = document.RootElement;
-
-			// Iterate through all properties
-			foreach (JsonProperty property in root.EnumerateObject())
-			{
-				Console.WriteLine($"Property Name: {property.Name}");
-
-				// Access the property values
-				foreach (JsonProperty subProperty in property.Value.EnumerateObject())
-				{
-					Console.WriteLine($"   Subproperty Name: {subProperty.Name}, Value: {subProperty.Value}");
-				}
-			}
+			var generator = new ObjectTypeClassGenerator(generatedOptionsDir, objType);
+			Console.WriteLine($"Generating {generator.OptionsFile}");
+			generator.Generate();
 		}
-		*/
 
 		return 0;
 	}

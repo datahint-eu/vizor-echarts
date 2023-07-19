@@ -1,6 +1,4 @@
-﻿using Vizor.ECharts.Types;
-
-namespace Vizor.ECharts.Options;
+﻿namespace Vizor.ECharts.Options;
 
 public interface ITextShadowOption
 {
