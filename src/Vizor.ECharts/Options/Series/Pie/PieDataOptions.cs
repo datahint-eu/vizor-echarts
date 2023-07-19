@@ -1,4 +1,7 @@
-﻿namespace Vizor.ECharts.Options.Series.Pie;
+﻿using Vizor.ECharts.Enums;
+using Vizor.ECharts.Types;
+
+namespace Vizor.ECharts.Options.Series.Pie;
 
 public class PieDataOptions
 	: IZOption

@@ -1,4 +1,6 @@
-﻿namespace Vizor.ECharts.Options;
+﻿using Vizor.ECharts.Enums;
+
+namespace Vizor.ECharts.Options;
 
 public interface IPaddingOption
 {

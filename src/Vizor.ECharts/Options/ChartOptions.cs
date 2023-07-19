@@ -1,6 +1,8 @@
 ﻿using System.Globalization;
 using System.Text.Json.Serialization;
+using Vizor.ECharts.Enums;
 using Vizor.ECharts.Options.Series;
+using Vizor.ECharts.Types;
 
 namespace Vizor.ECharts.Options;
 

@@ -1,4 +1,7 @@
-﻿namespace Vizor.ECharts.Options;
+﻿using Vizor.ECharts.Enums;
+using Vizor.ECharts.Types;
+
+namespace Vizor.ECharts.Options;
 
 /// <summary>
 /// See https://echarts.apache.org/en/option.html#grid.tooltip.axisPointer.label
@@ -10,6 +13,8 @@ public class Label
 	, ITextBorderOption
 {
 	public bool? Show { get; set; }
+
+	//TODO: https://echarts.apache.org/en/option.html#series-line.label Position
 
 	/// <summary>
 	/// The precision of value in label. It is auto determined by default.

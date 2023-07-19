@@ -1,4 +1,6 @@
 ﻿using System.Text.Json.Serialization;
+using Vizor.ECharts.Enums;
+using Vizor.ECharts.Types;
 
 namespace Vizor.ECharts.Options;
 

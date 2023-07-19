@@ -1,4 +1,7 @@
-﻿namespace Vizor.ECharts.Options;
+﻿using Vizor.ECharts.Enums;
+using Vizor.ECharts.Types;
+
+namespace Vizor.ECharts.Options;
 
 /// <summary>
 /// see https://echarts.apache.org/en/option.html#xAxis

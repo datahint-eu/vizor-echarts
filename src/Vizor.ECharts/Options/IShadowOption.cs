@@ -1,4 +1,6 @@
-﻿namespace Vizor.ECharts.Options;
+﻿using Vizor.ECharts.Types;
+
+namespace Vizor.ECharts.Options;
 
 public interface IShadowOption
 {
