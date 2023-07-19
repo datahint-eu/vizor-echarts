@@ -1,6 +1,8 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Text.Json;
 using Vizor.ECharts.BindingGenerator.Types;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Vizor.ECharts.BindingGenerator.Phases;
 
@@ -120,9 +122,10 @@ internal abstract class BasePhase
 					optProp.RemoveType("object");
 					optProp.AddType("color");
 				}
-				else if (!string.IsNullOrWhiteSpace(subType) && subType != "text")
+				else if (!string.IsNullOrWhiteSpace(subType))
 				{
-					optProp.AddType(subType);
+					if (subType != "text" && subType != "percent" && subType != "angle")
+						optProp.AddType(subType);
 				}
 			}
 
@@ -167,7 +170,7 @@ internal abstract class BasePhase
 		// special handling for arrays
 		if (str.StartsWith('['))
 		{
-			str = str.Replace("'", "");
+			str = str.Replace("\"", "").Replace("'", "");
 		}
 
 		return str;
@@ -194,30 +197,25 @@ internal abstract class BasePhase
 					// don't care that fontFamily/cursor isn't mapped, warn about all other unmapped types
 					if (prop.Name != "fontFamily" && prop.Name != "cursor")
 						Console.WriteLine($"WARNING: enum type '{prop.Name}' in '{parent.Name}' with values '{string.Join(',', optProp.EnumOptions ?? Array.Empty<string>())}' is not mapped");
-					return new PrimitiveType(typeof(string));
+					return new SimpleType("string");
 				case "string":
-					return new PrimitiveType(typeof(string));
+					return new SimpleType("string");
 				case "number":
 					// special case: we don't want to use double for indices
 					if (prop.Name.Contains("index", StringComparison.InvariantCultureIgnoreCase))
-						return new PrimitiveType(typeof(int));
+						return new SimpleType("int");
 					else
-						return new PrimitiveType(typeof(double));
+						return new SimpleType("double");
 				case "boolean":
-					return new PrimitiveType(typeof(bool));
+					return new SimpleType("bool");
 				case "color":
 					return new MappedCustomType(typeof(Color));
+				case "function":
+					return new MappedCustomType(typeof(Function));
 				case "array":
-					if (optProp.ItemType != null)
-					{
-						return new GenericListType(optProp.ItemType);
-					}
-					else
-					{
-						Console.WriteLine($"WARNING: array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>");
-						return new ArrayType();
-					}
-
+					return typeCollection.MapArrayType(parent, optProp, prop);
+				case "*":
+					return new SimpleType("object");
 			}
 		}
 
@@ -226,8 +224,6 @@ internal abstract class BasePhase
 		{
 			switch (optProp.Types[0], optProp.Types[1])
 			{
-				case ("angle", "number"):
-					return new PrimitiveType(typeof(double));
 				case ("number", "string"):
 					return new MappedCustomType(typeof(NumberOrString));
 				case ("icon", "string"):
@@ -241,6 +237,11 @@ internal abstract class BasePhase
 					return new MappedCustomType(typeof(StringOrFunction));
 				case ("function", "number"):
 					return new MappedCustomType(typeof(NumberOrFunction));
+				case ("function", "object"):
+					return new MappedCustomType(typeof(ObjectOrFunction));
+				case ("array", "percentvector"):
+				case ("array", "vector"):
+					return new SimpleType("double[]");
 			}
 		}
 
@@ -249,12 +250,15 @@ internal abstract class BasePhase
 		{
 			return new MappedCustomType(typeof(NumberOrStringOrFunction));
 		}
-		else if (optProp.Types is ["number", "percent", "string"])
+
+		// give additional enum warning if any of the types is an enum
+		var typeList = string.Join(',', optProp.Types ?? Enumerable.Empty<string>());
+		if (optProp.Types?.Contains("enum") ?? false)
 		{
-			return new MappedCustomType(typeof(NumberOrString));
+			Console.WriteLine($"WARNING: {typeList} type '{prop.Name}' in '{parent.Name}' with values '{string.Join(',', optProp.EnumOptions ?? Array.Empty<string>())}' is not mapped");
 		}
 
-		Console.WriteLine($"ERROR: Failed to map property '{prop.Name}' in type '{parent.Name}' with types '{string.Join(',', optProp.Types ?? Enumerable.Empty<string>())}'");
+		Console.WriteLine($"ERROR: Failed to map property '{prop.Name}' in type '{parent.Name}' with types '{typeList}'");
 		//throw new ArgumentException($"Failed to map property '{prop.Name}' in type '{parent.Name}' with types '{string.Join(',', optProp.Types ?? Enumerable.Empty<string>())}'");
 
 		return null;

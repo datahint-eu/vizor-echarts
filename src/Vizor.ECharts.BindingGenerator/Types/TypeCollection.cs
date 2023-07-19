@@ -1,4 +1,6 @@
-﻿namespace Vizor.ECharts.BindingGenerator.Types;
+﻿using System.Text.Json;
+
+namespace Vizor.ECharts.BindingGenerator.Types;
 
 internal class TypeCollection
 {
@@ -43,6 +45,7 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("overflow", typeof(Overflow)));
 		AddMappedEnumType(new MappedEnumType("padding", typeof(Padding)));
 		AddMappedEnumType(new MappedEnumType("radius", typeof(Radius)));
+		AddMappedEnumType(new MappedEnumType("roam", typeof(Roam)));
 		AddMappedEnumType(new MappedEnumType("selectedMode", typeof(SelectionMode)));
 		AddMappedEnumType(new MappedEnumType("selector", typeof(Selector)));
 		AddMappedEnumType(new MappedEnumType("seriesLayoutBy", typeof(SeriesLayoutBy)));
@@ -99,8 +102,22 @@ internal class TypeCollection
 
 		AddMappedEnumType(new MappedEnumType("symbolRepeatDirection", typeof(StartOrEnd)), "PictorialBarSeries", "PictorialBarSeriesData");
 		AddMappedEnumType(new MappedEnumType("symbolPosition", typeof(StartOrEndOrCenter)), "PictorialBarSeries", "PictorialBarSeriesData");
+		AddMappedEnumType(new MappedEnumType("symbolRepeat", typeof(PictorialSymbolRepeat)), "PictorialBarSeries", "PictorialBarSeriesData");
 
 		AddMappedEnumType(new MappedEnumType("effectType", typeof(ScatterEffectType)), "EffectScatterSeries");
+
+		AddMappedEnumType(new MappedEnumType("roseType", typeof(PieRoseType)), "PieSeries");
+
+		/*
+		 * Line  10: WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
+	Line  34: WARNING: array,enum type 'nameMap' in 'dayLabel' with values 'EN,ZH' is not mapped
+	Line  36: WARNING: array,enum type 'nameMap' in 'monthLabel' with values 'EN,ZH' is not mapped
+	Line  81: WARNING: array,enum type 'position' in 'upperLabel' with values 'top,left,right,bottom,inside,insideLeft,insideRight,insideTop,insideBottom,insideTopLeft,insideBottomLeft,insideTopRight,insideBottomRight,outside' is not mapped
+	Line  90: WARNING: boolean,enum type 'nodeClick' in 'SunburstSeries' with values 'rootToNode,link' is not mapped
+	Line  92: WARNING: enum,function type 'sort' in 'SunburstSeries' with values 'desc,asc' is not mapped
+	Line 111: WARNING: array,enum,number type 'type' in 'ParallelSeriesData' with values 'solid,dashed,dotted' is not mapped
+	Line 124: WARNING: enum,function type 'sort' in 'FunnelSeries' with values 'none,descending,ascending' is not mapped
+		*/
 	}
 
 	public ObjectType ChartOptions => chartOptions;
@@ -116,6 +133,31 @@ internal class TypeCollection
 	public IEnumerable<ObjectType> ListSeriesTypesToGenerate() => seriesTypes;
 
 	public bool TryGetObjectType(string name, out ObjectType? objectType) => objectTypeLookup.TryGetValue(name, out objectType);
+
+	public IPropertyType? MapArrayType(ObjectType parent, OptionProperty optProp, JsonProperty prop)
+	{
+		// did we succeed in determining the item type ?
+		if (optProp.ItemType != null)
+		{
+			return new GenericListType(optProp.ItemType);
+		}
+
+		// special cases: these are often aliases
+		switch (prop.Name, parent.Name)
+		{
+			case ("nodes", "SankeySeries"):
+				return new GenericListType(new SimpleType("SankeySeriesData"));
+			case ("edges", "SankeySeries"):
+				return new GenericListType(new SimpleType("SankeySeriesLinks"));
+			case ("nodes", "GraphSeries"):
+				return new GenericListType(new SimpleType("GraphSeriesData"));
+			case ("edges", "GraphSeries"):
+				return new GenericListType(new SimpleType("GraphSeriesLinks"));
+		}
+
+		Console.WriteLine($"WARNING: array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>");
+		return new ObjectListType();
+	}
 
 	public bool TryGetMappedEnumType(string name, string parentName, out MappedEnumType? mappedEnumType)
 	{

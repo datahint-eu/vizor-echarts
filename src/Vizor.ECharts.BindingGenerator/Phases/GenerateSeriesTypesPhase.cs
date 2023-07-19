@@ -1,6 +1,5 @@
 ﻿using System.Text.Json;
 using Vizor.ECharts.BindingGenerator.Types;
-using Vizor.ECharts.Options.Series;
 
 namespace Vizor.ECharts.BindingGenerator.Phases;
 

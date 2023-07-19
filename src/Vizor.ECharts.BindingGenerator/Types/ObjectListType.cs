@@ -1,8 +1,8 @@
 ﻿namespace Vizor.ECharts.BindingGenerator.Types;
 
-internal class ArrayType : IPropertyType
+internal class ObjectListType : IPropertyType
 {
-	public ArrayType()
+	public ObjectListType()
 	{
 	}
 

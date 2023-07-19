@@ -1,7 +1,5 @@
 ﻿using System.Globalization;
 using System.Text.Json.Serialization;
-using Vizor.ECharts;
-using Vizor.ECharts.Options.Series;
 
 namespace Vizor.ECharts.Options;
 

@@ -27,6 +27,22 @@ public class LineType
 
 	public double[]? Pattern { get; }
 	public LineTypeStyle? Style { get; }
+
+
+	public static implicit operator LineType(double number)
+	{
+		return new LineType(number);
+	}
+
+	public static implicit operator LineType(double[] numbers)
+	{
+		return new LineType(numbers);
+	}
+
+	public static implicit operator LineType(LineTypeStyle type)
+	{
+		return new LineType(type);
+	}
 }
 
 public enum LineTypeStyle
