@@ -4,7 +4,7 @@ using System.Xml.Linq;
 using Vizor.ECharts;
 using Vizor.ECharts.Options.Series;
 
-namespace Vizor.ECharts.BindingGenerator.AST;
+namespace Vizor.ECharts.BindingGenerator.Types;
 
 internal class Parser
 {
@@ -141,7 +141,7 @@ internal class Parser
 
 		var optProp = new OptionProperty()
 		{
-			Parent = parent,
+			ParentType = parent,
 			Name = prop.Name,
 			PropertyName = Helper.ToClassName(prop.Name)
 		};

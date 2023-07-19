@@ -1,10 +1,10 @@
-﻿namespace Vizor.ECharts.BindingGenerator.AST;
+﻿namespace Vizor.ECharts.BindingGenerator.Types;
 
 internal class OptionProperty
 {
 	private readonly List<string> types = new();
 
-	public required ObjectType Parent { get; set; }
+	public required ObjectType ParentType { get; set; }
 
 	public required string Name { get; set; }
 

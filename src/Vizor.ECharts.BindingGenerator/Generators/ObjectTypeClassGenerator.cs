@@ -1,4 +1,4 @@
-﻿using Vizor.ECharts.BindingGenerator.AST;
+﻿using Vizor.ECharts.BindingGenerator.Types;
 
 namespace Vizor.ECharts.BindingGenerator.Generators;
 

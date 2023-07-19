@@ -1,4 +1,4 @@
-﻿namespace Vizor.ECharts.BindingGenerator.AST;
+﻿namespace Vizor.ECharts.BindingGenerator.Types;
 
 internal class ArrayType : IPropertyType
 {
