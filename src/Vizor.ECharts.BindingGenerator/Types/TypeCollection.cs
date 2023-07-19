@@ -27,6 +27,7 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("borderType", typeof(LineType)));
 		AddMappedEnumType(new MappedEnumType("brushType", typeof(BrushType)));
 		AddMappedEnumType(new MappedEnumType("colorBy", typeof(ColorBy)));
+		AddMappedEnumType(new MappedEnumType("colorMappingBy", typeof(ColorMappingBy)));
 		AddMappedEnumType(new MappedEnumType("emphasisBlurScope", typeof(EmphasisBlurScope)));
 		AddMappedEnumType(new MappedEnumType("emphasisFocus", typeof(EmphasisFocus)));
 		AddMappedEnumType(new MappedEnumType("fontStyle", typeof(FontStyle)));
@@ -61,13 +62,15 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("verticalAlign", typeof(VerticalAlign)));
 
 
+
 		AddMappedEnumType(new MappedEnumType("type", typeof(LineType)), "lineStyle");
 		AddMappedEnumType(new MappedEnumType("type", typeof(LegendType)), "legend");
 		AddMappedEnumType(new MappedEnumType("type", typeof(ImageType)), "saveAsImage");
 		AddMappedEnumType(new MappedEnumType("type", typeof(AxisPointer)), "axisPointer");
+		AddMappedEnumType(new MappedEnumType("type", typeof(MarkPointType)), "markPointData");
 
-		AddMappedEnumType(new MappedEnumType("cap", typeof(LineCap)), "lineStyle", "crossStyle");
-		AddMappedEnumType(new MappedEnumType("join", typeof(LineJoin)), "lineStyle", "crossStyle");
+		AddMappedEnumType(new MappedEnumType("cap", typeof(LineCap)), "lineStyle", "crossStyle", "ParallelSeriesData");
+		AddMappedEnumType(new MappedEnumType("join", typeof(LineJoin)), "lineStyle", "crossStyle", "ParallelSeriesData");
 
 		AddMappedEnumType(new MappedEnumType("order", typeof(TooltipOrder)), "tooltip");
 		AddMappedEnumType(new MappedEnumType("renderMode", typeof(RenderMode)), "tooltip");
@@ -88,6 +91,14 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("layout", typeof(TreeLayout)), "TreeSeries");
 		AddMappedEnumType(new MappedEnumType("edgeShape", typeof(TreeEdgeShape)), "TreeSeries");
 
+		AddMappedEnumType(new MappedEnumType("funnelAlign", typeof(FunnelAlign)), "FunnelSeries");
+
+		AddMappedEnumType(new MappedEnumType("nodeAlign", typeof(SankeyNodeAlign)), "SankeySeries");
+
+		AddMappedEnumType(new MappedEnumType("layout", typeof(GraphLayout)), "GraphSeries");
+
+		AddMappedEnumType(new MappedEnumType("symbolRepeatDirection", typeof(StartOrEnd)), "PictorialBarSeries", "PictorialBarSeriesData");
+		AddMappedEnumType(new MappedEnumType("symbolPosition", typeof(StartOrEndOrCenter)), "PictorialBarSeries", "PictorialBarSeriesData");
 
 		AddMappedEnumType(new MappedEnumType("effectType", typeof(ScatterEffectType)), "EffectScatterSeries");
 	}

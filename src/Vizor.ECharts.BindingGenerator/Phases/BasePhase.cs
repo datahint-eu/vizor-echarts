@@ -9,7 +9,7 @@ internal abstract class BasePhase
 	protected readonly TypeCollection typeCollection;
 
 	public BasePhase(TypeCollection typeCollection)
-    {
+	{
 		this.typeCollection = typeCollection;
 	}
 
@@ -163,7 +163,7 @@ internal abstract class BasePhase
 	protected virtual string ParseDefaultAsString(JsonElement element)
 	{
 		var str = element.GetString()!.Trim('\'', '"'); // trim single quotes
-		
+
 		// special handling for arrays
 		if (str.StartsWith('['))
 		{
@@ -248,6 +248,10 @@ internal abstract class BasePhase
 		if (optProp.Types is ["function", "number", "string"])
 		{
 			return new MappedCustomType(typeof(NumberOrStringOrFunction));
+		}
+		else if (optProp.Types is ["number", "percent", "string"])
+		{
+			return new MappedCustomType(typeof(NumberOrString));
 		}
 
 		Console.WriteLine($"ERROR: Failed to map property '{prop.Name}' in type '{parent.Name}' with types '{string.Join(',', optProp.Types ?? Enumerable.Empty<string>())}'");
