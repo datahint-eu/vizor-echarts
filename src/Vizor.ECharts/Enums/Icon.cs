@@ -21,6 +21,16 @@ public class Icon
 
     public string? Url { get; }
     public IconType? Type { get; }
+
+	public static implicit operator Icon(string url)
+	{
+		return new Icon(url);
+	}
+
+	public static implicit operator Icon(IconType type)
+	{
+		return new Icon(type);
+	}
 }
 
 public enum IconType

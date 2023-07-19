@@ -6,6 +6,6 @@ namespace Vizor.ECharts;
 [JsonConverter(typeof(CamelCaseEnumConverter<TreeLayout>))]
 public enum TreeLayout
 {
-    Orthogonal,
-    Radial
+	Curve,
+	Polyline
 }
