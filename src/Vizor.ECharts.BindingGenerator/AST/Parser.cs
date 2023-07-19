@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics;
+using System.Text.Json;
 using System.Xml.Linq;
 using Vizor.ECharts;
 using Vizor.ECharts.Options.Series;
@@ -9,7 +10,8 @@ internal class Parser
 {
 	private readonly Dictionary<string, Dictionary<string, MappedEnumType>> enumTypesMappedByName = new();
 
-	private readonly Dictionary<string, ObjectType> generatedTypes = new();
+	private readonly Dictionary<string, ObjectType> typeLookup = new();
+	private readonly List<ObjectType> typesToGenerate = new();
 
 	public Parser()
 	{
@@ -27,6 +29,7 @@ internal class Parser
 		AddMappedEnumType(new MappedEnumType("borderJoin", typeof(LineJoin)));
 		AddMappedEnumType(new MappedEnumType("borderRadius", typeof(Radius)));
 		AddMappedEnumType(new MappedEnumType("borderType", typeof(LineType)));
+		AddMappedEnumType(new MappedEnumType("brushType", typeof(BrushType)));
 		AddMappedEnumType(new MappedEnumType("colorBy", typeof(ColorBy)));
 		AddMappedEnumType(new MappedEnumType("emphasisBlurScope", typeof(EmphasisBlurScope)));
 		AddMappedEnumType(new MappedEnumType("emphasisFocus", typeof(EmphasisFocus)));
@@ -46,6 +49,7 @@ internal class Parser
 		AddMappedEnumType(new MappedEnumType("selectedMode", typeof(SelectionMode)));
 		AddMappedEnumType(new MappedEnumType("selector", typeof(Selector)));
 		AddMappedEnumType(new MappedEnumType("seriesLayoutBy", typeof(SeriesLayoutBy)));
+		AddMappedEnumType(new MappedEnumType("showEffectOn", typeof(ShowEffectOn)));
 		AddMappedEnumType(new MappedEnumType("stackStrategy", typeof(StackStrategy)));
 		AddMappedEnumType(new MappedEnumType("step", typeof(Step)));
 		AddMappedEnumType(new MappedEnumType("textAlign", typeof(HorizontalAlign)));
@@ -59,7 +63,6 @@ internal class Parser
 		AddMappedEnumType(new MappedEnumType("triggerOn", typeof(TriggerOn)));
 		AddMappedEnumType(new MappedEnumType("treeLayout", typeof(TreeLayout)));
 		AddMappedEnumType(new MappedEnumType("verticalAlign", typeof(VerticalAlign)));
-
 
 
 		AddMappedEnumType(new MappedEnumType("type", typeof(LineType)), "lineStyle");
@@ -85,9 +88,15 @@ internal class Parser
 		AddMappedEnumType(new MappedEnumType("position", typeof(LeftOrRight)), "yAxis");
 		AddMappedEnumType(new MappedEnumType("controlPosition", typeof(LeftOrRight)), "timeline");
 		AddMappedEnumType(new MappedEnumType("layout", typeof(HorizontalOrVertical)), "parallel");
+
+		AddMappedEnumType(new MappedEnumType("layout", typeof(TreeLayout)), "TreeSeries");
+		AddMappedEnumType(new MappedEnumType("edgeShape", typeof(TreeEdgeShape)), "TreeSeries");
+
+
+		AddMappedEnumType(new MappedEnumType("effectType", typeof(ScatterEffectType)), "EffectScatterSeries");
 	}
 
-	public IReadOnlyDictionary<string, ObjectType> GeneratedTypes => generatedTypes;
+	public IReadOnlyList<ObjectType> TypesToGenerate => typesToGenerate;
 
 	private void AddMappedEnumType(MappedEnumType mappedType, params string[]? specificObjectTypes)
 	{
@@ -122,7 +131,7 @@ internal class Parser
 			}
 		}
 
-		generatedTypes.Add("", objType); // we don't want to use the root type for lookup purposes
+		typesToGenerate.Add(objType); // we don't want to use the root type for lookup purposes
 		return objType;
 	}
 
@@ -205,7 +214,7 @@ internal class Parser
 			// we need to define an item type, e.g. MediaItem and pass this to the MapType function
 			// MapType can then generate List<MediaItem> instead of List<object>
 
-			optProp.ItemType = ParseObjectType(prop.Name + "Item", itemsProp, parent.Name);
+			optProp.ItemType = ParseItemsObjectType(prop.Name + "Item", itemsProp, prop.Name);
 		}
 
 		// at this point we can decide how to map the type
@@ -214,29 +223,21 @@ internal class Parser
 		return optProp;
 	}
 
-	public IPropertyType? ParseObjectType(string propName, JsonElement value, string parentName)
+	public IPropertyType? ParseItemsObjectType(string propName, JsonElement value, string parentName)
 	{
 		//Console.WriteLine($"OBJECT {prop.Name}");
-
-		// try looking up previously defined types with the same name
-		if (generatedTypes.TryGetValue(propName, out var objType) && propName != "data" && propName != "items")
-		{
-			//TODO: don't simply return the previous type, we need to compare if the values actually match
-			//TODO: do we need prop.Name != "data" && prop.Name != "items" ??
-			return objType;
-		}
 
 		if (value.TryGetProperty("anyOf", out var anyOfElement))
 		{
 			// return an interface
-			switch (propName)
+			switch (parentName)
 			{
 				case "series":
 					foreach (JsonElement anyOfItemElement in anyOfElement.EnumerateArray())
 					{
 						var seriesType = GetSeriesType(anyOfItemElement, parentName);
 						Console.WriteLine($"----------------- SERIES TYPE {seriesType}");
-						_ = ParseObjectType(seriesType, anyOfItemElement, parentName); //TODO: remove type property
+						_ = ParseObjectType(seriesType, anyOfItemElement, seriesType); //TODO: remove type property
 					}
 
 					return new MappedCustomType(typeof(IChartSeries));
@@ -245,35 +246,61 @@ internal class Parser
 					return null;
 			}
 		}
-		else
+
+		return ParseObjectType(propName, value, parentName);
+	}
+
+	public IPropertyType? ParseObjectType(string propName, JsonElement value, string parentName)
+	{
+		//Console.WriteLine($"OBJECT {prop.Name}");
+
+		// rename data properties, e.g.: LineSeriesData
+		if (propName == "data")
 		{
-			// create a new type
-			objType = new ObjectType(propName);
-			generatedTypes.Add(propName, objType);
+			propName = parentName + "Data";
+		}
 
-			if (value.TryGetProperty("properties", out var childProps))
-			{
-				foreach (JsonProperty childProp in childProps.EnumerateObject())
-				{
-					//TODO: skip style_name for now
-					if (childProp.Name == "<style_name>")
-					{
-						Console.WriteLine($"TODO --- {childProp.Name} property in {propName}");
-						continue;
-					}
+		// sanity check: we shouldn't be using this function for data/items properties
+		Debug.Assert(propName != "data" && propName != "items");
 
-					objType.Properties.Add(ParseProperty(objType, childProp));
-				}
-			}
-
+		// try looking up previously defined types with the same name
+		if (typeLookup.TryGetValue(propName, out var objType))
+		{
+			//TODO: don't simply return the previous type, we need to compare if the values actually match
 			return objType;
 		}
+
+		// create a new type
+		objType = new ObjectType(propName);
+		typeLookup.Add(propName, objType);
+		typesToGenerate.Add(objType);
+
+		if (value.TryGetProperty("properties", out var childProps))
+		{
+			foreach (JsonProperty childProp in childProps.EnumerateObject())
+			{
+				//TODO: skip style_name for now
+				if (childProp.Name == "<style_name>")
+				{
+					Console.WriteLine($"TODO --- {childProp.Name} property in {propName}");
+					continue;
+				}
+
+				objType.Properties.Add(ParseProperty(objType, childProp));
+			}
+		}
+
+		return objType;
 	}
 
 	private static string GetSeriesType(JsonElement anyOfItemElement, string parentName)
 	{
-		if (!anyOfItemElement.TryGetProperty("type", out var typeElem))
+		if (!anyOfItemElement.TryGetProperty("properties", out var propertiesItem))
+			throw new ArgumentException($"Could not determine properties element of series item in '{parentName}'");
+
+		if (!propertiesItem.TryGetProperty("type", out var typeElem))
 			throw new ArgumentException($"Could not determine type of series item in '{parentName}'");
+		
 		if (!typeElem.TryGetProperty("default", out var defaultElem))
 			throw new ArgumentException($"Could not determine default type value of series item in '{parentName}'");
 
@@ -285,16 +312,16 @@ internal class Parser
 		// }
 
 		var parentClass = Helper.ToClassName(parentName);
-		var anyOfClass = Helper.ToClassName(defaultElem.GetString()!.Trim('\''));
+		var seriesClass = Helper.ToClassName(defaultElem.GetString()!.Trim('\''));
 
-		return parentClass + anyOfClass;
+		return seriesClass + parentClass;
 	}
 
 	private static object? ParseDefault(JsonElement element)
 	{
 		return element.ValueKind switch
 		{
-			JsonValueKind.String => element.GetString()!.Trim('\''), // trim single quotes
+			JsonValueKind.String => element.GetString()!.Trim('\'', '"'), // trim single quotes
 			JsonValueKind.False => false,
 			JsonValueKind.True => true,
 			JsonValueKind.Number => element.GetDouble(),
@@ -330,8 +357,8 @@ internal class Parser
 				case "object":
 					return ParseObjectType(prop.Name, prop.Value, parent.Name);
 				case "enum":
-					// don't care that font family isn't mapped, warn about all other unmapped types
-					if (prop.Name != "fontFamily")
+					// don't care that fontFamily/cursor isn't mapped, warn about all other unmapped types
+					if (prop.Name != "fontFamily" && prop.Name != "cursor")
 						Console.WriteLine($"WARNING: enum type '{prop.Name}' in '{parent.Name}' with values '{string.Join(',', optProp.EnumOptions ?? Array.Empty<string>())}' is not mapped");
 					return new PrimitiveType(typeof(string));
 				case "string":

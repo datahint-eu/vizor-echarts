@@ -38,9 +38,9 @@ internal class GenerateOptionBindingTool
 		var parser = new Parser();
 		var chartOptions = parser.ParseRoot(optionElem);
 
-		Console.WriteLine($"{parser.GeneratedTypes.Count} types will be generated");
+		Console.WriteLine($"{parser.TypesToGenerate.Count} types will be generated");
 
-		foreach (var objType in parser.GeneratedTypes.Values)
+		foreach (var objType in parser.TypesToGenerate)
 		{
 			var generator = new ObjectTypeClassGenerator(generatedOptionsDir, objType);
 			//Console.WriteLine($"Generating {generator.OptionsFile}");
