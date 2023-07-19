@@ -3,9 +3,9 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts.Enums;
 
-[JsonConverter(typeof(CamelCaseEnumConverter<ColorBy>))]
-public enum ColorBy
+[JsonConverter(typeof(CamelCaseEnumConverter<LeftOrRight>))]
+public enum LeftOrRight
 {
-    Series,
-    Data
+	Left,
+	Right
 }

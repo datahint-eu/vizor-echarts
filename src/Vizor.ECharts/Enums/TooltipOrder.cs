@@ -9,25 +9,11 @@ namespace Vizor.ECharts.Enums;
 /// 'valueAsc': Base on value, ascending order tooltip, only for numberic value.
 /// 'valueDesc': Base on value, descending order tooltip, only for numberic value.
 /// </summary>
-[JsonConverter(typeof(TooltipOrderConverter))]
+[JsonConverter(typeof(CamelCaseEnumConverter<TooltipOrder>))]
 public enum TooltipOrder
 {
     SeriesAsc,
     SeriesDesc,
     ValueAsc,
     ValueDesc,
-}
-
-public class TooltipOrderConverter : JsonConverter<TooltipOrder>
-{
-    public override TooltipOrder Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-    {
-        throw new NotImplementedException("Deserialization is not implemented for TooltipOrder.");
-    }
-
-    public override void Write(Utf8JsonWriter writer, TooltipOrder value, JsonSerializerOptions options)
-    {
-        var str = value.ToString();
-        writer.WriteStringValue(char.ToLower(str[0]) + str[1..]);
-    }
 }

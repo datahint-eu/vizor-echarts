@@ -6,7 +6,7 @@ namespace Vizor.ECharts.Enums;
 /// <summary>
 /// See https://echarts.apache.org/examples/en/editor.html?c=line-easing
 /// </summary>
-[JsonConverter(typeof(AnimationEasingConverter))]
+[JsonConverter(typeof(CamelCaseEnumConverter<AnimationEasing>))]
 public enum AnimationEasing
 {
     Linear,
@@ -40,18 +40,4 @@ public enum AnimationEasing
     BounceIn,
     BounceOut,
     BounceInOut
-}
-
-public class AnimationEasingConverter : JsonConverter<AnimationEasing>
-{
-    public override AnimationEasing Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-    {
-        throw new NotImplementedException("Deserialization is not implemented for AnimationEasing.");
-    }
-
-    public override void Write(Utf8JsonWriter writer, AnimationEasing value, JsonSerializerOptions options)
-    {
-        var str = value.ToString();
-        writer.WriteStringValue(char.ToLower(str[0]) + str[1..]);
-    }
 }

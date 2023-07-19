@@ -11,24 +11,10 @@ namespace Vizor.ECharts.Enums;
 /// 'break' Break by word
 /// 'breakAll' Break by character.
 /// </summary>
-[JsonConverter(typeof(OverflowConverter))]
+[JsonConverter(typeof(CamelCaseEnumConverter<Overflow>))]
 public enum Overflow
 {
     Truncate,
     Break,
     BreakAll
-}
-
-public class OverflowConverter : JsonConverter<Overflow>
-{
-    public override Overflow Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-    {
-        throw new NotImplementedException("Deserialization is not implemented for Overflow.");
-    }
-
-    public override void Write(Utf8JsonWriter writer, Overflow value, JsonSerializerOptions options)
-    {
-        var str = value.ToString();
-        writer.WriteStringValue(char.ToLower(str[0]) + str[1..]);
-    }
 }

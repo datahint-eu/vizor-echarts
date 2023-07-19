@@ -3,25 +3,11 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts.Enums;
 
-[JsonConverter(typeof(SelectionModeConverter))]
+[JsonConverter(typeof(CamelCaseEnumConverter<SelectionMode>))]
 public enum SelectionMode
 {
     True,
     False,
     Single,
     Multiple
-}
-
-public class SelectionModeConverter : JsonConverter<SelectionMode>
-{
-    public override SelectionMode Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-    {
-        throw new NotImplementedException("Deserialization is not implemented for SelectionMode.");
-    }
-
-    public override void Write(Utf8JsonWriter writer, SelectionMode value, JsonSerializerOptions options)
-    {
-        // Serialize the enum value as a lower-case string
-        writer.WriteStringValue(value.ToString().ToLower());
-    }
 }
