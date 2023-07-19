@@ -1,46 +1,46 @@
 ﻿@page "/example/pie/half-donut"
-@using Vizor.ECharts.Options;
-@using Vizor.ECharts.Options.Series.Pie;
-@using Vizor.ECharts;
 
-<Vizor.ECharts.EChart TData="PieNameValue" Options="@options" FunctionMap="@functionMap" Width="800px" Height="800px" />
+@using Vizor.ECharts;
+@using Vizor.ECharts.Types;
+
+<Vizor.ECharts.EChart Options="@options" FunctionMap="@functionMap" Width="800px" Height="800px" />
 
 @code {
 
 	// see https://echarts.apache.org/examples/en/editor.html?c=pie-half-donut
 
-	private ChartOptions<PieNameValue> options = new()
-	{
-		Title = new()
+	private ChartOptions options = new()
 		{
-			Text = "Referer of a Website",
-			SubText = "Fake Data",
-			Left = "center"
-		},
-		Tooltip = new()
-		{
-			Trigger = TooltipTrigger.Item
-		},
-		Legend = new()
-		{
-			Top = "5%",
-			Left = "center",
-			SelectedMode = SelectionMode.False
-		},
-		Series = new()
+			Title = new()
 			{
-				new PieSeries<PieNameValue>()
+				Text = "Referer of a Website",
+				Subtext = "Fake Data",
+				Left = "center"
+			},
+			Tooltip = new()
+			{
+				//Trigger = TooltipTrigger.Item
+			},
+			Legend = new()
+			{
+				Top = "5%",
+				Left = "center",
+				SelectedMode = SelectionMode.False
+			},
+			Series = new()
+			{
+				new PieSeries()
 				{
 					Name = "Access From",
-					Radius = new PieRadius("40%", "70%"),
-					Center = new PieCenter("50%", "70%"),
+					//Radius = new PieRadius("40%", "70%"),
+					//Center = new PieCenter("50%", "70%"),
 					StartAngle = 180,
 					Label = new()
 					{
 						Show = true,
 						Formatter = Guid.Parse("5896234a-60c7-4143-bf31-551551bf58fc")
 					},
-					Data = new List<PieNameValue>()
+					Data = new List<PieSeriesData>()
 					{
 						new() { Value = 1048, Name = "Search Engine" },
 						new() { Value = 735, Name = "Direct" },
@@ -50,23 +50,23 @@
 						new() {
 							// make an record to fill the bottom 50%
 							Value = 1048 + 735 + 580 + 484 + 300,
-							Options = new()
+							ItemStyle = new()
 							{
-								ItemStyle = new()
+								Color = new("none"),
+								Decal = new()
 								{
-									Color = new("none"),
-									//TODO: decal
-								},
-								Label = new()
-								{
-									Show = false
+									Symbol = IconType.None
 								}
+							},
+							Label = new()
+							{
+								Show = false
 							}
 						}
 					}
 				}
 			}
-	};
+		};
 
 	private FunctionMap functionMap = new FunctionMap()
 	{

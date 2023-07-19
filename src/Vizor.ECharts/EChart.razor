@@ -1,8 +1,8 @@
 ﻿@using Microsoft.JSInterop;
 @using System.Text.Json;
-@using Vizor.ECharts.Options;
+@using Vizor.ECharts;
+@using Vizor.ECharts.Types;
 
-@typeparam TData
 @namespace Vizor.ECharts
 
 @inject IJSRuntime jsRuntime
@@ -31,7 +31,7 @@
 	public string? Theme { get; set; }
 
 	[Parameter, EditorRequired]
-	public ChartOptions<TData> Options { get; set; } = default!;
+	public ChartOptions Options { get; set; } = default!;
 
 	[Parameter]
 	public FunctionMap? FunctionMap { get; set; }

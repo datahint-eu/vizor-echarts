@@ -1,1 +1,0 @@
-- properties should not have 'object' type

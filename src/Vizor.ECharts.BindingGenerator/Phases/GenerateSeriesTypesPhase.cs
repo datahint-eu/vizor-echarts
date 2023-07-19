@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using Microsoft.Extensions.Logging.Console;
 using Vizor.ECharts.BindingGenerator.Types;
 
 namespace Vizor.ECharts.BindingGenerator.Phases;
@@ -51,8 +52,7 @@ internal class GenerateSeriesTypesPhase : BasePhase
 				_ = ParseObjectType(seriesType, anyOfItemElement, dataPrefix: seriesType);
 			}
 
-			// return an interface
-			return new MappedCustomType(typeof(IChartSeries));
+			return new SimpleType("object");
 		}
 
 		return base.ParseObjectType(propName, value, dataPrefix);

@@ -69,7 +69,7 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("type", typeof(LineType)), "lineStyle");
 		AddMappedEnumType(new MappedEnumType("type", typeof(LegendType)), "legend");
 		AddMappedEnumType(new MappedEnumType("type", typeof(ImageType)), "saveAsImage");
-		AddMappedEnumType(new MappedEnumType("type", typeof(AxisPointer)), "axisPointer");
+		AddMappedEnumType(new MappedEnumType("type", typeof(AxisPointerType)), "axisPointer");
 		AddMappedEnumType(new MappedEnumType("type", typeof(MarkPointType)), "markPointData");
 
 		AddMappedEnumType(new MappedEnumType("cap", typeof(LineCap)), "lineStyle", "crossStyle", "ParallelSeriesData");

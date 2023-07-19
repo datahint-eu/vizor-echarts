@@ -71,7 +71,7 @@ internal class GenerateOptionBindingTool
 		// write series type classes
 		foreach (var objType in typeCollection.ListSeriesTypesToGenerate())
 		{
-			var generator = new ObjectTypeClassGenerator(generatedSeriesDir, objType);
+			var generator = new ObjectTypeClassGenerator(generatedSeriesDir, objType, isSeriesType: true);
 			generator.Generate();
 		}
 

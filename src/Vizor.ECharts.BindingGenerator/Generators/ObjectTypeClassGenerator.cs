@@ -5,13 +5,14 @@ namespace Vizor.ECharts.BindingGenerator.Generators;
 internal class ObjectTypeClassGenerator
 {
 	private readonly ObjectType objectType;
+	private readonly bool isSeriesType;
 
 	private readonly string optionsFile;
 
-	public ObjectTypeClassGenerator(string outputDir, ObjectType objectType)
+	public ObjectTypeClassGenerator(string outputDir, ObjectType objectType, bool isSeriesType = false)
 	{
 		this.objectType = objectType;
-
+		this.isSeriesType = isSeriesType;
 		optionsFile = Path.Combine(outputDir, objectType.DotNetType + ".cs");
 	}
 
@@ -27,7 +28,7 @@ internal class ObjectTypeClassGenerator
 		writer.WriteUsing("System.Text.Json.Serialization");
 		writer.EmptyLine();
 
-		writer.WriteNamespace("Vizor.ECharts.Generated");
+		writer.WriteNamespace("Vizor.ECharts");
 		writer.EmptyLine();
 
 		writer.WriteClassDeclaration(objectType.DotNetType);
@@ -41,14 +42,53 @@ internal class ObjectTypeClassGenerator
 			}
 			else
 			{
+				// the 'type' property of series is mandatory
+				string defaultAssign = string.Empty;
+				if (isSeriesType && prop.Name == "type")
+				{
+					defaultAssign = GetDefaultAssign(prop.Default);
+				}
+
 				writer.WriteDocumentation(prop.Description);
 				writer.WriteLine($"[JsonPropertyName(\"{prop.Name}\")]");
 				writer.WriteDefaultValueAttribute(prop.Default);
-				writer.WriteLine($"public {prop.MappedType.DotNetType}? {prop.PropertyName} {{ get; set; }} ");
+				writer.WriteLine($"public {prop.MappedType.DotNetType}? {prop.PropertyName} {{ get; set; }} {defaultAssign}");
 				writer.EmptyLine();
 			}
 		}
 
 		writer.CloseBrace();
+	}
+
+	private string GetDefaultAssign(object? defaultValue)
+	{
+		if (defaultValue == null)
+			return string.Empty;
+
+		if (defaultValue is string str)
+		{
+			return $" = \"{str}\";";
+		}
+		else if (defaultValue is bool b)
+		{
+			return $" = {b.ToString().ToLower()};";
+		}
+		else if (defaultValue is double d)
+		{
+			if ((d - (int)d) != 0)
+			{
+				// doubles with fractional part --> always write .
+				return $" = {d.ToString(System.Globalization.CultureInfo.InvariantCulture)};";
+			}
+			else
+			{
+				// integers
+				return $" = {d};";
+			}
+		}
+		else
+		{
+			return $" = {defaultValue};";
+		}
 	}
 }
