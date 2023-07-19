@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Vizor.ECharts.Types;
+namespace Vizor.ECharts;
 
 [JsonConverter(typeof(NumberOrStringConverter))]
 public class NumberOrString

@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Vizor.ECharts.Enums;
+namespace Vizor.ECharts;
 
 /// <summary>
 /// See https://echarts.apache.org/examples/en/editor.html?c=line-easing

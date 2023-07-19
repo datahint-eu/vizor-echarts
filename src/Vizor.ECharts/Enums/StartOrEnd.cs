@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Vizor.ECharts.Enums;
+namespace Vizor.ECharts;
 
 [JsonConverter(typeof(CamelCaseEnumConverter<StartOrEnd>))]
 public enum StartOrEnd

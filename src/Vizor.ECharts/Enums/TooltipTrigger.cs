@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Vizor.ECharts.Enums;
+namespace Vizor.ECharts;
 
 /// <summary>
 /// 'item': Triggered by data item, which is mainly used for charts that don't have a category axis like scatter charts or pie charts.

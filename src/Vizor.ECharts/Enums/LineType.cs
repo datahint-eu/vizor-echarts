@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Vizor.ECharts.Enums;
+namespace Vizor.ECharts;
 
 /// <summary>
 /// Line type

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Vizor.ECharts.Enums;
+namespace Vizor.ECharts;
 
 [JsonConverter(typeof(CamelCaseEnumConverter<ImageType>))]
 public enum ImageType

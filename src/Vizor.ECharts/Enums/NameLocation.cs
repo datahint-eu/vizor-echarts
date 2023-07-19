@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
-using Vizor.ECharts.Enums;
+using Vizor.ECharts;
 
-namespace Vizor.ECharts.Enums;
+namespace Vizor.ECharts;
 
 [JsonConverter(typeof(CamelCaseEnumConverter<NameLocation>))]
 public enum NameLocation

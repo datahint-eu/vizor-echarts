@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using System.Text.Json;
 
-namespace Vizor.ECharts.Enums;
+namespace Vizor.ECharts;
 
 public class LowerCaseEnumConverter<TEnum> : JsonConverter<TEnum> where TEnum : struct
 {

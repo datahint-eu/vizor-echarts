@@ -2,7 +2,7 @@
 using System.Text.Json.Serialization;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace Vizor.ECharts.Enums;
+namespace Vizor.ECharts;
 
 /// <summary>
 /// See https://echarts.apache.org/en/option.html#grid.tooltip.axisPointer.label.overflow
