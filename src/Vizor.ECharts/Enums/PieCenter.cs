@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Vizor.ECharts.Enums;
+namespace Vizor.ECharts;
 
 /// <summary>
 /// Center position of Pie chart, the first of which is the horizontal position, and the second is the vertical position.

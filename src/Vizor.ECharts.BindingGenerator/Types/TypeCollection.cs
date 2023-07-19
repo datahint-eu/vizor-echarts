@@ -107,6 +107,8 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("effectType", typeof(ScatterEffectType)), "EffectScatterSeries");
 
 		AddMappedEnumType(new MappedEnumType("roseType", typeof(PieRoseType)), "PieSeries");
+		AddMappedEnumType(new MappedEnumType("radius", typeof(PieRadius)), "PieSeries");
+		AddMappedEnumType(new MappedEnumType("center", typeof(PieCenter)), "PieSeries");
 
 		/*
 		 * Line  10: WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped

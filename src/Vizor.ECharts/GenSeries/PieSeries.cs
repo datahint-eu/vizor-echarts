@@ -364,7 +364,7 @@ public partial class PieSeries
 	/// </summary>
 	[JsonPropertyName("center")]
 	[DefaultValue("[50%, 50%]")]
-	public double[]? Center { get; set; } 
+	public PieCenter? Center { get; set; } 
 
 	/// <summary>
 	/// Radius of Pie chart.
@@ -377,7 +377,7 @@ public partial class PieSeries
 	/// </summary>
 	[JsonPropertyName("radius")]
 	[DefaultValue("0%, 75%")]
-	public Radius? Radius { get; set; } 
+	public PieRadius? Radius { get; set; } 
 
 	/// <summary>
 	/// When dataset is used, seriesLayoutBy specifies whether the column or the row of dataset is mapped to the series, namely, the series is "layout" on columns or rows.
