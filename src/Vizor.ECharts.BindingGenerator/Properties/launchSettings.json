@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Vizor.ECharts.BindingGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "option-binding --input \"C:\\Users\\Ben\\Downloads\\echarts-website\\en\\documents\\option.json\" --output \"D:\\Dev\\VizorECharts\\src\\Vizor.ECharts\""
+    }
+  }
+}

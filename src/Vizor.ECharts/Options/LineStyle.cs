@@ -37,7 +37,7 @@ public class LineStyle
 	/// Default value is 'butt'.
 	/// Refer to MDN https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap for more details.
 	/// </summary>
-	public BorderCap? Cap { get; set; }
+	public LineCap? Cap { get; set; }
 
 	/// <summary>
 	/// To determine the shape used to join two line segments where they meet.
@@ -48,7 +48,7 @@ public class LineStyle
 	/// Default value is 'bevel'.
 	/// Refer to MDN https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin for more details.
 	/// </summary>
-	public BorderJoin? Join { get; set; }
+	public LineJoin? Join { get; set; }
 
 	/// <summary>
 	/// To set the miter limit ratio. Only works when borderJoin is set as miter.

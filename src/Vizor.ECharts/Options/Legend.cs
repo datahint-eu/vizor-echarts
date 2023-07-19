@@ -64,7 +64,7 @@ public class Legend
 	/// When left value of this component is 'right', and the vertical layout (orient is 'vertical'), it would be aligned to 'right'.
 	/// Default = auto
 	/// </summary>
-	public HAlign Align { get; set; } //TODO: prevent center
+	public HorizontalAlign Align { get; set; } //TODO: prevent center
 
 	/// <inheritdoc />
 	public Padding? Padding { get; set; }

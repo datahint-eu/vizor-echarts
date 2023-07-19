@@ -68,13 +68,13 @@ public class Title
 	/// The horizontal align of the component (including "text" and "subtext").
 	/// Default = auto
 	/// </summary>
-	public HAlign? TextAlign { get; set; }
+	public HorizontalAlign? TextAlign { get; set; }
 
 	/// <summary>
 	/// The vertical align of the component (including "text" and "subtext").
 	/// Default = auto
 	/// </summary>
-	public VAlign? TextVerticalAlign { get; set; }
+	public VerticalAlign? TextVerticalAlign { get; set; }
 
 	/// <summary>
 	/// Set this to true to enable triggering events

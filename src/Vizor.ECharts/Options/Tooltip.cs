@@ -33,7 +33,7 @@ public class Tooltip
 	/// <summary>
 	/// Conditions to trigger tooltip. Default = mousemove|click
 	/// </summary>
-	public TooltipTriggerOn? TriggerOn { get; set; }
+	public TriggerOn? TriggerOn { get; set; }
 
 	/// <summary>
 	/// Delay time for showing tooltip, in ms.
@@ -58,7 +58,7 @@ public class Tooltip
 	/// This is very useful for environments that don't have DOM, such as Wechat applications.
 	/// Default = html
 	/// </summary>
-	public TooltipRenderMode? RenderMode { get; set; }
+	public RenderMode? RenderMode { get; set; }
 
 	/// <summary>
 	/// Whether confine tooltip content in the view rect of chart instance.

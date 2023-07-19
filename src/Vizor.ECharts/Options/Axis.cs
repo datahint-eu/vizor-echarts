@@ -34,7 +34,7 @@ public class Axis
 	/// The first x axis in grid defaults to be on the bottom of the grid, and the second x axis is on the other side against the first x axis.
 	/// Notice: Set xAxis.axisLine.onZero to false to activate this option.
 	/// </summary>
-	public AxisPosition? Position { get; set; }
+	public TopOrBottom? Position { get; set; }
 
 	/// <summary>
 	/// Offset of x axis relative to default position. Useful when multiple x axis has same position value.
