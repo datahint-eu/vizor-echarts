@@ -2,13 +2,16 @@
 
 namespace Vizor.ECharts.Options.Series;
 
-public interface IChartSeries<TData>
+public interface IChartSeries
 {
 	/// <summary>
 	/// Series type
 	/// </summary>
 	string Type { get; }
+}
 
+public interface IChartSeries<TData> : IChartSeries
+{
 	/// <summary>
 	/// Component ID, not specified by default. If specified, it can be used to refer the component in option or API.
 	/// </summary>

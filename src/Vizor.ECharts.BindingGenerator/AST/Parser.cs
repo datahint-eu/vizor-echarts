@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using System.Xml.Linq;
 using Vizor.ECharts;
+using Vizor.ECharts.Options.Series;
 
 namespace Vizor.ECharts.BindingGenerator.AST;
 
@@ -198,46 +199,95 @@ internal class Parser
 			}
 		}
 
+		if (prop.Value.TryGetProperty("items", out var itemsProp))
+		{
+			// items requires special handling
+			// we need to define an item type, e.g. MediaItem and pass this to the MapType function
+			// MapType can then generate List<MediaItem> instead of List<object>
+
+			optProp.ItemType = ParseObjectType(prop.Name + "Item", itemsProp, parent.Name);
+		}
+
 		// at this point we can decide how to map the type
 		optProp.MappedType = MapType(parent, optProp, prop);
-
-		//TODO: items
 
 		return optProp;
 	}
 
-	public ObjectType ParseObjectType(JsonProperty prop)
+	public IPropertyType? ParseObjectType(string propName, JsonElement value, string parentName)
 	{
 		//Console.WriteLine($"OBJECT {prop.Name}");
 
 		// try looking up previously defined types with the same name
-		if (generatedTypes.TryGetValue(prop.Name, out var objType))
+		if (generatedTypes.TryGetValue(propName, out var objType) && propName != "data" && propName != "items")
 		{
+			//TODO: don't simply return the previous type, we need to compare if the values actually match
+			//TODO: do we need prop.Name != "data" && prop.Name != "items" ??
 			return objType;
 		}
 
-		// create a new type
-		objType = new ObjectType(prop.Name);
-		generatedTypes.Add(prop.Name, objType);
-
-		if (prop.Value.TryGetProperty("properties", out var childProps))
+		if (value.TryGetProperty("anyOf", out var anyOfElement))
 		{
-			foreach (JsonProperty childProp in childProps.EnumerateObject())
+			// return an interface
+			switch (propName)
 			{
-				//TODO: skip data for now
-				if (childProp.Name == "data")
-					continue;
+				case "series":
+					foreach (JsonElement anyOfItemElement in anyOfElement.EnumerateArray())
+					{
+						var seriesType = GetSeriesType(anyOfItemElement, parentName);
+						Console.WriteLine($"----------------- SERIES TYPE {seriesType}");
+						_ = ParseObjectType(seriesType, anyOfItemElement, parentName); //TODO: remove type property
+					}
 
-				//TODO:
-				if (childProp.Name == "<style_name>")
-					continue;
-
-
-				objType.Properties.Add(ParseProperty(objType, childProp));
+					return new MappedCustomType(typeof(IChartSeries));
+				default:
+					Console.WriteLine($"--- TODO: ITEMS anyOf {parentName}");
+					return null;
 			}
 		}
+		else
+		{
+			// create a new type
+			objType = new ObjectType(propName);
+			generatedTypes.Add(propName, objType);
 
-		return objType;
+			if (value.TryGetProperty("properties", out var childProps))
+			{
+				foreach (JsonProperty childProp in childProps.EnumerateObject())
+				{
+					//TODO: skip style_name for now
+					if (childProp.Name == "<style_name>")
+					{
+						Console.WriteLine($"TODO --- {childProp.Name} property in {propName}");
+						continue;
+					}
+
+					objType.Properties.Add(ParseProperty(objType, childProp));
+				}
+			}
+
+			return objType;
+		}
+	}
+
+	private static string GetSeriesType(JsonElement anyOfItemElement, string parentName)
+	{
+		if (!anyOfItemElement.TryGetProperty("type", out var typeElem))
+			throw new ArgumentException($"Could not determine type of series item in '{parentName}'");
+		if (!typeElem.TryGetProperty("default", out var defaultElem))
+			throw new ArgumentException($"Could not determine default type value of series item in '{parentName}'");
+
+		// for example: in transform parent --> this must resolve to TransformFilter
+		//"type": {
+		//	"default": "'filter'",
+		//  "description": "",
+		//  "type": [ "string"  ]
+		// }
+
+		var parentClass = Helper.ToClassName(parentName);
+		var anyOfClass = Helper.ToClassName(defaultElem.GetString()!.Trim('\''));
+
+		return parentClass + anyOfClass;
 	}
 
 	private static object? ParseDefault(JsonElement element)
@@ -278,7 +328,7 @@ internal class Parser
 			switch (optProp.Types[0])
 			{
 				case "object":
-					return ParseObjectType(prop);
+					return ParseObjectType(prop.Name, prop.Value, parent.Name);
 				case "enum":
 					// don't care that font family isn't mapped, warn about all other unmapped types
 					if (prop.Name != "fontFamily")
@@ -297,8 +347,16 @@ internal class Parser
 				case "color":
 					return new MappedCustomType(typeof(Color));
 				case "array":
-					Console.WriteLine($"WARNING: array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>");
-					return new ArrayType();
+					if (optProp.ItemType != null)
+					{
+						return new GenericListType(optProp.ItemType);
+					}
+					else
+					{
+						Console.WriteLine($"WARNING: array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>");
+						return new ArrayType();
+					}
+
 			}
 		}
 

@@ -43,7 +43,7 @@ internal class GenerateOptionBindingTool
 		foreach (var objType in parser.GeneratedTypes.Values)
 		{
 			var generator = new ObjectTypeClassGenerator(generatedOptionsDir, objType);
-			Console.WriteLine($"Generating {generator.OptionsFile}");
+			//Console.WriteLine($"Generating {generator.OptionsFile}");
 			generator.Generate();
 		}
 

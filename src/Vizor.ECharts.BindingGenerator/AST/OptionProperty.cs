@@ -20,6 +20,8 @@ internal class OptionProperty
 
 	public IPropertyType? MappedType { get; set; }
 
+	public IPropertyType? ItemType { get; set; }
+
 	public void RemoveType(string name)
 	{
 		types.RemoveAll(item => item == name);

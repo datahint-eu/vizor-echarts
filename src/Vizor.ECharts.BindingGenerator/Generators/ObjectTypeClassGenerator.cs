@@ -43,20 +43,7 @@ internal class ObjectTypeClassGenerator
 			{
 				writer.WriteDocumentation(prop.Description);
 				writer.WriteLine($"[JsonPropertyName(\"{prop.Name}\")]");
-
-				if (prop.Default != null)
-				{
-					if (prop.Default is string)
-					{
-						writer.WriteLine($"[DefaultValue(\"{prop.Default}\")]");
-					}
-					else
-					{
-
-						writer.WriteLine($"[DefaultValue({prop.Default})]");
-					}
-				}
-
+				writer.WriteDefaultValueAttribute(prop.Default);
 				writer.WriteLine($"public {prop.MappedType.DotNetType}? {prop.PropertyName} {{ get; set; }} ");
 				writer.EmptyLine();
 			}

@@ -151,6 +151,38 @@ internal sealed class CSharpCodeWriter : IDisposable
 		WriteLine($"public const string {propertyName} = \"{escaped}\";");
 	}
 
+	public void WriteDefaultValueAttribute(object? defaultValue)
+	{
+		if (defaultValue == null)
+			return;
+
+		if (defaultValue is string str)
+		{
+			WriteLine($"[DefaultValue(\"{str}\")]");
+		}
+		else if (defaultValue is bool b)
+		{
+			WriteLine($"[DefaultValue({b.ToString().ToLower()})]");
+		}
+		else if (defaultValue is double d)
+		{
+			if ((d - (int)d) != 0)
+			{
+				// doubles with fractional part --> always write .
+				WriteLine($"[DefaultValue({d.ToString(System.Globalization.CultureInfo.InvariantCulture)})]");
+			}
+			else
+			{
+				// integers
+				WriteLine($"[DefaultValue({d})]");
+			}
+		}
+		else
+		{
+			WriteLine($"[DefaultValue({defaultValue})]");
+		}
+	}
+
 	public void WriteDocumentation(string? summary)
 	{
 		if (summary == null)
