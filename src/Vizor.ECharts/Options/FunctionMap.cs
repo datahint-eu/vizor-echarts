@@ -4,7 +4,7 @@ namespace Vizor.ECharts.Options;
 
 public class FunctionMap : IEnumerable<IFunction>
 {
-	private List<IFunction> functions = new();
+	private readonly List<IFunction> functions = new();
 
     public FunctionMap(IEnumerable<IFunction> functions)
     {

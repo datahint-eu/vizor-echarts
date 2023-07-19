@@ -161,8 +161,10 @@ internal sealed class CSharpCodeWriter : IDisposable
 			return;
 
 		WriteLine("/// <summary>");
+
 		foreach (var line in humanReadable)
 			WriteLine($"/// {line}");
+
 		WriteLine("/// </summary>");
 	}
 

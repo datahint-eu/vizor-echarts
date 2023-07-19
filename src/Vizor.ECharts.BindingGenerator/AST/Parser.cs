@@ -6,9 +6,9 @@ namespace Vizor.ECharts.BindingGenerator.AST;
 
 internal class Parser
 {
-	private Dictionary<string, Dictionary<string, MappedEnumType>> enumTypesMappedByName = new();
+	private readonly Dictionary<string, Dictionary<string, MappedEnumType>> enumTypesMappedByName = new();
 
-	private Dictionary<string, ObjectType> generatedTypes = new();
+	private readonly Dictionary<string, ObjectType> generatedTypes = new();
 
 	public Parser()
 	{
@@ -58,7 +58,7 @@ internal class Parser
 		AddMappedEnumType(new MappedEnumType("triggerOn", typeof(TriggerOn)));
 		AddMappedEnumType(new MappedEnumType("treeLayout", typeof(TreeLayout)));
 		AddMappedEnumType(new MappedEnumType("verticalAlign", typeof(VerticalAlign)));
-		
+
 
 
 		AddMappedEnumType(new MappedEnumType("type", typeof(LineType)), "lineStyle");
@@ -148,7 +148,7 @@ internal class Parser
 
 		if (prop.Value.TryGetProperty("default", out var defaultProp))
 		{
-			//TODO: optProp.Default = defaultProp.GetString();
+			optProp.Default = ParseDefault(defaultProp);
 		}
 
 		// always parse uiControl after type+default, since we might override certain values
@@ -231,13 +231,25 @@ internal class Parser
 				//TODO:
 				if (childProp.Name == "<style_name>")
 					continue;
-				
+
 
 				objType.Properties.Add(ParseProperty(objType, childProp));
 			}
 		}
 
 		return objType;
+	}
+
+	private static object? ParseDefault(JsonElement element)
+	{
+		return element.ValueKind switch
+		{
+			JsonValueKind.String => element.GetString()!.Trim('\''), // trim single quotes
+			JsonValueKind.False => false,
+			JsonValueKind.True => true,
+			JsonValueKind.Number => element.GetDouble(),
+			_ => null
+		};
 	}
 
 	private IPropertyType? MapType(ObjectType parent, OptionProperty optProp, JsonProperty prop)
@@ -270,7 +282,7 @@ internal class Parser
 				case "enum":
 					// don't care that font family isn't mapped, warn about all other unmapped types
 					if (prop.Name != "fontFamily")
-						Console.WriteLine($"WARNING: enum type '{prop.Name}' in '{parent.Name}' with values '{string.Join(',', optProp.EnumOptions ?? new string[] { })}' is not mapped");
+						Console.WriteLine($"WARNING: enum type '{prop.Name}' in '{parent.Name}' with values '{string.Join(',', optProp.EnumOptions ?? Array.Empty<string>())}' is not mapped");
 					return new PrimitiveType(typeof(string));
 				case "string":
 					return new PrimitiveType(typeof(string));
@@ -314,7 +326,7 @@ internal class Parser
 		}
 
 		// even more complex matching
-		if (optProp.Types is [ "function", "number", "string" ])
+		if (optProp.Types is ["function", "number", "string"])
 		{
 			return new MappedCustomType(typeof(NumberOrStringOrFunction));
 		}

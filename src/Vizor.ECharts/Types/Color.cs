@@ -49,8 +49,7 @@ public class ColorConverter : JsonConverter<Color>
 {
     public override Color Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        //TODO:
-        return new Color(reader.GetString());
+        return new Color(reader.GetString() ?? "");
     }
 
     public override void Write(Utf8JsonWriter writer, Color value, JsonSerializerOptions options)

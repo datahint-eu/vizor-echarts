@@ -2,7 +2,7 @@
 
 internal class OptionProperty
 {
-	private List<string> types = new();
+	private readonly List<string> types = new();
 
 	public required ObjectType Parent { get; set; }
 

@@ -32,7 +32,7 @@ public class NumberOrString
 
 public class NumberOrStringConverter : JsonConverter<NumberOrString>
 {
-    private static NumberOrStringConverter instance = new();
+    private static readonly NumberOrStringConverter instance = new();
 
     public override NumberOrString Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
