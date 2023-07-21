@@ -320,10 +320,11 @@ public partial class XAxis
 	/// Split area of axis in grid area, not shown by default.
 	/// </summary>
 	[JsonPropertyName("splitArea")]
-	public SplitArea? SplitArea { get; set; } 
+	public SplitArea? SplitArea { get; set; }
 
 	/// <summary>
 	/// Category data, available in type : 'category' axis.
+	/// Can be a string array or List of XAxisData
 	///  
 	/// If type is not specified, but axis.data is specified, the type is auto set as 'category' .
 	///  
@@ -346,7 +347,7 @@ public partial class XAxis
 	/// }, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<XAxisData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// axisPointer settings on the axis.

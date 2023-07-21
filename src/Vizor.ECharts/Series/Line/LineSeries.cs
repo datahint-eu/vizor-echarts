@@ -605,12 +605,14 @@ public partial class LineSeries
 	/// If you are using the dataset component to represent the data, it is recommended to use encode.itemGroupID to specify which dimension is encoded as the groupID.
 	/// </summary>
 	[JsonPropertyName("dataGroupId")]
-	public string? DataGroupId { get; set; } 
+	public string? DataGroupId { get; set; }
 
 	/// <summary>
 	/// Data array of series, which can be in the following forms:  
 	/// Notice, if no data specified in series, and there is dataset in option, series will use the first dataset as its datasource.
 	/// If data has been specified, dataset will not used.
+	/// 
+	/// Can be List of LineSeriesData or double array or int array or ...
 	///  
 	/// series.datasetIndex can be used to specify other dataset .
 	///  
@@ -710,7 +712,7 @@ public partial class LineSeries
 	/// For example, line chart can break when encounter an empty value, and scatter chart do not display graphic elements for empty values.
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<LineSeriesData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// Mark point in a chart.
