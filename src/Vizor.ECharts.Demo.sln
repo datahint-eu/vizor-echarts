@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vizor.ECharts.Demo", "Vizor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vizor.ECharts", "Vizor.ECharts\Vizor.ECharts.csproj", "{720FBA19-E82B-4AD3-953C-48AF8C07B212}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vizor.ECharts.BindingGenerator", "Vizor.ECharts.BindingGenerator\Vizor.ECharts.BindingGenerator.csproj", "{426C9C1A-6C8A-4231-ABB7-E3DE583429CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vizor.ECharts.BindingGenerator", "Vizor.ECharts.BindingGenerator\Vizor.ECharts.BindingGenerator.csproj", "{426C9C1A-6C8A-4231-ABB7-E3DE583429CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
