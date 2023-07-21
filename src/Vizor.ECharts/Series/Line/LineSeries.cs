@@ -103,8 +103,7 @@ public partial class LineSeries
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(4)]
-	//TODO: Type Warning: Failed to map property 'symbolSize' in type 'LineSeries' with types 'array,function,number'
-	public object? SymbolSize { get; set; } 
+	public NumberArrayOrFunction? SymbolSize { get; set; } 
 
 	/// <summary>
 	/// Rotate degree of  symbol.

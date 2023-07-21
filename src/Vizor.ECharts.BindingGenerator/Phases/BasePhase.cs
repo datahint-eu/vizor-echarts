@@ -279,6 +279,10 @@ internal abstract class BasePhase
 		{
 			return new MappedCustomType(typeof(NumberOrString)); // has implicit datetime support
 		}
+		else if (optProp.Types is ["array", "function", "number"])
+		{
+			return new MappedCustomType(typeof(NumberArrayOrFunction));
+		}
 
 		// give additional enum warning if any of the types is an enum
 		var typeList = string.Join(',', optProp.Types ?? Enumerable.Empty<string>());

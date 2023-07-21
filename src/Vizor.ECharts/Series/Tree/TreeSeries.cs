@@ -177,8 +177,7 @@ public partial class TreeSeries
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(7)]
-	//TODO: Type Warning: Failed to map property 'symbolSize' in type 'TreeSeries' with types 'array,function,number'
-	public object? SymbolSize { get; set; } 
+	public NumberArrayOrFunction? SymbolSize { get; set; } 
 
 	/// <summary>
 	/// Rotate degree of  symbol.

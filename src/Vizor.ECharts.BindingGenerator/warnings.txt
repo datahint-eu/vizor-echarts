@@ -88,31 +88,21 @@ ERROR: Failed to map property 'source' in type 'dataset' with types 'array,objec
 ---anyOf datasetTransform FilterdatasetTransform
 ---anyOf datasetTransform SortdatasetTransform
 ---anyOf Series LineSeries
-ERROR: Failed to map property 'symbolSize' in type 'LineSeries' with types 'array,function,number'
 ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
 WARNING: enum,number type 'origin' in 'areaStyle' with values 'auto,start,end' is not mapped
 ERROR: Failed to map property 'origin' in type 'areaStyle' with types 'enum,number'
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series BarSeries
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series PieSeries
 ERROR: Failed to map property 'emptyCircleStyle' in type 'PieSeries' with types 'boolean,object'
 WARNING: enum type 'alignTo' in 'label' with values 'labelLine,edge' is not mapped
 ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series ScatterSeries
-ERROR: Failed to map property 'symbolSize' in type 'ScatterSeries' with types 'array,function,number'
 ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series EffectScatterSeries
-ERROR: Failed to map property 'symbolSize' in type 'EffectScatterSeries' with types 'array,function,number'
 ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series RadarSeries
-ERROR: Failed to map property 'symbolSize' in type 'RadarSeries' with types 'array,function,number'
 ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
 ---anyOf Series TreeSeries
-ERROR: Failed to map property 'symbolSize' in type 'TreeSeries' with types 'array,function,number'
 ---anyOf Series TreemapSeries
 ERROR: Failed to map property 'nodeClick' in type 'TreemapSeries' with types 'boolean,string'
 ERROR: Failed to map property 'borderColorSaturation' in type 'itemStyle' with types 'color,number'
@@ -124,34 +114,25 @@ ERROR: Failed to map property 'nodeClick' in type 'SunburstSeries' with types 'b
 WARNING: enum,function type 'sort' in 'SunburstSeries' with values 'desc,asc' is not mapped
 ERROR: Failed to map property 'sort' in type 'SunburstSeries' with types 'enum,function'
 ---anyOf Series BoxplotSeries
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series CandlestickSeries
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series HeatmapSeries
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series MapSeries
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series ParallelSeries
 WARNING: array,enum,number type 'type' in 'ParallelSeriesData' with values 'solid,dashed,dotted' is not mapped
 ERROR: Failed to map property 'type' in type 'ParallelSeriesData' with types 'array,enum,number'
 ---anyOf Series LinesSeries
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series GraphSeries
 ERROR: Failed to map property 'edgeSymbolSize' in type 'GraphSeries' with types 'array,number,vector'
 ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
 ERROR: Failed to map property 'autoCurveness' in type 'GraphSeries' with types 'array,boolean,number'
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series SankeySeries
 ---anyOf Series FunnelSeries
 WARNING: enum,function type 'sort' in 'FunnelSeries' with values 'none,descending,ascending' is not mapped
 ERROR: Failed to map property 'sort' in type 'FunnelSeries' with types 'enum,function'
 ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series GaugeSeries
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series PictorialBarSeries
 ERROR: Failed to map property 'symbolMargin' in type 'PictorialBarSeries' with types 'number,percentvector,string'
 ERROR: Failed to map property 'symbolMargin' in type 'PictorialBarSeriesData' with types 'number,percentvector,string'
-ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 ---anyOf Series ThemeRiverSeries
 ---anyOf Series CustomSeries

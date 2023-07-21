@@ -130,8 +130,7 @@ public partial class ScatterSeries
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(10)]
-	//TODO: Type Warning: Failed to map property 'symbolSize' in type 'ScatterSeries' with types 'array,function,number'
-	public object? SymbolSize { get; set; } 
+	public NumberArrayOrFunction? SymbolSize { get; set; } 
 
 	/// <summary>
 	/// Rotate degree of  symbol.

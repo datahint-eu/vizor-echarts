@@ -76,8 +76,7 @@ public partial class RadarSeries
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(4)]
-	//TODO: Type Warning: Failed to map property 'symbolSize' in type 'RadarSeries' with types 'array,function,number'
-	public object? SymbolSize { get; set; } 
+	public NumberArrayOrFunction? SymbolSize { get; set; } 
 
 	/// <summary>
 	/// Rotate degree of  symbol.
