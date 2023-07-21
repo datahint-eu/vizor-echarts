@@ -8,5 +8,6 @@ public enum AxisPointerType
 {
 	Line,
 	Shadow,
-	None
+	None,
+	Cross
 }
