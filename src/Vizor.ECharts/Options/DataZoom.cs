@@ -56,8 +56,7 @@ public partial class DataZoom
 	/// If it is set to be [0, 3] , it controls the x-axes with axisIndex of 0 and 3 .
 	/// </summary>
 	[JsonPropertyName("xAxisIndex")]
-	//TODO: Type Warning: Failed to map property 'xAxisIndex' in type 'dataZoom' with types 'array,boolean,number'
-	public object? XAxisIndex { get; set; } 
+	public MultiIndex? XAxisIndex { get; set; } 
 
 	/// <summary>
 	/// Defines which yAxis should be controlled.
@@ -67,8 +66,7 @@ public partial class DataZoom
 	/// If it is set to be [0, 3] , it controls the x-axes with axisIndex of 0 and 3 .
 	/// </summary>
 	[JsonPropertyName("yAxisIndex")]
-	//TODO: Type Warning: Failed to map property 'yAxisIndex' in type 'dataZoom' with types 'array,boolean,number'
-	public object? YAxisIndex { get; set; } 
+	public MultiIndex? YAxisIndex { get; set; } 
 
 	/// <summary>
 	/// Style of brush rectangle.

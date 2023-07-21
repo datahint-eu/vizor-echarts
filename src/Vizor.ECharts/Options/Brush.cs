@@ -87,8 +87,7 @@ public partial class Brush
 	/// </summary>
 	[JsonPropertyName("seriesIndex")]
 	[DefaultValue("all")]
-	//TODO: Type Warning: Failed to map property 'seriesIndex' in type 'brush' with types 'array,number,string'
-	public object? SeriesIndex { get; set; } 
+	public MultiIndex? SeriesIndex { get; set; } 
 
 	/// <summary>
 	/// Assigns which of the geo can use brush selecting.
@@ -136,8 +135,7 @@ public partial class Brush
 	/// };
 	/// </summary>
 	[JsonPropertyName("geoIndex")]
-	//TODO: Type Warning: Failed to map property 'geoIndex' in type 'brush' with types 'array,number,string'
-	public object? GeoIndex { get; set; } 
+	public MultiIndex? GeoIndex { get; set; } 
 
 	/// <summary>
 	/// Assigns which of the xAxisIndex can use brush selecting.
@@ -185,8 +183,7 @@ public partial class Brush
 	/// };
 	/// </summary>
 	[JsonPropertyName("xAxisIndex")]
-	//TODO: Type Warning: Failed to map property 'xAxisIndex' in type 'brush' with types 'array,number,string'
-	public object? XAxisIndex { get; set; } 
+	public MultiIndex? XAxisIndex { get; set; } 
 
 	/// <summary>
 	/// Assigns which of the yAxisIndex can use brush selecting.
@@ -234,8 +231,7 @@ public partial class Brush
 	/// };
 	/// </summary>
 	[JsonPropertyName("yAxisIndex")]
-	//TODO: Type Warning: Failed to map property 'yAxisIndex' in type 'brush' with types 'array,number,string'
-	public object? YAxisIndex { get; set; } 
+	public MultiIndex? YAxisIndex { get; set; } 
 
 	/// <summary>
 	/// Default type of brush.

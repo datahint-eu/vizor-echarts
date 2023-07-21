@@ -55,6 +55,7 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("textAlign", typeof(HorizontalAlign)));
 		AddMappedEnumType(new MappedEnumType("textBorderType", typeof(LineType)));
 		AddMappedEnumType(new MappedEnumType("textBorderRadius", typeof(Radius)));
+		AddMappedEnumType(new MappedEnumType("textPadding", typeof(Padding)));
 		AddMappedEnumType(new MappedEnumType("textVerticalAlign", typeof(VerticalAlign)));
 		AddMappedEnumType(new MappedEnumType("tooltipOrder", typeof(TooltipOrder)));
 		AddMappedEnumType(new MappedEnumType("tooltipRenderMode", typeof(RenderMode)));
@@ -110,6 +111,11 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("roseType", typeof(PieRoseType)), "PieSeries");
 		AddMappedEnumType(new MappedEnumType("radius", typeof(PieRadius)), "PieSeries");
 		AddMappedEnumType(new MappedEnumType("center", typeof(PieCenter)), "PieSeries");
+
+		AddMappedEnumType(new MappedEnumType("seriesIndex", typeof(MultiIndex)), "brush");
+		AddMappedEnumType(new MappedEnumType("geoIndex", typeof(MultiIndex)), "brush");
+		AddMappedEnumType(new MappedEnumType("xAxisIndex", typeof(MultiIndex)), "brush", "dataZoom");
+		AddMappedEnumType(new MappedEnumType("yAxisIndex", typeof(MultiIndex)), "brush", "dataZoom");
 	}
 
 	public ObjectType ChartOptions => chartOptions;
@@ -147,7 +153,7 @@ internal class TypeCollection
 				return new GenericListType(new SimpleType("GraphSeriesLinks"));
 		}
 
-		Console.WriteLine($"WARNING: array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>");
+		//Console.WriteLine($"WARNING: array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>");
 		return new ObjectListType()
 		{
 			TypeWarning = $"array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>"

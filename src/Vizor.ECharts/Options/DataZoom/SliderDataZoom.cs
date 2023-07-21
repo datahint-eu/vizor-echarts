@@ -422,8 +422,7 @@ public partial class SliderDataZoom
 	/// More info about the relationship between dataZoom-slider.startValue and axis extent can be checked in dataZoom-slider.rangeMode .
 	/// </summary>
 	[JsonPropertyName("startValue")]
-	//TODO: Type Warning: Failed to map property 'startValue' in type 'SliderDataZoom' with types 'date,number,string'
-	public object? StartValue { get; set; } 
+	public NumberOrString? StartValue { get; set; } 
 
 	/// <summary>
 	/// The end absolute value of the window, doesn't work when dataZoom-slider.end is set.
@@ -436,8 +435,7 @@ public partial class SliderDataZoom
 	/// More info about the relationship between dataZoom-slider.endValue and axis extent can be checked in dataZoom-slider.rangeMode .
 	/// </summary>
 	[JsonPropertyName("endValue")]
-	//TODO: Type Warning: Failed to map property 'endValue' in type 'SliderDataZoom' with types 'date,number,string'
-	public object? EndValue { get; set; } 
+	public NumberOrString? EndValue { get; set; } 
 
 	/// <summary>
 	/// Used to restrict minimal window size, in percent, which value is in the range of [0, 100].
@@ -463,8 +461,7 @@ public partial class SliderDataZoom
 	/// In category axis it can be set as 5 to represent 5 categories.
 	/// </summary>
 	[JsonPropertyName("minValueSpan")]
-	//TODO: Type Warning: Failed to map property 'minValueSpan' in type 'SliderDataZoom' with types 'date,number,string'
-	public object? MinValueSpan { get; set; } 
+	public NumberOrString? MinValueSpan { get; set; } 
 
 	/// <summary>
 	/// Used to restrict maximal window size.
@@ -474,8 +471,7 @@ public partial class SliderDataZoom
 	/// In category axis it can be set as 5 to represent 5 categories.
 	/// </summary>
 	[JsonPropertyName("maxValueSpan")]
-	//TODO: Type Warning: Failed to map property 'maxValueSpan' in type 'SliderDataZoom' with types 'date,number,string'
-	public object? MaxValueSpan { get; set; } 
+	public NumberOrString? MaxValueSpan { get; set; } 
 
 	/// <summary>
 	/// Specify whether the layout of dataZoom component is horizontal or vertical.

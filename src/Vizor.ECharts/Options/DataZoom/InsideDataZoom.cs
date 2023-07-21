@@ -264,8 +264,7 @@ public partial class InsideDataZoom
 	/// More info about the relationship between dataZoom-inside.startValue and axis extent can be checked in dataZoom-inside.rangeMode .
 	/// </summary>
 	[JsonPropertyName("startValue")]
-	//TODO: Type Warning: Failed to map property 'startValue' in type 'InsideDataZoom' with types 'date,number,string'
-	public object? StartValue { get; set; } 
+	public NumberOrString? StartValue { get; set; } 
 
 	/// <summary>
 	/// The end absolute value of the window, doesn't work when dataZoom-inside.end is set.
@@ -278,8 +277,7 @@ public partial class InsideDataZoom
 	/// More info about the relationship between dataZoom-inside.endValue and axis extent can be checked in dataZoom-inside.rangeMode .
 	/// </summary>
 	[JsonPropertyName("endValue")]
-	//TODO: Type Warning: Failed to map property 'endValue' in type 'InsideDataZoom' with types 'date,number,string'
-	public object? EndValue { get; set; } 
+	public NumberOrString? EndValue { get; set; } 
 
 	/// <summary>
 	/// Used to restrict minimal window size, in percent, which value is in the range of [0, 100].
@@ -305,8 +303,7 @@ public partial class InsideDataZoom
 	/// In category axis it can be set as 5 to represent 5 categories.
 	/// </summary>
 	[JsonPropertyName("minValueSpan")]
-	//TODO: Type Warning: Failed to map property 'minValueSpan' in type 'InsideDataZoom' with types 'date,number,string'
-	public object? MinValueSpan { get; set; } 
+	public NumberOrString? MinValueSpan { get; set; } 
 
 	/// <summary>
 	/// Used to restrict maximal window size.
@@ -316,8 +313,7 @@ public partial class InsideDataZoom
 	/// In category axis it can be set as 5 to represent 5 categories.
 	/// </summary>
 	[JsonPropertyName("maxValueSpan")]
-	//TODO: Type Warning: Failed to map property 'maxValueSpan' in type 'InsideDataZoom' with types 'date,number,string'
-	public object? MaxValueSpan { get; set; } 
+	public NumberOrString? MaxValueSpan { get; set; } 
 
 	/// <summary>
 	/// Specify whether the layout of dataZoom component is horizontal or vertical.

@@ -22,14 +22,4 @@ Run this tool with the following command line parameters
 
 option-binding --input "C:\Users\Ben\Downloads\echarts-website\en\documents\option.json" --output "D:\Dev\VizorECharts\src\Vizor.ECharts"
 
-# TODO
- - check that duplicate types are actually duplicate, or given them a unique name:
-	- Radius <> PieRadius
-	- tooltip trigger ==> merge different tooltip objects ??
- - a lot of missing type maps
- - missing items/anyOf
- - dataData class
-	- 
-
-
 typeinfo --input "C:\Users\Ben\Downloads\echarts-website\en\documents\option.json"
