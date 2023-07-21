@@ -229,23 +229,23 @@ public partial class RadarSeries
 	/// If you are using the dataset component to represent the data, it is recommended to use encode.itemGroupID to specify which dimension is encoded as the groupID.
 	/// </summary>
 	[JsonPropertyName("dataGroupId")]
-	public string? DataGroupId { get; set; } 
+	public string? DataGroupId { get; set; }
 
-	/// <summary>
-	/// The data in radar chart is multi-variable (dimension).
-	/// Here is an example:  data : [
-	///     {
-	///         value : [4300, 10000, 28000, 35000, 50000, 19000],
-	///         name : 'Allocated Budget'
-	///     },
-	///     {
-	///         value : [5000, 14000, 28000, 31000, 42000, 21000],
-	///         name : 'Actual Spending'
-	///     }
-	/// ]  
-	/// Among them, value item array contains data that is corresponding to radar.indicator .
-	/// </summary>
-	[JsonPropertyName("data")]
+    /// <summary>
+    /// The data in radar chart is multi-variable (dimension).
+    /// Here is an example:  data : [
+    ///     {
+    ///         value : [4300, 10000, 28000, 35000, 50000, 19000],
+    ///         name : 'Allocated Budget'
+    ///     },
+    ///     {
+    ///         value : [5000, 14000, 28000, 31000, 42000, 21000],
+    ///         name : 'Actual Spending'
+    ///     }
+    /// ]  
+    /// Among them, value item array contains data that is corresponding to radar.indicator .
+    /// </summary>
+    [JsonPropertyName("data")]
 	public List<RadarSeriesData>? Data { get; set; } 
 
 	/// <summary>

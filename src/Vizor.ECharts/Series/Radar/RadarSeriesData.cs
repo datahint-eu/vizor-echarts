@@ -16,10 +16,10 @@ public partial class RadarSeriesData
 	public string? Name { get; set; } 
 
 	/// <summary>
-	/// Numerical value of a single data item.
+	/// Array of numerical values of a single data item.
 	/// </summary>
 	[JsonPropertyName("value")]
-	public double? Value { get; set; } 
+	public object? Value { get; set; } 
 
 	/// <summary>
 	/// The groupID of this data item.
