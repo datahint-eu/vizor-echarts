@@ -12,6 +12,7 @@ Blazor wrapper for [Apache ECharts](https://echarts.apache.org/en/index.html).
 ```
 <script src="_content/Vizor.ECharts/js/vizor-echarts-min.js"></script>
 ```
+See the [example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Pages/_Host.cshtml) from the demo application.
 
 ## How to use
 
@@ -76,6 +77,8 @@ private ChartOptions options = new()
 		}
 	};
 ```
+
+See the [full C# code](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Pie/PieSimple.razor).
 
 ## Async data loading
 TODO
