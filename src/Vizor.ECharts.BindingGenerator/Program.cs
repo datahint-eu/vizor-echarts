@@ -3,9 +3,10 @@ using Vizor.ECharts.BindingGenerator;
 
 try
 {
-	Parser.Default.ParseArguments<GenerateOptionBindingOptions>(args)
+	Parser.Default.ParseArguments<GenerateOptionBindingOptions, GenerateTypeInfoOptions>(args)
 		.MapResult(
 			(GenerateOptionBindingOptions opts) => new GenerateOptionBindingTool().Run(opts),
+			(GenerateTypeInfoOptions opts) => new GenerateTypeInfoTool().Run(opts),
 			errs => HandleParseError(errs)
 		);
 }

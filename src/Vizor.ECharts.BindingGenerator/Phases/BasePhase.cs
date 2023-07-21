@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Diagnostics;
 using System.Text.Json;
 using Vizor.ECharts.BindingGenerator.Types;
@@ -17,12 +18,7 @@ internal abstract class BasePhase
 
 	internal abstract void Run(JsonElement root);
 
-	protected virtual void StoreType(ObjectType objectType)
-	{
-		typeCollection.AddObjectType(objectType);
-	}
-
-	protected virtual IPropertyType? ParseObjectType(string propName, JsonElement value, string dataPrefix)
+	protected virtual IPropertyType? ParseObjectType(OptionProperty parent, string propName, JsonElement value, string dataPrefix)
 	{
 		//Console.WriteLine($"OBJECT {prop.Name}");
 
@@ -32,45 +28,62 @@ internal abstract class BasePhase
 			propName = dataPrefix + "Data";
 		}
 
-		// try looking up previously defined types with the same name
-		if (typeCollection.TryGetObjectType(propName, out var objType))
+		// special case
+		if (propName == "<style_name>")
 		{
-			//TODO: don't simply return the previous type, we need to compare if the values actually match
-			return objType;
+			propName = "RichStyleName";
 		}
 
-		// create a new type
-		objType = new ObjectType(propName);
-		StoreType(objType);
+		// create a new type --> we parse the type completely, so we can do a (deep) duplicate check
+		var objType = new ObjectType(parent, propName);
 
 		if (value.TryGetProperty("properties", out var childProps))
 		{
 			foreach (JsonProperty childProp in childProps.EnumerateObject())
 			{
 				//TODO: skip style_name for now
+				/*
 				if (childProp.Name == "<style_name>")
 				{
 					Console.WriteLine($"TODO --- {childProp.Name} property in {propName}");
 					continue;
 				}
+				*/
 
 				objType.Properties.Add(ParseProperty(objType, childProp));
 			}
 		}
 
-		return objType;
+		typeCollection.TrackType(objType);
+
+		/*
+		// try looking up previously defined types with the same name
+		if (typeCollection.TryGetObjectType(propName, out var lookupType))
+		{
+			//TODO: don't simply return the previous type, we need to compare if the values actually match
+			if (CompareType(lookupType, objType))
+				return lookupType;
+		}
+		*/
+
+		bool isSeriesType = objType.Name.EndsWith("Series") || objType.Name.EndsWith("SeriesData");
+		var mergedType = typeCollection.MergeType(objType, isSeriesType);
+
+		return mergedType;
 	}
 
 	protected virtual OptionProperty ParseProperty(ObjectType parentType, JsonProperty prop)
 	{
 		//Console.WriteLine($"PROPERTY {prop.Name}");
 
-		var optProp = new OptionProperty()
+		// special case
+		var propName = prop.Name;
+		if (propName == "<style_name>")
 		{
-			ParentType = parentType,
-			Name = prop.Name,
-			PropertyName = Helper.ToClassName(prop.Name)
-		};
+			propName = "RichStyleName";
+		}
+
+		var optProp = new OptionProperty(parentType, propName, Helper.ToClassName(propName));
 
 		if (prop.Value.TryGetProperty("description", out var descProp))
 		{
@@ -141,8 +154,8 @@ internal abstract class BasePhase
 			// we need to define an item type, e.g. MediaItem and pass this to the MapType function
 			// MapType can then generate List<MediaItem> instead of List<object>
 
-			var itemName = parentType.Name + Helper.ToClassName(prop.Name);
-			optProp.ItemType = ParseObjectType(itemName, itemsProp, dataPrefix: itemName);
+			var itemName = parentType.Name + Helper.ToClassName(propName);
+			optProp.ItemType = ParseObjectType(optProp, itemName, itemsProp, dataPrefix: itemName);
 		}
 
 		// at this point we can decide how to map the type
@@ -192,7 +205,7 @@ internal abstract class BasePhase
 			switch (optProp.Types[0])
 			{
 				case "object":
-					return ParseObjectType(prop.Name, prop.Value, dataPrefix: prop.Name);
+					return ParseObjectType(optProp, prop.Name, prop.Value, dataPrefix: prop.Name);
 				case "enum":
 					// don't care that fontFamily/cursor isn't mapped, warn about all other unmapped types
 					if (prop.Name != "fontFamily" && prop.Name != "cursor")
@@ -224,6 +237,8 @@ internal abstract class BasePhase
 		{
 			switch (optProp.Types[0], optProp.Types[1])
 			{
+				case ("boolean", "number"):
+					return new MappedCustomType(typeof(NumberOrBool));
 				case ("number", "string"):
 					return new MappedCustomType(typeof(NumberOrString));
 				case ("icon", "string"):
@@ -250,6 +265,10 @@ internal abstract class BasePhase
 		{
 			return new MappedCustomType(typeof(NumberOrStringOrFunction));
 		}
+		else if (optProp.Types is ["function", "icon", "string"])
+		{
+			return new MappedCustomType(typeof(StringOrFunction));
+		}
 
 		// give additional enum warning if any of the types is an enum
 		var typeList = string.Join(',', optProp.Types ?? Enumerable.Empty<string>());
@@ -261,6 +280,30 @@ internal abstract class BasePhase
 		Console.WriteLine($"ERROR: Failed to map property '{prop.Name}' in type '{parent.Name}' with types '{typeList}'");
 		//throw new ArgumentException($"Failed to map property '{prop.Name}' in type '{parent.Name}' with types '{string.Join(',', optProp.Types ?? Enumerable.Empty<string>())}'");
 
-		return null;
+		return new SimpleType("object");
+	}
+
+	private bool CompareType(ObjectType lookupType, ObjectType objType)
+	{
+		var propNamesA = GetPropertyList(lookupType);
+		var propNamesB = GetPropertyList(objType);
+
+		if (propNamesA != propNamesB)
+		{
+			Console.WriteLine($"!!! Type compare error: {lookupType.Name}");
+			Console.WriteLine($"\tA: {propNamesA}");
+			Console.WriteLine($"\tB: {propNamesB}");
+
+			//TODO return false;
+		}
+
+		return true;
+	}
+
+	private string GetPropertyList(ObjectType objectType)
+	{
+		var names = objectType.Properties.Select(p => p.Name).ToList();
+		names.Sort();
+		return string.Join(",", names);
 	}
 }

@@ -24,9 +24,9 @@ public class NumberOrString
         return new NumberOrString(number);
     }
 
-    public static implicit operator NumberOrString(string jsFunction)
+    public static implicit operator NumberOrString(string str)
     {
-        return new NumberOrString(jsFunction);
+        return new NumberOrString(str);
     }
 }
 

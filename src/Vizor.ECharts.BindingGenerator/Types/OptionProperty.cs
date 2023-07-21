@@ -2,13 +2,19 @@
 
 internal class OptionProperty
 {
-	private readonly List<string> types = new();
+    public OptionProperty(ObjectType? parentType, string name, string propertyName)
+    {
+		ParentType = parentType;
+		Name = name;
+		PropertyName = propertyName;
+	}
 
-	public required ObjectType ParentType { get; set; }
+    private readonly List<string> types = new();
 
-	public required string Name { get; set; }
+	public ObjectType? ParentType { get; }
+	public string Name { get; set; }
 
-	public required string PropertyName { get; set; }
+	public string PropertyName { get; set; }
 
 	public string? Description { get; set; }
 
@@ -21,6 +27,8 @@ internal class OptionProperty
 	public IPropertyType? MappedType { get; set; }
 
 	public IPropertyType? ItemType { get; set; }
+
+	public string Path => ParentType == null ? string.Empty : ParentType.Path;
 
 	public void RemoveType(string name)
 	{

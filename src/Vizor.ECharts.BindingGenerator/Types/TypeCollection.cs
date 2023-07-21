@@ -6,10 +6,11 @@ internal class TypeCollection
 {
 	private readonly Dictionary<string, Dictionary<string, MappedEnumType>> enumTypesMappedByName = new();
 
+	private readonly Dictionary<string, List<ObjectType>> allObjectTypesWithDuplicates = new();
 	private readonly Dictionary<string, ObjectType> objectTypeLookup = new();
-	private readonly List<ObjectType> seriesTypes = new();
+	private readonly Dictionary<string, ObjectType> seriesTypeLookup = new();
 
-	private readonly ObjectType chartOptions = new("chartOptions");
+	private readonly ObjectType chartOptions = new(null, "chartOptions");
 
 	public TypeCollection()
 	{
@@ -90,6 +91,7 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("position", typeof(LeftOrRight)), "yAxis");
 		AddMappedEnumType(new MappedEnumType("controlPosition", typeof(LeftOrRight)), "timeline");
 		AddMappedEnumType(new MappedEnumType("layout", typeof(HorizontalOrVertical)), "parallel");
+		AddMappedEnumType(new MappedEnumType("position", typeof(LabelPosition)), "label", "upperLabel");
 
 		AddMappedEnumType(new MappedEnumType("layout", typeof(TreeLayout)), "TreeSeries");
 		AddMappedEnumType(new MappedEnumType("edgeShape", typeof(TreeEdgeShape)), "TreeSeries");
@@ -124,6 +126,8 @@ internal class TypeCollection
 
 	public ObjectType ChartOptions => chartOptions;
 
+	public IReadOnlyDictionary<string, List<ObjectType>> TypesWithDuplicates => allObjectTypesWithDuplicates;
+
 	public IEnumerable<ObjectType> ListObjectTypesToGenerate()
 	{
 		yield return chartOptions;
@@ -132,7 +136,7 @@ internal class TypeCollection
 			yield return objectType;
 	}
 
-	public IEnumerable<ObjectType> ListSeriesTypesToGenerate() => seriesTypes;
+	public IEnumerable<ObjectType> ListSeriesTypesToGenerate() => seriesTypeLookup.Values;
 
 	public bool TryGetObjectType(string name, out ObjectType? objectType) => objectTypeLookup.TryGetValue(name, out objectType);
 
@@ -180,14 +184,49 @@ internal class TypeCollection
 		return false;
 	}
 
-	public void AddObjectType(ObjectType objectType)
+	public void TrackType(ObjectType objectType)
 	{
-		objectTypeLookup.Add(objectType.Name, objectType);
+		if (!allObjectTypesWithDuplicates.TryGetValue(objectType.Name, out var list))
+		{
+			list = new List<ObjectType>();
+			allObjectTypesWithDuplicates.Add(objectType.Name, list);
+		}
+
+		list.Add(objectType);
 	}
 
-	public void AddSeriesType(ObjectType objectType)
+	public ObjectType MergeType(ObjectType objectType, bool isSeriesType)
 	{
-		seriesTypes.Add(objectType);
+		ObjectType? mergedType = null;
+
+		if (isSeriesType)
+		{
+			if (!seriesTypeLookup.TryGetValue(objectType.Name, out mergedType))
+			{
+				mergedType = new ObjectType(null, objectType.Name); // merged types have many parents, so set parent to null
+				seriesTypeLookup.Add(mergedType.Name, mergedType);
+			}
+		}
+		else
+		{
+			objectTypeLookup.TryGetValue(objectType.Name, out mergedType);
+
+			if (!objectTypeLookup.TryGetValue(objectType.Name, out mergedType))
+			{
+				mergedType = new ObjectType(null, objectType.Name); // merged types have many parents, so set parent to null
+				objectTypeLookup.Add(mergedType.Name, mergedType);
+			}
+		}
+
+		foreach (var property in objectType.Properties)
+		{
+			if (!mergedType.Properties.Any(p => p.Name == property.Name))
+			{
+				mergedType.Properties.Add(property);
+			}
+		}
+
+		return mergedType;
 	}
 
 	private void AddMappedEnumType(MappedEnumType mappedType, params string[]? specificObjectTypes)

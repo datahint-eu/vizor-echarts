@@ -19,7 +19,7 @@
 			},
 			Tooltip = new()
 			{
-				//TODO: Trigger = TooltipTrigger.Item
+				Trigger = TooltipTrigger.Item
 			},
 			Legend = new()
 			{
@@ -42,12 +42,12 @@
 					},
 					Emphasis = new()
 					{
-						//TODO
-			//			itemStyle: {
-			//	shadowBlur: 10,
-			//	shadowOffsetX: 0,
-			//	shadowColor: 'rgba(0, 0, 0, 0.5)'
-			//}
+						ItemStyle = new()
+						{
+							ShadowBlur = 10,
+							ShadowOffsetX = 0,
+							ShadowColor = Color.FromRGBA(0, 0, 0, 0.5)
+						}
 					}
 				}
 			}

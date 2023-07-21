@@ -22,3 +22,8 @@ option-binding --input "C:\Users\Ben\Downloads\echarts-website\en\documents\opti
 	- tooltip trigger ==> merge different tooltip objects ??
  - a lot of missing type maps
  - missing items/anyOf
+ - dataData class
+	- 
+
+
+typeinfo --input "C:\Users\Ben\Downloads\echarts-website\en\documents\option.json"

@@ -13,7 +13,26 @@ internal class ObjectTypeClassGenerator
 	{
 		this.objectType = objectType;
 		this.isSeriesType = isSeriesType;
-		optionsFile = Path.Combine(outputDir, objectType.DotNetType + ".cs");
+
+		// create a subdir
+		if (isSeriesType)
+		{
+			var idx = objectType.Name.IndexOf("Series");
+			if (idx > 0)
+			{
+				var seriesName = objectType.Name[0..idx];
+
+				var seriesDir = Path.Combine(outputDir, seriesName);
+				if (!Directory.Exists(seriesDir))
+				{
+					Directory.CreateDirectory(seriesDir);
+				}
+
+				optionsFile = Path.Combine(seriesDir, objectType.DotNetType + ".cs");
+			}
+		}
+
+		optionsFile ??= Path.Combine(outputDir, objectType.DotNetType + ".cs");
 	}
 
 	public string OptionsFile => optionsFile;

@@ -26,19 +26,7 @@ internal class GenerateSeriesTypesPhase : BasePhase
 		}
 	}
 
-	protected override void StoreType(ObjectType objectType)
-	{
-		if (objectType.Name.EndsWith("Series") || objectType.Name.EndsWith("SeriesData"))
-		{
-			typeCollection.AddSeriesType(objectType);
-		}
-		else
-		{
-			typeCollection.AddObjectType(objectType);
-		}
-	}
-
-	protected override IPropertyType? ParseObjectType(string propName, JsonElement value, string dataPrefix)
+	protected override IPropertyType? ParseObjectType(OptionProperty parent, string propName, JsonElement value, string dataPrefix)
 	{
 		//Console.WriteLine($"OBJECT {prop.Name}");
 
@@ -49,13 +37,13 @@ internal class GenerateSeriesTypesPhase : BasePhase
 			{
 				var seriesType = GetSeriesType(anyOfItemElement);
 				Console.WriteLine($"----------------- SERIES TYPE {seriesType}");
-				_ = ParseObjectType(seriesType, anyOfItemElement, dataPrefix: seriesType);
+				_ = ParseObjectType(parent, seriesType, anyOfItemElement, dataPrefix: seriesType);
 			}
 
 			return new SimpleType("object");
 		}
 
-		return base.ParseObjectType(propName, value, dataPrefix);
+		return base.ParseObjectType(parent, propName, value, dataPrefix);
 	}
 
 	protected virtual string GetSeriesType(JsonElement anyOfItemElement)
