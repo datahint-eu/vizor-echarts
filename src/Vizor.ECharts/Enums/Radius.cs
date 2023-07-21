@@ -23,6 +23,11 @@ public class Radius
     public double UpperRight { get; }
     public double BottomRight { get; }
     public double BottomLeft { get; }
+
+	public static implicit operator Radius(double all)
+	{
+		return new Radius(all);
+	}
 }
 
 public class RadiusConverter : JsonConverter<Radius>
