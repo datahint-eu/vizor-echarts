@@ -228,8 +228,7 @@ public partial class InsideDataZoom
 	/// </summary>
 	[JsonPropertyName("filterMode")]
 	[DefaultValue("filter")]
-	//TODO: Type Warning: enum type 'filterMode' in 'InsideDataZoom' with values 'filter,weakFilter,empty,none' is not mapped
-	public string? FilterMode { get; set; } 
+	public DataZoomFilterMode? FilterMode { get; set; } 
 
 	/// <summary>
 	/// The start percentage of the window out of the data extent, in the range of 0 ~ 100.
@@ -381,8 +380,7 @@ public partial class InsideDataZoom
 	/// </summary>
 	[JsonPropertyName("zoomOnMouseWheel")]
 	[DefaultValue("true")]
-	//TODO: Type Warning: Failed to map property 'zoomOnMouseWheel' in type 'InsideDataZoom' with types 'boolean,enum'
-	public object? ZoomOnMouseWheel { get; set; } 
+	public DataZoomOnMouse? ZoomOnMouseWheel { get; set; } 
 
 	/// <summary>
 	/// How to trigger data window move.
@@ -394,8 +392,7 @@ public partial class InsideDataZoom
 	/// </summary>
 	[JsonPropertyName("moveOnMouseMove")]
 	[DefaultValue("true")]
-	//TODO: Type Warning: Failed to map property 'moveOnMouseMove' in type 'InsideDataZoom' with types 'boolean,enum'
-	public object? MoveOnMouseMove { get; set; } 
+	public DataZoomOnMouse? MoveOnMouseMove { get; set; } 
 
 	/// <summary>
 	/// How to trigger data window move.
@@ -407,8 +404,7 @@ public partial class InsideDataZoom
 	/// </summary>
 	[JsonPropertyName("moveOnMouseWheel")]
 	[DefaultValue("true")]
-	//TODO: Type Warning: Failed to map property 'moveOnMouseWheel' in type 'InsideDataZoom' with types 'boolean,enum'
-	public object? MoveOnMouseWheel { get; set; } 
+	public DataZoomOnMouse? MoveOnMouseWheel { get; set; } 
 
 	/// <summary>
 	/// Whether to prevent default behavior of mouse move event.

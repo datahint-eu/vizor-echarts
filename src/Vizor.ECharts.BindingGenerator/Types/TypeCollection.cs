@@ -83,6 +83,10 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("position", typeof(TopOrBottom)), "xAxis");
 		AddMappedEnumType(new MappedEnumType("shape", typeof(RadarShape)), "radar");
 
+		AddMappedEnumType(new MappedEnumType("status", typeof(AxisPointerStatus)), "axisPointer");
+
+		AddMappedEnumType(new MappedEnumType("alignTo", typeof(LabelAlignTo)), "label");
+
 		AddMappedEnumType(new MappedEnumType("selectorPosition", typeof(StartOrEnd)), "legend");
 		AddMappedEnumType(new MappedEnumType("position", typeof(StartOrEnd)), "dayLabel");
 		AddMappedEnumType(new MappedEnumType("position", typeof(StartOrEnd)), "monthLabel");
@@ -93,6 +97,13 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("layout", typeof(HorizontalOrVertical)), "parallel");
 		AddMappedEnumType(new MappedEnumType("position", typeof(LabelPosition)), "label", "upperLabel");
 
+		AddMappedEnumType(new MappedEnumType("seriesIndex", typeof(MultiIndex)), "brush");
+		AddMappedEnumType(new MappedEnumType("geoIndex", typeof(MultiIndex)), "brush");
+		AddMappedEnumType(new MappedEnumType("xAxisIndex", typeof(MultiIndex)), "brush", "dataZoom");
+		AddMappedEnumType(new MappedEnumType("yAxisIndex", typeof(MultiIndex)), "brush", "dataZoom");
+
+
+
 		AddMappedEnumType(new MappedEnumType("layout", typeof(TreeLayout)), "TreeSeries");
 		AddMappedEnumType(new MappedEnumType("edgeShape", typeof(TreeEdgeShape)), "TreeSeries");
 
@@ -101,6 +112,8 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("nodeAlign", typeof(SankeyNodeAlign)), "SankeySeries");
 
 		AddMappedEnumType(new MappedEnumType("layout", typeof(GraphLayout)), "GraphSeries");
+
+		AddMappedEnumType(new MappedEnumType("nodeClick", typeof(SunburstNodeClick)), "SunburstSeries");
 
 		AddMappedEnumType(new MappedEnumType("symbolRepeatDirection", typeof(StartOrEnd)), "PictorialBarSeries", "PictorialBarSeriesData");
 		AddMappedEnumType(new MappedEnumType("symbolPosition", typeof(StartOrEndOrCenter)), "PictorialBarSeries", "PictorialBarSeriesData");
@@ -112,10 +125,10 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("radius", typeof(PieRadius)), "PieSeries");
 		AddMappedEnumType(new MappedEnumType("center", typeof(PieCenter)), "PieSeries");
 
-		AddMappedEnumType(new MappedEnumType("seriesIndex", typeof(MultiIndex)), "brush");
-		AddMappedEnumType(new MappedEnumType("geoIndex", typeof(MultiIndex)), "brush");
-		AddMappedEnumType(new MappedEnumType("xAxisIndex", typeof(MultiIndex)), "brush", "dataZoom");
-		AddMappedEnumType(new MappedEnumType("yAxisIndex", typeof(MultiIndex)), "brush", "dataZoom");
+		AddMappedEnumType(new MappedEnumType("filterMode", typeof(DataZoomFilterMode)), "InsideDataZoom", "SliderDataZoom");
+		AddMappedEnumType(new MappedEnumType("zoomOnMouseWheel", typeof(DataZoomOnMouse)), "InsideDataZoom");
+		AddMappedEnumType(new MappedEnumType("moveOnMouseMove", typeof(DataZoomOnMouse)), "InsideDataZoom");
+		AddMappedEnumType(new MappedEnumType("moveOnMouseWheel", typeof(DataZoomOnMouse)), "InsideDataZoom");
 	}
 
 	public ObjectType ChartOptions => chartOptions;

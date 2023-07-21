@@ -1,79 +1,30 @@
-ERROR: Failed to map property 'pageIconSize' in type 'legend' with types 'array,number,vector'
 WARNING: array,enum,number type 'type' in 'crossStyle' with values 'solid,dashed,dotted' is not mapped
 ERROR: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
 ERROR: Failed to map property 'boundaryGap' in type 'xAxis' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
-ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
-ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
-ERROR: Failed to map property 'color' in type 'lineStyle' with types 'array,color'
-WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
-ERROR: Failed to map property 'status' in type 'axisPointer' with types 'boolean,enum'
-ERROR: Failed to map property 'size' in type 'handle' with types 'array,number,vector'
 ERROR: Failed to map property 'boundaryGap' in type 'yAxis' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
-ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
-ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
-ERROR: Failed to map property 'color' in type 'lineStyle' with types 'array,color'
-WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
-ERROR: Failed to map property 'status' in type 'axisPointer' with types 'boolean,enum'
-ERROR: Failed to map property 'size' in type 'handle' with types 'array,number,vector'
 WARNING: array,enum,number type 'type' in 'crossStyle' with values 'solid,dashed,dotted' is not mapped
 ERROR: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
 ERROR: Failed to map property 'boundaryGap' in type 'radiusAxis' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
-ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
-ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
-ERROR: Failed to map property 'color' in type 'lineStyle' with types 'array,color'
-WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
-ERROR: Failed to map property 'status' in type 'axisPointer' with types 'boolean,enum'
-ERROR: Failed to map property 'size' in type 'handle' with types 'array,number,vector'
 ERROR: Failed to map property 'boundaryGap' in type 'angleAxis' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
-ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
-ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
-ERROR: Failed to map property 'color' in type 'lineStyle' with types 'array,color'
-WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
-ERROR: Failed to map property 'status' in type 'axisPointer' with types 'boolean,enum'
-ERROR: Failed to map property 'size' in type 'handle' with types 'array,number,vector'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
-ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
-ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
-ERROR: Failed to map property 'color' in type 'lineStyle' with types 'array,color'
 ---anyOf DataZoom InsideDataZoom
-WARNING: enum type 'filterMode' in 'InsideDataZoom' with values 'filter,weakFilter,empty,none' is not mapped
-WARNING: boolean,enum type 'zoomOnMouseWheel' in 'InsideDataZoom' with values 'true,false,shift,ctrl,alt' is not mapped
-ERROR: Failed to map property 'zoomOnMouseWheel' in type 'InsideDataZoom' with types 'boolean,enum'
-WARNING: boolean,enum type 'moveOnMouseMove' in 'InsideDataZoom' with values 'true,false,shift,ctrl,alt' is not mapped
-ERROR: Failed to map property 'moveOnMouseMove' in type 'InsideDataZoom' with types 'boolean,enum'
-WARNING: boolean,enum type 'moveOnMouseWheel' in 'InsideDataZoom' with values 'true,false,shift,ctrl,alt' is not mapped
-ERROR: Failed to map property 'moveOnMouseWheel' in type 'InsideDataZoom' with types 'boolean,enum'
 ---anyOf DataZoom SliderDataZoom
 ERROR: Failed to map property 'showDataShadow' in type 'SliderDataZoom' with types 'boolean,string'
-WARNING: enum type 'filterMode' in 'SliderDataZoom' with values 'filter,weakFilter,empty,none' is not mapped
 ---anyOf VisualMap ContinuousVisualMap
 ---anyOf VisualMap PiecewiseVisualMap
 ERROR: Failed to map property 'itemGap' in type 'PiecewiseVisualMap' with types '*,number'
 WARNING: array,enum,number type 'type' in 'crossStyle' with values 'solid,dashed,dotted' is not mapped
 ERROR: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
-WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
-ERROR: Failed to map property 'status' in type 'axisPointer' with types 'boolean,enum'
-ERROR: Failed to map property 'size' in type 'handle' with types 'array,number,vector'
 ERROR: Failed to map property 'boundaryGap' in type 'parallelAxisDefault' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
-ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
-ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
 ERROR: Failed to map property 'boundaryGap' in type 'parallelAxis' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
-ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
-ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
 ERROR: Failed to map property 'boundaryGap' in type 'singleAxis' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
-ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
-ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
-ERROR: Failed to map property 'color' in type 'lineStyle' with types 'array,color'
-WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
-ERROR: Failed to map property 'status' in type 'axisPointer' with types 'boolean,enum'
-ERROR: Failed to map property 'size' in type 'handle' with types 'array,number,vector'
 WARNING: array,enum,number type 'type' in 'crossStyle' with values 'solid,dashed,dotted' is not mapped
 ERROR: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
 ERROR: Failed to map property 'rotate' in type 'label' with types 'prefix'
@@ -88,20 +39,14 @@ ERROR: Failed to map property 'source' in type 'dataset' with types 'array,objec
 ---anyOf datasetTransform FilterdatasetTransform
 ---anyOf datasetTransform SortdatasetTransform
 ---anyOf Series LineSeries
-ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
 WARNING: enum,number type 'origin' in 'areaStyle' with values 'auto,start,end' is not mapped
 ERROR: Failed to map property 'origin' in type 'areaStyle' with types 'enum,number'
 ---anyOf Series BarSeries
 ---anyOf Series PieSeries
 ERROR: Failed to map property 'emptyCircleStyle' in type 'PieSeries' with types 'boolean,object'
-WARNING: enum type 'alignTo' in 'label' with values 'labelLine,edge' is not mapped
-ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
 ---anyOf Series ScatterSeries
-ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
 ---anyOf Series EffectScatterSeries
-ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
 ---anyOf Series RadarSeries
-ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
 ---anyOf Series TreeSeries
 ---anyOf Series TreemapSeries
 ERROR: Failed to map property 'nodeClick' in type 'TreemapSeries' with types 'boolean,string'
@@ -109,8 +54,6 @@ ERROR: Failed to map property 'borderColorSaturation' in type 'itemStyle' with t
 ERROR: Failed to map property 'borderColorSaturation' in type 'itemStyle' with types 'color,number'
 ERROR: Failed to map property 'borderColorSaturation' in type 'itemStyle' with types 'color,number'
 ---anyOf Series SunburstSeries
-WARNING: boolean,enum type 'nodeClick' in 'SunburstSeries' with values 'rootToNode,link' is not mapped
-ERROR: Failed to map property 'nodeClick' in type 'SunburstSeries' with types 'boolean,enum'
 WARNING: enum,function type 'sort' in 'SunburstSeries' with values 'desc,asc' is not mapped
 ERROR: Failed to map property 'sort' in type 'SunburstSeries' with types 'enum,function'
 ---anyOf Series BoxplotSeries
@@ -122,14 +65,11 @@ WARNING: array,enum,number type 'type' in 'ParallelSeriesData' with values 'soli
 ERROR: Failed to map property 'type' in type 'ParallelSeriesData' with types 'array,enum,number'
 ---anyOf Series LinesSeries
 ---anyOf Series GraphSeries
-ERROR: Failed to map property 'edgeSymbolSize' in type 'GraphSeries' with types 'array,number,vector'
-ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
 ERROR: Failed to map property 'autoCurveness' in type 'GraphSeries' with types 'array,boolean,number'
 ---anyOf Series SankeySeries
 ---anyOf Series FunnelSeries
 WARNING: enum,function type 'sort' in 'FunnelSeries' with values 'none,descending,ascending' is not mapped
 ERROR: Failed to map property 'sort' in type 'FunnelSeries' with types 'enum,function'
-ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
 ---anyOf Series GaugeSeries
 ---anyOf Series PictorialBarSeries
 ERROR: Failed to map property 'symbolMargin' in type 'PictorialBarSeries' with types 'number,percentvector,string'

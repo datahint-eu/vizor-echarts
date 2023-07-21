@@ -386,8 +386,7 @@ public partial class SliderDataZoom
 	/// </summary>
 	[JsonPropertyName("filterMode")]
 	[DefaultValue("filter")]
-	//TODO: Type Warning: enum type 'filterMode' in 'SliderDataZoom' with values 'filter,weakFilter,empty,none' is not mapped
-	public string? FilterMode { get; set; } 
+	public DataZoomFilterMode? FilterMode { get; set; } 
 
 	/// <summary>
 	/// The start percentage of the window out of the data extent, in the range of 0 ~ 100.

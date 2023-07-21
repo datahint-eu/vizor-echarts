@@ -531,8 +531,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("alignTo")]
 	[DefaultValue("none")]
-	//TODO: Type Warning: enum type 'alignTo' in 'label' with values 'labelLine,edge' is not mapped
-	public string? AlignTo { get; set; } 
+	public LabelAlignTo? AlignTo { get; set; } 
 
 	/// <summary>
 	/// The horizontal distance between text edges and viewport when label.position is 'outer' and label.alignTo is 'edge' .

@@ -185,8 +185,7 @@ public partial class AxisPointer
 	/// Current status, can be 'show' 和 'hide' .
 	/// </summary>
 	[JsonPropertyName("status")]
-	//TODO: Type Warning: Failed to map property 'status' in type 'axisPointer' with types 'boolean,enum'
-	public object? Status { get; set; } 
+	public AxisPointerStatus? Status { get; set; } 
 
 	/// <summary>
 	/// A button used to drag axisPointer.

@@ -126,8 +126,7 @@ public partial class SunburstSeries
 	/// </summary>
 	[JsonPropertyName("nodeClick")]
 	[DefaultValue("rootToNode")]
-	//TODO: Type Warning: Failed to map property 'nodeClick' in type 'SunburstSeries' with types 'boolean,enum'
-	public object? NodeClick { get; set; } 
+	public SunburstNodeClick? NodeClick { get; set; } 
 
 	/// <summary>
 	/// Sorting method that sectors use based on value , which is the sum of children when not set.
