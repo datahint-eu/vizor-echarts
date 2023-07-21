@@ -264,6 +264,7 @@ public partial class PieSeries
 	/// </summary>
 	[JsonPropertyName("emptyCircleStyle")]
 	[DefaultValue("true")]
+	//TODO: Type Warning: Failed to map property 'emptyCircleStyle' in type 'PieSeries' with types 'boolean,object'
 	public object? EmptyCircleStyle { get; set; } 
 
 	/// <summary>
@@ -449,6 +450,7 @@ public partial class PieSeries
 	/// Otherwise, tooltip will displayed only value horizontally.
 	/// </summary>
 	[JsonPropertyName("dimensions")]
+	//TODO: Type Warning: array type 'dimensions' in 'PieSeries' will be mapped to List<object>
 	public List<object>? Dimensions { get; set; } 
 
 	/// <summary>

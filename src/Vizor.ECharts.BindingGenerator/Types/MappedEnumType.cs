@@ -12,4 +12,6 @@ internal class MappedEnumType : IPropertyType
 	public Type EnumType { get; }
 
 	public string DotNetType => EnumType.Name;
+
+	public string? TypeWarning { get; set; }
 }

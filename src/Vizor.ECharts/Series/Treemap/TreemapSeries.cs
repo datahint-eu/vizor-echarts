@@ -160,6 +160,7 @@ public partial class TreemapSeries
 	/// </summary>
 	[JsonPropertyName("nodeClick")]
 	[DefaultValue("zoomToNode")]
+	//TODO: Type Warning: Failed to map property 'nodeClick' in type 'TreemapSeries' with types 'boolean,string'
 	public object? NodeClick { get; set; } 
 
 	/// <summary>
@@ -221,6 +222,7 @@ public partial class TreemapSeries
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("colorAlpha")]
+	//TODO: Type Warning: array type 'colorAlpha' in 'TreemapSeries' will be mapped to List<object>
 	public List<object>? ColorAlpha { get; set; } 
 
 	/// <summary>

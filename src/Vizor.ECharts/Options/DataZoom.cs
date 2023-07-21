@@ -56,6 +56,7 @@ public partial class DataZoom
 	/// If it is set to be [0, 3] , it controls the x-axes with axisIndex of 0 and 3 .
 	/// </summary>
 	[JsonPropertyName("xAxisIndex")]
+	//TODO: Type Warning: Failed to map property 'xAxisIndex' in type 'dataZoom' with types 'array,boolean,number'
 	public object? XAxisIndex { get; set; } 
 
 	/// <summary>
@@ -66,6 +67,7 @@ public partial class DataZoom
 	/// If it is set to be [0, 3] , it controls the x-axes with axisIndex of 0 and 3 .
 	/// </summary>
 	[JsonPropertyName("yAxisIndex")]
+	//TODO: Type Warning: Failed to map property 'yAxisIndex' in type 'dataZoom' with types 'array,boolean,number'
 	public object? YAxisIndex { get; set; } 
 
 	/// <summary>

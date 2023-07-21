@@ -113,6 +113,7 @@ public partial class TreeSeries
 	/// Example:  center: [115.97, '30%']
 	/// </summary>
 	[JsonPropertyName("center")]
+	//TODO: Type Warning: array type 'center' in 'TreeSeries' will be mapped to List<object>
 	public List<object>? Center { get; set; } 
 
 	/// <summary>
@@ -176,6 +177,7 @@ public partial class TreeSeries
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(7)]
+	//TODO: Type Warning: Failed to map property 'symbolSize' in type 'TreeSeries' with types 'array,function,number'
 	public object? SymbolSize { get; set; } 
 
 	/// <summary>

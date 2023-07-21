@@ -18,4 +18,6 @@ internal class ObjectType : IPropertyType, IObjectType
 	public List<OptionProperty> Properties { get; } = new List<OptionProperty>();
 
 	public string Path => Parent == null ? string.Empty : Parent.Path + "." + Name;
+
+	public string? TypeWarning { get; set; }
 }

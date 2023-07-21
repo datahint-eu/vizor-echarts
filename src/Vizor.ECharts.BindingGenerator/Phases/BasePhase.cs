@@ -209,7 +209,13 @@ internal abstract class BasePhase
 				case "enum":
 					// don't care that fontFamily/cursor isn't mapped, warn about all other unmapped types
 					if (prop.Name != "fontFamily" && prop.Name != "cursor")
+					{
 						Console.WriteLine($"WARNING: enum type '{prop.Name}' in '{parent.Name}' with values '{string.Join(',', optProp.EnumOptions ?? Array.Empty<string>())}' is not mapped");
+						return new SimpleType("string")
+						{
+							TypeWarning = $"enum type '{prop.Name}' in '{parent.Name}' with values '{string.Join(',', optProp.EnumOptions ?? Array.Empty<string>())}' is not mapped"
+						};
+					}
 					return new SimpleType("string");
 				case "string":
 					return new SimpleType("string");
@@ -280,7 +286,10 @@ internal abstract class BasePhase
 		Console.WriteLine($"ERROR: Failed to map property '{prop.Name}' in type '{parent.Name}' with types '{typeList}'");
 		//throw new ArgumentException($"Failed to map property '{prop.Name}' in type '{parent.Name}' with types '{string.Join(',', optProp.Types ?? Enumerable.Empty<string>())}'");
 
-		return new SimpleType("object");
+		return new SimpleType("object")
+		{
+			TypeWarning = $"Failed to map property '{prop.Name}' in type '{parent.Name}' with types '{typeList}'"
+		};
 	}
 
 	private bool CompareType(ObjectType lookupType, ObjectType objType)

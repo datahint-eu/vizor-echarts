@@ -43,6 +43,7 @@ public partial class Dataset
 	/// More details about dataset can be checked in the tutorial .
 	/// </summary>
 	[JsonPropertyName("source")]
+	//TODO: Type Warning: Failed to map property 'source' in type 'dataset' with types 'array,object'
 	public object? Source { get; set; } 
 
 	/// <summary>
@@ -87,6 +88,7 @@ public partial class Dataset
 	/// Otherwise, tooltip will displayed only value horizontally.
 	/// </summary>
 	[JsonPropertyName("dimensions")]
+	//TODO: Type Warning: array type 'dimensions' in 'dataset' will be mapped to List<object>
 	public List<object>? Dimensions { get; set; } 
 
 	/// <summary>

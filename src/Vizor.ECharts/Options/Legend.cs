@@ -506,6 +506,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("pageIconSize")]
 	[DefaultValue("15,15")]
+	//TODO: Type Warning: Failed to map property 'pageIconSize' in type 'legend' with types 'array,number,vector'
 	public object? PageIconSize { get; set; } 
 
 	/// <summary>

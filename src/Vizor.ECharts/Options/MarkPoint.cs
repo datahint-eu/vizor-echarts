@@ -41,6 +41,7 @@ public partial class MarkPoint
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(50)]
+	//TODO: Type Warning: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
 	public object? SymbolSize { get; set; } 
 
 	/// <summary>

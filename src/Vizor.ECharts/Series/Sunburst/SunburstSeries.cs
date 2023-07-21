@@ -126,6 +126,7 @@ public partial class SunburstSeries
 	/// </summary>
 	[JsonPropertyName("nodeClick")]
 	[DefaultValue("rootToNode")]
+	//TODO: Type Warning: Failed to map property 'nodeClick' in type 'SunburstSeries' with types 'boolean,enum'
 	public object? NodeClick { get; set; } 
 
 	/// <summary>
@@ -136,6 +137,7 @@ public partial class SunburstSeries
 	/// </summary>
 	[JsonPropertyName("sort")]
 	[DefaultValue("desc")]
+	//TODO: Type Warning: Failed to map property 'sort' in type 'SunburstSeries' with types 'enum,function'
 	public object? Sort { get; set; } 
 
 	/// <summary>

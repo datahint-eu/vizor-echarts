@@ -39,6 +39,7 @@ public partial class AxisLine
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("none")]
+	//TODO: Type Warning: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
 	public object? Symbol { get; set; } 
 
 	/// <summary>
@@ -56,6 +57,7 @@ public partial class AxisLine
 	/// </summary>
 	[JsonPropertyName("symbolOffset")]
 	[DefaultValue("0,0")]
+	//TODO: Type Warning: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
 	public object? SymbolOffset { get; set; } 
 
 	/// <summary>

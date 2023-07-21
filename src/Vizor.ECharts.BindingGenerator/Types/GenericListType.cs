@@ -12,4 +12,6 @@ internal class GenericListType : IPropertyType
 	public string Name => "array";
 
 	public string DotNetType => $"List<{genericArgument.DotNetType}>";
+
+	public string? TypeWarning { get; set; }
 }

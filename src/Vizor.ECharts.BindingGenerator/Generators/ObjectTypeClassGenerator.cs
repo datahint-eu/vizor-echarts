@@ -71,6 +71,12 @@ internal class ObjectTypeClassGenerator
 				writer.WriteDocumentation(prop.Description);
 				writer.WriteLine($"[JsonPropertyName(\"{prop.Name}\")]");
 				writer.WriteDefaultValueAttribute(prop.Default);
+
+				if (prop.MappedType.TypeWarning != null)
+				{
+					writer.WriteLine($"//TODO: Type Warning: {prop.MappedType.TypeWarning}");
+				}
+
 				writer.WriteLine($"public {prop.MappedType.DotNetType}? {prop.PropertyName} {{ get; set; }} {defaultAssign}");
 				writer.EmptyLine();
 			}

@@ -111,17 +111,6 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("roseType", typeof(PieRoseType)), "PieSeries");
 		AddMappedEnumType(new MappedEnumType("radius", typeof(PieRadius)), "PieSeries");
 		AddMappedEnumType(new MappedEnumType("center", typeof(PieCenter)), "PieSeries");
-
-		/*
-		 * Line  10: WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
-	Line  34: WARNING: array,enum type 'nameMap' in 'dayLabel' with values 'EN,ZH' is not mapped
-	Line  36: WARNING: array,enum type 'nameMap' in 'monthLabel' with values 'EN,ZH' is not mapped
-	Line  81: WARNING: array,enum type 'position' in 'upperLabel' with values 'top,left,right,bottom,inside,insideLeft,insideRight,insideTop,insideBottom,insideTopLeft,insideBottomLeft,insideTopRight,insideBottomRight,outside' is not mapped
-	Line  90: WARNING: boolean,enum type 'nodeClick' in 'SunburstSeries' with values 'rootToNode,link' is not mapped
-	Line  92: WARNING: enum,function type 'sort' in 'SunburstSeries' with values 'desc,asc' is not mapped
-	Line 111: WARNING: array,enum,number type 'type' in 'ParallelSeriesData' with values 'solid,dashed,dotted' is not mapped
-	Line 124: WARNING: enum,function type 'sort' in 'FunnelSeries' with values 'none,descending,ascending' is not mapped
-		*/
 	}
 
 	public ObjectType ChartOptions => chartOptions;
@@ -162,7 +151,10 @@ internal class TypeCollection
 		}
 
 		Console.WriteLine($"WARNING: array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>");
-		return new ObjectListType();
+		return new ObjectListType()
+		{
+			TypeWarning = $"array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>"
+		};
 	}
 
 	public bool TryGetMappedEnumType(string name, string parentName, out MappedEnumType? mappedEnumType)

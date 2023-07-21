@@ -19,6 +19,7 @@ public partial class Brush
 	///  'clear' : Clearing all selection.
 	/// </summary>
 	[JsonPropertyName("type")]
+	//TODO: Type Warning: array type 'type' in 'brush' will be mapped to List<object>
 	public List<object>? Type { get; set; } 
 
 	/// <summary>
@@ -47,6 +48,7 @@ public partial class Brush
 	/// </summary>
 	[JsonPropertyName("toolbox")]
 	[DefaultValue("[rect, polygon, keep, clear]")]
+	//TODO: Type Warning: array type 'toolbox' in 'brush' will be mapped to List<object>
 	public List<object>? Toolbox { get; set; } 
 
 	/// <summary>
@@ -85,6 +87,7 @@ public partial class Brush
 	/// </summary>
 	[JsonPropertyName("seriesIndex")]
 	[DefaultValue("all")]
+	//TODO: Type Warning: Failed to map property 'seriesIndex' in type 'brush' with types 'array,number,string'
 	public object? SeriesIndex { get; set; } 
 
 	/// <summary>
@@ -133,6 +136,7 @@ public partial class Brush
 	/// };
 	/// </summary>
 	[JsonPropertyName("geoIndex")]
+	//TODO: Type Warning: Failed to map property 'geoIndex' in type 'brush' with types 'array,number,string'
 	public object? GeoIndex { get; set; } 
 
 	/// <summary>
@@ -181,6 +185,7 @@ public partial class Brush
 	/// };
 	/// </summary>
 	[JsonPropertyName("xAxisIndex")]
+	//TODO: Type Warning: Failed to map property 'xAxisIndex' in type 'brush' with types 'array,number,string'
 	public object? XAxisIndex { get; set; } 
 
 	/// <summary>
@@ -229,6 +234,7 @@ public partial class Brush
 	/// };
 	/// </summary>
 	[JsonPropertyName("yAxisIndex")]
+	//TODO: Type Warning: Failed to map property 'yAxisIndex' in type 'brush' with types 'array,number,string'
 	public object? YAxisIndex { get; set; } 
 
 	/// <summary>

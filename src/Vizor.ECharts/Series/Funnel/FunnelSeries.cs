@@ -86,6 +86,7 @@ public partial class FunnelSeries
 	/// </summary>
 	[JsonPropertyName("sort")]
 	[DefaultValue("descending")]
+	//TODO: Type Warning: Failed to map property 'sort' in type 'FunnelSeries' with types 'enum,function'
 	public object? Sort { get; set; } 
 
 	/// <summary>
@@ -359,6 +360,7 @@ public partial class FunnelSeries
 	/// Otherwise, tooltip will displayed only value horizontally.
 	/// </summary>
 	[JsonPropertyName("dimensions")]
+	//TODO: Type Warning: array type 'dimensions' in 'FunnelSeries' will be mapped to List<object>
 	public List<object>? Dimensions { get; set; } 
 
 	/// <summary>

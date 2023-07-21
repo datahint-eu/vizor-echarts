@@ -554,6 +554,7 @@ public partial class PictorialBarSeries
 	/// </summary>
 	[JsonPropertyName("symbolMargin")]
 	[DefaultValue("0,0")]
+	//TODO: Type Warning: Failed to map property 'symbolMargin' in type 'PictorialBarSeries' with types 'number,percentvector,string'
 	public object? SymbolMargin { get; set; } 
 
 	/// <summary>
@@ -765,6 +766,7 @@ public partial class PictorialBarSeries
 	/// Otherwise, tooltip will displayed only value horizontally.
 	/// </summary>
 	[JsonPropertyName("dimensions")]
+	//TODO: Type Warning: array type 'dimensions' in 'PictorialBarSeries' will be mapped to List<object>
 	public List<object>? Dimensions { get; set; } 
 
 	/// <summary>

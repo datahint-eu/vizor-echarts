@@ -319,6 +319,7 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("symbolMargin")]
 	[DefaultValue("0,0")]
+	//TODO: Type Warning: Failed to map property 'symbolMargin' in type 'PictorialBarSeriesData' with types 'number,percentvector,string'
 	public object? SymbolMargin { get; set; } 
 
 	/// <summary>

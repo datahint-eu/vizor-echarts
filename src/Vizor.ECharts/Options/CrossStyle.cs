@@ -42,6 +42,7 @@ public partial class CrossStyle
 	/// </summary>
 	[JsonPropertyName("type")]
 	[DefaultValue("solid")]
+	//TODO: Type Warning: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
 	public object? Type { get; set; } 
 
 	/// <summary>

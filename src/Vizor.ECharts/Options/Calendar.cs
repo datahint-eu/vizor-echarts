@@ -120,6 +120,7 @@ public partial class Calendar
 	/// range: ['2017-01', '2017-02']
 	/// </summary>
 	[JsonPropertyName("range")]
+	//TODO: Type Warning: Failed to map property 'range' in type 'calendar' with types 'array,number,string'
 	public object? Range { get; set; } 
 
 	/// <summary>

@@ -12,4 +12,6 @@ internal class MappedCustomType : IPropertyType
 	public string DotNetType => CustomType.Name;
 
 	public Type CustomType { get; }
+
+	public string? TypeWarning { get; set; }
 }

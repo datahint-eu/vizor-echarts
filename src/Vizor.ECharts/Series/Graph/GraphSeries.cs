@@ -255,6 +255,7 @@ public partial class GraphSeries
 	/// </summary>
 	[JsonPropertyName("edgeSymbolSize")]
 	[DefaultValue("10")]
+	//TODO: Type Warning: Failed to map property 'edgeSymbolSize' in type 'GraphSeries' with types 'array,number,vector'
 	public object? EdgeSymbolSize { get; set; } 
 
 	/// <summary>
@@ -397,6 +398,7 @@ public partial class GraphSeries
 	/// </summary>
 	[JsonPropertyName("autoCurveness")]
 	[DefaultValue(false)]
+	//TODO: Type Warning: Failed to map property 'autoCurveness' in type 'GraphSeries' with types 'array,boolean,number'
 	public object? AutoCurveness { get; set; } 
 
 	/// <summary>

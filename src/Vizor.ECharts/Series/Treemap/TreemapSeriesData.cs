@@ -81,6 +81,7 @@ public partial class TreemapSeriesData
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("color")]
+	//TODO: Type Warning: array type 'color' in 'TreemapSeriesData' will be mapped to List<object>
 	public List<object>? Color { get; set; } 
 
 	/// <summary>
@@ -97,6 +98,7 @@ public partial class TreemapSeriesData
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("colorAlpha")]
+	//TODO: Type Warning: array type 'colorAlpha' in 'TreemapSeriesData' will be mapped to List<object>
 	public List<object>? ColorAlpha { get; set; } 
 
 	/// <summary>
@@ -251,6 +253,7 @@ public partial class TreemapSeriesData
 	/// child nodes, recursive definition, configurations are the same as series-treemap.data .
 	/// </summary>
 	[JsonPropertyName("children")]
+	//TODO: Type Warning: array type 'children' in 'TreemapSeriesData' will be mapped to List<object>
 	public List<object>? Children { get; set; } 
 
 	/// <summary>

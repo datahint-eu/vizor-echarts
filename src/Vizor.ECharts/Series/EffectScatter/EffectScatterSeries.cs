@@ -154,6 +154,7 @@ public partial class EffectScatterSeries
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(10)]
+	//TODO: Type Warning: Failed to map property 'symbolSize' in type 'EffectScatterSeries' with types 'array,function,number'
 	public object? SymbolSize { get; set; } 
 
 	/// <summary>
@@ -365,6 +366,7 @@ public partial class EffectScatterSeries
 	/// Otherwise, tooltip will displayed only value horizontally.
 	/// </summary>
 	[JsonPropertyName("dimensions")]
+	//TODO: Type Warning: array type 'dimensions' in 'EffectScatterSeries' will be mapped to List<object>
 	public List<object>? Dimensions { get; set; } 
 
 	/// <summary>

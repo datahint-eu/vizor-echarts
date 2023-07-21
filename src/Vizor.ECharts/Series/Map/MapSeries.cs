@@ -122,6 +122,7 @@ public partial class MapSeries
 	/// Example:  center: [115.97, '30%']
 	/// </summary>
 	[JsonPropertyName("center")]
+	//TODO: Type Warning: array type 'center' in 'MapSeries' will be mapped to List<object>
 	public List<object>? Center { get; set; } 
 
 	/// <summary>
@@ -148,6 +149,7 @@ public partial class MapSeries
 	/// ],
 	/// </summary>
 	[JsonPropertyName("boundingCoords")]
+	//TODO: Type Warning: array type 'boundingCoords' in 'MapSeries' will be mapped to List<object>
 	public List<object>? BoundingCoords { get; set; } 
 
 	/// <summary>
@@ -306,6 +308,7 @@ public partial class MapSeries
 	/// After setting these two values, left/right/top/bottom/width/height becomes invalid.
 	/// </summary>
 	[JsonPropertyName("layoutCenter")]
+	//TODO: Type Warning: array type 'layoutCenter' in 'MapSeries' will be mapped to List<object>
 	public List<object>? LayoutCenter { get; set; } 
 
 	/// <summary>

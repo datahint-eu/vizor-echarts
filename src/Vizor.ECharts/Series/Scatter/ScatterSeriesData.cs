@@ -19,6 +19,7 @@ public partial class ScatterSeriesData
 	/// the value of data item.
 	/// </summary>
 	[JsonPropertyName("value")]
+	//TODO: Type Warning: array type 'value' in 'ScatterSeriesData' will be mapped to List<object>
 	public List<object>? Value { get; set; } 
 
 	/// <summary>

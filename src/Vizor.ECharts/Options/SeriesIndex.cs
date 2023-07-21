@@ -13,12 +13,14 @@ public partial class SeriesIndex
 	/// 
 	/// </summary>
 	[JsonPropertyName("line")]
+	//TODO: Type Warning: array type 'line' in 'seriesIndex' will be mapped to List<object>
 	public List<object>? Line { get; set; } 
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("bar")]
+	//TODO: Type Warning: array type 'bar' in 'seriesIndex' will be mapped to List<object>
 	public List<object>? Bar { get; set; } 
 
 }

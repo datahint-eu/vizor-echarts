@@ -1264,6 +1264,7 @@ public partial class ChartOptions
 	/// }
 	/// </summary>
 	[JsonPropertyName("color")]
+	//TODO: Type Warning: array type 'color' in 'chartOptions' will be mapped to List<object>
 	public List<object>? Color { get; set; } 
 
 	/// <summary>
@@ -1418,6 +1419,7 @@ public partial class ChartOptions
 	/// Each item of this array is an echarts option ( ECUnitOption ).
 	/// </summary>
 	[JsonPropertyName("options")]
+	//TODO: Type Warning: array type 'options' in 'chartOptions' will be mapped to List<object>
 	public List<object>? Options { get; set; } 
 
 	/// <summary>

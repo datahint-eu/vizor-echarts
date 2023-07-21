@@ -129,6 +129,7 @@ public partial class ThemeRiverSeries
 	/// </summary>
 	[JsonPropertyName("boundaryGap")]
 	[DefaultValue("[10%, 10%]")]
+	//TODO: Type Warning: array type 'boundaryGap' in 'ThemeRiverSeries' will be mapped to List<object>
 	public List<object>? BoundaryGap { get; set; } 
 
 	/// <summary>

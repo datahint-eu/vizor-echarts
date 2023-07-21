@@ -1,4 +1,10 @@
-﻿# How to generate
+﻿# Remarks
+
+This tool was used to generate 80-90% of the initial binding.
+It is good enough to generate the bulk of the bindings, but the last bits and pieces are hand tuned.
+So in general, you should never have to run this tool again.
+
+# How to generate
 
  - Download the latest version of https://github.com/apache/echarts-doc
  - run `npm install --save-dev`

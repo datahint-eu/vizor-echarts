@@ -211,6 +211,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("borderColorSaturation")]
 	[DefaultValue("0.5")]
+	//TODO: Type Warning: Failed to map property 'borderColorSaturation' in type 'itemStyle' with types 'color,number'
 	public object? BorderColorSaturation { get; set; } 
 
 	/// <summary>

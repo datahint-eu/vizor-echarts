@@ -9,4 +9,6 @@ internal class ObjectListType : IPropertyType
 	public string Name => "array";
 
 	public string DotNetType => "List<object>";
+
+	public string? TypeWarning { get; set; }
 }

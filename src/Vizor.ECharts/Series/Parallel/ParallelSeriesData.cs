@@ -19,6 +19,7 @@ public partial class ParallelSeriesData
 	/// The value of a data item.
 	/// </summary>
 	[JsonPropertyName("value")]
+	//TODO: Type Warning: array type 'value' in 'ParallelSeriesData' will be mapped to List<object>
 	public List<object>? Value { get; set; } 
 
 	/// <summary>
@@ -60,6 +61,7 @@ public partial class ParallelSeriesData
 	/// </summary>
 	[JsonPropertyName("type")]
 	[DefaultValue("solid")]
+	//TODO: Type Warning: Failed to map property 'type' in type 'ParallelSeriesData' with types 'array,enum,number'
 	public object? Type { get; set; }  = "solid";
 
 	/// <summary>

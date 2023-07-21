@@ -192,6 +192,7 @@ public partial class IconStyle
 	/// Padding of text area.
 	/// </summary>
 	[JsonPropertyName("textPadding")]
+	//TODO: Type Warning: Failed to map property 'textPadding' in type 'iconStyle' with types 'number,vector'
 	public object? TextPadding { get; set; } 
 
 }

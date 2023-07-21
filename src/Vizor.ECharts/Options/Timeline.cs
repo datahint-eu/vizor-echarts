@@ -350,6 +350,7 @@ public partial class Timeline
 	/// ]
 	/// </summary>
 	[JsonPropertyName("data")]
+	//TODO: Type Warning: array type 'data' in 'timeline' will be mapped to List<object>
 	public List<object>? Data { get; set; } 
 
 }

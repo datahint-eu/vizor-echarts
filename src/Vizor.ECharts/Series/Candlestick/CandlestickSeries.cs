@@ -241,6 +241,7 @@ public partial class CandlestickSeries
 	/// Otherwise, tooltip will displayed only value horizontally.
 	/// </summary>
 	[JsonPropertyName("dimensions")]
+	//TODO: Type Warning: array type 'dimensions' in 'CandlestickSeries' will be mapped to List<object>
 	public List<object>? Dimensions { get; set; } 
 
 	/// <summary>

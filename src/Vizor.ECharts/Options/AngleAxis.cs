@@ -76,6 +76,7 @@ public partial class AngleAxis
 	/// Example:  boundaryGap: ['20%', '20%']
 	/// </summary>
 	[JsonPropertyName("boundaryGap")]
+	//TODO: Type Warning: Failed to map property 'boundaryGap' in type 'angleAxis' with types 'array,boolean'
 	public object? BoundaryGap { get; set; } 
 
 	/// <summary>

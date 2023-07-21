@@ -20,6 +20,7 @@ public partial class CandlestickSeriesData
 	///  [open, close, lowest, highest]  (namely: [opening value, closing value, lowest value, highest value])
 	/// </summary>
 	[JsonPropertyName("value")]
+	//TODO: Type Warning: array type 'value' in 'CandlestickSeriesData' will be mapped to List<object>
 	public List<object>? Value { get; set; } 
 
 	/// <summary>

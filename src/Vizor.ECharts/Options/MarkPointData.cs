@@ -68,6 +68,7 @@ public partial class MarkPointData
 	/// }
 	/// </summary>
 	[JsonPropertyName("coord")]
+	//TODO: Type Warning: array type 'coord' in 'markPointData' will be mapped to List<object>
 	public List<object>? Coord { get; set; } 
 
 	/// <summary>

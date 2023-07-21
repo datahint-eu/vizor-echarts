@@ -28,6 +28,7 @@ public partial class PageIcons
 	/// See vertically scrollable legend or horizontally scrollable legend .
 	/// </summary>
 	[JsonPropertyName("horizontal")]
+	//TODO: Type Warning: array type 'horizontal' in 'pageIcons' will be mapped to List<object>
 	public List<object>? Horizontal { get; set; } 
 
 	/// <summary>
@@ -49,6 +50,7 @@ public partial class PageIcons
 	/// See vertically scrollable legend or horizontally scrollable legend .
 	/// </summary>
 	[JsonPropertyName("vertical")]
+	//TODO: Type Warning: array type 'vertical' in 'pageIcons' will be mapped to List<object>
 	public List<object>? Vertical { get; set; } 
 
 }

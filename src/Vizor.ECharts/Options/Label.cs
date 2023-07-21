@@ -531,6 +531,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("alignTo")]
 	[DefaultValue("none")]
+	//TODO: Type Warning: enum type 'alignTo' in 'label' with values 'labelLine,edge' is not mapped
 	public string? AlignTo { get; set; } 
 
 	/// <summary>

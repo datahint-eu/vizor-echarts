@@ -16,6 +16,7 @@ public partial class AreaStyle
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("[rgba(250,250,250,0.3),rgba(200,200,200,0.3)]")]
+	//TODO: Type Warning: array type 'color' in 'areaStyle' will be mapped to List<object>
 	public List<object>? Color { get; set; } 
 
 	/// <summary>
@@ -71,6 +72,7 @@ public partial class AreaStyle
 	/// </summary>
 	[JsonPropertyName("origin")]
 	[DefaultValue("auto")]
+	//TODO: Type Warning: Failed to map property 'origin' in type 'areaStyle' with types 'enum,number'
 	public object? Origin { get; set; } 
 
 }

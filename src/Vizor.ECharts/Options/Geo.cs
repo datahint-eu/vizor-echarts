@@ -107,6 +107,7 @@ public partial class Geo
 	/// center: project([115.97, 29.71])
 	/// </summary>
 	[JsonPropertyName("center")]
+	//TODO: Type Warning: array type 'center' in 'geo' will be mapped to List<object>
 	public List<object>? Center { get; set; } 
 
 	/// <summary>
@@ -133,6 +134,7 @@ public partial class Geo
 	/// ],
 	/// </summary>
 	[JsonPropertyName("boundingCoords")]
+	//TODO: Type Warning: array type 'boundingCoords' in 'geo' will be mapped to List<object>
 	public List<object>? BoundingCoords { get; set; } 
 
 	/// <summary>
@@ -298,6 +300,7 @@ public partial class Geo
 	/// After setting these two values, left/right/top/bottom/width/height becomes invalid.
 	/// </summary>
 	[JsonPropertyName("layoutCenter")]
+	//TODO: Type Warning: array type 'layoutCenter' in 'geo' will be mapped to List<object>
 	public List<object>? LayoutCenter { get; set; } 
 
 	/// <summary>

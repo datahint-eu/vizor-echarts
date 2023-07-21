@@ -213,6 +213,7 @@ public partial class AxisLabel
 	/// }
 	/// </summary>
 	[JsonPropertyName("color")]
+	//TODO: Type Warning: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
 	public object? Color { get; set; } 
 
 	/// <summary>
