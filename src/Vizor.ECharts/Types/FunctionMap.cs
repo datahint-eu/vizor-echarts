@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace Vizor.ECharts.Types;
+namespace Vizor.ECharts;
 
 public class FunctionMap : IEnumerable<IFunction>
 {

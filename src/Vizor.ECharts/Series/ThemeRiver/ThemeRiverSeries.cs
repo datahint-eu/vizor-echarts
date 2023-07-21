@@ -129,8 +129,7 @@ public partial class ThemeRiverSeries
 	/// </summary>
 	[JsonPropertyName("boundaryGap")]
 	[DefaultValue("[10%, 10%]")]
-	//TODO: Type Warning: array type 'boundaryGap' in 'ThemeRiverSeries' will be mapped to List<object>
-	public List<object>? BoundaryGap { get; set; } 
+	public BoundaryGap? BoundaryGap { get; set; } 
 
 	/// <summary>
 	/// The index of single time axis, which defaults to be 0 because it contains only one axis.

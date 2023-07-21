@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using Vizor.ECharts;
 
 namespace Vizor.ECharts.BindingGenerator.Types;
 
@@ -27,6 +28,7 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("borderJoin", typeof(LineJoin)));
 		AddMappedEnumType(new MappedEnumType("borderRadius", typeof(Radius)));
 		AddMappedEnumType(new MappedEnumType("borderType", typeof(LineType)));
+		AddMappedEnumType(new MappedEnumType("boundaryGap", typeof(BoundaryGap)));
 		AddMappedEnumType(new MappedEnumType("brushType", typeof(BrushType)));
 		AddMappedEnumType(new MappedEnumType("colorBy", typeof(ColorBy)));
 		AddMappedEnumType(new MappedEnumType("colorMappingBy", typeof(ColorMappingBy)));

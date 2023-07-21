@@ -267,6 +267,8 @@ internal abstract class BasePhase
 					return new MappedCustomType(typeof(ColorArray));
 				case ("color", "function"):
 					return new MappedCustomType(typeof(ColorOrFunction));
+				case ("color", "number"): // specific case for borderColorSaturation
+					return new SimpleType("double");
 			}
 		}
 

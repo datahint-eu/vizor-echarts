@@ -134,8 +134,7 @@ public partial class YAxis
 	/// Example:  boundaryGap: ['20%', '20%']
 	/// </summary>
 	[JsonPropertyName("boundaryGap")]
-	//TODO: Type Warning: Failed to map property 'boundaryGap' in type 'yAxis' with types 'array,boolean'
-	public object? BoundaryGap { get; set; } 
+	public BoundaryGap? BoundaryGap { get; set; } 
 
 	/// <summary>
 	/// The minimun value of axis.

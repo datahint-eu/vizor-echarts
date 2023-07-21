@@ -1,14 +1,10 @@
 WARNING: array,enum,number type 'type' in 'crossStyle' with values 'solid,dashed,dotted' is not mapped
 ERROR: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
-ERROR: Failed to map property 'boundaryGap' in type 'xAxis' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
-ERROR: Failed to map property 'boundaryGap' in type 'yAxis' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
 WARNING: array,enum,number type 'type' in 'crossStyle' with values 'solid,dashed,dotted' is not mapped
 ERROR: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
-ERROR: Failed to map property 'boundaryGap' in type 'radiusAxis' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
-ERROR: Failed to map property 'boundaryGap' in type 'angleAxis' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
 ---anyOf DataZoom InsideDataZoom
@@ -19,11 +15,8 @@ ERROR: Failed to map property 'showDataShadow' in type 'SliderDataZoom' with typ
 ERROR: Failed to map property 'itemGap' in type 'PiecewiseVisualMap' with types '*,number'
 WARNING: array,enum,number type 'type' in 'crossStyle' with values 'solid,dashed,dotted' is not mapped
 ERROR: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
-ERROR: Failed to map property 'boundaryGap' in type 'parallelAxisDefault' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
-ERROR: Failed to map property 'boundaryGap' in type 'parallelAxis' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
-ERROR: Failed to map property 'boundaryGap' in type 'singleAxis' with types 'array,boolean'
 ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
 WARNING: array,enum,number type 'type' in 'crossStyle' with values 'solid,dashed,dotted' is not mapped
 ERROR: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
@@ -50,9 +43,6 @@ ERROR: Failed to map property 'emptyCircleStyle' in type 'PieSeries' with types 
 ---anyOf Series TreeSeries
 ---anyOf Series TreemapSeries
 ERROR: Failed to map property 'nodeClick' in type 'TreemapSeries' with types 'boolean,string'
-ERROR: Failed to map property 'borderColorSaturation' in type 'itemStyle' with types 'color,number'
-ERROR: Failed to map property 'borderColorSaturation' in type 'itemStyle' with types 'color,number'
-ERROR: Failed to map property 'borderColorSaturation' in type 'itemStyle' with types 'color,number'
 ---anyOf Series SunburstSeries
 WARNING: enum,function type 'sort' in 'SunburstSeries' with values 'desc,asc' is not mapped
 ERROR: Failed to map property 'sort' in type 'SunburstSeries' with types 'enum,function'
