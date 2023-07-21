@@ -1,0 +1,48 @@
+﻿@page "/example/scatter/simple"
+
+@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+
+@code {
+
+    // see https://echarts.apache.org/examples/en/editor.html?c=scatter-simple
+
+    private ChartOptions options = new()
+		{
+			XAxis = new() {},
+			YAxis = new() {},
+			Series = new()
+			{
+				new ScatterSeries()
+				{
+                    SymbolSize = 20,
+					Data = new double[][]
+                    {
+                        new double[] { 10.0, 8.04 },
+                        new double[] { 8.07, 6.95 },
+                        new double[] { 13.0, 7.58 },
+                        new double[] { 9.05, 8.81 },
+                        new double[] { 11.0, 8.33 },
+                        new double[] { 14.0, 7.66 },
+                        new double[] { 13.4, 6.81 },
+                        new double[] { 10.0, 6.33 },
+                        new double[] { 14.0, 8.96 },
+                        new double[] { 12.5, 6.82 },
+                        new double[] { 9.15, 7.2 },
+                        new double[] { 11.5, 7.2 },
+                        new double[] { 3.03, 4.23 },
+                        new double[] { 12.2, 7.83 },
+                        new double[] { 2.02, 4.47 },
+                        new double[] { 1.05, 3.33 },
+                        new double[] { 4.05, 4.96 },
+                        new double[] { 6.03, 7.24 },
+                        new double[] { 12.0, 6.26 },
+                        new double[] { 12.0, 8.84 },
+                        new double[] { 7.08, 5.82 },
+                        new double[] { 5.02, 5.68 }
+                    }
+				}
+			}
+		};
+}
