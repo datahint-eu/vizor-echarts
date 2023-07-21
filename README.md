@@ -4,6 +4,8 @@ Blazor wrapper for [Apache ECharts](https://echarts.apache.org/en/index.html).
 
  - Supports .NET >= 6.0
  - Ships with echarts 5.4.3
+ - `Apache-2.0` Licensed (same as echarts)
+ - Lots of examples in the `Vizor.ECharts.Demo` project
  
 ## How to include
 
@@ -80,14 +82,44 @@ private ChartOptions options = new()
 
 See the [full C# code](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Pie/PieSimple.razor).
 
-## Async data loading
+## Data loading
+
+Most examples that you will find online have very basic datasets.
+However, in real life, data sets are often huge and come from various different sources.
+
+Vizor.ECharts allows you to define data in 3 different ways:
+1. Inside the ChartOptions, as demonstrated in most samples
+2. Using async data sources in C#, allowing you to fetch data directly from the database
+3. Using remote data sources (e.g.: REST API) fetched by the browser
+
+### Async data loading
 TODO
 
-## Remote data loading
-TODO
+### Remote data loading
+
+Any `Data` property of type `object?` accepts a `ExternalDataSource` allowing you to specify the external data source.
+
+```
+Data = new ExternalDataSource("https://example.com/api/data/sunburst/simple")
+```
+See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Sunburst/SunburstSimple.razor).
+
+
+Additional credentials, headers, policies, ... can also be supplied. *feature in development*
+
 
 ## Javascript functions
-TODO
+
+ECharts sometimes allows you to assign custom functions instead of values.
+This can be achieved with the JavascriptFunction class.
+The class accepts a raw Javascript function that is evaluated in the browser.
+
+For example:
+```
+Formatter = new JavascriptFunction("function (param) { return param.name + ' (' + param.percent * 2 + '%)'; }")
+```
+
+See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Pie/PieHalfDoughnut.razor).
 
 # Filing Bugs
 
