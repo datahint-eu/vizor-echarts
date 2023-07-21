@@ -11,22 +11,22 @@ public class ColorOrFunction
 		Color = color;
 	}
 
-	public ColorOrFunction(Guid functionId)
+	public ColorOrFunction(JavascriptFunction function)
 	{
-		FunctionId = functionId;
+		Function = function;
 	}
 
 	public Color? Color { get; }
-	public Guid? FunctionId { get; }
+	public JavascriptFunction? Function { get; }
 
 	public static implicit operator ColorOrFunction(Color color)
 	{
 		return new ColorOrFunction(color);
 	}
 
-	public static implicit operator ColorOrFunction(Guid functionId)
+	public static implicit operator ColorOrFunction(JavascriptFunction function)
 	{
-		return new ColorOrFunction(functionId);
+		return new ColorOrFunction(function);
 	}
 }
 
@@ -43,9 +43,9 @@ public class ColorOrFunctionConverter : JsonConverter<ColorOrFunction>
 		{
 			writer.WriteStringValue(value.Color.ToString());
 		}
-		else if (value.FunctionId != null)
+		else if (value.Function != null)
 		{
-			writer.WriteStringValue(value.FunctionId.ToString());
+			JavascriptFunctionConverter.Instance.Write(writer, value.Function, options);
 		}
 	}
 }

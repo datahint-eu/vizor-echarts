@@ -57,17 +57,80 @@ window.vizorECharts = {
 		return null;
 	},
 
-	initChart: function (id, /*blazorComponent,*/ options, theme, width, height) {
+	processObject: async function (obj) {
+		for (const key in obj) {
+			if (obj.hasOwnProperty(key)) {
+				const value = obj[key];
+
+				if (typeof value === 'object') {
+					if (value.type === '__vi-ext-data') {
+						// Fetch data asynchronously
+						const response = await fetch(value.url);
+						if (!response.ok) {
+							throw new Error('Failed to fetch external chart data: url=' + value.url);
+						}
+
+						// parse the response as JSON
+						const data = await response.json();
+						console.log("========= FETCHED");
+						console.log(data);
+						console.log("========= OBJECT");
+						console.log(obj);
+						console.log("========= KEY");
+						console.log(key);
+
+						// replace the object with the fetched data
+						obj[key] = data;
+					} else if (value.type === '__vi-js-function') {
+						// evaluate the function using eval
+						const evaluatedFunction = eval('(' + value.function + ')');
+
+						// replace the object with the evaluated function
+						obj[key] = evaluatedFunction;
+					} else {
+						// Continue recursively if the object has other properties
+						await vizorECharts.processObject(value);
+					}
+				}
+			}
+		}
+	},
+
+	initChart: function (id, theme, width, height, options, noMapping) {
 		var chart = echarts.init(document.getElementById(id), theme, { renderer: 'svg', width: width, height: height });
+		vizorECharts.charts.push({ id: id, chart: chart });
 
-		// we need to use eval instead of JSON.parse, because the options can contain JS functions
-		var parsedOptions = eval('(' + options + ')');
-
+		// show loading animation
 		chart.showLoading();
-		chart.setOption(parsedOptions);
-		chart.hideLoading();
 
-		vizorECharts.charts.push({ id: id, chart: chart/*, blazorComponent: blazorComponent*/ });
+		// parse the options
+		var parsedOptions = JSON.parse(options);
+		console.log("========= INPUT");
+		console.log(parsedOptions);
+
+		// iterate through the options and map all JS functions / external data sources
+		if (!noMapping) {
+			vizorECharts.processObject(parsedOptions)
+				.then(() => {
+					console.log("========= PROCESSED");
+					console.log(parsedOptions); // The updated object with fetched data and evaluated function
+
+					// update the chart data
+					chart.setOption(parsedOptions);
+
+					// hide the loading animation
+					chart.hideLoading();
+				})
+				.catch(error => {
+					console.error('Error: ', error.message);
+				});
+		} else {
+			// set the chart options
+			chart.setOption(parsedOptions);
+
+			// hide the loading animation immediately
+			chart.hideLoading();
+		}
 	},
 
 	updateChart: function (id, options) {
@@ -77,9 +140,9 @@ window.vizorECharts = {
 			return;
 		}
 
-		// we need to use eval instead of JSON.parse, because the options can contain JS functions
-		var parsedOptions = eval('(' + options + ')');
+		//TODO: support for updating from external sources
 
+		var parsedOptions = JSON.parse(options);
 		chart.setOption(parsedOptions);
 	},
 

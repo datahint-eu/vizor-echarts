@@ -11,18 +11,18 @@ public class ObjectOrFunction
 		Value = value;
 	}
 
-	public ObjectOrFunction(Guid functionId)
+	public ObjectOrFunction(JavascriptFunction function)
 	{
-		FunctionId = functionId;
+		Function = function;
 	}
 
 	public object? Value { get; }
 
-	public Guid? FunctionId { get; }
+	public JavascriptFunction? Function { get; }
 
-	public static implicit operator ObjectOrFunction(Guid functionId)
+	public static implicit operator ObjectOrFunction(JavascriptFunction function)
 	{
-		return new ObjectOrFunction(functionId);
+		return new ObjectOrFunction(function);
 	}
 }
 
@@ -39,10 +39,9 @@ public class ObjectOrFunctionConverter : JsonConverter<ObjectOrFunction>
 		{
 			JsonSerializer.Serialize(writer, value.Value, value.Value.GetType(), options);
 		}
-		else if (value.FunctionId != null)
+		else if (value.Function != null)
 		{
-			// write a unique function id, we replace this with an actual function definition later on
-			writer.WriteStringValue(value.FunctionId.ToString());
+			JavascriptFunctionConverter.Instance.Write(writer, value.Function, options);
 		}
 	}
 }

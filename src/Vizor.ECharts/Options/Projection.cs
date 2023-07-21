@@ -14,14 +14,14 @@ public partial class Projection
 	/// Projection of latitude and longitude coordinates to other coordinates.
 	/// </summary>
 	[JsonPropertyName("project")]
-	public Function? Project { get; set; } 
+	public JavascriptFunction? Project { get; set; } 
 
 	/// <summary>
 	/// (point: [number, number]) => [number, number]  
 	/// Calculate the raw latitude and longitude coordinates from the projected coordinates
 	/// </summary>
 	[JsonPropertyName("unproject")]
-	public Function? Unproject { get; set; } 
+	public JavascriptFunction? Unproject { get; set; } 
 
 	/// <summary>
 	/// This property is mainly used to adapt the stream interface used in d3-geo .
@@ -42,6 +42,6 @@ public partial class Projection
 	/// Note: stream is not required in the projection .
 	/// </summary>
 	[JsonPropertyName("stream")]
-	public Function? Stream { get; set; } 
+	public JavascriptFunction? Stream { get; set; } 
 
 }

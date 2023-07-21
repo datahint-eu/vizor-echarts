@@ -84,14 +84,14 @@ public partial class DataView
 	/// }
 	/// </summary>
 	[JsonPropertyName("optionToContent")]
-	public Function? OptionToContent { get; set; } 
+	public JavascriptFunction? OptionToContent { get; set; } 
 
 	/// <summary>
 	/// (container:HTMLDomElement, option:Object) => Object  
 	/// When optionToContent is used, if you want to support refreshing chart after data changes, you need to implement the logic to merge options in this function.
 	/// </summary>
 	[JsonPropertyName("contentToOption")]
-	public Function? ContentToOption { get; set; } 
+	public JavascriptFunction? ContentToOption { get; set; } 
 
 	/// <summary>
 	/// There are 3 names in data view, which are ['data view', 'turn off' and 'refresh'] .

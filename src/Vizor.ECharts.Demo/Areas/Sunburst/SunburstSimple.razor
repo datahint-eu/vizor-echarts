@@ -10,8 +10,6 @@
 
 	// see https://echarts.apache.org/examples/en/editor.html?c=sunburst-simple
 
-
-
 	private ChartOptions options = new()
 		{
 			Series = new()
@@ -19,7 +17,7 @@
 				new SunburstSeries()
 				{
 					Name = "Budget vs spending",
-					// Data = data,
+					Data = new ExternalDataSource("data/sunburst/simple"), // see SunburstDataController
                     Radius = new CircleRadius(0, "90%"),
 					Label = new()
 					{

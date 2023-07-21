@@ -16,16 +16,16 @@ public class NumberOrStringOrFunction
 		String = str;
 	}
 
-	public NumberOrStringOrFunction(Guid functionId)
+	public NumberOrStringOrFunction(JavascriptFunction function)
 	{
-		FunctionId = functionId;
+		Function = function;
 	}
 
 	public double? Number { get; }
 
 	public string? String { get; }
 
-	public Guid? FunctionId { get; }
+	public JavascriptFunction? Function { get; }
 
 	public static implicit operator NumberOrStringOrFunction(double number)
 	{
@@ -37,9 +37,9 @@ public class NumberOrStringOrFunction
 		return new NumberOrStringOrFunction(str);
 	}
 
-	public static implicit operator NumberOrStringOrFunction(Guid functionId)
+	public static implicit operator NumberOrStringOrFunction(JavascriptFunction function)
 	{
-		return new NumberOrStringOrFunction(functionId);
+		return new NumberOrStringOrFunction(function);
 	}
 }
 
@@ -60,9 +60,9 @@ public class NumberOrStringOrFunctionConverter : JsonConverter<NumberOrStringOrF
 		{
 			writer.WriteStringValue(value.String);
 		}
-		else if (value.FunctionId != null)
+		else if (value.Function != null)
 		{
-			writer.WriteStringValue(value.FunctionId.ToString());
+			JavascriptFunctionConverter.Instance.Write(writer, value.Function, options);
 		}
 	}
 }

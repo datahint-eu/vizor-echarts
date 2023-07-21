@@ -16,13 +16,13 @@ public class NumberArrayOrFunction
 		Numbers = numbers;
 	}
 
-	public NumberArrayOrFunction(Guid functionId)
+	public NumberArrayOrFunction(JavascriptFunction function)
 	{
-		FunctionId = functionId;
+		Function = function;
 	}
 
 	public double[]? Numbers { get; }
-	public Guid? FunctionId { get; }
+	public JavascriptFunction? Function { get; }
 
 	public static implicit operator NumberArrayOrFunction(double number)
 	{
@@ -34,9 +34,9 @@ public class NumberArrayOrFunction
 		return new NumberArrayOrFunction(numbers);
 	}
 
-	public static implicit operator NumberArrayOrFunction(Guid functionId)
+	public static implicit operator NumberArrayOrFunction(JavascriptFunction function)
 	{
-		return new NumberArrayOrFunction(functionId);
+		return new NumberArrayOrFunction(function);
 	}
 }
 
@@ -65,9 +65,9 @@ public class NumberArrayOrFunctionConverter : JsonConverter<NumberArrayOrFunctio
 				writer.WriteEndArray();
 			}
 		}
-		else if (value.FunctionId != null)
+		else if (value.Function != null)
 		{
-			writer.WriteStringValue(value.FunctionId.ToString());
+			JavascriptFunctionConverter.Instance.Write(writer, value.Function, options);
 		}
 	}
 }

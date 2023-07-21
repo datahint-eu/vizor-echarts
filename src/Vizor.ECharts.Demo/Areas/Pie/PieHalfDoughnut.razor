@@ -4,7 +4,7 @@
 
 <PageHeader Title="Half Doughnut Chart" ChartType="@typeof(PieHalfDoughnut)" />
 
-<Vizor.ECharts.EChart Options="@options" FunctionMap="@functionMap" Width="800px" Height="800px" />
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
 
 @code {
 
@@ -39,7 +39,7 @@
 					Label = new()
 					{
 						Show = true,
-						Formatter = Guid.Parse("5896234a-60c7-4143-bf31-551551bf58fc")
+						Formatter = new JavascriptFunction("function (param) { return param.name + ' (' + param.percent * 2 + '%)'; }")
 					},
 					Data = new List<PieSeriesData>()
 					{
@@ -68,11 +68,6 @@
 				}
 			}
 		};
-
-	private FunctionMap functionMap = new FunctionMap()
-	{
-		new JavascriptFunction(Guid.Parse("5896234a-60c7-4143-bf31-551551bf58fc"), "function (param) { return param.name + ' (' + param.percent * 2 + '%)'; }")
-	};
 
 	//TODO: ideally, the formatter should also accept
 	[JSInvokable("FormatLabel")]

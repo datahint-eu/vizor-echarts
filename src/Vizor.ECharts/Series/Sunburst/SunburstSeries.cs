@@ -77,10 +77,13 @@ public partial class SunburstSeries
 	/// </summary>
 	[JsonPropertyName("radius")]
 	[DefaultValue("0%, 75%")]
-	public CircleRadius? Radius { get; set; } 
+	public CircleRadius? Radius { get; set; }
 
 	/// <summary>
 	/// The data structure of series-sunburst.data is like tree.
+	/// 
+	/// Can be List of SunburstSeriesData, an external data source, ...
+	/// 
 	/// For example:  [{
 	///     name: 'parent1',
 	///     value: 10,          // value of parent node can be left unset, and sum of
@@ -117,7 +120,7 @@ public partial class SunburstSeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<SunburstSeriesData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// The action of clicking a sector, which can be:   false : nothing happens.

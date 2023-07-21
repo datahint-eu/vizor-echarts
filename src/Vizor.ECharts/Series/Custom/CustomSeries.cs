@@ -159,7 +159,7 @@ public partial class CustomSeries
 	/// This method can also be called like api.style({fill: 'green', stroke: 'yellow'}) to override those style settings.
 	/// </summary>
 	[JsonPropertyName("renderItem")]
-	public Function? RenderItem { get; set; } 
+	public JavascriptFunction? RenderItem { get; set; } 
 
 	/// <summary>
 	/// Graphic style of , emphasis is the style when it is highlighted, like being hovered by mouse, or highlighted via legend connect.

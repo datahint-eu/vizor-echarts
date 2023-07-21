@@ -49,7 +49,7 @@ public partial class UniversalTransition
 	/// }
 	/// </summary>
 	[JsonPropertyName("delay")]
-	public Function? Delay { get; set; } 
+	public JavascriptFunction? Delay { get; set; } 
 
 	/// <summary>
 	/// Specify the delay time before animation start.
