@@ -1,9 +1,15 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Vizor ECharts Demo</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Vizor ECharts Demo</h1>
 
-Welcome to your new app.
+<span>Version @GetLibVersion()</span>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@code {
+
+	string GetLibVersion()
+	{
+		return typeof(ChartOptions).Assembly.GetName().Version!.ToString();
+	}
+}

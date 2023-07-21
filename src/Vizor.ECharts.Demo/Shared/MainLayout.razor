@@ -2,18 +2,13 @@
 
 <PageTitle>Vizor.ECharts.Demo</PageTitle>
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+<div class="container-fluid">
+    <div class="row">
+       <SideNav />
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
+        <!-- Main content area -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             @Body
-        </article>
-    </main>
+        </main>
+    </div>
 </div>
