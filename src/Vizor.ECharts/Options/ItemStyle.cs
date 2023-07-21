@@ -184,7 +184,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("borderRadius")]
 	[DefaultValue(0)]
-	public Radius? BorderRadius { get; set; } 
+	public BorderRadius? BorderRadius { get; set; } 
 
 	/// <summary>
 	/// Gaps between child nodes.

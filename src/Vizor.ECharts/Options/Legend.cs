@@ -360,7 +360,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("borderRadius")]
 	[DefaultValue(0)]
-	public Radius? BorderRadius { get; set; } 
+	public BorderRadius? BorderRadius { get; set; } 
 
 	/// <summary>
 	/// Size of shadow blur.

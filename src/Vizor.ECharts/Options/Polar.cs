@@ -64,7 +64,7 @@ public partial class Polar
 	/// </summary>
 	[JsonPropertyName("radius")]
 	[DefaultValue("0%, 75%")]
-	public Radius? Radius { get; set; } 
+	public CircleRadius? Radius { get; set; } 
 
 	/// <summary>
 	/// tooltip settings in the coordinate system component.

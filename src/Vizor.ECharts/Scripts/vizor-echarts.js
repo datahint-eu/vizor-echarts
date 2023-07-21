@@ -14,8 +14,7 @@
 	initChart: function (id, /*blazorComponent,*/ options, theme, width, height) {
 		var chart = echarts.init(document.getElementById(id), theme, { renderer: 'svg', width: width, height: height });
 
-		// we need to use eval instead of JSON.parse, because the options can contain JS functions
-		var parsedOptions = eval('(' + options + ')');
+		var parsedOptions = JSON.parse(options);
 
 		chart.showLoading();
 		chart.setOption(parsedOptions);
@@ -31,9 +30,7 @@
 			return;
 		}
 
-		// we need to use eval instead of JSON.parse, because the options can contain JS functions
-		var parsedOptions = eval('(' + options + ')');
-
+		var parsedOptions = JSON.parse(options);
 		chart.setOption(parsedOptions);
 	},
 

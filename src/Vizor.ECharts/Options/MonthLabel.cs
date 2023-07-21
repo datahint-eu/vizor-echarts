@@ -270,7 +270,7 @@ public partial class MonthLabel
 	/// </summary>
 	[JsonPropertyName("borderRadius")]
 	[DefaultValue(0)]
-	public Radius? BorderRadius { get; set; } 
+	public BorderRadius? BorderRadius { get; set; } 
 
 	/// <summary>
 	/// Padding of the text fragment, for example:   padding: [3, 4, 5, 6] : represents padding of [top, right, bottom, left] .

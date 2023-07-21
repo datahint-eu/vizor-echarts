@@ -83,7 +83,7 @@ public partial class GaugeSeries
 	/// </summary>
 	[JsonPropertyName("radius")]
 	[DefaultValue("75%")]
-	public Radius? Radius { get; set; } 
+	public NumberOrString? Radius { get; set; } 
 
 	/// <summary>
 	/// Whether to enable highlighting chart when legend is being hovered.

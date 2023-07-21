@@ -186,7 +186,7 @@ public partial class IconStyle
 	/// Border radius of text area.
 	/// </summary>
 	[JsonPropertyName("textBorderRadius")]
-	public Radius? TextBorderRadius { get; set; } 
+	public BorderRadius? TextBorderRadius { get; set; } 
 
 	/// <summary>
 	/// Padding of text area.

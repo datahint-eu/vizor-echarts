@@ -64,7 +64,7 @@ public partial class Radar
 	/// </summary>
 	[JsonPropertyName("radius")]
 	[DefaultValue("0%, 75%")]
-	public Radius? Radius { get; set; } 
+	public CircleRadius? Radius { get; set; } 
 
 	/// <summary>
 	/// The start angle of coordinate, which is the angle of the first indicator axis.

@@ -7,10 +7,10 @@ namespace Vizor.ECharts;
 /// Center position of Pie chart, the first of which is the horizontal position, and the second is the vertical position.
 /// Percentage is supported.When set in percentage, the item is relative to the container width, and the second item to the height.
 /// </summary>
-[JsonConverter(typeof(PieCenterConverter))]
-public class PieCenter
+[JsonConverter(typeof(CircleCenterConverter))]
+public class CircleCenter
 {
-    public PieCenter(NumberOrString horizontal, NumberOrString vertical)
+    public CircleCenter(NumberOrString horizontal, NumberOrString vertical)
     {
         Horizontal = horizontal;
         Vertical = vertical;
@@ -20,14 +20,14 @@ public class PieCenter
     public NumberOrString Vertical { get; }
 }
 
-public class PieCenterConverter : JsonConverter<PieCenter>
+public class CircleCenterConverter : JsonConverter<CircleCenter>
 {
-    public override PieCenter Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override CircleCenter Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        throw new NotImplementedException("Deserialization is not implemented for PieCenter.");
+        throw new NotImplementedException("Deserialization is not implemented for CircleCenter.");
     }
 
-    public override void Write(Utf8JsonWriter writer, PieCenter value, JsonSerializerOptions options)
+    public override void Write(Utf8JsonWriter writer, CircleCenter value, JsonSerializerOptions options)
     {
         writer.WriteStartArray();
         NumberOrStringConverter.Instance.Write(writer, value.Horizontal, options);

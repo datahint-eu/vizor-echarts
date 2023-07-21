@@ -396,7 +396,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("rotate")]
 	[DefaultValue("0")]
-	public double? Rotate { get; set; } 
+	public NumberOrString? Rotate { get; set; } 
 
 	/// <summary>
 	/// Whether to move text slightly.
@@ -473,7 +473,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("borderRadius")]
 	[DefaultValue(0)]
-	public Radius? BorderRadius { get; set; } 
+	public BorderRadius? BorderRadius { get; set; } 
 
 	/// <summary>
 	/// "Rich text styles" can be defined in this rich property.

@@ -77,7 +77,7 @@ public partial class SunburstSeries
 	/// </summary>
 	[JsonPropertyName("radius")]
 	[DefaultValue("0%, 75%")]
-	public Radius? Radius { get; set; } 
+	public CircleRadius? Radius { get; set; } 
 
 	/// <summary>
 	/// The data structure of series-sunburst.data is like tree.

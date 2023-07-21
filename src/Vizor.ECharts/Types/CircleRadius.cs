@@ -10,15 +10,15 @@ namespace Vizor.ECharts;
 /// Array.<number|string>: The first item specifies the inside radius, and the second item specifies the outside radius.Each item follows the definitions above.
 /// Donut chart can be achieved by setting a inner radius.
 /// </summary>
-[JsonConverter(typeof(PieRadiusConverter))]
-public class PieRadius
+[JsonConverter(typeof(CircleRadiusConverter))]
+public class CircleRadius
 {
-    public PieRadius(NumberOrString outsideRadius)
+    public CircleRadius(NumberOrString outsideRadius)
     {
         OutsideRadius = outsideRadius;
     }
 
-    public PieRadius(NumberOrString insideRadius, NumberOrString outsideRadius)
+    public CircleRadius(NumberOrString insideRadius, NumberOrString outsideRadius)
     {
         InsideRadius = insideRadius;
         OutsideRadius = outsideRadius;
@@ -28,14 +28,14 @@ public class PieRadius
     public NumberOrString? InsideRadius { get; }
 }
 
-public class PieRadiusConverter : JsonConverter<PieRadius>
+public class CircleRadiusConverter : JsonConverter<CircleRadius>
 {
-    public override PieRadius Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override CircleRadius Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        throw new NotImplementedException("Deserialization is not implemented for PieRadius.");
+        throw new NotImplementedException("Deserialization is not implemented for CircleRadius.");
     }
 
-    public override void Write(Utf8JsonWriter writer, PieRadius value, JsonSerializerOptions options)
+    public override void Write(Utf8JsonWriter writer, CircleRadius value, JsonSerializerOptions options)
     {
         if (value.InsideRadius == null)
         {

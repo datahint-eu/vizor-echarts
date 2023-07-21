@@ -14,7 +14,7 @@ public partial class SunburstSeriesLevels
 	/// The inner and outer radius of the current layer, noting that the radius of other layers will not be adaptive.
 	/// </summary>
 	[JsonPropertyName("radius")]
-	public Radius? Radius { get; set; } 
+	public CircleRadius? Radius { get; set; } 
 
 	/// <summary>
 	/// To specify the style of the label of the sector.

@@ -3,15 +3,15 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-[JsonConverter(typeof(RadiusConverter))]
-public class Radius
+[JsonConverter(typeof(BorderRadiusConverter))]
+public class BorderRadius
 {
-    public Radius(double all)
+    public BorderRadius(double all)
     {
         UpperLeft = UpperRight = BottomRight = BottomLeft = all;
     }
 
-    public Radius(double upperLeft, double upperRight, double bottomRight, double bottomLeft)
+    public BorderRadius(double upperLeft, double upperRight, double bottomRight, double bottomLeft)
     {
         UpperLeft = upperLeft;
         UpperRight = upperRight;
@@ -24,20 +24,20 @@ public class Radius
     public double BottomRight { get; }
     public double BottomLeft { get; }
 
-	public static implicit operator Radius(double all)
-	{
-		return new Radius(all);
-	}
+    public static implicit operator BorderRadius(double all)
+    {
+        return new BorderRadius(all);
+    }
 }
 
-public class RadiusConverter : JsonConverter<Radius>
+public class BorderRadiusConverter : JsonConverter<BorderRadius>
 {
-    public override Radius Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override BorderRadius Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        throw new NotImplementedException("Deserialization is not implemented for Radius.");
+        throw new NotImplementedException("Deserialization is not implemented for BorderRadius.");
     }
 
-    public override void Write(Utf8JsonWriter writer, Radius value, JsonSerializerOptions options)
+    public override void Write(Utf8JsonWriter writer, BorderRadius value, JsonSerializerOptions options)
     {
         if (value.UpperLeft == value.UpperRight && value.UpperLeft == value.BottomRight && value.UpperLeft == value.BottomLeft)
         {
