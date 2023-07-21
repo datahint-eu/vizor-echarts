@@ -319,10 +319,12 @@ public partial class YAxis
 	/// Split area of axis in grid area, not shown by default.
 	/// </summary>
 	[JsonPropertyName("splitArea")]
-	public SplitArea? SplitArea { get; set; } 
+	public SplitArea? SplitArea { get; set; }
 
 	/// <summary>
 	/// Category data, available in type : 'category' axis.
+	/// 
+	/// List of YAxisData, or string[] or ...
 	///  
 	/// If type is not specified, but axis.data is specified, the type is auto set as 'category' .
 	///  
@@ -345,7 +347,7 @@ public partial class YAxis
 	/// }, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<YAxisData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// axisPointer settings on the axis.
