@@ -1,0 +1,15 @@
+﻿<div>
+	<h2>@Title</h2>
+	<Vizor.ECharts.Demo.Components.GithubLink ChartType="@ChartType" />
+</div>
+<hr />
+<br />
+
+@code {
+
+	[Parameter, EditorRequired]
+	public string Title { get; set; } = default!;
+
+	[Parameter, EditorRequired]
+	public Type ChartType { get; set; } = default!;
+}
