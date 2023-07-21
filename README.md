@@ -20,6 +20,11 @@ This makes it very easy to translate the examples from the official documentatio
 
 For example: [a simple pie chart](https://echarts.apache.org/examples/en/editor.html?c=pie-simple).
 
+Add a using statement:
+```
+@using Vizor.ECharts;
+```
+
 Chart component in your .razor file:
 ```
 <Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
