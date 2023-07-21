@@ -39,8 +39,7 @@ public partial class Handle
 	/// </summary>
 	[JsonPropertyName("size")]
 	[DefaultValue("45,45")]
-	//TODO: Type Warning: Failed to map property 'size' in type 'handle' with types 'array,number,vector'
-	public object? Size { get; set; } 
+	public NumberArray? Size { get; set; } 
 
 	/// <summary>
 	/// Distance from handle center to axis.

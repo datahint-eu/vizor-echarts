@@ -263,6 +263,10 @@ internal abstract class BasePhase
 				case ("array", "percentvector"):
 				case ("array", "vector"):
 					return new SimpleType("double[]");
+				case ("array", "color"):
+					return new MappedCustomType(typeof(ColorArray));
+				case ("color", "function"):
+					return new MappedCustomType(typeof(ColorOrFunction));
 			}
 		}
 
@@ -282,6 +286,10 @@ internal abstract class BasePhase
 		else if (optProp.Types is ["array", "function", "number"])
 		{
 			return new MappedCustomType(typeof(NumberArrayOrFunction));
+		}
+		else if (optProp.Types is ["array", "number", "vector"])
+		{
+			return new MappedCustomType(typeof(NumberArray));
 		}
 
 		// give additional enum warning if any of the types is an enum

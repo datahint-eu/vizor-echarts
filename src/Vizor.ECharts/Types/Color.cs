@@ -21,7 +21,12 @@ public class Color
 
     public override string ToString() => color;
 
-    public static Color FromHex(string hex)
+	public static implicit operator Color(string color)
+	{
+		return new Color(color);
+	}
+
+	public static Color FromHex(string hex)
     {
         if (hex.StartsWith("#"))
         {
@@ -33,7 +38,6 @@ public class Color
 
     public static Color FromRGB(byte r, byte g, byte b)
     {
-
         return new Color($"rgb({(int)r}, {(int)g}, {(int)b})");
     }
 

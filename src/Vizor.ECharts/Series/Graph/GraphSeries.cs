@@ -255,8 +255,7 @@ public partial class GraphSeries
 	/// </summary>
 	[JsonPropertyName("edgeSymbolSize")]
 	[DefaultValue("10")]
-	//TODO: Type Warning: Failed to map property 'edgeSymbolSize' in type 'GraphSeries' with types 'array,number,vector'
-	public object? EdgeSymbolSize { get; set; } 
+	public NumberArray? EdgeSymbolSize { get; set; } 
 
 	/// <summary>
 	/// The mouse style when mouse hovers on an element, the same as cursor property in CSS .
