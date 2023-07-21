@@ -39,8 +39,7 @@ public partial class AxisLine
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("none")]
-	//TODO: Type Warning: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
-	public object? Symbol { get; set; } 
+	public AxisLineSymbol? Symbol { get; set; } 
 
 	/// <summary>
 	/// Size of the arrows at two ends.

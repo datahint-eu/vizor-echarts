@@ -48,7 +48,9 @@ public enum IconType
 
 public class IconConverter : JsonConverter<Icon>
 {
-    public override Icon Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+	private static readonly IconConverter instance = new();
+
+	public override Icon Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         throw new NotImplementedException("Deserialization is not implemented for Icon.");
     }
@@ -64,4 +66,6 @@ public class IconConverter : JsonConverter<Icon>
             writer.WriteStringValue(value.Url);
         }
     }
+
+	public static IconConverter Instance => instance;
 }

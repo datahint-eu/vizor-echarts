@@ -86,6 +86,7 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("shape", typeof(RadarShape)), "radar");
 
 		AddMappedEnumType(new MappedEnumType("status", typeof(AxisPointerStatus)), "axisPointer");
+		AddMappedEnumType(new MappedEnumType("symbol", typeof(AxisLineSymbol)), "axisLine");
 
 		AddMappedEnumType(new MappedEnumType("alignTo", typeof(LabelAlignTo)), "label");
 

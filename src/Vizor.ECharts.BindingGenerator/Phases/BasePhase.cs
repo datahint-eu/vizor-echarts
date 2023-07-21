@@ -34,7 +34,7 @@ internal abstract class BasePhase
 				if (anyOfType.Contains("xxx"))
 					continue;
 
-				Console.WriteLine($"---anyOf {propName} {anyOfType}");
+				//Console.WriteLine($"---anyOf {propName} {anyOfType}");
 				_ = ParseObjectType(parent, anyOfType, anyOfItemElement, dataPrefix: anyOfType, typeGroup: propName);
 			}
 
