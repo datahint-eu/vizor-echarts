@@ -65,8 +65,7 @@ public partial class PiecewiseVisualMap
 	/// See more detailed rules in visualMap.inverse .
 	/// </summary>
 	[JsonPropertyName("pieces")]
-	//TODO: Type Warning: array type 'pieces' in 'PiecewiseVisualMap' will be mapped to List<object>
-	public List<object>? Pieces { get; set; } 
+	public List<VisualMapPiece>? Pieces { get; set; } 
 
 	/// <summary>
 	/// When dataValues in series.data (specified by visualMap-piecewise.dimension ) are discrete (or also known as category data or enumerable data), and we intend to perform Table Mapping from dataValue to visual channels, categories is used to describe the entire enumeration of data.
@@ -254,7 +253,7 @@ public partial class PiecewiseVisualMap
 	/// Use the last dimension of data by default.
 	/// </summary>
 	[JsonPropertyName("dimension")]
-	public string? Dimension { get; set; } 
+	public NumberOrString? Dimension { get; set; } 
 
 	/// <summary>
 	/// Specify visual mapping should be performed on which series, from which series.data is fetched.

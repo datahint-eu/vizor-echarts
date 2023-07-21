@@ -181,7 +181,7 @@ public partial class ContinuousVisualMap
 	/// Use the last dimension of data by default.
 	/// </summary>
 	[JsonPropertyName("dimension")]
-	public string? Dimension { get; set; } 
+	public NumberOrString? Dimension { get; set; } 
 
 	/// <summary>
 	/// Specify visual mapping should be performed on which series, from which series.data is fetched.

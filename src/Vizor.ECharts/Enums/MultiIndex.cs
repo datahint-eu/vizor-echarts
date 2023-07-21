@@ -3,9 +3,6 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-/// <summary>
-/// See https://echarts.apache.org/en/option.html#legend.icon
-/// </summary>
 [JsonConverter(typeof(MultiIndexConverter))]
 public class MultiIndex
 {

@@ -154,7 +154,7 @@ public partial class Tooltip
 	/// Bottom position of the graphic element where the mouse is in, which is only valid when trigger is 'item' .
 	/// </summary>
 	[JsonPropertyName("position")]
-	public Icon? Position { get; set; } 
+	public TooltipPosition? Position { get; set; } 
 
 	/// <summary>
 	/// The content formatter of tooltip's floating layer which supports string template and callback function.
