@@ -5,34 +5,36 @@ namespace Vizor.ECharts.BindingGenerator.Generators;
 internal class ObjectTypeClassGenerator
 {
 	private readonly ObjectType objectType;
-	private readonly bool isSeriesType;
 
 	private readonly string optionsFile;
 
-	public ObjectTypeClassGenerator(string outputDir, ObjectType objectType, bool isSeriesType = false)
+	public ObjectTypeClassGenerator(string outputDir, ObjectType objectType)
 	{
 		this.objectType = objectType;
-		this.isSeriesType = isSeriesType;
 
-		// create a subdir
-		if (isSeriesType)
+		string dir = outputDir;
+		if (objectType.TypeGroup.Contains("Series"))
 		{
 			var idx = objectType.Name.IndexOf("Series");
 			if (idx > 0)
 			{
 				var seriesName = objectType.Name[0..idx];
-
-				var seriesDir = Path.Combine(outputDir, seriesName);
-				if (!Directory.Exists(seriesDir))
-				{
-					Directory.CreateDirectory(seriesDir);
-				}
-
-				optionsFile = Path.Combine(seriesDir, objectType.DotNetType + ".cs");
+				dir = Path.Combine(outputDir, "Series", seriesName);
 			}
 		}
+		else if (objectType.TypeGroup != "Options")
+		{
+			dir = Path.Combine(outputDir, "Options", objectType.TypeGroup);
+		}
+		else
+		{
+			dir = Path.Combine(outputDir, "Options");
+		}
 
-		optionsFile ??= Path.Combine(outputDir, objectType.DotNetType + ".cs");
+		if (dir != outputDir && !Directory.Exists(dir))
+			Directory.CreateDirectory(dir);
+
+		optionsFile = Path.Combine(dir, objectType.DotNetType + ".cs");
 	}
 
 	public string OptionsFile => optionsFile;
@@ -61,9 +63,9 @@ internal class ObjectTypeClassGenerator
 			}
 			else
 			{
-				// the 'type' property of series is mandatory
+				// the 'type' property of anyOf objects is mandatory
 				string defaultAssign = string.Empty;
-				if (isSeriesType && prop.Name == "type")
+				if (objectType.TypeGroup != "Options" && prop.Name == "type")
 				{
 					defaultAssign = GetDefaultAssign(prop.Default);
 				}

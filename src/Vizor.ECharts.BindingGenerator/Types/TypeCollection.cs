@@ -8,9 +8,8 @@ internal class TypeCollection
 
 	private readonly Dictionary<string, List<ObjectType>> allObjectTypesWithDuplicates = new();
 	private readonly Dictionary<string, ObjectType> objectTypeLookup = new();
-	private readonly Dictionary<string, ObjectType> seriesTypeLookup = new();
 
-	private readonly ObjectType chartOptions = new(null, "chartOptions");
+	private readonly ObjectType chartOptions = new(null, "", "ChartOptions", "Options");
 
 	public TypeCollection()
 	{
@@ -125,8 +124,6 @@ internal class TypeCollection
 			yield return objectType;
 	}
 
-	public IEnumerable<ObjectType> ListSeriesTypesToGenerate() => seriesTypeLookup.Values;
-
 	public bool TryGetObjectType(string name, out ObjectType? objectType) => objectTypeLookup.TryGetValue(name, out objectType);
 
 	public IPropertyType? MapArrayType(ObjectType parent, OptionProperty optProp, JsonProperty prop)
@@ -187,27 +184,12 @@ internal class TypeCollection
 		list.Add(objectType);
 	}
 
-	public ObjectType MergeType(ObjectType objectType, bool isSeriesType)
+	public ObjectType MergeType(ObjectType objectType)
 	{
-		ObjectType? mergedType = null;
-
-		if (isSeriesType)
+		if (!objectTypeLookup.TryGetValue(objectType.Name, out var mergedType))
 		{
-			if (!seriesTypeLookup.TryGetValue(objectType.Name, out mergedType))
-			{
-				mergedType = new ObjectType(null, objectType.Name); // merged types have many parents, so set parent to null
-				seriesTypeLookup.Add(mergedType.Name, mergedType);
-			}
-		}
-		else
-		{
-			objectTypeLookup.TryGetValue(objectType.Name, out mergedType);
-
-			if (!objectTypeLookup.TryGetValue(objectType.Name, out mergedType))
-			{
-				mergedType = new ObjectType(null, objectType.Name); // merged types have many parents, so set parent to null
-				objectTypeLookup.Add(mergedType.Name, mergedType);
-			}
+			mergedType = new ObjectType(null, objectType.Name, typeGroup: objectType.TypeGroup); // merged types have many parents, so set parent to null
+			objectTypeLookup.Add(mergedType.Name, mergedType);
 		}
 
 		foreach (var property in objectType.Properties)

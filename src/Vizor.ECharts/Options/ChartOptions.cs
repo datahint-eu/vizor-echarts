@@ -271,7 +271,7 @@ public partial class ChartOptions
 	/// If you want to change the process sequence, you can just change the sequence of the definitions apearing in option .
 	/// </summary>
 	[JsonPropertyName("dataZoom")]
-	public List<ChartOptionsDataZoom>? DataZoom { get; set; } 
+	public List<object>? DataZoom { get; set; } 
 
 	/// <summary>
 	/// visualMap is a type of component for visual encoding, which maps the data to visual channels, including:   symbol : Type of symbol.
@@ -326,7 +326,7 @@ public partial class ChartOptions
 	/// ✦
 	/// </summary>
 	[JsonPropertyName("visualMap")]
-	public List<ChartOptionsVisualMap>? VisualMap { get; set; } 
+	public List<object>? VisualMap { get; set; } 
 
 	/// <summary>
 	/// Tooltip component.
@@ -1211,6 +1211,9 @@ public partial class ChartOptions
 	[JsonPropertyName("aria")]
 	public object? Aria { get; set; } 
 
+	[JsonPropertyName("series")]
+	public List<object>? Series { get; set; } 
+
 	/// <summary>
 	/// To specify whether it's dark mode.
 	///  
@@ -1264,7 +1267,7 @@ public partial class ChartOptions
 	/// }
 	/// </summary>
 	[JsonPropertyName("color")]
-	//TODO: Type Warning: array type 'color' in 'chartOptions' will be mapped to List<object>
+	//TODO: Type Warning: array type 'color' in '' will be mapped to List<object>
 	public List<object>? Color { get; set; } 
 
 	/// <summary>
@@ -1419,16 +1422,13 @@ public partial class ChartOptions
 	/// Each item of this array is an echarts option ( ECUnitOption ).
 	/// </summary>
 	[JsonPropertyName("options")]
-	//TODO: Type Warning: array type 'options' in 'chartOptions' will be mapped to List<object>
+	//TODO: Type Warning: array type 'options' in '' will be mapped to List<object>
 	public List<object>? Options { get; set; } 
 
 	/// <summary>
 	/// See Responsive Mobile-End for details.
 	/// </summary>
 	[JsonPropertyName("media")]
-	public List<ChartOptionsMedia>? Media { get; set; } 
-
-	[JsonPropertyName("series")]
-	public List<object>? Series { get; set; } 
+	public List<Media>? Media { get; set; } 
 
 }

@@ -7,6 +7,6 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class DatasetTransform
+public partial class OutOfRange
 {
 }

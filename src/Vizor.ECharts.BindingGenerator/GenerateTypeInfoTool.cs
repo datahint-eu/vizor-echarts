@@ -29,8 +29,7 @@ internal class GenerateTypeInfoTool
 		// process the input JSON
 		var typeCollection = new TypeCollection();
 		var phases = new List<BasePhase> {
-			new GenerateObjectTypesPhase(typeCollection),
-			new GenerateSeriesTypesPhase(typeCollection)
+			new GenerateObjectTypesPhase(typeCollection)
 		};
 
 		foreach (var phase in phases)

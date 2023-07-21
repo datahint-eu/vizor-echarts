@@ -18,6 +18,18 @@ public partial class Emphasis
 	/// <summary>
 	/// 
 	/// </summary>
+	[JsonPropertyName("handleStyle")]
+	public HandleStyle? HandleStyle { get; set; } 
+
+	/// <summary>
+	/// 
+	/// </summary>
+	[JsonPropertyName("moveHandleStyle")]
+	public MoveHandleStyle? MoveHandleStyle { get; set; } 
+
+	/// <summary>
+	/// 
+	/// </summary>
 	[JsonPropertyName("iconStyle")]
 	public IconStyle? IconStyle { get; set; } 
 

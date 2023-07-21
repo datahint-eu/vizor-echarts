@@ -17,10 +17,6 @@ internal class GenerateObjectTypesPhase : BasePhase
 		{
 			foreach (JsonProperty childProp in childProps.EnumerateObject())
 			{
-				// skip the series --> handle in GenerateSeriesTypesPhase
-				if (childProp.Name == "series")
-					continue;
-
 				typeCollection.ChartOptions.Properties.Add(ParseProperty(typeCollection.ChartOptions, childProp));
 			}
 		}

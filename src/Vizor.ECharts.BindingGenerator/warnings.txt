@@ -1,0 +1,248 @@
+WARNING: array type 'horizontal' in 'pageIcons' will be mapped to List<object>
+WARNING: array type 'vertical' in 'pageIcons' will be mapped to List<object>
+ERROR: Failed to map property 'pageIconSize' in type 'legend' with types 'array,number,vector'
+WARNING: array,enum,number type 'type' in 'crossStyle' with values 'solid,dashed,dotted' is not mapped
+ERROR: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
+ERROR: Failed to map property 'boundaryGap' in type 'xAxis' with types 'array,boolean'
+ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
+ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
+ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
+ERROR: Failed to map property 'color' in type 'lineStyle' with types 'array,color'
+WARNING: array type 'color' in 'areaStyle' will be mapped to List<object>
+WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
+ERROR: Failed to map property 'status' in type 'axisPointer' with types 'boolean,enum'
+ERROR: Failed to map property 'size' in type 'handle' with types 'array,number,vector'
+ERROR: Failed to map property 'boundaryGap' in type 'yAxis' with types 'array,boolean'
+ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
+ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
+ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
+ERROR: Failed to map property 'color' in type 'lineStyle' with types 'array,color'
+WARNING: array type 'color' in 'areaStyle' will be mapped to List<object>
+WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
+ERROR: Failed to map property 'status' in type 'axisPointer' with types 'boolean,enum'
+ERROR: Failed to map property 'size' in type 'handle' with types 'array,number,vector'
+WARNING: array,enum,number type 'type' in 'crossStyle' with values 'solid,dashed,dotted' is not mapped
+ERROR: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
+ERROR: Failed to map property 'boundaryGap' in type 'radiusAxis' with types 'array,boolean'
+ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
+ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
+ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
+ERROR: Failed to map property 'color' in type 'lineStyle' with types 'array,color'
+WARNING: array type 'color' in 'areaStyle' will be mapped to List<object>
+WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
+ERROR: Failed to map property 'status' in type 'axisPointer' with types 'boolean,enum'
+ERROR: Failed to map property 'size' in type 'handle' with types 'array,number,vector'
+ERROR: Failed to map property 'boundaryGap' in type 'angleAxis' with types 'array,boolean'
+ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
+ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
+ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
+ERROR: Failed to map property 'color' in type 'lineStyle' with types 'array,color'
+WARNING: array type 'color' in 'areaStyle' will be mapped to List<object>
+WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
+ERROR: Failed to map property 'status' in type 'axisPointer' with types 'boolean,enum'
+ERROR: Failed to map property 'size' in type 'handle' with types 'array,number,vector'
+ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
+ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
+ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
+ERROR: Failed to map property 'color' in type 'lineStyle' with types 'array,color'
+WARNING: array type 'color' in 'areaStyle' will be mapped to List<object>
+---anyOf DataZoom InsideDataZoom
+WARNING: enum type 'filterMode' in 'InsideDataZoom' with values 'filter,weakFilter,empty,none' is not mapped
+ERROR: Failed to map property 'startValue' in type 'InsideDataZoom' with types 'date,number,string'
+ERROR: Failed to map property 'endValue' in type 'InsideDataZoom' with types 'date,number,string'
+ERROR: Failed to map property 'minValueSpan' in type 'InsideDataZoom' with types 'date,number,string'
+ERROR: Failed to map property 'maxValueSpan' in type 'InsideDataZoom' with types 'date,number,string'
+WARNING: array type 'rangeMode' in 'InsideDataZoom' will be mapped to List<object>
+WARNING: boolean,enum type 'zoomOnMouseWheel' in 'InsideDataZoom' with values 'true,false,shift,ctrl,alt' is not mapped
+ERROR: Failed to map property 'zoomOnMouseWheel' in type 'InsideDataZoom' with types 'boolean,enum'
+WARNING: boolean,enum type 'moveOnMouseMove' in 'InsideDataZoom' with values 'true,false,shift,ctrl,alt' is not mapped
+ERROR: Failed to map property 'moveOnMouseMove' in type 'InsideDataZoom' with types 'boolean,enum'
+WARNING: boolean,enum type 'moveOnMouseWheel' in 'InsideDataZoom' with values 'true,false,shift,ctrl,alt' is not mapped
+ERROR: Failed to map property 'moveOnMouseWheel' in type 'InsideDataZoom' with types 'boolean,enum'
+---anyOf DataZoom SliderDataZoom
+ERROR: Failed to map property 'showDataShadow' in type 'SliderDataZoom' with types 'boolean,string'
+WARNING: enum type 'filterMode' in 'SliderDataZoom' with values 'filter,weakFilter,empty,none' is not mapped
+ERROR: Failed to map property 'startValue' in type 'SliderDataZoom' with types 'date,number,string'
+ERROR: Failed to map property 'endValue' in type 'SliderDataZoom' with types 'date,number,string'
+ERROR: Failed to map property 'minValueSpan' in type 'SliderDataZoom' with types 'date,number,string'
+ERROR: Failed to map property 'maxValueSpan' in type 'SliderDataZoom' with types 'date,number,string'
+WARNING: array type 'rangeMode' in 'SliderDataZoom' will be mapped to List<object>
+---anyOf VisualMap ContinuousVisualMap
+WARNING: array type 'range' in 'ContinuousVisualMap' will be mapped to List<object>
+WARNING: array type 'text' in 'ContinuousVisualMap' will be mapped to List<object>
+WARNING: array type 'color' in 'ContinuousVisualMap' will be mapped to List<object>
+---anyOf VisualMap PiecewiseVisualMap
+WARNING: array type 'pieces' in 'PiecewiseVisualMap' will be mapped to List<object>
+WARNING: array type 'categories' in 'PiecewiseVisualMap' will be mapped to List<object>
+WARNING: array type 'text' in 'PiecewiseVisualMap' will be mapped to List<object>
+ERROR: Failed to map property 'itemGap' in type 'PiecewiseVisualMap' with types '*,number'
+WARNING: array type 'color' in 'PiecewiseVisualMap' will be mapped to List<object>
+WARNING: array,enum,number type 'type' in 'crossStyle' with values 'solid,dashed,dotted' is not mapped
+ERROR: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
+WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
+ERROR: Failed to map property 'status' in type 'axisPointer' with types 'boolean,enum'
+ERROR: Failed to map property 'size' in type 'handle' with types 'array,number,vector'
+WARNING: array type 'link' in 'axisPointer' will be mapped to List<object>
+WARNING: array type 'excludeComponents' in 'saveAsImage' will be mapped to List<object>
+ERROR: Failed to map property 'textPadding' in type 'iconStyle' with types 'number,vector'
+ERROR: Failed to map property 'textPadding' in type 'iconStyle' with types 'number,vector'
+ERROR: Failed to map property 'textPadding' in type 'iconStyle' with types 'number,vector'
+WARNING: array type 'lang' in 'dataView' will be mapped to List<object>
+ERROR: Failed to map property 'textPadding' in type 'iconStyle' with types 'number,vector'
+ERROR: Failed to map property 'xAxisIndex' in type 'dataZoom' with types 'array,boolean,number'
+ERROR: Failed to map property 'yAxisIndex' in type 'dataZoom' with types 'array,boolean,number'
+WARNING: array type 'type' in 'magicType' will be mapped to List<object>
+ERROR: Failed to map property 'textPadding' in type 'iconStyle' with types 'number,vector'
+WARNING: array type 'line' in 'seriesIndex' will be mapped to List<object>
+WARNING: array type 'bar' in 'seriesIndex' will be mapped to List<object>
+WARNING: array type 'type' in 'brush' will be mapped to List<object>
+ERROR: Failed to map property 'textPadding' in type 'iconStyle' with types 'number,vector'
+WARNING: array type 'toolbox' in 'brush' will be mapped to List<object>
+ERROR: Failed to map property 'seriesIndex' in type 'brush' with types 'array,number,string'
+ERROR: Failed to map property 'geoIndex' in type 'brush' with types 'array,number,string'
+ERROR: Failed to map property 'xAxisIndex' in type 'brush' with types 'array,number,string'
+ERROR: Failed to map property 'yAxisIndex' in type 'brush' with types 'array,number,string'
+WARNING: array type 'center' in 'geo' will be mapped to List<object>
+WARNING: array type 'boundingCoords' in 'geo' will be mapped to List<object>
+WARNING: array type 'layoutCenter' in 'geo' will be mapped to List<object>
+ERROR: Failed to map property 'boundaryGap' in type 'parallelAxisDefault' with types 'array,boolean'
+ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
+ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
+ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
+ERROR: Failed to map property 'boundaryGap' in type 'parallelAxis' with types 'array,boolean'
+ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
+ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
+ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
+ERROR: Failed to map property 'boundaryGap' in type 'singleAxis' with types 'array,boolean'
+ERROR: Failed to map property 'symbol' in type 'axisLine' with types 'array,icon,string'
+ERROR: Failed to map property 'symbolOffset' in type 'axisLine' with types 'array,number,vector'
+ERROR: Failed to map property 'color' in type 'axisLabel' with types 'color,function'
+ERROR: Failed to map property 'color' in type 'lineStyle' with types 'array,color'
+WARNING: array type 'color' in 'areaStyle' will be mapped to List<object>
+WARNING: boolean,enum type 'status' in 'axisPointer' with values 'show,hide' is not mapped
+ERROR: Failed to map property 'status' in type 'axisPointer' with types 'boolean,enum'
+ERROR: Failed to map property 'size' in type 'handle' with types 'array,number,vector'
+WARNING: array,enum,number type 'type' in 'crossStyle' with values 'solid,dashed,dotted' is not mapped
+ERROR: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
+ERROR: Failed to map property 'rotate' in type 'label' with types 'prefix'
+ERROR: Failed to map property 'rotate' in type 'label' with types 'prefix'
+ERROR: Failed to map property 'rotate' in type 'label' with types 'prefix'
+WARNING: array type 'data' in 'timeline' will be mapped to List<object>
+ERROR: Failed to map property 'range' in type 'calendar' with types 'array,number,string'
+WARNING: array,enum type 'nameMap' in 'dayLabel' with values 'EN,ZH' is not mapped
+ERROR: Failed to map property 'nameMap' in type 'dayLabel' with types 'array,enum'
+WARNING: array,enum type 'nameMap' in 'monthLabel' with values 'EN,ZH' is not mapped
+ERROR: Failed to map property 'nameMap' in type 'monthLabel' with types 'array,enum'
+ERROR: Failed to map property 'source' in type 'dataset' with types 'array,object'
+WARNING: array type 'dimensions' in 'dataset' will be mapped to List<object>
+---anyOf datasetTransform FilterdatasetTransform
+---anyOf datasetTransform SortdatasetTransform
+---anyOf Series LineSeries
+ERROR: Failed to map property 'symbolSize' in type 'LineSeries' with types 'array,function,number'
+ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
+WARNING: enum,number type 'origin' in 'areaStyle' with values 'auto,start,end' is not mapped
+ERROR: Failed to map property 'origin' in type 'areaStyle' with types 'enum,number'
+WARNING: array type 'dimensions' in 'LineSeries' will be mapped to List<object>
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+WARNING: array type 'coord' in 'markPointData' will be mapped to List<object>
+---anyOf Series BarSeries
+WARNING: array type 'dimensions' in 'BarSeries' will be mapped to List<object>
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+WARNING: array type 'coord' in 'markPointData' will be mapped to List<object>
+---anyOf Series PieSeries
+ERROR: Failed to map property 'emptyCircleStyle' in type 'PieSeries' with types 'boolean,object'
+WARNING: enum type 'alignTo' in 'label' with values 'labelLine,edge' is not mapped
+ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
+WARNING: array type 'dimensions' in 'PieSeries' will be mapped to List<object>
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+---anyOf Series ScatterSeries
+ERROR: Failed to map property 'symbolSize' in type 'ScatterSeries' with types 'array,function,number'
+ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
+WARNING: array type 'dimensions' in 'ScatterSeries' will be mapped to List<object>
+WARNING: array type 'value' in 'ScatterSeriesData' will be mapped to List<object>
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+WARNING: array type 'coord' in 'markPointData' will be mapped to List<object>
+---anyOf Series EffectScatterSeries
+ERROR: Failed to map property 'symbolSize' in type 'EffectScatterSeries' with types 'array,function,number'
+ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
+WARNING: array type 'dimensions' in 'EffectScatterSeries' will be mapped to List<object>
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+WARNING: array type 'coord' in 'markPointData' will be mapped to List<object>
+---anyOf Series RadarSeries
+ERROR: Failed to map property 'symbolSize' in type 'RadarSeries' with types 'array,function,number'
+ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
+---anyOf Series TreeSeries
+WARNING: array type 'center' in 'TreeSeries' will be mapped to List<object>
+ERROR: Failed to map property 'symbolSize' in type 'TreeSeries' with types 'array,function,number'
+---anyOf Series TreemapSeries
+ERROR: Failed to map property 'nodeClick' in type 'TreemapSeries' with types 'boolean,string'
+WARNING: array type 'colorAlpha' in 'TreemapSeries' will be mapped to List<object>
+ERROR: Failed to map property 'borderColorSaturation' in type 'itemStyle' with types 'color,number'
+WARNING: array type 'color' in 'TreemapSeriesLevels' will be mapped to List<object>
+WARNING: array type 'colorAlpha' in 'TreemapSeriesLevels' will be mapped to List<object>
+ERROR: Failed to map property 'borderColorSaturation' in type 'itemStyle' with types 'color,number'
+WARNING: array type 'color' in 'TreemapSeriesData' will be mapped to List<object>
+WARNING: array type 'colorAlpha' in 'TreemapSeriesData' will be mapped to List<object>
+ERROR: Failed to map property 'borderColorSaturation' in type 'itemStyle' with types 'color,number'
+WARNING: array type 'children' in 'TreemapSeriesData' will be mapped to List<object>
+---anyOf Series SunburstSeries
+WARNING: array type 'children' in 'SunburstSeriesData' will be mapped to List<object>
+WARNING: boolean,enum type 'nodeClick' in 'SunburstSeries' with values 'rootToNode,link' is not mapped
+ERROR: Failed to map property 'nodeClick' in type 'SunburstSeries' with types 'boolean,enum'
+WARNING: enum,function type 'sort' in 'SunburstSeries' with values 'desc,asc' is not mapped
+ERROR: Failed to map property 'sort' in type 'SunburstSeries' with types 'enum,function'
+---anyOf Series BoxplotSeries
+WARNING: array type 'dimensions' in 'BoxplotSeries' will be mapped to List<object>
+WARNING: array type 'value' in 'BoxplotSeriesData' will be mapped to List<object>
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+WARNING: array type 'coord' in 'markPointData' will be mapped to List<object>
+---anyOf Series CandlestickSeries
+WARNING: array type 'dimensions' in 'CandlestickSeries' will be mapped to List<object>
+WARNING: array type 'value' in 'CandlestickSeriesData' will be mapped to List<object>
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+WARNING: array type 'coord' in 'markPointData' will be mapped to List<object>
+---anyOf Series HeatmapSeries
+WARNING: array type 'value' in 'HeatmapSeriesData' will be mapped to List<object>
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+---anyOf Series MapSeries
+WARNING: array type 'center' in 'MapSeries' will be mapped to List<object>
+WARNING: array type 'boundingCoords' in 'MapSeries' will be mapped to List<object>
+WARNING: array type 'layoutCenter' in 'MapSeries' will be mapped to List<object>
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+WARNING: array type 'coord' in 'markPointData' will be mapped to List<object>
+---anyOf Series ParallelSeries
+WARNING: array type 'value' in 'ParallelSeriesData' will be mapped to List<object>
+WARNING: array,enum,number type 'type' in 'ParallelSeriesData' with values 'solid,dashed,dotted' is not mapped
+ERROR: Failed to map property 'type' in type 'ParallelSeriesData' with types 'array,enum,number'
+---anyOf Series LinesSeries
+WARNING: array type 'coords' in 'LinesSeriesData' will be mapped to List<object>
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+---anyOf Series GraphSeries
+ERROR: Failed to map property 'edgeSymbolSize' in type 'GraphSeries' with types 'array,number,vector'
+ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
+ERROR: Failed to map property 'autoCurveness' in type 'GraphSeries' with types 'array,boolean,number'
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+WARNING: array type 'coord' in 'markPointData' will be mapped to List<object>
+---anyOf Series SankeySeries
+---anyOf Series FunnelSeries
+WARNING: enum,function type 'sort' in 'FunnelSeries' with values 'none,descending,ascending' is not mapped
+ERROR: Failed to map property 'sort' in type 'FunnelSeries' with types 'enum,function'
+ERROR: Failed to map property 'color' in type 'itemStyle' with types 'color,function'
+WARNING: array type 'dimensions' in 'FunnelSeries' will be mapped to List<object>
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+---anyOf Series GaugeSeries
+WARNING: array type 'color' in 'lineStyle' will be mapped to List<object>
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+---anyOf Series PictorialBarSeries
+ERROR: Failed to map property 'symbolMargin' in type 'PictorialBarSeries' with types 'number,percentvector,string'
+WARNING: array type 'dimensions' in 'PictorialBarSeries' will be mapped to List<object>
+ERROR: Failed to map property 'symbolMargin' in type 'PictorialBarSeriesData' with types 'number,percentvector,string'
+ERROR: Failed to map property 'symbolSize' in type 'markPoint' with types 'array,function,number'
+WARNING: array type 'coord' in 'markPointData' will be mapped to List<object>
+---anyOf Series ThemeRiverSeries
+WARNING: array type 'boundaryGap' in 'ThemeRiverSeries' will be mapped to List<object>
+---anyOf Series CustomSeries
+WARNING: array type 'dimensions' in 'CustomSeries' will be mapped to List<object>
+WARNING: array type 'color' in '' will be mapped to List<object>
+WARNING: array type 'options' in '' will be mapped to List<object>
+done.

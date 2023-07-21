@@ -18,9 +18,28 @@ internal abstract class BasePhase
 
 	internal abstract void Run(JsonElement root);
 
-	protected virtual IPropertyType? ParseObjectType(OptionProperty parent, string propName, JsonElement value, string dataPrefix)
+	protected virtual IPropertyType? ParseObjectType(OptionProperty parent, string propName, JsonElement value, string dataPrefix, string typeGroup)
 	{
 		//Console.WriteLine($"OBJECT {prop.Name}");
+
+		// special handling for 'anyOf' arrays
+		if (value.TryGetProperty("anyOf", out var anyOfElement))
+		{
+			// generate child types
+			foreach (JsonElement anyOfItemElement in anyOfElement.EnumerateArray())
+			{
+				var anyOfType = GetAnyOfType(anyOfItemElement, propName);
+
+				// special case
+				if (anyOfType.Contains("xxx"))
+					continue;
+
+				Console.WriteLine($"---anyOf {propName} {anyOfType}");
+				_ = ParseObjectType(parent, anyOfType, anyOfItemElement, dataPrefix: anyOfType, typeGroup: propName);
+			}
+
+			return new SimpleType("object");
+		}
 
 		// special handling for "data" elements
 		if (propName == "data")
@@ -35,41 +54,22 @@ internal abstract class BasePhase
 		}
 
 		// create a new type --> we parse the type completely, so we can do a (deep) duplicate check
-		var objType = new ObjectType(parent, propName);
+		var objType = new ObjectType(parent, propName, typeGroup);
 
 		if (value.TryGetProperty("properties", out var childProps))
 		{
 			foreach (JsonProperty childProp in childProps.EnumerateObject())
 			{
-				//TODO: skip style_name for now
-				/*
-				if (childProp.Name == "<style_name>")
-				{
-					Console.WriteLine($"TODO --- {childProp.Name} property in {propName}");
-					continue;
-				}
-				*/
-
 				objType.Properties.Add(ParseProperty(objType, childProp));
 			}
 		}
 
 		typeCollection.TrackType(objType);
 
-		/*
-		// try looking up previously defined types with the same name
-		if (typeCollection.TryGetObjectType(propName, out var lookupType))
-		{
-			//TODO: don't simply return the previous type, we need to compare if the values actually match
-			if (CompareType(lookupType, objType))
-				return lookupType;
-		}
-		*/
-
-		bool isSeriesType = objType.Name.EndsWith("Series") || objType.Name.EndsWith("SeriesData");
-		var mergedType = typeCollection.MergeType(objType, isSeriesType);
-
-		return mergedType;
+		// there are a lot of types that are 90% similar
+		// we could generate a unique type for each, but in some cases that would result in 300 very silimar types
+		// so merging seems to be the best option
+		return typeCollection.MergeType(objType);
 	}
 
 	protected virtual OptionProperty ParseProperty(ObjectType parentType, JsonProperty prop)
@@ -155,7 +155,7 @@ internal abstract class BasePhase
 			// MapType can then generate List<MediaItem> instead of List<object>
 
 			var itemName = parentType.Name + Helper.ToClassName(propName);
-			optProp.ItemType = ParseObjectType(optProp, itemName, itemsProp, dataPrefix: itemName);
+			optProp.ItemType = ParseObjectType(optProp, itemName, itemsProp, dataPrefix: itemName, typeGroup: parentType.TypeGroup ?? "Options");
 		}
 
 		// at this point we can decide how to map the type
@@ -205,7 +205,7 @@ internal abstract class BasePhase
 			switch (optProp.Types[0])
 			{
 				case "object":
-					return ParseObjectType(optProp, prop.Name, prop.Value, dataPrefix: prop.Name);
+					return ParseObjectType(optProp, prop.Name, prop.Value, dataPrefix: prop.Name, typeGroup: "Options");
 				case "enum":
 					// don't care that fontFamily/cursor isn't mapped, warn about all other unmapped types
 					if (prop.Name != "fontFamily" && prop.Name != "cursor")
@@ -292,7 +292,7 @@ internal abstract class BasePhase
 		};
 	}
 
-	private bool CompareType(ObjectType lookupType, ObjectType objType)
+	protected bool CompareType(ObjectType lookupType, ObjectType objType)
 	{
 		var propNamesA = GetPropertyList(lookupType);
 		var propNamesB = GetPropertyList(objType);
@@ -309,10 +309,33 @@ internal abstract class BasePhase
 		return true;
 	}
 
-	private string GetPropertyList(ObjectType objectType)
+	protected string GetPropertyList(ObjectType objectType)
 	{
 		var names = objectType.Properties.Select(p => p.Name).ToList();
 		names.Sort();
 		return string.Join(",", names);
+	}
+
+	protected virtual string GetAnyOfType(JsonElement anyOfItemElement, string postfix)
+	{
+		if (!anyOfItemElement.TryGetProperty("properties", out var propertiesItem))
+			throw new ArgumentException($"Could not determine properties element of {postfix} item");
+
+		if (!propertiesItem.TryGetProperty("type", out var typeElem))
+			throw new ArgumentException($"Could not determine type of {postfix} item");
+
+		if (!typeElem.TryGetProperty("default", out var defaultElem))
+			throw new ArgumentException($"Could not determine default type value of {postfix} item");
+
+		// for example: in transform parent --> this must resolve to TransformFilter
+		//"type": {
+		//	"default": "'filter'",
+		//  "description": "",
+		//  "type": [ "string"  ]
+		// }
+
+		var cls = Helper.ToClassName(defaultElem.GetString()!.Trim('\''));
+
+		return cls + postfix;
 	}
 }

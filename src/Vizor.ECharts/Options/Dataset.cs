@@ -109,7 +109,7 @@ public partial class Dataset
 	/// See the tutorial of data transform .
 	/// </summary>
 	[JsonPropertyName("transform")]
-	public List<DatasetTransform>? Transform { get; set; } 
+	public List<object>? Transform { get; set; } 
 
 	/// <summary>
 	/// Specify the input dataset for dataset.transform .

@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class BrushStyle
+public partial class IndicatorStyle
 {
 	/// <summary>
 	/// color.
@@ -16,14 +16,13 @@ public partial class BrushStyle
 	/// Also supports setting as gradient color and pattern fill, see option.color for details
 	/// </summary>
 	[JsonPropertyName("color")]
-	[DefaultValue("rgba(135,175,274,0.15)")]
 	public Color? Color { get; set; } 
 
 	/// <summary>
 	/// border color, whose format is similar to that of color .
 	/// </summary>
 	[JsonPropertyName("borderColor")]
-	[DefaultValue("#000")]
+	[DefaultValue("#fff")]
 	public Color? BorderColor { get; set; } 
 
 	/// <summary>
@@ -34,7 +33,7 @@ public partial class BrushStyle
 	/// No border when it is set to be 0.
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
-	[DefaultValue(0)]
+	[DefaultValue(2)]
 	public double? BorderWidth { get; set; } 
 
 	/// <summary>
@@ -121,7 +120,7 @@ public partial class BrushStyle
 	/// }
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
-	[DefaultValue("")]
+	[DefaultValue("2")]
 	public double? ShadowBlur { get; set; } 
 
 	/// <summary>
@@ -129,21 +128,21 @@ public partial class BrushStyle
 	/// Support same format as color .
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
-	[DefaultValue("")]
+	[DefaultValue("rgba(0,0,0,0.2)")]
 	public Color? ShadowColor { get; set; } 
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
-	[DefaultValue("0")]
+	[DefaultValue("1")]
 	public double? ShadowOffsetX { get; set; } 
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
-	[DefaultValue("0")]
+	[DefaultValue("1")]
 	public double? ShadowOffsetY { get; set; } 
 
 	/// <summary>

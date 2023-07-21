@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class BrushStyle
+public partial class MoveHandleStyle
 {
 	/// <summary>
 	/// color.
@@ -16,7 +16,7 @@ public partial class BrushStyle
 	/// Also supports setting as gradient color and pattern fill, see option.color for details
 	/// </summary>
 	[JsonPropertyName("color")]
-	[DefaultValue("rgba(135,175,274,0.15)")]
+	[DefaultValue("#D2DBEE")]
 	public Color? Color { get; set; } 
 
 	/// <summary>

@@ -25,20 +25,6 @@ internal class GenerateOptionBindingTool
 			return 1;
 		}
 
-		// generate the output directory for regular options
-		var generatedOptionsDir = Path.Combine(options.OutputDirectory, "Options");
-		if (!Directory.Exists(generatedOptionsDir))
-		{
-			Directory.CreateDirectory(generatedOptionsDir);
-		}
-
-		// generate the output directory for series+data
-		var generatedSeriesDir = Path.Combine(options.OutputDirectory, "Series");
-		if (!Directory.Exists(generatedSeriesDir))
-		{
-			Directory.CreateDirectory(generatedSeriesDir);
-		}
-
 		// parse the input JSON
 		var jsonOptions = new JsonDocumentOptions
 		{
@@ -50,8 +36,7 @@ internal class GenerateOptionBindingTool
 		// process the input JSON
 		var typeCollection = new TypeCollection();
 		var phases = new List<BasePhase> {
-			new GenerateObjectTypesPhase(typeCollection),
-			new GenerateSeriesTypesPhase(typeCollection)
+			new GenerateObjectTypesPhase(typeCollection)
 		};
 
 		foreach (var phase in phases)
@@ -65,14 +50,7 @@ internal class GenerateOptionBindingTool
 		// write regular option type classes
 		foreach (var objType in typeCollection.ListObjectTypesToGenerate())
 		{
-			var generator = new ObjectTypeClassGenerator(generatedOptionsDir, objType);
-			generator.Generate();
-		}
-
-		// write series type classes
-		foreach (var objType in typeCollection.ListSeriesTypesToGenerate())
-		{
-			var generator = new ObjectTypeClassGenerator(generatedSeriesDir, objType, isSeriesType: true);
+			var generator = new ObjectTypeClassGenerator(options.OutputDirectory, objType);
 			generator.Generate();
 		}
 

@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class ChartOptionsMedia
+public partial class Media
 {
 	/// <summary>
 	/// If more than one properties used, it means "and".
