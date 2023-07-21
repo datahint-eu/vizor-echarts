@@ -88,3 +88,7 @@ TODO
 
 ## Javascript functions
 TODO
+
+# Filing Bugs
+
+Please provide a runnable sample using the [ECharts Online Editor](https://echarts.apache.org/examples/en/editor.html) and a description of what is wrong with the C# mapping.
