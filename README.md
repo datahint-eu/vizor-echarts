@@ -152,11 +152,9 @@ private async Task UpdateChartAsync()
 
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Gauge/TempGauge.razor).
 
-# Future Development
 
-See [Future Development](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/FUTURE.md).
+# Filing Bugs / Future Development
 
-
-# Filing Bugs
+See [Issues](https://github.com/datahint-eu/vizor-echarts/issues) for a list of open tasks/bugs.
 
 Please provide a runnable sample using the [ECharts Online Editor](https://echarts.apache.org/examples/en/editor.html) and a description of what is wrong with the C# mapping.
