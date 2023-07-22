@@ -20,13 +20,6 @@ public class ExternalDataSource
 		Url = url;
 	}
 
-	//TODO: support additional fetch parameters, see https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch, https://developer.mozilla.org/en-US/docs/Web/API/fetch
-	
-	
-
-	//	redirect: "follow", // manual, *follow, error
-	//	referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-
 	public string Url { get; }
 
 	/// <summary>

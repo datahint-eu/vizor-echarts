@@ -109,6 +109,7 @@ See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vi
 
 
 Additional credentials, headers, policies, ... can also be supplied.
+See [ExternalDataSource class](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/Types/ExternalDataSource.cs) for more details.
 
 
 ## Javascript functions
@@ -155,7 +156,6 @@ See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vi
 
  - Async data loading
  - Auto refresh interval
- - ExternalDataSource options (credentials, headers, ...) and multiproperty support (sankey nodes/links, ...)
  - ChartData option classes
 
 
