@@ -121,9 +121,11 @@ public partial class ParallelSeries
 	/// </summary>
 	[JsonPropertyName("progressiveChunkMode")]
 	[DefaultValue("sequential")]
-	public string? ProgressiveChunkMode { get; set; } 
+	public string? ProgressiveChunkMode { get; set; }
 
 	/// <summary>
+	/// Can be list of ParallelSeriesData or int[][], double[][], object[][], ...
+	/// 
 	/// For example, series-parallel.data is the following data:  [
 	///     [1,  55,  9,   56,  0.46,  18,  6,  'good'],
 	///     [2,  25,  11,  21,  0.65,  34,  9,  'excellent'],
@@ -139,7 +141,7 @@ public partial class ParallelSeries
 	/// For example, the meanings of columns above are: "data", "AQI", "PM2.5", "PM10", "carbon monoxide level", "nitrogen dioxide level", and "sulfur dioxide level".
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<ParallelSeriesData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// zlevel value of all graphical elements in parallel.

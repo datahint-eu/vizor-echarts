@@ -430,10 +430,13 @@ public partial class MapSeries
 	/// Configuration of label guide line.
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
-	/// Data array of map series, which can be a single data value, like:  [12, 34, 56, 10, 23]  
+	/// Data array of map series.
+	/// Can be list of MapSeriesData, int[], double[], int[][], double[][], ...
+	/// 
+	/// Which can be a single data value, like:  [12, 34, 56, 10, 23]  
 	/// Or, if need extra dimensions for components like visualMap to map to graphic attributes like color, it can also be in the form of array.
 	/// For example:  [[12, 14], [34, 50], [56, 30], [10, 15], [23, 10]]  
 	/// In this case, we can assgin the second value in each array item to visualMap component.
@@ -461,7 +464,7 @@ public partial class MapSeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<MapSeriesData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// Mark point in a chart.

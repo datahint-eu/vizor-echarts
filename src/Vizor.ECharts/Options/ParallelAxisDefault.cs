@@ -248,10 +248,11 @@ public partial class ParallelAxisDefault
 	/// Settings related to axis label.
 	/// </summary>
 	[JsonPropertyName("axisLabel")]
-	public AxisLabel? AxisLabel { get; set; } 
+	public AxisLabel? AxisLabel { get; set; }
 
 	/// <summary>
 	/// Category data, available in type : 'category' axis.
+	/// Can be list of ParallelAxisDefaultData, string[], ...
 	///  
 	/// If type is not specified, but axis.data is specified, the type is auto set as 'category' .
 	///  
@@ -274,7 +275,7 @@ public partial class ParallelAxisDefault
 	/// }, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<ParallelAxisDefaultData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// Whether to enable animation.

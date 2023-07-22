@@ -363,10 +363,11 @@ public partial class SingleAxis
 	/// Split area of axis in grid area, not shown by default.
 	/// </summary>
 	[JsonPropertyName("splitArea")]
-	public SplitArea? SplitArea { get; set; } 
+	public SplitArea? SplitArea { get; set; }
 
 	/// <summary>
 	/// Category data, available in type : 'category' axis.
+	/// Can be list of SingleAxisData, string[], ...
 	///  
 	/// If type is not specified, but axis.data is specified, the type is auto set as 'category' .
 	///  
@@ -389,7 +390,7 @@ public partial class SingleAxis
 	/// }, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<SingleAxisData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// axisPointer settings on the axis.

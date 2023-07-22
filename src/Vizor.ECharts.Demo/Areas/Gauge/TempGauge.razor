@@ -142,7 +142,7 @@
 	protected override void OnInitialized()
 	{
 		// Start the timer when the component is initialized.
-		timer = new Timer(async _ => await UpdateChartAsync(), null, 0, 1000);
+		timer = new Timer(async _ => await UpdateChartAsync(), null, 2000, 2000);
 	}
 
 	private async Task UpdateChartAsync()
@@ -151,8 +151,12 @@
 			return;
 
 		var randomVal = Math.Round(rnd.NextDouble() * 60, 2);
-		(options.Series![0] as GaugeSeries)!.Data![0].Value = randomVal;
-		(options.Series![1] as GaugeSeries)!.Data![0].Value = randomVal;
+
+		var firstSeries = options.Series![0] as GaugeSeries;
+		var secondSeries = options.Series![1] as GaugeSeries;
+
+		(firstSeries!.Data as List<GaugeSeriesData>)![0].Value = randomVal;
+		(secondSeries!.Data as List<GaugeSeriesData>)![0].Value = randomVal;
 
 		await chart.UpdateAsync();
 	}

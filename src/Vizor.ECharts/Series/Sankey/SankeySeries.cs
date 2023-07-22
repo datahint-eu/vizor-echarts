@@ -303,10 +303,12 @@ public partial class SankeySeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// The nodes list of the sankey diagram.
+	/// List of SankeySeriesData.
+	/// 
 	///  data: [{
 	///     name: 'node1',
 	///     // This attribute decides the layer of the current node.
@@ -318,7 +320,7 @@ public partial class SankeySeries
 	/// Notice: The name of the node cannot be repeated.
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<SankeySeriesData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// Equals to data

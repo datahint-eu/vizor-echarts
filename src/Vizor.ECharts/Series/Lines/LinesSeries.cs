@@ -257,13 +257,14 @@ public partial class LinesSeries
 	/// If you are using the dataset component to represent the data, it is recommended to use encode.itemGroupID to specify which dimension is encoded as the groupID.
 	/// </summary>
 	[JsonPropertyName("dataGroupId")]
-	public string? DataGroupId { get; set; } 
+	public string? DataGroupId { get; set; }
 
 	/// <summary>
 	/// The data set of lines.
+	/// Can be list of LinesSeriesData
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<LinesSeriesData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// Mark point in a chart.

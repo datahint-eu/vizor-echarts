@@ -282,10 +282,11 @@ public partial class RadiusAxis
 	/// Split area of axis in grid area, not shown by default.
 	/// </summary>
 	[JsonPropertyName("splitArea")]
-	public SplitArea? SplitArea { get; set; } 
+	public SplitArea? SplitArea { get; set; }
 
 	/// <summary>
 	/// Category data, available in type : 'category' axis.
+	/// Can be list of RadiusAxisData, string[], ...
 	///  
 	/// If type is not specified, but axis.data is specified, the type is auto set as 'category' .
 	///  
@@ -308,7 +309,7 @@ public partial class RadiusAxis
 	/// }, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<RadiusAxisData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// axisPointer settings on the axis.

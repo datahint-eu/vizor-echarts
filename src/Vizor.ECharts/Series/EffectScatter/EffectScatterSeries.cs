@@ -491,12 +491,14 @@ public partial class EffectScatterSeries
 	/// };
 	/// </summary>
 	[JsonPropertyName("encode")]
-	public Encode? Encode { get; set; } 
+	public Encode? Encode { get; set; }
 
 	/// <summary>
 	/// Data array of series, which can be in the following forms:  
 	/// Notice, if no data specified in series, and there is dataset in option, series will use the first dataset as its datasource.
 	/// If data has been specified, dataset will not used.
+	/// 
+	/// Can be list of EffectScatterSeriesData, double[][], int[][], ...
 	///  
 	/// series.datasetIndex can be used to specify other dataset .
 	///  
@@ -596,7 +598,7 @@ public partial class EffectScatterSeries
 	/// For example, line chart can break when encounter an empty value, and scatter chart do not display graphic elements for empty values.
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<EffectScatterSeriesData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// Mark point in a chart.

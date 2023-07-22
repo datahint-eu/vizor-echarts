@@ -518,10 +518,12 @@ public partial class TreemapSeries
 	/// Explanation about borderWidth, gapWidth, borderColor
 	/// </summary>
 	[JsonPropertyName("levels")]
-	public List<TreemapSeriesLevels>? Levels { get; set; } 
+	public List<TreemapSeriesLevels>? Levels { get; set; }
 
 	/// <summary>
 	/// the the data format of series-treemap.data is a forest.
+	/// List of TreemapSeriesData.
+	/// 
 	/// For example:  [ // Tips, the top level is an array.
 	///     {
 	///         value: 1212,
@@ -568,7 +570,7 @@ public partial class TreemapSeries
 	/// ]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<TreemapSeriesData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// Whether to ignore mouse events.

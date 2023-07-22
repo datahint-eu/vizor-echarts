@@ -4,6 +4,7 @@
 
 using System.ComponentModel;
 using System.Text.Json.Serialization;
+using Vizor.ECharts.Options.DataZoom;
 
 namespace Vizor.ECharts;
 
@@ -271,7 +272,7 @@ public partial class ChartOptions
 	/// If you want to change the process sequence, you can just change the sequence of the definitions apearing in option .
 	/// </summary>
 	[JsonPropertyName("dataZoom")]
-	public List<object>? DataZoom { get; set; } 
+	public List<IDataZoom>? DataZoom { get; set; } 
 
 	/// <summary>
 	/// visualMap is a type of component for visual encoding, which maps the data to visual channels, including:   symbol : Type of symbol.

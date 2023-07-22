@@ -315,10 +315,12 @@ public partial class BoxplotSeries
 	/// If you are using the dataset component to represent the data, it is recommended to use encode.itemGroupID to specify which dimension is encoded as the groupID.
 	/// </summary>
 	[JsonPropertyName("dataGroupId")]
-	public string? DataGroupId { get; set; } 
+	public string? DataGroupId { get; set; }
 
 	/// <summary>
 	/// Data should be the two-dimensional array shown as follow.
+	/// Can be list of BoxplotSeriesData, int[][], double[][], ...
+	/// 
 	///  [
 	///     [655, 850, 940, 980, 1175],
 	///     [672.5, 800, 845, 885, 1012.5],
@@ -338,7 +340,7 @@ public partial class BoxplotSeries
 	/// For example, this example uses echarts.dataTool.prepareBoxplotData to proceed simple data statistics.
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<BoxplotSeriesData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// Mark point in a chart.

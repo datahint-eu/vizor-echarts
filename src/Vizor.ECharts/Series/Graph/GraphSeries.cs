@@ -398,10 +398,12 @@ public partial class GraphSeries
 	[JsonPropertyName("autoCurveness")]
 	[DefaultValue(false)]
 	//TODO: Type Warning: Failed to map property 'autoCurveness' in type 'GraphSeries' with types 'array,boolean,number'
-	public object? AutoCurveness { get; set; } 
+	public object? AutoCurveness { get; set; }
 
 	/// <summary>
 	/// Nodes list of graph.
+	/// Can be a list of GraphSeriesData.
+	/// 
 	///  data: [{
 	///     name: '1',
 	///     x: 10,
@@ -419,7 +421,7 @@ public partial class GraphSeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<GraphSeriesData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// Alias of data

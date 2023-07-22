@@ -4,10 +4,11 @@
 
 using System.ComponentModel;
 using System.Text.Json.Serialization;
+using Vizor.ECharts.Options.VisualMap;
 
 namespace Vizor.ECharts;
 
-public partial class ContinuousVisualMap
+public partial class ContinuousVisualMap : IVisualMap
 {
 	/// <summary>
 	/// Used to determine that it is a continuous visualMap component.

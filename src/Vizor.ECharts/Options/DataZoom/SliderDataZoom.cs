@@ -4,10 +4,11 @@
 
 using System.ComponentModel;
 using System.Text.Json.Serialization;
+using Vizor.ECharts.Options.DataZoom;
 
 namespace Vizor.ECharts;
 
-public partial class SliderDataZoom
+public partial class SliderDataZoom : IDataZoom
 {
 	/// <summary>
 	/// 

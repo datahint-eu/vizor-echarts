@@ -237,9 +237,11 @@ public partial class ThemeRiverSeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
+	/// Can be list of ThemeRiverSeriesData, object[][], ...
+	/// 
 	/// data: [
 	///     ["2015/11/09",10,"DQ"],
 	///     ["2015/11/10",10,"DQ"],
@@ -268,7 +270,7 @@ public partial class ThemeRiverSeries
 	/// From what is mentioned, we could set default value on any position of a complete time period.
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<ThemeRiverSeriesData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// tooltip settings in this series.

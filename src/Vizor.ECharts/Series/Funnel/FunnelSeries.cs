@@ -495,10 +495,13 @@ public partial class FunnelSeries
 	/// If you are using the dataset component to represent the data, it is recommended to use encode.itemGroupID to specify which dimension is encoded as the groupID.
 	/// </summary>
 	[JsonPropertyName("dataGroupId")]
-	public string? DataGroupId { get; set; } 
+	public string? DataGroupId { get; set; }
 
 	/// <summary>
-	/// Data array of  series, which can be a single data value, like:  [12, 34, 56, 10, 23]  
+	/// Data array of  series. 
+	/// Can be list of FunnelSeriesData, int[], double[], int[][], double[][], ...
+	/// 
+	/// Which can be a single data value, like:  [12, 34, 56, 10, 23]  
 	/// Or, if need extra dimensions for components like visualMap to map to graphic attributes like color, it can also be in the form of array.
 	/// For example:  [[12, 14], [34, 50], [56, 30], [10, 15], [23, 10]]  
 	/// In this case, we can assgin the second value in each array item to visualMap component.
@@ -526,7 +529,7 @@ public partial class FunnelSeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<FunnelSeriesData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// Mark point in a chart.

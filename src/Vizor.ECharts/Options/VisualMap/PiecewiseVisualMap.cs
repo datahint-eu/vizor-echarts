@@ -4,10 +4,11 @@
 
 using System.ComponentModel;
 using System.Text.Json.Serialization;
+using Vizor.ECharts.Options.VisualMap;
 
 namespace Vizor.ECharts;
 
-public partial class PiecewiseVisualMap
+public partial class PiecewiseVisualMap : IVisualMap
 {
 	/// <summary>
 	/// Used to determine it is a piecewise visualMap component.

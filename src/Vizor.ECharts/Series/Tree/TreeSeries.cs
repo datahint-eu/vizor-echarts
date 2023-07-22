@@ -409,6 +409,7 @@ public partial class TreeSeries
 	/// };
 	/// </summary>
 	[JsonPropertyName("data")]
+	//TODO: rename DataData to TreeData ??
 	public DataData? Data { get; set; } 
 
 	/// <summary>
