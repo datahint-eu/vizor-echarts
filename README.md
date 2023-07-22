@@ -7,6 +7,9 @@ Blazor wrapper for [Apache ECharts](https://echarts.apache.org/en/index.html).
  - `Apache-2.0` Licensed (same as echarts)
  - Lots of examples in the `Vizor.ECharts.Demo` project
  
+The project currently is not yet production ready, it will be around September/October.
+Small API changes will occur frequently until version >= 1.0.0 .
+ 
 ## How to include
 
 1. Add a package reference to `Vizor.ECharts`
@@ -105,7 +108,7 @@ Data = new ExternalDataSource("https://example.com/api/data/sunburst/simple")
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Sunburst/SunburstSimple.razor).
 
 
-Additional credentials, headers, policies, ... can also be supplied. *feature in development*
+Additional credentials, headers, policies, ... can also be supplied.
 
 
 ## Javascript functions
@@ -120,6 +123,15 @@ Formatter = new JavascriptFunction("function (param) { return param.name + ' (' 
 ```
 
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Pie/PieHalfDoughnut.razor).
+
+
+# Features in development
+
+ - Async data loading
+ - Auto refresh interval
+ - ExternalDataSource options (credentials, headers, ...) and multiproperty support (sankey nodes/links, ...)
+ - ChartData option classes
+
 
 # Filing Bugs
 
