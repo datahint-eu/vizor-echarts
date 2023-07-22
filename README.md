@@ -152,11 +152,9 @@ private async Task UpdateChartAsync()
 
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Gauge/TempGauge.razor).
 
-# Features in development
+# Future Development
 
- - Async data loading
- - Auto refresh interval
- - ChartData option classes
+See [Future Development](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/FUTURE.md).
 
 
 # Filing Bugs

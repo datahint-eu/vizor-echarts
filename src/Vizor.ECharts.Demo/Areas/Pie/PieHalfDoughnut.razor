@@ -68,11 +68,4 @@
 				}
 			}
 		};
-
-	//TODO: ideally, the formatter should also accept
-	[JSInvokable("FormatLabel")]
-	private string FormatLabel(dynamic item)
-	{
-		return $"{item.Name} ({item.percent * 2}%)";
-	}
 }
