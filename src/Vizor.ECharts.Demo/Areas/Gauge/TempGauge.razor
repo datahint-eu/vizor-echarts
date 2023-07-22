@@ -1,0 +1,164 @@
+﻿@page "/example/gauge/temp"
+
+@using Vizor.ECharts;
+
+@implements IDisposable
+
+<PageHeader Title="Temperature Gauge" ChartType="@typeof(TempGauge)" />
+
+<Vizor.ECharts.EChart @ref="chart" Options="@options" Width="800px" Height="800px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=gauge-temperature
+
+	private Timer? timer;
+	private Vizor.ECharts.EChart? chart;
+	private readonly Random rnd = new();
+
+	private ChartOptions options = new()
+		{
+			Series = new()
+			{
+				new GaugeSeries()
+				{
+					Center = new("50%", "60%"),
+					StartAngle = 200,
+					EndAngle = -20,
+					Min = 0,
+					Max = 60,
+					SplitNumber = 12,
+					ItemStyle = new() {
+						Color = "#FFAB91"
+					},
+					Progress= new() {
+						Show = true,
+						Width = 30
+					},
+					Pointer= new() {
+						Show = false
+					},
+					AxisLine= new() {
+						LineStyle= new() {
+							Width = 30
+						}
+					},
+					AxisTick= new() {
+						Distance = -45,
+						SplitNumber = 5,
+						LineStyle= new() {
+							Width = 2,
+							Color = "#999"
+						}
+					},
+					SplitLine= new() {
+						Distance = -52,
+						Length = 14,
+						LineStyle= new() {
+							Width = 3,
+							Color = "#999"
+						}
+					},
+					AxisLabel= new() {
+						Distance = -20,
+						Color = "#999",
+						FontSize = 20
+					},
+					Anchor= new() {
+						Show = false
+					},
+					Title= new() {
+						Show = false
+					},
+					Detail= new() {
+						ValueAnimation = true,
+						Width = "60%",
+						LineHeight = 40,
+						BorderRadius = 8,
+						OffsetCenter = new(0, "-15%"),
+						FontSize = 60,
+						FontWeight = FontWeight.Bolder,
+						Formatter = "{value} °C",
+						Color = "inherit"
+					},
+					Data = new List<GaugeSeriesData>()
+					{
+						new GaugeSeriesData()
+						{
+							Value = 20
+						}
+					}
+				},
+				new GaugeSeries()
+				{
+					Center = new("50%", "60%"),
+					StartAngle = 200,
+					EndAngle = -20,
+					Min = 0,
+					Max = 60,
+					SplitNumber = 12,
+					ItemStyle = new() {
+						Color = "#FD7347"
+					},
+					Progress= new() {
+						Show = true,
+						Width = 8
+					},
+					Pointer= new() {
+						Show = false
+					},
+					AxisLine= new() {
+						Show = false
+					},
+					AxisTick= new() {
+						Show = false
+					},
+					SplitLine= new() {
+						Show = false
+					},
+					AxisLabel= new() {
+						Show = false
+					},
+					Anchor= new() {
+						Show = false
+					},
+					Title= new() {
+						Show = false
+					},
+					Detail= new() {
+						Show = false
+					},
+					Data = new List<GaugeSeriesData>()
+					{
+						new GaugeSeriesData()
+						{
+							Value = 20
+						}
+					}
+				}
+			}
+		};
+
+	protected override void OnInitialized()
+	{
+		// Start the timer when the component is initialized.
+		timer = new Timer(async _ => await UpdateTimeAsync(), null, 0, 1000);
+	}
+
+	private async Task UpdateTimeAsync()
+	{
+		if (chart == null)
+			return;
+
+		var randomVal = Math.Round(rnd.NextDouble() * 60, 2);
+		(options.Series![0] as GaugeSeries)!.Data![0].Value = randomVal;
+		(options.Series![1] as GaugeSeries)!.Data![0].Value = randomVal;
+
+		await chart.UpdateAsync();
+	}
+
+	public void Dispose()
+	{
+		timer?.Dispose();
+	}
+}

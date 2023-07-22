@@ -7,7 +7,7 @@ namespace Vizor.ECharts;
 /// Center position of Pie chart, the first of which is the horizontal position, and the second is the vertical position.
 /// Percentage is supported.When set in percentage, the item is relative to the container width, and the second item to the height.
 /// </summary>
-[JsonConverter(typeof(AxisLineSymbol))]
+[JsonConverter(typeof(AxisLineSymbolConverter))]
 public class AxisLineSymbol
 {
 	public AxisLineSymbol(Icon both)

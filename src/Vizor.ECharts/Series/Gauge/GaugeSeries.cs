@@ -75,7 +75,7 @@ public partial class GaugeSeries
 	/// </summary>
 	[JsonPropertyName("center")]
 	[DefaultValue("[50%, 50%]")]
-	public double[]? Center { get; set; } 
+	public CircleCenter? Center { get; set; } 
 
 	/// <summary>
 	/// The radius of gauge chart.

@@ -11,6 +11,15 @@
 
 @code {
 
+	private static readonly JsonSerializerOptions jsonOpts = new JsonSerializerOptions()
+		{
+			PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+			DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+#if DEBUG
+					WriteIndented = true
+#endif
+		};
+
 	[Parameter]
 	public string Id { get; set; } = "chart-" + Guid.NewGuid().ToString();
 
@@ -54,15 +63,6 @@
 		if (string.IsNullOrWhiteSpace(Id))
 			throw new ArgumentException("Id property must be set");
 
-		var jsonOpts = new JsonSerializerOptions()
-			{
-				PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-				DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-#if DEBUG
-					WriteIndented = true
-#endif
-			};
-
 		var chartOpts = JsonSerializer.Serialize(Options, jsonOpts);
 
 		//TODO: also pass DotNetObjectReference.Create(this) ?
@@ -76,5 +76,11 @@
 			await jsRuntime.InvokeVoidAsync("vizorECharts.disposeChart", Id);
 		}
 		catch { }
+	}
+
+	public async Task UpdateAsync()
+	{
+		var chartOpts = JsonSerializer.Serialize(Options, jsonOpts);
+		await jsRuntime.InvokeVoidAsync("vizorECharts.updateChart", Id, chartOpts, NoMapping);
 	}
 }

@@ -176,14 +176,14 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("100")]
-	public double? Width { get; set; } 
+	public NumberOrString? Width { get; set; } 
 
 	/// <summary>
 	/// The height of detail.
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("40")]
-	public double? Height { get; set; } 
+	public NumberOrString? Height { get; set; } 
 
 	/// <summary>
 	/// Stroke color of the text.
@@ -324,7 +324,7 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("offsetCenter")]
 	[DefaultValue("0,-40%")]
-	public double[]? OffsetCenter { get; set; } 
+	public CircleCenter? OffsetCenter { get; set; } 
 
 	/// <summary>
 	/// Formatter is used to format detail, which supports string template and callback function.

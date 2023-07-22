@@ -19,6 +19,11 @@ public class ColorOrFunction
 	public Color? Color { get; }
 	public JavascriptFunction? Function { get; }
 
+	public static implicit operator ColorOrFunction(string color)
+	{
+		return new ColorOrFunction(new Color(color));
+	}
+
 	public static implicit operator ColorOrFunction(Color color)
 	{
 		return new ColorOrFunction(color);

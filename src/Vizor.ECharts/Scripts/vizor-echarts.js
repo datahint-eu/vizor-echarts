@@ -26,12 +26,6 @@
 
 						// parse the response as JSON
 						const data = await response.json();
-						console.log("========= FETCHED");
-						console.log(data);
-						console.log("========= OBJECT");
-						console.log(obj);
-						console.log("========= KEY");
-						console.log(key);
 
 						// replace the object with the fetched data
 						obj[key] = data;
@@ -59,16 +53,11 @@
 
 		// parse the options
 		var parsedOptions = JSON.parse(options);
-		console.log("========= INPUT");
-		console.log(parsedOptions);
 
 		// iterate through the options and map all JS functions / external data sources
 		if (!noMapping) {
 			vizorECharts.processObject(parsedOptions)
 				.then(() => {
-					console.log("========= PROCESSED");
-					console.log(parsedOptions); // The updated object with fetched data and evaluated function
-
 					// update the chart data
 					chart.setOption(parsedOptions);
 
@@ -87,17 +76,30 @@
 		}
 	},
 
-	updateChart: function (id, options) {
-		var chart = GetChart(id);
+	updateChart: function (id, options, noMapping) {
+		var chart = vizorECharts.getChart(id);
 		if (chart == null) {
 			console.error("Failed to retrieve chart id " + id);
 			return;
 		}
 
-		//TODO: support for updating from external sources
-
+		// parse the options
 		var parsedOptions = JSON.parse(options);
-		chart.setOption(parsedOptions);
+
+		// iterate through the options and map all JS functions / external data sources
+		if (!noMapping) {
+			vizorECharts.processObject(parsedOptions)
+				.then(() => {
+					// update the chart data
+					chart.setOption(parsedOptions);
+				})
+				.catch(error => {
+					console.error('Error: ', error.message);
+				});
+		} else {
+			// set the chart options
+			chart.setOption(parsedOptions);
+		}
 	},
 
 	disposeChart: function (id) {
