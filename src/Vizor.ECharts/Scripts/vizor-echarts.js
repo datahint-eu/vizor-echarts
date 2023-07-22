@@ -53,6 +53,12 @@
 
 						// replace the object with the evaluated function
 						obj[key] = evaluatedFunction;
+					} else if (value.type === '__vi-js-function-call') {
+						// evaluate the function using eval
+						const evaluatedFunction = eval('(' + value.function + ')()');
+
+						// replace the object with the evaluated function
+						obj[key] = evaluatedFunction;
 					} else {
 						// Continue recursively if the object has other properties
 						await vizorECharts.processObject(value);

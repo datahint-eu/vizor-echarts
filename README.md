@@ -119,7 +119,7 @@ See [ExternalDataSource class](https://github.com/datahint-eu/vizor-echarts/blob
 ## Javascript functions
 
 ECharts sometimes allows you to assign custom functions instead of values.
-This can be achieved with the JavascriptFunction class.
+This can be achieved with the `JavascriptFunction` class.
 The class accepts a raw Javascript function that is evaluated in the browser.
 
 For example:
@@ -128,6 +128,23 @@ Formatter = new JavascriptFunction("function (param) { return param.name + ' (' 
 ```
 
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Pie/PieHalfDoughnut.razor).
+
+## Javascript function calls
+
+Sometimes you want to calculate data dynamically in Javascript. This can be done with the `JavascriptFunctionCall` class.
+
+For example:
+```
+private static JavascriptFunctionCall dataFunc = new(@"
+function getData() {
+    const data = [[0, 0, 5], ..., [6, 23, 6]];
+    return data.map(function (item) {
+        return [item[1], item[0], item[2] || '-'];
+    });
+}
+");
+```
+
 
 ## Updating charts
 
