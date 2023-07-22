@@ -376,9 +376,10 @@ public partial class CandlestickSeries
 	/// If you are using the dataset component to represent the data, it is recommended to use encode.itemGroupID to specify which dimension is encoded as the groupID.
 	/// </summary>
 	[JsonPropertyName("dataGroupId")]
-	public string? DataGroupId { get; set; } 
+	public string? DataGroupId { get; set; }
 
 	/// <summary>
+	/// List of CandlestickSeriesData or int[][] or  double[][] ...
 	/// Data should be the two-dimensional array shown as follows.
 	///  [
 	///     [2320.26, 2320.26, 2287.3,  2362.94],
@@ -393,7 +394,7 @@ public partial class CandlestickSeries
 	/// They are:  [open, close, lowest, highest]  (namely: [opening value, closing value, lowest value, highest value])
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<CandlestickSeriesData>? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// Mark point in a chart.
