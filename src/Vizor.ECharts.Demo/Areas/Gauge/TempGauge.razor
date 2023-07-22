@@ -142,10 +142,10 @@
 	protected override void OnInitialized()
 	{
 		// Start the timer when the component is initialized.
-		timer = new Timer(async _ => await UpdateTimeAsync(), null, 0, 1000);
+		timer = new Timer(async _ => await UpdateChartAsync(), null, 0, 1000);
 	}
 
-	private async Task UpdateTimeAsync()
+	private async Task UpdateChartAsync()
 	{
 		if (chart == null)
 			return;

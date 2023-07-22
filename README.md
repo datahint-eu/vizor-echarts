@@ -124,6 +124,32 @@ Formatter = new JavascriptFunction("function (param) { return param.name + ' (' 
 
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Pie/PieHalfDoughnut.razor).
 
+## Updating charts
+
+Chart options and/or data can be updated. For example: to show a never ending line chart, a temperature gauge, ... .
+
+First store a reference to your chart.
+```
+<Vizor.ECharts.EChart @ref="chart" Options="@options" Width="800px" Height="800px" />
+...
+private Vizor.ECharts.EChart? chart;
+```
+
+Next modify the chart options.
+Modified options have full support for Javascript functions and external data sources.
+```
+private async Task UpdateChartAsync()
+{
+	if (chart == null)
+		return;
+
+	// modify chart options
+	
+	await chart.UpdateAsync();
+}
+```
+
+See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Gauge/TempGauge.razor).
 
 # Features in development
 
