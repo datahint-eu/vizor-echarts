@@ -131,20 +131,21 @@ See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vi
 
 ## Javascript function calls
 
-Sometimes you want to calculate data dynamically in Javascript. This can be done with the `JavascriptFunctionCall` class.
+Sometimes you want to calculate data dynamically in Javascript.
+This can be done with the `JavascriptFunctionCall` class.
+You can assign this to any chart option property accepting an `object`.
 
 For example:
 ```
-private static JavascriptFunctionCall dataFunc = new(@"
-function getData() {
-    const data = [[0, 0, 5], ..., [6, 23, 6]];
-    return data.map(function (item) {
-        return [item[1], item[0], item[2] || '-'];
-    });
-}
-");
+Data = new JavascriptFunctionCall(@"
+	function getData() {
+		const data = [[0, 0, 5], ..., [6, 23, 6]];
+		return data.map(function (item) {
+			return [item[1], item[0], item[2] || '-'];
+		});
+	}
+")
 ```
-
 
 ## Updating charts
 
