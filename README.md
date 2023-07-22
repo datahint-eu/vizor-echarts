@@ -107,6 +107,10 @@ Data = new ExternalDataSource("https://example.com/api/data/sunburst_simple.json
 ```
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Sunburst/SunburstSimple.razor).
 
+It is also possible to provide a *simple* path expression to retrieve only a part of the external data:
+```
+Data = new ExternalDataSource("https://example.com/api/data/sankey_simple.json") { Path = "nodes" }
+```
 
 Additional credentials, headers, policies, ... can also be supplied.
 See [ExternalDataSource class](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/Types/ExternalDataSource.cs) for more details.

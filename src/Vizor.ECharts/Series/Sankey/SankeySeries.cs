@@ -320,16 +320,19 @@ public partial class SankeySeries
 	/// Notice: The name of the node cannot be repeated.
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
-	/// Equals to data
+	/// Equals to data.
+	/// Can be list of SankeySeriesData
 	/// </summary>
 	[JsonPropertyName("nodes")]
-	public List<SankeySeriesData>? Nodes { get; set; } 
+	public object? Nodes { get; set; }
 
 	/// <summary>
 	/// The links between nodes.
+	/// Can be list of SankeySeriesLinks
+	/// 
 	/// Notes: The Sankey diagram theoretically only supports Directed Acyclic Graph(DAG), so please make sure that there is no cycle in the links.
 	/// For instance:  links: [{
 	///     source: 'n1',
@@ -340,13 +343,13 @@ public partial class SankeySeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("links")]
-	public List<SankeySeriesLinks>? Links { get; set; } 
+	public object? Links { get; set; } 
 
 	/// <summary>
 	/// Equals to links
 	/// </summary>
 	[JsonPropertyName("edges")]
-	public List<SankeySeriesLinks>? Edges { get; set; } 
+	public object? Edges { get; set; } 
 
 	/// <summary>
 	/// Whether to ignore mouse events.

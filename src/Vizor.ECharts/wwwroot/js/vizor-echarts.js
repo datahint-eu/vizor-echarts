@@ -57,6 +57,20 @@ window.vizorECharts = {
 		return null;
 	},
 
+	evaluatePath: function (data, pathExpression) {
+		const pathSegments = pathExpression.split('.');
+		let currentObj = data;
+
+		for (const segment of pathSegments) {
+			if (!currentObj.hasOwnProperty(segment)) {
+				return undefined; // Property not found, return undefined
+			}
+			currentObj = currentObj[segment];
+		}
+
+		return currentObj;
+	},
+
 	processObject: async function (obj) {
 		for (const key in obj) {
 			if (obj.hasOwnProperty(key)) {
@@ -65,7 +79,7 @@ window.vizorECharts = {
 				if (typeof value === 'object') {
 					if (value.type === '__vi-ext-data') {
 						// Fetch data asynchronously
-						const response = await fetch(value.url);
+						const response = await fetch(value.url, value.options);
 						if (!response.ok) {
 							throw new Error('Failed to fetch external chart data: url=' + value.url);
 						}
@@ -74,7 +88,11 @@ window.vizorECharts = {
 						const data = await response.json();
 
 						// replace the object with the fetched data
-						obj[key] = data;
+						if (value.path != null) {
+							obj[key] = vizorECharts.evaluatePath(data, value.path);
+						} else {
+							obj[key] = data;
+						}
 					} else if (value.type === '__vi-js-function') {
 						// evaluate the function using eval
 						const evaluatedFunction = eval('(' + value.function + ')');

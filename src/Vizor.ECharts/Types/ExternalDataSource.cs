@@ -15,7 +15,16 @@ public class ExternalDataSource
 		Url = url;
 	}
 
+	/// <summary>
+	/// URL of the datasource
+	/// </summary>
 	public string Url { get; }
+
+	/// <summary>
+	/// Optional object path in the returned JSON.
+	/// Currently only simple expressions are supported, not full JsonPath expressions.
+	/// </summary>
+	public string? Path { get; set; }
 
 	/// <summary>
 	/// The request method, e.g., "GET", "POST". The default is "GET". 
@@ -106,6 +115,9 @@ public class ExternalDataSourceConverter : JsonConverter<ExternalDataSource>
 
 		writer.WriteString("type", "__vi-ext-data");
 		writer.WriteString("url", value.Url);
+
+		if (value.Path != null)
+			writer.WriteString("path", value.Path);
 
 		{
 			writer.WritePropertyName("options");
