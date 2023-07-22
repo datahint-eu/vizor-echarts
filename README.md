@@ -103,7 +103,7 @@ TODO
 Any `Data` property of type `object?` accepts a `ExternalDataSource` allowing you to specify the external data source.
 
 ```
-Data = new ExternalDataSource("https://example.com/api/data/sunburst/simple")
+Data = new ExternalDataSource("https://example.com/api/data/sunburst_simple.json")
 ```
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Sunburst/SunburstSimple.razor).
 
