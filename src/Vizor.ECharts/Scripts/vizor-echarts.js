@@ -44,7 +44,7 @@
 		}
 	},
 
-	initChart: function (id, theme, width, height, options, noMapping) {
+	initChart: function (id, theme, width, height, options, mapSpecialObjects) {
 		var chart = echarts.init(document.getElementById(id), theme, { renderer: 'svg', width: width, height: height });
 		vizorECharts.charts.push({ id: id, chart: chart });
 
@@ -55,7 +55,7 @@
 		var parsedOptions = JSON.parse(options);
 
 		// iterate through the options and map all JS functions / external data sources
-		if (!noMapping) {
+		if (mapSpecialObjects) {
 			vizorECharts.processObject(parsedOptions)
 				.then(() => {
 					// update the chart data
@@ -76,7 +76,7 @@
 		}
 	},
 
-	updateChart: function (id, options, noMapping) {
+	updateChart: function (id, options, mapSpecialObjects) {
 		var chart = vizorECharts.getChart(id);
 		if (chart == null) {
 			console.error("Failed to retrieve chart id " + id);
@@ -87,7 +87,7 @@
 		var parsedOptions = JSON.parse(options);
 
 		// iterate through the options and map all JS functions / external data sources
-		if (!noMapping) {
+		if (mapSpecialObjects) {
 			vizorECharts.processObject(parsedOptions)
 				.then(() => {
 					// update the chart data

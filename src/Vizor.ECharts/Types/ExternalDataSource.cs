@@ -1,10 +1,5 @@
-﻿using System.Net;
-using System.Runtime.Intrinsics.X86;
-using System;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using static System.Net.WebRequestMethods;
-using System.Text.RegularExpressions;
 
 namespace Vizor.ECharts;
 
@@ -160,6 +155,9 @@ public class ExternalDataSourceConverter : JsonConverter<ExternalDataSource>
 		}
 
 		writer.WriteEndObject();
+
+		// see EChart SerializeOptions() why we need to do this
+		SpecialObjectMapper.MarkUseExternalDataSource(options);
 	}
 
 	public static ExternalDataSourceConverter Instance => instance;

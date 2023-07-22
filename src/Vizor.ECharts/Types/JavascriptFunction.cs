@@ -34,6 +34,9 @@ public class JavascriptFunctionConverter : JsonConverter<JavascriptFunction>
 		writer.WriteString("type", "__vi-js-function");
 		writer.WriteString("function", value.Function);
 		writer.WriteEndObject();
+
+		// see EChart SerializeOptions() why we need to do this
+		SpecialObjectMapper.MarkUseJavascriptFunction(options);
 	}
 
 	public static JavascriptFunctionConverter Instance => instance;
