@@ -84,7 +84,7 @@ private ChartOptions options = new()
 };
 ```
 
-See the [full C# code](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Pie/PieSimple.razor).
+See the [full C# code](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Pie/SimplePieChart.razor).
 
 ## Data loading
 
@@ -111,7 +111,7 @@ private async Task LoadChartData()
 }
 ```
 
-See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Misc/DataLoaderSample.razor).
+See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Misc/DataLoaderSampleChart.razor).
 
 ### Remote data loading
 
@@ -120,7 +120,7 @@ Any `Data` property of type `object?` accepts a `ExternalDataSource` allowing yo
 ```
 Data = new ExternalDataSource("https://example.com/api/data/sunburst_simple.json")
 ```
-See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Sunburst/SunburstSimple.razor).
+See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Sunburst/SimpleSunburstChart.razor).
 
 It is also possible to provide a *simple* path expression to retrieve only a part of the external data:
 ```
@@ -142,7 +142,7 @@ For example:
 Formatter = new JavascriptFunction("function (param) { return param.name + ' (' + param.percent * 2 + '%)'; }")
 ```
 
-See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Pie/PieHalfDoughnut.razor).
+See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Pie/HalfDoughnutChart.razor).
 
 ## Javascript function calls
 
@@ -187,7 +187,7 @@ private async Task UpdateChartAsync()
 }
 ```
 
-See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Gauge/TempGauge.razor).
+See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Gauge/TempGaugeChart.razor).
 
 
 # Filing Bugs / Future Development
