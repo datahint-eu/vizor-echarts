@@ -20,8 +20,7 @@ public partial class MagicType
 	/// Enabled magic types, including 'line' (for line charts), 'bar' (for bar charts), 'stack' (for stacked charts).
 	/// </summary>
 	[JsonPropertyName("type")]
-	//TODO: Type Warning: array type 'type' in 'magicType' will be mapped to List<object>
-	public List<object>? Type { get; set; } 
+	public string[]? Type { get; set; } 
 
 	/// <summary>
 	/// Title for different types, can be configured seperately.
