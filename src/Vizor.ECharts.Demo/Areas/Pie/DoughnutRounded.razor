@@ -1,66 +1,8 @@
 ﻿@page "/example/pie/doughnut-rounded"
 
 @using Vizor.ECharts;
+@using Vizor.ECharts.Samples.Areas.Pie;
 
-<PageHeader Title="Rounded Doughnut Chart" ChartType="@typeof(DoughnutRounded)" />
+<PageHeader Title="Rounded Doughnut Chart" ChartType="@typeof(RoundedDoughnutChart)" />
 
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
-
-@code {
-
-	// see https://echarts.apache.org/examples/en/editor.html?c=pie-borderRadius
-
-	private ChartOptions options = new()
-		{
-			Tooltip = new()
-			{
-				Trigger = TooltipTrigger.Item
-			},
-			Legend = new()
-			{
-				Top = "5%",
-				Left = "center"
-			},
-			Series = new()
-			{
-				new PieSeries()
-				{
-					Name = "Access From",
-					Radius = new CircleRadius("40%", "70%"),
-					AvoidLabelOverlap = false,
-					ItemStyle = new()
-					{
-						BorderRadius = 10,
-						BorderColor = "#fff",
-						BorderWidth= 2
-					},
-					Label = new()
-					{
-						Show = false,
-						Position = LabelPosition.Center
-					},
-					LabelLine = new ()
-					{
-						Show = false
-					},
-					Emphasis = new()
-					{
-						Label = new()
-						{
-							Show = true,
-							FontSize = 40,
-							FontWeight = FontWeight.Bold
-						}
-					},
-					Data = new List<PieSeriesData>()
-					{
-						new() { Value = 1048, Name = "Search Engine" },
-						new() { Value = 735, Name = "Direct" },
-						new() { Value = 580, Name = "Email" },
-						new() { Value = 484, Name = "Union Ads" },
-						new() { Value = 300, Name = "Video Ads" },
-					}
-				}
-			}
-		};
-}
+<RoundedDoughnutChart />

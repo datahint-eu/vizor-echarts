@@ -1,34 +1,8 @@
 ﻿@page "/example/candlestick/simple"
 
 @using Vizor.ECharts;
+@using Vizor.ECharts.Samples.Areas.Candlestick;
 
-<PageHeader Title="Simple Line Chart" ChartType="@typeof(CandlestickSimple)" />
+<PageHeader Title="Simple Line Chart" ChartType="@typeof(SimpleCandlestickChart)" />
 
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
-
-@code {
-
-	// see https://echarts.apache.org/examples/en/editor.html?c=candlestick-simple
-
-	private ChartOptions options = new()
-		{
-			XAxis = new()
-			{
-				Data = new string[] { "2017-10-24", "2017-10-25", "2017-10-26", "2017-10-27" }
-			},
-			YAxis = new() {},
-			Series = new()
-			{
-				new CandlestickSeries()
-				{
-					Data = new int[][]
-					{
-						new int[] { 20, 34, 10, 38 },
-						new int[] { 40, 35, 30, 50 },
-						new int[] { 31, 38, 33, 44 },
-						new int[] { 38, 15, 5, 42 }
-					}
-				}
-			}
-		};
-}
+<SimpleCandlestickChart />

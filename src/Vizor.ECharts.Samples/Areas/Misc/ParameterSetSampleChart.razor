@@ -1,0 +1,87 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=area-basic
+
+	private ChartOptions options = options1;
+
+	private static ChartOptions options1 = new()
+		{
+			XAxis = new()
+			{
+				Type = "category",
+				Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
+			},
+			YAxis = new()
+			{
+				Type = "value"
+			},
+			Series = new()
+			{
+				new LineSeries()
+				{
+					Data = new int[] { 150, 230, 224, 218, 135, 147, 260 }
+				}
+			}
+		};
+
+	private static ChartOptions options2 = new()
+		{
+			Title = new()
+			{
+				Text = "Referer of a Website",
+				Subtext = "Fake Data",
+				Left = "center"
+			},
+			Tooltip = new()
+			{
+				Trigger = ECharts.TooltipTrigger.Item
+			},
+			Legend = new()
+			{
+				Orient = Orient.Vertical,
+				Left = "left"
+			},
+			Series = new()
+			{
+				new PieSeries()
+				{
+					Name = "Access From",
+					Radius = new CircleRadius("50%"),
+					Data = new List<PieSeriesData>()
+					{
+						new() { Value = 1048, Name = "Search Engine" },
+						new() { Value = 735, Name = "Direct" },
+						new() { Value = 580, Name = "Email" },
+						new() { Value = 484, Name = "Union Ads" },
+						new() { Value = 300, Name = "Video Ads" },
+					},
+					Emphasis = new()
+					{
+						ItemStyle = new()
+						{
+							ShadowBlur = 10,
+							ShadowOffsetX = 0,
+							ShadowColor = Color.FromRGBA(0, 0, 0, 0.5)
+						}
+					}
+				}
+			}
+		};
+
+	protected override Task OnInitializedAsync()
+	{
+		Task.Run(async () =>
+		{
+			await Task.Delay(3000);
+
+			options = options2;
+			await InvokeAsync(StateHasChanged);
+		});
+
+		return Task.CompletedTask;
+	}
+}

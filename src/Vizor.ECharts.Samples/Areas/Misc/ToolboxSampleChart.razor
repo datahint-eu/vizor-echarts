@@ -1,0 +1,55 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=area-basic
+
+	private ChartOptions options = new()
+		{
+			XAxis = new()
+			{
+				Type = "category",
+				Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
+			},
+			YAxis = new()
+			{
+				Type = "value"
+			},
+			Toolbox = new()
+			{
+				Feature = new()
+				{
+					SaveAsImage = new()
+					{
+						Show = true
+					},
+					Restore = new()
+					{
+						Show = true
+					},
+					DataView = new()
+					{
+						Show = true
+					},
+					DataZoom = new()
+					{
+						Show = true
+					},
+					MagicType = new()
+					{
+						Show = true,
+						Type = new string[] { "line", "bar"}
+					}
+				}
+			},
+			Series = new()
+			{
+				new LineSeries()
+				{
+					Data = new int[] { 150, 230, 224, 218, 135, 147, 260 }
+				}
+			}
+		};
+}

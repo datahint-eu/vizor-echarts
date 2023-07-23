@@ -1,85 +1,8 @@
 ﻿@page "/example/line/stacked"
 
 @using Vizor.ECharts;
+@using Vizor.ECharts.Samples.Areas.Line;
 
-<PageHeader Title="Stacked Line Chart" ChartType="@typeof(LineStacked)" />
+<PageHeader Title="Stacked Line Chart" ChartType="@typeof(StackedLineChart)" />
 
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
-
-@code {
-
-	// see https://echarts.apache.org/examples/en/editor.html?c=line-stack
-
-	private ChartOptions options = new()
-		{
-			Title = new()
-			{
-				Text = "Stacked Line"
-			},
-			Tooltip = new()
-			{
-				Trigger = TooltipTrigger.Axis
-			},
-			Legend = new()
-			{
-				Data = new string[] { "Email", "Union Ads", "Video Ads", "Direct", "Search Engine" }
-			},
-			Toolbox = new()
-			{
-				Feature = new()
-				{
-					SaveAsImage = new() { }
-				}
-			},
-			Grid = new()
-			{
-				Left = "3%",
-				Right = "4%",
-				Bottom = "3%",
-				ContainLabel = true
-			},
-			XAxis = new()
-			{
-				Type = "category",
-				BoundaryGap = false,
-				Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
-			},
-			YAxis = new()
-			{
-				Type = "value"
-			},
-			Series = new()
-			{
-				new LineSeries()
-				{
-					Name = "Email",
-					Data = new int[] {120, 132, 101, 134, 90, 230, 210 },
-					Stack = "Total"
-				},
-				new LineSeries()
-				{
-					Name = "Union Ads",
-					Data = new int[] {220, 182, 191, 234, 290, 330, 310 },
-					Stack = "Total"
-				},
-				new LineSeries()
-				{
-					Name = "Video Ads",
-					Data = new int[] {150, 232, 201, 154, 190, 330, 410 },
-					Stack = "Total"
-				},
-				new LineSeries()
-				{
-					Name = "Direct",
-					Data = new int[] {320, 332, 301, 334, 390, 330, 320 },
-					Stack = "Total"
-				},
-				new LineSeries()
-				{
-					Name = "Search Engine",
-					Data = new int[] {820, 932, 901, 934, 1290, 1330, 1320 },
-					Stack = "Total"
-				}
-			}
-		};
-}
+<StackedLineChart />

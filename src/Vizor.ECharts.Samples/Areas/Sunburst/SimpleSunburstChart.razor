@@ -1,0 +1,25 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=sunburst-simple
+
+	private ChartOptions options = new()
+		{
+			Series = new()
+			{
+				new SunburstSeries()
+				{
+					Name = "Budget vs spending",
+					Data = new ExternalDataSource("data/sunburst_simple.json"),
+					Radius = new CircleRadius(0, "90%"),
+					Label = new()
+					{
+						Rotate = "radial"
+					}
+				}
+			}
+		};
+}

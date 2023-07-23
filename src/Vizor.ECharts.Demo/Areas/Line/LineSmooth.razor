@@ -1,33 +1,8 @@
 ﻿@page "/example/line/smooth"
 
 @using Vizor.ECharts;
+@using Vizor.ECharts.Samples.Areas.Line;
 
-<PageHeader Title="Smooth Line Chart" ChartType="@typeof(LineSmooth)" />
+<PageHeader Title="Smooth Line Chart" ChartType="@typeof(SmoothLineChart)" />
 
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
-
-@code {
-
-	// see https://echarts.apache.org/examples/en/editor.html?c=line-smooth
-
-	private ChartOptions options = new()
-		{
-			XAxis = new()
-			{
-				Type = "category",
-				Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
-			},
-			YAxis = new()
-			{
-				Type = "value"
-			},
-			Series = new()
-			{
-				new LineSeries()
-				{
-					Data = new int[] { 820, 932, 901, 934, 1290, 1330, 1320 },
-					Smooth = true
-				}
-			}
-		};
-}
+<SmoothLineChart />

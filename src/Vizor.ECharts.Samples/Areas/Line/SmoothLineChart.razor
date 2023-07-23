@@ -1,0 +1,29 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=line-smooth
+
+	private ChartOptions options = new()
+		{
+			XAxis = new()
+			{
+				Type = "category",
+				Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
+			},
+			YAxis = new()
+			{
+				Type = "value"
+			},
+			Series = new()
+			{
+				new LineSeries()
+				{
+					Data = new int[] { 820, 932, 901, 934, 1290, 1330, 1320 },
+					Smooth = true
+				}
+			}
+		};
+}

@@ -20,4 +20,10 @@
 
 	[Parameter, EditorRequired]
 	public Type ChartType { get; set; } = default!;
+
+	protected override void OnInitialized()
+	{
+		if (!(ChartType.FullName?.Contains(".Samples") ?? false))
+			throw new ArgumentException("The supplied chart type must be part of the Samples project");
+	}
 }

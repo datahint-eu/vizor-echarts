@@ -1,0 +1,67 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=pie-half-donut
+
+	private ChartOptions options = new()
+		{
+			Title = new()
+			{
+				Text = "Referer of a Website",
+				Subtext = "Fake Data",
+				Left = "center"
+			},
+			Tooltip = new()
+			{
+				Trigger = TooltipTrigger.Item
+			},
+			Legend = new()
+			{
+				Top = "5%",
+				Left = "center",
+				SelectedMode = SelectionMode.False
+			},
+			Series = new()
+			{
+				new PieSeries()
+				{
+					Name = "Access From",
+					Radius = new CircleRadius("40%", "70%"),
+					Center = new CircleCenter("50%", "70%"),
+					StartAngle = 180,
+					Label = new()
+					{
+						Show = true,
+						Formatter = new JavascriptFunction("function (param) { return param.name + ' (' + param.percent * 2 + '%)'; }")
+					},
+					Data = new List<PieSeriesData>()
+					{
+						new() { Value = 1048, Name = "Search Engine" },
+						new() { Value = 735, Name = "Direct" },
+						new() { Value = 580, Name = "Email" },
+						new() { Value = 484, Name = "Union Ads" },
+						new() { Value = 300, Name = "Video Ads" },
+						new() {
+							// make an record to fill the bottom 50%
+							Value = 1048 + 735 + 580 + 484 + 300,
+							ItemStyle = new()
+							{
+								Color = new("none"),
+								Decal = new()
+								{
+									Symbol = IconType.None
+								}
+							},
+							Label = new()
+							{
+								Show = false
+							}
+						}
+					}
+				}
+			}
+		};
+}

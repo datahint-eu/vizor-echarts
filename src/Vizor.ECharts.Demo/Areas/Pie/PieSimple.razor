@@ -1,56 +1,8 @@
 ﻿@page "/example/pie/simple"
 
 @using Vizor.ECharts;
+@using Vizor.ECharts.Samples.Areas.Pie;
 
-<PageHeader Title="Simple Pie Chart" ChartType="@typeof(PieSimple)" />
+<PageHeader Title="Simple Pie Chart" ChartType="@typeof(SimplePieChart)" />
 
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
-
-@code {
-
-    // see https://echarts.apache.org/examples/en/editor.html?c=pie-simple
-
-    private ChartOptions options = new()
-		{
-			Title = new()
-			{
-				Text = "Referer of a Website",
-				Subtext = "Fake Data",
-				Left = "center"
-			},
-			Tooltip = new()
-			{
-				Trigger = ECharts.TooltipTrigger.Item
-			},
-			Legend = new()
-			{
-				Orient = Orient.Vertical,
-				Left = "left"
-			},
-			Series = new()
-			{
-				new PieSeries()
-				{
-					Name = "Access From",
-					Radius = new CircleRadius("50%"),
-					Data = new List<PieSeriesData>()
-					{
-						new() { Value = 1048, Name = "Search Engine" },
-						new() { Value = 735, Name = "Direct" },
-						new() { Value = 580, Name = "Email" },
-						new() { Value = 484, Name = "Union Ads" },
-						new() { Value = 300, Name = "Video Ads" },
-					},
-					Emphasis = new()
-					{
-						ItemStyle = new()
-						{
-							ShadowBlur = 10,
-							ShadowOffsetX = 0,
-							ShadowColor = Color.FromRGBA(0, 0, 0, 0.5)
-						}
-					}
-				}
-			}
-		};
-}
+<SimplePieChart />

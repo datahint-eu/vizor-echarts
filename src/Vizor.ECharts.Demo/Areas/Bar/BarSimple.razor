@@ -1,32 +1,8 @@
 ﻿@page "/example/bar/simple"
 
 @using Vizor.ECharts;
+@using Vizor.ECharts.Samples.Areas.Bar;
 
-<PageHeader Title="Simple Bar Chart" ChartType="@typeof(BarSimple)" />
+<PageHeader Title="Simple Bar Chart" ChartType="@typeof(SimpleBarChart)" />
 
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
-
-@code {
-
-	// see https://echarts.apache.org/examples/en/editor.html?c=bar-simple
-
-	private ChartOptions options = new()
-		{
-			XAxis = new()
-			{
-				Type = "category",
-				Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
-			},
-			YAxis = new()
-			{
-				Type = "value"
-			},
-			Series = new()
-			{
-				new BarSeries()
-				{
-					Data = new int[] { 120, 200, 150, 80, 70, 110, 130 }
-				}
-			}
-		};
-}
+<SimpleBarChart />
