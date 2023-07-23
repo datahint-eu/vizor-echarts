@@ -16,6 +16,7 @@
 	private readonly JsonSerializerOptions jsonOpts = SpecialObjectMapper.CreateOptions();
 
 	private bool isChartInitialized;
+	private bool isChartRendered;
 
 	[Parameter]
 	public string Id { get; set; } = "chart-" + Guid.NewGuid().ToString();
@@ -46,7 +47,7 @@
 
 	protected override async Task OnParametersSetAsync()
 	{
-		if (isChartInitialized)
+		if (isChartRendered)
 		{
 			await UpdateAsync();
 		}
@@ -88,6 +89,8 @@
 			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, Width, Height, chartOpts, mapSpecialObjects);
 			isChartInitialized = true;
 		}
+
+		isChartRendered = true;
 	}
 
 	public async ValueTask DisposeAsync()
