@@ -6,6 +6,7 @@ Blazor wrapper for [Apache ECharts](https://echarts.apache.org/en/index.html).
  - Ships with echarts 5.4.3
  - `Apache-2.0` Licensed (same as echarts)
  - Lots of examples in the `Vizor.ECharts.Demo` project
+ - Refer to the official echarts [cheat sheet](https://echarts.apache.org/en/cheat-sheet.html) for a quick introduction
  
 The project currently is not yet production ready, it will be around September/October.
 Small API changes will occur frequently until version >= 1.0.0 .
@@ -96,7 +97,21 @@ Vizor.ECharts allows you to define data in 3 different ways:
 3. Using remote data sources (e.g.: REST API) fetched by the browser
 
 ### Async data loading
-TODO
+
+Specify the DataLoader parameter, this can be a sync or async function.
+```
+<Vizor.ECharts.EChart Options="@options" DataLoader="@LoadChartData" Width="800px" Height="800px" />
+```
+
+Typically in the data loader function you update the Series property. However, you can update any chart option.
+```
+private async Task LoadChartData()
+{
+	options.Series = ... ;
+}
+```
+
+See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Areas/Misc/DataLoaderSample.razor).
 
 ### Remote data loading
 
