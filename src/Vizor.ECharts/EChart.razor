@@ -33,15 +33,14 @@
 	[Parameter]
 	public string? Theme { get; set; }
 
+	/// <summary>
+	/// Task used to retrieve data from external sources.
+	/// </summary>
+	[Parameter]
+	public EventCallback DataLoader { get; set; }
+
 	[Parameter, EditorRequired]
 	public ChartOptions Options { get; set; } = default!;
-
-	protected override Task OnInitializedAsync()
-	{
-		return base.OnInitializedAsync();
-
-		//TODO: async data loaders
-	}
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
@@ -55,10 +54,28 @@
 		if (string.IsNullOrWhiteSpace(Id))
 			throw new ArgumentException("Id property must be set");
 
-		(string chartOpts, bool mapSpecialObjects) = SerializeOptions();
+		if (DataLoader.HasDelegate)
+		{
+			// init the chart without any data
+			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, Width, Height, null, false);
 
-		//TODO: also pass DotNetObjectReference.Create(this) ?
-		await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, Width, Height, chartOpts, mapSpecialObjects);
+			// retrieve the data
+			if (DataLoader.HasDelegate)
+			{
+				await DataLoader.InvokeAsync();
+			}
+
+			// update the chart
+			(string chartOpts, bool mapSpecialObjects) = SerializeOptions();
+			await jsRuntime.InvokeVoidAsync("vizorECharts.updateChart", Id, chartOpts, mapSpecialObjects);
+		}
+		else
+		{
+			(string chartOpts, bool mapSpecialObjects) = SerializeOptions();
+
+			//TODO: also pass DotNetObjectReference.Create(this) ?
+			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, Width, Height, chartOpts, mapSpecialObjects);
+		}
 	}
 
 	public async ValueTask DisposeAsync()

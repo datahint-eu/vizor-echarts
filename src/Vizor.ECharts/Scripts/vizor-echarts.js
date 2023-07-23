@@ -76,27 +76,29 @@
 		chart.showLoading();
 
 		// parse the options
-		var parsedOptions = JSON.parse(options);
+		if (options != null) {
+			var parsedOptions = JSON.parse(options);
 
-		// iterate through the options and map all JS functions / external data sources
-		if (mapSpecialObjects) {
-			vizorECharts.processObject(parsedOptions)
-				.then(() => {
-					// update the chart data
-					chart.setOption(parsedOptions);
+			// iterate through the options and map all JS functions / external data sources
+			if (mapSpecialObjects) {
+				vizorECharts.processObject(parsedOptions)
+					.then(() => {
+						// update the chart data
+						chart.setOption(parsedOptions);
 
-					// hide the loading animation
-					chart.hideLoading();
-				})
-				.catch(error => {
-					console.error('Error: ', error.message);
-				});
-		} else {
-			// set the chart options
-			chart.setOption(parsedOptions);
+						// hide the loading animation
+						chart.hideLoading();
+					})
+					.catch(error => {
+						console.error('Error: ', error.message);
+					});
+			} else {
+				// set the chart options
+				chart.setOption(parsedOptions);
 
-			// hide the loading animation immediately
-			chart.hideLoading();
+				// hide the loading animation immediately
+				chart.hideLoading();
+			}
 		}
 	},
 
@@ -116,6 +118,9 @@
 				.then(() => {
 					// update the chart data
 					chart.setOption(parsedOptions);
+
+					// hide the loading animation
+					chart.hideLoading();
 				})
 				.catch(error => {
 					console.error('Error: ', error.message);
@@ -123,6 +128,9 @@
 		} else {
 			// set the chart options
 			chart.setOption(parsedOptions);
+
+			// hide the loading animation
+			chart.hideLoading();
 		}
 	},
 

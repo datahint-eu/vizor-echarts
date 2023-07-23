@@ -1,6 +1,11 @@
 ﻿<div>
 	<h2>@Title</h2>
 	<Vizor.ECharts.Demo.Components.GithubLink ChartType="@ChartType" />
+	@if (SubTitle != null)
+	{
+		<br />
+		<span class="text-muted">@SubTitle</span>
+	}
 </div>
 <hr />
 <br />
@@ -9,6 +14,9 @@
 
 	[Parameter, EditorRequired]
 	public string Title { get; set; } = default!;
+
+	[Parameter]
+	public string? SubTitle { get; set; }
 
 	[Parameter, EditorRequired]
 	public Type ChartType { get; set; } = default!;
