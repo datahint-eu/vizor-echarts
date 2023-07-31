@@ -8,7 +8,7 @@
 
 @code {
 
-	private const string githubPrefix = "https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/";
+	private const string githubPrefix = "https://github.com/datahint-eu/vizor-echarts/blob/main/src/";
 	private string? href = null;
 
 	[Parameter, EditorRequired]
@@ -19,10 +19,11 @@
 		// e.g.: https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Line/SmoothLineChart.razor
 
 		var fullname = ChartType.FullName ?? string.Empty;
+		var folderIndex = fullname.IndexOf("Vizor.ECharts");
 		var areasIndex = fullname.IndexOf("Areas");
-		if (areasIndex > 0)
-		{
-			href = githubPrefix + fullname[areasIndex..].Replace('.', '/') + ".razor";
-		}
+		if (folderIndex < 0 || areasIndex < folderIndex)
+			return;
+
+		href = githubPrefix + fullname.Substring(folderIndex, areasIndex - folderIndex - 1) + "/" + fullname[areasIndex..].Replace('.', '/') + ".razor";
 	}
 }

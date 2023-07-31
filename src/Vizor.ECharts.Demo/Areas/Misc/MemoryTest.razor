@@ -1,0 +1,63 @@
+﻿@page "/example/misc/memory-test"
+
+@using Vizor.ECharts;
+@using Vizor.ECharts.Samples.Areas.Line;
+
+<PageHeader Title="Memory Test" ChartType="@typeof(SimpleLineChart)" />
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="400px" @ref="@chart"  />
+<span>Update counter: @updateCount</span>
+
+@code
+{
+	private EChart? chart = null;
+	private int updateCount = 0;
+
+	private List<string> xLabel = new(1500);
+	private List<int> yValue = new(1500);
+
+	private ChartOptions options = new()
+		{
+			XAxis = new()
+			{
+				Type = AxisType.Value,
+				Max = 1500
+			},
+			YAxis = new()
+			{
+				Type = AxisType.Value,
+				Max = 1500
+			},
+			Series = new()
+			{
+				new LineSeries()
+				{
+				}
+			}
+		};
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (!firstRender)
+			return;
+
+		GC.Collect();
+
+		for (int i = 0; i < 1500; ++i)
+		{
+			xLabel.Add(i.ToString());
+			yValue.Add(i);
+
+			options.XAxis!.Data = xLabel;
+			(options.Series![0] as LineSeries)!.Data = yValue;
+
+			await Task.Delay(1);
+			await chart!.UpdateAsync();
+
+			++updateCount;
+			await InvokeAsync(StateHasChanged);
+		}
+
+		GC.Collect();
+	}
+}
