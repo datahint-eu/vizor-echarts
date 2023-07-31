@@ -16,6 +16,13 @@
 		<ProductVersion>$(Version)</ProductVersion>
 		<AssemblyVersion>$(Version)</AssemblyVersion>
 		<FileVersion>$(Version)</FileVersion>
+
+		<PackageProjectUrl>https://github.com/datahint-eu/vizor-echarts</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/datahint-eu/vizor-echarts</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>blazor;echarts;apache;chart;library;vizor</PackageTags>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -29,5 +36,13 @@
 	<ItemGroup>
 		<Folder Include="wwwroot\" />
 	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
+
+	<Target Name="PublishAfterPackAutoFail" AfterTargets="Pack" Condition="'$(Configuration)' != 'Release' ">
+		<Error Text="You must pack in Release mode" />
+	</Target>
 
 </Project>
