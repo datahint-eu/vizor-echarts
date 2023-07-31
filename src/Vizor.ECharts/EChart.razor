@@ -45,14 +45,6 @@
 	[Parameter, EditorRequired]
 	public ChartOptions Options { get; set; } = default!;
 
-	protected override async Task OnParametersSetAsync()
-	{
-		if (isChartRendered)
-		{
-			await UpdateAsync();
-		}
-	}
-
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
 		// echarts.init the very first time the component is rendered

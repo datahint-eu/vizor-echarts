@@ -1,12 +1,12 @@
 ﻿@using Vizor.ECharts;
 
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="400px" />
+<Vizor.ECharts.EChart Options="@options1" Width="800px" Height="400px" @ref="@chart" />
 
 @code {
 
 	// see https://echarts.apache.org/examples/en/editor.html?c=area-basic
 
-	private ChartOptions options = options1;
+	private Vizor.ECharts.EChart? chart = null;
 
 	private static ChartOptions options1 = new()
 		{
@@ -78,8 +78,11 @@
 		{
 			await Task.Delay(3000);
 
-			options = options2;
-			await InvokeAsync(StateHasChanged);
+			if (chart != null)
+			{
+				chart.Options = options2;
+				await chart.UpdateAsync();
+			}
 		});
 
 		return Task.CompletedTask;
