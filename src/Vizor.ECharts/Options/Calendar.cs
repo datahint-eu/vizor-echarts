@@ -145,7 +145,7 @@ public partial class Calendar
 	/// </summary>
 	[JsonPropertyName("cellSize")]
 	[DefaultValue("20")]
-	public NumberOrNumberArray? CellSize { get; set; } 
+	public CellSize? CellSize { get; set; } 
 
 	/// <summary>
 	/// The layout orientation of calendar.

@@ -47,17 +47,14 @@ function getData() {
                     Show = true
                 }
             },
-            VisualMap = new List<object>()
+            VisualMap = new ContinuousVisualMap()
             {
-                new ContinuousVisualMap()
-                {
-                    Min = 0,
-                    Max = 10,
-                    Calculable = true,
-                    Orient = Orient.Horizontal,
-                    Left = "center",
-                    Bottom = "15%"
-                }
+                Min = 0,
+                Max = 10,
+                Calculable = true,
+                Orient = Orient.Horizontal,
+                Left = "center",
+                Bottom = "15%"
             },
 			Series = new()
 			{

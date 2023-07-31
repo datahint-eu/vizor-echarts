@@ -5,6 +5,7 @@
 using System.ComponentModel;
 using System.Text.Json.Serialization;
 using Vizor.ECharts.Options.DataZoom;
+using Vizor.ECharts.Options.VisualMap;
 
 namespace Vizor.ECharts;
 
@@ -47,15 +48,34 @@ public partial class ChartOptions
 	/// Following is an example of Anscombe Quartet:
 	/// </summary>
 	[JsonPropertyName("grid")]
-	public Grid? Grid { get; set; } 
+	public Grid? Grid { get; set; }
 
 	/// <summary>
 	/// The x axis in cartesian(rectangular) coordinate.
 	/// Usually a single grid component can place at most 2 x axis, one on the bottom and another on the top.
 	/// offset can be used to avoid overlap when you need to put more than two x axis.
 	/// </summary>
+	[JsonIgnore]
+	public XAxis? XAxis
+	{
+		get => XAxisObject as XAxis;
+		set => XAxisObject = value;
+	}
+
+	/// <summary>
+	/// The x axis in cartesian(rectangular) coordinate.
+	/// Usually a single grid component can place at most 2 x axis, one on the bottom and another on the top.
+	/// offset can be used to avoid overlap when you need to put more than two x axis.
+	/// </summary>
+	[JsonIgnore]
+	public List<XAxis>? XAxisList
+	{
+		get => XAxisObject as List<XAxis>;
+		set => XAxisObject = value;
+	}
+
 	[JsonPropertyName("xAxis")]
-	public XAxis? XAxis { get; set; } 
+	public object? XAxisObject { get; set; }
 
 	/// <summary>
 	/// The y axis in cartesian(rectangular) coordinate.
@@ -346,7 +366,21 @@ public partial class ChartOptions
 	/// ✦
 	/// </summary>
 	[JsonPropertyName("visualMap")]
-	public List<object>? VisualMap { get; set; } 
+	public object? VisualMapObject { get; set; }
+
+	[JsonIgnore]
+	public IVisualMap? VisualMap
+	{
+		get => VisualMapObject as IVisualMap;
+		set => VisualMapObject = value;
+	}
+
+	[JsonIgnore]
+	public List<IVisualMap>? VisualMapList
+	{
+		get => VisualMapObject as List<IVisualMap>;
+		set => VisualMapObject = value;
+	}
 
 	/// <summary>
 	/// Tooltip component.

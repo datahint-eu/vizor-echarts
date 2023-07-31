@@ -100,18 +100,15 @@
 			{
 				Position = TooltipPositionType.Top
 			},
-			VisualMap = new List<object>()
+			VisualMap = new PiecewiseVisualMap()
 			{
-				new PiecewiseVisualMap()
-				{
-					Top = "middle",
-					Min = 0,
-					Max = ClusterCount,
-					Left = 10,
-					SplitNumber = ClusterCount,
-					Dimension = ClusterIndex,
-					Pieces = GetPieces()
-				}
+				Top = "middle",
+				Min = 0,
+				Max = ClusterCount,
+				Left = 10,
+				SplitNumber = ClusterCount,
+				Dimension = ClusterIndex,
+				Pieces = GetPieces()
 			},
 			Grid = new()
 			{

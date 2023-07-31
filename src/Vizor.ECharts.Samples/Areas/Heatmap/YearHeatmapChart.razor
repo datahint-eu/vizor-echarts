@@ -1,0 +1,67 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="400px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=calendar-heatmap
+
+	private ChartOptions options = new()
+		{
+			Title = new()
+			{
+				Top = 30,
+				Left = "center",
+				Text = "Daily Step Count"
+			},
+			Tooltip = new()
+			{
+			},
+			Calendar = new()
+			{
+				Top = 120,
+				Left = 30,
+				Right = 30,
+				CellSize = new CellSize("auto", 13),
+				Range = "2022",
+				ItemStyle = new()
+				{
+					BorderWidth = 0.5
+				}
+			},
+			VisualMap = new PiecewiseVisualMap()
+			{
+				Min = 0,
+				Max = 10000,
+				Orient = Orient.Horizontal,
+				Left = "center",
+				Bottom = 65
+			},
+			Series = new()
+			{
+				new HeatmapSeries()
+				{
+					Name = "Punch Card",
+					CoordinateSystem = "calendar",
+					Data = (object)GenerateData(2022)
+				}
+			}
+		};
+
+	private static IEnumerable<object[]> GenerateData(int year)
+	{
+		var rnd = new Random(year);
+		var end = new DateTime(year, 12, 31);
+
+		var current = new DateTime(year, 1, 1);
+		while (current <= end)
+		{
+			yield return new object[]
+			{
+				current.ToString("yyyy-MM-dd"), rnd.Next(10000)
+			};
+
+			current = current.AddDays(1);
+		}
+	}
+}
