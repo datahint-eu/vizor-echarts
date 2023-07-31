@@ -6,7 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
 
-		<Authors>Ben Motmans</Authors>
+		<Authors>DataHint BV, Ben Motmans</Authors>
 		<Company>DataHint BV</Company>
 		<Copyright>Copyright © 2023</Copyright>
 
@@ -23,6 +23,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>blazor;echarts;apache;chart;library;vizor</PackageTags>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<Description>Blazor wrapper for Apache ECharts.</Description>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -38,7 +39,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 	<Target Name="PublishAfterPackAutoFail" AfterTargets="Pack" Condition="'$(Configuration)' != 'Release' ">
