@@ -15,9 +15,6 @@
 	// see SpecialObjectMapper class for more details
 	private readonly JsonSerializerOptions jsonOpts = SpecialObjectMapper.CreateOptions();
 
-	private bool isChartInitialized;
-	private bool isChartRendered;
-
 	[Parameter]
 	public string Id { get; set; } = "chart-" + Guid.NewGuid().ToString();
 
@@ -61,7 +58,6 @@
 		{
 			// init the chart without any data
 			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, Width, Height, null, false);
-			isChartInitialized = true;
 
 			// retrieve the data
 			if (DataLoader.HasDelegate)
@@ -79,10 +75,7 @@
 
 			//TODO: also pass DotNetObjectReference.Create(this) ?
 			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, Width, Height, chartOpts, mapSpecialObjects);
-			isChartInitialized = true;
 		}
-
-		isChartRendered = true;
 	}
 
 	public async ValueTask DisposeAsync()
