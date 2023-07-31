@@ -1,6 +1,6 @@
 ﻿@using Vizor.ECharts;
 
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="400px" />
 
 @code {
 
@@ -33,12 +33,12 @@
 			},
 			YAxis = new()
 			{
-				Type = "category",
+				Type = AxisType.Category,
 				Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
 			},
 			XAxis = new()
 			{
-				Type = "value"
+				Type = AxisType.Value
 			},
 			Series = new()
 			{

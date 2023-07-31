@@ -1,0 +1,94 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="400px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=mix-line-bar
+
+	private ChartOptions options = new()
+		{
+			Tooltip = new()
+			{
+				Trigger = TooltipTrigger.Axis,
+				AxisPointer = new()
+				{
+					Type = AxisPointerType.Cross,
+					CrossStyle = new()
+					{
+						Color = "#999"
+					}
+				}
+			},
+			Legend = new()
+			{
+				Data = new string[] { "Evaporation", "Precipitation", "Temperature" }
+			},
+			XAxis = new()
+			{
+				Type = AxisType.Category,
+				AxisPointer = new()
+				{
+					Type = AxisPointerType.Shadow
+				},
+				Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
+			},
+			YAxisList = new List<YAxis>()
+			{
+				new YAxis()
+				{
+					Type = AxisType.Value,
+					Name = "Precipitation",
+					Min = 0,
+					Max = 250,
+					Interval = 50,
+					AxisLabel = new()
+					{
+						Formatter = "{value} ml"
+					}
+				},
+				new YAxis()
+				{
+					Type = AxisType.Value,
+					Name = "Temperature",
+					Min = 0,
+					Max = 25,
+					Interval = 5,
+					AxisLabel = new()
+					{
+						Formatter = "{value} °C"
+					}
+				}
+			},
+			Series = new List<object>()
+			{
+				new BarSeries()
+				{
+					Name = "Evaporation",
+					Tooltip = new()
+					{
+						ValueFormatter = new JavascriptFunction("function (value) { return value + ' ml'; }")
+					},
+					Data = new double[] { 2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3 }
+				},
+				new BarSeries()
+				{
+					Name = "Precipitation",
+					Tooltip = new()
+					{
+						ValueFormatter = new JavascriptFunction("function (value) { return value + ' ml'; }")
+					},
+					Data = new double[] { 2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3 }
+				},
+				new LineSeries()
+				{
+					Name = "Temperature",
+					Tooltip = new()
+					{
+						ValueFormatter = new JavascriptFunction("function (value) { return value + ' °C'; }")
+					},
+					Data = new double[] { 2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2 }
+				}
+			}
+		};
+}

@@ -1,6 +1,6 @@
 ﻿@using Vizor.ECharts;
 
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="400px" />
 
 @code {
 
@@ -31,7 +31,7 @@ function getData() {
             },
             XAxis = new()
             {
-                Type = "category",
+                Type = AxisType.Category,
                 Data = hours,
                 SplitArea = new()
                 {
@@ -40,7 +40,7 @@ function getData() {
             },
             YAxis = new()
             {
-                Type = "category",
+                Type = AxisType.Category,
                 Data = days,
                 SplitArea = new()
                 {
