@@ -12,13 +12,13 @@
 	private string? href = null;
 
 	[Parameter, EditorRequired]
-	public Type ChartType { get; set; } = default!;
+	public Type SourceLink { get; set; } = default!;
 
 	protected override void OnParametersSet()
 	{
 		// e.g.: https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Line/SmoothLineChart.razor
 
-		var fullname = ChartType.FullName ?? string.Empty;
+		var fullname = SourceLink.FullName ?? string.Empty;
 		var folderIndex = fullname.IndexOf("Vizor.ECharts");
 		var areasIndex = fullname.IndexOf("Areas");
 		if (folderIndex < 0 || areasIndex < folderIndex)

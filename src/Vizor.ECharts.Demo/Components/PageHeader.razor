@@ -1,6 +1,6 @@
 ﻿<div>
 	<h2>@Title</h2>
-	<Vizor.ECharts.Demo.Components.GithubLink ChartType="@ChartType" />
+	<Vizor.ECharts.Demo.Components.GithubLink SourceLink="@SourceLink" />
 	@if (SubTitle != null)
 	{
 		<br />
@@ -19,11 +19,5 @@
 	public string? SubTitle { get; set; }
 
 	[Parameter, EditorRequired]
-	public Type ChartType { get; set; } = default!;
-
-	protected override void OnInitialized()
-	{
-		if (!(ChartType.FullName?.Contains(".Samples") ?? false))
-			throw new ArgumentException("The supplied chart type must be part of the Samples project");
-	}
+	public Type SourceLink { get; set; } = default!;
 }

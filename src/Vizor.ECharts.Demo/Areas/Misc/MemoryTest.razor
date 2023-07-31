@@ -3,7 +3,7 @@
 @using Vizor.ECharts;
 @using Vizor.ECharts.Samples.Areas.Line;
 
-<PageHeader Title="Memory Test" ChartType="@typeof(SimpleLineChart)" />
+<PageHeader Title="Memory Test" SourceLink="@typeof(MemoryTest)" />
 
 <Vizor.ECharts.EChart Options="@options" Width="800px" Height="400px" @ref="@chart"  />
 <span>Update counter: @updateCount</span>
