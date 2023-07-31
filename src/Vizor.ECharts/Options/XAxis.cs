@@ -79,7 +79,7 @@ public partial class XAxis
 	/// </summary>
 	[JsonPropertyName("type")]
 	[DefaultValue("category")]
-	public string? Type { get; set; } 
+	public AxisType? Type { get; set; } 
 
 	/// <summary>
 	/// Name of axis.

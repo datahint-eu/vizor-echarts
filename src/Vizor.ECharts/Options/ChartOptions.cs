@@ -62,8 +62,27 @@ public partial class ChartOptions
 	/// Usually a single grid component can place at most 2 y axis, one on the left and another on the right.
 	/// offset can be used to avoid overlap when you need to put more than two y axis.
 	/// </summary>
+	[JsonIgnore]
+	public YAxis? YAxis
+	{
+		get => YAxisObject as YAxis;
+		set => YAxisObject = value;
+	}
+
+	/// <summary>
+	/// The y axis in cartesian(rectangular) coordinate.
+	/// Usually a single grid component can place at most 2 y axis, one on the left and another on the right.
+	/// offset can be used to avoid overlap when you need to put more than two y axis.
+	/// </summary>
+	[JsonIgnore]
+	public List<YAxis>? YAxisList
+	{
+		get => YAxisObject as List<YAxis>;
+		set => YAxisObject = value;
+	}
+
 	[JsonPropertyName("yAxis")]
-	public YAxis? YAxis { get; set; } 
+	public object? YAxisObject { get; set; }
 
 	/// <summary>
 	/// Polar coordinate can be used in scatter and line chart.

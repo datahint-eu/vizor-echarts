@@ -320,7 +320,7 @@ public partial class Tooltip
 	/// valueFormatter: (value) => '$' + value.toFixed(2)
 	/// </summary>
 	[JsonPropertyName("valueFormatter")]
-	public string? ValueFormatter { get; set; } 
+	public StringOrFunction? ValueFormatter { get; set; } 
 
 	/// <summary>
 	/// The background color of tooltip's floating layer.

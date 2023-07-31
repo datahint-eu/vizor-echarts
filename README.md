@@ -14,7 +14,7 @@ Small API changes will occur frequently until version >= 1.0.0 .
 ## How to include
 
 1. Add a package reference to `Vizor.ECharts`
-2. Add the following script to your `_Host.cshtml` file
+2. Add the following script to your `_Host.cshtml` or `_Layout.cshtml` file
 ```
 <script src="_content/Vizor.ECharts/js/vizor-echarts-min.js"></script>
 ```
@@ -34,7 +34,7 @@ Add a using statement:
 
 Chart component in your .razor file:
 ```
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="400px" />
 ```
 
 Chart options in the code section of your razor file:
@@ -100,7 +100,7 @@ Vizor.ECharts allows you to define data in 3 different ways:
 
 Specify the DataLoader parameter, this can be a sync or async function.
 ```
-<Vizor.ECharts.EChart Options="@options" DataLoader="@LoadChartData" Width="800px" Height="800px" />
+<Vizor.ECharts.EChart Options="@options" DataLoader="@LoadChartData" Width="800px" Height="400px" />
 ```
 
 Typically in the data loader function you update the Series property. However, you can update any chart option.
@@ -168,7 +168,7 @@ Chart options and/or data can be updated. For example: to show a never ending li
 
 First store a reference to your chart.
 ```
-<Vizor.ECharts.EChart @ref="chart" Options="@options" Width="800px" Height="800px" />
+<Vizor.ECharts.EChart @ref="chart" Options="@options" Width="800px" Height="400px" />
 ...
 private Vizor.ECharts.EChart? chart;
 ```
