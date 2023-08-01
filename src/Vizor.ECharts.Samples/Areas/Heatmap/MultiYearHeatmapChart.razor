@@ -1,0 +1,96 @@
+﻿@using Vizor.ECharts
+
+<Vizor.ECharts.EChart Options="@options" DataLoader="LoadChartData" Height="500px" @ref="@chart" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=calendar-horizontal
+
+	private Vizor.ECharts.EChart? chart = null;
+	private ChartOptions options = new()
+		{
+			Tooltip = new()
+			{
+				Position = TooltipPositionType.Top,
+				Formatter = new JavascriptFunction("function (p) { const format = echarts.time.format(p.data[0], '{yyyy}-{MM}-{dd}', false); return format + ': ' + p.data[1]; }")
+			},
+			CalendarList = new()
+			{
+				new Calendar()
+				{
+					Top = 100,
+					CellSize = new CellSize("auto", 20),
+					ItemStyle = new()
+					{
+						BorderWidth = 0.5
+					}
+				},
+				new Calendar()
+				{
+					Top = 300,
+					CellSize = new CellSize("auto", 20),
+					ItemStyle = new()
+					{
+						BorderWidth = 0.5
+					}
+				}
+			},
+			VisualMap = new ContinuousVisualMap()
+			{
+				//Min = 0,
+				//Max = 10000,
+				Calculable = true,
+				Orient = Orient.Horizontal,
+				Left = "center",
+				Top = "top"
+			},
+			Series = new()
+			{
+				new HeatmapSeries()
+				{
+					CoordinateSystem = "calendar",
+					CalendarIndex = 0
+				},
+				new HeatmapSeries()
+				{
+					CoordinateSystem = "calendar",
+					CalendarIndex = 1
+				}
+			}
+		};
+
+	public async Task UpdateAsync()
+	{
+		if (chart != null)
+			await chart.UpdateAsync();
+	}
+
+	private void LoadChartData()
+	{
+		var toDate = DateOnly.FromDateTime(DateTime.Now.AddDays(1));
+		var fromDate = toDate.AddYears(-1);
+
+		var fromYearCounts = new List<SeriesData<DateOnly, int>>();
+		var toYearCounts = new List<SeriesData<DateOnly, int>>();
+		var rnd = new Random();
+
+		var curDate = fromDate;
+		while (curDate <= toDate)
+		{
+			var count = rnd.Next(100);
+
+			if (curDate.Year == fromDate.Year)
+				fromYearCounts.Add(new(curDate, count));
+			else
+				toYearCounts.Add(new(curDate, count));
+
+			curDate = curDate.AddDays(1);
+		}
+
+		options.CalendarList![0].Range = fromDate.ToString("yyyy");
+		options.CalendarList![1].Range = toDate.ToString("yyyy");
+
+		(options.Series![0] as HeatmapSeries)!.Data = fromYearCounts;
+		(options.Series![1] as HeatmapSeries)!.Data = toYearCounts;
+	}
+}

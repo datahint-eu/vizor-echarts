@@ -1217,7 +1217,7 @@ public partial class ChartOptions
 	/// Note, bounding can be used to specify whether the entire transformed element (containing children if is group) is confined in its container.
 	/// </summary>
 	[JsonPropertyName("graphic")]
-	public object? Graphic { get; set; } 
+	public object? Graphic { get; set; }
 
 	/// <summary>
 	/// Calendar coordinates.
@@ -1242,8 +1242,22 @@ public partial class ChartOptions
 	/// First of all, like other components, those location and size configurations can be specified on canlendar: left  right  top  bottom  width  height , which make calendar possible to modify its size according to container size.
 	/// Besides, cellSize can be specified to fix the size of each cell of calendar.
 	/// </summary>
+	[JsonIgnore]
+	public Calendar? Calendar
+	{
+		get => CalendarObject as Calendar;
+		set => CalendarObject = value;
+	}
+
+	[JsonIgnore]
+	public List<Calendar>? CalendarList
+	{
+		get => CalendarObject as List<Calendar>;
+		set => CalendarObject = value;
+	}
+
 	[JsonPropertyName("calendar")]
-	public Calendar? Calendar { get; set; } 
+	public object? CalendarObject { get; set; }
 
 	/// <summary>
 	/// dataset component is published since ECharts 4.
