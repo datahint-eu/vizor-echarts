@@ -51,14 +51,14 @@
 	private static IEnumerable<object[]> GenerateData(int year)
 	{
 		var rnd = new Random(year);
-		var end = new DateTime(year, 12, 31);
+		var end = new DateOnly(year, 12, 31);
 
-		var current = new DateTime(year, 1, 1);
+		var current = new DateOnly(year, 1, 1);
 		while (current <= end)
 		{
 			yield return new object[]
 			{
-				current.ToString("yyyy-MM-dd"), rnd.Next(10000)
+				current, rnd.Next(10000)
 			};
 
 			current = current.AddDays(1);
