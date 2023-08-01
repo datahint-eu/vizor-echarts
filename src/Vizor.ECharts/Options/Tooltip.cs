@@ -454,7 +454,7 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("renderMode")]
 	[DefaultValue("html")]
-	public RenderMode? RenderMode { get; set; } 
+	public TooltipRenderMode? RenderMode { get; set; } 
 
 	/// <summary>
 	/// Whether confine tooltip content in the view rect of chart instance.

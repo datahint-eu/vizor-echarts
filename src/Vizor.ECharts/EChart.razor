@@ -37,6 +37,9 @@
 	[Parameter]
 	public ChartGroup? Group { get; set; }
 
+	[Parameter]
+	public ChartRenderer Renderer { get; set; } = ChartRenderer.Svg;
+
 	/// <summary>
 	/// Function used to retrieve data from external sources.
 	/// </summary>
@@ -61,10 +64,17 @@
 		// register the chart in a group (if needed)
 		Group?.Add(this);
 
+		var initOptions = JsonSerializer.Serialize(new
+		{
+			renderer = Renderer.ToJsParam(),
+			width = Width,
+			height = Height
+		});
+
 		if (DataLoader.HasDelegate)
 		{
 			// init the chart without any data
-			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, Width, Height, null, false);
+			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, initOptions, null, false);
 
 			// retrieve the data
 			if (DataLoader.HasDelegate)
@@ -81,7 +91,7 @@
 			(string chartOpts, bool mapSpecialObjects) = SerializeOptions();
 
 			//TODO: also pass DotNetObjectReference.Create(this) ?
-			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, Width, Height, chartOpts, mapSpecialObjects);
+			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, initOptions, chartOpts, mapSpecialObjects);
 		}
 	}
 

@@ -114,8 +114,8 @@ window.vizorECharts = {
 		}
 	},
 
-	initChart: function (id, theme, width, height, options, mapSpecialObjects) {
-		var chart = echarts.init(document.getElementById(id), theme, { renderer: 'svg', width: width, height: height });
+	initChart: function (id, theme, initOptions, options, mapSpecialObjects) {
+		var chart = echarts.init(document.getElementById(id), theme, JSON.parse(initOptions));
 		vizorECharts.charts.push({ id: id, chart: chart });
 
 		// show loading animation
