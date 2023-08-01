@@ -38,6 +38,16 @@ public class MultiIndex
 	{
 		return new MultiIndex(type);
 	}
+
+	public static implicit operator MultiIndex(string type)
+	{
+		return type switch
+		{
+			"none" => new MultiIndex(MultiIndexType.None),
+			"all" => new MultiIndex(MultiIndexType.All),
+			_ => throw new NotSupportedException($"'{type}' is not a valid Axis Index")
+		};
+	}
 }
 
 public enum MultiIndexType

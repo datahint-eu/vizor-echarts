@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -17,18 +19,6 @@ public class NumberOrString
 		String = value;
 	}
 
-	public NumberOrString(DateTime dt)
-	{
-		if (dt.Kind == DateTimeKind.Local)
-		{
-			String = dt.ToUniversalTime().ToString("o", CultureInfo.InvariantCulture);
-		}
-		else
-		{
-			String = dt.ToString("o", CultureInfo.InvariantCulture);
-		}
-	}
-
 	public double? Number { get; }
 	public string? String { get; }
 
@@ -37,14 +27,13 @@ public class NumberOrString
 		return new NumberOrString(number);
 	}
 
-	public static implicit operator NumberOrString(string str)
+	[return: NotNullIfNotNull(nameof(str))]
+	public static implicit operator NumberOrString?(string? str)
 	{
-		return new NumberOrString(str);
-	}
+		if (str == null)
+			return null;
 
-	public static implicit operator NumberOrString(DateTime dt)
-	{
-		return new NumberOrString(dt);
+		return new NumberOrString(str);
 	}
 }
 

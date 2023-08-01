@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
@@ -32,8 +33,12 @@ public class NumberOrStringOrFunction
 		return new NumberOrStringOrFunction(number);
 	}
 
-	public static implicit operator NumberOrStringOrFunction(string str)
+	[return: NotNullIfNotNull(nameof(str))]
+	public static implicit operator NumberOrStringOrFunction?(string? str)
 	{
+		if (str == null)
+			return null;
+
 		return new NumberOrStringOrFunction(str);
 	}
 
