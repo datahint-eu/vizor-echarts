@@ -34,6 +34,9 @@
 	[Parameter]
 	public string? Theme { get; set; }
 
+	[Parameter]
+	public ChartGroup? Group { get; set; }
+
 	/// <summary>
 	/// Function used to retrieve data from external sources.
 	/// </summary>
@@ -54,6 +57,9 @@
 			throw new ArgumentException("Options property must be set");
 		if (string.IsNullOrWhiteSpace(Id))
 			throw new ArgumentException("Id property must be set");
+
+		// register the chart in a group (if needed)
+		Group?.Add(this);
 
 		if (DataLoader.HasDelegate)
 		{
@@ -83,6 +89,9 @@
 	{
 		try
 		{
+			// remove the chart from a group (if needed)
+			Group?.Remove(this);
+
 			await jsRuntime.InvokeVoidAsync("vizorECharts.disposeChart", Id);
 		}
 		catch { }
