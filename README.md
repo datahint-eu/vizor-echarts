@@ -34,7 +34,7 @@ Add a using statement:
 
 Chart component in your .razor file:
 ```
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="400px" />
+<Vizor.ECharts.EChart Options="@options" Width="auto" Height="400px" />
 ```
 
 Chart options in the code section of your razor file:
@@ -128,7 +128,7 @@ Data = new ExternalDataSource("https://example.com/api/data/sankey_simple.json")
 ```
 
 Additional credentials, headers, policies, ... can also be supplied.
-See [ExternalDataSource class](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/Types/ExternalDataSource.cs) for more details.
+See [ExternalDataSource](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/Types/ExternalDataSource.cs) and [FetchOptions](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/Types/FetchOptions.cs) for more details.
 
 
 ## Javascript functions
@@ -143,24 +143,6 @@ Formatter = new JavascriptFunction("function (param) { return param.name + ' (' 
 ```
 
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Pie/HalfDoughnutChart.razor).
-
-## Javascript function calls
-
-Sometimes you want to calculate data dynamically in Javascript.
-This can be done with the `JavascriptFunctionCall` class.
-You can assign this to any chart option property accepting an `object`.
-
-For example:
-```
-Data = new JavascriptFunctionCall(@"
-	function getData() {
-		const data = [[0, 0, 5], ..., [6, 23, 6]];
-		return data.map(function (item) {
-			return [item[1], item[0], item[2] || '-'];
-		});
-	}
-")
-```
 
 ## Updating charts
 
