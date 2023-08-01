@@ -1,6 +1,7 @@
 ﻿@using Microsoft.JSInterop;
 @using System.Text.Json;
 @using System.Text.Json.Serialization;
+@using System.Text;
 @using Vizor.ECharts;
 @using Vizor.ECharts.Internal;
 
@@ -9,16 +10,15 @@
 @inject IJSRuntime jsRuntime
 @implements IAsyncDisposable
 
-<div id="@Id" class="@CssClass" style="@Style"></div>
+<div id="@id" class="@CssClass" style="@Style"></div>
 
 @code {
 
-	//REMARK: do NOT mark this as static, we want 1 instance per chart since we abuse it to detect JS function/external data source mapping.
-	// see SpecialObjectMapper class for more details
-	private readonly JsonSerializerOptions jsonOpts = SpecialObjectMapper.CreateOptions();
+	// one instance per chart, we need it to pass state info of external data sources, ...
+	private JsonSerializerOptions? jsonOpts;
 
-	[Parameter]
-	public string Id { get; set; } = "chart-" + Guid.NewGuid().ToString();
+	private readonly List<ExternalDataSourceConverter.FetchCommand> commands = new();
+	private readonly string id = "chart" + Guid.NewGuid().ToString().Replace("-", "");
 
 	[Parameter]
 	public string? CssClass { get; set; }
@@ -62,21 +62,14 @@
 
 		if (Options == null)
 			throw new ArgumentException("Options property must be set");
-		if (string.IsNullOrWhiteSpace(Id))
-			throw new ArgumentException("Id property must be set");
 
-		// register extra JSON converters if needed
-		if (JsonConverters != null)
-		{
-			foreach (var converter in JsonConverters)
-			{
-				jsonOpts.Converters.Add(converter);
-			}
-		}
+		// init the serializer options if required
+		jsonOpts ??= CreateSerializerOptions();
 
-		// register the chart in a group (if needed)
+		// register the chart in a group if available
 		Group?.Add(this);
 
+		// options passed to echarts.init
 		var initOptions = JsonSerializer.Serialize(new
 		{
 			renderer = Renderer.ToJsParam(),
@@ -87,7 +80,7 @@
 		if (DataLoader.HasDelegate)
 		{
 			// init the chart without any data
-			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, initOptions, null, false);
+			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", id, Theme, initOptions, null /*fetchOptions*/, null /*chartOpts*/);
 
 			// retrieve the data
 			if (DataLoader.HasDelegate)
@@ -95,16 +88,19 @@
 				await DataLoader.InvokeAsync();
 			}
 
+			// serialize all required data
+			(var chartOpts, var fetchOpts) = Serialize();
+
 			// update the chart
-			(string chartOpts, bool mapSpecialObjects) = SerializeOptions();
-			await jsRuntime.InvokeVoidAsync("vizorECharts.updateChart", Id, chartOpts, mapSpecialObjects);
+			await jsRuntime.InvokeVoidAsync("vizorECharts.updateChart", id, fetchOpts, chartOpts);
 		}
 		else
 		{
-			(string chartOpts, bool mapSpecialObjects) = SerializeOptions();
+			// serialize all required data
+			(var chartOpts, var fetchOpts) = Serialize();
 
 			//TODO: also pass DotNetObjectReference.Create(this) ?
-			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, initOptions, chartOpts, mapSpecialObjects);
+			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", id, Theme, initOptions, fetchOpts, chartOpts);
 		}
 	}
 
@@ -115,7 +111,7 @@
 			// remove the chart from a group (if needed)
 			Group?.Remove(this);
 
-			await jsRuntime.InvokeVoidAsync("vizorECharts.disposeChart", Id);
+			await jsRuntime.InvokeVoidAsync("vizorECharts.disposeChart", id);
 		}
 		catch { }
 	}
@@ -127,22 +123,54 @@
 			await DataLoader.InvokeAsync();
 		}
 
-		(string chartOpts, bool mapSpecialObjects) = SerializeOptions();
-		await jsRuntime.InvokeVoidAsync("vizorECharts.updateChart", Id, chartOpts, mapSpecialObjects);
+		// serialize all required data
+		(var chartOpts, var fetchOpts) = Serialize();
+
+		await jsRuntime.InvokeVoidAsync("vizorECharts.updateChart", id, fetchOpts, chartOpts);
 	}
 
-	private (string chartOpts, bool mapSpecialObjects) SerializeOptions()
+	private (string chartOpts, string? fetchOpts) Serialize()
 	{
-		// REMARK: the ChartOptions can contain multiple JavascriptFunction, ExternalDataSource, ... objects.
-		// IF we serialize them, the vizorECharts.initChart function must iterate the ENTIRE object and replace the content dynamically.
-		// This can be very expensive in big charts
-		//
-		// Since JsonSerializer doesn't have a state, we have no way of knowing if any of the properties that were serialized is a JavascriptFunction, ExternalDataSource, ... .
-		// We solve this using the SpecialObjectMapper class
+		// clear the fetch option commands
+		commands.Clear();
 
-		SpecialObjectMapper.ClearFlags(jsonOpts);
+		// serialize the chart options
 		var chartOpts = JsonSerializer.Serialize(Options, jsonOpts);
 
-		return (chartOpts, SpecialObjectMapper.ShouldMapSpecialObjects(jsonOpts));
+		// serialize the chart options first, fetch commands are constructed during serialize
+		var fetchOpts = commands.Count == 0 ? null : JsonSerializer.Serialize(commands);
+
+		return (chartOpts, fetchOpts);
+	}
+
+	private JsonSerializerOptions CreateSerializerOptions()
+	{
+		var jsonOpts = new JsonSerializerOptions()
+			{
+				PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+				DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+#if DEBUG
+            WriteIndented = true
+#endif
+			};
+
+		jsonOpts.Converters.Add(new DateOnlyJsonConverter());
+		jsonOpts.Converters.Add(new DateTimeJsonConverter());
+		jsonOpts.Converters.Add(new DateTimeOffsetJsonConverter());
+		jsonOpts.Converters.Add(new SeriesDataConverterFactory());
+
+		// register extra JSON converters if needed
+		if (JsonConverters != null)
+		{
+			foreach (var converter in JsonConverters)
+			{
+				jsonOpts.Converters.Add(converter);
+			}
+		}
+
+		// register the special converter for external data source fetches
+		jsonOpts.Converters.Add(new ExternalDataSourceConverter(commands, id));
+
+		return jsonOpts;
 	}
 }

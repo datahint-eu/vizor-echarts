@@ -31,13 +31,7 @@ public class JavascriptFunctionConverter : JsonConverter<JavascriptFunction>
 
 	public override void Write(Utf8JsonWriter writer, JavascriptFunction value, JsonSerializerOptions options)
 	{
-		writer.WriteStartObject();
-		writer.WriteString("type", "__vi-js-function");
-		writer.WriteString("function", value.Function);
-		writer.WriteEndObject();
-
-		// see EChart SerializeOptions() why we need to do this
-		SpecialObjectMapper.MarkUseJavascriptFunction(options);
+		writer.WriteRawValue(value.Function, skipInputValidation: true);
 	}
 
 	public static JavascriptFunctionConverter Instance => instance;

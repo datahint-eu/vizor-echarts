@@ -25,113 +25,75 @@
 		return currentObj;
 	},
 
-	processObject: async function (obj) {
-		for (const key in obj) {
-			if (obj.hasOwnProperty(key)) {
-				const value = obj[key];
+	fetchExternalData: async function (chartId, fetchOptions) {
+		if (fetchOptions == null)
+			return;
 
-				if (typeof value === 'object') {
-					if (value.type === '__vi-ext-data') {
-						// Fetch data asynchronously
-						const response = await fetch(value.url, value.options);
-						if (!response.ok) {
-							throw new Error('Failed to fetch external chart data: url=' + value.url);
-						}
+		for (item of JSON.parse(fetchOptions)) {
+			//console.log(item);
 
-						// parse the response as JSON
-						const data = await response.json();
-
-						// replace the object with the fetched data
-						if (value.path != null) {
-							obj[key] = vizorECharts.evaluatePath(data, value.path);
-						} else {
-							obj[key] = data;
-						}
-					} else if (value.type === '__vi-js-function') {
-						// evaluate the function using eval
-						const evaluatedFunction = eval('(' + value.function + ')');
-
-						// replace the object with the evaluated function
-						obj[key] = evaluatedFunction;
-					} else if (value.type === '__vi-js-function-call') {
-						// evaluate the function using eval
-						const evaluatedFunction = eval('(' + value.function + ')()');
-
-						// replace the object with the evaluated function
-						obj[key] = evaluatedFunction;
-					} else {
-						// Continue recursively if the object has other properties
-						await vizorECharts.processObject(value);
-					}
-				}
+			const response = await fetch(item.url, item.options);
+			if (!response.ok) {
+				throw new Error('Failed to fetch external chart data: url=' + url);
 			}
+
+			// parse the response as JSON
+			var data = await response.json();
+			//console.log(data);
+
+			// replace the object with the fetched data
+			if (item.path != null) {
+				data = vizorECharts.evaluatePath(data, item.path);
+			}
+
+			// assign for later retrieval
+			window.vizorECharts.getChart(chartId)[item.id] = data;
 		}
 	},
 
-	initChart: function (id, theme, initOptions, options, mapSpecialObjects) {
+	initChart: async function (id, theme, initOptions, fetchOptions, chartOptions) {
 		var chart = echarts.init(document.getElementById(id), theme, JSON.parse(initOptions));
 		vizorECharts.charts.push({ id: id, chart: chart });
 
 		// show loading animation
 		chart.showLoading();
 
+		if (chartOptions == null)
+			return;
+
+		// fetch external data if needed
+		await vizorECharts.fetchExternalData(id, fetchOptions);
+
 		// parse the options
-		if (options != null) {
-			var parsedOptions = JSON.parse(options);
+		var parsedOptions = eval('(' + chartOptions + ')');
+		console.log(parsedOptions);
 
-			// iterate through the options and map all JS functions / external data sources
-			if (mapSpecialObjects) {
-				vizorECharts.processObject(parsedOptions)
-					.then(() => {
-						// update the chart data
-						chart.setOption(parsedOptions);
+		// set the chart options
+		chart.setOption(parsedOptions);
 
-						// hide the loading animation
-						chart.hideLoading();
-					})
-					.catch(error => {
-						console.error('Error: ', error.message);
-					});
-			} else {
-				// set the chart options
-				chart.setOption(parsedOptions);
-
-				// hide the loading animation immediately
-				chart.hideLoading();
-			}
-		}
+		// hide the loading animation immediately
+		chart.hideLoading();
 	},
 
-	updateChart: function (id, options, mapSpecialObjects) {
+	updateChart: async function (id, fetchOptions, chartOptions) {
 		var chart = vizorECharts.getChart(id);
 		if (chart == null) {
 			console.error("Failed to retrieve chart id " + id);
 			return;
 		}
 
+		// fetch external data if needed
+		await vizorECharts.fetchExternalData(id, fetchOptions);
+
 		// parse the options
-		var parsedOptions = JSON.parse(options);
+		var parsedOptions = eval('(' + chartOptions + ')');
 
 		// iterate through the options and map all JS functions / external data sources
-		if (mapSpecialObjects) {
-			vizorECharts.processObject(parsedOptions)
-				.then(() => {
-					// update the chart data
-					chart.setOption(parsedOptions);
+		// set the chart options
+		chart.setOption(parsedOptions);
 
-					// hide the loading animation
-					chart.hideLoading();
-				})
-				.catch(error => {
-					console.error('Error: ', error.message);
-				});
-		} else {
-			// set the chart options
-			chart.setOption(parsedOptions);
-
-			// hide the loading animation
-			chart.hideLoading();
-		}
+		// hide the loading animation
+		chart.hideLoading();
 	},
 
 	disposeChart: function (id) {
