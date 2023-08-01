@@ -1,14 +1,9 @@
 ﻿window.vizorECharts = {
 
-	charts: new Array(),
+	charts: new Map(),
 
 	getChart: function (id) {
-		for (var i = 0; i < vizorECharts.charts.length; i++) {
-			if (vizorECharts.charts[i].id === id) {
-				return vizorECharts.charts[i].chart;
-			}
-		}
-		return null;
+		return vizorECharts.charts.get(id);
 	},
 
 	evaluatePath: function (data, pathExpression) {
@@ -53,7 +48,7 @@
 
 	initChart: async function (id, theme, initOptions, fetchOptions, chartOptions) {
 		var chart = echarts.init(document.getElementById(id), theme, JSON.parse(initOptions));
-		vizorECharts.charts.push({ id: id, chart: chart });
+		vizorECharts.charts.set(id, chart);
 
 		// show loading animation
 		chart.showLoading();
@@ -76,9 +71,9 @@
 	},
 
 	updateChart: async function (id, fetchOptions, chartOptions) {
-		var chart = vizorECharts.getChart(id);
+		var chart = vizorECharts.charts.get(id);
 		if (chart == null) {
-			console.error("Failed to retrieve chart id " + id);
+			console.error("Failed to retrieve chart " + id);
 			return;
 		}
 
@@ -97,17 +92,13 @@
 	},
 
 	disposeChart: function (id) {
-		var found = -1;
-		for (var i = 0; i < vizorECharts.charts.length; i++) {
-			if (vizorECharts.charts[i].id === id) {
-				found = i;
-				break;
-			}
+		var chart = vizorECharts.charts.get(id);
+		if (chart == null) {
+			console.error("Failed to dispose chart " + id);
+			return;
 		}
 
-		if (found >= 0) {
-			echarts.dispose(vizorECharts.charts[i].id)
-			vizorECharts.charts.splice(found, 1); // delete 1 at position found
-		}
+		echarts.dispose(chart)
+		vizorECharts.charts.delete(id);
 	}
 };
