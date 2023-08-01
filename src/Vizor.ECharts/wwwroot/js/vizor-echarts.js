@@ -88,7 +88,7 @@ window.vizorECharts = {
 			}
 
 			// assign for later retrieval
-			window.vizorECharts.getChart(chartId)[item.id] = data;
+			window.vizorECharts.charts.get(chartId)[item.id] = data;
 		}
 	},
 
@@ -107,7 +107,7 @@ window.vizorECharts = {
 
 		// parse the options
 		var parsedOptions = eval('(' + chartOptions + ')');
-		console.log(parsedOptions);
+		//console.log(parsedOptions);
 
 		// set the chart options
 		chart.setOption(parsedOptions);
