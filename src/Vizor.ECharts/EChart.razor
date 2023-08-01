@@ -1,5 +1,6 @@
 ﻿@using Microsoft.JSInterop;
 @using System.Text.Json;
+@using System.Text.Json.Serialization;
 @using Vizor.ECharts;
 @using Vizor.ECharts.Internal;
 
@@ -40,6 +41,9 @@
 	[Parameter]
 	public ChartRenderer Renderer { get; set; } = ChartRenderer.Svg;
 
+	[Parameter]
+	public List<JsonConverter>? JsonConverters { get; set; }
+
 	/// <summary>
 	/// Function used to retrieve data from external sources.
 	/// </summary>
@@ -60,6 +64,15 @@
 			throw new ArgumentException("Options property must be set");
 		if (string.IsNullOrWhiteSpace(Id))
 			throw new ArgumentException("Id property must be set");
+
+		// register extra JSON converters if needed
+		if (JsonConverters != null)
+		{
+			foreach (var converter in JsonConverters)
+			{
+				jsonOpts.Converters.Add(converter);
+			}
+		}
 
 		// register the chart in a group (if needed)
 		Group?.Add(this);
