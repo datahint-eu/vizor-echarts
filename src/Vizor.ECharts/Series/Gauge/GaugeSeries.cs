@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class GaugeSeries
+public partial class GaugeSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("gauge")]
-	public string? Type { get; set; }  = "gauge";
+	public string Type => "gauge";
 
 	/// <summary>
 	/// Component ID, not specified by default.

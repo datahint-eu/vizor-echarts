@@ -4,17 +4,13 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class FilterdatasetTransform
+public partial class SortTransform
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("filter")]
-	public string? Type { get; set; }  = "filter";
+	public string Type => "sort";
 
 	/// <summary>
-	/// The condition of transform "filter".
+	/// The condition of transform "sort".
 	///  
 	/// See the tutorial of data transform .
 	/// </summary>

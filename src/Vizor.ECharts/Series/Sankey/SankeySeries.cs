@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class SankeySeries
+public partial class SankeySeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("sankey")]
-	public string? Type { get; set; }  = "sankey";
+	public string Type => "sankey";
 
 	/// <summary>
 	/// Component ID, not specified by default.

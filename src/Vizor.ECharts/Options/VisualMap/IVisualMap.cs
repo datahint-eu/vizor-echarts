@@ -2,4 +2,5 @@
 
 public interface IVisualMap
 {
+	string Type { get; }
 }

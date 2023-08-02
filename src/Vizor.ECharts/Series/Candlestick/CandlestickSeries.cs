@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class CandlestickSeries
+public partial class CandlestickSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("candlestick")]
-	public string? Type { get; set; }  = "candlestick";
+	public string Type => "candlestick";
 
 	/// <summary>
 	/// Component ID, not specified by default.

@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class SunburstSeries
+public partial class SunburstSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("sunburst")]
-	public string? Type { get; set; }  = "sunburst";
+	public string Type => "sunburst";
 
 	/// <summary>
 	/// Component ID, not specified by default.

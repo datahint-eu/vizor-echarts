@@ -7,12 +7,8 @@ namespace Vizor.ECharts;
 
 public partial class PiecewiseVisualMap : IVisualMap
 {
-	/// <summary>
-	/// Used to determine it is a piecewise visualMap component.
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("piecewise")]
-	public string? Type { get; set; }  = "piecewise";
+	public string Type => "piecewise";
 
 	/// <summary>
 	/// Component ID, not specified by default.

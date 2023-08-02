@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class PieSeries
+public partial class PieSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("pie")]
-	public string? Type { get; set; }  = "pie";
+	public string Type => "pie";
 
 	/// <summary>
 	/// Component ID, not specified by default.

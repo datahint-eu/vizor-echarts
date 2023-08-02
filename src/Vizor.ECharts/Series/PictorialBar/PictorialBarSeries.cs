@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class PictorialBarSeries
+public partial class PictorialBarSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("pictorialBar")]
-	public string? Type { get; set; }  = "pictorialBar";
+	public string Type => "pictorialBar";
 
 	/// <summary>
 	/// Component ID, not specified by default.

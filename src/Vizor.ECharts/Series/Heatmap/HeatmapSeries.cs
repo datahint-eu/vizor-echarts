@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class HeatmapSeries
+public partial class HeatmapSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("heatmap")]
-	public string? Type { get; set; }  = "heatmap";
+	public string Type => "heatmap";
 
 	/// <summary>
 	/// Component ID, not specified by default.

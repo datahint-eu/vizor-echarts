@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class ScatterSeries
+public partial class ScatterSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("scatter")]
-	public string? Type { get; set; }  = "scatter";
+	public string Type => "scatter";
 
 	/// <summary>
 	/// Component ID, not specified by default.

@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class RadarSeries
+public partial class RadarSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("radar")]
-	public string? Type { get; set; }  = "radar";
+	public string Type => "radar";
 
 	/// <summary>
 	/// Component ID, not specified by default.

@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class ParallelSeries
+public partial class ParallelSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("parallel")]
-	public string? Type { get; set; }  = "parallel";
+	public string Type => "parallel";
 
 	/// <summary>
 	/// Component ID, not specified by default.

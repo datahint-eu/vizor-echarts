@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class GraphSeries
+public partial class GraphSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("graph")]
-	public string? Type { get; set; }  = "graph";
+	public string Type => "graph";
 
 	/// <summary>
 	/// Component ID, not specified by default.

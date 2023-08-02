@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class ThemeRiverSeries
+public partial class ThemeRiverSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("themeRiver")]
-	public string? Type { get; set; }  = "themeRiver";
+	public string Type => "themeRiver";
 
 	/// <summary>
 	/// Component ID, not specified by default.

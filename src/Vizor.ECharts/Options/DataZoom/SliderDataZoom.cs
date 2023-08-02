@@ -7,12 +7,8 @@ namespace Vizor.ECharts;
 
 public partial class SliderDataZoom : IDataZoom
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("slider")]
-	public string? Type { get; set; }  = "slider";
+	public string Type => "slider";
 
 	/// <summary>
 	/// Component ID, not specified by default.

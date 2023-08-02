@@ -7,12 +7,8 @@ namespace Vizor.ECharts;
 
 public partial class ContinuousVisualMap : IVisualMap
 {
-	/// <summary>
-	/// Used to determine that it is a continuous visualMap component.
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("continuous")]
-	public string? Type { get; set; }  = "continuous";
+	public string Type => "continuous";
 
 	/// <summary>
 	/// Component ID, not specified by default.

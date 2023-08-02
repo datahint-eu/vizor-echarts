@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class FunnelSeries
+public partial class FunnelSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("funnel")]
-	public string? Type { get; set; }  = "funnel";
+	public string Type => "funnel";
 
 	/// <summary>
 	/// Component ID, not specified by default.

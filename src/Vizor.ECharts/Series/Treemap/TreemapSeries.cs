@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class TreemapSeries
+public partial class TreemapSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("treemap")]
-	public string? Type { get; set; }  = "treemap";
+	public string Type => "treemap";
 
 	/// <summary>
 	/// Component ID, not specified by default.

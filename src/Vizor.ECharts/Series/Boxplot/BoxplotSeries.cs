@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class BoxplotSeries
+public partial class BoxplotSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("boxplot")]
-	public string? Type { get; set; }  = "boxplot";
+	public string Type => "boxplot";
 
 	/// <summary>
 	/// Component ID, not specified by default.

@@ -2,4 +2,5 @@
 
 public interface IDataZoom
 {
+	string Type { get; }
 }

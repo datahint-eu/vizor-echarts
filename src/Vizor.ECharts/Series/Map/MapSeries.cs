@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class MapSeries
+public partial class MapSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("map")]
-	public string? Type { get; set; }  = "map";
+	public string Type => "map";
 
 	/// <summary>
 	/// Component ID, not specified by default.

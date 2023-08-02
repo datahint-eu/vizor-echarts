@@ -4,14 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class TreeSeries
+public partial class TreeSeries : ISeries
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("type")]
-	[DefaultValue("tree")]
-	public string? Type { get; set; }  = "tree";
+	public string Type => "tree";
 
 	/// <summary>
 	/// Component ID, not specified by default.
@@ -406,8 +402,7 @@ public partial class TreeSeries
 	/// };
 	/// </summary>
 	[JsonPropertyName("data")]
-	//TODO: rename DataData to TreeData ??
-	public DataData? Data { get; set; } 
+	public TreeSeriesData? Data { get; set; } 
 
 	/// <summary>
 	/// tooltip settings in this series.
