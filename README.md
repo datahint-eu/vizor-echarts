@@ -131,6 +131,15 @@ Additional credentials, headers, policies, ... can also be supplied.
 See [ExternalDataSource](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/Types/ExternalDataSource.cs) and [FetchOptions](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/Types/FetchOptions.cs) for more details.
 
 
+### Datasets
+
+ECharts allows datasets to be transformed.
+This allows for simplified data retrieval, without the need to have a separate dataset for different charts or chart types.
+
+See [Dataset example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Bar/StackedBarTimeSeriesChart.razor) .
+
+See also the [echarts dataset documentation](https://echarts.apache.org/en/option.html#dataset) and [tutorial](https://echarts.apache.org/en/tutorial.html#Dataset) .
+
 ## Javascript functions
 
 ECharts sometimes allows you to assign custom functions instead of values.
