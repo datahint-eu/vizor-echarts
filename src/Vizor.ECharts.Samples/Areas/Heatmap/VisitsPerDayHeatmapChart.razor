@@ -1,0 +1,105 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" DataLoader="LoadChartData" Width="800px" Height="400px" />
+
+@code {
+
+    private static readonly string[] hours = new string[] { "0h", "1h", "2h", "3h", "4h", "5h", "6h", "7h", "8h", "9h", "10h", "11h", "12h", "13h", "14h", "15h", "16h", "17h", "18h", "19h", "20h", "21h", "22h", "23h" };
+    private static readonly string[] days = new string[] { "Sunday", "Saturday", "Friday", "Thursday", "Wednesday", "Tuesday", "Monday" };
+
+    private ChartOptions options = new()
+        {
+            Tooltip = new()
+            {
+                Position = TooltipPositionType.Top
+            },
+            Grid = new()
+            {
+                Height = "50%",
+                Top = "10%"
+            },
+            XAxis = new()
+            {
+                Type = AxisType.Category,
+                Data = hours,
+                SplitArea = new()
+                {
+                    Show = true
+                }
+            },
+            YAxis = new()
+            {
+                Type = AxisType.Category,
+                Data = days,
+                SplitArea = new()
+                {
+                    Show = true
+                }
+            },
+            VisualMap = new ContinuousVisualMap()
+            {
+                Calculable = true,
+                Orient = Orient.Horizontal,
+                Left = "center",
+                Bottom = "15%"
+            },
+			Series = new()
+			{
+				new HeatmapSeries()
+				{
+                    Name = "Visits",
+                    Label = new()
+                    {
+                        Show = true
+                    },
+                    Emphasis = new()
+                    {
+                        ItemStyle = new()
+                        {
+                            ShadowBlur = 10,
+                            ShadowColor = Color.FromRGBA(0, 0, 0, 0.5)
+                        }
+                    }
+				}
+			}
+		};
+
+    private void LoadChartData()
+    {
+        // dimensions = [ x, y, value] where x = hour of day slot and y = day of week
+        var data = new List<SeriesData<int, int, int>>();
+
+        // Monday: y==6
+        data.Add(new(9, 6, 10)); // 9h
+        data.Add(new(10, 6, 15)); // 10h
+        data.Add(new(11, 6, 20)); // 11h
+        data.Add(new(14, 6, 40)); // 14h
+        data.Add(new(15, 6, 40)); // 15h
+        data.Add(new(16, 6, 100)); // 16h
+
+        // Tuesday: y==5
+        data.Add(new(10, 5, 5)); // 10h
+        data.Add(new(11, 5, 10)); // 11h
+        data.Add(new(14, 5, 20)); // 14h
+        data.Add(new(15, 5, 30)); // 15h
+        data.Add(new(16, 5, 50)); // 16h
+
+        var rnd = new Random();
+
+        // Thursday: y==3
+        data.Add(new(10, 3, rnd.Next(50))); // 10h
+        data.Add(new(11, 3, rnd.Next(50))); // 11h
+        data.Add(new(14, 3, rnd.Next(50))); // 14h
+        data.Add(new(15, 3, rnd.Next(50))); // 15h
+        data.Add(new(16, 3, rnd.Next(50))); // 16h
+
+        // Friday: y==2
+        data.Add(new(10, 2, rnd.Next(50))); // 10h
+        data.Add(new(11, 2, rnd.Next(50))); // 11h
+        data.Add(new(14, 2, rnd.Next(50))); // 14h
+        data.Add(new(15, 2, rnd.Next(50))); // 15h
+        data.Add(new(16, 2, rnd.Next(50))); // 16h
+
+        (options.Series![0] as HeatmapSeries)!.Data = data;
+    }
+}
