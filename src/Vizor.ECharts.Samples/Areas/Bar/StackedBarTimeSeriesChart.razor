@@ -33,21 +33,15 @@
 			Series = new()
 		};
 
+	// see https://stackoverflow.com/questions/69215766/echarts-separate-series-based-on-dataset-field
+
 	private void LoadChartData()
 	{
-		var start = new DateOnly(2023, 8, 1);
-		var rnd = new Random();
-
+		// create Bar series for each
 		var names = new string[] { "A", "B", "C", "D" };
 		var series = new List<BarSeries>();
 		for (int seriesIndex = 0; seriesIndex < 4; ++seriesIndex)
 		{
-			var values = new List<SeriesData<DateOnly, int>>(10);
-			for (int i = 0; i < 10; ++i)
-			{
-				values.Add(new(start.AddDays(i), rnd.Next(300)));
-			}
-
 			var s = new BarSeries()
 			{
 				Name = names[seriesIndex],
@@ -60,11 +54,38 @@
 				{
 					Focus = "series"
 				},
-				Data = values
+				DatasetIndex = seriesIndex,
+				Encode = new()
+				{
+					X = "time",
+					Y = "count"
+				}
 			};
 			series.Add(s);
 		}
 
 		options.Series!.AddRange(series);
+
+		// create a dataset
+		var start = new DateOnly(2023, 8, 1);
+		var rnd = new Random();
+
+		var datasets = new List<Dataset>();
+		for (int seriesIndex = 0; seriesIndex < 4; ++seriesIndex)
+		{
+			var values = new List<SeriesData<DateOnly, int>>(10 * 4);
+			for (int i = 0; i < 10; ++i)
+			{
+				values.Add(new(start.AddDays(i), rnd.Next(300)));
+			}
+
+			datasets.Add(new Dataset()
+			{
+				Dimensions = new string[] { "time", "count" },
+				Source = values
+			});
+		}
+
+		options.DatasetList = datasets;
 	}
 }
