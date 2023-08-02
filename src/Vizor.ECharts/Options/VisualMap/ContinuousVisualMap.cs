@@ -63,8 +63,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// range gotten by getOption is always an Array , but not null or undefined .
 	/// </summary>
 	[JsonPropertyName("range")]
-	//TODO: Type Warning: array type 'range' in 'ContinuousVisualMap' will be mapped to List<object>
-	public List<object>? Range { get; set; } 
+	public double[]? Range { get; set; } 
 
 	/// <summary>
 	/// Whether show handles, which can be dragged to adjust "selected range".
@@ -135,14 +134,12 @@ public partial class ContinuousVisualMap : IVisualMap
 
 	/// <summary>
 	/// The label text on both ends, such as ['High', 'Low'] .
-	/// sample .
 	///  
 	/// You can understand the order of items in text array just by a simple trial.
 	/// See visualMap.inverse .
 	/// </summary>
 	[JsonPropertyName("text")]
-	//TODO: Type Warning: array type 'text' in 'ContinuousVisualMap' will be mapped to List<object>
-	public List<object>? Text { get; set; } 
+	public string[]? Text { get; set; } 
 
 	/// <summary>
 	/// The distance between the ends of the main bar and the label, with unit px.
@@ -386,7 +383,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// If you dont want it, set inRange: {color: null} to disable it.
 	/// </summary>
 	[JsonPropertyName("inRange")]
-	public InRange? InRange { get; set; } 
+	public VisualMapRange? InRange { get; set; } 
 
 	/// <summary>
 	/// Define visual channels that will mapped from dataValues that are out of selected range .
@@ -395,7 +392,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// See available configurations in visualMap-continuous.inRange
 	/// </summary>
 	[JsonPropertyName("outOfRange")]
-	public OutOfRange? OutOfRange { get; set; } 
+	public VisualMapRange? OutOfRange { get; set; } 
 
 	/// <summary>
 	/// Property inRange and outOfRange can be set within property controller , which means those inRange and outOfRange are only used on the controller ( visualMap component itself), but are not used on chart (series).
@@ -526,8 +523,8 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("[#bf444c, #d88273, #f6efa6]")]
-	//TODO: Type Warning: array type 'color' in 'ContinuousVisualMap' will be mapped to List<object>
-	public List<object>? Color { get; set; } 
+	[Obsolete]
+	public string[]? Color { get; set; } 
 
 	/// <summary>
 	/// 

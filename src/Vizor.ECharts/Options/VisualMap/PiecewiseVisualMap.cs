@@ -458,7 +458,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// If you dont want it, set inRange: {color: null} to disable it.
 	/// </summary>
 	[JsonPropertyName("inRange")]
-	public InRange? InRange { get; set; } 
+	public VisualMapRange? InRange { get; set; } 
 
 	/// <summary>
 	/// Define visual channels that will mapped from dataValues that are out of selected range .
@@ -467,7 +467,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// See available configurations in visualMap-piecewise.inRange
 	/// </summary>
 	[JsonPropertyName("outOfRange")]
-	public OutOfRange? OutOfRange { get; set; } 
+	public VisualMapRange? OutOfRange { get; set; } 
 
 	/// <summary>
 	/// Property inRange and outOfRange can be set within property controller , which means those inRange and outOfRange are only used on the controller ( visualMap component itself), but are not used on chart (series).

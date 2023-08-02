@@ -32,7 +32,7 @@ public partial class Feature
 
 	/// <summary>
 	/// Magic type switching.
-	/// 示例:  feature: {
+	/// feature: {
 	///     magicType: {
 	///         type: ['line', 'bar', 'stack']
 	///     }

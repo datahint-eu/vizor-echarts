@@ -40,7 +40,6 @@ public partial class Dataset
 	/// More details about dataset can be checked in the tutorial .
 	/// </summary>
 	[JsonPropertyName("source")]
-	//TODO: Type Warning: Failed to map property 'source' in type 'dataset' with types 'array,object'
 	public object? Source { get; set; } 
 
 	/// <summary>
@@ -105,7 +104,7 @@ public partial class Dataset
 	/// See the tutorial of data transform .
 	/// </summary>
 	[JsonPropertyName("transform")]
-	public List<object>? Transform { get; set; } 
+	public List<IDatasetTransform>? Transform { get; set; } 
 
 	/// <summary>
 	/// Specify the input dataset for dataset.transform .
