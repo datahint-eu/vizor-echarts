@@ -14,8 +14,7 @@
 
 @code {
 
-	// one instance per chart, we need it to pass state info of external data sources, ...
-	private JsonSerializerOptions? jsonOpts;
+	private ChartOptions.JsonContext? jsonCtx;
 
 	private readonly List<ExternalDataSourceConverter.FetchCommand> commands = new();
 	private readonly string id = "chart" + Guid.NewGuid().ToString().Replace("-", "");
@@ -63,9 +62,6 @@
 		if (Options == null)
 			throw new ArgumentException("Options property must be set");
 
-		// init the serializer options if required
-		jsonOpts ??= CreateSerializerOptions();
-
 		// register the chart in a group if available
 		Group?.Add(this);
 
@@ -108,7 +104,7 @@
 	{
 		try
 		{
-			jsonOpts = null;
+			jsonCtx = null;
 			commands.Clear();
 
 			// remove the chart from a group (if needed)
@@ -138,7 +134,8 @@
 		commands.Clear();
 
 		// serialize the chart options
-		var chartOpts = JsonSerializer.Serialize(Options, jsonOpts);
+		jsonCtx ??= CreateSerializerContext();
+		var chartOpts = JsonSerializer.Serialize<ChartOptions>(Options, jsonCtx.ChartOptions);
 
 		/*
 		using var ms = new MemoryStream(1024 * 32);
@@ -154,7 +151,7 @@
 		return (chartOpts, fetchOpts);
 	}
 
-	private JsonSerializerOptions CreateSerializerOptions()
+	private ChartOptions.JsonContext CreateSerializerContext()
 	{
 		var jsonOpts = new JsonSerializerOptions()
 			{
@@ -182,6 +179,6 @@
 		// register the special converter for external data source fetches
 		jsonOpts.Converters.Add(new ExternalDataSourceConverter(commands, id));
 
-		return jsonOpts;
+		return new ChartOptions.JsonContext(jsonOpts);
 	}
 }

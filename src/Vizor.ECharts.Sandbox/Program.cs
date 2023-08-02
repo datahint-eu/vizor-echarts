@@ -88,9 +88,9 @@ function getData() {
 
 	Console.WriteLine($"allocated before = {GC.GetTotalAllocatedBytes(precise: true)}");
 
-	for (int i = 0; i < 100000; ++i)
+	for (int i = 0; i < 1_000_000; ++i)
 	{
-		var serializer = JsonSerializer.Serialize(options, jsonOpts);
+		var json = JsonSerializer.Serialize(options, jsonOpts);
 	}
 }
 
