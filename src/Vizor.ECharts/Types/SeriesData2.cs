@@ -16,21 +16,6 @@ public struct SeriesData<T1, T2>
 	public T2? Value2 { get; set; }
 }
 
-public class SeriesDataConverterFactory : JsonConverterFactory
-{
-	public override bool CanConvert(Type typeToConvert)
-	{
-		return typeToConvert.IsGenericType && typeToConvert.GetGenericTypeDefinition() == typeof(SeriesData<,>);
-	}
-
-	public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
-	{
-		Type[] genericArgs = typeToConvert.GetGenericArguments();
-		Type converterType = typeof(SeriesDataConverter<,>).MakeGenericType(genericArgs);
-		return (Activator.CreateInstance(converterType) as JsonConverter)!;
-	}
-}
-
 public class SeriesDataConverter<T1, T2> : JsonConverter<SeriesData<T1, T2>>
 {
 	public override SeriesData<T1, T2> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
