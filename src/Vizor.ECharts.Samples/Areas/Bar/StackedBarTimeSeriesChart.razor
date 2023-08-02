@@ -1,0 +1,70 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" DataLoader="LoadChartData" Width="auto" Height="400px" />
+
+@code {
+
+	private ChartOptions options = new()
+		{
+			Tooltip = new()
+			{
+				Trigger = TooltipTrigger.Axis,
+				AxisPointer = new()
+				{
+					Type = AxisPointerType.Shadow
+				}
+			},
+			Legend = new() { },
+			Grid = new()
+			{
+				Left = "3%",
+				Right = "4%",
+				Bottom = "3%",
+				ContainLabel = true
+			},
+			YAxis = new()
+			{
+				Type = AxisType.Value
+			},
+			XAxis = new()
+			{
+				Type = AxisType.Time
+			},
+			Series = new()
+		};
+
+	private void LoadChartData()
+	{
+		var start = new DateOnly(2023, 8, 1);
+		var rnd = new Random();
+
+		var names = new string[] { "A", "B", "C", "D" };
+		var series = new List<BarSeries>();
+		for (int seriesIndex = 0; seriesIndex < 4; ++seriesIndex)
+		{
+			var values = new List<SeriesData<DateOnly, int>>(10);
+			for (int i = 0; i < 10; ++i)
+			{
+				values.Add(new(start.AddDays(i), rnd.Next(300)));
+			}
+
+			var s = new BarSeries()
+			{
+				Name = names[seriesIndex],
+				Stack = "StackName",
+				Label = new()
+				{
+					Show = true
+				},
+				Emphasis = new()
+				{
+					Focus = "series"
+				},
+				Data = values
+			};
+			series.Add(s);
+		}
+
+		options.Series!.AddRange(series);
+	}
+}
