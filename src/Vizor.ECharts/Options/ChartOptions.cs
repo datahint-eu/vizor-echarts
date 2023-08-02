@@ -1,8 +1,6 @@
-// AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// http://www.datahint.eu/
-
 
 using System.ComponentModel;
+using System.Data;
 using System.Text.Json.Serialization;
 using Vizor.ECharts.Options.DataZoom;
 using Vizor.ECharts.Options.VisualMap;
@@ -1266,8 +1264,22 @@ public partial class ChartOptions
 	///  
 	/// More details about dataset can be checked in the tutorial .
 	/// </summary>
+	[JsonIgnore]
+	public Dataset? Dataset
+	{
+		get => DatasetObject as Dataset;
+		set => DatasetObject = value;
+	}
+
+	[JsonIgnore]
+	public List<Dataset>? DatasetList
+	{
+		get => DatasetObject as List<Dataset>;
+		set => DatasetObject = value;
+	}
+
 	[JsonPropertyName("dataset")]
-	public Dataset? Dataset { get; set; } 
+	public object? DatasetObject { get; set; } 
 
 	/// <summary>
 	/// The W3C has developed the WAI-ARIA , the Accessible Rich Internet Applications Suite, which is dedicated to making web content and web applications accessible.

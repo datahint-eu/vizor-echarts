@@ -85,8 +85,7 @@ public partial class Dataset
 	/// Otherwise, tooltip will displayed only value horizontally.
 	/// </summary>
 	[JsonPropertyName("dimensions")]
-	//TODO: Type Warning: array type 'dimensions' in 'dataset' will be mapped to List<object>
-	public List<object>? Dimensions { get; set; } 
+	public NumberOrStringArray? Dimensions { get; set; } 
 
 	/// <summary>
 	/// Whether the first row/column of dataset.source represents dimension names .
