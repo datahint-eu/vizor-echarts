@@ -5,14 +5,14 @@
 /// </summary>
 public class ChartGroup
 {
-	private List<EChart> charts = new List<EChart>();
+	private readonly List<EChartBase> charts = new();
 
-	internal void Add(EChart chart)
+	internal void Add(EChartBase chart)
 	{
 		charts.Add(chart);
 	}
 
-	internal void Remove(EChart chart)
+	internal void Remove(EChartBase chart)
 	{
 		charts.Remove(chart);
 	}

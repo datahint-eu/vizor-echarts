@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Data;
 using System.Text.Json.Serialization;
+using Vizor.ECharts.Internal;
 
 namespace Vizor.ECharts;
 
@@ -307,7 +308,8 @@ public partial class ChartOptions
 	/// If you want to change the process sequence, you can just change the sequence of the definitions apearing in option .
 	/// </summary>
 	[JsonPropertyName("dataZoom")]
-	public List<object>? DataZoom { get; set; }  //Remark: List<IDataZoom> doesn't serialize correctly in .NET 6
+	[JsonConverter(typeof(PolymorphicListJsonConverter<IDataZoom>))]
+	public List<IDataZoom>? DataZoom { get; set; }
 
 	/// <summary>
 	/// visualMap is a type of component for visual encoding, which maps the data to visual channels, including:   symbol : Type of symbol.
@@ -1290,7 +1292,8 @@ public partial class ChartOptions
 	public object? Aria { get; set; } 
 
 	[JsonPropertyName("series")]
-	public List<object>? Series { get; set; }  //Remark: List<ISeries> doesn't serialize correctly in .NET 6
+	[JsonConverter(typeof(PolymorphicListJsonConverter<ISeries>))]
+	public List<ISeries>? Series { get; set; }
 
 	/// <summary>
 	/// To specify whether it's dark mode.

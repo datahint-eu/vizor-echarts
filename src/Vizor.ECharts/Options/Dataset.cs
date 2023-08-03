@@ -1,6 +1,7 @@
 
 using System.ComponentModel;
 using System.Text.Json.Serialization;
+using Vizor.ECharts.Internal;
 
 namespace Vizor.ECharts;
 
@@ -104,7 +105,8 @@ public partial class Dataset
 	/// See the tutorial of data transform .
 	/// </summary>
 	[JsonPropertyName("transform")]
-	public List<object>? Transform { get; set; } //Remark: List<IDatasetTransform> doesn't serialize correctly in .NET 6
+	[JsonConverter(typeof(PolymorphicListJsonConverter<IDatasetTransform>))]
+	public List<IDatasetTransform>? Transform { get; set; }
 
 	/// <summary>
 	/// Specify the input dataset for dataset.transform .

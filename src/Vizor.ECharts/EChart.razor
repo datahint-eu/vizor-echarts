@@ -7,51 +7,12 @@
 
 @namespace Vizor.ECharts
 
-@inject IJSRuntime jsRuntime
-@implements IAsyncDisposable
+@inherits EChartBase
 
 <div id="@id" class="@CssClass" style="@Style"></div>
 
 @code {
 
-	// one instance per chart, we need it to pass state info of external data sources, ...
-	private JsonSerializerOptions? jsonOpts;
-
-	private readonly List<ExternalDataSourceConverter.FetchCommand> commands = new();
-	private readonly string id = "chart" + Guid.NewGuid().ToString().Replace("-", "");
-
-	[Parameter]
-	public string? CssClass { get; set; }
-
-	[Parameter]
-	public string? Style { get; set; }
-
-	[Parameter]
-	public string? Width { get; set; }
-
-	[Parameter]
-	public string? Height { get; set; }
-
-	[Parameter]
-	public string? Theme { get; set; }
-
-	[Parameter]
-	public ChartGroup? Group { get; set; }
-
-	[Parameter]
-	public ChartRenderer Renderer { get; set; } = ChartRenderer.Svg;
-
-	[Parameter]
-	public List<JsonConverter>? JsonConverters { get; set; }
-
-	/// <summary>
-	/// Function used to retrieve data from external sources.
-	/// </summary>
-	[Parameter]
-	public EventCallback DataLoader { get; set; }
-
-	[Parameter, EditorRequired]
-	public ChartOptions Options { get; set; } = default!;
 
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
@@ -80,7 +41,7 @@
 		if (DataLoader.HasDelegate)
 		{
 			// init the chart without any data
-			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", id, Theme, initOptions, null /*fetchOptions*/, null /*chartOpts*/);
+			await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", id, Theme, initOptions, null /*fetchOptions*/, null /*chartOpts*/);
 
 			// retrieve the data
 			if (DataLoader.HasDelegate)
@@ -92,7 +53,7 @@
 			(var chartOpts, var fetchOpts) = Serialize();
 
 			// update the chart
-			await jsRuntime.InvokeVoidAsync("vizorECharts.updateChart", id, fetchOpts, chartOpts);
+			await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", id, fetchOpts, chartOpts);
 		}
 		else
 		{
@@ -100,26 +61,11 @@
 			(var chartOpts, var fetchOpts) = Serialize();
 
 			//TODO: also pass DotNetObjectReference.Create(this) ?
-			await jsRuntime.InvokeVoidAsync("vizorECharts.initChart", id, Theme, initOptions, fetchOpts, chartOpts);
+			await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", id, Theme, initOptions, fetchOpts, chartOpts);
 		}
 	}
 
-	public async ValueTask DisposeAsync()
-	{
-		try
-		{
-			jsonOpts = null;
-			commands.Clear();
-
-			// remove the chart from a group (if needed)
-			Group?.Remove(this);
-
-			await jsRuntime.InvokeVoidAsync("vizorECharts.disposeChart", id);
-		}
-		catch { }
-	}
-
-	public async Task UpdateAsync(bool executeDataLoader = true)
+	public override async Task UpdateAsync(bool executeDataLoader = true)
 	{
 		if (executeDataLoader && DataLoader.HasDelegate)
 		{
@@ -129,59 +75,6 @@
 		// serialize all required data
 		(var chartOpts, var fetchOpts) = Serialize();
 
-		await jsRuntime.InvokeVoidAsync("vizorECharts.updateChart", id, fetchOpts, chartOpts);
-	}
-
-	private (string chartOpts, string? fetchOpts) Serialize()
-	{
-		// clear the fetch option commands
-		commands.Clear();
-
-		// serialize the chart options
-		var chartOpts = JsonSerializer.Serialize(Options, jsonOpts);
-
-		/*
-		using var ms = new MemoryStream(1024 * 32);
-		using var writer = new Utf8JsonWriter(ms);
-
-		JsonSerializer.Serialize(writer, Options, typeof(ChartOptions), jsonOpts);
-		var chartOpts = Encoding.UTF8.GetString(ms.GetBuffer(), 0, (int)writer.BytesCommitted);
-		*/
-
-		// serialize the chart options first, fetch commands are constructed during serialize
-		var fetchOpts = commands.Count == 0 ? null : JsonSerializer.Serialize(commands);
-
-		return (chartOpts, fetchOpts);
-	}
-
-	private JsonSerializerOptions CreateSerializerOptions()
-	{
-		var jsonOpts = new JsonSerializerOptions()
-			{
-				PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-				DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-#if DEBUG
-            WriteIndented = true
-#endif
-			};
-
-		jsonOpts.Converters.Add(new DateOnlyJsonConverter());
-		jsonOpts.Converters.Add(new DateTimeJsonConverter());
-		jsonOpts.Converters.Add(new DateTimeOffsetJsonConverter());
-		jsonOpts.Converters.Add(new SeriesDataConverterFactory());
-
-		// register extra JSON converters if needed
-		if (JsonConverters != null)
-		{
-			foreach (var converter in JsonConverters)
-			{
-				jsonOpts.Converters.Add(converter);
-			}
-		}
-
-		// register the special converter for external data source fetches
-		jsonOpts.Converters.Add(new ExternalDataSourceConverter(commands, id));
-
-		return jsonOpts;
+		await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", id, fetchOpts, chartOpts);
 	}
 }
