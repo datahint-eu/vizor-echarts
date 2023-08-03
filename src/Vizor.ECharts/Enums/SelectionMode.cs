@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-[JsonConverter(typeof(CamelCaseEnumConverter<SelectionMode>))]
+[JsonConverter(typeof(CamelCaseEnumConverterWithBoolean<SelectionMode>))]
 public enum SelectionMode
 {
     True,

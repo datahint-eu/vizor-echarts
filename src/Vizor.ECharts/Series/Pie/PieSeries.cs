@@ -256,9 +256,7 @@ public partial class PieSeries : ISeries
 	/// Style of circle placeholder.
 	/// </summary>
 	[JsonPropertyName("emptyCircleStyle")]
-	[DefaultValue("true")]
-	//TODO: Type Warning: Failed to map property 'emptyCircleStyle' in type 'PieSeries' with types 'boolean,object'
-	public object? EmptyCircleStyle { get; set; } 
+	public EmptyCircleStyle? EmptyCircleStyle { get; set; } 
 
 	/// <summary>
 	/// Text label of pie chart, to explain some data information about graphic item like value, name and so on.

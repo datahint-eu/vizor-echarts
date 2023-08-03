@@ -390,8 +390,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("autoCurveness")]
 	[DefaultValue(false)]
-	//TODO: Type Warning: Failed to map property 'autoCurveness' in type 'GraphSeries' with types 'array,boolean,number'
-	public object? AutoCurveness { get; set; }
+	public AutoCurveness? AutoCurveness { get; set; }
 
 	/// <summary>
 	/// Nodes list of graph.

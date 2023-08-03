@@ -1500,7 +1500,6 @@ public partial class ChartOptions
 	/// Each item of this array is an echarts option ( ECUnitOption ).
 	/// </summary>
 	[JsonPropertyName("options")]
-	//TODO: Type Warning: array type 'options' in '' will be mapped to List<object>
 	public List<object>? Options { get; set; } 
 
 	/// <summary>

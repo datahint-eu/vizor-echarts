@@ -142,8 +142,7 @@ public partial class MapSeries : ISeries
 	/// ],
 	/// </summary>
 	[JsonPropertyName("boundingCoords")]
-	//TODO: Type Warning: array type 'boundingCoords' in 'MapSeries' will be mapped to List<object>
-	public List<object>? BoundingCoords { get; set; } 
+	public List<double[]>? BoundingCoords { get; set; }
 
 	/// <summary>
 	/// Zoom rate of current view-port.

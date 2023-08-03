@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-[JsonConverter(typeof(CamelCaseEnumConverter<AxisPointerStatus>))]
+[JsonConverter(typeof(CamelCaseEnumConverterWithBoolean<AxisPointerStatus>))]
 public enum AxisPointerStatus
 {
 	True,

@@ -24,8 +24,7 @@ public partial class LinesSeriesData
 	/// Each coordinate could be [x, y] in rectangular coordinate and [lng, lat] in geographic coordinate .
 	/// </summary>
 	[JsonPropertyName("coords")]
-	//TODO: Type Warning: array type 'coords' in 'LinesSeriesData' will be mapped to List<object>
-	public List<object>? Coords { get; set; } 
+	public List<double[]>? Coords { get; set; } 
 
 	/// <summary>
 	/// The line style of this data item.

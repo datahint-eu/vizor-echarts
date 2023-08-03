@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-[JsonConverter(typeof(CamelCaseEnumConverter<Roam>))]
+[JsonConverter(typeof(CamelCaseEnumConverterWithBoolean<Roam>))]
 public enum Roam
 {
 	True,

@@ -153,8 +153,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("nodeClick")]
 	[DefaultValue("zoomToNode")]
-	//TODO: Type Warning: Failed to map property 'nodeClick' in type 'TreemapSeries' with types 'boolean,string'
-	public object? NodeClick { get; set; } 
+	public TreemapNodeClick? NodeClick { get; set; } 
 
 	/// <summary>
 	/// The treemap will be auto zoomed to a appropriate ratio when a node is clicked (when nodeClick is set as 'zoomToNode' and no drill down happens).

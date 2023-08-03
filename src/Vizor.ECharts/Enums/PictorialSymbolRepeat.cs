@@ -49,7 +49,18 @@ public class PictorialSymbolRepeatConverter : JsonConverter<PictorialSymbolRepea
 	{
 		if (value.RepeatType != null)
 		{
-			writer.WriteStringValue(value.RepeatType!.ToString()!.ToLower());
+			switch (value.RepeatType.Value)
+			{
+				case PictorialSymbolRepeatType.True:
+					writer.WriteBooleanValue(true);
+					break;
+				case PictorialSymbolRepeatType.False:
+					writer.WriteBooleanValue(false);
+					break;
+				default:
+					writer.WriteStringValue(value.RepeatType!.ToString()!.ToLower());
+					break;
+			}
 		}
 		else if (value.Number != null)
 		{

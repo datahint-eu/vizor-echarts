@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-[JsonConverter(typeof(CamelCaseEnumConverter<SunburstNodeClick>))]
+[JsonConverter(typeof(CamelCaseEnumConverterWithBoolean<SunburstNodeClick>))]
 public enum SunburstNodeClick
 {
 	True,

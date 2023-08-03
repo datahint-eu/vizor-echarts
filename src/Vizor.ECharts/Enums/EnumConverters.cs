@@ -30,3 +30,30 @@ public class CamelCaseEnumConverter<TEnum> : JsonConverter<TEnum> where TEnum : 
 		writer.WriteStringValue(char.ToLower(str[0]) + str[1..]);
 	}
 }
+
+public class CamelCaseEnumConverterWithBoolean<TEnum> : JsonConverter<TEnum> where TEnum : struct
+{
+	public override TEnum Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+	{
+		throw new NotImplementedException($"Deserialization is not implemented for {typeof(TEnum).Name}.");
+	}
+
+	public override void Write(Utf8JsonWriter writer, TEnum value, JsonSerializerOptions options)
+	{
+		var str = value.ToString()!;
+		str = char.ToLower(str[0]) + str[1..];
+
+		switch (str)
+		{
+			case "true":
+				writer.WriteBooleanValue(true);
+				break;
+			case "false":
+				writer.WriteBooleanValue(false);
+				break;
+			default:
+				writer.WriteStringValue(str);
+				break;
+		}
+	}
+}

@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-[JsonConverter(typeof(CamelCaseEnumConverter<Step>))]
+[JsonConverter(typeof(CamelCaseEnumConverterWithBoolean<Step>))]
 public enum Step
 {
     True,

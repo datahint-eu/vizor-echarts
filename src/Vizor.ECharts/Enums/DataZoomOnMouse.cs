@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-[JsonConverter(typeof(CamelCaseEnumConverter<DataZoomOnMouse>))]
+[JsonConverter(typeof(CamelCaseEnumConverterWithBoolean<DataZoomOnMouse>))]
 public enum DataZoomOnMouse
 {
 	True,
