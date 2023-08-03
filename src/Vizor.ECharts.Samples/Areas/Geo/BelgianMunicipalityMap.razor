@@ -1,0 +1,37 @@
+﻿@using System.Text.Json.Serialization;
+@using Vizor.ECharts;
+@using Microsoft.AspNetCore.Components.Web;
+
+<Vizor.ECharts.EChart Options="@mapOptions" Maps="maps" Width="1000px" Height="1000px" @ref="@chart" />
+
+@code {
+
+	private EChart? chart = null;
+
+	// Geo data: https://github.com/bmesuere/belgium-topojson
+
+	private ChartOptions mapOptions = new()
+		{
+			Tooltip = new()
+			{
+			},
+			Series = new()
+			{
+				new MapSeries()
+				{
+					Id = "population",
+					Roam = Roam.True,
+					Map = "BE",
+					ItemStyle = new()
+					{
+						AreaColor = "white",
+					}
+				}
+			}
+		};
+
+	private IMapDefinition[] maps = new[]
+	{
+		new GeoMapDefinition("BE", new ExternalDataSource("/data/BE_mun.json"))
+	};
+}
