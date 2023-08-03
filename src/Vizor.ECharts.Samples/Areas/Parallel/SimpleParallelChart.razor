@@ -1,0 +1,55 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=parallel-simple
+
+	private ChartOptions options = new()
+		{
+			ParallelAxis = new ()
+			{
+				new()
+				{
+					Dim = 0,
+					Name = "Price"
+				},
+				new()
+				{
+					Dim = 1,
+					Name = "Net Weight"
+				},
+				new()
+				{
+					Dim = 2,
+					Name = "Amount"
+				},
+				new()
+				{
+					Dim = 3,
+					Name = "Score",
+					Type = AxisType.Category,
+					Data = new string[] { "Excellent", "Good", "OK", "Bad" }
+				}
+			},
+			Series = new()
+			{
+				new ParallelSeries()
+				{
+					LineStyle = new()
+					{
+						Width = 4
+					},
+					Data = new List<object>()
+					{
+						CreateLineData(12.99, 100, 82, "Good"),
+						CreateLineData(9.99, 80, 77, "OK"),
+						CreateLineData(20, 120, 60, "Excellent"),
+					}
+				}
+			}
+		};
+
+	private static object CreateLineData(double dim0, double dim1, double dim2, string cat) => new object[] { dim0, dim1, dim2, cat };
+}
