@@ -6,10 +6,20 @@ namespace Vizor.ECharts;
 
 public partial class FunnelSeriesData
 {
-	/// <summary>
-	/// the name of data item.
-	/// </summary>
-	[JsonPropertyName("name")]
+    public FunnelSeriesData()
+    {
+    }
+
+    public FunnelSeriesData(string name, double value)
+    {
+		Name = name;
+		Value = value;
+	}
+
+    /// <summary>
+    /// the name of data item.
+    /// </summary>
+    [JsonPropertyName("name")]
 	public string? Name { get; set; } 
 
 	/// <summary>

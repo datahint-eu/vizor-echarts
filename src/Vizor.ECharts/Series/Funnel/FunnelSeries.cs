@@ -85,9 +85,9 @@ public partial class FunnelSeries : ISeries
 	/// Data sorting, which can be whether 'ascending' , 'descending' , 'none' (in data order)
 	/// </summary>
 	[JsonIgnore]
-	public SortOrder? Sort
+	public FunnelSortOrder? Sort
 	{
-		get => (SortOrder?)SortObject;
+		get => (FunnelSortOrder?)SortObject;
 		set => SortObject = value;
 	}
 
