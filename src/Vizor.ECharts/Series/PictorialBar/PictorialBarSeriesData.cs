@@ -6,10 +6,20 @@ namespace Vizor.ECharts;
 
 public partial class PictorialBarSeriesData
 {
-	/// <summary>
-	/// The name of data item.
-	/// </summary>
-	[JsonPropertyName("name")]
+    public PictorialBarSeriesData()
+    {
+    }
+
+    public PictorialBarSeriesData(string symbol, double value)
+    {
+		Value = value;
+		Symbol = symbol;
+	}
+
+    /// <summary>
+    /// The name of data item.
+    /// </summary>
+    [JsonPropertyName("name")]
 	public string? Name { get; set; } 
 
 	/// <summary>

@@ -104,7 +104,8 @@ public class ColorConverter : JsonConverter<Color>
 				case RadialGradient rg:
 					writer.WriteRawValue($"new echarts.graphic.RadialGradient({rg.X}, {rg.Y}, {rg.R}, {colorStops}, {global})", true);
 					break;
-
+				default:
+					throw new NotSupportedException($"Serialization of type {value.GraphicColor.GetType()} not supported");
 			}
 		}
 		else

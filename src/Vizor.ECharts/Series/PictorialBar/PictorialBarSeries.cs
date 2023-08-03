@@ -338,7 +338,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue("100%,100%")]
-	public NumberOrNumberArray? SymbolSize { get; set; } 
+	public NumberOrStringArray? SymbolSize { get; set; } 
 
 	/// <summary>
 	/// Specify the location of the graphic elements.

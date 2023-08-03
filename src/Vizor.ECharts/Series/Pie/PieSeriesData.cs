@@ -6,10 +6,20 @@ namespace Vizor.ECharts;
 
 public partial class PieSeriesData
 {
-	/// <summary>
-	/// The name of data item.
-	/// </summary>
-	[JsonPropertyName("name")]
+    public PieSeriesData()
+    {
+    }
+
+    public PieSeriesData(string name, double value)
+    {
+		Name = name;
+		Value = value;
+	}
+
+    /// <summary>
+    /// The name of data item.
+    /// </summary>
+    [JsonPropertyName("name")]
 	public string? Name { get; set; } 
 
 	/// <summary>
