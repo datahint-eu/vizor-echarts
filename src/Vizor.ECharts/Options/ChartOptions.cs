@@ -847,7 +847,7 @@ public partial class ChartOptions
 	/// See this example:
 	/// </summary>
 	[JsonPropertyName("parallelAxis")]
-	public ParallelAxis? ParallelAxis { get; set; } 
+	public List<ParallelAxis>? ParallelAxis { get; set; } 
 
 	/// <summary>
 	/// An axis with a single dimension.

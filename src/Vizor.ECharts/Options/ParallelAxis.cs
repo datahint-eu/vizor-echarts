@@ -94,7 +94,7 @@ public partial class ParallelAxis
 	/// </summary>
 	[JsonPropertyName("type")]
 	[DefaultValue("value")]
-	public string? Type { get; set; } 
+	public AxisType? Type { get; set; } 
 
 	/// <summary>
 	/// Name of axis.
