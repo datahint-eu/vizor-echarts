@@ -46,7 +46,7 @@ public class ColorOrFunctionConverter : JsonConverter<ColorOrFunction>
 	{
 		if (value.Color != null)
 		{
-			writer.WriteStringValue(value.Color.ToString());
+			ColorConverter.Instance.Write(writer, value.Color, options);
 		}
 		else if (value.Function != null)
 		{

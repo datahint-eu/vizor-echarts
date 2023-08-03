@@ -104,7 +104,7 @@ public partial class Geo
 	/// center: project([115.97, 29.71])
 	/// </summary>
 	[JsonPropertyName("center")]
-	public double[]? Center { get; set; } 
+	public NumberOrStringArray? Center { get; set; } 
 
 	/// <summary>
 	/// Used to scale aspect of geo.

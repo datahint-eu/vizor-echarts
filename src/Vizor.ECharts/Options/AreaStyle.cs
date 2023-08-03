@@ -64,11 +64,44 @@ public partial class AreaStyle
 	/// By default, the area between axis line and data will be filled.
 	/// This config enables you to fill the area from data to the max or min of the axis data or a specified value.
 	///  
-	/// Valid values:   'auto' to fill between axis line and data ( Default )  'start' to fill between min axis value (when not inverse ) and data  'end' to fill between max axis value (when not inverse ) and data  number to fill between specified value and data (Since v5.3.2 )
+	/// Valid values:
+	/// 'auto' to fill between axis line and data ( Default )
+	/// 'start' to fill between min axis value (when not inverse ) and data 
+	/// 'end' to fill between max axis value (when not inverse ) and data 
+	/// number to fill between specified value and data (Since v5.3.2 )
 	/// </summary>
 	[JsonPropertyName("origin")]
 	[DefaultValue("auto")]
-	//TODO: Type Warning: Failed to map property 'origin' in type 'areaStyle' with types 'enum,number'
-	public object? Origin { get; set; } 
+	public object? OriginObject { get; set; }
+
+	/// <summary>
+	/// Origin position of area.
+	///  
+	/// By default, the area between axis line and data will be filled.
+	/// This config enables you to fill the area from data to the max or min of the axis data or a specified value.
+	///  
+	/// Valid values:
+	/// 'auto' to fill between axis line and data ( Default )
+	/// 'start' to fill between min axis value (when not inverse ) and data 
+	/// 'end' to fill between max axis value (when not inverse ) and data 
+	/// 
+	/// number to fill between specified value and data (Since v5.3.2 )
+	/// Use OriginValue to specify the number
+	[JsonIgnore]
+	public AreaStyleOrigin? Origin
+	{
+		get => (AreaStyleOrigin?)OriginObject;
+		set => OriginObject = value;
+	}
+
+	/// <summary>
+	/// number to fill between specified value and data (Since v5.3.2 )
+	/// </summary>
+	[JsonIgnore]
+	public double? OriginValue
+	{
+		get => (double?)OriginObject;
+		set => OriginObject = value;
+	}
 
 }

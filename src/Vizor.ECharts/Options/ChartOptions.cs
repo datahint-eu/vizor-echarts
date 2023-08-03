@@ -1345,8 +1345,7 @@ public partial class ChartOptions
 	/// }
 	/// </summary>
 	[JsonPropertyName("color")]
-	//TODO: Type Warning: array type 'color' in '' will be mapped to List<object>
-	public List<object>? Color { get; set; } 
+	public List<Color>? Color { get; set; } 
 
 	/// <summary>
 	/// Background color.

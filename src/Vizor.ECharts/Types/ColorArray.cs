@@ -47,14 +47,14 @@ public class ColorArrayConverter : JsonConverter<ColorArray>
 		{
 			if (value.Colors.Length == 1)
 			{
-				writer.WriteStringValue(value.Colors[0].ToString());
+				ColorConverter.Instance.Write(writer, value.Colors[0], options);
 			}
 			else
 			{
 				writer.WriteStartArray();
 				foreach (var val in value.Colors)
 				{
-					writer.WriteStringValue(val.ToString());
+					ColorConverter.Instance.Write(writer, val, options);
 				}
 				writer.WriteEndArray();
 			}

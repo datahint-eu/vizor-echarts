@@ -115,8 +115,7 @@ public partial class MapSeries : ISeries
 	/// Example:  center: [115.97, '30%']
 	/// </summary>
 	[JsonPropertyName("center")]
-	//TODO: Type Warning: array type 'center' in 'MapSeries' will be mapped to List<object>
-	public List<object>? Center { get; set; } 
+	public NumberOrStringArray? Center { get; set; } 
 
 	/// <summary>
 	/// Used to scale aspect of geo.
@@ -300,8 +299,7 @@ public partial class MapSeries : ISeries
 	/// After setting these two values, left/right/top/bottom/width/height becomes invalid.
 	/// </summary>
 	[JsonPropertyName("layoutCenter")]
-	//TODO: Type Warning: array type 'layoutCenter' in 'MapSeries' will be mapped to List<object>
-	public List<object>? LayoutCenter { get; set; } 
+	public NumberOrStringArray? LayoutCenter { get; set; } 
 
 	/// <summary>
 	/// Size of map, see layoutCenter for more information.
