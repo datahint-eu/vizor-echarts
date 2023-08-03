@@ -173,8 +173,7 @@ public partial class BoxplotSeries : ISeries
 	/// Otherwise, tooltip will displayed only value horizontally.
 	/// </summary>
 	[JsonPropertyName("dimensions")]
-	//TODO: Type Warning: array type 'dimensions' in 'BoxplotSeries' will be mapped to List<object>
-	public List<object>? Dimensions { get; set; } 
+	public string[]? Dimensions { get; set; }
 
 	/// <summary>
 	/// Define what is encoded to for each dimension of data .

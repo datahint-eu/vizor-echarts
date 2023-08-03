@@ -254,8 +254,7 @@ public partial class AxisPointer
 	/// {number} The result of conversion.
 	/// </summary>
 	[JsonPropertyName("link")]
-	//TODO: Type Warning: array type 'link' in 'axisPointer' will be mapped to List<object>
-	public List<object>? Link { get; set; } 
+	public List<AxisPointerLink>? Link { get; set; } 
 
 	/// <summary>
 	/// Conditions to trigger tooltip.

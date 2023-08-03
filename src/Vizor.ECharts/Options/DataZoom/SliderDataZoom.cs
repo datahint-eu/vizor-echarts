@@ -519,8 +519,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// When we are using dynamic data (update data periodically via setOption ), if in 'value ' mode, the window will be kept in a fixed value range despite how data are appended, while if in 'percent' mode, whe window range will be changed alone with the appended data (suppose axis.min and axis.max are not specified).
 	/// </summary>
 	[JsonPropertyName("rangeMode")]
-	//TODO: Type Warning: array type 'rangeMode' in 'SliderDataZoom' will be mapped to List<object>
-	public List<object>? RangeMode { get; set; } 
+	public NumberOrStringArray? RangeMode { get; set; } 
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .

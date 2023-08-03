@@ -215,8 +215,7 @@ public partial class TreemapSeries : ISeries
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("colorAlpha")]
-	//TODO: Type Warning: array type 'colorAlpha' in 'TreemapSeries' will be mapped to List<object>
-	public List<object>? ColorAlpha { get; set; } 
+	public double[]? ColorAlpha { get; set; } 
 
 	/// <summary>
 	/// It indicates the range of saturation (color alpha) for nodes  of the series.

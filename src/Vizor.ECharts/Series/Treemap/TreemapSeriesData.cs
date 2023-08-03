@@ -78,8 +78,7 @@ public partial class TreemapSeriesData
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("color")]
-	//TODO: Type Warning: array type 'color' in 'TreemapSeriesData' will be mapped to List<object>
-	public List<object>? Color { get; set; } 
+	public Color[]? Color { get; set; } 
 
 	/// <summary>
 	/// It indicates the range of tranparent rate (color alpha) for nodes in a level  
@@ -95,8 +94,7 @@ public partial class TreemapSeriesData
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("colorAlpha")]
-	//TODO: Type Warning: array type 'colorAlpha' in 'TreemapSeriesData' will be mapped to List<object>
-	public List<object>? ColorAlpha { get; set; } 
+	public double[]? ColorAlpha { get; set; } 
 
 	/// <summary>
 	/// It indicates the range of saturation (color alpha) for nodes in a level.

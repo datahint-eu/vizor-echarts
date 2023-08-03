@@ -16,8 +16,7 @@ public partial class HeatmapSeriesData
 	/// Value of data item.
 	/// </summary>
 	[JsonPropertyName("value")]
-	//TODO: Type Warning: array type 'value' in 'HeatmapSeriesData' will be mapped to List<object>
-	public List<object>? Value { get; set; } 
+	public object? Value { get; set; } 
 
 	/// <summary>
 	/// The groupID of this data item.

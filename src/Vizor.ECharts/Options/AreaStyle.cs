@@ -13,8 +13,7 @@ public partial class AreaStyle
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("[rgba(250,250,250,0.3),rgba(200,200,200,0.3)]")]
-	//TODO: Type Warning: array type 'color' in 'areaStyle' will be mapped to List<object>
-	public List<object>? Color { get; set; } 
+	public Color[]? Color { get; set; } 
 
 	/// <summary>
 	/// Size of shadow blur.

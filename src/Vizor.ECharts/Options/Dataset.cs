@@ -84,7 +84,7 @@ public partial class Dataset
 	/// Otherwise, tooltip will displayed only value horizontally.
 	/// </summary>
 	[JsonPropertyName("dimensions")]
-	public NumberOrStringArray? Dimensions { get; set; } 
+	public string[]? Dimensions { get; set; } 
 
 	/// <summary>
 	/// Whether the first row/column of dataset.source represents dimension names .

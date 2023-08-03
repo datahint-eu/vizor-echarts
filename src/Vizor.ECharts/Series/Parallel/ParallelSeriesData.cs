@@ -16,8 +16,7 @@ public partial class ParallelSeriesData
 	/// The value of a data item.
 	/// </summary>
 	[JsonPropertyName("value")]
-	//TODO: Type Warning: array type 'value' in 'ParallelSeriesData' will be mapped to List<object>
-	public List<object>? Value { get; set; } 
+	public object? Value { get; set; } 
 
 	/// <summary>
 	/// Line style.

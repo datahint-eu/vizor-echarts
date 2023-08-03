@@ -17,8 +17,7 @@ public partial class BoxplotSeriesData
 	///  [min,  Q1,  median (or Q2),  Q3,  max]
 	/// </summary>
 	[JsonPropertyName("value")]
-	//TODO: Type Warning: array type 'value' in 'BoxplotSeriesData' will be mapped to List<object>
-	public List<object>? Value { get; set; } 
+	public object? Value { get; set; } 
 
 	/// <summary>
 	/// The groupID of this data item.

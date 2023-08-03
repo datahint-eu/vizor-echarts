@@ -37,6 +37,11 @@ public class NumberOrStringArray
 	{
 		return new NumberOrStringArray(values.Select(v => new NumberOrString(v)).ToArray());
 	}
+
+	public static implicit operator NumberOrStringArray(double[] values)
+	{
+		return new NumberOrStringArray(values.Select(v => new NumberOrString(v)).ToArray());
+	}
 }
 
 public class NumberOrStringArrayConverter : JsonConverter<NumberOrStringArray>
