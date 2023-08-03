@@ -8,6 +8,28 @@ Blazor wrapper for [Apache ECharts](https://echarts.apache.org/en/index.html).
  - Lots of examples in the `Vizor.ECharts.Demo` project
  - Refer to the official echarts [cheat sheet](https://echarts.apache.org/en/cheat-sheet.html) for a quick introduction
  
+Supported Chart Types:
+ - Line
+ - Bar
+ - Pie
+ - Scatter
+ - Geo/Map
+ - Candlestick
+ - Radar
+ - Boxplot
+ - Heatmap
+ - Graph
+ - Tree
+ - Treemap
+ - Sunburst
+ - Parallel
+ - Sankey
+ - Funnel
+ - Gauge
+ - Pictorial Bar
+ - Theme River
+ - Custom
+ 
 The project currently is not yet production ready, it will be around September/October.
 Small API changes will occur frequently until version >= 1.0.0 .
  
