@@ -1,0 +1,96 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="1000px" Height="1000px" />
+
+@code {
+
+		// see https://echarts.apache.org/examples/en/editor.html?c=graph-simple
+
+	private ChartOptions options = new()
+	{
+		Title = new()
+		{
+			Text = "Basic Graph"
+		},
+		Tooltip = new() { },
+		AnimationDurationUpdate = 1500,
+		AnimationEasingUpdate = AnimationEasing.QuinticInOut,
+		Series = new List<object>()
+		{
+			new GraphSeries()
+			{
+				Layout = GraphLayout.None,
+				SymbolSize = 50,
+				Roam = Roam.True,
+				Label = new()
+				{
+					Show = true
+				},
+				EdgeSymbol = new Icon[] { IconType.Circle, IconType.Arrow },
+				EdgeSymbolSize = new double[] { 4, 10 },
+				EdgeLabel = new()
+				{
+					FontSize = 20
+				},
+				Data = new List<GraphSeriesData>()
+				{
+					new ("Node 1", 300, 300),
+					new ("Node 2", 800, 300),
+					new ("Node 3", 550, 100),
+					new ("Node 4", 550, 500)
+				},
+				Links = new List<GraphSeriesLink>()
+				{
+					new GraphSeriesLink()
+					{
+						Source = 0,
+						Target = 1,
+						SymbolSize = new double[] { 5, 20 },
+						Label = new ()
+						{
+							Show = true,
+						},
+						LineStyle = new ()
+						{
+							Width = 5,
+							Curveness = 0.2
+						}
+					},
+					new GraphSeriesLink()
+					{
+						Source = "Node 2",
+						Target = "Node 1",
+						Label = new ()
+						{
+							Show = true,
+						},
+						LineStyle = new ()
+						{
+							Curveness = 0.2
+						}
+					},
+					new GraphSeriesLink()
+					{
+						Source = "Node 1",
+						Target = "Node 3"
+					},
+					new GraphSeriesLink()
+					{
+						Source = "Node 2",
+						Target = "Node 3"
+					},
+					new GraphSeriesLink()
+					{
+						Source = "Node 2",
+						Target = "Node 4"
+					},
+					new GraphSeriesLink()
+					{
+						Source = "Node 1",
+						Target = "Node 4"
+					}
+				}
+			}
+		}
+	};
+}
