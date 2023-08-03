@@ -1,0 +1,76 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=funnel
+
+	private ChartOptions options = new()
+		{
+			Title = new()
+			{
+				Text = "Funnel"	
+			},
+			Tooltip = new()
+			{
+				Trigger = TooltipTrigger.Item,
+				Formatter = "{a} <br/>{b} : {c}%"
+			},
+			Legend = new()
+			{
+				Data = new string[] { "Show", "Click", "Visit", "Inquiry", "Order" }
+			},
+			Series = new()
+			{
+				new FunnelSeries()
+				{
+					Name = "Funnel",
+					Left = "10%",
+					Top = 60,
+					Bottom = 60,
+					Width = "80%",
+					Min = 0,
+					Max = 100,
+					MinSize = "0%",
+					MaxSize = "100%",
+					Sort = FunnelSortOrder.Descending,
+					Gap = 2,
+					Label = new()
+					{
+						Show = true,
+						Position = LabelPosition.Inside
+					},
+					LabelLine = new()
+					{
+						Length = 10,
+						LineStyle = new()
+						{
+							Width = 1,
+							Type = LineTypeStyle.Solid
+						}
+					},
+					ItemStyle = new()
+					{
+						BorderColor = "#fff",
+						BorderWidth = 1
+					},
+					Emphasis = new()
+					{
+						Label = new()
+						{
+							FontSize = 20
+						}
+					},
+					Data = new List<FunnelSeriesData>()
+					{
+						new("Visit", 60),
+						new("Inquiry", 40),
+						new("Order", 20),
+						new("Click", 80),
+						new("Show", 100)
+					}
+				}
+			}
+		};
+}
