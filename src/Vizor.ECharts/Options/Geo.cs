@@ -317,7 +317,7 @@ public partial class Geo
 	/// See series-map.geoIndex .
 	/// </summary>
 	[JsonPropertyName("regions")]
-	public List<GeoRegions>? Regions { get; set; } 
+	public List<GeoRegion>? Regions { get; set; } 
 
 	/// <summary>
 	/// Whether to ignore mouse events.

@@ -265,11 +265,10 @@ public partial class RadarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
-	/// Whether to ignore mouse events.
-	/// Default value is false, for triggering and responding to mouse events.
+	/// Set this to true, to prevent interaction with the axis.
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]

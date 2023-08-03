@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
+using Vizor.ECharts.Enums;
 using Vizor.ECharts.Internal;
 
 namespace Vizor.ECharts;
@@ -17,9 +18,10 @@ public class ExternalDataSource
 		Url = url;
 	}
 
-	public ExternalDataSource(string url, string? path = null, FetchOptions? options = null)
+	public ExternalDataSource(string url, ExternalDataFetchAs fetchAs = ExternalDataFetchAs.Json, string? path = null, FetchOptions? options = null)
 	{
 		Url = url;
+		FetchAs = fetchAs;
 		Path = path;
 		Options = options;
 	}
@@ -28,6 +30,11 @@ public class ExternalDataSource
 	/// URL of the datasource
 	/// </summary>
 	public string Url { get; }
+
+	/// <summary>
+	/// Default = json
+	/// </summary>
+	public ExternalDataFetchAs FetchAs { get; set; } = ExternalDataFetchAs.Json;
 
 	/// <summary>
 	/// Optional object path in the returned JSON.
@@ -69,15 +76,16 @@ public class ExternalDataSourceConverter : JsonConverter<ExternalDataSource>
 		string raw = $"window.vizorECharts.getChart('{chartId}')['{fetchId}']";
 		writer.WriteRawValue(raw, skipInputValidation: true);
 
-		commands.Add(new FetchCommand(value.Url, fetchId, value.Path, value.Options));
+		commands.Add(new FetchCommand(value.Url, fetchId, value.FetchAs, value.Path, value.Options));
 	}
 
 	internal class FetchCommand
 	{
-		public FetchCommand(string url, string id, string? path, FetchOptions? options)
+		public FetchCommand(string url, string id, ExternalDataFetchAs fetchAs, string? path, FetchOptions? options)
         {
 			Url = url;
 			Id = id;
+			FetchAs = fetchAs;
 			Path = path;
 			Options = options;
 		}
@@ -87,6 +95,9 @@ public class ExternalDataSourceConverter : JsonConverter<ExternalDataSource>
 
 		[JsonPropertyName("id")]
 		public string Id { get; }
+
+		[JsonPropertyName("fetchAs")]
+		public ExternalDataFetchAs FetchAs { get; }
 
 		[JsonPropertyName("path")]
 		public string? Path { get; }

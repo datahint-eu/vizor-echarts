@@ -1,0 +1,104 @@
+﻿@using System.Text.Json.Serialization;
+@using Vizor.ECharts;
+@using Microsoft.AspNetCore.Components.Web;
+
+<Vizor.ECharts.EChart Options="@mapOptions" Maps="maps" Width="1000px" Height="1000px" @ref="@chart" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=geo-seatmap-flight
+
+	private EChart? chart = null;
+
+	private static readonly string[] takenSeatNames = new[] { "26E", "26D", "26C", "25D", "23C", "21A", "20F" };
+
+	private ChartOptions mapOptions = new()
+		{
+			Tooltip = new()
+			{
+			},
+			Geo = new()
+			{
+				Map = "flight-seats",
+				Roam = Roam.True,
+				SelectedMode = SelectionMode.Multiple,
+				LayoutCenter = new("50%", "50%"),
+				LayoutSize = "95%",
+				Tooltip = new()
+				{
+					Show = true
+				},
+				ItemStyle = new()
+				{
+					Color = "#fff"
+				},
+				Emphasis = new()
+				{
+					ItemStyle = new()
+					{
+						Color = null,
+						BorderColor = "green",
+						BorderWidth = 2
+					},
+					Label = new()
+					{
+						Show = false
+					}
+				},
+				Select = new()
+				{
+					ItemStyle = new()
+					{
+						Color = "green"
+					},
+					Label = new()
+					{
+						Show = false,
+						TextBorderColor = "#fff",
+						TextBorderWidth = 2
+					}
+				},
+				Regions = CreateTakenRegions(takenSeatNames)
+			}
+		};
+
+	private static List<GeoRegion> CreateTakenRegions(string[] takenSeatNames)
+	{
+		var regions = new List<GeoRegion>();
+
+		foreach (var seatName in takenSeatNames)
+		{
+			regions.Add(new GeoRegion()
+				{
+					Name = seatName,
+					Silent = true,
+					ItemStyle = new()
+					{
+						Color = "#bf0e08"
+					},
+					Emphasis = new()
+					{
+						ItemStyle = new()
+						{
+							BorderColor = "#aaa",
+							BorderWidth = 1
+						}
+					},
+					Select = new()
+					{
+						ItemStyle = new()
+						{
+							Color = "#bf0e08"
+						}
+					}
+				});
+		}
+
+		return regions;
+	}
+
+	private IMapDefinition[] maps = new[]
+	{
+		new SvgMapDefinition("flight-seats", new ExternalDataSource("/data/flight-seats.svg", fetchAs: Enums.ExternalDataFetchAs.String))
+	};
+}

@@ -88,15 +88,20 @@ window.vizorECharts = {
 			}
 
 			// parse the response as JSON
-			var data = await response.json();
+			var data = null;
+			if (item.fetchAs == "json") {
+				data = await response.json();
 
-			if (vizorECharts.logging) {
-				console.log(data);
-			}
+				if (vizorECharts.logging) {
+					console.log(data);
+				}
 
-			// replace the object with the fetched data
-			if (item.path != null) {
-				data = vizorECharts.evaluatePath(data, item.path);
+				// replace the object with the fetched data
+				if (item.path != null) {
+					data = vizorECharts.evaluatePath(data, item.path);
+				}
+			} else if (item.fetchAs == "string") {
+				data = await response.text();
 			}
 
 			// assign for later retrieval

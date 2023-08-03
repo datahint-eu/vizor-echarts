@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class GeoRegions
+public partial class GeoRegion
 {
 	/// <summary>
 	/// Name of area in map, like 'Guangdong' , or 'Zhejiang' .
@@ -17,7 +17,14 @@ public partial class GeoRegions
 	/// </summary>
 	[JsonPropertyName("selected")]
 	[DefaultValue(false)]
-	public bool? Selected { get; set; } 
+	public bool? Selected { get; set; }
+
+	/// <summary>
+	/// Set this to true, to prevent interaction with the axis.
+	/// </summary>
+	[JsonPropertyName("silent")]
+	[DefaultValue(false)]
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Item style of this area.
