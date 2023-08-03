@@ -12,7 +12,7 @@
 
 		<Product>Vizor ECharts components for Blazor</Product>
 		<ProductName>Vizor.ECharts</ProductName>
-		<Version>0.8.6</Version>
+		<Version>0.8.7</Version>
 		<ProductVersion>$(Version)</ProductVersion>
 		<AssemblyVersion>$(Version)</AssemblyVersion>
 		<FileVersion>$(Version)</FileVersion>
