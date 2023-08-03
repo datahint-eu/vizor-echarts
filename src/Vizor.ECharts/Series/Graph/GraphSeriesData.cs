@@ -6,10 +6,21 @@ namespace Vizor.ECharts;
 
 public partial class GraphSeriesData
 {
-	/// <summary>
-	/// Name of data item.
-	/// </summary>
-	[JsonPropertyName("name")]
+    public GraphSeriesData()
+    {
+    }
+
+    public GraphSeriesData(string name, double x, double y)
+    {
+		Name = name;
+		X = x;
+		Y = y;
+	}
+
+    /// <summary>
+    /// Name of data item.
+    /// </summary>
+    [JsonPropertyName("name")]
 	public string? Name { get; set; } 
 
 	/// <summary>

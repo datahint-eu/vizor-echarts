@@ -235,7 +235,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("edgeSymbol")]
 	[DefaultValue("[none, none]")]
-	public Icon? EdgeSymbol { get; set; } 
+	public Icon[]? EdgeSymbol { get; set; } 
 
 	/// <summary>
 	/// Size of symbol of two ends of edge line.
@@ -432,13 +432,13 @@ public partial class GraphSeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("links")]
-	public List<GraphSeriesLinks>? Links { get; set; } 
+	public List<GraphSeriesLink>? Links { get; set; } 
 
 	/// <summary>
 	/// Alias of links
 	/// </summary>
 	[JsonPropertyName("edges")]
-	public List<GraphSeriesLinks>? Edges { get; set; } 
+	public List<GraphSeriesLink>? Edges { get; set; } 
 
 	/// <summary>
 	/// Mark point in a chart.

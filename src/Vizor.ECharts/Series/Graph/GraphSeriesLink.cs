@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class GraphSeriesLinks
+public partial class GraphSeriesLink
 {
 	/// <summary>
 	/// A string representing the name of source node on edge.
@@ -70,7 +70,7 @@ public partial class GraphSeriesLinks
 	/// Can be an array with two item to specify two ends, or a string specifies both ends.
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
-	public Icon? SymbolSize { get; set; } 
+	public NumberOrStringArray? SymbolSize { get; set; } 
 
 	/// <summary>
 	/// Since v4.5.0   
