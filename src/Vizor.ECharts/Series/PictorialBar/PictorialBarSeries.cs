@@ -547,8 +547,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolMargin")]
 	[DefaultValue("0,0")]
-	//TODO: Type Warning: Failed to map property 'symbolMargin' in type 'PictorialBarSeries' with types 'number,percentvector,string'
-	public object? SymbolMargin { get; set; } 
+	public NumberOrString? SymbolMargin { get; set; } 
 
 	/// <summary>
 	/// Whether to clip graphic elements.

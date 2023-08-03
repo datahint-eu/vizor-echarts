@@ -42,9 +42,7 @@ public partial class ParallelSeriesData
 	public double? Width { get; set; } 
 
 	/// <summary>
-	/// line type.
-	///  
-	/// Possible values are:   'solid'  'dashed'  'dotted'   
+	/// line type. Possible values are:   'solid'  'dashed'  'dotted'   
 	/// Since v5.0.0 , it can also be a number or a number array to specify the dash array of the line.
 	/// With dashOffset , we can make the line style more flexible.
 	///  
@@ -57,13 +55,34 @@ public partial class ParallelSeriesData
 	/// </summary>
 	[JsonPropertyName("type")]
 	[DefaultValue("solid")]
-	//TODO: Type Warning: Failed to map property 'type' in type 'ParallelSeriesData' with types 'array,enum,number'
-	public object? Type { get; set; }  = "solid";
+	public object? TypeObject { get; set; }
+
+	/// <summary>
+	/// line type. Possible values are:   'solid'  'dashed'  'dotted'
+	/// </summary>
+	[JsonIgnore]
+	public LineStyle? Type
+	{
+		get => TypeObject as LineStyle;
+		set => TypeObject = value;
+	}
+
+	/// <summary>
+	/// Since v5.0.0, it can also be a number or a number array to specify the dash array of the line. 
+	/// For example: [5, 10]
+	/// Use in combination with DashOffset
+	/// </summary>
+	[JsonIgnore]
+	public NumberArray? TypeDashArray
+	{
+		get => TypeObject as NumberArray;
+		set => TypeObject = value;
+	}
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// To set the line dash offset.
-	/// With type , we can make the line style more flexible.
+	/// Use in combination with TypeDashArray
 	///  
 	/// Refer to MDN lineDashOffset for more details.
 	/// </summary>

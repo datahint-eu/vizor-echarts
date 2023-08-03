@@ -24,9 +24,7 @@ public partial class CrossStyle
 	public double? Width { get; set; } 
 
 	/// <summary>
-	/// line type.
-	///  
-	/// Possible values are:   'solid'  'dashed'  'dotted'   
+	/// line type. Possible values are:   'solid'  'dashed'  'dotted'
 	/// Since v5.0.0 , it can also be a number or a number array to specify the dash array of the line.
 	/// With dashOffset , we can make the line style more flexible.
 	///  
@@ -41,6 +39,9 @@ public partial class CrossStyle
 	[DefaultValue("solid")]
 	public object? TypeObject { get; set; }
 
+	/// <summary>
+	/// line type. Possible values are:   'solid'  'dashed'  'dotted'
+	/// </summary>
 	[JsonIgnore]
 	public LineStyle? Type
 	{

@@ -43,8 +43,7 @@ public partial class SaveAsImage
 	/// </summary>
 	[JsonPropertyName("excludeComponents")]
 	[DefaultValue("[toolbox]")]
-	//TODO: Type Warning: array type 'excludeComponents' in 'saveAsImage' will be mapped to List<object>
-	public List<object>? ExcludeComponents { get; set; } 
+	public string[]? ExcludeComponents { get; set; } 
 
 	/// <summary>
 	/// Whether to show the tool.

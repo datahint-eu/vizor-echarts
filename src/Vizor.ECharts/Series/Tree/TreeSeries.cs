@@ -106,8 +106,7 @@ public partial class TreeSeries : ISeries
 	/// Example:  center: [115.97, '30%']
 	/// </summary>
 	[JsonPropertyName("center")]
-	//TODO: Type Warning: array type 'center' in 'TreeSeries' will be mapped to List<object>
-	public List<object>? Center { get; set; } 
+	public NumberOrStringArray? Center { get; set; } 
 
 	/// <summary>
 	/// Zoom rate of current view-port.

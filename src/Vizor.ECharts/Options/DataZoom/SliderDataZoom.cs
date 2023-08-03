@@ -1,7 +1,6 @@
 
 using System.ComponentModel;
 using System.Text.Json.Serialization;
-using Vizor.ECharts.Options.DataZoom;
 
 namespace Vizor.ECharts;
 
@@ -165,8 +164,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("showDataShadow")]
 	[DefaultValue("auto")]
-	//TODO: Type Warning: Failed to map property 'showDataShadow' in type 'SliderDataZoom' with types 'boolean,string'
-	public object? ShowDataShadow { get; set; } 
+	public string? ShowDataShadow { get; set; } 
 
 	/// <summary>
 	/// Whether to update view while dragging.

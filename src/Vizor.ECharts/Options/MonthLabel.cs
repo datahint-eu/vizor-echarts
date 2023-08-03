@@ -91,8 +91,7 @@ public partial class MonthLabel
 	/// </summary>
 	[JsonPropertyName("nameMap")]
 	[DefaultValue("EN")]
-	//TODO: Type Warning: Failed to map property 'nameMap' in type 'monthLabel' with types 'array,enum'
-	public object? NameMap { get; set; } 
+	public StringArray? NameMap { get; set; } 
 
 	/// <summary>
 	/// Formatter of month text label, which supports string template and callback function.

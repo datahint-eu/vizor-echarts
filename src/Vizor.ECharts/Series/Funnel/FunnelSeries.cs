@@ -74,13 +74,32 @@ public partial class FunnelSeries : ISeries
 	public Orient? Orient { get; set; } 
 
 	/// <summary>
-	/// Data sorting, which can be whether 'ascending' , 'descending' , 'none' (in data order) or a function, which is the same as Array.prototype.sort(function (a, b) { ...
-	/// }) ;
+	/// Data sorting, which can be whether 'ascending' , 'descending' , 'none' (in data order)
+	/// or a function, which is the same as Array.prototype.sort(function (a, b) { ... }) ;
 	/// </summary>
 	[JsonPropertyName("sort")]
 	[DefaultValue("descending")]
-	//TODO: Type Warning: Failed to map property 'sort' in type 'FunnelSeries' with types 'enum,function'
-	public object? Sort { get; set; } 
+	public object? SortObject { get; set; }
+
+	/// <summary>
+	/// Data sorting, which can be whether 'ascending' , 'descending' , 'none' (in data order)
+	/// </summary>
+	[JsonIgnore]
+	public SortOrder? Sort
+	{
+		get => (SortOrder?)SortObject;
+		set => SortObject = value;
+	}
+
+	/// <summary>
+	/// A sort function, which is the same as Array.prototype.sort(function (a, b) { ... }) ;
+	/// </summary>
+	[JsonIgnore]
+	public JavascriptFunction? SortFunction
+	{
+		get => SortObject as JavascriptFunction;
+		set => SortObject = value;
+	}
 
 	/// <summary>
 	/// Gap between each trapezoid.

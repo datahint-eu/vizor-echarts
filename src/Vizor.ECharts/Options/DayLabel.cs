@@ -78,8 +78,7 @@ public partial class DayLabel
 	/// </summary>
 	[JsonPropertyName("nameMap")]
 	[DefaultValue("EN")]
-	//TODO: Type Warning: Failed to map property 'nameMap' in type 'dayLabel' with types 'array,enum'
-	public object? NameMap { get; set; } 
+	public StringArray? NameMap { get; set; } 
 
 	/// <summary>
 	/// text color.

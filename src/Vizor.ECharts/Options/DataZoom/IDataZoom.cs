@@ -1,4 +1,4 @@
-﻿namespace Vizor.ECharts.Options.DataZoom;
+﻿namespace Vizor.ECharts;
 
 public interface IDataZoom
 {

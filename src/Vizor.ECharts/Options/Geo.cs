@@ -104,8 +104,7 @@ public partial class Geo
 	/// center: project([115.97, 29.71])
 	/// </summary>
 	[JsonPropertyName("center")]
-	//TODO: Type Warning: array type 'center' in 'geo' will be mapped to List<object>
-	public List<object>? Center { get; set; } 
+	public double[]? Center { get; set; } 
 
 	/// <summary>
 	/// Used to scale aspect of geo.
@@ -131,8 +130,7 @@ public partial class Geo
 	/// ],
 	/// </summary>
 	[JsonPropertyName("boundingCoords")]
-	//TODO: Type Warning: array type 'boundingCoords' in 'geo' will be mapped to List<object>
-	public List<object>? BoundingCoords { get; set; } 
+	public double[]? BoundingCoords { get; set; } 
 
 	/// <summary>
 	/// Zoom rate of current view-port.
@@ -297,8 +295,7 @@ public partial class Geo
 	/// After setting these two values, left/right/top/bottom/width/height becomes invalid.
 	/// </summary>
 	[JsonPropertyName("layoutCenter")]
-	//TODO: Type Warning: array type 'layoutCenter' in 'geo' will be mapped to List<object>
-	public List<object>? LayoutCenter { get; set; } 
+	public NumberOrStringArray? LayoutCenter { get; set; } 
 
 	/// <summary>
 	/// Size of map, see layoutCenter for more information.

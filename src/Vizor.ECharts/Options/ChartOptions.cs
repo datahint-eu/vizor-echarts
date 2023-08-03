@@ -2,8 +2,6 @@
 using System.ComponentModel;
 using System.Data;
 using System.Text.Json.Serialization;
-using Vizor.ECharts.Options.DataZoom;
-using Vizor.ECharts.Options.VisualMap;
 
 namespace Vizor.ECharts;
 

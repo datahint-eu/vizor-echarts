@@ -18,6 +18,11 @@ public class ColorArray
 
 	public Color[]? Colors { get; }
 
+	public static implicit operator ColorArray(string color)
+	{
+		return new ColorArray(color);
+	}
+
 	public static implicit operator ColorArray(Color color)
 	{
 		return new ColorArray(color);

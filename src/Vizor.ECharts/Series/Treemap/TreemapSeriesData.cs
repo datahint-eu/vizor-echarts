@@ -248,8 +248,7 @@ public partial class TreemapSeriesData
 	/// child nodes, recursive definition, configurations are the same as series-treemap.data .
 	/// </summary>
 	[JsonPropertyName("children")]
-	//TODO: Type Warning: array type 'children' in 'TreemapSeriesData' will be mapped to List<object>
-	public List<object>? Children { get; set; } 
+	public List<TreemapSeriesData>? Children { get; set; } 
 
 	/// <summary>
 	/// tooltip settings in this series data.

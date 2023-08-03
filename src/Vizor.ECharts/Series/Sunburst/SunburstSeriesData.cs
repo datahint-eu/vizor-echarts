@@ -88,8 +88,7 @@ public partial class SunburstSeriesData
 	/// The structure is the same as series-sunburst.data .
 	/// </summary>
 	[JsonPropertyName("children")]
-	//TODO: Type Warning: array type 'children' in 'SunburstSeriesData' will be mapped to List<object>
-	public List<object>? Children { get; set; } 
+	public List<SunburstSeriesData>? Children { get; set; } 
 
 	/// <summary>
 	/// tooltip settings in this series data.

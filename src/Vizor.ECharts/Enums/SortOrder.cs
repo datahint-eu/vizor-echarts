@@ -7,5 +7,6 @@ namespace Vizor.ECharts;
 public enum SortOrder
 {
 	Asc,
-	Desc
+	Desc,
+	None
 }

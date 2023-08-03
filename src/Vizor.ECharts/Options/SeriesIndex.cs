@@ -4,20 +4,14 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
+/// <summary>
+/// See https://echarts.apache.org/en/option.html#toolbox.feature.magicType.seriesIndex
+/// </summary>
 public partial class SeriesIndex
 {
-	/// <summary>
-	/// 
-	/// </summary>
-	[JsonPropertyName("line")]
-	//TODO: Type Warning: array type 'line' in 'seriesIndex' will be mapped to List<object>
-	public List<object>? Line { get; set; } 
+	public object? Line { get; set; } 
 
-	/// <summary>
-	/// 
-	/// </summary>
 	[JsonPropertyName("bar")]
-	//TODO: Type Warning: array type 'bar' in 'seriesIndex' will be mapped to List<object>
-	public List<object>? Bar { get; set; } 
+	public object? Bar { get; set; } 
 
 }

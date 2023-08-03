@@ -1,7 +1,6 @@
 
 using System.ComponentModel;
 using System.Text.Json.Serialization;
-using Vizor.ECharts.Options.VisualMap;
 
 namespace Vizor.ECharts;
 
@@ -71,8 +70,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// See more detailed rules in visualMap.inverse .
 	/// </summary>
 	[JsonPropertyName("categories")]
-	//TODO: Type Warning: array type 'categories' in 'PiecewiseVisualMap' will be mapped to List<object>
-	public List<object>? Categories { get; set; } 
+	public string[]? Categories { get; set; } 
 
 	/// <summary>
 	/// Specify the min dataValue for the visualMap component.
@@ -177,7 +175,6 @@ public partial class PiecewiseVisualMap : IVisualMap
 
 	/// <summary>
 	/// The label text on both ends, such as ['High', 'Low'] .
-	/// Sample .
 	///  
 	/// You can understand the order of items in text array just by a simple trial.
 	/// See visualMap.inverse .
@@ -185,8 +182,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// The rule, that labels will not show when text is use, is retained for compatibility with ECharts2.
 	/// </summary>
 	[JsonPropertyName("text")]
-	//TODO: Type Warning: array type 'text' in 'PiecewiseVisualMap' will be mapped to List<object>
-	public List<object>? Text { get; set; } 
+	public string[]? Text { get; set; } 
 
 	/// <summary>
 	/// The distance between the ends of the graphical elements for pieces and the labels, with unit px.
@@ -209,8 +205,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("itemGap")]
 	[DefaultValue("10")]
-	//TODO: Type Warning: Failed to map property 'itemGap' in type 'PiecewiseVisualMap' with types '*,number'
-	public object? ItemGap { get; set; } 
+	public double? ItemGap { get; set; } 
 
 	/// <summary>
 	/// Default symbol (the shape of graphical element).
@@ -598,8 +593,8 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("[#bf444c, #d88273, #f6efa6]")]
-	//TODO: Type Warning: array type 'color' in 'PiecewiseVisualMap' will be mapped to List<object>
-	public List<object>? Color { get; set; } 
+	[Obsolete]
+	public Color[]? Color { get; set; } 
 
 	/// <summary>
 	/// 

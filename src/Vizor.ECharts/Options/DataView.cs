@@ -95,8 +95,7 @@ public partial class DataView
 	/// </summary>
 	[JsonPropertyName("lang")]
 	[DefaultValue("[data view, turn off, refresh]")]
-	//TODO: Type Warning: array type 'lang' in 'dataView' will be mapped to List<object>
-	public List<object>? Lang { get; set; } 
+	public string[]? Lang { get; set; } 
 
 	/// <summary>
 	/// Background color of the floating layer in data view.

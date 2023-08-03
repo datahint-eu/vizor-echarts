@@ -1,4 +1,4 @@
-﻿namespace Vizor.ECharts.Options.VisualMap;
+﻿namespace Vizor.ECharts;
 
 public interface IVisualMap
 {

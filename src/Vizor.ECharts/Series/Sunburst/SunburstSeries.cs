@@ -126,14 +126,37 @@ public partial class SunburstSeries : ISeries
 
 	/// <summary>
 	/// Sorting method that sectors use based on value , which is the sum of children when not set.
-	/// The default value 'desc' states for descending order, while it can also be set to be 'asc' for ascending order, or null for not sorting, or callback function like:  function(nodeA, nodeB) {
+	/// The default value 'desc' states for descending order, while it can also be set to be 'asc' for ascending order, or null for not sorting
+	/// Or callback function like:  function(nodeA, nodeB) {
 	///     return nodeA.getValue() - nodeB.getValue();
 	/// }
 	/// </summary>
 	[JsonPropertyName("sort")]
 	[DefaultValue("desc")]
-	//TODO: Type Warning: Failed to map property 'sort' in type 'SunburstSeries' with types 'enum,function'
-	public object? Sort { get; set; } 
+	public object? SortObject { get; set; }
+
+	/// <summary>
+	/// orting method that sectors use based on value , which is the sum of children when not set.
+	/// The default value 'desc' states for descending order, while it can also be set to be 'asc' for ascending order, or null for not sorting
+	/// </summary>
+	[JsonIgnore]
+	public SortOrder? Sort
+	{
+		get => (SortOrder?)SortObject;
+		set => SortObject = value;
+	}
+
+	/// <summary>
+	/// callback function like:  function(nodeA, nodeB) {
+	///     return nodeA.getValue() - nodeB.getValue();
+	/// }
+	/// </summary>
+	[JsonIgnore]
+	public JavascriptFunction? SortFunction
+	{
+		get => SortObject as JavascriptFunction;
+		set => SortObject = value;
+	}
 
 	/// <summary>
 	/// If there is no name , whether need to render it.
