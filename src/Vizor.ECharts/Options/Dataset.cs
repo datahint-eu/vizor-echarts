@@ -104,7 +104,7 @@ public partial class Dataset
 	/// See the tutorial of data transform .
 	/// </summary>
 	[JsonPropertyName("transform")]
-	public List<IDatasetTransform>? Transform { get; set; } 
+	public List<object>? Transform { get; set; } //Remark: List<IDatasetTransform> doesn't serialize correctly in .NET 6
 
 	/// <summary>
 	/// Specify the input dataset for dataset.transform .

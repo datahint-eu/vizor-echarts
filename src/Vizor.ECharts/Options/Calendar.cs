@@ -117,8 +117,7 @@ public partial class Calendar
 	/// range: ['2017-01', '2017-02']
 	/// </summary>
 	[JsonPropertyName("range")]
-	//TODO: Type Warning: Failed to map property 'range' in type 'calendar' with types 'array,number,string'
-	public object? Range { get; set; } 
+	public NumberOrStringArray? Range { get; set; } 
 
 	/// <summary>
 	/// The size of each rect of calendar coordinates, can be set to a single value or array, the first element is width and the second element is height.

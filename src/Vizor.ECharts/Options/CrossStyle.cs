@@ -39,13 +39,31 @@ public partial class CrossStyle
 	/// </summary>
 	[JsonPropertyName("type")]
 	[DefaultValue("solid")]
-	//TODO: Type Warning: Failed to map property 'type' in type 'crossStyle' with types 'array,enum,number'
-	public object? Type { get; set; } 
+	public object? TypeObject { get; set; }
+
+	[JsonIgnore]
+	public LineStyle? Type
+	{
+		get => TypeObject as LineStyle;
+		set => TypeObject = value;
+	}
+
+	/// <summary>
+	/// Since v5.0.0, it can also be a number or a number array to specify the dash array of the line. 
+	/// For example: [5, 10]
+	/// Use in combination with DashOffset
+	/// </summary>
+	[JsonIgnore]
+	public NumberArray? TypeDashArray
+	{
+		get => TypeObject as NumberArray;
+		set => TypeObject = value;
+	}
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// To set the line dash offset.
-	/// With type , we can make the line style more flexible.
+	/// Use in combination with TypeDashArray
 	///  
 	/// Refer to MDN lineDashOffset for more details.
 	/// </summary>

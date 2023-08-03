@@ -47,6 +47,6 @@ public partial class Feature
 	/// It can also be configured at brush.toolbox .
 	/// </summary>
 	[JsonPropertyName("brush")]
-	public Brush? Brush { get; set; } 
+	public BrushFeature? Brush { get; set; } 
 
 }

@@ -7,31 +7,6 @@ namespace Vizor.ECharts;
 public partial class Brush
 {
 	/// <summary>
-	/// Icons used, whose values are:   'rect' : Enabling selecting with rectangle area.
-	///  'polygon' : Enabling selecting with any shape.
-	///  'lineX' : Enabling horizontal selecting.
-	///  'lineY' : Enabling vertical selecting.
-	///  'keep' : Switching between single selecting and multiple selecting .
-	/// The latter one can select multiple areas, while the former one cancels previous selection.
-	///  'clear' : Clearing all selection.
-	/// </summary>
-	[JsonPropertyName("type")]
-	//TODO: Type Warning: array type 'type' in 'brush' will be mapped to List<object>
-	public List<object>? Type { get; set; } 
-
-	/// <summary>
-	/// Icon path for each icon.
-	/// </summary>
-	[JsonPropertyName("icon")]
-	public Icon? Icon { get; set; } 
-
-	/// <summary>
-	/// Title.
-	/// </summary>
-	[JsonPropertyName("title")]
-	public Title? Title { get; set; } 
-
-	/// <summary>
 	/// Component ID, not specified by default.
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
@@ -41,12 +16,17 @@ public partial class Brush
 	/// <summary>
 	/// Use the buttons in toolbox.
 	///  
-	/// Buttons in toolbox that is related to brush includes:   'rect' : for selection-box in rectangle shape;  'polygon' : for selection-box in polygon shape;  'lineX' : for horizontal selection-box;  'lineY' : for vertical selection-box;  'keep' : for setting mode between single and multiple selection, the former of which supports clearing selection on click, and the latter selecting multiple areas;  'clear' : for clearing all selections.
+	/// Buttons in toolbox that is related to brush includes:
+	/// 'rect' : for selection-box in rectangle shape;
+	/// 'polygon' : for selection-box in polygon shape;
+	/// 'lineX' : for horizontal selection-box;
+	/// 'lineY' : for vertical selection-box;
+	/// 'keep' : for setting mode between single and multiple selection, the former of which supports clearing selection on click, and the latter selecting multiple areas;
+	/// 'clear' : for clearing all selections.
 	/// </summary>
 	[JsonPropertyName("toolbox")]
 	[DefaultValue("[rect, polygon, keep, clear]")]
-	//TODO: Type Warning: array type 'toolbox' in 'brush' will be mapped to List<object>
-	public List<object>? Toolbox { get; set; } 
+	public ToolboxBrushType[]? Toolbox { get; set; } 
 
 	/// <summary>
 	/// Links interaction between selected items in different series.

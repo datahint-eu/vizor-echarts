@@ -309,7 +309,7 @@ public partial class ChartOptions
 	/// If you want to change the process sequence, you can just change the sequence of the definitions apearing in option .
 	/// </summary>
 	[JsonPropertyName("dataZoom")]
-	public List<IDataZoom>? DataZoom { get; set; } 
+	public List<object>? DataZoom { get; set; }  //Remark: List<IDataZoom> doesn't serialize correctly in .NET 6
 
 	/// <summary>
 	/// visualMap is a type of component for visual encoding, which maps the data to visual channels, including:   symbol : Type of symbol.
@@ -1292,7 +1292,7 @@ public partial class ChartOptions
 	public object? Aria { get; set; } 
 
 	[JsonPropertyName("series")]
-	public List<object>? Series { get; set; } 
+	public List<object>? Series { get; set; }  //Remark: List<ISeries> doesn't serialize correctly in .NET 6
 
 	/// <summary>
 	/// To specify whether it's dark mode.
