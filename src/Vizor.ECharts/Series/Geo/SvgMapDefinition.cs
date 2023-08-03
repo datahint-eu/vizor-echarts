@@ -13,11 +13,19 @@ public class SvgMapDefinition : IMapDefinition
 		Svg = svgData;
 	}
 
+	public SvgMapDefinition(string name, object svgData)
+	{
+		Name = name;
+		Svg = svgData;
+	}
+
 	public SvgMapDefinition(string name, ExternalDataSource dataSource)
 	{
 		Name = name;
 		Svg = dataSource;
 	}
+
+	public string Type => "svg";
 
 	/// <summary>
 	/// Map name, referring to map value set in geo component or map.

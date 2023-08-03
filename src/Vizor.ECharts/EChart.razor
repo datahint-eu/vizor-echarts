@@ -38,10 +38,14 @@
 			height = Height
 		});
 
+#if DEBUG
+		await JSRuntime.InvokeVoidAsync("vizorECharts.changeLogging", true);
+#endif
+
 		if (DataLoader.HasDelegate)
 		{
 			// init the chart without any data
-			await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", id, Theme, initOptions, null /*fetchOptions*/, null /*chartOpts*/);
+			await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", id, Theme, initOptions, null /*chartOpts*/, null /*mapOpts*/, null /*fetchOptions*/);
 
 			// retrieve the data
 			if (DataLoader.HasDelegate)
@@ -50,18 +54,18 @@
 			}
 
 			// serialize all required data
-			(var chartOpts, var fetchOpts) = Serialize();
+			(var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: true);
 
 			// update the chart
-			await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", id, fetchOpts, chartOpts);
+			await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", id, chartOpts, mapOpts, fetchOpts);
 		}
 		else
 		{
 			// serialize all required data
-			(var chartOpts, var fetchOpts) = Serialize();
+			(var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: true);
 
 			//TODO: also pass DotNetObjectReference.Create(this) ?
-			await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", id, Theme, initOptions, fetchOpts, chartOpts);
+			await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", id, Theme, initOptions, chartOpts, mapOpts, fetchOpts);
 		}
 	}
 
@@ -73,8 +77,8 @@
 		}
 
 		// serialize all required data
-		(var chartOpts, var fetchOpts) = Serialize();
+		(var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: false);
 
-		await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", id, fetchOpts, chartOpts);
+		await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", id, chartOpts, mapOpts, fetchOpts);
 	}
 }

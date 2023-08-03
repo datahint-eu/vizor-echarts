@@ -5,5 +5,7 @@
 /// </summary>
 public interface IMapDefinition
 {
+	string Type { get; }
+
 	string Name { get; set; }
 }

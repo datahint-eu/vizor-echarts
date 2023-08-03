@@ -50,3 +50,31 @@ internal class PolymorphicListJsonConverter<T> : JsonConverter<List<T>>
 		}
 	}
 }
+
+internal class PolymorphicArrayJsonConverter<T> : JsonConverter<T[]>
+{
+	public override T[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+	{
+		throw new NotImplementedException($"Deserialization is not implemented for {typeof(T)}[].");
+	}
+
+	public override void Write(Utf8JsonWriter writer, T[] value, JsonSerializerOptions options)
+	{
+		if (value == null)
+		{
+			writer.WriteNullValue();
+		}
+		else
+		{
+			writer.WriteStartArray();
+			foreach (var item in value)
+			{
+				if (item == null)
+					writer.WriteNullValue();
+				else
+					JsonSerializer.Serialize(writer, item, item.GetType(), options);
+			}
+			writer.WriteEndArray();
+		}
+	}
+}

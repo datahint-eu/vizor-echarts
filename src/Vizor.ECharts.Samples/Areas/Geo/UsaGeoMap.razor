@@ -1,75 +1,189 @@
-﻿@using Vizor.ECharts;
+﻿@using System.Text.Json.Serialization;
+@using Vizor.ECharts;
+@using Microsoft.AspNetCore.Components.Web;
 
-<Vizor.ECharts.EChart Options="@options" Width="1000px" Height="1000px" />
+<div class="btn btn-primary" @onclick="ToggleChart">Toggle Bar &lt;&gt; Map</div>
+<Vizor.ECharts.EChart Options="@mapOptions" Maps="maps" Width="1000px" Height="1000px" @ref="@chart" />
 
 @code {
 
-    // see https://echarts.apache.org/examples/en/editor.html?c=map-bar-morph
+	// see https://echarts.apache.org/examples/en/editor.html?c=map-bar-morph
 
-    private static readonly List<StateData> data = new()
-    {
-        new() { Name = "Alabama", Value = 4822023 },
-        new() { Name = "Alaska", Value = 731449 },
-        new() { Name = "Arizona", Value = 6553255 },
-        new() { Name = "Arkansas", Value = 2949131 },
-        new() { Name = "California", Value = 38041430 },
-        new() { Name = "Colorado", Value = 5187582 },
-        new() { Name = "Connecticut", Value = 3590347 },
-        new() { Name = "Delaware", Value = 917092 },
-        new() { Name = "District of Columbia", Value = 632323 },
-        new() { Name = "Florida", Value = 19317568 },
-        new() { Name = "Georgia", Value = 9919945 },
-        new() { Name = "Hawaii", Value = 1392313 },
-        new() { Name = "Idaho", Value = 1595728 },
-        new() { Name = "Illinois", Value = 12875255 },
-        new() { Name = "Indiana", Value = 6537334 },
-        new() { Name = "Iowa", Value = 3074186 },
-        new() { Name = "Kansas", Value = 2885905 },
-        new() { Name = "Kentucky", Value = 4380415 },
-        new() { Name = "Louisiana", Value = 4601893 },
-        new() { Name = "Maine", Value = 1329192 },
-        new() { Name = "Maryland", Value = 5884563 },
-        new() { Name = "Massachusetts", Value = 6646144 },
-        new() { Name = "Michigan", Value = 9883360 },
-        new() { Name = "Minnesota", Value = 5379139 },
-        new() { Name = "Mississippi", Value = 2984926 },
-        new() { Name = "Missouri", Value = 6021988 },
-        new() { Name = "Montana", Value = 1005141 },
-        new() { Name = "Nebraska", Value = 1855525 },
-        new() { Name = "Nevada", Value = 2758931 },
-        new() { Name = "New Hampshire", Value = 1320718 },
-        new() { Name = "New Jersey", Value = 8864590 },
-        new() { Name = "New Mexico", Value = 2085538 },
-        new() { Name = "New York", Value = 19570261 },
-        new() { Name = "North Carolina", Value = 9752073 },
-        new() { Name = "North Dakota", Value = 699628 },
-        new() { Name = "Ohio", Value = 11544225 },
-        new() { Name = "Oklahoma", Value = 3814820 },
-        new() { Name = "Oregon", Value = 3899353 },
-        new() { Name = "Pennsylvania", Value = 12763536 },
-        new() { Name = "Rhode Island", Value = 1050292 },
-        new() { Name = "South Carolina", Value = 4723723 },
-        new() { Name = "South Dakota", Value = 833354 },
-        new() { Name = "Tennessee", Value = 6456243 },
-        new() { Name = "Texas", Value = 26059203 },
-        new() { Name = "Utah", Value = 2855287 },
-        new() { Name = "Vermont", Value = 626011 },
-        new() { Name = "Virginia", Value = 8185867 },
-        new() { Name = "Washington", Value = 6897012 },
-        new() { Name = "West Virginia", Value = 1855413 },
-        new() { Name = "Wisconsin", Value = 5726398 },
-        new() { Name = "Wyoming", Value = 576412 },
-        new() { Name = "Puerto Rico", Value = 3667084 }
-    };
+	private EChart? chart = null;
 
-    private ChartOptions options = new()
-    {
+	private static readonly List<StateData> data;
+	static UsaGeoMap()
+	{
+		data = new()
+		{
+			new() { Name = "Alabama", Value = 4822023 },
+			new() { Name = "Alaska", Value = 731449 },
+			new() { Name = "Arizona", Value = 6553255 },
+			new() { Name = "Arkansas", Value = 2949131 },
+			new() { Name = "California", Value = 38041430 },
+			new() { Name = "Colorado", Value = 5187582 },
+			new() { Name = "Connecticut", Value = 3590347 },
+			new() { Name = "Delaware", Value = 917092 },
+			new() { Name = "District of Columbia", Value = 632323 },
+			new() { Name = "Florida", Value = 19317568 },
+			new() { Name = "Georgia", Value = 9919945 },
+			new() { Name = "Hawaii", Value = 1392313 },
+			new() { Name = "Idaho", Value = 1595728 },
+			new() { Name = "Illinois", Value = 12875255 },
+			new() { Name = "Indiana", Value = 6537334 },
+			new() { Name = "Iowa", Value = 3074186 },
+			new() { Name = "Kansas", Value = 2885905 },
+			new() { Name = "Kentucky", Value = 4380415 },
+			new() { Name = "Louisiana", Value = 4601893 },
+			new() { Name = "Maine", Value = 1329192 },
+			new() { Name = "Maryland", Value = 5884563 },
+			new() { Name = "Massachusetts", Value = 6646144 },
+			new() { Name = "Michigan", Value = 9883360 },
+			new() { Name = "Minnesota", Value = 5379139 },
+			new() { Name = "Mississippi", Value = 2984926 },
+			new() { Name = "Missouri", Value = 6021988 },
+			new() { Name = "Montana", Value = 1005141 },
+			new() { Name = "Nebraska", Value = 1855525 },
+			new() { Name = "Nevada", Value = 2758931 },
+			new() { Name = "New Hampshire", Value = 1320718 },
+			new() { Name = "New Jersey", Value = 8864590 },
+			new() { Name = "New Mexico", Value = 2085538 },
+			new() { Name = "New York", Value = 19570261 },
+			new() { Name = "North Carolina", Value = 9752073 },
+			new() { Name = "North Dakota", Value = 699628 },
+			new() { Name = "Ohio", Value = 11544225 },
+			new() { Name = "Oklahoma", Value = 3814820 },
+			new() { Name = "Oregon", Value = 3899353 },
+			new() { Name = "Pennsylvania", Value = 12763536 },
+			new() { Name = "Rhode Island", Value = 1050292 },
+			new() { Name = "South Carolina", Value = 4723723 },
+			new() { Name = "South Dakota", Value = 833354 },
+			new() { Name = "Tennessee", Value = 6456243 },
+			new() { Name = "Texas", Value = 26059203 },
+			new() { Name = "Utah", Value = 2855287 },
+			new() { Name = "Vermont", Value = 626011 },
+			new() { Name = "Virginia", Value = 8185867 },
+			new() { Name = "Washington", Value = 6897012 },
+			new() { Name = "West Virginia", Value = 1855413 },
+			new() { Name = "Wisconsin", Value = 5726398 },
+			new() { Name = "Wyoming", Value = 576412 },
+			new() { Name = "Puerto Rico", Value = 3667084 }
+		};
 
-    };
+		data.Sort((x, y) => x.Value.CompareTo(y.Value));
+	}
 
-    public struct StateData
-    {
-        public string Name { get; set; }
-        public int Value { get; set; }
-    }
+
+
+	private ChartOptions mapOptions = new()
+	{
+		VisualMap = new ContinuousVisualMap()
+		{
+			Left = "right",
+			Min = 500000,
+			Max = 38000000,
+			InRange = new()
+			{
+				Color = new Color[] { "#313695", "#4575b4", "#74add1", "#abd9e9", "#e0f3f8", "#ffffbf", "#fee090", "#fdae61", "#f46d43", "#d73027", "#a50026" }
+			},
+			Text = new string[] { "High", "Low"},
+			Calculable = true
+		},
+		Series = new()
+		{
+			new MapSeries()
+			{
+				Id = "population",
+				Roam = Roam.True,
+				Map = "USA",
+				Data = data,
+				//TODO: animation duration update ?
+				UniversalTransition = new()
+				{
+					Enabled = true
+				}
+			}
+		}
+	};
+
+	private ChartOptions barOptions = new()
+	{
+		XAxis = new()
+		{
+			Type = AxisType.Value
+		},
+		YAxis = new()
+		{
+			Type = AxisType.Category,
+			AxisLabel = new()
+			{
+				Rotate = 30
+			},
+			Data = data.Select(x => x.Name).ToArray()
+		},
+		AnimationDurationUpdate = 1000,
+		Series = new()
+		{
+			new BarSeries()
+			{
+				Id = "population",
+				Data = data.Select(x => x.Value).ToArray(),
+				UniversalTransition = new()
+				{
+					Enabled = true
+				}
+			}
+		}
+	};
+
+	private IMapDefinition[] maps = new[]
+	{
+		new GeoMapDefinition("USA", new ExternalDataSource("/data/USA.json"), new UsaMapOptions())
+	};
+
+	public struct StateData
+	{
+		public string Name { get; set; }
+		public int Value { get; set; }
+	}
+
+	public class UsaMapOptions
+	{
+		[JsonPropertyName("Alaska")]
+		public object Alaska = new
+		{
+			Left = -131,
+			Top = 25,
+			Width = 15
+		};
+
+		[JsonPropertyName("Hawaii")]
+		public object Hawaii = new
+		{
+			Left = -110,
+			Top = 28,
+			Width = 5
+		};
+
+		[JsonPropertyName("Puerto Rico")]
+		public object PuertoRico = new
+		{
+			Left = -76,
+			Top = 26,
+			Width = 2
+		};
+	}
+
+	private async Task ToggleChart()
+	{
+		if (chart != null)
+		{
+			if (chart.Options == barOptions)
+				chart.Options = mapOptions;
+			else
+				chart.Options = barOptions;
+
+			await chart.UpdateAsync();
+		}
+	}
 }

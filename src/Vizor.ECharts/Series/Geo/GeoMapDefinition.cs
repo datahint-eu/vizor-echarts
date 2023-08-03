@@ -14,12 +14,21 @@ public class GeoMapDefinition : IMapDefinition
 		SpecialAreas = specialAreas;
 	}
 
+	public GeoMapDefinition(string name, object geoData, object? specialAreas = null)
+	{
+		Name = name;
+		GeoJson = geoData;
+		SpecialAreas = specialAreas;
+	}
+
 	public GeoMapDefinition(string name, ExternalDataSource dataSource, object? specialAreas = null)
 	{
 		Name = name;
 		GeoJson = dataSource;
 		SpecialAreas = specialAreas;
 	}
+
+	public string Type => "geoJSON";
 
 	/// <summary>
 	/// Map name, referring to map value set in geo component or map.

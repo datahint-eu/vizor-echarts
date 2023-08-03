@@ -48,6 +48,12 @@ window.vizorECharts = {
 
 	charts: new Map(),
 
+	logging: false,
+
+	changeLogging: function (b) {
+		vizorECharts.logging = b;
+	},
+
 	getChart: function (id) {
 		return vizorECharts.charts.get(id);
 	},
@@ -71,7 +77,10 @@ window.vizorECharts = {
 			return;
 
 		for (item of JSON.parse(fetchOptions)) {
-			//console.log(item);
+			if (vizorECharts.logging) {
+				console.log("FETCH");
+				console.log(item);
+			}
 
 			const response = await fetch(item.url, item.options);
 			if (!response.ok) {
@@ -80,7 +89,10 @@ window.vizorECharts = {
 
 			// parse the response as JSON
 			var data = await response.json();
-			//console.log(data);
+
+			if (vizorECharts.logging) {
+				console.log(data);
+			}
 
 			// replace the object with the fetched data
 			if (item.path != null) {
@@ -92,7 +104,26 @@ window.vizorECharts = {
 		}
 	},
 
-	initChart: async function (id, theme, initOptions, fetchOptions, chartOptions) {
+	registerMaps: function (chartId, mapOptions) {
+		if (mapOptions == null)
+			return;
+
+		var parsedOptions = eval('(' + mapOptions + ')');
+		for (item of parsedOptions) {
+			if (vizorECharts.logging) {
+				console.log("MAP");
+				console.log(item);
+			}
+
+			if (item.type === "geoJSON") {
+				echarts.registerMap(item.mapName, { geoJSON: item.geoJSON, specialAreas: item.specialAreas });
+			} else if (item.type === "svg") {
+				echarts.registerMap(item.mapName, { svg: item.svg });
+			}
+		}
+	},
+
+	initChart: async function (id, theme, initOptions, chartOptions, mapOptions, fetchOptions) {
 		var chart = echarts.init(document.getElementById(id), theme, JSON.parse(initOptions));
 		vizorECharts.charts.set(id, chart);
 
@@ -105,9 +136,16 @@ window.vizorECharts = {
 		// fetch external data if needed
 		await vizorECharts.fetchExternalData(id, fetchOptions);
 
+		// register GEO maps
+		await vizorECharts.registerMaps(id, mapOptions);
+
 		// parse the options
 		var parsedOptions = eval('(' + chartOptions + ')');
-		//console.log(parsedOptions);
+
+		if (vizorECharts.logging) {
+			console.log("CHART");
+			console.log(parsedOptions);
+		}
 
 		// set the chart options
 		chart.setOption(parsedOptions);
@@ -116,7 +154,7 @@ window.vizorECharts = {
 		chart.hideLoading();
 	},
 
-	updateChart: async function (id, fetchOptions, chartOptions) {
+	updateChart: async function (id, chartOptions, mapOptions, fetchOptions) {
 		var chart = vizorECharts.charts.get(id);
 		if (chart == null) {
 			console.error("Failed to retrieve chart " + id);
@@ -125,6 +163,9 @@ window.vizorECharts = {
 
 		// fetch external data if needed
 		await vizorECharts.fetchExternalData(id, fetchOptions);
+
+		// register GEO maps
+		await vizorECharts.registerMaps(id, mapOptions);
 
 		// parse the options
 		var parsedOptions = eval('(' + chartOptions + ')');
