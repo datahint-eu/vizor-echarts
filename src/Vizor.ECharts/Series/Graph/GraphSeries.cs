@@ -366,16 +366,25 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// The categories of node, which is optional.
+	/// Can be a list of GraphSeriesCategories or an external data source.
+	/// 
 	/// If there is a classification of nodes, the category of each node can be assigned through data[i].category .
 	/// And the style of category will also be applied to the style of nodes.
 	/// categories can also be used in legend .
 	/// </summary>
 	[JsonPropertyName("categories")]
-	public List<GraphSeriesCategories>? Categories { get; set; } 
+	public object? Categories { get; set; }
+
+	[JsonIgnore]
+	public List<GraphSeriesCategories>? CategoriesList
+	{
+		get => Categories as List<GraphSeriesCategories>;
+		set => Categories = value;
+	}
 
 	/// <summary>
 	/// For the situation where there are multiple links between nodes, the curveness of each link is automatically calculated, not enabled by default.
@@ -394,7 +403,7 @@ public partial class GraphSeries : ISeries
 
 	/// <summary>
 	/// Nodes list of graph.
-	/// Can be a list of GraphSeriesData.
+	/// Can be a list of GraphSeriesData or an external data source.
 	/// 
 	///  data: [{
 	///     name: '1',
@@ -413,16 +422,33 @@ public partial class GraphSeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
+
+	[JsonIgnore]
+	public List<GraphSeriesData>? DataList
+	{
+		get => Data as List<GraphSeriesData>;
+		set => Data = value;
+	}
 
 	/// <summary>
-	/// Alias of data
+	/// Alias of data.
+	/// Can be a list of GraphSeriesData or an external data source.
 	/// </summary>
 	[JsonPropertyName("nodes")]
-	public List<GraphSeriesData>? Nodes { get; set; } 
+	public object? Nodes { get; set; }
+
+	[JsonIgnore]
+	public List<GraphSeriesData>? NodesList
+	{
+		get => Nodes as List<GraphSeriesData>;
+		set => Nodes = value;
+	}
 
 	/// <summary>
 	/// Relational data between nodes.
+	/// Can be a list of GraphSeriesLink or an external data source.
+	/// 
 	/// Example:  links: [{
 	///     source: 'n1',
 	///     target: 'n2'
@@ -432,13 +458,28 @@ public partial class GraphSeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("links")]
-	public List<GraphSeriesLink>? Links { get; set; } 
+	public object? Links { get; set; }
+
+	[JsonIgnore]
+	public List<GraphSeriesLink>? LinksList
+	{
+		get => Links as List<GraphSeriesLink>;
+		set => Links = value;
+	}
 
 	/// <summary>
-	/// Alias of links
+	/// Alias of links.
+	/// Can be a list of GraphSeriesLink or an external data source.
 	/// </summary>
 	[JsonPropertyName("edges")]
-	public List<GraphSeriesLink>? Edges { get; set; } 
+	public object? Edges { get; set; }
+
+	[JsonIgnore]
+	public List<GraphSeriesLink>? EdgesList
+	{
+		get => Edges as List<GraphSeriesLink>;
+		set => Edges = value;
+	}
 
 	/// <summary>
 	/// Mark point in a chart.

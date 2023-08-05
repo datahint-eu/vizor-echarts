@@ -1,0 +1,55 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="1000px" Height="1000px" />
+
+@code {
+
+		// see https://echarts.apache.org/examples/en/editor.html?c=graph-force
+
+	private static ExternalDataSource graph = new ExternalDataSource("/data/les-miserables.json", ExternalDataFetchAs.Json)
+	{
+		AfterLoad = new JavascriptFunction(@"function (graph) {
+			console.log('AFTER EXECUTE');
+			console.log(graph);
+			graph.nodes.forEach(function (node) { node.symbolSize = 5; });
+			return graph;
+		}")
+	};
+
+	private ChartOptions options = new()
+	{
+		Title = new()
+		{
+			Text = "Les Miserables",
+			Subtext = "Default layout",
+			Top = "top",
+			Left = "center"
+		},
+		Tooltip = new() { },
+		Legend = new()
+		{
+			Top = 100
+			//Data = new JavascriptFunction("graph.categories.map(function (a) { return a.name; })") //TODO: this won't work, 'graph' is not defined
+		},
+		Series = new()
+		{
+			new GraphSeries()
+			{
+				Name = "Les Miserables",
+				Layout = GraphLayout.Force,
+				Data = new ExternalDataSourceRef(graph, "nodes"),
+				Links = new ExternalDataSourceRef(graph, "links"),
+				Categories = new ExternalDataSourceRef(graph, "categories"),
+				Roam = Roam.True,
+				Label = new()
+				{
+					Position = LabelPosition.Right
+				},
+				Force = new()
+				{
+					Repulsion = 100
+				}
+			}
+		}
+	};
+}
