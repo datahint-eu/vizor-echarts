@@ -117,7 +117,8 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 
         // register the special converter for external data source fetches
         jsonOpts.Converters.Add(new ExternalDataSourceConverter(dataFetchCommands, id));
+		jsonOpts.Converters.Add(new ExternalDataSourceRefConverter(dataFetchCommands, id));
 
-        return jsonOpts;
+		return jsonOpts;
     }
 }

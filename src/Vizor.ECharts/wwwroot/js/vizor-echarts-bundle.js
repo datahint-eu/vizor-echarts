@@ -99,10 +99,26 @@ window.vizorECharts = {
 
 				// replace the object with the fetched data
 				if (item.path != null) {
-					data = vizorECharts.evaluatePath(data, item.path);
+					try {
+						data = vizorECharts.evaluatePath(data, item.path);
+					} catch (error) {
+						console.log('Failed to evaluate path expression of external data source');
+						console.log(error);
+					}
 				}
 			} else if (item.fetchAs == "string") {
 				data = await response.text();
+			}
+
+			// execute the afterLoad function if required
+			if (item.afterLoad != null) {
+				try {
+					const func = eval(`(${item.afterLoad})`)
+					data = func(data);
+				} catch (error) {
+					console.log('Failed to execute afterLoad function of external data source');
+					console.log(error);
+				}
 			}
 
 			// assign for later retrieval

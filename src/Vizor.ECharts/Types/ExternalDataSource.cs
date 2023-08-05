@@ -1,6 +1,5 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using Vizor.ECharts.Enums;
 using Vizor.ECharts.Internal;
 
 namespace Vizor.ECharts;
@@ -32,6 +31,12 @@ public class ExternalDataSource
 	public string Url { get; }
 
 	/// <summary>
+	/// Unique internal ID
+	/// </summary>
+	public string FetchId { get; } = Guid.NewGuid().ToString().Replace("-", "");
+
+	/// <summary>
+	/// Determines how the returned data is interpreted.
 	/// Default = json
 	/// </summary>
 	public ExternalDataFetchAs FetchAs { get; set; } = ExternalDataFetchAs.Json;
@@ -41,6 +46,15 @@ public class ExternalDataSource
 	/// Currently only simple expressions are supported, not full JsonPath expressions.
 	/// </summary>
 	public string? Path { get; set; }
+
+	/// <summary>
+	/// A function executed after the data is loaded, allowing the data to be manipulated.
+	/// Function signature: function (data)
+	/// The function must return the manipulated data object.
+	/// 
+	/// The function is evaluated AFTER the Path expression.
+	/// </summary>
+	public JavascriptFunction? AfterLoad { get; set; }
 
 	/// <summary>
 	/// Additional options passed to the fetch command
@@ -71,22 +85,21 @@ public class ExternalDataSourceConverter : JsonConverter<ExternalDataSource>
 
 	public override void Write(Utf8JsonWriter writer, ExternalDataSource value, JsonSerializerOptions options)
 	{
-		var fetchId = Guid.NewGuid().ToString().Replace("-", "");
-
-		string raw = $"window.vizorECharts.getChart('{chartId}')['{fetchId}']";
+		string raw = $"window.vizorECharts.getChart('{chartId}')['{value.FetchId}']";
 		writer.WriteRawValue(raw, skipInputValidation: true);
 
-		commands.Add(new FetchCommand(value.Url, fetchId, value.FetchAs, value.Path, value.Options));
+		commands.Add(new FetchCommand(value.Url, value.FetchId, value.FetchAs, value.Path, value.AfterLoad, value.Options));
 	}
 
 	internal class FetchCommand
 	{
-		public FetchCommand(string url, string id, ExternalDataFetchAs fetchAs, string? path, FetchOptions? options)
+		public FetchCommand(string url, string fetchId, ExternalDataFetchAs fetchAs, string? path, JavascriptFunction? afterLoad, FetchOptions? options)
         {
 			Url = url;
-			Id = id;
+			FetchId = fetchId;
 			FetchAs = fetchAs;
 			Path = path;
+			AfterLoad = afterLoad?.Function; // serialize as string
 			Options = options;
 		}
 
@@ -94,13 +107,16 @@ public class ExternalDataSourceConverter : JsonConverter<ExternalDataSource>
         public string Url { get; set; }
 
 		[JsonPropertyName("id")]
-		public string Id { get; }
+		public string FetchId { get; }
 
 		[JsonPropertyName("fetchAs")]
 		public ExternalDataFetchAs FetchAs { get; }
 
 		[JsonPropertyName("path")]
 		public string? Path { get; }
+
+		[JsonPropertyName("afterLoad")]
+		public string? AfterLoad { get; }
 
 		[JsonPropertyName("options")]
 		public FetchOptions? Options { get; set; }
