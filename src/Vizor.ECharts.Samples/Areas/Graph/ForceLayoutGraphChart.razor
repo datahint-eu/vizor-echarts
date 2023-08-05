@@ -9,8 +9,6 @@
 	private static ExternalDataSource graph = new ExternalDataSource("/data/les-miserables.json", ExternalDataFetchAs.Json)
 	{
 		AfterLoad = new JavascriptFunction(@"function (graph) {
-			console.log('AFTER EXECUTE');
-			console.log(graph);
 			graph.nodes.forEach(function (node) { node.symbolSize = 5; });
 			return graph;
 		}")

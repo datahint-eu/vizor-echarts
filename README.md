@@ -135,7 +135,7 @@ private async Task LoadChartData()
 
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Misc/DataLoaderSampleChart.razor).
 
-### Remote data loading
+### External Data Sources (fetch)
 
 Any `Data` property of type `object?` accepts a `ExternalDataSource` allowing you to specify the external data source.
 
@@ -149,16 +149,45 @@ It is also possible to provide a *simple* path expression to retrieve only a par
 Data = new ExternalDataSource("https://example.com/api/data/sankey_simple.json") { Path = "nodes" }
 ```
 
+Or you can execute a function after load to manipulate the loaded data:
+```
+private static ExternalDataSource graph = new ExternalDataSource("/data/les-miserables.json", ExternalDataFetchAs.Json)
+{
+	AfterLoad = new JavascriptFunction(@"function (graph) {
+		graph.nodes.forEach(function (node) { node.symbolSize = 5; });
+		return graph;
+	}")
+};
+```
+See *Javascript functions* for more details.
+
+
 Additional credentials, headers, policies, ... can also be supplied.
 See [ExternalDataSource](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/Types/ExternalDataSource.cs) and [FetchOptions](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/Types/FetchOptions.cs) for more details.
 
+### External Data Source References
+
+In case you need to re-use an external data source multiple times, you can use an `ExternalDataSourceRef`.
+An `ExternalDataSourceRef` also supports a path expression to select a child object.
+
+```
+private static ExternalDataSource graph = ... ;
+...
+{
+	Data = new ExternalDataSourceRef(graph, "nodes"),
+	Links = new ExternalDataSourceRef(graph, "links"),
+	Categories = new ExternalDataSourceRef(graph, "categories")
+}
+```
+
+See [example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Graph/ForceLayoutGraphChart.razor).
 
 ### Datasets
 
 ECharts supports dataset transformations.
 This allows for simplified data retrieval, without the need to have a separate dataset for different charts or chart types.
 
-See [example 1](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Bar/SimpleDatasetBarChart.razor) and [example #2](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Bar/StackedBarTimeSeriesChart.razor) .
+See [example #](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Bar/SimpleDatasetBarChart.razor) and [example 2](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Bar/StackedBarTimeSeriesChart.razor) .
 
 See also the [echarts dataset documentation](https://echarts.apache.org/en/option.html#dataset) and [tutorial](https://echarts.apache.org/en/tutorial.html#Dataset) .
 
