@@ -1,6 +1,6 @@
 ﻿@using Vizor.ECharts;
 
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="400px" />
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
 
 @code {
 
@@ -72,27 +72,29 @@
 	private const int ClusterIndex = 2;
 	private static readonly string[] Colors = new string[] { "#37A2DA", "#e06343", "#37a354", "#b55dba", "#b5bd48", "#8378EA", "#96BFFF" };
 
-	// TODO: echarts.registerTransform(ecStat.transform.clustering);
+	// NOTE: the following script is required in _Host.cshtml
+	// <script>echarts.registerTransform(ecStat.transform.clustering);</script>
 
 	private ChartOptions options = new()
 		{
-			Dataset = new()
+			DatasetList = new()
 			{
-				Source = data, //TODO: this should be in a child object ??
-				//TODO: transform
-				/*
-				 * {
-      transform: {
-        type: 'ecStat:clustering',
-        // print: true,
-        config: {
-          clusterCount: CLUSTER_COUNT,
-          outputType: 'single',
-          outputClusterIndexDimension: DIENSIION_CLUSTER_INDEX
-        }
-      }
-    }
-				 */
+				new Dataset()
+				{
+					Source = data
+				},
+				new Dataset()
+				{
+					Transform = new CustomTransform("ecStat:clustering")
+					{
+						Config = new
+						{
+							ClusterCount = ClusterCount,
+							OutputType = "single",
+							OutputClusterIndexDimension = ClusterIndex
+						}
+					}
+				}
 			},
 			XAxis = new() { },
 			YAxis = new() { },
@@ -120,7 +122,7 @@
 				{
 					Encode = new()
 					{
-						//TODO: tooltip: [0, 1]
+						Tooltip = new(0, 1)
 					},
 					SymbolSize = 15,
 					ItemStyle = new()
