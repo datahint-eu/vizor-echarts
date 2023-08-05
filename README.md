@@ -39,6 +39,10 @@ Small API changes will occur frequently until version >= 1.0.0 .
 2. Add `vizor-echarts-bundle-min.js` OR `vizor-echarts-min.js` to your `_Host.cshtml` or `_Layout.cshtml` file
     - `vizor-echarts-bundle-min.js` includes apache echarts and echarts-stat.
 	- `vizor-echarts-min.js` ONLY contains the binding code and requires you to manually include apache-echarts and plugins.
+	
+```
+<script src="_content/Vizor.ECharts/js/vizor-echarts-bundle-min.js"></script>
+```
 
 See the [example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Pages/_Host.cshtml) from the demo application.
 
@@ -114,9 +118,9 @@ Most examples that you will find online have very basic datasets.
 However, in real life, data sets are often huge and come from various different sources.
 
 Vizor.ECharts allows you to define data in 3 different ways:
-1. Inside the ChartOptions, as demonstrated in most samples
-2. Using async data sources in C#, allowing you to fetch data directly from the database
-3. Using remote data sources (e.g.: REST API) fetched by the browser
+1. Inside the ChartOptions, as demonstrated in most examples.
+2. Using async data loaders in C#, allowing you to fetch data directly from the database.
+3. Using external data sources (e.g.: REST API) fetched by the browser.
 
 ### Async data loading
 
