@@ -29,7 +29,7 @@ public partial class SunburstSeriesData
 	public string? Link { get; set; } 
 
 	/// <summary>
-	/// Like target attribute of HTML <a> , which can either be 'blank' or 'self' .
+	/// Like target attribute of HTML 'a' , which can either be 'blank' or 'self' .
 	/// See series-sunburst.data.link .
 	/// </summary>
 	[JsonPropertyName("target")]

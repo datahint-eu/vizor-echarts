@@ -237,7 +237,7 @@ public partial class TreemapSeriesData
 	public string? Link { get; set; } 
 
 	/// <summary>
-	/// The same meaning as target in html  <a> label, See series-treemap.data.link .
+	/// The same meaning as target in html 'a' label, See series-treemap.data.link .
 	/// Option values are: 'blank' or 'self' .
 	/// </summary>
 	[JsonPropertyName("target")]

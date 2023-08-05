@@ -97,7 +97,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// <summary>
 	/// This option works when type is piecewise and min / max / splitNumber are set.
 	///  
-	/// If it is set as true , an extra piece labeled with "< min" will show.
+	/// If it is set as true , an extra piece labeled with '&lt; min' will show.
 	/// </summary>
 	[JsonPropertyName("minOpen")]
 	public bool? MinOpen { get; set; } 
@@ -105,7 +105,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// <summary>
 	/// This option works when type is piecewise and min / max / splitNumber are set.
 	///  
-	/// If it is set as true , an extra piece labeled with "> max" will show.
+	/// If it is set as true , an extra piece labeled with '&gt; max' will show.
 	/// </summary>
 	[JsonPropertyName("maxOpen")]
 	public bool? MaxOpen { get; set; } 

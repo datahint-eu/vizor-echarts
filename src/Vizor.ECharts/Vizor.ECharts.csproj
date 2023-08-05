@@ -5,6 +5,7 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 
 		<Authors>DataHint BV, Ben Motmans</Authors>
 		<Company>DataHint BV</Company>
@@ -24,6 +25,9 @@
 		<PackageTags>blazor;echarts;apache;chart;library;vizor</PackageTags>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		<Description>Blazor wrapper for Apache ECharts.</Description>
+
+		<!-- no warnings for missing XML docs -->
+		<NoWarn>$(NoWarn);1591</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>

@@ -36,7 +36,7 @@ public partial class Label
 	/// If axis.type is 'category' , it is one of the value in axis.data .
 	/// If axis.type is 'time' , it is a timestamp.
 	///  
-	/// {Array.<Object>} params.seriesData: An array, containing info of nearest points.
+	/// {Array.&lt;Object&gt;} params.seriesData: An array, containing info of nearest points.
 	/// Each item is:  
 	/// {string} params.axisDimension: The dimension name of the axis.
 	/// For example, in catesian it will be 'x' , 'y' , and in polar it will be 'radius' , 'angle' .
@@ -70,7 +70,7 @@ public partial class Label
 	///     // }
 	///     encode: Object,
 	///     // dimension names list
-	///     dimensionNames: Array<String>,
+	///     dimensionNames: Array&lt;String&gt;,
 	///     // data dimension index, for example 0 or 1 or 2 ...
 	///     // Only work in `radar` series.
 	///     dimensionIndex: number,

@@ -87,9 +87,9 @@ public partial class PictorialBarSeriesData
 	///  
 	/// When percent value is used, final size of the graphic element is calculated based on its reference bar .
 	///  
-	/// For example, there is a reference bar based on x axis (that is, it is a vertical bar), and symbolSize is set as ['30%', '50%'] , the final size of its graphic elements is:   width: <width of reference bar> * 30% .
-	///  height:  If symbolRepeat is used: <height of reference bar> * 50% .
-	///  If symbolRepeat is not used: <height of reference bar> * 50% .
+	/// For example, there is a reference bar based on x axis (that is, it is a vertical bar), and symbolSize is set as ['30%', '50%'] , the final size of its graphic elements is:   width: width of reference bar * 30% .
+	///  height:  If symbolRepeat is used: height of reference bar * 50% .
+	///  If symbolRepeat is not used: height of reference bar * 50% .
 	///     
 	/// Analogously, the case that based on y axis can be obtained by exchanging them.
 	///  

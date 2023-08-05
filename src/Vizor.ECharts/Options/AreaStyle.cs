@@ -87,6 +87,7 @@ public partial class AreaStyle
 	/// 
 	/// number to fill between specified value and data (Since v5.3.2 )
 	/// Use OriginValue to specify the number
+	/// </summary>
 	[JsonIgnore]
 	public AreaStyleOrigin? Origin
 	{

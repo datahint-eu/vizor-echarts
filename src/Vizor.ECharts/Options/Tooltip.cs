@@ -104,7 +104,7 @@ public partial class Tooltip
 	///   // relative position, in the exact center of the container
 	///   position: ['50%', '50%']   
 	/// Function  
-	/// Callback function in the following form:  (point: Array, params: Object|Array.<Object>, dom: HTMLDomElement, rect: Object, size: Object) => Array  
+	/// Callback function in the following form:  (point: Array, params: Object|Array.&lt;Object&gt;, dom: HTMLDomElement, rect: Object, size: Object) =&gt; Array  
 	///  Parameters: 
 	/// point: Mouse position.
 	/// 
@@ -132,7 +132,7 @@ public partial class Tooltip
 	///       // tooltip will be fixed on the right if mouse hovering on the left,
 	///       // and on the left if hovering on the right.
 	///       var obj = {top: 60};
-	///       obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 5;
+	///       obj[['left', 'right'][+(pos[0] &lt; size.viewSize[0] / 2)]] = 5;
 	///       return obj;
 	///   }   
 	/// 'inside'  
@@ -168,7 +168,7 @@ public partial class Tooltip
 	/// Map: {a} for series name, {b} for area name, {c} for merging data, {d} for none;   
 	/// Pie charts, gauge charts, funnel charts: {a} for series name, {b} for data item name, {c} for data value, {d} for percentage.
 	///    
-	/// Example:  formatter: '{b0}: {c0}<br />{b1}: {c1}'  
+	/// Example:  formatter: '{b0}: {c0}   {b1}: {c1}'  
 	/// 2.
 	/// Callback function  
 	/// The format of callback function:  (params: Object|Array, ticket: string, callback: (ticket: string, html: string)) => string | HTMLElement | HTMLElement[]  
@@ -201,7 +201,7 @@ public partial class Tooltip
 	///     // }
 	///     encode: Object,
 	///     // dimension names list
-	///     dimensionNames: Array<String>,
+	///     dimensionNames: Array&lt;String&gt;,
 	///     // data dimension index, for example 0 or 1 or 2 ...
 	///     // Only work in `radar` series.
 	///     dimensionIndex: number,
@@ -264,7 +264,7 @@ public partial class Tooltip
 	///     // }
 	///     encode: Object,
 	///     // dimension names list
-	///     dimensionNames: Array<String>,
+	///     dimensionNames: Array&lt;String&gt;,
 	///     // data dimension index, for example 0 or 1 or 2 ...
 	///     // Only work in `radar` series.
 	///     dimensionIndex: number,
@@ -464,13 +464,13 @@ public partial class Tooltip
 
 	/// <summary>
 	/// Since v4.7.0   
-	/// Whether to append the tooltip DOM element as a child of the <body> of the HTML page, when using renderMode  'html' .
+	/// Whether to append the tooltip DOM element as a child of the body of the HTML page, when using renderMode  'html' .
 	///  
 	/// By default false , means that the tooltip DOM element will be one of a descendant of its echarts DOM container.
 	/// But that means that the tooltip might be cut when overflow the container if some of the ancestors DOM element of the echarts container are styled with overflow: hidden .
 	/// This case could also be resolved by setting tooltip.confine , but it might not suitable for all scenarios.
 	///  
-	/// Here we provide appendToBody: true to auto append the tooltip element to <body> , which is a common way to resolve this kind of issue.
+	/// Here we provide appendToBody: true to auto append the tooltip element to body , which is a common way to resolve this kind of issue.
 	/// But true is not set as a default value because to void to bring break change for some cases where tooltip is deeply customized and to void some unexpected bad cases.
 	///  
 	/// Note that it also works when CSS transform used.

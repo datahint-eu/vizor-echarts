@@ -123,7 +123,7 @@ public partial class CustomSeries : ISeries
 	///                 height: params.coordSys.height
 	///             });
 	/// 
-	///             return rectShape && {
+	///             return rectShape &amp;&amp; {
 	///                 type: 'rect',
 	///                 shape: rectShape,
 	///                 style: api.style()
