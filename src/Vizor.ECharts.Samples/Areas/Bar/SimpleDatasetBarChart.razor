@@ -1,0 +1,64 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+
+@code {
+
+		// see https://echarts.apache.org/examples/en/editor.html?c=dataset-encode0
+
+	private ChartOptions options = new()
+	{
+		Dataset = new()
+		{
+			Source = new SeriesData<double, int, string>[]
+		{
+				new(89.3, 58212, "Matcha Latte"),
+				new(57.1, 78254, "Milk Tea"),
+				new(74.4, 41032, "Cheese Cocoa"),
+				new(50.1, 12755, "Cheese Brownie"),
+				new(89.7, 20145, "Matcha Cocoa"),
+				new(68.1, 79146, "Tea"),
+				new(19.6, 91852, "Orange Juice"),
+				new(10.6, 101852, "Lemon Juice"),
+				new(32.7, 20112, "Walnut Brownie")
+		},
+			Dimensions = new string[] { "score", "amount", "product"}
+		},
+		Grid = new()
+		{
+			ContainLabel = true
+		},
+		XAxis = new()
+		{
+			Name = "Amount"
+		},
+		YAxis = new()
+		{
+			Type = AxisType.Category
+		},
+		VisualMap = new ContinuousVisualMap()
+		{
+			Orient = Orient.Horizontal,
+			Left = "center",
+			Min = 10,
+			Max = 100,
+			Text = new string[] { "High Score", "Low Score" },
+			Dimension = 0,
+			InRange = new()
+			{
+				Color = new Color[] { "#65B581", "#FFCE34", "#FD665F" }
+			}
+		},
+		Series = new()
+		{
+			new BarSeries()
+			{
+				Encode = new()
+				{
+					X = "amount",
+					Y = "product"
+				}
+			}
+		}
+	};
+}
