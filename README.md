@@ -32,14 +32,14 @@ Supported Chart Types:
  
 The project currently is not yet production ready, it will be around September/October.
 Small API changes will occur frequently until version >= 1.0.0 .
- 
+
 ## How to include
 
 1. Add a package reference to `Vizor.ECharts`
-2. Add the following script to your `_Host.cshtml` or `_Layout.cshtml` file
-```
-<script src="_content/Vizor.ECharts/js/vizor-echarts-min.js"></script>
-```
+2. Add `vizor-echarts-bundle-min.js` OR `vizor-echarts-min.js` to your `_Host.cshtml` or `_Layout.cshtml` file
+    - `vizor-echarts-bundle-min.js` includes apache echarts and echarts-stat.
+	- `vizor-echarts-min.js` ONLY contains the binding code and requires you to manually include apache-echarts and plugins.
+
 See the [example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Demo/Pages/_Host.cshtml) from the demo application.
 
 ## How to use
@@ -166,7 +166,8 @@ See also the [echarts dataset documentation](https://echarts.apache.org/en/optio
 
 ECharts sometimes allows you to assign custom functions instead of values.
 This can be achieved with the `JavascriptFunction` class.
-The class accepts a raw Javascript function that is evaluated in the browser.
+The class accepts a string literal containing the Javascript function. The function is evaluated inside the brower.
+Be carefull: syntax errors in the JS function will break the chart serialization.
 
 For example:
 ```

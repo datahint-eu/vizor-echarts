@@ -4,7 +4,7 @@
 // in the project dir:
 //   npm init
 //   npm install --save-dev gulp gulp-rename gulp-clean gulp-concat gulp-minify child_process
-//   npm install echarts --save
+//   npm install echarts echarts-stat --save
 //
 // to build:
 //   gulp
@@ -27,7 +27,11 @@ var libroot = path.resolve(__dirname, "./node_modules");
 
 var srcPaths = {
 	js: [
+		path.resolve(vizorScripts, 'vizor-echarts.js'),
+	],
+	jsBundle: [
 		path.resolve(libroot, 'echarts/dist/echarts.min.js'),
+		path.resolve(libroot, 'echarts-stat/dist/ecStat.min.js'),
 		path.resolve(vizorScripts, 'vizor-echarts.js'),
 	]
 };
@@ -51,6 +55,13 @@ gulp.task('buildJs', () => {
 		.pipe(gulp.dest(destPaths.js))
 });
 
+gulp.task('buildJsBundle', () => {
+	return gulp.src(srcPaths.jsBundle)
+		.pipe(concat('vizor-echarts-bundle.js'))
+		.pipe(minify())
+		.pipe(gulp.dest(destPaths.js))
+});
+
 gulp.task("publishLocal", function (callback) {
 	exec(
 		"Powershell.exe -executionpolicy remotesigned . .\\publish_local.ps1 -Push:1",
@@ -62,4 +73,4 @@ gulp.task("publishLocal", function (callback) {
 });
 
 gulp.task('cleanup', gulp.series(['clean']));
-gulp.task('default', gulp.series(['buildJs']));
+gulp.task('default', gulp.series(['buildJs'], ['buildJsBundle']));

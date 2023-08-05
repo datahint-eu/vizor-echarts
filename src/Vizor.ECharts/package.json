@@ -22,7 +22,8 @@
     "sass": "^1.55.0"
   },
   "dependencies": {
-    "echarts": "^5.4.3"
+    "echarts": "^5.4.3",
+    "echarts-stat": "^1.2.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
