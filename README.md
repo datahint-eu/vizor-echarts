@@ -155,10 +155,10 @@ See [ExternalDataSource](https://github.com/datahint-eu/vizor-echarts/blob/main/
 
 ### Datasets
 
-ECharts allows datasets to be transformed.
+ECharts supports dataset transformations.
 This allows for simplified data retrieval, without the need to have a separate dataset for different charts or chart types.
 
-See [Dataset example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Bar/StackedBarTimeSeriesChart.razor) .
+See [example 1](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Bar/SimpleDatasetBarChart.razor) and [example #2](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Bar/StackedBarTimeSeriesChart.razor) .
 
 See also the [echarts dataset documentation](https://echarts.apache.org/en/option.html#dataset) and [tutorial](https://echarts.apache.org/en/tutorial.html#Dataset) .
 
