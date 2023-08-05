@@ -105,8 +105,29 @@ public partial class Dataset
 	/// See the tutorial of data transform .
 	/// </summary>
 	[JsonPropertyName("transform")]
-	[JsonConverter(typeof(PolymorphicListJsonConverter<IDatasetTransform>))]
-	public List<IDatasetTransform>? Transform { get; set; }
+	public object? TransformObject { get; set; }
+
+	/// <summary>
+	/// See the tutorial of data transform .
+	/// </summary>
+	[JsonIgnore]
+	public IDatasetTransform? Transform
+	{
+		get => TransformObject as IDatasetTransform;
+		set => TransformObject = value;
+	}
+
+	/// <summary>
+	/// See the tutorial of data transform .
+	/// </summary>
+	[JsonIgnore]
+	public List<IDatasetTransform>? TransformList
+	{
+		get => TransformObject as List<IDatasetTransform>;
+		set => TransformObject = value;
+	}
+
+
 
 	/// <summary>
 	/// Specify the input dataset for dataset.transform .

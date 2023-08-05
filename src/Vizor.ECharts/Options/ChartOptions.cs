@@ -1258,7 +1258,6 @@ public partial class ChartOptions
 	public object? CalendarObject { get; set; }
 
 	/// <summary>
-	/// dataset component is published since ECharts 4.
 	/// dataset brings convenience in data management separated with styles and enables data reuse by different series.
 	/// More importantly, it enables data encoding from data to visual, which brings convenience in some scenarios.
 	///  
@@ -1271,6 +1270,12 @@ public partial class ChartOptions
 		set => DatasetObject = value;
 	}
 
+	/// <summary>
+	/// dataset brings convenience in data management separated with styles and enables data reuse by different series.
+	/// More importantly, it enables data encoding from data to visual, which brings convenience in some scenarios.
+	///  
+	/// More details about dataset can be checked in the tutorial .
+	/// </summary>
 	[JsonIgnore]
 	public List<Dataset>? DatasetList
 	{
@@ -1278,6 +1283,12 @@ public partial class ChartOptions
 		set => DatasetObject = value;
 	}
 
+	/// <summary>
+	/// dataset brings convenience in data management separated with styles and enables data reuse by different series.
+	/// More importantly, it enables data encoding from data to visual, which brings convenience in some scenarios.
+	///  
+	/// More details about dataset can be checked in the tutorial .
+	/// </summary>
 	[JsonPropertyName("dataset")]
 	public object? DatasetObject { get; set; } 
 
