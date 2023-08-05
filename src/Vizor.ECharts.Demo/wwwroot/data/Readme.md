@@ -5,4 +5,4 @@ Data from the Apache ECharts samples:
  - USA.json
 
 Data from https://github.com/bmesuere/belgium-topojson (Creative Commons Zero v1.0 Universal)
- - Gemeenten.json --> converted to BE_mun_orig.json (geoJSON) using https://mapshaper.org/ , the file is manually modifed to create BE_mun.json
+ - Gemeenten.json --> converted to BE_mun.json (geoJSON) using https://mapshaper.org/ , additional modifications were done to correctly display names in the chart tooltips
