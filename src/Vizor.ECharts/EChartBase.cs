@@ -38,12 +38,18 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
     [Parameter]
     public ChartRenderer Renderer { get; set; } = ChartRenderer.Svg;
 
-    [Parameter]
+	/// <summary>
+	/// Custom list of JsonConverters.
+	/// REMARK: Use the same list of custom converters in every chart OR set CacheJsonSerializerOptions to false.
+	/// For memory consumption, ideally you re-use the same cached JsonSerializerOptions.
+	/// </summary>
+	[Parameter]
     public JsonConverter[]? JsonConverters { get; set; }
 
 	// see https://www.meziantou.net/avoid-performance-issue-with-jsonserializer-by-reusing-the-same-instance-of-json.htm
 	/// <summary>
-	/// Prefer to re-use the same JsonSerializerOptions
+	/// Prefer to re-use the same JsonSerializerOptions. (default = true)
+    /// Setting this to false is generally a bad idea, unless you know what you are doing.
 	/// </summary>
 	[Parameter]
     public bool CacheJsonSerializerOptions { get; set; } = true;
@@ -102,18 +108,7 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
         // return cached instance if possible
         if (CacheJsonSerializerOptions && cachedJsonOpts != null)
         {
-			// double check that all custom JsonConverters are already added
-			if (JsonConverters != null)
-			{
-				foreach (var converter in JsonConverters)
-				{
-                    if (!cachedJsonOpts.Converters.Contains(converter))
-                    {
-						cachedJsonOpts.Converters.Add(converter);
-					}
-				}
-			}
-
+			//NOTE: custom converters cannot be changed after first use of cachedJsonOpts
 			return cachedJsonOpts;
         }
 
