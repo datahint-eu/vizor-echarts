@@ -8,8 +8,8 @@ namespace Vizor.ECharts;
 
 public abstract class EChartBase : ComponentBase, IAsyncDisposable
 {
-    // one instance per chart, we need it to pass state info of external data sources, ...
-    protected JsonSerializerOptions? jsonOpts;
+	private static JsonSerializerOptions? cachedJsonOpts;
+	protected JsonSerializerOptions? jsonOpts;
 
     private readonly List<ExternalDataSourceConverter.FetchCommand> dataFetchCommands = new();
     protected readonly string id = "chart" + Guid.NewGuid().ToString().Replace("-", "");
@@ -40,6 +40,13 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 
     [Parameter]
     public JsonConverter[]? JsonConverters { get; set; }
+
+	// see https://www.meziantou.net/avoid-performance-issue-with-jsonserializer-by-reusing-the-same-instance-of-json.htm
+	/// <summary>
+	/// Prefer to re-use the same JsonSerializerOptions
+	/// </summary>
+	[Parameter]
+    public bool CacheJsonSerializerOptions { get; set; } = true;
 
 	/// <summary>
 	/// Geo maps, see https://echarts.apache.org/en/api.html#echarts.registerMap
@@ -90,9 +97,27 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
         return (chartOpts, mapOpts, fetchOpts);
     }
 
-    protected JsonSerializerOptions CreateSerializerOptions()
+	protected JsonSerializerOptions CreateSerializerOptions()
     {
-        var jsonOpts = new JsonSerializerOptions()
+        // return cached instance if possible
+        if (CacheJsonSerializerOptions && cachedJsonOpts != null)
+        {
+			// double check that all custom JsonConverters are already added
+			if (JsonConverters != null)
+			{
+				foreach (var converter in JsonConverters)
+				{
+                    if (!cachedJsonOpts.Converters.Contains(converter))
+                    {
+						cachedJsonOpts.Converters.Add(converter);
+					}
+				}
+			}
+
+			return cachedJsonOpts;
+        }
+
+		var jsonOpts = new JsonSerializerOptions()
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
@@ -118,6 +143,10 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
         // register the special converter for external data source fetches
         jsonOpts.Converters.Add(new ExternalDataSourceConverter(dataFetchCommands, id));
 		jsonOpts.Converters.Add(new ExternalDataSourceRefConverter(dataFetchCommands, id));
+
+        // store the json opts for re-use later on
+        if (CacheJsonSerializerOptions && cachedJsonOpts == null)
+            cachedJsonOpts = jsonOpts;
 
 		return jsonOpts;
     }
