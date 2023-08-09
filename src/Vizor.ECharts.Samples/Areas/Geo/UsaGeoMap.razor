@@ -2,14 +2,20 @@
 @using Vizor.ECharts;
 @using Microsoft.AspNetCore.Components.Web;
 
-<div class="btn btn-primary" @onclick="ToggleChart">Toggle Bar &lt;&gt; Map</div>
-<Vizor.ECharts.EChart Options="@mapOptions" Maps="maps" Width="1000px" Height="1000px" @ref="@chart" />
+@if (isInitialized)
+{
+	<div class="btn btn-primary" @onclick="ToggleChart">Toggle Bar &lt;&gt; Map</div>
+	<Vizor.ECharts.EChart Options="@mapOptions" Maps="maps" ExternalDataSources="@(new[] { mapSource })" Width="1000px" Height="1000px" @ref="@chart" />
+}
 
 @code {
 
 	// see https://echarts.apache.org/examples/en/editor.html?c=map-bar-morph
 
 	private EChart? chart = null;
+	private ExternalDataSource? mapSource = null;
+	private IMapDefinition[]? maps = null;
+	private bool isInitialized = false;
 
 	private static readonly List<StateData> data;
 	static UsaGeoMap()
@@ -73,7 +79,17 @@
 		data.Sort((x, y) => x.Value.CompareTo(y.Value));
 	}
 
+	protected override void OnInitialized()
+	{
+		mapSource = new("/data/USA.json");
 
+		maps = new[]
+		{
+			new GeoMapDefinition("USA", mapSource, new UsaMapOptions())
+		};
+
+		isInitialized = true;
+	}
 
 	private ChartOptions mapOptions = new()
 	{
@@ -135,11 +151,6 @@
 				}
 			}
 		}
-	};
-
-	private IMapDefinition[] maps = new[]
-	{
-		new GeoMapDefinition("USA", new ExternalDataSource("/data/USA.json"), new UsaMapOptions())
 	};
 
 	public struct StateData

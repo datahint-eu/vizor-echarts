@@ -1,6 +1,7 @@
 window.vizorECharts = {
 
 	charts: new Map(),
+	dataSources: new Map(),
 
 	logging: false,
 
@@ -10,6 +11,17 @@ window.vizorECharts = {
 
 	getChart: function (id) {
 		return vizorECharts.charts.get(id);
+	},
+
+	getDataSource: function (fetchId) {
+		var data = vizorECharts.dataSources.get(fetchId);
+
+		if (vizorECharts.logging) {
+			console.log(`GET CACHED FETCH ${fetchId}`);
+			console.log(data);
+		}
+
+		return data;
 	},
 
 	evaluatePath: function (data, pathExpression) {
@@ -26,13 +38,15 @@ window.vizorECharts = {
 		return currentObj;
 	},
 
-	fetchExternalData: async function (chartId, fetchOptions) {
+	fetchExternalData: async function (chart, fetchOptions) {
 		if (fetchOptions == null)
 			return;
 
+		chart.__dataSources = [];
+
 		for (item of JSON.parse(fetchOptions)) {
 			if (vizorECharts.logging) {
-				console.log("FETCH");
+				console.log(`FETCH ${item.id}`);
 				console.log(item);
 			}
 
@@ -45,10 +59,6 @@ window.vizorECharts = {
 			var data = null;
 			if (item.fetchAs == "json") {
 				data = await response.json();
-
-				if (vizorECharts.logging) {
-					console.log(data);
-				}
 
 				// replace the object with the fetched data
 				if (item.path != null) {
@@ -63,6 +73,10 @@ window.vizorECharts = {
 				data = await response.text();
 			}
 
+			if (vizorECharts.logging) {
+				console.log(data);
+			}
+
 			// execute the afterLoad function if required
 			if (item.afterLoad != null) {
 				try {
@@ -74,12 +88,15 @@ window.vizorECharts = {
 				}
 			}
 
-			// assign for later retrieval
-			window.vizorECharts.charts.get(chartId)[item.id] = data;
+			// store in the datasources map for later retrieval
+			window.vizorECharts.dataSources.set(item.id, data);
+
+			// add reference inside the chart, so we can cleanup later
+			chart.__dataSources.push(item.id);
 		}
 	},
 
-	registerMaps: function (chartId, mapOptions) {
+	registerMaps: function (chart, mapOptions) {
 		if (mapOptions == null)
 			return;
 
@@ -109,10 +126,10 @@ window.vizorECharts = {
 			return;
 
 		// fetch external data if needed
-		await vizorECharts.fetchExternalData(id, fetchOptions);
+		await vizorECharts.fetchExternalData(chart, fetchOptions);
 
 		// register GEO maps
-		await vizorECharts.registerMaps(id, mapOptions);
+		await vizorECharts.registerMaps(chart, mapOptions);
 
 		// parse the options
 		var parsedOptions = eval('(' + chartOptions + ')');
@@ -158,6 +175,13 @@ window.vizorECharts = {
 		if (chart == null) {
 			console.error("Failed to dispose chart " + id);
 			return;
+		}
+
+		// dispose of all dataSources linked to the chart
+		if (chart.__dataSources && Array.isArray(chart.__dataSources)) {
+			chart.__dataSources.forEach(id => {
+				window.vizorECharts.dataSources.delete(id);
+			});
 		}
 
 		echarts.dispose(chart)

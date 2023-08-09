@@ -24,6 +24,13 @@ public class GeoMapDefinition : IMapDefinition
 	public GeoMapDefinition(string name, ExternalDataSource dataSource, object? specialAreas = null)
 	{
 		Name = name;
+		GeoJson = new ExternalDataSourceRef(dataSource);
+		SpecialAreas = specialAreas;
+	}
+
+	public GeoMapDefinition(string name, ExternalDataSourceRef dataSource, object? specialAreas = null)
+	{
+		Name = name;
 		GeoJson = dataSource;
 		SpecialAreas = specialAreas;
 	}

@@ -1,12 +1,23 @@
 ﻿@using Vizor.ECharts;
 
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+@if (isInitialized)
+{
+	<Vizor.ECharts.EChart Options="@options" ExternalDataSources="@(new[] { extData })" Width="800px" Height="800px" />
+}
 
 @code {
 
 	// see https://echarts.apache.org/examples/en/editor.html?c=sankey-levels
 
-	private ChartOptions options = new()
+	private ExternalDataSource? extData = null;
+	private ChartOptions? options = null;
+	private bool isInitialized = false;
+
+	protected override void OnInitialized()
+	{
+		extData = new ExternalDataSource("data/sankey_simple.json", ExternalDataFetchAs.Json);
+
+		options = new()
 		{
 			Title = new()
 			{
@@ -21,8 +32,8 @@
 			{
 				new SankeySeries()
 				{
-					Data = new ExternalDataSource("data/sankey_simple.json") { Path = "nodes" },
-					Links = new ExternalDataSource("data/sankey_simple.json") { Path = "links" }, // in theory this is a double call, but the browser will retrieve it from cache
+					Data = new ExternalDataSourceRef(extData, path: "nodes"),
+					Links = new ExternalDataSourceRef(extData, path: "links"),
 					Emphasis = new()
 					{
 						Focus = "adjacency"
@@ -89,4 +100,7 @@
 				}
 			}
 		};
+
+		isInitialized = true;
+	}
 }

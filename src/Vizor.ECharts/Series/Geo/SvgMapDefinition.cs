@@ -22,6 +22,12 @@ public class SvgMapDefinition : IMapDefinition
 	public SvgMapDefinition(string name, ExternalDataSource dataSource)
 	{
 		Name = name;
+		Svg = new ExternalDataSourceRef(dataSource);
+	}
+
+	public SvgMapDefinition(string name, ExternalDataSourceRef dataSource)
+	{
+		Name = name;
 		Svg = dataSource;
 	}
 

@@ -1,12 +1,23 @@
 ﻿@using Vizor.ECharts;
 
-<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+@if (isInitialized)
+{
+	<Vizor.ECharts.EChart Options="@options" ExternalDataSources="@(new[] { extData })" Width="800px" Height="800px" />
+}
 
 @code {
 
 	// see https://echarts.apache.org/examples/en/editor.html?c=tree-basic
 
-	private ChartOptions options = new()
+	private ExternalDataSource? extData = null;
+	private ChartOptions? options = null;
+	private bool isInitialized = false;
+
+	protected override void OnInitialized()
+	{
+		extData = new ExternalDataSource("data/flare.json", ExternalDataFetchAs.Json);
+
+		options = new()
 		{
 			Tooltip = new()
 			{
@@ -18,7 +29,7 @@
 				new TreeSeries()
 				{
 					Data = new object[] {
-						new ExternalDataSource("/data/flare.json", ExternalDataFetchAs.Json),
+						new ExternalDataSourceRef(extData)
 					},
 					Top = "1%",
 					Left = "7%",
@@ -51,4 +62,7 @@
 				}
 			}
 		};
+
+		isInitialized = true;
+	}
 }

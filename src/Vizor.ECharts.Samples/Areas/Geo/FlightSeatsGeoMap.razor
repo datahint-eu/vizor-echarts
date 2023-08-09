@@ -2,15 +2,33 @@
 @using Vizor.ECharts;
 @using Microsoft.AspNetCore.Components.Web;
 
-<Vizor.ECharts.EChart Options="@mapOptions" Maps="maps" Width="1000px" Height="1000px" @ref="@chart" />
+@if (isInitialized)
+{
+	<Vizor.ECharts.EChart Options="@mapOptions" Maps="maps" ExternalDataSources="@(new[] { mapSource })" Width="1000px" Height="1000px" @ref="@chart" />
+}
 
 @code {
 
 	// see https://echarts.apache.org/examples/en/editor.html?c=geo-seatmap-flight
 
 	private EChart? chart = null;
+	private ExternalDataSource? mapSource = null;
+	private IMapDefinition[]? maps = null;
+	private bool isInitialized = false;
 
 	private static readonly string[] takenSeatNames = new[] { "26E", "26D", "26C", "25D", "23C", "21A", "20F" };
+
+	protected override void OnInitialized()
+	{
+		mapSource = new("/data/flight-seats.svg", fetchAs: ExternalDataFetchAs.String);
+
+		maps = new[]
+		{
+			new SvgMapDefinition("flight-seats", mapSource)
+		};
+
+		isInitialized = true;
+	}
 
 	private ChartOptions mapOptions = new()
 		{
@@ -97,8 +115,5 @@
 		return regions;
 	}
 
-	private IMapDefinition[] maps = new[]
-	{
-		new SvgMapDefinition("flight-seats", new ExternalDataSource("/data/flight-seats.svg", fetchAs: ExternalDataFetchAs.String))
-	};
+	
 }

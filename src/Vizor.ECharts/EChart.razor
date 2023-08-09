@@ -9,7 +9,7 @@
 
 @inherits EChartBase
 
-<div id="@id" class="@CssClass" style="@Style"></div>
+<div id="@Id" class="@CssClass" style="@Style"></div>
 
 @code {
 
@@ -46,7 +46,7 @@
 		if (DataLoader.HasDelegate)
 		{
 			// init the chart without any data
-			await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", id, Theme, initOptions, null /*chartOpts*/, null /*mapOpts*/, null /*fetchOptions*/);
+			await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, initOptions, null /*chartOpts*/, null /*mapOpts*/, null /*fetchOptions*/);
 
 			// retrieve the data
 			if (DataLoader.HasDelegate)
@@ -58,7 +58,7 @@
 			(var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: true);
 
 			// update the chart
-			await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", id, chartOpts, mapOpts, fetchOpts);
+			await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", Id, chartOpts, mapOpts, fetchOpts);
 		}
 		else
 		{
@@ -66,7 +66,7 @@
 			(var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: true);
 
 			//TODO: also pass DotNetObjectReference.Create(this) ?
-			await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", id, Theme, initOptions, chartOpts, mapOpts, fetchOpts);
+			await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, initOptions, chartOpts, mapOpts, fetchOpts);
 		}
 	}
 
@@ -80,6 +80,6 @@
 		// serialize all required data
 		(var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: false);
 
-		await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", id, chartOpts, mapOpts, fetchOpts);
+		await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", Id, chartOpts, mapOpts, fetchOpts);
 	}
 }

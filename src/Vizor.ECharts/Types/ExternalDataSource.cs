@@ -1,6 +1,5 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using Vizor.ECharts.Internal;
 
 namespace Vizor.ECharts;
 
@@ -14,11 +13,13 @@ public class ExternalDataSource
 {
 	public ExternalDataSource(string url)
 	{
+		FetchId = EChartBase.GenerateRandomId();
 		Url = url;
 	}
 
-	public ExternalDataSource(string url, ExternalDataFetchAs fetchAs = ExternalDataFetchAs.Json, string? path = null, FetchOptions? options = null, JavascriptFunction? afterLoad = null)
+	public ExternalDataSource(string url, ExternalDataFetchAs fetchAs = ExternalDataFetchAs.Json, string? path = null, FetchOptions? options = null, JavascriptFunction? afterLoad = null, string? fetchId = null)
 	{
+		FetchId = fetchId ?? EChartBase.GenerateRandomId();
 		Url = url;
 		FetchAs = fetchAs;
 		Path = path;
@@ -27,14 +28,14 @@ public class ExternalDataSource
 	}
 
 	/// <summary>
+	/// A unique identifier.
+	/// </summary>
+	public string FetchId { get; }
+
+	/// <summary>
 	/// URL of the datasource
 	/// </summary>
 	public string Url { get; }
-
-	/// <summary>
-	/// Unique internal ID
-	/// </summary>
-	public string FetchId { get; } = Guid.NewGuid().ToString().Replace("-", "");
 
 	/// <summary>
 	/// Determines how the returned data is interpreted.
@@ -61,22 +62,12 @@ public class ExternalDataSource
 	/// Additional options passed to the fetch command
 	/// </summary>
 	public FetchOptions? Options { get; set; }
-
-	public static explicit operator ExternalDataSource(string url)
-	{
-		return new ExternalDataSource(url);
-	}
 }
 
 public class ExternalDataSourceConverter : JsonConverter<ExternalDataSource>
 {
-	private readonly List<FetchCommand> commands;
-	private readonly string chartId;
-
-	internal ExternalDataSourceConverter(List<FetchCommand> commands, string chartId)
+	internal ExternalDataSourceConverter()
     {
-		this.commands = commands;
-		this.chartId = chartId;
 	}
 
     public override ExternalDataSource Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -86,40 +77,6 @@ public class ExternalDataSourceConverter : JsonConverter<ExternalDataSource>
 
 	public override void Write(Utf8JsonWriter writer, ExternalDataSource value, JsonSerializerOptions options)
 	{
-		string raw = $"window.vizorECharts.getChart('{chartId}')['{value.FetchId}']";
-		writer.WriteRawValue(raw, skipInputValidation: true);
-
-		commands.Add(new FetchCommand(value.Url, value.FetchId, value.FetchAs, value.Path, value.AfterLoad, value.Options));
-	}
-
-	internal class FetchCommand
-	{
-		public FetchCommand(string url, string fetchId, ExternalDataFetchAs fetchAs, string? path, JavascriptFunction? afterLoad, FetchOptions? options)
-        {
-			Url = url;
-			FetchId = fetchId;
-			FetchAs = fetchAs;
-			Path = path;
-			AfterLoad = afterLoad?.Function; // serialize as string
-			Options = options;
-		}
-
-		[JsonPropertyName("url")]
-        public string Url { get; set; }
-
-		[JsonPropertyName("id")]
-		public string FetchId { get; }
-
-		[JsonPropertyName("fetchAs")]
-		public ExternalDataFetchAs FetchAs { get; }
-
-		[JsonPropertyName("path")]
-		public string? Path { get; }
-
-		[JsonPropertyName("afterLoad")]
-		public string? AfterLoad { get; }
-
-		[JsonPropertyName("options")]
-		public FetchOptions? Options { get; set; }
+		throw new InvalidOperationException("ExternalDataSource cannot be serialized, please use ExternalDataSourceRef");
 	}
 }

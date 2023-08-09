@@ -141,21 +141,31 @@ See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vi
 
 ### External Data Sources (fetch)
 
-Any `Data` property of type `object?` accepts a `ExternalDataSource` allowing you to specify the external data source.
-
+Any `Data` property of type `object?` accepts a `ExternalDataSourceRef` allowing you to specify a reference to an external data source.
 ```
-Data = new ExternalDataSource("https://example.com/api/data/sunburst_simple.json")
+... = new ExternalDataSourceRef(dataSource); // also accepts a path parameter referring to a child of the data source, e.g.: children.nodes
+```
+
+An array of `ExternalDataSource` instances must be supplied to the the `EChart` `ExternalDataSources` parameter.
+```
+<Vizor.ECharts.EChart ExternalDataSources="@(new[] { extData })" ... />
+```
+
+Some examples on how to construct `ExternalDataSource` instances:
+```
+... = new ExternalDataSource("https://example.com/api/data/sunburst_simple.json")
 ```
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Sunburst/SimpleSunburstChart.razor).
 
 It is also possible to provide a *simple* path expression to retrieve only a part of the external data:
 ```
-Data = new ExternalDataSource("https://example.com/api/data/sankey_simple.json") { Path = "nodes" }
+... = new ExternalDataSource("https://example.com/api/data/sankey_simple.json", path: "nodes")
 ```
+See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Sankey/SankeyWithLevelsChart.razor).
 
 Or you can execute a function after load to manipulate the loaded data:
 ```
-private static ExternalDataSource graph = new ExternalDataSource("/data/les-miserables.json", ExternalDataFetchAs.Json)
+... = new ExternalDataSource("/data/les-miserables.json", ExternalDataFetchAs.Json)
 {
 	AfterLoad = new JavascriptFunction(@"function (graph) {
 		graph.nodes.forEach(function (node) { node.symbolSize = 5; });
@@ -163,11 +173,17 @@ private static ExternalDataSource graph = new ExternalDataSource("/data/les-mise
 	}")
 };
 ```
-See *Javascript functions* for more details.
+See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Graph/ForceLayoutGraphChart.razor).
+
+The *Javascript functions* chapter in the readme for more details about JS functions.
 
 
 Additional credentials, headers, policies, ... can also be supplied.
 See [ExternalDataSource](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/Types/ExternalDataSource.cs) and [FetchOptions](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/Types/FetchOptions.cs) for more details.
+
+
+**Remark: never make an `ExternalDataSource` static, you need 1 instance per chart**
+
 
 ### External Data Source References
 

@@ -1,53 +1,65 @@
 ﻿@using Vizor.ECharts;
 
-<Vizor.ECharts.EChart Options="@options" Width="1000px" Height="1000px" />
+@if (isInitialized)
+{
+	<Vizor.ECharts.EChart Options="@options" ExternalDataSources="@(new[] { graph })" Width="1000px" Height="1000px" />
+}
 
 @code {
 
-		// see https://echarts.apache.org/examples/en/editor.html?c=graph-force
+	// see https://echarts.apache.org/examples/en/editor.html?c=graph-force
 
-	private static ExternalDataSource graph = new ExternalDataSource("/data/les-miserables.json", ExternalDataFetchAs.Json)
-	{
-		AfterLoad = new JavascriptFunction(@"function (graph) {
-			graph.nodes.forEach(function (node) { node.symbolSize = 5; });
-			return graph;
-		}")
-	};
+	private ExternalDataSource? graph = null;
+	private ChartOptions? options = null;
+	private bool isInitialized = false;
 
-	private ChartOptions options = new()
+	protected override void OnInitialized()
 	{
-		Title = new()
+		graph = new ExternalDataSource("/data/les-miserables.json", ExternalDataFetchAs.Json)
 		{
-			Text = "Les Miserables",
-			Subtext = "Default layout",
-			Top = "top",
-			Left = "center"
-		},
-		Tooltip = new() { },
-		Legend = new()
+			AfterLoad = new JavascriptFunction(@"function (graph) {
+				graph.nodes.forEach(function (node) { node.symbolSize = 5; });
+				return graph;
+			}")
+		};
+
+		options = new()
 		{
-			Top = 100
-			//Data = new JavascriptFunction("graph.categories.map(function (a) { return a.name; })") //TODO: this won't work, 'graph' is not defined
-		},
-		Series = new()
-		{
-			new GraphSeries()
+			Title = new()
 			{
-				Name = "Les Miserables",
-				Layout = GraphLayout.Force,
-				Data = new ExternalDataSourceRef(graph, "nodes"),
-				Links = new ExternalDataSourceRef(graph, "links"),
-				Categories = new ExternalDataSourceRef(graph, "categories"),
-				Roam = Roam.True,
-				Label = new()
+				Text = "Les Miserables",
+				Subtext = "Default layout",
+				Top = "top",
+				Left = "center"
+			},
+			Tooltip = new() { },
+			Legend = new()
+			{
+				Top = 100
+				//Data = new JavascriptFunction("graph.categories.map(function (a) { return a.name; })") //TODO: this won't work, 'graph' is not defined
+			},
+			Series = new()
+			{
+				new GraphSeries()
 				{
-					Position = LabelPosition.Right
-				},
-				Force = new()
-				{
-					Repulsion = 100
+					Name = "Les Miserables",
+					Layout = GraphLayout.Force,
+					Data = new ExternalDataSourceRef(graph, "nodes"),
+					Links = new ExternalDataSourceRef(graph, "links"),
+					Categories = new ExternalDataSourceRef(graph, "categories"),
+					Roam = Roam.True,
+					Label = new()
+					{
+						Position = LabelPosition.Right
+					},
+					Force = new()
+					{
+						Repulsion = 100
+					}
 				}
 			}
-		}
-	};
+		};
+
+		isInitialized = true;
+	}
 }
