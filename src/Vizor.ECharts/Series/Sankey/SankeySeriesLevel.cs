@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class SankeySeriesLevels
+public partial class SankeySeriesLevel
 {
 	/// <summary>
 	/// Specify which layer is set, value starts from 0.

@@ -194,7 +194,7 @@ public partial class SankeySeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("levels")]
-	public List<SankeySeriesLevels>? Levels { get; set; } 
+	public List<SankeySeriesLevel>? Levels { get; set; } 
 
 	/// <summary>
 	/// label describes the text label style in each rectangular node.

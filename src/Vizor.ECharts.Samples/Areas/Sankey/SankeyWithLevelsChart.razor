@@ -1,0 +1,92 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=sankey-levels
+
+	private ChartOptions options = new()
+		{
+			Title = new()
+			{
+				Text = "Sankey Diagram"
+			},
+			Tooltip = new()
+			{
+				Trigger = ECharts.TooltipTrigger.Item,
+				TriggerOn = TriggerOn.MouseMove
+			},
+			Series = new()
+			{
+				new SankeySeries()
+				{
+					Data = new ExternalDataSource("data/sankey_simple.json") { Path = "nodes" },
+					Links = new ExternalDataSource("data/sankey_simple.json") { Path = "links" }, // in theory this is a double call, but the browser will retrieve it from cache
+					Emphasis = new()
+					{
+						Focus = "adjacency"
+					},
+					Levels = new List<SankeySeriesLevel>()
+					{
+						new()
+						{
+							Depth = 0,
+							ItemStyle = new()
+							{
+								Color = "#fbb4ae"
+							},
+							LineStyle = new()
+							{
+								Color = "source",
+								Opacity = 0.6
+							}
+						},
+						new()
+						{
+							Depth = 1,
+							ItemStyle = new()
+							{
+								Color = "#b3cde3"
+							},
+							LineStyle = new()
+							{
+								Color = "source",
+								Opacity = 0.6
+							}
+						},
+						new()
+						{
+							Depth = 2,
+							ItemStyle = new()
+							{
+								Color = "#ccebc5"
+							},
+							LineStyle = new()
+							{
+								Color = "source",
+								Opacity = 0.6
+							}
+						},
+						new()
+						{
+							Depth = 3,
+							ItemStyle = new()
+							{
+								Color = "#decbe4"
+							},
+							LineStyle = new()
+							{
+								Color = "source",
+								Opacity = 0.6
+							}
+						}
+					},
+					LineStyle = new()
+					{
+						Curveness = 0.5
+					}
+				}
+			}
+		};
+}

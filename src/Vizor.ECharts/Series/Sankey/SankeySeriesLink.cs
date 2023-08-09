@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class SankeySeriesLinks
+public partial class SankeySeriesLink
 {
 	/// <summary>
 	/// The name of source node of edge
