@@ -141,9 +141,11 @@ See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vi
 
 ### External Data Sources (fetch)
 
-Any `Data` property of type `object?` accepts a `ExternalDataSourceRef` allowing you to specify a reference to an external data source.
+The short version: `ExternalDataSource` is provided as an `EChart` parameter, `ExternalDataSourceRef` is used in the `ChartOptions` to refer to a specific `ExternalDataSource`.
+
+Any `Data` property inside the `ChartOptions` of type `object?` accepts a `ExternalDataSourceRef` allowing you to specify a reference to an external data source.
 ```
-... = new ExternalDataSourceRef(dataSource); // also accepts a path parameter referring to a child of the data source, e.g.: children.nodes
+... = new ExternalDataSourceRef(dataSource);
 ```
 
 An array of `ExternalDataSource` instances must be supplied to the the `EChart` `ExternalDataSources` parameter.
@@ -151,17 +153,19 @@ An array of `ExternalDataSource` instances must be supplied to the the `EChart` 
 <Vizor.ECharts.EChart ExternalDataSources="@(new[] { extData })" ... />
 ```
 
-Some examples on how to construct `ExternalDataSource` instances:
+An example on how to construct an `ExternalDataSource` instance:
 ```
 ... = new ExternalDataSource("https://example.com/api/data/sunburst_simple.json")
 ```
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Sunburst/SimpleSunburstChart.razor).
+
 
 It is also possible to provide a *simple* path expression to retrieve only a part of the external data:
 ```
 ... = new ExternalDataSource("https://example.com/api/data/sankey_simple.json", path: "nodes")
 ```
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Sankey/SankeyWithLevelsChart.razor).
+
 
 Or you can execute a function after load to manipulate the loaded data:
 ```
@@ -175,32 +179,28 @@ Or you can execute a function after load to manipulate the loaded data:
 ```
 See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Graph/ForceLayoutGraphChart.razor).
 
-The *Javascript functions* chapter in the readme for more details about JS functions.
+See *Javascript functions* chapter in the readme for more details about JS functions.
+
+
+An `ExternalDataSourceRef` also supports a path expression to select a child object.
+```
+... = new ExternalDataSourceRef(graph, "nodes")
+... = new ExternalDataSourceRef(graph, "links")
+... = new ExternalDataSourceRef(graph, "categories")
+}
+```
+
+See [example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Graph/ForceLayoutGraphChart.razor).
 
 
 Additional credentials, headers, policies, ... can also be supplied.
 See [ExternalDataSource](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/Types/ExternalDataSource.cs) and [FetchOptions](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts/Types/FetchOptions.cs) for more details.
 
 
-**Remark: never make an `ExternalDataSource` static, you need 1 instance per chart**
+**Remark 1:** Never make an `ExternalDataSource` static, you need 1 instance per chart.
 
+**Remark 2:** You will get a `InvalidOperationException` if you try to use `ExternalDataSource` in the chart options.
 
-### External Data Source References
-
-In case you need to re-use an external data source multiple times, you can use an `ExternalDataSourceRef`.
-An `ExternalDataSourceRef` also supports a path expression to select a child object.
-
-```
-private static ExternalDataSource graph = ... ;
-...
-{
-	Data = new ExternalDataSourceRef(graph, "nodes"),
-	Links = new ExternalDataSourceRef(graph, "links"),
-	Categories = new ExternalDataSourceRef(graph, "categories")
-}
-```
-
-See [example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vizor.ECharts.Samples/Areas/Graph/ForceLayoutGraphChart.razor).
 
 ### Datasets
 
