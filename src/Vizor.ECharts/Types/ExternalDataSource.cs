@@ -17,12 +17,13 @@ public class ExternalDataSource
 		Url = url;
 	}
 
-	public ExternalDataSource(string url, ExternalDataFetchAs fetchAs = ExternalDataFetchAs.Json, string? path = null, FetchOptions? options = null)
+	public ExternalDataSource(string url, ExternalDataFetchAs fetchAs = ExternalDataFetchAs.Json, string? path = null, FetchOptions? options = null, JavascriptFunction? afterLoad = null)
 	{
 		Url = url;
 		FetchAs = fetchAs;
 		Path = path;
 		Options = options;
+		AfterLoad = afterLoad;
 	}
 
 	/// <summary>
