@@ -1,0 +1,66 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=treemap-simple
+
+	private ChartOptions options = new()
+		{
+			Series = new()
+		{
+			new TreemapSeries()
+			{
+				Name = "Budget vs spending",
+				Data = new List<TreemapSeriesData>()
+				{
+					new()
+					{
+						Name = "nodeA",
+						Value = 10,
+						Children = new()
+						{
+							new()
+							{
+								Name = "NodeAa",
+								Value = 4
+							},
+							new()
+							{
+								Name = "NodeAb",
+								Value = 6
+							}
+						}
+					},
+					new()
+					{
+						Name = "nodeB",
+						Value = 20,
+						Children = new()
+						{
+							new()
+							{
+								Name = "NodeBa",
+								Value = 20,
+								Children = new()
+								{
+									new()
+									{
+										Name = "NodeBa1",
+										Value = 16
+									},
+									new()
+									{
+										Name = "NodeBa2",
+										Value = 4
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		};
+}
