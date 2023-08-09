@@ -373,6 +373,8 @@ public partial class TreeSeries : ISeries
 	public Leaves? Leaves { get; set; } 
 
 	/// <summary>
+	/// TreeSeriesData or ExternalDataSource or ...
+	/// 
 	/// series-tree.data the data format is a tree structure, for example：  { // note that the outermost layer is an object that represents the root node of the tree.
 	///     name: "flare",    // the name of the node, the text corresponding to the current node label.
 	///     label: {          // the special label configuration (if necessary).
@@ -401,7 +403,7 @@ public partial class TreeSeries : ISeries
 	/// };
 	/// </summary>
 	[JsonPropertyName("data")]
-	public TreeSeriesData? Data { get; set; } 
+	public object? Data { get; set; } 
 
 	/// <summary>
 	/// tooltip settings in this series.

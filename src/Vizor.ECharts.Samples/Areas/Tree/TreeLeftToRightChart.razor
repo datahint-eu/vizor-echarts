@@ -1,0 +1,54 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="800px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=tree-basic
+
+	private ChartOptions options = new()
+		{
+			Tooltip = new()
+			{
+				Trigger = TooltipTrigger.Item,
+				TriggerOn = TriggerOn.MouseMove
+			},
+			Series = new()
+			{
+				new TreeSeries()
+				{
+					Data = new object[] {
+						new ExternalDataSource("/data/flare.json", ExternalDataFetchAs.Json),
+					},
+					Top = "1%",
+					Left = "7%",
+					Bottom = "1%",
+					Right = "20%",
+					SymbolSize = 7,
+					Label = new()
+					{
+						Position = LabelPosition.Left,
+						VerticalAlign = VerticalAlign.Middle,
+						Align = HorizontalAlign.Right,
+						FontSize = 9
+					},
+					Leaves = new()
+					{
+						Label = new()
+						{
+							Position = LabelPosition.Right,
+							VerticalAlign = VerticalAlign.Middle,
+							Align = HorizontalAlign.Left,
+						}
+					},
+					Emphasis = new()
+					{
+						Focus = "descendant"
+					},
+					ExpandAndCollapse = true,
+					//TODO: AnimationDuration = 550,
+					//TODO: AnimationDurationUpdate = 750
+				}
+			}
+		};
+}
