@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class SunburstSeriesLevels
+public partial class SunburstSeriesLevel
 {
 	/// <summary>
 	/// Since v5.2.0   

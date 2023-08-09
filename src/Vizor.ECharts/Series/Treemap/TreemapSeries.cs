@@ -509,7 +509,7 @@ public partial class TreemapSeries : ISeries
 	/// Explanation about borderWidth, gapWidth, borderColor
 	/// </summary>
 	[JsonPropertyName("levels")]
-	public List<TreemapSeriesLevels>? Levels { get; set; }
+	public List<TreemapSeriesLevel>? Levels { get; set; }
 
 	/// <summary>
 	/// the the data format of series-treemap.data is a forest.

@@ -319,7 +319,7 @@ public partial class SunburstSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("levels")]
-	public List<SunburstSeriesLevels>? Levels { get; set; } 
+	public List<SunburstSeriesLevel>? Levels { get; set; } 
 
 	/// <summary>
 	/// tooltip settings in this series.

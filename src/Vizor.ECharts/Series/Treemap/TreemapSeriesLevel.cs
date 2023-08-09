@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class TreemapSeriesLevels
+public partial class TreemapSeriesLevel
 {
 	/// <summary>
 	/// treemap is able to map any dimensions of data to visual.
