@@ -4,6 +4,7 @@
 
 @if (isInitialized)
 {
+	<div class="btn btn-primary" @onclick="Refresh">Refresh</div>
 	<Vizor.ECharts.EChart Options="@mapOptions" Maps="maps" ExternalDataSources="@(new[] { mapSource })" Width="1000px" Height="1000px" @ref="@chart" />
 }
 
@@ -23,7 +24,7 @@
 		maps = new[]
 		{
 			new GeoMapDefinition("BE", mapSource)
-		};
+	};
 
 		isInitialized = true;
 	}
@@ -47,4 +48,10 @@
 			}
 		}
 	};
+
+	private async Task Refresh()
+	{
+		if (chart != null)
+			await chart.UpdateAsync();
+	}
 }

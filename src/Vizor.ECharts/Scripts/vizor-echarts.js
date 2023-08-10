@@ -154,10 +154,10 @@
 		}
 
 		// fetch external data if needed
-		await vizorECharts.fetchExternalData(id, fetchOptions);
+		await vizorECharts.fetchExternalData(chart, fetchOptions);
 
 		// register GEO maps
-		await vizorECharts.registerMaps(id, mapOptions);
+		await vizorECharts.registerMaps(chart, mapOptions);
 
 		// parse the options
 		var parsedOptions = eval('(' + chartOptions + ')');
