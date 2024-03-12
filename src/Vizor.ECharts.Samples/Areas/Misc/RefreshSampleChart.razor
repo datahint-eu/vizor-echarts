@@ -1,0 +1,102 @@
+﻿@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart @ref="@chart" Options="@options" DataLoader="@LoadChartData" Width="800px" Height="400px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=line-stack
+
+	private readonly Random rnd = new();
+	private EChart? chart;
+
+	public async Task UpdateAsync()
+	{
+		if (chart != null)
+			await chart.UpdateAsync();
+	}
+
+	private ChartOptions options = new()
+		{
+			Title = new()
+			{
+				Text = "Stacked Line"
+			},
+			Tooltip = new()
+			{
+				Trigger = TooltipTrigger.Axis
+			},
+			Legend = new()
+			{
+				Data = new string[] { "Email", "Union Ads", "Video Ads", "Direct", "Search Engine" }
+			},
+			Toolbox = new()
+			{
+				Feature = new()
+				{
+					SaveAsImage = new() { }
+				}
+			},
+			Grid = new()
+			{
+				Left = "3%",
+				Right = "4%",
+				Bottom = "3%",
+				ContainLabel = true
+			},
+			XAxis = new()
+			{
+				Type = AxisType.Category,
+				BoundaryGap = false,
+				Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
+			},
+			YAxis = new()
+			{
+				Type = AxisType.Value
+			}
+		};
+
+	private async Task LoadChartData()
+	{
+		options.Series = new()
+		{
+			new LineSeries()
+			{
+				Name = "Email",
+				Data = GenerateRandomSeries(75, 250),
+				Stack = "Total"
+			},
+			new LineSeries()
+			{
+				Name = "Union Ads",
+				Data = GenerateRandomSeries(150, 350),
+				Stack = "Total"
+			},
+			new LineSeries()
+			{
+				Name = "Video Ads",
+				Data = GenerateRandomSeries(100, 450),
+				Stack = "Total"
+			},
+			new LineSeries()
+			{
+				Name = "Direct",
+				Data = GenerateRandomSeries(300, 400),
+				Stack = "Total"
+			},
+			new LineSeries()
+			{
+				Name = "Search Engine",
+				Data = GenerateRandomSeries(800, 1400),
+				Stack = "Total"
+			}
+		};
+	}
+
+	private int[] GenerateRandomSeries(int min, int max)
+	{
+		var arr = new int[7];
+		for (int i = 0; i < arr.Length; ++i)
+			arr[i] = rnd.Next(min, max);
+		return arr;
+	}
+}
