@@ -29,9 +29,6 @@ Supported Chart Types:
  - Pictorial Bar
  - Theme River
  - Custom
- 
-The project currently is not yet production ready, it will be around September/October.
-Small API changes will occur frequently until version >= 1.0.0 .
 
 ## How to include
 
