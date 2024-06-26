@@ -1,0 +1,53 @@
+@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="auto" Height="400px" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=pie-simple
+
+	private ChartOptions options = new()
+	{
+		Title = new()
+		{
+			Text = "Auto Size Pie",
+			Subtext = "Fake Data",
+			Left = "center"
+		},
+		BackgroundColor = "#ccc",
+		Tooltip = new()
+		{
+			Trigger = ECharts.TooltipTrigger.Item
+		},
+		Legend = new()
+		{
+			Orient = Orient.Vertical,
+			Left = "left"
+		},
+		Series = new()
+		{
+			new PieSeries()
+			{
+				Name = "Access From",
+				Radius = new CircleRadius("50%"),
+				Data = new List<PieSeriesData>()
+				{
+					new() { Value = 1048, Name = "Search Engine" },
+					new() { Value = 735, Name = "Direct" },
+					new() { Value = 580, Name = "Email" },
+					new() { Value = 484, Name = "Union Ads" },
+					new() { Value = 300, Name = "Video Ads" },
+				},
+				Emphasis = new()
+				{
+					ItemStyle = new()
+					{
+						ShadowBlur = 10,
+						ShadowOffsetX = 0,
+						ShadowColor = Color.FromRGBA(0, 0, 0, 0.5)
+					}
+				}
+			}
+		}
+	};
+}
