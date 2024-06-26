@@ -1,0 +1,21 @@
+﻿@page "/example/misc/refresh"
+
+@using Vizor.ECharts;
+@using Vizor.ECharts.Samples.Areas.Misc;
+
+<PageHeader Title="Sample Sample" SourceLink="@typeof(RefreshSampleChart)" SubTitle="Every time you hit refresh, the chart data source is randomized" />
+
+<button class="btn btn-primary" @onclick="UpdateAsync">Refresh</button>
+
+<RefreshSampleChart @ref="@chart" />
+
+@code {
+
+	private RefreshSampleChart? chart;
+
+	private async Task UpdateAsync()
+	{
+		if (chart != null)
+			await chart.UpdateAsync();
+	}
+}

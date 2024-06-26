@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GeoJsonSanitizer": {
+      "commandName": "Project",
+      "commandLineArgs": "BE_mun.json"
+    }
+  }
+}
