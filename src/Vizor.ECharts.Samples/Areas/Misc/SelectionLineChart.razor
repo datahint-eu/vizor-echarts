@@ -1,0 +1,75 @@
+@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="400px" />
+
+@code {
+	
+	// see https://github.com/datahint-eu/vizor-echarts/issues/22
+	// see https://github.com/datahint-eu/vizor-echarts/issues/21
+
+	private ChartOptions options = new()
+	{
+		Title = new()
+		{
+			Text = "Selection"
+		},
+		Tooltip = new()
+		{
+			Trigger = TooltipTrigger.Axis
+		},
+		Legend = new()
+		{
+			Data = new string[] { "Email", "Union Ads", "Video Ads", "Direct", "Search Engine" },
+			Selected = new Selected()
+			{
+				{ "Union Ads", false },
+				{ "Video Ads", false },
+			}
+		},
+		Grid = new()
+		{
+			Left = "3%",
+			Right = "4%",
+			Bottom = "3%",
+			ContainLabel = true
+		},
+		XAxis = new()
+		{
+			Type = AxisType.Category,
+			BoundaryGap = false,
+			Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
+		},
+		YAxis = new()
+		{
+			Type = AxisType.Value
+		},
+		Series = new()
+		{
+			new LineSeries()
+			{
+				Name = "Email",
+				Data = new int[] {120, 132, 101, 134, 90, 230, 210 }
+			},
+			new LineSeries()
+			{
+				Name = "Union Ads",
+				Data = new int[] {220, 182, 191, 234, 290, 330, 310 }
+			},
+			new LineSeries()
+			{
+				Name = "Video Ads",
+				Data = new int[] {150, 232, 201, 154, 190, 330, 410 }
+			},
+			new LineSeries()
+			{
+				Name = "Direct",
+				Data = new int[] {320, 332, 301, 334, 390, 330, 320 }
+			},
+			new LineSeries()
+			{
+				Name = "Search Engine",
+				Data = new int[] {820, 932, 901, 934, 1290, 1330, 1320 }
+			}
+		}
+	};
+}
