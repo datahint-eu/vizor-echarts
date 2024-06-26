@@ -170,6 +170,28 @@ window.vizorECharts = {
 		chart.hideLoading();
 	},
 
+	attachClickEvent: function (id, objRef) {
+		var chart = vizorECharts.charts.get(id);
+		if (chart == null) {
+			console.error("Failed to retrieve chart " + id);
+			return;
+		}
+
+		// Call the JSInvokable .NET method
+		chart.on('click', function (params) {
+			if (vizorECharts.logging) {
+				console.log("CLICK");
+				console.log(params);
+			}
+			
+			// before we can call .NET, we must sanitize the object to prevent circular references from being serialized
+			delete params.encode;
+			delete params.event;
+			
+			objRef.invokeMethodAsync('HandleChartClick', params);
+		});
+	},
+
 	disposeChart: function (id) {
 		var chart = vizorECharts.charts.get(id);
 		if (chart == null) {

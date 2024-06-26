@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 using System.Text.Json;
 using Microsoft.AspNetCore.Components;
 using Vizor.ECharts.Internal;
@@ -10,6 +11,7 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 {
 	private static JsonSerializerOptions? cachedJsonOpts;
 	protected JsonSerializerOptions? jsonOpts;
+	protected DotNetObjectReference<EChartBase>? objRef;
 
 	[Inject]
 	public IJSRuntime JSRuntime { get; set; } = default!;
@@ -76,6 +78,19 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 
 	[Parameter, EditorRequired]
 	public ChartOptions Options { get; set; } = default!;
+	
+	[Parameter]
+	public EventCallback<EventParams> OnChartClick { get; set; }
+
+	[DynamicDependency(nameof(HandleChartClick))]
+	public EChartBase()
+	{
+	}
+
+	protected override void OnInitialized()
+	{
+		objRef = DotNetObjectReference.Create(this);
+	}
 
 	public static string GenerateRandomId() => Guid.NewGuid().ToString("N");
 
@@ -91,6 +106,12 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 			Group?.Remove(this);
 
 			await JSRuntime.InvokeVoidAsync("vizorECharts.disposeChart", Id);
+		}
+		catch { }
+
+		try
+		{
+			objRef?.Dispose();
 		}
 		catch { }
 	}
@@ -156,5 +177,14 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 			cachedJsonOpts = jsonOpts;
 
 		return jsonOpts;
+	}
+	
+	[JSInvokable("HandleChartClick")]
+	public async Task HandleChartClick(EventParams p)
+	{
+		if (OnChartClick.HasDelegate)
+		{
+			await OnChartClick.InvokeAsync(p);
+		}
 	}
 }

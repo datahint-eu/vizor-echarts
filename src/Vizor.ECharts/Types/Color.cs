@@ -68,6 +68,8 @@ public class Color
 	}
 
 	public static Color Transparent => new("transparent");
+
+	public override string ToString() => color ?? string.Empty;
 }
 
 public class ColorConverter : JsonConverter<Color>

@@ -68,6 +68,12 @@
 			//TODO: also pass DotNetObjectReference.Create(this) ?
 			await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, initOptions, chartOpts, mapOpts, fetchOpts);
 		}
+		
+		// listen for events if needed
+		if (OnChartClick.HasDelegate)
+		{
+			await JSRuntime.InvokeVoidAsync("vizorECharts.attachClickEvent", Id, objRef);
+		}
 	}
 
 	public override async Task UpdateAsync(bool executeDataLoader = true)

@@ -1,0 +1,128 @@
+@using System.Text.Json
+@using System.Text.Json.Serialization
+@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="400px" CssClass="@CssClass" OnChartClick="OnChartClick"/>
+
+<div class="card">
+	<div class="card-header">Selection</div>
+	<div class="card-body">
+		<div class="row">
+			<div class="col-6">
+				<dl>
+					<dt>Component Type</dt>
+					<dd>@(selectedData?.ComponentType)</dd>
+
+					<dt>Series Type</dt>
+					<dd>@(selectedData?.SeriesType)</dd>
+
+					<dt>Series Name</dt>
+					<dd>@(selectedData?.SeriesName)</dd>
+
+					<dt>Series Index</dt>
+					<dd>@(selectedData?.SeriesIndex)</dd>
+
+					<dt>Name</dt>
+					<dd>@(selectedData?.Name)</dd>
+				</dl>
+			</div>
+			<div class="col-6">
+				<dl>
+					<dt>Data Index</dt>
+					<dd>@(selectedData?.DataIndex)</dd>
+
+					<dt>Data Type</dt>
+					<dd>@(selectedData?.DataType)</dd>
+
+					<dt>Value</dt>
+					<dd>@(selectedData?.Value)</dd>
+
+					<dt>Color</dt>
+					<dd>@(selectedData?.Color)</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>
+
+@code {
+
+	// see https://github.com/datahint-eu/vizor-echarts/issues/21
+
+	private EventParams? selectedData;
+
+	private ChartOptions options = new()
+	{
+		Title = new()
+		{
+			Text = "Selectable Pie Chart",
+			Left = "center"
+		},
+		Tooltip = new()
+		{
+			Trigger = ECharts.TooltipTrigger.Item
+		},
+		Legend = new()
+		{
+			Orient = Orient.Vertical,
+			Left = "left"
+		},
+		Series = new()
+		{
+			new PieSeries()
+			{
+				Name = "Selectable Pie",
+				Radius = new CircleRadius("50%"),
+				AvoidLabelOverlap = true,
+				StillShowZeroSum = false,
+				ShowEmptyCircle = false,
+				SelectedMode = Vizor.ECharts.SelectionMode.Single,
+				SelectedOffset = 20,
+				Data = new List<PieSeriesData>()
+				{
+					new() { Value = 1048, Name = "Search Engine" },
+					new() { Value = 735, Name = "Direct" },
+					new() { Value = 580, Name = "Email" },
+					new() { Value = 484, Name = "Union Ads" },
+					new() { Value = 300, Name = "Video Ads" },
+				},
+				Label = new()
+				{
+					Show = true,
+					Overflow = Overflow.Truncate,
+					Precision = 2,
+					Formatter = "{b}: {d}%"
+				},
+				LabelLine = new()
+				{
+					Show = true,
+				},
+				ItemStyle = new()
+				{
+					BorderRadius = 10,
+					BorderColor = "#fff",
+					BorderWidth = 2
+				},
+				Emphasis = new()
+				{
+					ItemStyle = new()
+					{
+						ShadowBlur = 10,
+						ShadowOffsetX = 0,
+
+						ShadowColor = Vizor.ECharts.Color.FromRGBA(0, 0, 0, 0.5)
+					}
+				}
+			}
+		}
+	};
+
+	[Parameter] public string? CssClass { get; set; }
+
+	private void OnChartClick(EventParams p)
+	{
+		selectedData = p;
+		InvokeAsync(StateHasChanged);
+	}
+
+}
