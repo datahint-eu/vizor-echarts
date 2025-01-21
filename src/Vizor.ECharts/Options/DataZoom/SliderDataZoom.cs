@@ -92,6 +92,13 @@ public partial class SliderDataZoom : IDataZoom
 	public HandleStyle? HandleStyle { get; set; }
 
 	/// <summary>
+	/// Since v5.6.0
+	/// Style settings for the text near the handle.
+	/// </summary>
+	[JsonPropertyName("handleLabel")]
+	public HandleLabel? HandleLabel { get; set; }
+
+	/// <summary>
 	/// Since v5.0.0   
 	/// Icon of move handle.
 	///  'M-320.9-50L-320.9-50c18.1,0,27.1,9,27.1,27.1V85.7c0,18.1-9,27.1-27.1,27.1l0,0c-18.1,0-27.1-9-27.1-27.1V-22.9C-348-41-339-50-320.9-50z M-212.3-50L-212.3-50c18.1,0,27.1,9,27.1,27.1V85.7c0,18.1-9,27.1-27.1,27.1l0,0c-18.1,0-27.1-9-27.1-27.1V-22.9C-239.4-41-230.4-50-212.3-50z M-103.7-50L-103.7-50c18.1,0,27.1,9,27.1,27.1V85.7c0,18.1-9,27.1-27.1,27.1l0,0c-18.1,0-27.1-9-27.1-27.1V-22.9C-130.9-41-121.8-50-103.7-50z'  

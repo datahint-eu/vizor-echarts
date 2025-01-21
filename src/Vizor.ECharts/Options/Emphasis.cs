@@ -19,6 +19,13 @@ public partial class Emphasis
 	public HandleStyle? HandleStyle { get; set; }
 
 	/// <summary>
+	/// Since v5.6.0
+	/// Style settings for the text near the handle.
+	/// </summary>
+	[JsonPropertyName("handleLabel")]
+	public HandleLabel? HandleLabel { get; set; }
+
+	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("moveHandleStyle")]
