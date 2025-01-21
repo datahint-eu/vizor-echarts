@@ -242,6 +242,13 @@ public partial class YAxis
 	public double? LogBase { get; set; }
 
 	/// <summary>
+	/// Since v5.5.1
+	/// To specify the start value of the axis.
+	/// </summary>
+	[JsonPropertyName("startValue")]
+	public double? StartValue { get; set; }
+
+	/// <summary>
 	/// Set this to true , to prevent interaction with the axis.
 	/// </summary>
 	[JsonPropertyName("silent")]
