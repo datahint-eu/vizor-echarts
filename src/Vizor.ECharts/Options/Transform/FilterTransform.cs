@@ -15,7 +15,7 @@ public partial class FilterTransform : IDatasetTransform
 	/// See the tutorial of data transform .
 	/// </summary>
 	[JsonPropertyName("config")]
-	public object? Config { get; set; } 
+	public object? Config { get; set; }
 
 	/// <summary>
 	/// When using data transform, we might run into the trouble that the final chart do not display correctly but we do not know where the config is wrong.
@@ -40,6 +40,6 @@ public partial class FilterTransform : IDatasetTransform
 	/// </summary>
 	[JsonPropertyName("print")]
 	[DefaultValue(false)]
-	public bool? Print { get; set; } 
+	public bool? Print { get; set; }
 
 }

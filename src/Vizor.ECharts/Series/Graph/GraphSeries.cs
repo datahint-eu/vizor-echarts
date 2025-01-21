@@ -14,20 +14,20 @@ public partial class GraphSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Whether to enable highlighting chart when legend is being hovered.
 	/// </summary>
 	[JsonPropertyName("legendHoverLink")]
 	[DefaultValue("true")]
-	public bool? LegendHoverLink { get; set; } 
+	public bool? LegendHoverLink { get; set; }
 
 	/// <summary>
 	/// The coordinate used in the series, whose options are:   
@@ -50,42 +50,42 @@ public partial class GraphSeries : ISeries
 	/// Do not use coordinate system.
 	/// </summary>
 	[JsonPropertyName("coordinateSystem")]
-	public string? CoordinateSystem { get; set; } 
+	public string? CoordinateSystem { get; set; }
 
 	/// <summary>
 	/// Index of x axis to combine with, which is  useful for multiple x axes in one chart.
 	/// </summary>
 	[JsonPropertyName("xAxisIndex")]
 	[DefaultValue(0)]
-	public int? XAxisIndex { get; set; } 
+	public int? XAxisIndex { get; set; }
 
 	/// <summary>
 	/// Index of y axis to combine with, which is  useful for multiple y axes in one chart.
 	/// </summary>
 	[JsonPropertyName("yAxisIndex")]
 	[DefaultValue(0)]
-	public int? YAxisIndex { get; set; } 
+	public int? YAxisIndex { get; set; }
 
 	/// <summary>
 	/// Index of polar coordinate to combine with, which is useful for multiple polar axes in one chart.
 	/// </summary>
 	[JsonPropertyName("polarIndex")]
 	[DefaultValue(0)]
-	public int? PolarIndex { get; set; } 
+	public int? PolarIndex { get; set; }
 
 	/// <summary>
 	/// Index of geographic coordinate to combine with, which is useful for multiple geographic axes in one chart.
 	/// </summary>
 	[JsonPropertyName("geoIndex")]
 	[DefaultValue(0)]
-	public int? GeoIndex { get; set; } 
+	public int? GeoIndex { get; set; }
 
 	/// <summary>
 	/// Index of calendar coordinates to combine with, which is useful for multiple calendar coordinates in one chart.
 	/// </summary>
 	[JsonPropertyName("calendarIndex")]
 	[DefaultValue(0)]
-	public int? CalendarIndex { get; set; } 
+	public int? CalendarIndex { get; set; }
 
 	/// <summary>
 	/// Center of current view-port.
@@ -96,14 +96,14 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("center")]
 	[DefaultValue("0,0")]
-	public double[]? Center { get; set; } 
+	public double[]? Center { get; set; }
 
 	/// <summary>
 	/// Zoom rate of current view-port.
 	/// </summary>
 	[JsonPropertyName("zoom")]
 	[DefaultValue("1")]
-	public double? Zoom { get; set; } 
+	public double? Zoom { get; set; }
 
 	/// <summary>
 	/// Graph layout.
@@ -117,13 +117,13 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("layout")]
 	[DefaultValue("none")]
-	public GraphLayout? Layout { get; set; } 
+	public GraphLayout? Layout { get; set; }
 
 	/// <summary>
 	/// Configuration about circular layout.
 	/// </summary>
 	[JsonPropertyName("circular")]
-	public Circular? Circular { get; set; } 
+	public Circular? Circular { get; set; }
 
 	/// <summary>
 	/// Configuration items about force-directed layout.
@@ -135,7 +135,7 @@ public partial class GraphSeries : ISeries
 	/// The result of force-directed layout has a good symmetries and clustering, which is also aesthetically pleasing.
 	/// </summary>
 	[JsonPropertyName("force")]
-	public Force? Force { get; set; } 
+	public Force? Force { get; set; }
 
 	/// <summary>
 	/// Whether to enable mouse zooming and translating.
@@ -145,14 +145,14 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("roam")]
 	[DefaultValue(false)]
-	public Roam? Roam { get; set; } 
+	public Roam? Roam { get; set; }
 
 	/// <summary>
 	/// Limit of scaling, with min and max .
 	/// 1 by default.
 	/// </summary>
 	[JsonPropertyName("scaleLimit")]
-	public ScaleLimit? ScaleLimit { get; set; } 
+	public ScaleLimit? ScaleLimit { get; set; }
 
 	/// <summary>
 	/// Related zooming ratio of nodes when mouse zooming in or out.
@@ -160,7 +160,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("nodeScaleRatio")]
 	[DefaultValue("0.6")]
-	public double? NodeScaleRatio { get; set; } 
+	public double? NodeScaleRatio { get; set; }
 
 	/// <summary>
 	/// If node is draggable.
@@ -169,7 +169,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("draggable")]
 	[DefaultValue("false")]
-	public bool? Draggable { get; set; } 
+	public bool? Draggable { get; set; }
 
 	/// <summary>
 	/// Symbol of node.
@@ -189,7 +189,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("circle")]
-	public Icon? Symbol { get; set; } 
+	public Icon? Symbol { get; set; }
 
 	/// <summary>
 	/// node symbol size.
@@ -197,7 +197,7 @@ public partial class GraphSeries : ISeries
 	/// For example, [20, 10] means symbol width is 20 , and height is 10 .
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
-	public NumberOrNumberArray? SymbolSize { get; set; } 
+	public NumberOrNumberArray? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Rotate degree of node symbol.
@@ -205,14 +205,14 @@ public partial class GraphSeries : ISeries
 	/// Note that when symbol is set to be 'arrow' in markLine , symbolRotate value will be ignored, and compulsively use tangent angle.
 	/// </summary>
 	[JsonPropertyName("symbolRotate")]
-	public double? SymbolRotate { get; set; } 
+	public double? SymbolRotate { get; set; }
 
 	/// <summary>
 	/// Whether to keep aspect for symbols in the form of path:// .
 	/// </summary>
 	[JsonPropertyName("symbolKeepAspect")]
 	[DefaultValue(false)]
-	public bool? SymbolKeepAspect { get; set; } 
+	public bool? SymbolKeepAspect { get; set; }
 
 	/// <summary>
 	/// Offset of node symbol relative to original position.
@@ -226,7 +226,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolOffset")]
 	[DefaultValue("[0, 0]")]
-	public double[]? SymbolOffset { get; set; } 
+	public double[]? SymbolOffset { get; set; }
 
 	/// <summary>
 	/// Symbol of two ends of edge line.
@@ -235,7 +235,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("edgeSymbol")]
 	[DefaultValue("[none, none]")]
-	public Icon[]? EdgeSymbol { get; set; } 
+	public Icon[]? EdgeSymbol { get; set; }
 
 	/// <summary>
 	/// Size of symbol of two ends of edge line.
@@ -248,27 +248,27 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("edgeSymbolSize")]
 	[DefaultValue("10")]
-	public NumberArray? EdgeSymbolSize { get; set; } 
+	public NumberArray? EdgeSymbolSize { get; set; }
 
 	/// <summary>
 	/// The mouse style when mouse hovers on an element, the same as cursor property in CSS .
 	/// </summary>
 	[JsonPropertyName("cursor")]
 	[DefaultValue("pointer")]
-	public string? Cursor { get; set; } 
+	public string? Cursor { get; set; }
 
 	/// <summary>
 	/// Graphic style of , emphasis is the style when it is highlighted, like being hovered by mouse, or highlighted via legend connect.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// The style of edge line.
 	/// lineStyle.color can be 'source' or 'target' , which will use the color of source node or target node.
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// Text label of , to explain some data information about graphic item like value, name and so on.
@@ -276,13 +276,13 @@ public partial class GraphSeries : ISeries
 	/// In ECharts 3, to make the configuration structure flatter, label is taken to be at the same level with itemStyle , and has emphasis as itemStyle does.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("edgeLabel")]
-	public EdgeLabel? EdgeLabel { get; set; } 
+	public EdgeLabel? EdgeLabel { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -331,13 +331,13 @@ public partial class GraphSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelLayout")]
-	public ObjectOrFunction? LabelLayout { get; set; } 
+	public ObjectOrFunction? LabelLayout { get; set; }
 
 	/// <summary>
 	/// Configurations of emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -345,7 +345,7 @@ public partial class GraphSeries : ISeries
 	/// Available when emphasis.focus is set.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -353,7 +353,7 @@ public partial class GraphSeries : ISeries
 	/// Available when selectedMode is set.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -485,20 +485,20 @@ public partial class GraphSeries : ISeries
 	/// Mark point in a chart.
 	/// </summary>
 	[JsonPropertyName("markPoint")]
-	public MarkPoint? MarkPoint { get; set; } 
+	public MarkPoint? MarkPoint { get; set; }
 
 	/// <summary>
 	/// Use a line in the chart to illustrate.
 	/// </summary>
 	[JsonPropertyName("markLine")]
-	public MarkLine? MarkLine { get; set; } 
+	public MarkLine? MarkLine { get; set; }
 
 	/// <summary>
 	/// Used to mark an area in chart.
 	/// For example, mark a time interval.
 	/// </summary>
 	[JsonPropertyName("markArea")]
-	public MarkArea? MarkArea { get; set; } 
+	public MarkArea? MarkArea { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -512,7 +512,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -522,7 +522,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between  component and the left side of the container.
@@ -533,7 +533,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("center")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between  component and the top side of the container.
@@ -544,7 +544,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("middle")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between  component and the right side of the container.
@@ -555,7 +555,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("auto")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between  component and the bottom side of the container.
@@ -566,21 +566,21 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("auto")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Width of  component.
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("auto")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of  component.
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("auto")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -588,14 +588,14 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -603,7 +603,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -613,7 +613,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -621,7 +621,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -634,7 +634,7 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -644,14 +644,14 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -664,12 +664,12 @@ public partial class GraphSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

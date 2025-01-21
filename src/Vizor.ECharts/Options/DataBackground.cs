@@ -10,12 +10,12 @@ public partial class DataBackground
 	/// Line style of data shadow
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// Area style of data shadow
 	/// </summary>
 	[JsonPropertyName("areaStyle")]
-	public AreaStyle? AreaStyle { get; set; } 
+	public AreaStyle? AreaStyle { get; set; }
 
 }

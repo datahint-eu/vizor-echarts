@@ -14,55 +14,55 @@ public partial class Select
 	/// </summary>
 	[JsonPropertyName("disabled")]
 	[DefaultValue("false")]
-	public bool? Disabled { get; set; } 
+	public bool? Disabled { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configuration of label guide line.
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("areaStyle")]
-	public AreaStyle? AreaStyle { get; set; } 
+	public AreaStyle? AreaStyle { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("endLabel")]
-	public EndLabel? EndLabel { get; set; } 
+	public EndLabel? EndLabel { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("upperLabel")]
-	public UpperLabel? UpperLabel { get; set; } 
+	public UpperLabel? UpperLabel { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("edgeLabel")]
-	public EdgeLabel? EdgeLabel { get; set; } 
+	public EdgeLabel? EdgeLabel { get; set; }
 
 }

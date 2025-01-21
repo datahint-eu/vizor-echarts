@@ -10,18 +10,18 @@ public partial class Option
 	/// 
 	/// </summary>
 	[JsonPropertyName("line")]
-	public Line? Line { get; set; } 
+	public Line? Line { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("bar")]
-	public Bar? Bar { get; set; } 
+	public Bar? Bar { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("stack")]
-	public Stack? Stack { get; set; } 
+	public Stack? Stack { get; set; }
 
 }

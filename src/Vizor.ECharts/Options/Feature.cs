@@ -10,25 +10,25 @@ public partial class Feature
 	/// Save as image.
 	/// </summary>
 	[JsonPropertyName("saveAsImage")]
-	public SaveAsImage? SaveAsImage { get; set; } 
+	public SaveAsImage? SaveAsImage { get; set; }
 
 	/// <summary>
 	/// Restore configuration item.
 	/// </summary>
 	[JsonPropertyName("restore")]
-	public Restore? Restore { get; set; } 
+	public Restore? Restore { get; set; }
 
 	/// <summary>
 	/// Data view tool, which could display data in current chart and updates chart after being edited.
 	/// </summary>
 	[JsonPropertyName("dataView")]
-	public DataView? DataView { get; set; } 
+	public DataView? DataView { get; set; }
 
 	/// <summary>
 	/// Data area zooming, which only supports rectangular coordinate by now.
 	/// </summary>
 	[JsonPropertyName("dataZoom")]
-	public DataZoom? DataZoom { get; set; } 
+	public DataZoom? DataZoom { get; set; }
 
 	/// <summary>
 	/// Magic type switching.
@@ -39,7 +39,7 @@ public partial class Feature
 	/// }
 	/// </summary>
 	[JsonPropertyName("magicType")]
-	public MagicType? MagicType { get; set; } 
+	public MagicType? MagicType { get; set; }
 
 	/// <summary>
 	/// Brush-selecting icon.
@@ -47,6 +47,6 @@ public partial class Feature
 	/// It can also be configured at brush.toolbox .
 	/// </summary>
 	[JsonPropertyName("brush")]
-	public BrushFeature? Brush { get; set; } 
+	public BrushFeature? Brush { get; set; }
 
 }

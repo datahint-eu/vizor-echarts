@@ -24,7 +24,7 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("circle")]
-	public Icon? Symbol { get; set; } 
+	public Icon? Symbol { get; set; }
 
 	/// <summary>
 	/// timeline.checkpointStyle  symbol size.
@@ -33,7 +33,7 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(13)]
-	public NumberOrNumberArray? SymbolSize { get; set; } 
+	public NumberOrNumberArray? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Rotate degree of timeline.checkpointStyle  symbol.
@@ -41,14 +41,14 @@ public partial class CheckpointStyle
 	/// Note that when symbol is set to be 'arrow' in markLine , symbolRotate value will be ignored, and compulsively use tangent angle.
 	/// </summary>
 	[JsonPropertyName("symbolRotate")]
-	public double? SymbolRotate { get; set; } 
+	public double? SymbolRotate { get; set; }
 
 	/// <summary>
 	/// Whether to keep aspect for symbols in the form of path:// .
 	/// </summary>
 	[JsonPropertyName("symbolKeepAspect")]
 	[DefaultValue(false)]
-	public bool? SymbolKeepAspect { get; set; } 
+	public bool? SymbolKeepAspect { get; set; }
 
 	/// <summary>
 	/// Offset of timeline.checkpointStyle  symbol relative to original position.
@@ -62,7 +62,7 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("symbolOffset")]
 	[DefaultValue("[0, 0]")]
-	public double[]? SymbolOffset { get; set; } 
+	public double[]? SymbolOffset { get; set; }
 
 	/// <summary>
 	/// color.
@@ -72,14 +72,14 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("#316bf3")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// border color, whose format is similar to that of color .
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("#fff")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// border width.
@@ -90,7 +90,7 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue(2)]
-	public double? BorderWidth { get; set; } 
+	public double? BorderWidth { get; set; }
 
 	/// <summary>
 	/// border type.
@@ -108,7 +108,7 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("borderType")]
 	[DefaultValue("solid")]
-	public LineType? BorderType { get; set; } 
+	public LineType? BorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -119,7 +119,7 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("borderDashOffset")]
 	[DefaultValue("0")]
-	public double? BorderDashOffset { get; set; } 
+	public double? BorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -133,7 +133,7 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("borderCap")]
 	[DefaultValue("butt")]
-	public LineCap? BorderCap { get; set; } 
+	public LineCap? BorderCap { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -150,7 +150,7 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("borderJoin")]
 	[DefaultValue("bevel")]
-	public LineJoin? BorderJoin { get; set; } 
+	public LineJoin? BorderJoin { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -164,7 +164,7 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("borderMiterLimit")]
 	[DefaultValue("10")]
-	public double? BorderMiterLimit { get; set; } 
+	public double? BorderMiterLimit { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -177,7 +177,7 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("2")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -185,21 +185,21 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("&#39;rgba(0, 0, 0, 0.3)&#39;")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("1")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("1")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Opacity of the component.
@@ -207,21 +207,21 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("opacity")]
 	[DefaultValue("1")]
-	public double? Opacity { get; set; } 
+	public double? Opacity { get; set; }
 
 	/// <summary>
 	/// In timeline component, whether there is animation in checkpoint moving during the process of timeline playing and switching.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// The animation duration of checkpoint in timeline component.
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("300")]
-	public double? AnimationDuration { get; set; } 
+	public double? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// The easing effect of animation of checkpoint in timeline component.
@@ -229,6 +229,6 @@ public partial class CheckpointStyle
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("quinticInOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 }

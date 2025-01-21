@@ -10,12 +10,12 @@ public partial class YAxisData
 	/// Name of a category.
 	/// </summary>
 	[JsonPropertyName("value")]
-	public string? Value { get; set; } 
+	public string? Value { get; set; }
 
 	/// <summary>
 	/// Text style of the category.
 	/// </summary>
 	[JsonPropertyName("textStyle")]
-	public TextStyle? TextStyle { get; set; } 
+	public TextStyle? TextStyle { get; set; }
 
 }

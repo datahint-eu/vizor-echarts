@@ -10,12 +10,12 @@ public partial class ScaleLimit
 	/// Minimum scaling
 	/// </summary>
 	[JsonPropertyName("min")]
-	public double? Min { get; set; } 
+	public double? Min { get; set; }
 
 	/// <summary>
 	/// Maximum scaling
 	/// </summary>
 	[JsonPropertyName("max")]
-	public double? Max { get; set; } 
+	public double? Max { get; set; }
 
 }

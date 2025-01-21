@@ -12,13 +12,13 @@ public partial class StateAnimation
 	/// </summary>
 	[JsonPropertyName("duration")]
 	[DefaultValue(300)]
-	public double? Duration { get; set; } 
+	public double? Duration { get; set; }
 
 	/// <summary>
 	/// Easing of animation.
 	/// </summary>
 	[JsonPropertyName("easing")]
 	[DefaultValue("cubicOut")]
-	public string? Easing { get; set; } 
+	public string? Easing { get; set; }
 
 }

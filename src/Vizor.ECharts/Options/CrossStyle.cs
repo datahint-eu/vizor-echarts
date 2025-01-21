@@ -14,14 +14,14 @@ public partial class CrossStyle
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("#555")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// line width.
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue(1)]
-	public double? Width { get; set; } 
+	public double? Width { get; set; }
 
 	/// <summary>
 	/// line type. Possible values are:   'solid'  'dashed'  'dotted'
@@ -70,7 +70,7 @@ public partial class CrossStyle
 	/// </summary>
 	[JsonPropertyName("dashOffset")]
 	[DefaultValue("0")]
-	public double? DashOffset { get; set; } 
+	public double? DashOffset { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -84,7 +84,7 @@ public partial class CrossStyle
 	/// </summary>
 	[JsonPropertyName("cap")]
 	[DefaultValue("butt")]
-	public LineCap? Cap { get; set; } 
+	public LineCap? Cap { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -101,7 +101,7 @@ public partial class CrossStyle
 	/// </summary>
 	[JsonPropertyName("join")]
 	[DefaultValue("bevel")]
-	public LineJoin? Join { get; set; } 
+	public LineJoin? Join { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -115,7 +115,7 @@ public partial class CrossStyle
 	/// </summary>
 	[JsonPropertyName("miterLimit")]
 	[DefaultValue("10")]
-	public double? MiterLimit { get; set; } 
+	public double? MiterLimit { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -128,7 +128,7 @@ public partial class CrossStyle
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -136,21 +136,21 @@ public partial class CrossStyle
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Opacity of the component.
@@ -158,6 +158,6 @@ public partial class CrossStyle
 	/// </summary>
 	[JsonPropertyName("opacity")]
 	[DefaultValue("1")]
-	public double? Opacity { get; set; } 
+	public double? Opacity { get; set; }
 
 }

@@ -14,14 +14,14 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("inherit")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// border color, whose format is similar to that of color .
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("inherit")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// border width.
@@ -32,7 +32,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue("auto")]
-	public double? BorderWidth { get; set; } 
+	public double? BorderWidth { get; set; }
 
 	/// <summary>
 	/// border type.
@@ -50,7 +50,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("borderType")]
 	[DefaultValue("solid")]
-	public LineType? BorderType { get; set; } 
+	public LineType? BorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -61,7 +61,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("borderDashOffset")]
 	[DefaultValue("0")]
-	public double? BorderDashOffset { get; set; } 
+	public double? BorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -75,7 +75,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("borderCap")]
 	[DefaultValue("butt")]
-	public LineCap? BorderCap { get; set; } 
+	public LineCap? BorderCap { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -92,7 +92,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("borderJoin")]
 	[DefaultValue("bevel")]
-	public LineJoin? BorderJoin { get; set; } 
+	public LineJoin? BorderJoin { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -106,7 +106,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("borderMiterLimit")]
 	[DefaultValue("10")]
-	public double? BorderMiterLimit { get; set; } 
+	public double? BorderMiterLimit { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -119,7 +119,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("0")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -127,21 +127,21 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("null")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Opacity of the component.
@@ -149,7 +149,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("opacity")]
 	[DefaultValue("inherit")]
-	public double? Opacity { get; set; } 
+	public double? Opacity { get; set; }
 
 	/// <summary>
 	/// The style of the decal pattern.
@@ -159,7 +159,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("decal")]
 	[DefaultValue("inherit")]
-	public Decal? Decal { get; set; } 
+	public Decal? Decal { get; set; }
 
 	/// <summary>
 	/// Area filling color.
@@ -169,7 +169,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("areaColor")]
 	[DefaultValue("#eee")]
-	public Color? AreaColor { get; set; } 
+	public Color? AreaColor { get; set; }
 
 	/// <summary>
 	/// The radius of rounded corner.
@@ -181,14 +181,14 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("borderRadius")]
 	[DefaultValue(0)]
-	public BorderRadius? BorderRadius { get; set; } 
+	public BorderRadius? BorderRadius { get; set; }
 
 	/// <summary>
 	/// Gaps between child nodes.
 	/// </summary>
 	[JsonPropertyName("gapWidth")]
 	[DefaultValue(0)]
-	public double? GapWidth { get; set; } 
+	public double? GapWidth { get; set; }
 
 	/// <summary>
 	/// The color saturation of a border or gap.
@@ -208,13 +208,13 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("borderColorSaturation")]
 	[DefaultValue("0.5")]
-	public double? BorderColorSaturation { get; set; } 
+	public double? BorderColorSaturation { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("textStyle")]
-	public TextStyle? TextStyle { get; set; } 
+	public TextStyle? TextStyle { get; set; }
 
 	/// <summary>
 	/// Fill color of bearish candle stick.
@@ -224,7 +224,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("color0")]
 	[DefaultValue("#314656")]
-	public Color? Color0 { get; set; } 
+	public Color? Color0 { get; set; }
 
 	/// <summary>
 	/// Border color of bearish candle stick.
@@ -234,7 +234,7 @@ public partial class ItemStyle
 	/// </summary>
 	[JsonPropertyName("borderColor0")]
 	[DefaultValue("#314656")]
-	public Color? BorderColor0 { get; set; } 
+	public Color? BorderColor0 { get; set; }
 
 	/// <summary>
 	/// Since v5.4.1   
@@ -244,7 +244,7 @@ public partial class ItemStyle
 	/// Also supports setting as gradient color and pattern fill, see option.color for details
 	/// </summary>
 	[JsonPropertyName("borderColorDoji")]
-	public Color? BorderColorDoji { get; set; } 
+	public Color? BorderColorDoji { get; set; }
 
 	/// <summary>
 	/// Height of this data item.
@@ -253,6 +253,6 @@ public partial class ItemStyle
 	/// Please make sure that the total height of all data items is 100%.
 	/// </summary>
 	[JsonPropertyName("height")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 }

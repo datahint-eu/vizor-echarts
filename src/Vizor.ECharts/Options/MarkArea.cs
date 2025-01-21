@@ -12,25 +12,25 @@ public partial class MarkArea
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Label in mark area.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Style of the mark area.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Emphasis status of mark area.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -38,7 +38,7 @@ public partial class MarkArea
 	/// Whether to blur follows the series.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// The scope of the area is defined by data , which is an array with two item, representing the left-top point and the right-bottom point of rectangle area.
@@ -100,14 +100,14 @@ public partial class MarkArea
 	/// ]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("false")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -115,7 +115,7 @@ public partial class MarkArea
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -125,7 +125,7 @@ public partial class MarkArea
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -133,7 +133,7 @@ public partial class MarkArea
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -146,7 +146,7 @@ public partial class MarkArea
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -156,14 +156,14 @@ public partial class MarkArea
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -176,6 +176,6 @@ public partial class MarkArea
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 }

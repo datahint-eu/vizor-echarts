@@ -26,7 +26,7 @@ public partial class MarkPoint
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("circle")]
-	public StringOrFunction? Symbol { get; set; } 
+	public StringOrFunction? Symbol { get; set; }
 
 	/// <summary>
 	/// symbol size.
@@ -38,7 +38,7 @@ public partial class MarkPoint
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(50)]
-	public NumberArrayOrFunction? SymbolSize { get; set; } 
+	public NumberArrayOrFunction? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Rotate degree of  symbol.
@@ -51,14 +51,14 @@ public partial class MarkPoint
 	/// Callback is supported since 4.8.0 .
 	/// </summary>
 	[JsonPropertyName("symbolRotate")]
-	public NumberOrFunction? SymbolRotate { get; set; } 
+	public NumberOrFunction? SymbolRotate { get; set; }
 
 	/// <summary>
 	/// Whether to keep aspect for symbols in the form of path:// .
 	/// </summary>
 	[JsonPropertyName("symbolKeepAspect")]
 	[DefaultValue(false)]
-	public bool? SymbolKeepAspect { get; set; } 
+	public bool? SymbolKeepAspect { get; set; }
 
 	/// <summary>
 	/// Offset of  symbol relative to original position.
@@ -72,7 +72,7 @@ public partial class MarkPoint
 	/// </summary>
 	[JsonPropertyName("symbolOffset")]
 	[DefaultValue("[0, 0]")]
-	public double[]? SymbolOffset { get; set; } 
+	public double[]? SymbolOffset { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -80,25 +80,25 @@ public partial class MarkPoint
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Label of mark point.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Mark point style.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Emphasis status of mark point.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -106,7 +106,7 @@ public partial class MarkPoint
 	/// Whether to blur follows the series.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Data array for mark points, each of which is an object.
@@ -141,14 +141,14 @@ public partial class MarkPoint
 	/// ]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public List<MarkPointData>? Data { get; set; } 
+	public List<MarkPointData>? Data { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -156,7 +156,7 @@ public partial class MarkPoint
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -166,7 +166,7 @@ public partial class MarkPoint
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -174,7 +174,7 @@ public partial class MarkPoint
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -187,7 +187,7 @@ public partial class MarkPoint
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -197,14 +197,14 @@ public partial class MarkPoint
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -217,6 +217,6 @@ public partial class MarkPoint
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 }

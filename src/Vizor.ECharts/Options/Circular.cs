@@ -11,6 +11,6 @@ public partial class Circular
 	/// </summary>
 	[JsonPropertyName("rotateLabel")]
 	[DefaultValue(false)]
-	public bool? RotateLabel { get; set; } 
+	public bool? RotateLabel { get; set; }
 
 }

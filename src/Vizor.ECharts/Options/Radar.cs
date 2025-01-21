@@ -11,7 +11,7 @@ public partial class Radar
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -25,7 +25,7 @@ public partial class Radar
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -35,7 +35,7 @@ public partial class Radar
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Center position of , the first of which is the horizontal position, and the second is the vertical position.
@@ -50,7 +50,7 @@ public partial class Radar
 	/// </summary>
 	[JsonPropertyName("center")]
 	[DefaultValue("[50%, 50%]")]
-	public double[]? Center { get; set; } 
+	public double[]? Center { get; set; }
 
 	/// <summary>
 	/// Radius of .
@@ -61,41 +61,41 @@ public partial class Radar
 	/// </summary>
 	[JsonPropertyName("radius")]
 	[DefaultValue("0%, 75%")]
-	public CircleRadius? Radius { get; set; } 
+	public CircleRadius? Radius { get; set; }
 
 	/// <summary>
 	/// The start angle of coordinate, which is the angle of the first indicator axis.
 	/// </summary>
 	[JsonPropertyName("startAngle")]
 	[DefaultValue(90)]
-	public double? StartAngle { get; set; } 
+	public double? StartAngle { get; set; }
 
 	/// <summary>
 	/// Name options for radar indicators.
 	/// </summary>
 	[JsonPropertyName("axisName")]
-	public AxisName? AxisName { get; set; } 
+	public AxisName? AxisName { get; set; }
 
 	/// <summary>
 	/// Distance between the indicator's name and axis.
 	/// </summary>
 	[JsonPropertyName("nameGap")]
 	[DefaultValue("15")]
-	public double? NameGap { get; set; } 
+	public double? NameGap { get; set; }
 
 	/// <summary>
 	/// Segments of indicator axis.
 	/// </summary>
 	[JsonPropertyName("splitNumber")]
 	[DefaultValue("15")]
-	public double? SplitNumber { get; set; } 
+	public double? SplitNumber { get; set; }
 
 	/// <summary>
 	/// Radar render type, in which 'polygon' and 'circle' are supported.
 	/// </summary>
 	[JsonPropertyName("shape")]
 	[DefaultValue("polygon")]
-	public RadarShape? Shape { get; set; } 
+	public RadarShape? Shape { get; set; }
 
 	/// <summary>
 	/// Whether to prevent calculating the scaling relative to zero.
@@ -103,14 +103,14 @@ public partial class Radar
 	/// </summary>
 	[JsonPropertyName("scale")]
 	[DefaultValue(false)]
-	public bool? Scale { get; set; } 
+	public bool? Scale { get; set; }
 
 	/// <summary>
 	/// Set this to true , to prevent interaction with the axis.
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Set this to true to enable triggering events.
@@ -129,37 +129,37 @@ public partial class Radar
 	/// </summary>
 	[JsonPropertyName("triggerEvent")]
 	[DefaultValue(false)]
-	public bool? TriggerEvent { get; set; } 
+	public bool? TriggerEvent { get; set; }
 
 	/// <summary>
 	/// Settings related to axis line.
 	/// </summary>
 	[JsonPropertyName("axisLine")]
-	public AxisLine? AxisLine { get; set; } 
+	public AxisLine? AxisLine { get; set; }
 
 	/// <summary>
 	/// Settings related to axis tick.
 	/// </summary>
 	[JsonPropertyName("axisTick")]
-	public AxisTick? AxisTick { get; set; } 
+	public AxisTick? AxisTick { get; set; }
 
 	/// <summary>
 	/// Settings related to axis label.
 	/// </summary>
 	[JsonPropertyName("axisLabel")]
-	public AxisLabel? AxisLabel { get; set; } 
+	public AxisLabel? AxisLabel { get; set; }
 
 	/// <summary>
 	/// Split line of axis in grid area.
 	/// </summary>
 	[JsonPropertyName("splitLine")]
-	public SplitLine? SplitLine { get; set; } 
+	public SplitLine? SplitLine { get; set; }
 
 	/// <summary>
 	/// Split area of axis in grid area, not shown by default.
 	/// </summary>
 	[JsonPropertyName("splitArea")]
-	public SplitArea? SplitArea { get; set; } 
+	public SplitArea? SplitArea { get; set; }
 
 	/// <summary>
 	/// Indicator of radar chart, which is used to assign multiple variables(dimensions) in radar chart.
@@ -174,6 +174,6 @@ public partial class Radar
 	/// ]
 	/// </summary>
 	[JsonPropertyName("indicator")]
-	public List<RadarIndicator>? Indicator { get; set; } 
+	public List<RadarIndicator>? Indicator { get; set; }
 
 }

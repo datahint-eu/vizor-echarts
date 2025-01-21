@@ -14,7 +14,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Continuous data can be divide into pieces averagely according to splitNumber, that is, if splitNumber is 5, data will be sliced into 5 pieces.
@@ -25,7 +25,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("splitNumber")]
 	[DefaultValue("5")]
-	public double? SplitNumber { get; set; } 
+	public double? SplitNumber { get; set; }
 
 	/// <summary>
 	/// Used to customize how to slice continuous data, and some specific view style for some pieces.
@@ -58,7 +58,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// See more detailed rules in visualMap.inverse .
 	/// </summary>
 	[JsonPropertyName("pieces")]
-	public List<VisualMapPiece>? Pieces { get; set; } 
+	public List<VisualMapPiece>? Pieces { get; set; }
 
 	/// <summary>
 	/// When dataValues in series.data (specified by visualMap-piecewise.dimension ) are discrete (or also known as category data or enumerable data), and we intend to perform Table Mapping from dataValue to visual channels, categories is used to describe the entire enumeration of data.
@@ -70,7 +70,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// See more detailed rules in visualMap.inverse .
 	/// </summary>
 	[JsonPropertyName("categories")]
-	public string[]? Categories { get; set; } 
+	public string[]? Categories { get; set; }
 
 	/// <summary>
 	/// Specify the min dataValue for the visualMap component.
@@ -81,7 +81,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// In CONTINUOUS-AVERAGE mode (i.e., visualMap-piecewise.splitNumber is used), they should be specified explicitly, and be [0, 200] by default, but not dataMin and dataMax in series.data.
 	/// </summary>
 	[JsonPropertyName("min")]
-	public double? Min { get; set; } 
+	public double? Min { get; set; }
 
 	/// <summary>
 	/// Specify the max dataValue for the visualMap component.
@@ -92,7 +92,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// In CONTINUOUS-AVERAGE mode (i.e., visualMap-piecewise.splitNumber is used), they should be specified explicitly, and be [0, 200] by default, but not dataMin and dataMax in series.data.
 	/// </summary>
 	[JsonPropertyName("max")]
-	public double? Max { get; set; } 
+	public double? Max { get; set; }
 
 	/// <summary>
 	/// This option works when type is piecewise and min / max / splitNumber are set.
@@ -100,7 +100,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// If it is set as true , an extra piece labeled with '&lt; min' will show.
 	/// </summary>
 	[JsonPropertyName("minOpen")]
-	public bool? MinOpen { get; set; } 
+	public bool? MinOpen { get; set; }
 
 	/// <summary>
 	/// This option works when type is piecewise and min / max / splitNumber are set.
@@ -108,7 +108,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// If it is set as true , an extra piece labeled with '&gt; max' will show.
 	/// </summary>
 	[JsonPropertyName("maxOpen")]
-	public bool? MaxOpen { get; set; } 
+	public bool? MaxOpen { get; set; }
 
 	/// <summary>
 	/// Selected Mode could be:   'multiple' (multiple selection).
@@ -118,7 +118,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue("multiple")]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// Whether to inverse the layout of visualMap component.
@@ -137,7 +137,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("inverse")]
 	[DefaultValue(false)]
-	public bool? Inverse { get; set; } 
+	public bool? Inverse { get; set; }
 
 	/// <summary>
 	/// The decimal precision of label, defaults to be 0 (no decimals).
@@ -147,21 +147,21 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// In CONTINUOUS-CUSTOMIZED mode (i.e., visualMap-piecewise.pieces is used) or CATEGORY mode (i.e., visualMap-piecewise.categories is used), decimal percision defaults to be 0 (no decimals):
 	/// </summary>
 	[JsonPropertyName("precision")]
-	public double? Precision { get; set; } 
+	public double? Precision { get; set; }
 
 	/// <summary>
 	/// The width of each graphical element that represents a piece.
 	/// </summary>
 	[JsonPropertyName("itemWidth")]
 	[DefaultValue("20")]
-	public double? ItemWidth { get; set; } 
+	public double? ItemWidth { get; set; }
 
 	/// <summary>
 	/// The height of each graphical element that represents a piece.
 	/// </summary>
 	[JsonPropertyName("itemHeight")]
 	[DefaultValue("14")]
-	public double? ItemHeight { get; set; } 
+	public double? ItemHeight { get; set; }
 
 	/// <summary>
 	/// The layout relationship between the graphical elements for pieces and their labels.
@@ -171,7 +171,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("align")]
 	[DefaultValue("auto")]
-	public HorizontalAlign? Align { get; set; } 
+	public HorizontalAlign? Align { get; set; }
 
 	/// <summary>
 	/// The label text on both ends, such as ['High', 'Low'] .
@@ -182,7 +182,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// The rule, that labels will not show when text is use, is retained for compatibility with ECharts2.
 	/// </summary>
 	[JsonPropertyName("text")]
-	public string[]? Text { get; set; } 
+	public string[]? Text { get; set; }
 
 	/// <summary>
 	/// The distance between the ends of the graphical elements for pieces and the labels, with unit px.
@@ -190,14 +190,14 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("textGap")]
 	[DefaultValue("10")]
-	public double? TextGap { get; set; } 
+	public double? TextGap { get; set; }
 
 	/// <summary>
 	/// Whether to show label of each item.
 	/// By default, label will not be shown when visualMap-piecewise.text used, otherwise label will be shown.
 	/// </summary>
 	[JsonPropertyName("showLabel")]
-	public bool? ShowLabel { get; set; } 
+	public bool? ShowLabel { get; set; }
 
 	/// <summary>
 	/// Its the distance between each two graphical elements for pieces.
@@ -205,7 +205,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("itemGap")]
 	[DefaultValue("10")]
-	public double? ItemGap { get; set; } 
+	public double? ItemGap { get; set; }
 
 	/// <summary>
 	/// Default symbol (the shape of graphical element).
@@ -217,7 +217,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("itemSymbol")]
 	[DefaultValue("roundRect")]
-	public string? ItemSymbol { get; set; } 
+	public string? ItemSymbol { get; set; }
 
 	/// <summary>
 	/// Whether to show visualMap-piecewise component.
@@ -225,7 +225,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue(true)]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// Specify which dimension should be used to fetch dataValue from series.data , and then map them to visual channel.
@@ -242,7 +242,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// Use the last dimension of data by default.
 	/// </summary>
 	[JsonPropertyName("dimension")]
-	public NumberOrString? Dimension { get; set; } 
+	public NumberOrString? Dimension { get; set; }
 
 	/// <summary>
 	/// Specify visual mapping should be performed on which series, from which series.data is fetched.
@@ -250,7 +250,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// All series are used by default.
 	/// </summary>
 	[JsonPropertyName("seriesIndex")]
-	public NumberOrNumberArray? SeriesIndex { get; set; } 
+	public NumberOrNumberArray? SeriesIndex { get; set; }
 
 	/// <summary>
 	/// hoverLink enable highlight certain graphical elements of chart when mouse hovers on some place of visualMap component that is coresponding to those graphical elements by visual mapping.
@@ -259,7 +259,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("hoverLink")]
 	[DefaultValue(true)]
-	public bool? HoverLink { get; set; } 
+	public bool? HoverLink { get; set; }
 
 	/// <summary>
 	/// Define visual channels that will mapped from dataValues that are in selected range .
@@ -453,7 +453,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// If you dont want it, set inRange: {color: null} to disable it.
 	/// </summary>
 	[JsonPropertyName("inRange")]
-	public VisualMapRange? InRange { get; set; } 
+	public VisualMapRange? InRange { get; set; }
 
 	/// <summary>
 	/// Define visual channels that will mapped from dataValues that are out of selected range .
@@ -462,14 +462,14 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// See available configurations in visualMap-piecewise.inRange
 	/// </summary>
 	[JsonPropertyName("outOfRange")]
-	public VisualMapRange? OutOfRange { get; set; } 
+	public VisualMapRange? OutOfRange { get; set; }
 
 	/// <summary>
 	/// Property inRange and outOfRange can be set within property controller , which means those inRange and outOfRange are only used on the controller ( visualMap component itself), but are not used on chart (series).
 	/// This property is useful in some scenarios when the view of controller needs to be customized in detail.
 	/// </summary>
 	[JsonPropertyName("controller")]
-	public Controller? Controller { get; set; } 
+	public Controller? Controller { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -483,7 +483,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -493,7 +493,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(4)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between visualMap  component and the left side of the container.
@@ -504,7 +504,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue(0)]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between visualMap  component and the top side of the container.
@@ -515,7 +515,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("auto")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between visualMap  component and the right side of the container.
@@ -524,7 +524,7 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("auto")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between visualMap  component and the bottom side of the container.
@@ -533,14 +533,14 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue(0)]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// How to layout the visualMap component, 'horizontal' or 'vertical' .
 	/// </summary>
 	[JsonPropertyName("orient")]
 	[DefaultValue("vertical")]
-	public Orient? Orient { get; set; } 
+	public Orient? Orient { get; set; }
 
 	/// <summary>
 	/// visualMap-piecewise space around content.
@@ -562,28 +562,28 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("padding")]
 	[DefaultValue(5)]
-	public Padding? Padding { get; set; } 
+	public Padding? Padding { get; set; }
 
 	/// <summary>
 	/// background color of visualMap component.
 	/// </summary>
 	[JsonPropertyName("backgroundColor")]
 	[DefaultValue("rgba(0,0,0,0)")]
-	public Color? BackgroundColor { get; set; } 
+	public Color? BackgroundColor { get; set; }
 
 	/// <summary>
 	/// border color of visualMap component.
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("#ccc")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// border width of visualMap component, with unit: px.
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue(0)]
-	public double? BorderWidth { get; set; } 
+	public double? BorderWidth { get; set; }
 
 	/// <summary>
 	/// This property remains only for compatibility with ECharts2, and is not recommended in ECharts3.
@@ -594,13 +594,13 @@ public partial class PiecewiseVisualMap : IVisualMap
 	[JsonPropertyName("color")]
 	[DefaultValue("[#bf444c, #d88273, #f6efa6]")]
 	[Obsolete]
-	public Color[]? Color { get; set; } 
+	public Color[]? Color { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("textStyle")]
-	public object? TextStyle { get; set; } 
+	public object? TextStyle { get; set; }
 
 	/// <summary>
 	/// the formatter tool for label.
@@ -612,6 +612,6 @@ public partial class PiecewiseVisualMap : IVisualMap
 	/// }
 	/// </summary>
 	[JsonPropertyName("formatter")]
-	public StringOrFunction? Formatter { get; set; } 
+	public StringOrFunction? Formatter { get; set; }
 
 }

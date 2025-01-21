@@ -10,31 +10,31 @@ public partial class GaugeSeriesData
 	/// The title of gauge chart.
 	/// </summary>
 	[JsonPropertyName("title")]
-	public Title? Title { get; set; } 
+	public Title? Title { get; set; }
 
 	/// <summary>
 	/// The detail about gauge chart which is used to show data.
 	/// </summary>
 	[JsonPropertyName("detail")]
-	public Detail? Detail { get; set; } 
+	public Detail? Detail { get; set; }
 
 	/// <summary>
 	/// Data name.
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Data value.
 	/// </summary>
 	[JsonPropertyName("value")]
 	[DefaultValue("0")]
-	public double? Value { get; set; } 
+	public double? Value { get; set; }
 
 	/// <summary>
 	/// The style of data pointer.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 }

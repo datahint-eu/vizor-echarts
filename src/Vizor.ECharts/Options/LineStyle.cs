@@ -14,14 +14,14 @@ public partial class LineStyle
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("inherit")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// line width.
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("auto")]
-	public double? Width { get; set; } 
+	public double? Width { get; set; }
 
 	/// <summary>
 	/// line type.
@@ -39,7 +39,7 @@ public partial class LineStyle
 	/// </summary>
 	[JsonPropertyName("type")]
 	[DefaultValue("solid")]
-	public LineType? Type { get; set; } 
+	public LineType? Type { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -50,7 +50,7 @@ public partial class LineStyle
 	/// </summary>
 	[JsonPropertyName("dashOffset")]
 	[DefaultValue("0")]
-	public double? DashOffset { get; set; } 
+	public double? DashOffset { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -64,7 +64,7 @@ public partial class LineStyle
 	/// </summary>
 	[JsonPropertyName("cap")]
 	[DefaultValue("butt")]
-	public LineCap? Cap { get; set; } 
+	public LineCap? Cap { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -81,7 +81,7 @@ public partial class LineStyle
 	/// </summary>
 	[JsonPropertyName("join")]
 	[DefaultValue("bevel")]
-	public LineJoin? Join { get; set; } 
+	public LineJoin? Join { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -95,7 +95,7 @@ public partial class LineStyle
 	/// </summary>
 	[JsonPropertyName("miterLimit")]
 	[DefaultValue("10")]
-	public double? MiterLimit { get; set; } 
+	public double? MiterLimit { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -108,7 +108,7 @@ public partial class LineStyle
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("inherit")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -116,21 +116,21 @@ public partial class LineStyle
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Opacity of the component.
@@ -138,7 +138,7 @@ public partial class LineStyle
 	/// </summary>
 	[JsonPropertyName("opacity")]
 	[DefaultValue("inherit")]
-	public double? Opacity { get; set; } 
+	public double? Opacity { get; set; }
 
 	/// <summary>
 	/// Whether to show the axis.
@@ -146,7 +146,7 @@ public partial class LineStyle
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// Edge curvature, which supports value from 0 to 1.
@@ -154,6 +154,6 @@ public partial class LineStyle
 	/// </summary>
 	[JsonPropertyName("curveness")]
 	[DefaultValue("0")]
-	public double? Curveness { get; set; } 
+	public double? Curveness { get; set; }
 
 }

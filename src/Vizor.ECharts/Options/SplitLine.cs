@@ -12,7 +12,7 @@ public partial class SplitLine
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// Interval of Axis splitLine, which is available in category axis.
@@ -31,20 +31,20 @@ public partial class SplitLine
 	/// </summary>
 	[JsonPropertyName("interval")]
 	[DefaultValue("auto")]
-	public NumberOrFunction? Interval { get; set; } 
+	public NumberOrFunction? Interval { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// The length of split line, can be a pecentage value relative to radius.
 	/// </summary>
 	[JsonPropertyName("length")]
 	[DefaultValue("10")]
-	public NumberOrString? Length { get; set; } 
+	public NumberOrString? Length { get; set; }
 
 	/// <summary>
 	/// Since v5.0   
@@ -52,6 +52,6 @@ public partial class SplitLine
 	/// </summary>
 	[JsonPropertyName("distance")]
 	[DefaultValue("10")]
-	public double? Distance { get; set; } 
+	public double? Distance { get; set; }
 
 }

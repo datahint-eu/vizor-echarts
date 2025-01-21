@@ -18,7 +18,7 @@ public partial class ChartOptions
 	/// Here are some instances of different animation easing functions, among which every instance has a title component:
 	/// </summary>
 	[JsonPropertyName("title")]
-	public Title? Title { get; set; } 
+	public Title? Title { get; set; }
 
 	/// <summary>
 	/// Legend component.
@@ -32,7 +32,7 @@ public partial class ChartOptions
 	/// Check legend.type please.
 	/// </summary>
 	[JsonPropertyName("legend")]
-	public Legend? Legend { get; set; } 
+	public Legend? Legend { get; set; }
 
 	/// <summary>
 	/// Drawing grid in rectangular coordinate.
@@ -108,19 +108,19 @@ public partial class ChartOptions
 	/// For example:
 	/// </summary>
 	[JsonPropertyName("polar")]
-	public Polar? Polar { get; set; } 
+	public Polar? Polar { get; set; }
 
 	/// <summary>
 	/// Radial axis of polar coordinate.
 	/// </summary>
 	[JsonPropertyName("radiusAxis")]
-	public RadiusAxis? RadiusAxis { get; set; } 
+	public RadiusAxis? RadiusAxis { get; set; }
 
 	/// <summary>
 	/// The angle axis in Polar Coordinate.
 	/// </summary>
 	[JsonPropertyName("angleAxis")]
-	public AngleAxis? AngleAxis { get; set; } 
+	public AngleAxis? AngleAxis { get; set; }
 
 	/// <summary>
 	/// Coordinate for radar charts .
@@ -133,7 +133,7 @@ public partial class ChartOptions
 	/// Here is a custom example of radar component.
 	/// </summary>
 	[JsonPropertyName("radar")]
-	public Radar? Radar { get; set; } 
+	public Radar? Radar { get; set; }
 
 	/// <summary>
 	/// dataZoom component is used for zooming a specific area, which enables user to investigate data in detail, or get an overview of the data, or get rid of outlier points.
@@ -391,7 +391,7 @@ public partial class ChartOptions
 	/// Configured in each item of series.data : series.data.tooltip
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 	/// <summary>
 	/// This is the global configurations of axisPointer.
@@ -441,7 +441,7 @@ public partial class ChartOptions
 	/// In value axis and time axis, if snap is set as true, axisPointer will snap to point automatically.
 	/// </summary>
 	[JsonPropertyName("axisPointer")]
-	public AxisPointer? AxisPointer { get; set; } 
+	public AxisPointer? AxisPointer { get; set; }
 
 	/// <summary>
 	/// A group of utility tools, which includes export , data view , dynamic type switching , data area zooming , and reset .
@@ -449,7 +449,7 @@ public partial class ChartOptions
 	/// Example:
 	/// </summary>
 	[JsonPropertyName("toolbox")]
-	public Toolbox? Toolbox { get; set; } 
+	public Toolbox? Toolbox { get; set; }
 
 	/// <summary>
 	/// brush is an area-selecting component, with which user can select part of data from a chart to display in detail, or do calculations with them.
@@ -593,7 +593,7 @@ public partial class ChartOptions
 	/// Here is the configuration in detail.
 	/// </summary>
 	[JsonPropertyName("brush")]
-	public Brush? Brush { get; set; } 
+	public Brush? Brush { get; set; }
 
 	/// <summary>
 	/// Geographic coordinate system component.
@@ -613,7 +613,7 @@ public partial class ChartOptions
 	/// See series-map.geoIndex .
 	/// </summary>
 	[JsonPropertyName("geo")]
-	public Geo? Geo { get; set; } 
+	public Geo? Geo { get; set; }
 
 	/// <summary>
 	/// Introduction about Parallel coordinates  
@@ -730,7 +730,7 @@ public partial class ChartOptions
 	/// See this example:
 	/// </summary>
 	[JsonPropertyName("parallel")]
-	public Parallel? Parallel { get; set; } 
+	public Parallel? Parallel { get; set; }
 
 	/// <summary>
 	/// This component is the coordinate axis for parallel coordinate.
@@ -849,7 +849,7 @@ public partial class ChartOptions
 	/// See this example:
 	/// </summary>
 	[JsonPropertyName("parallelAxis")]
-	public List<ParallelAxis>? ParallelAxis { get; set; } 
+	public List<ParallelAxis>? ParallelAxis { get; set; }
 
 	/// <summary>
 	/// An axis with a single dimension.
@@ -857,7 +857,7 @@ public partial class ChartOptions
 	/// For example:
 	/// </summary>
 	[JsonPropertyName("singleAxis")]
-	public SingleAxis? SingleAxis { get; set; } 
+	public SingleAxis? SingleAxis { get; set; }
 
 	/// <summary>
 	/// timeline component, which provides functions like switching and playing between multiple ECharts options .
@@ -957,7 +957,7 @@ public partial class ChartOptions
 	/// };
 	/// </summary>
 	[JsonPropertyName("timeline")]
-	public Timeline? Timeline { get; set; } 
+	public Timeline? Timeline { get; set; }
 
 	/// <summary>
 	/// graphic component enables creating graphic elements in ECharts.
@@ -1290,7 +1290,7 @@ public partial class ChartOptions
 	/// More details about dataset can be checked in the tutorial .
 	/// </summary>
 	[JsonPropertyName("dataset")]
-	public object? DatasetObject { get; set; } 
+	public object? DatasetObject { get; set; }
 
 	/// <summary>
 	/// The W3C has developed the WAI-ARIA , the Accessible Rich Internet Applications Suite, which is dedicated to making web content and web applications accessible.
@@ -1300,7 +1300,7 @@ public partial class ChartOptions
 	/// It is turned off by default and needs to be turned on by setting aria.enabled to true .
 	/// </summary>
 	[JsonPropertyName("aria")]
-	public object? Aria { get; set; } 
+	public object? Aria { get; set; }
 
 	[JsonPropertyName("series")]
 	[JsonConverter(typeof(PolymorphicListJsonConverter<ISeries>))]
@@ -1314,7 +1314,7 @@ public partial class ChartOptions
 	/// This option is usually used in themes.
 	/// </summary>
 	[JsonPropertyName("darkMode")]
-	public bool? DarkMode { get; set; } 
+	public bool? DarkMode { get; set; }
 
 	/// <summary>
 	/// The color list of palette.
@@ -1359,7 +1359,7 @@ public partial class ChartOptions
 	/// }
 	/// </summary>
 	[JsonPropertyName("color")]
-	public List<Color>? Color { get; set; } 
+	public List<Color>? Color { get; set; }
 
 	/// <summary>
 	/// Background color.
@@ -1369,20 +1369,20 @@ public partial class ChartOptions
 	/// Also supports setting as gradient color and pattern fill, see option.color for details
 	/// </summary>
 	[JsonPropertyName("backgroundColor")]
-	public Color? BackgroundColor { get; set; } 
+	public Color? BackgroundColor { get; set; }
 
 	/// <summary>
 	/// Global font style.
 	/// </summary>
 	[JsonPropertyName("textStyle")]
-	public TextStyle? TextStyle { get; set; } 
+	public TextStyle? TextStyle { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -1390,7 +1390,7 @@ public partial class ChartOptions
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -1400,7 +1400,7 @@ public partial class ChartOptions
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -1408,7 +1408,7 @@ public partial class ChartOptions
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -1421,7 +1421,7 @@ public partial class ChartOptions
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -1431,14 +1431,14 @@ public partial class ChartOptions
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -1451,14 +1451,14 @@ public partial class ChartOptions
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 	/// <summary>
 	/// Animation configurations of state switchment.
 	/// Can be configured in each series individually.
 	/// </summary>
 	[JsonPropertyName("stateAnimation")]
-	public StateAnimation? StateAnimation { get; set; } 
+	public StateAnimation? StateAnimation { get; set; }
 
 	/// <summary>
 	/// Sets the type of compositing operation to apply when drawing a new shape.
@@ -1474,7 +1474,7 @@ public partial class ChartOptions
 	/// </summary>
 	[JsonPropertyName("blendMode")]
 	[DefaultValue("source-over")]
-	public BlendMode? BlendMode { get; set; } 
+	public BlendMode? BlendMode { get; set; }
 
 	/// <summary>
 	/// When the number of element of the whole chart is larger than hoverLayerThreshold , a seperate hover layer is used to render hovered elements.
@@ -1490,7 +1490,7 @@ public partial class ChartOptions
 	/// </summary>
 	[JsonPropertyName("hoverLayerThreshold")]
 	[DefaultValue(3000)]
-	public double? HoverLayerThreshold { get; set; } 
+	public double? HoverLayerThreshold { get; set; }
 
 	/// <summary>
 	/// Whether to use UTC in display.
@@ -1506,19 +1506,19 @@ public partial class ChartOptions
 	/// </summary>
 	[JsonPropertyName("useUTC")]
 	[DefaultValue(false)]
-	public bool? UseUTC { get; set; } 
+	public bool? UseUTC { get; set; }
 
 	/// <summary>
 	/// Option array used in timeline .
 	/// Each item of this array is an echarts option ( ECUnitOption ).
 	/// </summary>
 	[JsonPropertyName("options")]
-	public List<object>? Options { get; set; } 
+	public List<object>? Options { get; set; }
 
 	/// <summary>
 	/// See Responsive Mobile-End for details.
 	/// </summary>
 	[JsonPropertyName("media")]
-	public List<Media>? Media { get; set; } 
+	public List<Media>? Media { get; set; }
 
 }

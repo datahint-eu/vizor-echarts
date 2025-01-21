@@ -14,13 +14,13 @@ public partial class PieSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -29,14 +29,14 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("colorBy")]
 	[DefaultValue("data")]
-	public ColorBy? ColorBy { get; set; } 
+	public ColorBy? ColorBy { get; set; }
 
 	/// <summary>
 	/// Whether to enable highlighting chart when legend is being hovered.
 	/// </summary>
 	[JsonPropertyName("legendHoverLink")]
 	[DefaultValue("true")]
-	public bool? LegendHoverLink { get; set; } 
+	public bool? LegendHoverLink { get; set; }
 
 	/// <summary>
 	/// Since v5.4.0   
@@ -54,7 +54,7 @@ public partial class PieSeries : ISeries
 	/// Do not use coordinate system.
 	/// </summary>
 	[JsonPropertyName("coordinateSystem")]
-	public string? CoordinateSystem { get; set; } 
+	public string? CoordinateSystem { get; set; }
 
 	/// <summary>
 	/// Since v5.4.0   
@@ -62,7 +62,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("geoIndex")]
 	[DefaultValue(0)]
-	public int? GeoIndex { get; set; } 
+	public int? GeoIndex { get; set; }
 
 	/// <summary>
 	/// Since v5.4.0   
@@ -70,7 +70,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("calendarIndex")]
 	[DefaultValue(0)]
-	public int? CalendarIndex { get; set; } 
+	public int? CalendarIndex { get; set; }
 
 	/// <summary>
 	/// Selected mode.
@@ -82,28 +82,28 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// The offset distance of selected sector.
 	/// </summary>
 	[JsonPropertyName("selectedOffset")]
 	[DefaultValue("10")]
-	public double? SelectedOffset { get; set; } 
+	public double? SelectedOffset { get; set; }
 
 	/// <summary>
 	/// Whether the layout of sectors of pie chart is clockwise.
 	/// </summary>
 	[JsonPropertyName("clockwise")]
 	[DefaultValue("true")]
-	public bool? Clockwise { get; set; } 
+	public bool? Clockwise { get; set; }
 
 	/// <summary>
 	/// The start angle, which range is [0, 360].
 	/// </summary>
 	[JsonPropertyName("startAngle")]
 	[DefaultValue("90")]
-	public double? StartAngle { get; set; } 
+	public double? StartAngle { get; set; }
 
 	/// <summary>
 	/// The minimum angle of sector (0 ~ 360).
@@ -111,14 +111,14 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("minAngle")]
 	[DefaultValue("0")]
-	public double? MinAngle { get; set; } 
+	public double? MinAngle { get; set; }
 
 	/// <summary>
 	/// If a sector is less than this angle (0 ~ 360), label and labelLine will not be displayed.
 	/// </summary>
 	[JsonPropertyName("minShowLabelAngle")]
 	[DefaultValue("0")]
-	public double? MinShowLabelAngle { get; set; } 
+	public double? MinShowLabelAngle { get; set; }
 
 	/// <summary>
 	/// Whether to show as Nightingale chart, which distinguishs data through radius.
@@ -127,7 +127,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("roseType")]
 	[DefaultValue(false)]
-	public PieRoseType? RoseType { get; set; } 
+	public PieRoseType? RoseType { get; set; }
 
 	/// <summary>
 	/// Whether to enable the strategy to avoid labels overlap.
@@ -135,14 +135,14 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("avoidLabelOverlap")]
 	[DefaultValue("true")]
-	public bool? AvoidLabelOverlap { get; set; } 
+	public bool? AvoidLabelOverlap { get; set; }
 
 	/// <summary>
 	/// Whether to show sector when all data are zero.
 	/// </summary>
 	[JsonPropertyName("stillShowZeroSum")]
 	[DefaultValue("true")]
-	public bool? StillShowZeroSum { get; set; } 
+	public bool? StillShowZeroSum { get; set; }
 
 	/// <summary>
 	/// The precision of the percentage value.
@@ -150,14 +150,14 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("percentPrecision")]
 	[DefaultValue("2")]
-	public double? PercentPrecision { get; set; } 
+	public double? PercentPrecision { get; set; }
 
 	/// <summary>
 	/// The mouse style when mouse hovers on an element, the same as cursor property in CSS .
 	/// </summary>
 	[JsonPropertyName("cursor")]
 	[DefaultValue("pointer")]
-	public string? Cursor { get; set; } 
+	public string? Cursor { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -171,7 +171,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -181,7 +181,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between pie chart component and the left side of the container.
@@ -192,7 +192,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue(0)]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between pie chart component and the top side of the container.
@@ -203,7 +203,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue(0)]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between pie chart component and the right side of the container.
@@ -214,7 +214,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue(0)]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between pie chart component and the bottom side of the container.
@@ -225,7 +225,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue(0)]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Width of pie chart component.
@@ -233,7 +233,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("auto")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of pie chart component.
@@ -241,7 +241,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("auto")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -249,14 +249,14 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("showEmptyCircle")]
 	[DefaultValue("true")]
-	public bool? ShowEmptyCircle { get; set; } 
+	public bool? ShowEmptyCircle { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
 	/// Style of circle placeholder.
 	/// </summary>
 	[JsonPropertyName("emptyCircleStyle")]
-	public EmptyCircleStyle? EmptyCircleStyle { get; set; } 
+	public EmptyCircleStyle? EmptyCircleStyle { get; set; }
 
 	/// <summary>
 	/// Text label of pie chart, to explain some data information about graphic item like value, name and so on.
@@ -264,14 +264,14 @@ public partial class PieSeries : ISeries
 	/// In ECharts 3, to make the configuration structure flatter, label is taken to be at the same level with itemStyle , and has emphasis as itemStyle does.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// The style of visual guide line.
 	/// Will show when label position is set as 'outside' .
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -320,19 +320,19 @@ public partial class PieSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelLayout")]
-	public ObjectOrFunction? LabelLayout { get; set; } 
+	public ObjectOrFunction? LabelLayout { get; set; }
 
 	/// <summary>
 	/// Graphic style of , emphasis is the style when it is highlighted, like being hovered by mouse, or highlighted via legend connect.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Configurations of emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -340,7 +340,7 @@ public partial class PieSeries : ISeries
 	/// Available when emphasis.focus is set.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -348,7 +348,7 @@ public partial class PieSeries : ISeries
 	/// Available when selectedMode is set.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Center position of Pie chart, the first of which is the horizontal position, and the second is the vertical position.
@@ -363,7 +363,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("center")]
 	[DefaultValue("[50%, 50%]")]
-	public CircleCenter? Center { get; set; } 
+	public CircleCenter? Center { get; set; }
 
 	/// <summary>
 	/// Radius of Pie chart.
@@ -376,7 +376,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("radius")]
 	[DefaultValue("0%, 75%")]
-	public CircleRadius? Radius { get; set; } 
+	public CircleRadius? Radius { get; set; }
 
 	/// <summary>
 	/// When dataset is used, seriesLayoutBy specifies whether the column or the row of dataset is mapped to the series, namely, the series is "layout" on columns or rows.
@@ -389,7 +389,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("seriesLayoutBy")]
 	[DefaultValue("column")]
-	public SeriesLayoutBy? SeriesLayoutBy { get; set; } 
+	public SeriesLayoutBy? SeriesLayoutBy { get; set; }
 
 	/// <summary>
 	/// If series.data is not specified, and dataset exists, the series will use dataset .
@@ -397,7 +397,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("datasetIndex")]
 	[DefaultValue(0)]
-	public int? DatasetIndex { get; set; } 
+	public int? DatasetIndex { get; set; }
 
 	/// <summary>
 	/// dimensions can be used to define dimension info for series.data or dataset.source .
@@ -566,7 +566,7 @@ public partial class PieSeries : ISeries
 	/// };
 	/// </summary>
 	[JsonPropertyName("encode")]
-	public Encode? Encode { get; set; } 
+	public Encode? Encode { get; set; }
 
 	/// <summary>
 	/// A groupID common to all data in the series.
@@ -609,26 +609,26 @@ public partial class PieSeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// Mark point in a chart.
 	/// </summary>
 	[JsonPropertyName("markPoint")]
-	public MarkPoint? MarkPoint { get; set; } 
+	public MarkPoint? MarkPoint { get; set; }
 
 	/// <summary>
 	/// Use a line in the chart to illustrate.
 	/// </summary>
 	[JsonPropertyName("markLine")]
-	public MarkLine? MarkLine { get; set; } 
+	public MarkLine? MarkLine { get; set; }
 
 	/// <summary>
 	/// Used to mark an area in chart.
 	/// For example, mark a time interval.
 	/// </summary>
 	[JsonPropertyName("markArea")]
-	public MarkArea? MarkArea { get; set; } 
+	public MarkArea? MarkArea { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -636,7 +636,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Initial animation type.
@@ -646,7 +646,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationType")]
 	[DefaultValue("expansion")]
-	public AnimationType? AnimationType { get; set; } 
+	public AnimationType? AnimationType { get; set; }
 
 	/// <summary>
 	/// Since v4.4.0   
@@ -656,14 +656,14 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationTypeUpdate")]
 	[DefaultValue("transition")]
-	public AnimationTypeUpdate? AnimationTypeUpdate { get; set; } 
+	public AnimationTypeUpdate? AnimationTypeUpdate { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -671,7 +671,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -681,7 +681,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -689,7 +689,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -702,7 +702,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -712,14 +712,14 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -732,7 +732,7 @@ public partial class PieSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -748,12 +748,12 @@ public partial class PieSeries : ISeries
 	/// It is also possible to provide an object for more detailed configuration.
 	/// </summary>
 	[JsonPropertyName("universalTransition")]
-	public UniversalTransition? UniversalTransition { get; set; } 
+	public UniversalTransition? UniversalTransition { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

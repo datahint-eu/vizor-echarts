@@ -11,7 +11,7 @@ public partial class AxisLine
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// Specifies whether X or Y axis lies on the other's origin position, where value is 0 on axis.
@@ -19,13 +19,13 @@ public partial class AxisLine
 	/// </summary>
 	[JsonPropertyName("onZero")]
 	[DefaultValue("true")]
-	public bool? OnZero { get; set; } 
+	public bool? OnZero { get; set; }
 
 	/// <summary>
 	/// When mutiple axes exists, this option can be used to specify which axis can be "onZero" to.
 	/// </summary>
 	[JsonPropertyName("onZeroAxisIndex")]
-	public int? OnZeroAxisIndex { get; set; } 
+	public int? OnZeroAxisIndex { get; set; }
 
 	/// <summary>
 	/// Symbol of the two ends of the axis.
@@ -36,7 +36,7 @@ public partial class AxisLine
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("none")]
-	public AxisLineSymbol? Symbol { get; set; } 
+	public AxisLineSymbol? Symbol { get; set; }
 
 	/// <summary>
 	/// Size of the arrows at two ends.
@@ -44,7 +44,7 @@ public partial class AxisLine
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue("10,15")]
-	public double[]? SymbolSize { get; set; } 
+	public double[]? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Arrow offset of axis.
@@ -53,13 +53,13 @@ public partial class AxisLine
 	/// </summary>
 	[JsonPropertyName("symbolOffset")]
 	[DefaultValue("0,0")]
-	public NumberArray? SymbolOffset { get; set; } 
+	public NumberArray? SymbolOffset { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -67,6 +67,6 @@ public partial class AxisLine
 	/// </summary>
 	[JsonPropertyName("roundCap")]
 	[DefaultValue(false)]
-	public bool? RoundCap { get; set; } 
+	public bool? RoundCap { get; set; }
 
 }

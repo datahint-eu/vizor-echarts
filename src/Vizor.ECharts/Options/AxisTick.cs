@@ -11,7 +11,7 @@ public partial class AxisTick
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// Align axis tick with label, which is available only when boundaryGap is set to be true in category axis.
@@ -19,7 +19,7 @@ public partial class AxisTick
 	/// </summary>
 	[JsonPropertyName("alignWithLabel")]
 	[DefaultValue("false")]
-	public bool? AlignWithLabel { get; set; } 
+	public bool? AlignWithLabel { get; set; }
 
 	/// <summary>
 	/// Interval of axisTick, which is available in category axis.
@@ -38,34 +38,34 @@ public partial class AxisTick
 	/// </summary>
 	[JsonPropertyName("interval")]
 	[DefaultValue("auto")]
-	public NumberOrFunction? Interval { get; set; } 
+	public NumberOrFunction? Interval { get; set; }
 
 	/// <summary>
 	/// Set this to true so the axis labels face the inside direction.
 	/// </summary>
 	[JsonPropertyName("inside")]
 	[DefaultValue(false)]
-	public bool? Inside { get; set; } 
+	public bool? Inside { get; set; }
 
 	/// <summary>
 	/// The length of the axis tick.
 	/// </summary>
 	[JsonPropertyName("length")]
 	[DefaultValue("5")]
-	public double? Length { get; set; } 
+	public double? Length { get; set; }
 
 	/// <summary>
 	/// Line style of axis ticks.
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// The split scale number between split line.
 	/// </summary>
 	[JsonPropertyName("splitNumber")]
 	[DefaultValue("5")]
-	public double? SplitNumber { get; set; } 
+	public double? SplitNumber { get; set; }
 
 	/// <summary>
 	/// Since v5.0   
@@ -73,6 +73,6 @@ public partial class AxisTick
 	/// </summary>
 	[JsonPropertyName("distance")]
 	[DefaultValue("10")]
-	public double? Distance { get; set; } 
+	public double? Distance { get; set; }
 
 }

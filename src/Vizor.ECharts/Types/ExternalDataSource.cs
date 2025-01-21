@@ -41,7 +41,7 @@ public class ExternalDataSource
 	/// Determines how the returned data is interpreted.
 	/// Default = json
 	/// </summary>
-	public ExternalDataFetchAs FetchAs { get; set; } = ExternalDataFetchAs.Json;
+	public ExternalDataFetchAs FetchAs { get; set; }= ExternalDataFetchAs.Json;
 
 	/// <summary>
 	/// Optional object path in the returned JSON.

@@ -11,21 +11,21 @@ public partial class Anchor
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// Whether the anchor is showed above the pointer.
 	/// </summary>
 	[JsonPropertyName("showAbove")]
 	[DefaultValue("false")]
-	public bool? ShowAbove { get; set; } 
+	public bool? ShowAbove { get; set; }
 
 	/// <summary>
 	/// The size of anchor.
 	/// </summary>
 	[JsonPropertyName("size")]
 	[DefaultValue("6")]
-	public double? Size { get; set; } 
+	public double? Size { get; set; }
 
 	/// <summary>
 	/// Icon types provided by ECharts includes  
@@ -43,7 +43,7 @@ public partial class Anchor
 	/// </summary>
 	[JsonPropertyName("icon")]
 	[DefaultValue("default")]
-	public Icon? Icon { get; set; } 
+	public Icon? Icon { get; set; }
 
 	/// <summary>
 	/// The offset position relative to the center of gauge chart.
@@ -52,19 +52,19 @@ public partial class Anchor
 	/// </summary>
 	[JsonPropertyName("offsetCenter")]
 	[DefaultValue("0,0")]
-	public double[]? OffsetCenter { get; set; } 
+	public double[]? OffsetCenter { get; set; }
 
 	/// <summary>
 	/// Whether to keep aspect for icons in the form of path:// .
 	/// </summary>
 	[JsonPropertyName("keepAspect")]
 	[DefaultValue("false")]
-	public bool? KeepAspect { get; set; } 
+	public bool? KeepAspect { get; set; }
 
 	/// <summary>
 	/// The style of anchor.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 }

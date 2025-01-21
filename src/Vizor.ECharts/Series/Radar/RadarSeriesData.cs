@@ -10,20 +10,20 @@ public partial class RadarSeriesData
 	/// Data item name
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Array of numerical values of a single data item.
 	/// </summary>
 	[JsonPropertyName("value")]
-	public object? Value { get; set; } 
+	public object? Value { get; set; }
 
 	/// <summary>
 	/// The groupID of this data item.
 	/// groupID will be used to classify the data.
 	/// </summary>
 	[JsonPropertyName("groupId")]
-	public string? GroupId { get; set; } 
+	public string? GroupId { get; set; }
 
 	/// <summary>
 	/// Symbol of single data.
@@ -43,7 +43,7 @@ public partial class RadarSeriesData
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("circle")]
-	public Icon? Symbol { get; set; } 
+	public Icon? Symbol { get; set; }
 
 	/// <summary>
 	/// single data symbol size.
@@ -52,7 +52,7 @@ public partial class RadarSeriesData
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(4)]
-	public NumberOrNumberArray? SymbolSize { get; set; } 
+	public NumberOrNumberArray? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Rotate degree of single data symbol.
@@ -60,14 +60,14 @@ public partial class RadarSeriesData
 	/// Note that when symbol is set to be 'arrow' in markLine , symbolRotate value will be ignored, and compulsively use tangent angle.
 	/// </summary>
 	[JsonPropertyName("symbolRotate")]
-	public double? SymbolRotate { get; set; } 
+	public double? SymbolRotate { get; set; }
 
 	/// <summary>
 	/// Whether to keep aspect for symbols in the form of path:// .
 	/// </summary>
 	[JsonPropertyName("symbolKeepAspect")]
 	[DefaultValue(false)]
-	public bool? SymbolKeepAspect { get; set; } 
+	public bool? SymbolKeepAspect { get; set; }
 
 	/// <summary>
 	/// Offset of single data symbol relative to original position.
@@ -81,56 +81,56 @@ public partial class RadarSeriesData
 	/// </summary>
 	[JsonPropertyName("symbolOffset")]
 	[DefaultValue("[0, 0]")]
-	public double[]? SymbolOffset { get; set; } 
+	public double[]? SymbolOffset { get; set; }
 
 	/// <summary>
 	/// Style setting of the text on single inflection point.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Style setting of the symbol on single inflection point.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Line style of a single item.
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// Area filling style of a single item.
 	/// </summary>
 	[JsonPropertyName("areaStyle")]
-	public AreaStyle? AreaStyle { get; set; } 
+	public AreaStyle? AreaStyle { get; set; }
 
 	/// <summary>
 	/// Configurations of emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configurations of blur state.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configurations of selected state.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series data.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

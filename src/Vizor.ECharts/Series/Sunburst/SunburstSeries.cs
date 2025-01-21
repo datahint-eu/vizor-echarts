@@ -14,13 +14,13 @@ public partial class SunburstSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -34,7 +34,7 @@ public partial class SunburstSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -44,7 +44,7 @@ public partial class SunburstSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Center position of Sunburst chart, the first of which is the horizontal position, and the second is the vertical position.
@@ -59,7 +59,7 @@ public partial class SunburstSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("center")]
 	[DefaultValue("[50%, 50%]")]
-	public double[]? Center { get; set; } 
+	public double[]? Center { get; set; }
 
 	/// <summary>
 	/// Radius of Sunburst chart.
@@ -113,7 +113,7 @@ public partial class SunburstSeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// The action of clicking a sector, which can be:   false : nothing happens.
@@ -122,7 +122,7 @@ public partial class SunburstSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("nodeClick")]
 	[DefaultValue("rootToNode")]
-	public SunburstNodeClick? NodeClick { get; set; } 
+	public SunburstNodeClick? NodeClick { get; set; }
 
 	/// <summary>
 	/// Sorting method that sectors use based on value , which is the sum of children when not set.
@@ -163,21 +163,21 @@ public partial class SunburstSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("renderLabelForZeroData")]
 	[DefaultValue(false)]
-	public bool? RenderLabelForZeroData { get; set; } 
+	public bool? RenderLabelForZeroData { get; set; }
 
 	/// <summary>
 	/// Whether the layout of sectors of sunburst chart is clockwise.
 	/// </summary>
 	[JsonPropertyName("clockwise")]
 	[DefaultValue("true")]
-	public bool? Clockwise { get; set; } 
+	public bool? Clockwise { get; set; }
 
 	/// <summary>
 	/// The start angle, which range is [0, 360].
 	/// </summary>
 	[JsonPropertyName("startAngle")]
 	[DefaultValue("90")]
-	public double? StartAngle { get; set; } 
+	public double? StartAngle { get; set; }
 
 	/// <summary>
 	/// To specify the style of the label of the sector.
@@ -188,14 +188,14 @@ public partial class SunburstSeries : ISeries
 	/// In ECharts 3, to make the configuration structure flatter, label is taken to be at the same level with itemStyle , and has emphasis as itemStyle does.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configuration of label guide line.
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -244,7 +244,7 @@ public partial class SunburstSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelLayout")]
-	public ObjectOrFunction? LabelLayout { get; set; } 
+	public ObjectOrFunction? LabelLayout { get; set; }
 
 	/// <summary>
 	/// To specify the style of the sector of the sunburst chart.
@@ -255,27 +255,27 @@ public partial class SunburstSeries : ISeries
 	/// Priority： series.data.itemStyle > series.levels.itemStyle > series.itemStyle 。
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Configurations of emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public object? Emphasis { get; set; } 
+	public object? Emphasis { get; set; }
 
 	/// <summary>
 	/// Configurations of blur state.
 	/// Available when emphasis.focus is set.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public object? Blur { get; set; } 
+	public object? Blur { get; set; }
 
 	/// <summary>
 	/// Configurations of select state.
 	/// Available when selectedMode is set.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public object? Select { get; set; } 
+	public object? Select { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -288,7 +288,7 @@ public partial class SunburstSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// Multiple levels  
@@ -319,20 +319,20 @@ public partial class SunburstSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("levels")]
-	public List<SunburstSeriesLevel>? Levels { get; set; } 
+	public List<SunburstSeriesLevel>? Levels { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -340,7 +340,7 @@ public partial class SunburstSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -350,7 +350,7 @@ public partial class SunburstSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -358,7 +358,7 @@ public partial class SunburstSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -371,7 +371,7 @@ public partial class SunburstSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -381,14 +381,14 @@ public partial class SunburstSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -401,6 +401,6 @@ public partial class SunburstSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 }

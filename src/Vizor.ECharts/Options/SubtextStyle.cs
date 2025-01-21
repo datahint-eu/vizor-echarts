@@ -11,7 +11,7 @@ public partial class SubtextStyle
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("'#aaa'")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// subtitle font style.
@@ -20,7 +20,7 @@ public partial class SubtextStyle
 	/// </summary>
 	[JsonPropertyName("fontStyle")]
 	[DefaultValue("normal")]
-	public FontStyle? FontStyle { get; set; } 
+	public FontStyle? FontStyle { get; set; }
 
 	/// <summary>
 	/// subtitle font thick weight.
@@ -29,7 +29,7 @@ public partial class SubtextStyle
 	/// </summary>
 	[JsonPropertyName("fontWeight")]
 	[DefaultValue("normal")]
-	public FontWeight? FontWeight { get; set; } 
+	public FontWeight? FontWeight { get; set; }
 
 	/// <summary>
 	/// subtitle font family.
@@ -38,14 +38,14 @@ public partial class SubtextStyle
 	/// </summary>
 	[JsonPropertyName("fontFamily")]
 	[DefaultValue("sans-serif")]
-	public string? FontFamily { get; set; } 
+	public string? FontFamily { get; set; }
 
 	/// <summary>
 	/// subtitle font size.
 	/// </summary>
 	[JsonPropertyName("fontSize")]
 	[DefaultValue("12")]
-	public double? FontSize { get; set; } 
+	public double? FontSize { get; set; }
 
 	/// <summary>
 	/// Horizontal alignment of text, automatic by default.
@@ -62,7 +62,7 @@ public partial class SubtextStyle
 	/// }
 	/// </summary>
 	[JsonPropertyName("align")]
-	public HorizontalAlign? Align { get; set; } 
+	public HorizontalAlign? Align { get; set; }
 
 	/// <summary>
 	/// Vertical alignment of text, automatic by default.
@@ -79,7 +79,7 @@ public partial class SubtextStyle
 	/// }
 	/// </summary>
 	[JsonPropertyName("verticalAlign")]
-	public VerticalAlign? VerticalAlign { get; set; } 
+	public VerticalAlign? VerticalAlign { get; set; }
 
 	/// <summary>
 	/// Line height of the text fragment.
@@ -96,33 +96,33 @@ public partial class SubtextStyle
 	/// </summary>
 	[JsonPropertyName("lineHeight")]
 	[DefaultValue("12")]
-	public double? LineHeight { get; set; } 
+	public double? LineHeight { get; set; }
 
 	/// <summary>
 	/// Width of text block.
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("100")]
-	public double? Width { get; set; } 
+	public double? Width { get; set; }
 
 	/// <summary>
 	/// Height of text block.
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("50")]
-	public double? Height { get; set; } 
+	public double? Height { get; set; }
 
 	/// <summary>
 	/// Stroke color of the text.
 	/// </summary>
 	[JsonPropertyName("textBorderColor")]
-	public Color? TextBorderColor { get; set; } 
+	public Color? TextBorderColor { get; set; }
 
 	/// <summary>
 	/// Stroke line width of the text.
 	/// </summary>
 	[JsonPropertyName("textBorderWidth")]
-	public double? TextBorderWidth { get; set; } 
+	public double? TextBorderWidth { get; set; }
 
 	/// <summary>
 	/// Stroke line type of the text.
@@ -140,7 +140,7 @@ public partial class SubtextStyle
 	/// </summary>
 	[JsonPropertyName("textBorderType")]
 	[DefaultValue("solid")]
-	public LineType? TextBorderType { get; set; } 
+	public LineType? TextBorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -151,35 +151,35 @@ public partial class SubtextStyle
 	/// </summary>
 	[JsonPropertyName("textBorderDashOffset")]
 	[DefaultValue("0")]
-	public double? TextBorderDashOffset { get; set; } 
+	public double? TextBorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Shadow color of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowColor")]
 	[DefaultValue("#000")]
-	public Color? TextShadowColor { get; set; } 
+	public Color? TextShadowColor { get; set; }
 
 	/// <summary>
 	/// Shadow blue of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowBlur")]
 	[DefaultValue(0)]
-	public double? TextShadowBlur { get; set; } 
+	public double? TextShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow X offset of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowOffsetX")]
 	[DefaultValue(0)]
-	public double? TextShadowOffsetX { get; set; } 
+	public double? TextShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Shadow Y offset of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowOffsetY")]
 	[DefaultValue(0)]
-	public double? TextShadowOffsetY { get; set; } 
+	public double? TextShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Determine how to display the text when it's overflow.
@@ -189,7 +189,7 @@ public partial class SubtextStyle
 	/// </summary>
 	[JsonPropertyName("overflow")]
 	[DefaultValue("none")]
-	public Overflow? Overflow { get; set; } 
+	public Overflow? Overflow { get; set; }
 
 	/// <summary>
 	/// Ellipsis to be displayed when overflow is set to truncate .
@@ -197,7 +197,7 @@ public partial class SubtextStyle
 	/// </summary>
 	[JsonPropertyName("ellipsis")]
 	[DefaultValue("...")]
-	public string? Ellipsis { get; set; } 
+	public string? Ellipsis { get; set; }
 
 	/// <summary>
 	/// "Rich text styles" can be defined in this rich property.
@@ -234,6 +234,6 @@ public partial class SubtextStyle
 	/// For more details, see Rich Text please.
 	/// </summary>
 	[JsonPropertyName("rich")]
-	public Rich? Rich { get; set; } 
+	public Rich? Rich { get; set; }
 
 }

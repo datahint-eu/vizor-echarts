@@ -14,13 +14,13 @@ public partial class FunnelSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -29,21 +29,21 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("colorBy")]
 	[DefaultValue("data")]
-	public ColorBy? ColorBy { get; set; } 
+	public ColorBy? ColorBy { get; set; }
 
 	/// <summary>
 	/// The specified minimum value.
 	/// </summary>
 	[JsonPropertyName("min")]
 	[DefaultValue("0")]
-	public double? Min { get; set; } 
+	public double? Min { get; set; }
 
 	/// <summary>
 	/// The specified maximum value.
 	/// </summary>
 	[JsonPropertyName("max")]
 	[DefaultValue("100")]
-	public double? Max { get; set; } 
+	public double? Max { get; set; }
 
 	/// <summary>
 	/// The mapped width from minimum data value min .
@@ -53,7 +53,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("minSize")]
 	[DefaultValue("0%")]
-	public NumberOrString? MinSize { get; set; } 
+	public NumberOrString? MinSize { get; set; }
 
 	/// <summary>
 	/// The mapped width from maximum data value max .
@@ -62,7 +62,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("maxSize")]
 	[DefaultValue("100%")]
-	public NumberOrString? MaxSize { get; set; } 
+	public NumberOrString? MaxSize { get; set; }
 
 	/// <summary>
 	/// Orient of funnel，Can be 'vertical' or 'horizontal' .
@@ -71,7 +71,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("orient")]
 	[DefaultValue("vertical")]
-	public Orient? Orient { get; set; } 
+	public Orient? Orient { get; set; }
 
 	/// <summary>
 	/// Data sorting, which can be whether 'ascending' , 'descending' , 'none' (in data order)
@@ -106,14 +106,14 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("gap")]
 	[DefaultValue("0")]
-	public double? Gap { get; set; } 
+	public double? Gap { get; set; }
 
 	/// <summary>
 	/// Whether to enable highlighting chart when legend is being hovered.
 	/// </summary>
 	[JsonPropertyName("legendHoverLink")]
 	[DefaultValue("true")]
-	public bool? LegendHoverLink { get; set; } 
+	public bool? LegendHoverLink { get; set; }
 
 	/// <summary>
 	/// Horizontal align.
@@ -122,7 +122,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("funnelAlign")]
 	[DefaultValue("center")]
-	public FunnelAlign? FunnelAlign { get; set; } 
+	public FunnelAlign? FunnelAlign { get; set; }
 
 	/// <summary>
 	/// Text label of funnel chart, to explain some data information about graphic item like value, name and so on.
@@ -130,20 +130,20 @@ public partial class FunnelSeries : ISeries
 	/// In ECharts 3, to make the configuration structure flatter, label is taken to be at the same level with itemStyle , and has emphasis as itemStyle does.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// The visual guide line style of label.
 	/// When label position is set as 'left' or 'right' , the visual guide line will show.
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
 	/// Graphic style of , emphasis is the style when it is highlighted, like being hovered by mouse, or highlighted via legend connect.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -192,13 +192,13 @@ public partial class FunnelSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelLayout")]
-	public ObjectOrFunction? LabelLayout { get; set; } 
+	public ObjectOrFunction? LabelLayout { get; set; }
 
 	/// <summary>
 	/// Configurations of emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -206,7 +206,7 @@ public partial class FunnelSeries : ISeries
 	/// Available when emphasis.focus is set.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -214,7 +214,7 @@ public partial class FunnelSeries : ISeries
 	/// Available when selectedMode is set.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -227,7 +227,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -241,7 +241,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -251,7 +251,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between Funnel component and the left side of the container.
@@ -262,7 +262,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue(80)]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between Funnel component and the top side of the container.
@@ -273,7 +273,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue(60)]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between Funnel component and the right side of the container.
@@ -282,7 +282,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue(80)]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between Funnel component and the bottom side of the container.
@@ -291,7 +291,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue(60)]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Width of Funnel component.
@@ -299,7 +299,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("auto")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of Funnel component.
@@ -307,7 +307,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("auto")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// When dataset is used, seriesLayoutBy specifies whether the column or the row of dataset is mapped to the series, namely, the series is "layout" on columns or rows.
@@ -320,7 +320,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("seriesLayoutBy")]
 	[DefaultValue("column")]
-	public SeriesLayoutBy? SeriesLayoutBy { get; set; } 
+	public SeriesLayoutBy? SeriesLayoutBy { get; set; }
 
 	/// <summary>
 	/// If series.data is not specified, and dataset exists, the series will use dataset .
@@ -328,7 +328,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("datasetIndex")]
 	[DefaultValue(0)]
-	public int? DatasetIndex { get; set; } 
+	public int? DatasetIndex { get; set; }
 
 	/// <summary>
 	/// dimensions can be used to define dimension info for series.data or dataset.source .
@@ -497,7 +497,7 @@ public partial class FunnelSeries : ISeries
 	/// };
 	/// </summary>
 	[JsonPropertyName("encode")]
-	public Encode? Encode { get; set; } 
+	public Encode? Encode { get; set; }
 
 	/// <summary>
 	/// A groupID common to all data in the series.
@@ -540,26 +540,26 @@ public partial class FunnelSeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// Mark point in a chart.
 	/// </summary>
 	[JsonPropertyName("markPoint")]
-	public MarkPoint? MarkPoint { get; set; } 
+	public MarkPoint? MarkPoint { get; set; }
 
 	/// <summary>
 	/// Use a line in the chart to illustrate.
 	/// </summary>
 	[JsonPropertyName("markLine")]
-	public MarkLine? MarkLine { get; set; } 
+	public MarkLine? MarkLine { get; set; }
 
 	/// <summary>
 	/// Used to mark an area in chart.
 	/// For example, mark a time interval.
 	/// </summary>
 	[JsonPropertyName("markArea")]
-	public MarkArea? MarkArea { get; set; } 
+	public MarkArea? MarkArea { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -567,14 +567,14 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -582,7 +582,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -592,7 +592,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -600,7 +600,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -613,7 +613,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -623,14 +623,14 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -643,7 +643,7 @@ public partial class FunnelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -659,12 +659,12 @@ public partial class FunnelSeries : ISeries
 	/// It is also possible to provide an object for more detailed configuration.
 	/// </summary>
 	[JsonPropertyName("universalTransition")]
-	public UniversalTransition? UniversalTransition { get; set; } 
+	public UniversalTransition? UniversalTransition { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

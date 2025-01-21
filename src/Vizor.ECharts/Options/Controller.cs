@@ -13,7 +13,7 @@ public partial class Controller
 	/// See available configurations in visualMap-continuous.inRange
 	/// </summary>
 	[JsonPropertyName("inRange")]
-	public VisualMapRange? InRange { get; set; } 
+	public VisualMapRange? InRange { get; set; }
 
 	/// <summary>
 	/// Define visual channels that will mapped from dataValues that are out of selected range .
@@ -22,6 +22,6 @@ public partial class Controller
 	/// See available configurations in visualMap-continuous.inRange
 	/// </summary>
 	[JsonPropertyName("outOfRange")]
-	public VisualMapRange? OutOfRange { get; set; } 
+	public VisualMapRange? OutOfRange { get; set; }
 
 }

@@ -23,19 +23,19 @@ public partial class SplitArea
 	/// </summary>
 	[JsonPropertyName("interval")]
 	[DefaultValue("auto")]
-	public NumberOrFunction? Interval { get; set; } 
+	public NumberOrFunction? Interval { get; set; }
 
 	/// <summary>
 	/// Set this to true to show the splitArea.
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// Split area style.
 	/// </summary>
 	[JsonPropertyName("areaStyle")]
-	public AreaStyle? AreaStyle { get; set; } 
+	public AreaStyle? AreaStyle { get; set; }
 
 }

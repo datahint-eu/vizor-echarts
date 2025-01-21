@@ -13,7 +13,7 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// Type of triggering.
@@ -34,7 +34,7 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("trigger")]
 	[DefaultValue("item")]
-	public TooltipTrigger? Trigger { get; set; } 
+	public TooltipTrigger? Trigger { get; set; }
 
 	/// <summary>
 	/// Configuration item for axisPointer.
@@ -90,7 +90,7 @@ public partial class Tooltip
 	/// In value axis and time axis, if snap is set as true, axisPointer will snap to point automatically.
 	/// </summary>
 	[JsonPropertyName("axisPointer")]
-	public AxisPointer? AxisPointer { get; set; } 
+	public AxisPointer? AxisPointer { get; set; }
 
 	/// <summary>
 	/// The position of the tooltip's floating layer, which would follow the position of mouse by default.
@@ -151,7 +151,7 @@ public partial class Tooltip
 	/// Bottom position of the graphic element where the mouse is in, which is only valid when trigger is 'item' .
 	/// </summary>
 	[JsonPropertyName("position")]
-	public TooltipPosition? Position { get; set; } 
+	public TooltipPosition? Position { get; set; }
 
 	/// <summary>
 	/// The content formatter of tooltip's floating layer which supports string template and callback function.
@@ -306,7 +306,7 @@ public partial class Tooltip
 	/// }
 	/// </summary>
 	[JsonPropertyName("formatter")]
-	public StringOrFunction? Formatter { get; set; } 
+	public StringOrFunction? Formatter { get; set; }
 
 	/// <summary>
 	/// Since v5.3.0   
@@ -317,28 +317,28 @@ public partial class Tooltip
 	/// valueFormatter: (value) => '$' + value.toFixed(2)
 	/// </summary>
 	[JsonPropertyName("valueFormatter")]
-	public StringOrFunction? ValueFormatter { get; set; } 
+	public StringOrFunction? ValueFormatter { get; set; }
 
 	/// <summary>
 	/// The background color of tooltip's floating layer.
 	/// </summary>
 	[JsonPropertyName("backgroundColor")]
 	[DefaultValue("rgba(50,50,50,0.7)")]
-	public Color? BackgroundColor { get; set; } 
+	public Color? BackgroundColor { get; set; }
 
 	/// <summary>
 	/// The border color of tooltip's floating layer.
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("#333")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// The border width of tooltip's floating layer.
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue("0")]
-	public double? BorderWidth { get; set; } 
+	public double? BorderWidth { get; set; }
 
 	/// <summary>
 	/// The floating layer of tooltip space around content.
@@ -360,13 +360,13 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("padding")]
 	[DefaultValue(5)]
-	public Padding? Padding { get; set; } 
+	public Padding? Padding { get; set; }
 
 	/// <summary>
 	/// The text syle of tooltip's floating layer.
 	/// </summary>
 	[JsonPropertyName("textStyle")]
-	public TextStyle? TextStyle { get; set; } 
+	public TextStyle? TextStyle { get; set; }
 
 	/// <summary>
 	/// Extra CSS style for floating layer.
@@ -374,7 +374,7 @@ public partial class Tooltip
 	///  extraCssText: 'box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);'
 	/// </summary>
 	[JsonPropertyName("extraCssText")]
-	public string? ExtraCssText { get; set; } 
+	public string? ExtraCssText { get; set; }
 
 	/// <summary>
 	/// Whether to show the tooltip floating layer, whose default value is true.
@@ -382,7 +382,7 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("showContent")]
 	[DefaultValue("true")]
-	public bool? ShowContent { get; set; } 
+	public bool? ShowContent { get; set; }
 
 	/// <summary>
 	/// Whether to show tooltip content all the time.
@@ -393,7 +393,7 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("alwaysShowContent")]
 	[DefaultValue("false")]
-	public bool? AlwaysShowContent { get; set; } 
+	public bool? AlwaysShowContent { get; set; }
 
 	/// <summary>
 	/// Conditions to trigger tooltip.
@@ -416,7 +416,7 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("triggerOn")]
 	[DefaultValue("mousemove|click")]
-	public TriggerOn? TriggerOn { get; set; } 
+	public TriggerOn? TriggerOn { get; set; }
 
 	/// <summary>
 	/// Delay time for showing tooltip, in ms.
@@ -425,7 +425,7 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("showDelay")]
 	[DefaultValue(0)]
-	public double? ShowDelay { get; set; } 
+	public double? ShowDelay { get; set; }
 
 	/// <summary>
 	/// Delay time for hiding tooltip, in ms.
@@ -433,7 +433,7 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("hideDelay")]
 	[DefaultValue("100")]
-	public double? HideDelay { get; set; } 
+	public double? HideDelay { get; set; }
 
 	/// <summary>
 	/// Whether mouse is allowed to enter the floating layer of tooltip, whose default value is false.
@@ -441,7 +441,7 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("enterable")]
 	[DefaultValue("false")]
-	public bool? Enterable { get; set; } 
+	public bool? Enterable { get; set; }
 
 	/// <summary>
 	/// Render mode for tooltip.
@@ -451,7 +451,7 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("renderMode")]
 	[DefaultValue("html")]
-	public TooltipRenderMode? RenderMode { get; set; } 
+	public TooltipRenderMode? RenderMode { get; set; }
 
 	/// <summary>
 	/// Whether confine tooltip content in the view rect of chart instance.
@@ -460,7 +460,7 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("confine")]
 	[DefaultValue("false")]
-	public bool? Confine { get; set; } 
+	public bool? Confine { get; set; }
 
 	/// <summary>
 	/// Since v4.7.0   
@@ -477,7 +477,7 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("appendToBody")]
 	[DefaultValue("false")]
-	public bool? AppendToBody { get; set; } 
+	public bool? AppendToBody { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -487,7 +487,7 @@ public partial class Tooltip
 	/// Example:  className: 'echarts-tooltip echarts-tooltip-dark'
 	/// </summary>
 	[JsonPropertyName("className")]
-	public string? ClassName { get; set; } 
+	public string? ClassName { get; set; }
 
 	/// <summary>
 	/// The transition duration of tooltip's animation, in seconds.
@@ -495,7 +495,7 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("transitionDuration")]
 	[DefaultValue("0.4")]
-	public double? TransitionDuration { get; set; } 
+	public double? TransitionDuration { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -518,6 +518,6 @@ public partial class Tooltip
 	/// </summary>
 	[JsonPropertyName("order")]
 	[DefaultValue("seriesAsc")]
-	public TooltipOrder? Order { get; set; } 
+	public TooltipOrder? Order { get; set; }
 
 }

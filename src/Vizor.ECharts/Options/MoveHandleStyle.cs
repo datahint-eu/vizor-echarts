@@ -14,14 +14,14 @@ public partial class MoveHandleStyle
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("#D2DBEE")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// border color, whose format is similar to that of color .
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("#000")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// border width.
@@ -32,7 +32,7 @@ public partial class MoveHandleStyle
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue(0)]
-	public double? BorderWidth { get; set; } 
+	public double? BorderWidth { get; set; }
 
 	/// <summary>
 	/// border type.
@@ -50,7 +50,7 @@ public partial class MoveHandleStyle
 	/// </summary>
 	[JsonPropertyName("borderType")]
 	[DefaultValue("solid")]
-	public LineType? BorderType { get; set; } 
+	public LineType? BorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -61,7 +61,7 @@ public partial class MoveHandleStyle
 	/// </summary>
 	[JsonPropertyName("borderDashOffset")]
 	[DefaultValue("0")]
-	public double? BorderDashOffset { get; set; } 
+	public double? BorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -75,7 +75,7 @@ public partial class MoveHandleStyle
 	/// </summary>
 	[JsonPropertyName("borderCap")]
 	[DefaultValue("butt")]
-	public LineCap? BorderCap { get; set; } 
+	public LineCap? BorderCap { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -92,7 +92,7 @@ public partial class MoveHandleStyle
 	/// </summary>
 	[JsonPropertyName("borderJoin")]
 	[DefaultValue("bevel")]
-	public LineJoin? BorderJoin { get; set; } 
+	public LineJoin? BorderJoin { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -106,7 +106,7 @@ public partial class MoveHandleStyle
 	/// </summary>
 	[JsonPropertyName("borderMiterLimit")]
 	[DefaultValue("10")]
-	public double? BorderMiterLimit { get; set; } 
+	public double? BorderMiterLimit { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -119,7 +119,7 @@ public partial class MoveHandleStyle
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -127,21 +127,21 @@ public partial class MoveHandleStyle
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Opacity of the component.
@@ -149,6 +149,6 @@ public partial class MoveHandleStyle
 	/// </summary>
 	[JsonPropertyName("opacity")]
 	[DefaultValue("1")]
-	public double? Opacity { get; set; } 
+	public double? Opacity { get; set; }
 
 }

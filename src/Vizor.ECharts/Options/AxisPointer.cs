@@ -20,7 +20,7 @@ public partial class AxisPointer
 	/// </summary>
 	[JsonPropertyName("type")]
 	[DefaultValue("line")]
-	public AxisPointerType? Type { get; set; } 
+	public AxisPointerType? Type { get; set; }
 
 	/// <summary>
 	/// The coordinate axis, which could be 'x' , 'y' , 'radius' , or 'angle' .
@@ -28,7 +28,7 @@ public partial class AxisPointer
 	/// </summary>
 	[JsonPropertyName("axis")]
 	[DefaultValue("auto")]
-	public string? Axis { get; set; } 
+	public string? Axis { get; set; }
 
 	/// <summary>
 	/// Whether snap to point automatically.
@@ -37,45 +37,45 @@ public partial class AxisPointer
 	/// This feature usually makes sense in value axis and time axis, where tiny points can be seeked automatically.
 	/// </summary>
 	[JsonPropertyName("snap")]
-	public bool? Snap { get; set; } 
+	public bool? Snap { get; set; }
 
 	/// <summary>
 	/// z value, which controls order of drawing graphical components.
 	/// Components with smaller z values may be overwritten by those with larger z values.
 	/// </summary>
 	[JsonPropertyName("z")]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// label of axisPointer
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// It is valid when axisPointer.type is 'line' .
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// It is valid when axisPointer.type is 'shadow' .
 	/// </summary>
 	[JsonPropertyName("shadowStyle")]
-	public ShadowStyle? ShadowStyle { get; set; } 
+	public ShadowStyle? ShadowStyle { get; set; }
 
 	/// <summary>
 	/// It is valid when axisPointer.type is 'cross' .
 	/// </summary>
 	[JsonPropertyName("crossStyle")]
-	public CrossStyle? CrossStyle { get; set; } 
+	public CrossStyle? CrossStyle { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -83,7 +83,7 @@ public partial class AxisPointer
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -93,7 +93,7 @@ public partial class AxisPointer
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -101,7 +101,7 @@ public partial class AxisPointer
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -114,7 +114,7 @@ public partial class AxisPointer
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -124,14 +124,14 @@ public partial class AxisPointer
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("exponentialOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -144,7 +144,7 @@ public partial class AxisPointer
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 	/// <summary>
 	/// axisPointer will not be displayed by default.
@@ -154,7 +154,7 @@ public partial class AxisPointer
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue(false)]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// Since v5.4.3   
@@ -162,27 +162,27 @@ public partial class AxisPointer
 	/// </summary>
 	[JsonPropertyName("triggerEmphasis")]
 	[DefaultValue("true")]
-	public bool? TriggerEmphasis { get; set; } 
+	public bool? TriggerEmphasis { get; set; }
 
 	/// <summary>
 	/// Whether to trigger tooltip.
 	/// </summary>
 	[JsonPropertyName("triggerTooltip")]
 	[DefaultValue("true")]
-	public bool? TriggerTooltip { get; set; } 
+	public bool? TriggerTooltip { get; set; }
 
 	/// <summary>
 	/// current value.
 	/// When using axisPointer.handle , value can be set to define the initial position of axisPointer.
 	/// </summary>
 	[JsonPropertyName("value")]
-	public double? Value { get; set; } 
+	public double? Value { get; set; }
 
 	/// <summary>
 	/// Current status, can be 'show' 和 'hide' .
 	/// </summary>
 	[JsonPropertyName("status")]
-	public AxisPointerStatus? Status { get; set; } 
+	public AxisPointerStatus? Status { get; set; }
 
 	/// <summary>
 	/// A button used to drag axisPointer.
@@ -190,14 +190,14 @@ public partial class AxisPointer
 	/// See example .
 	/// </summary>
 	[JsonPropertyName("handle")]
-	public Handle? Handle { get; set; } 
+	public Handle? Handle { get; set; }
 
 	/// <summary>
 	/// Component ID, not specified by default.
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// axisPointers can be linked to each other.
@@ -254,7 +254,7 @@ public partial class AxisPointer
 	/// {number} The result of conversion.
 	/// </summary>
 	[JsonPropertyName("link")]
-	public List<AxisPointerLink>? Link { get; set; } 
+	public List<AxisPointerLink>? Link { get; set; }
 
 	/// <summary>
 	/// Conditions to trigger tooltip.
@@ -273,6 +273,6 @@ public partial class AxisPointer
 	/// </summary>
 	[JsonPropertyName("triggerOn")]
 	[DefaultValue("mousemove|click")]
-	public TriggerOn? TriggerOn { get; set; } 
+	public TriggerOn? TriggerOn { get; set; }
 
 }

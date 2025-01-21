@@ -11,7 +11,7 @@ public partial class Breadcrumb
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// Distance between breadcrumb  component and the left side of the container.
@@ -22,7 +22,7 @@ public partial class Breadcrumb
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("center")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between breadcrumb  component and the top side of the container.
@@ -33,7 +33,7 @@ public partial class Breadcrumb
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("bottom")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between breadcrumb  component and the right side of the container.
@@ -44,7 +44,7 @@ public partial class Breadcrumb
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("auto")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between breadcrumb  component and the bottom side of the container.
@@ -55,32 +55,32 @@ public partial class Breadcrumb
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("auto")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// The height of breadcrumb.
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("22")]
-	public double? Height { get; set; } 
+	public double? Height { get; set; }
 
 	/// <summary>
 	/// When is no content in breadcrumb, this minimal width need to be set up.
 	/// </summary>
 	[JsonPropertyName("emptyItemWidth")]
 	[DefaultValue("25")]
-	public double? EmptyItemWidth { get; set; } 
+	public double? EmptyItemWidth { get; set; }
 
 	/// <summary>
 	/// Graphic style of , emphasis is the style when it is highlighted, like being hovered by mouse, or highlighted via legend connect.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Since v5.4.0
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 }

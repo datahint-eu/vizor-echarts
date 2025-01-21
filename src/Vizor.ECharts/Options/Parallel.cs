@@ -11,7 +11,7 @@ public partial class Parallel
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -25,7 +25,7 @@ public partial class Parallel
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -35,7 +35,7 @@ public partial class Parallel
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between parallel  component and the left side of the container.
@@ -46,7 +46,7 @@ public partial class Parallel
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue(80)]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between parallel  component and the top side of the container.
@@ -57,7 +57,7 @@ public partial class Parallel
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue(60)]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between parallel  component and the right side of the container.
@@ -66,7 +66,7 @@ public partial class Parallel
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue(80)]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between parallel  component and the bottom side of the container.
@@ -75,7 +75,7 @@ public partial class Parallel
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue(60)]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Width of parallel  component.
@@ -83,7 +83,7 @@ public partial class Parallel
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("auto")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of parallel  component.
@@ -91,7 +91,7 @@ public partial class Parallel
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("auto")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// Layout modes, whose optional values are:   
@@ -101,7 +101,7 @@ public partial class Parallel
 	/// </summary>
 	[JsonPropertyName("layout")]
 	[DefaultValue("horizontal")]
-	public HorizontalOrVertical? Layout { get; set; } 
+	public HorizontalOrVertical? Layout { get; set; }
 
 	/// <summary>
 	/// When dimension number is extremely large, say, more than 50 dimensions, there will be more than 50 axes, which may hardly display in a page.
@@ -112,7 +112,7 @@ public partial class Parallel
 	/// </summary>
 	[JsonPropertyName("axisExpandable")]
 	[DefaultValue(false)]
-	public bool? AxisExpandable { get; set; } 
+	public bool? AxisExpandable { get; set; }
 
 	/// <summary>
 	/// Index of the axis which is used as the center of expanding initially.
@@ -121,7 +121,7 @@ public partial class Parallel
 	/// Please refer to parallel.axisExpandable for more information.
 	/// </summary>
 	[JsonPropertyName("axisExpandCenter")]
-	public double? AxisExpandCenter { get; set; } 
+	public double? AxisExpandCenter { get; set; }
 
 	/// <summary>
 	/// Defines how many axes are at expanding state initially.
@@ -131,7 +131,7 @@ public partial class Parallel
 	/// </summary>
 	[JsonPropertyName("axisExpandCount")]
 	[DefaultValue(0)]
-	public double? AxisExpandCount { get; set; } 
+	public double? AxisExpandCount { get; set; }
 
 	/// <summary>
 	/// Distance between two axes when at expanding state, in pixels.
@@ -140,7 +140,7 @@ public partial class Parallel
 	/// </summary>
 	[JsonPropertyName("axisExpandWidth")]
 	[DefaultValue(50)]
-	public double? AxisExpandWidth { get; set; } 
+	public double? AxisExpandWidth { get; set; }
 
 	/// <summary>
 	/// Optional values:   'click' : Trigger expanding when mouse clicking.
@@ -148,7 +148,7 @@ public partial class Parallel
 	/// </summary>
 	[JsonPropertyName("axisExpandTriggerOn")]
 	[DefaultValue("click")]
-	public TriggerOn? AxisExpandTriggerOn { get; set; } 
+	public TriggerOn? AxisExpandTriggerOn { get; set; }
 
 	/// <summary>
 	/// When configuring multiple parallelAxis , there might be some common attributes in each axis configuration.
@@ -158,6 +158,6 @@ public partial class Parallel
 	/// See the sample .
 	/// </summary>
 	[JsonPropertyName("parallelAxisDefault")]
-	public ParallelAxisDefault? ParallelAxisDefault { get; set; } 
+	public ParallelAxisDefault? ParallelAxisDefault { get; set; }
 
 }

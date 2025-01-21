@@ -14,13 +14,13 @@ public partial class GaugeSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -29,7 +29,7 @@ public partial class GaugeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("colorBy")]
 	[DefaultValue("data")]
-	public ColorBy? ColorBy { get; set; } 
+	public ColorBy? ColorBy { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -43,7 +43,7 @@ public partial class GaugeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -53,7 +53,7 @@ public partial class GaugeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Center position of , the first of which is the horizontal position, and the second is the vertical position.
@@ -68,7 +68,7 @@ public partial class GaugeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("center")]
 	[DefaultValue("[50%, 50%]")]
-	public CircleCenter? Center { get; set; } 
+	public CircleCenter? Center { get; set; }
 
 	/// <summary>
 	/// The radius of gauge chart.
@@ -76,14 +76,14 @@ public partial class GaugeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("radius")]
 	[DefaultValue("75%")]
-	public NumberOrString? Radius { get; set; } 
+	public NumberOrString? Radius { get; set; }
 
 	/// <summary>
 	/// Whether to enable highlighting chart when legend is being hovered.
 	/// </summary>
 	[JsonPropertyName("legendHoverLink")]
 	[DefaultValue("true")]
-	public bool? LegendHoverLink { get; set; } 
+	public bool? LegendHoverLink { get; set; }
 
 	/// <summary>
 	/// The start angle of gauge chart.
@@ -91,14 +91,14 @@ public partial class GaugeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("startAngle")]
 	[DefaultValue("225")]
-	public double? StartAngle { get; set; } 
+	public double? StartAngle { get; set; }
 
 	/// <summary>
 	/// The end angle of gauge chart.
 	/// </summary>
 	[JsonPropertyName("endAngle")]
 	[DefaultValue("-45")]
-	public double? EndAngle { get; set; } 
+	public double? EndAngle { get; set; }
 
 	/// <summary>
 	/// Whether the scale in gauge chart increases clockwise.
@@ -139,115 +139,115 @@ public partial class GaugeSeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// The minimum data value which map to minAngle .
 	/// </summary>
 	[JsonPropertyName("min")]
 	[DefaultValue("0")]
-	public double? Min { get; set; } 
+	public double? Min { get; set; }
 
 	/// <summary>
 	/// The maximum data value which map to maxAngle .
 	/// </summary>
 	[JsonPropertyName("max")]
 	[DefaultValue("100")]
-	public double? Max { get; set; } 
+	public double? Max { get; set; }
 
 	/// <summary>
 	/// The number of split segments of gauge chart scale.
 	/// </summary>
 	[JsonPropertyName("splitNumber")]
 	[DefaultValue("10")]
-	public double? SplitNumber { get; set; } 
+	public double? SplitNumber { get; set; }
 
 	/// <summary>
 	/// The related configuration about the axis line of gauge chart.
 	/// </summary>
 	[JsonPropertyName("axisLine")]
-	public AxisLine? AxisLine { get; set; } 
+	public AxisLine? AxisLine { get; set; }
 
 	/// <summary>
 	/// Since v5.0   
 	/// Used to show current progress.
 	/// </summary>
 	[JsonPropertyName("progress")]
-	public Progress? Progress { get; set; } 
+	public Progress? Progress { get; set; }
 
 	/// <summary>
 	/// The style of split line.
 	/// </summary>
 	[JsonPropertyName("splitLine")]
-	public SplitLine? SplitLine { get; set; } 
+	public SplitLine? SplitLine { get; set; }
 
 	/// <summary>
 	/// The tick line style.
 	/// </summary>
 	[JsonPropertyName("axisTick")]
-	public AxisTick? AxisTick { get; set; } 
+	public AxisTick? AxisTick { get; set; }
 
 	/// <summary>
 	/// Axis tick label.
 	/// </summary>
 	[JsonPropertyName("axisLabel")]
-	public AxisLabel? AxisLabel { get; set; } 
+	public AxisLabel? AxisLabel { get; set; }
 
 	/// <summary>
 	/// Gauge chart pointer.
 	/// </summary>
 	[JsonPropertyName("pointer")]
-	public Pointer? Pointer { get; set; } 
+	public Pointer? Pointer { get; set; }
 
 	/// <summary>
 	/// Since v5.0   
 	/// The fixed point of a pointer in a dial.
 	/// </summary>
 	[JsonPropertyName("anchor")]
-	public Anchor? Anchor { get; set; } 
+	public Anchor? Anchor { get; set; }
 
 	/// <summary>
 	/// The style of gauge chart.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Configurations of emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// The title of gauge chart.
 	/// </summary>
 	[JsonPropertyName("title")]
-	public Title? Title { get; set; } 
+	public Title? Title { get; set; }
 
 	/// <summary>
 	/// The detail about gauge chart which is used to show data.
 	/// </summary>
 	[JsonPropertyName("detail")]
-	public Detail? Detail { get; set; } 
+	public Detail? Detail { get; set; }
 
 	/// <summary>
 	/// Mark point in a chart.
 	/// </summary>
 	[JsonPropertyName("markPoint")]
-	public MarkPoint? MarkPoint { get; set; } 
+	public MarkPoint? MarkPoint { get; set; }
 
 	/// <summary>
 	/// Use a line in the chart to illustrate.
 	/// </summary>
 	[JsonPropertyName("markLine")]
-	public MarkLine? MarkLine { get; set; } 
+	public MarkLine? MarkLine { get; set; }
 
 	/// <summary>
 	/// Used to mark an area in chart.
 	/// For example, mark a time interval.
 	/// </summary>
 	[JsonPropertyName("markArea")]
-	public MarkArea? MarkArea { get; set; } 
+	public MarkArea? MarkArea { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -255,14 +255,14 @@ public partial class GaugeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -270,7 +270,7 @@ public partial class GaugeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -280,7 +280,7 @@ public partial class GaugeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -288,7 +288,7 @@ public partial class GaugeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -301,7 +301,7 @@ public partial class GaugeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -311,14 +311,14 @@ public partial class GaugeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -331,12 +331,12 @@ public partial class GaugeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

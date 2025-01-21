@@ -20,20 +20,20 @@ public partial class PictorialBarSeriesData
     /// The name of data item.
     /// </summary>
     [JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// The value of a single data item.
 	/// </summary>
 	[JsonPropertyName("value")]
-	public double? Value { get; set; } 
+	public double? Value { get; set; }
 
 	/// <summary>
 	/// The groupID of this data item.
 	/// groupID will be used to classify the data.
 	/// </summary>
 	[JsonPropertyName("groupId")]
-	public string? GroupId { get; set; } 
+	public string? GroupId { get; set; }
 
 	/// <summary>
 	/// Specify the type of graphic elements.
@@ -74,7 +74,7 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("circle")]
-	public string? Symbol { get; set; } 
+	public string? Symbol { get; set; }
 
 	/// <summary>
 	/// Symbol size.
@@ -117,7 +117,7 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue("100%,100%")]
-	public NumberOrNumberArray? SymbolSize { get; set; } 
+	public NumberOrNumberArray? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Specify the location of the graphic elements.
@@ -149,7 +149,7 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("symbolPosition")]
 	[DefaultValue("start")]
-	public StartOrEndOrCenter? SymbolPosition { get; set; } 
+	public StartOrEndOrCenter? SymbolPosition { get; set; }
 
 	/// <summary>
 	/// Specify the offset of graphic element according to its original position.
@@ -183,7 +183,7 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("symbolOffset")]
 	[DefaultValue("0,0")]
-	public double[]? SymbolOffset { get; set; } 
+	public double[]? SymbolOffset { get; set; }
 
 	/// <summary>
 	/// The degree of the rotation of a graphic element.
@@ -212,7 +212,7 @@ public partial class PictorialBarSeriesData
 	/// }]
 	/// </summary>
 	[JsonPropertyName("symbolRotate")]
-	public double? SymbolRotate { get; set; } 
+	public double? SymbolRotate { get; set; }
 
 	/// <summary>
 	/// Whether to repeat a graphic element.
@@ -248,7 +248,7 @@ public partial class PictorialBarSeriesData
 	/// }]
 	/// </summary>
 	[JsonPropertyName("symbolRepeat")]
-	public PictorialSymbolRepeat? SymbolRepeat { get; set; } 
+	public PictorialSymbolRepeat? SymbolRepeat { get; set; }
 
 	/// <summary>
 	/// When symbolRepeat is used, symbolRepeatDirection specifies the render order of the repeated graphic elements.
@@ -284,7 +284,7 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("symbolRepeatDirection")]
 	[DefaultValue("start")]
-	public StartOrEnd? SymbolRepeatDirection { get; set; } 
+	public StartOrEnd? SymbolRepeatDirection { get; set; }
 
 	/// <summary>
 	/// Specify margin of both sides of a graphic element.
@@ -326,7 +326,7 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("symbolMargin")]
 	[DefaultValue("0,0")]
-	public NumberOrString? SymbolMargin { get; set; } 
+	public NumberOrString? SymbolMargin { get; set; }
 
 	/// <summary>
 	/// Whether to clip graphic elements.
@@ -364,7 +364,7 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("symbolClip")]
 	[DefaultValue(false)]
-	public bool? SymbolClip { get; set; } 
+	public bool? SymbolClip { get; set; }
 
 	/// <summary>
 	/// Defines a bounding area availble for the graphic elements.
@@ -423,7 +423,7 @@ public partial class PictorialBarSeriesData
 	/// }]
 	/// </summary>
 	[JsonPropertyName("symbolBoundingData")]
-	public double? SymbolBoundingData { get; set; } 
+	public double? SymbolBoundingData { get; set; }
 
 	/// <summary>
 	/// Image can be used as the pattern of graphic elements.
@@ -465,14 +465,14 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("symbolPatternSize")]
 	[DefaultValue("400")]
-	public double? SymbolPatternSize { get; set; } 
+	public double? SymbolPatternSize { get; set; }
 
 	/// <summary>
 	/// Specify the relationship of overlap between graphic elements.
 	/// A bigger value means higher.
 	/// </summary>
 	[JsonPropertyName("z")]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Whether to enable hover animation.
@@ -500,14 +500,14 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("hoverAnimation")]
 	[DefaultValue(false)]
-	public bool? HoverAnimation { get; set; } 
+	public bool? HoverAnimation { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -515,7 +515,7 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -525,7 +525,7 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -533,7 +533,7 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -543,14 +543,14 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Specify the delay time before animation start.
@@ -567,7 +567,7 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Specify the delay time before update animation.
@@ -584,51 +584,51 @@ public partial class PictorialBarSeriesData
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 	/// <summary>
 	/// The style setting of the text label in a single bar.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configuration of label guide line.
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Emphasis state of the specified single data.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Blur state of the specified single data.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Select state of the specified single data.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series data.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

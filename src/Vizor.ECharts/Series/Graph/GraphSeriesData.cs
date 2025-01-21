@@ -21,37 +21,37 @@ public partial class GraphSeriesData
     /// Name of data item.
     /// </summary>
     [JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// x value of node position.
 	/// </summary>
 	[JsonPropertyName("x")]
-	public double? X { get; set; } 
+	public double? X { get; set; }
 
 	/// <summary>
 	/// y value of node position.
 	/// </summary>
 	[JsonPropertyName("y")]
-	public double? Y { get; set; } 
+	public double? Y { get; set; }
 
 	/// <summary>
 	/// If node are fixed when doing force directed layout.
 	/// </summary>
 	[JsonPropertyName("fixed")]
-	public bool? Fixed { get; set; } 
+	public bool? Fixed { get; set; }
 
 	/// <summary>
 	/// Value of data item.
 	/// </summary>
 	[JsonPropertyName("value")]
-	public NumberOrNumberArray? Value { get; set; } 
+	public NumberOrNumberArray? Value { get; set; }
 
 	/// <summary>
 	/// Index of category which the data item belongs to.
 	/// </summary>
 	[JsonPropertyName("category")]
-	public double? Category { get; set; } 
+	public double? Category { get; set; }
 
 	/// <summary>
 	/// Symbol of node of this category.
@@ -71,7 +71,7 @@ public partial class GraphSeriesData
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("circle")]
-	public Icon? Symbol { get; set; } 
+	public Icon? Symbol { get; set; }
 
 	/// <summary>
 	/// node of this category symbol size.
@@ -79,7 +79,7 @@ public partial class GraphSeriesData
 	/// For example, [20, 10] means symbol width is 20 , and height is 10 .
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
-	public NumberOrNumberArray? SymbolSize { get; set; } 
+	public NumberOrNumberArray? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Rotate degree of node of this category symbol.
@@ -87,14 +87,14 @@ public partial class GraphSeriesData
 	/// Note that when symbol is set to be 'arrow' in markLine , symbolRotate value will be ignored, and compulsively use tangent angle.
 	/// </summary>
 	[JsonPropertyName("symbolRotate")]
-	public double? SymbolRotate { get; set; } 
+	public double? SymbolRotate { get; set; }
 
 	/// <summary>
 	/// Whether to keep aspect for symbols in the form of path:// .
 	/// </summary>
 	[JsonPropertyName("symbolKeepAspect")]
 	[DefaultValue(false)]
-	public bool? SymbolKeepAspect { get; set; } 
+	public bool? SymbolKeepAspect { get; set; }
 
 	/// <summary>
 	/// Offset of node of this category symbol relative to original position.
@@ -108,44 +108,44 @@ public partial class GraphSeriesData
 	/// </summary>
 	[JsonPropertyName("symbolOffset")]
 	[DefaultValue("[0, 0]")]
-	public double[]? SymbolOffset { get; set; } 
+	public double[]? SymbolOffset { get; set; }
 
 	/// <summary>
 	/// The style of this node.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// The label style of this node.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Emphasis state of specified node.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Blur state of specified node.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Select state of specified node.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series data.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

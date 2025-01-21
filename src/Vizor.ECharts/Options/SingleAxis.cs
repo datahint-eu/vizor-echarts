@@ -11,7 +11,7 @@ public partial class SingleAxis
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -25,7 +25,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -35,7 +35,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between single component and the left side of the container.
@@ -46,7 +46,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("5%")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between single component and the top side of the container.
@@ -57,7 +57,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("5%")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between single component and the right side of the container.
@@ -66,7 +66,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("5%")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between single component and the bottom side of the container.
@@ -75,7 +75,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("5%")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Width of single component.
@@ -83,7 +83,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("auto")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of single component.
@@ -91,7 +91,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("auto")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// Orientation of the axis.
@@ -100,7 +100,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("orient")]
 	[DefaultValue("horizontal")]
-	public Orient? Orient { get; set; } 
+	public Orient? Orient { get; set; }
 
 	/// <summary>
 	/// Type of axis.
@@ -119,13 +119,13 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("type")]
 	[DefaultValue("value")]
-	public AxisType? Type { get; set; } 
+	public AxisType? Type { get; set; }
 
 	/// <summary>
 	/// Name of axis.
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Location of axis name.
@@ -134,26 +134,26 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("nameLocation")]
 	[DefaultValue("end")]
-	public NameLocation? NameLocation { get; set; } 
+	public NameLocation? NameLocation { get; set; }
 
 	/// <summary>
 	/// Text style of axis name.
 	/// </summary>
 	[JsonPropertyName("nameTextStyle")]
-	public NameTextStyle? NameTextStyle { get; set; } 
+	public NameTextStyle? NameTextStyle { get; set; }
 
 	/// <summary>
 	/// Gap between axis name and axis line.
 	/// </summary>
 	[JsonPropertyName("nameGap")]
 	[DefaultValue("15")]
-	public double? NameGap { get; set; } 
+	public double? NameGap { get; set; }
 
 	/// <summary>
 	/// Rotation of axis name.
 	/// </summary>
 	[JsonPropertyName("nameRotate")]
-	public double? NameRotate { get; set; } 
+	public double? NameRotate { get; set; }
 
 	/// <summary>
 	/// Set this to true to invert the axis.
@@ -161,7 +161,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("inverse")]
 	[DefaultValue(false)]
-	public bool? Inverse { get; set; } 
+	public bool? Inverse { get; set; }
 
 	/// <summary>
 	/// The boundary gap on both sides of a coordinate axis.
@@ -175,7 +175,7 @@ public partial class SingleAxis
 	/// Example:  boundaryGap: ['20%', '20%']
 	/// </summary>
 	[JsonPropertyName("boundaryGap")]
-	public BoundaryGap? BoundaryGap { get; set; } 
+	public BoundaryGap? BoundaryGap { get; set; }
 
 	/// <summary>
 	/// The minimun value of axis.
@@ -195,7 +195,7 @@ public partial class SingleAxis
 	/// This function should return the min value of axis, or return null / undefined to make echarts use the auto calculated min value ( null / undefined return is only supported since v4.8.0 ).
 	/// </summary>
 	[JsonPropertyName("min")]
-	public NumberOrStringOrFunction? Min { get; set; } 
+	public NumberOrStringOrFunction? Min { get; set; }
 
 	/// <summary>
 	/// The maximum value of axis.
@@ -215,7 +215,7 @@ public partial class SingleAxis
 	/// This function should return the max value of axis, or return null / undefined to make echarts use the auto calculated max value ( null / undefined return is only supported since v4.8.0 ).
 	/// </summary>
 	[JsonPropertyName("max")]
-	public NumberOrStringOrFunction? Max { get; set; } 
+	public NumberOrStringOrFunction? Max { get; set; }
 
 	/// <summary>
 	/// It is available only in numerical axis, i.e., type : 'value'.
@@ -227,7 +227,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("scale")]
 	[DefaultValue(false)]
-	public bool? Scale { get; set; } 
+	public bool? Scale { get; set; }
 
 	/// <summary>
 	/// Number of segments that the axis is split into.
@@ -237,7 +237,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("splitNumber")]
 	[DefaultValue("5")]
-	public double? SplitNumber { get; set; } 
+	public double? SplitNumber { get; set; }
 
 	/// <summary>
 	/// Minimum gap between split lines.
@@ -250,7 +250,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("minInterval")]
 	[DefaultValue(0)]
-	public double? MinInterval { get; set; } 
+	public double? MinInterval { get; set; }
 
 	/// <summary>
 	/// Maximum gap between split lines.
@@ -262,7 +262,7 @@ public partial class SingleAxis
 	/// It is available only for axis of type 'value' or 'time'.
 	/// </summary>
 	[JsonPropertyName("maxInterval")]
-	public double? MaxInterval { get; set; } 
+	public double? MaxInterval { get; set; }
 
 	/// <summary>
 	/// Compulsively set segmentation interval for axis.
@@ -276,21 +276,21 @@ public partial class SingleAxis
 	/// Logged value should be passed for type : 'log' axis.
 	/// </summary>
 	[JsonPropertyName("interval")]
-	public double? Interval { get; set; } 
+	public double? Interval { get; set; }
 
 	/// <summary>
 	/// Base of logarithm, which is valid only for numeric axes with type : 'log'.
 	/// </summary>
 	[JsonPropertyName("logBase")]
 	[DefaultValue("10")]
-	public double? LogBase { get; set; } 
+	public double? LogBase { get; set; }
 
 	/// <summary>
 	/// Set this to true , to prevent interaction with the axis.
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Set this to true to enable triggering events.
@@ -309,19 +309,19 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("triggerEvent")]
 	[DefaultValue(false)]
-	public bool? TriggerEvent { get; set; } 
+	public bool? TriggerEvent { get; set; }
 
 	/// <summary>
 	/// Settings related to axis line.
 	/// </summary>
 	[JsonPropertyName("axisLine")]
-	public AxisLine? AxisLine { get; set; } 
+	public AxisLine? AxisLine { get; set; }
 
 	/// <summary>
 	/// Settings related to axis tick.
 	/// </summary>
 	[JsonPropertyName("axisTick")]
-	public AxisTick? AxisTick { get; set; } 
+	public AxisTick? AxisTick { get; set; }
 
 	/// <summary>
 	/// Since v4.6.0   
@@ -335,26 +335,26 @@ public partial class SingleAxis
 	/// 2) Using minor ticks in log axis.
 	/// </summary>
 	[JsonPropertyName("minorTick")]
-	public MinorTick? MinorTick { get; set; } 
+	public MinorTick? MinorTick { get; set; }
 
 	/// <summary>
 	/// Settings related to axis label.
 	/// </summary>
 	[JsonPropertyName("axisLabel")]
-	public AxisLabel? AxisLabel { get; set; } 
+	public AxisLabel? AxisLabel { get; set; }
 
 	/// <summary>
 	/// Split line of axis in grid area.
 	/// </summary>
 	[JsonPropertyName("splitLine")]
-	public SplitLine? SplitLine { get; set; } 
+	public SplitLine? SplitLine { get; set; }
 
 	/// <summary>
 	/// Since v4.6.0   
 	/// Minor split lines of axis in the grid area。It will align to the minorTick
 	/// </summary>
 	[JsonPropertyName("minorSplitLine")]
-	public MinorSplitLine? MinorSplitLine { get; set; } 
+	public MinorSplitLine? MinorSplitLine { get; set; }
 
 	/// <summary>
 	/// Split area of axis in grid area, not shown by default.
@@ -387,20 +387,20 @@ public partial class SingleAxis
 	/// }, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// axisPointer settings on the axis.
 	/// </summary>
 	[JsonPropertyName("axisPointer")]
-	public AxisPointer? AxisPointer { get; set; } 
+	public AxisPointer? AxisPointer { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -408,7 +408,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -418,7 +418,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -426,7 +426,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -439,7 +439,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -449,14 +449,14 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -469,7 +469,7 @@ public partial class SingleAxis
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 	/// <summary>
 	/// tooltip settings in the coordinate system component.
@@ -482,6 +482,6 @@ public partial class SingleAxis
 	/// Configured in each item of series.data : series.data.tooltip
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

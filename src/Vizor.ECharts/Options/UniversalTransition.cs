@@ -11,7 +11,7 @@ public partial class UniversalTransition
 	/// </summary>
 	[JsonPropertyName("enabled")]
 	[DefaultValue(false)]
-	public bool? Enabled { get; set; } 
+	public bool? Enabled { get; set; }
 
 	/// <summary>
 	/// The seriesKey determines how the series to be animated is associated, it defaults to the id of the series when not configured.
@@ -23,7 +23,7 @@ public partial class UniversalTransition
 	/// For example, this configuration means that series with id or seriesKey of 'male' and 'female' will be merged into the current series.
 	/// </summary>
 	[JsonPropertyName("seriesKey")]
-	public Icon? SeriesKey { get; set; } 
+	public Icon? SeriesKey { get; set; }
 
 	/// <summary>
 	/// divideShape determines how the elements in the current series will split into multiple elements in a one-to-many or many-to-one animation.
@@ -34,7 +34,7 @@ public partial class UniversalTransition
 	/// You can set this to the desired splitting strategy according to the needs of your own scenario.
 	/// </summary>
 	[JsonPropertyName("divideShape")]
-	public string? DivideShape { get; set; } 
+	public string? DivideShape { get; set; }
 
 	/// <summary>
 	/// (index: number, count: number) => number  
@@ -46,7 +46,7 @@ public partial class UniversalTransition
 	/// }
 	/// </summary>
 	[JsonPropertyName("delay")]
-	public JavascriptFunction? Delay { get; set; } 
+	public JavascriptFunction? Delay { get; set; }
 
 	/// <summary>
 	/// Specify the delay time before animation start.
@@ -63,7 +63,7 @@ public partial class UniversalTransition
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Specify the delay time before update animation.
@@ -80,6 +80,6 @@ public partial class UniversalTransition
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 }

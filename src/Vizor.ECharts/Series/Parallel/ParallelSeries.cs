@@ -14,7 +14,7 @@ public partial class ParallelSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// The coordinate used in the series, whose options are:   
@@ -23,20 +23,20 @@ public partial class ParallelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("coordinateSystem")]
 	[DefaultValue("parallel")]
-	public string? CoordinateSystem { get; set; } 
+	public string? CoordinateSystem { get; set; }
 
 	/// <summary>
 	/// Index of parallel coordinates to combine with, which is useful for multiple parallel axes in one chart.
 	/// </summary>
 	[JsonPropertyName("parallelIndex")]
 	[DefaultValue(0)]
-	public int? ParallelIndex { get; set; } 
+	public int? ParallelIndex { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -45,40 +45,40 @@ public partial class ParallelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("colorBy")]
 	[DefaultValue("series")]
-	public ColorBy? ColorBy { get; set; } 
+	public ColorBy? ColorBy { get; set; }
 
 	/// <summary>
 	/// Line style.
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// When perform brush selection, the unselected lines will be set as this transparency rate (which could darken those lines).
 	/// </summary>
 	[JsonPropertyName("inactiveOpacity")]
 	[DefaultValue("0.05")]
-	public double? InactiveOpacity { get; set; } 
+	public double? InactiveOpacity { get; set; }
 
 	/// <summary>
 	/// When perform brush selection, the selected lines will be set as this transparency rate (which could highlight those lines).
 	/// </summary>
 	[JsonPropertyName("activeOpacity")]
 	[DefaultValue("1")]
-	public double? ActiveOpacity { get; set; } 
+	public double? ActiveOpacity { get; set; }
 
 	/// <summary>
 	/// Whether to update view in realtime.
 	/// </summary>
 	[JsonPropertyName("realtime")]
 	[DefaultValue("true")]
-	public bool? Realtime { get; set; } 
+	public bool? Realtime { get; set; }
 
 	/// <summary>
 	/// Whether to smooth the line.
@@ -86,7 +86,7 @@ public partial class ParallelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("smooth")]
 	[DefaultValue(false)]
-	public NumberOrBool? Smooth { get; set; } 
+	public NumberOrBool? Smooth { get; set; }
 
 	/// <summary>
 	/// progressive specifies the amount of graphic elements that can be rendered within a frame (about 16ms) if "progressive rendering" enabled.
@@ -99,14 +99,14 @@ public partial class ParallelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("progressive")]
 	[DefaultValue(500)]
-	public double? Progressive { get; set; } 
+	public double? Progressive { get; set; }
 
 	/// <summary>
 	/// If current data amount is over the threshold, "progressive rendering" is enabled.
 	/// </summary>
 	[JsonPropertyName("progressiveThreshold")]
 	[DefaultValue(3000)]
-	public double? ProgressiveThreshold { get; set; } 
+	public double? ProgressiveThreshold { get; set; }
 
 	/// <summary>
 	/// Chunk approach, optional values:   'sequential' : slice data by data index.
@@ -134,7 +134,7 @@ public partial class ParallelSeries : ISeries
 	/// For example, the meanings of columns above are: "data", "AQI", "PM2.5", "PM10", "carbon monoxide level", "nitrogen dioxide level", and "sulfur dioxide level".
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in parallel.
@@ -148,7 +148,7 @@ public partial class ParallelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in parallel, which controls order of drawing graphical components.
@@ -158,7 +158,7 @@ public partial class ParallelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -166,14 +166,14 @@ public partial class ParallelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -181,7 +181,7 @@ public partial class ParallelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -191,7 +191,7 @@ public partial class ParallelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -199,7 +199,7 @@ public partial class ParallelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("linear")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -212,7 +212,7 @@ public partial class ParallelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -222,14 +222,14 @@ public partial class ParallelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -242,6 +242,6 @@ public partial class ParallelSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 }

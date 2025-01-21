@@ -14,13 +14,13 @@ public partial class BarSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -29,14 +29,14 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("colorBy")]
 	[DefaultValue("series")]
-	public ColorBy? ColorBy { get; set; } 
+	public ColorBy? ColorBy { get; set; }
 
 	/// <summary>
 	/// Whether to enable highlighting chart when legend is being hovered.
 	/// </summary>
 	[JsonPropertyName("legendHoverLink")]
 	[DefaultValue("true")]
-	public bool? LegendHoverLink { get; set; } 
+	public bool? LegendHoverLink { get; set; }
 
 	/// <summary>
 	/// The coordinate used in the series, whose options are:   
@@ -48,28 +48,28 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("coordinateSystem")]
 	[DefaultValue("cartesian2d")]
-	public string? CoordinateSystem { get; set; } 
+	public string? CoordinateSystem { get; set; }
 
 	/// <summary>
 	/// Index of x axis to combine with, which is  useful for multiple x axes in one chart.
 	/// </summary>
 	[JsonPropertyName("xAxisIndex")]
 	[DefaultValue(0)]
-	public int? XAxisIndex { get; set; } 
+	public int? XAxisIndex { get; set; }
 
 	/// <summary>
 	/// Index of y axis to combine with, which is  useful for multiple y axes in one chart.
 	/// </summary>
 	[JsonPropertyName("yAxisIndex")]
 	[DefaultValue(0)]
-	public int? YAxisIndex { get; set; } 
+	public int? YAxisIndex { get; set; }
 
 	/// <summary>
 	/// Index of polar coordinate to combine with, which is useful for multiple polar axes in one chart.
 	/// </summary>
 	[JsonPropertyName("polarIndex")]
 	[DefaultValue(0)]
-	public int? PolarIndex { get; set; } 
+	public int? PolarIndex { get; set; }
 
 	/// <summary>
 	/// Since v4.5.0   
@@ -78,7 +78,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("roundCap")]
 	[DefaultValue(false)]
-	public bool? RoundCap { get; set; } 
+	public bool? RoundCap { get; set; }
 
 	/// <summary>
 	/// Whether to enable realtime sorting, which is used for bar-racing effect.
@@ -86,7 +86,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("realtimeSort")]
 	[DefaultValue(false)]
-	public bool? RealtimeSort { get; set; } 
+	public bool? RealtimeSort { get; set; }
 
 	/// <summary>
 	/// Since v4.7.0   
@@ -95,14 +95,14 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("showBackground")]
 	[DefaultValue(false)]
-	public bool? ShowBackground { get; set; } 
+	public bool? ShowBackground { get; set; }
 
 	/// <summary>
 	/// Since v4.7.0   
 	/// Background style of each bar if showBackground is set to be true .
 	/// </summary>
 	[JsonPropertyName("backgroundStyle")]
-	public BackgroundStyle? BackgroundStyle { get; set; } 
+	public BackgroundStyle? BackgroundStyle { get; set; }
 
 	/// <summary>
 	/// Text label of , to explain some data information about graphic item like value, name and so on.
@@ -110,20 +110,20 @@ public partial class BarSeries : ISeries
 	/// In ECharts 3, to make the configuration structure flatter, label is taken to be at the same level with itemStyle , and has emphasis as itemStyle does.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configuration of label guide line.
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
 	/// Graphic style of , emphasis is the style when it is highlighted, like being hovered by mouse, or highlighted via legend connect.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -172,20 +172,20 @@ public partial class BarSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelLayout")]
-	public ObjectOrFunction? LabelLayout { get; set; } 
+	public ObjectOrFunction? LabelLayout { get; set; }
 
 	/// <summary>
 	/// Configurations of emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Configurations of blur state.
 	/// Available when emphasis.focus is set.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -193,7 +193,7 @@ public partial class BarSeries : ISeries
 	/// Available when selectedMode is set.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -206,7 +206,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// Name of stack.
@@ -218,7 +218,7 @@ public partial class BarSeries : ISeries
 	/// time and category axis are not supported.
 	/// </summary>
 	[JsonPropertyName("stack")]
-	public string? Stack { get; set; } 
+	public string? Stack { get; set; }
 
 	/// <summary>
 	/// Since v5.3.3   
@@ -230,7 +230,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("stackStrategy")]
 	[DefaultValue("samesign")]
-	public StackStrategy? StackStrategy { get; set; } 
+	public StackStrategy? StackStrategy { get; set; }
 
 	/// <summary>
 	/// The dowmsampling strategy used when the data size is much larger than pixel size.
@@ -242,14 +242,14 @@ public partial class BarSeries : ISeries
 	///  'average' Use average value of filter points  'max' Use maximum value of filter points  'min' Use minimum value of filter points  'sum' Use sum of filter points
 	/// </summary>
 	[JsonPropertyName("sampling")]
-	public string? Sampling { get; set; } 
+	public string? Sampling { get; set; }
 
 	/// <summary>
 	/// The mouse style when mouse hovers on an element, the same as cursor property in CSS .
 	/// </summary>
 	[JsonPropertyName("cursor")]
 	[DefaultValue("pointer")]
-	public string? Cursor { get; set; } 
+	public string? Cursor { get; set; }
 
 	/// <summary>
 	/// The width of the bar.
@@ -262,7 +262,7 @@ public partial class BarSeries : ISeries
 	/// This attribute should be set on the last 'bar' series in the coodinate system, then it will be adopted by all 'bar' series in the coordinate system.
 	/// </summary>
 	[JsonPropertyName("barWidth")]
-	public NumberOrString? BarWidth { get; set; } 
+	public NumberOrString? BarWidth { get; set; }
 
 	/// <summary>
 	/// The maximum width of the bar.
@@ -276,7 +276,7 @@ public partial class BarSeries : ISeries
 	/// This attribute should be set on the last 'bar' series in the coodinate system, then it will be adopted by all 'bar' series in the coordinate system.
 	/// </summary>
 	[JsonPropertyName("barMaxWidth")]
-	public NumberOrString? BarMaxWidth { get; set; } 
+	public NumberOrString? BarMaxWidth { get; set; }
 
 	/// <summary>
 	/// The minimum width of the bar.
@@ -291,7 +291,7 @@ public partial class BarSeries : ISeries
 	/// This attribute should be set on the last 'bar' series in the coodinate system, then it will be adopted by all 'bar' series in the coordinate system.
 	/// </summary>
 	[JsonPropertyName("barMinWidth")]
-	public NumberOrString? BarMinWidth { get; set; } 
+	public NumberOrString? BarMinWidth { get; set; }
 
 	/// <summary>
 	/// The minimum width of bar.
@@ -299,7 +299,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("barMinHeight")]
 	[DefaultValue(0)]
-	public double? BarMinHeight { get; set; } 
+	public double? BarMinHeight { get; set; }
 
 	/// <summary>
 	/// The minimum angle of bar.
@@ -308,7 +308,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("barMinAngle")]
 	[DefaultValue(0)]
-	public double? BarMinAngle { get; set; } 
+	public double? BarMinAngle { get; set; }
 
 	/// <summary>
 	/// The gap between bars between different series, is a percent value like '30%' , which means 30% of the bar width.
@@ -322,7 +322,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("barGap")]
 	[DefaultValue("30%")]
-	public string? BarGap { get; set; } 
+	public string? BarGap { get; set; }
 
 	/// <summary>
 	/// The bar gap of a single series, defaults to be 20% of the category gap, can be set as a fixed value.
@@ -332,7 +332,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("barCategoryGap")]
 	[DefaultValue("20%")]
-	public string? BarCategoryGap { get; set; } 
+	public string? BarCategoryGap { get; set; }
 
 	/// <summary>
 	/// Whether to enable the optimization of large-scale data.
@@ -344,14 +344,14 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("large")]
 	[DefaultValue(false)]
-	public bool? Large { get; set; } 
+	public bool? Large { get; set; }
 
 	/// <summary>
 	/// The threshold enabling the drawing optimization.
 	/// </summary>
 	[JsonPropertyName("largeThreshold")]
 	[DefaultValue("400")]
-	public double? LargeThreshold { get; set; } 
+	public double? LargeThreshold { get; set; }
 
 	/// <summary>
 	/// progressive specifies the amount of graphic elements that can be rendered within a frame (about 16ms) if "progressive rendering" enabled.
@@ -364,14 +364,14 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("progressive")]
 	[DefaultValue(5000)]
-	public double? Progressive { get; set; } 
+	public double? Progressive { get; set; }
 
 	/// <summary>
 	/// If current data amount is over the threshold, "progressive rendering" is enabled.
 	/// </summary>
 	[JsonPropertyName("progressiveThreshold")]
 	[DefaultValue(3000)]
-	public double? ProgressiveThreshold { get; set; } 
+	public double? ProgressiveThreshold { get; set; }
 
 	/// <summary>
 	/// Chunk approach, optional values:   'sequential' : slice data by data index.
@@ -379,7 +379,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("progressiveChunkMode")]
 	[DefaultValue("mod")]
-	public string? ProgressiveChunkMode { get; set; } 
+	public string? ProgressiveChunkMode { get; set; }
 
 	/// <summary>
 	/// dimensions can be used to define dimension info for series.data or dataset.source .
@@ -548,7 +548,7 @@ public partial class BarSeries : ISeries
 	/// };
 	/// </summary>
 	[JsonPropertyName("encode")]
-	public Encode? Encode { get; set; } 
+	public Encode? Encode { get; set; }
 
 	/// <summary>
 	/// When dataset is used, seriesLayoutBy specifies whether the column or the row of dataset is mapped to the series, namely, the series is "layout" on columns or rows.
@@ -561,7 +561,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("seriesLayoutBy")]
 	[DefaultValue("column")]
-	public SeriesLayoutBy? SeriesLayoutBy { get; set; } 
+	public SeriesLayoutBy? SeriesLayoutBy { get; set; }
 
 	/// <summary>
 	/// If series.data is not specified, and dataset exists, the series will use dataset .
@@ -569,7 +569,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("datasetIndex")]
 	[DefaultValue(0)]
-	public int? DatasetIndex { get; set; } 
+	public int? DatasetIndex { get; set; }
 
 	/// <summary>
 	/// A groupID common to all data in the series.
@@ -685,7 +685,7 @@ public partial class BarSeries : ISeries
 	/// For example, line chart can break when encounter an empty value, and scatter chart do not display graphic elements for empty values.
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// Since v4.4.0   
@@ -704,26 +704,26 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("clip")]
 	[DefaultValue("true")]
-	public bool? Clip { get; set; } 
+	public bool? Clip { get; set; }
 
 	/// <summary>
 	/// Mark point in a chart.
 	/// </summary>
 	[JsonPropertyName("markPoint")]
-	public MarkPoint? MarkPoint { get; set; } 
+	public MarkPoint? MarkPoint { get; set; }
 
 	/// <summary>
 	/// Use a line in the chart to illustrate.
 	/// </summary>
 	[JsonPropertyName("markLine")]
-	public MarkLine? MarkLine { get; set; } 
+	public MarkLine? MarkLine { get; set; }
 
 	/// <summary>
 	/// Used to mark an area in chart.
 	/// For example, mark a time interval.
 	/// </summary>
 	[JsonPropertyName("markArea")]
-	public MarkArea? MarkArea { get; set; } 
+	public MarkArea? MarkArea { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in Bar chart .
@@ -737,7 +737,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in Bar chart , which controls order of drawing graphical components.
@@ -747,7 +747,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -755,14 +755,14 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -770,7 +770,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -780,7 +780,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -788,7 +788,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -801,7 +801,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -811,14 +811,14 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -831,7 +831,7 @@ public partial class BarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -847,12 +847,12 @@ public partial class BarSeries : ISeries
 	/// It is also possible to provide an object for more detailed configuration.
 	/// </summary>
 	[JsonPropertyName("universalTransition")]
-	public UniversalTransition? UniversalTransition { get; set; } 
+	public UniversalTransition? UniversalTransition { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

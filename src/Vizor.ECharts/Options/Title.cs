@@ -11,28 +11,28 @@ public partial class Title
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Set this to false to prevent the title from showing
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// The main title text, supporting for \n for newlines.
 	/// </summary>
 	[JsonPropertyName("text")]
 	[DefaultValue("")]
-	public string? Text { get; set; } 
+	public string? Text { get; set; }
 
 	/// <summary>
 	/// The hyper link of main title text.
 	/// </summary>
 	[JsonPropertyName("link")]
 	[DefaultValue("")]
-	public string? Link { get; set; } 
+	public string? Link { get; set; }
 
 	/// <summary>
 	/// Open the hyper link of main title in specified tab.
@@ -43,27 +43,27 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("target")]
 	[DefaultValue("blank")]
-	public string? Target { get; set; } 
+	public string? Target { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("textStyle")]
-	public TextStyle? TextStyle { get; set; } 
+	public TextStyle? TextStyle { get; set; }
 
 	/// <summary>
 	/// Subtitle text, supporting for \n for newlines.
 	/// </summary>
 	[JsonPropertyName("subtext")]
 	[DefaultValue("")]
-	public string? Subtext { get; set; } 
+	public string? Subtext { get; set; }
 
 	/// <summary>
 	/// The hyper link of subtitle text.
 	/// </summary>
 	[JsonPropertyName("sublink")]
 	[DefaultValue("")]
-	public string? Sublink { get; set; } 
+	public string? Sublink { get; set; }
 
 	/// <summary>
 	/// Open the hyper link of subtitle in specified tab, options:   
@@ -72,13 +72,13 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("subtarget")]
 	[DefaultValue("blank")]
-	public string? Subtarget { get; set; } 
+	public string? Subtarget { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("subtextStyle")]
-	public SubtextStyle? SubtextStyle { get; set; } 
+	public SubtextStyle? SubtextStyle { get; set; }
 
 	/// <summary>
 	/// The horizontal align of the component (including "text" and "subtext").
@@ -87,7 +87,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("textAlign")]
 	[DefaultValue("auto")]
-	public HorizontalAlign? TextAlign { get; set; } 
+	public HorizontalAlign? TextAlign { get; set; }
 
 	/// <summary>
 	/// The vertical align of the component (including "text" and "subtext").
@@ -96,14 +96,14 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("textVerticalAlign")]
 	[DefaultValue("auto")]
-	public VerticalAlign? TextVerticalAlign { get; set; } 
+	public VerticalAlign? TextVerticalAlign { get; set; }
 
 	/// <summary>
 	/// Set this to true to enable triggering events
 	/// </summary>
 	[JsonPropertyName("triggerEvent")]
 	[DefaultValue(false)]
-	public bool? TriggerEvent { get; set; } 
+	public bool? TriggerEvent { get; set; }
 
 	/// <summary>
 	/// title space around content.
@@ -125,14 +125,14 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("padding")]
 	[DefaultValue(5)]
-	public Padding? Padding { get; set; } 
+	public Padding? Padding { get; set; }
 
 	/// <summary>
 	/// The gap between the main title and subtitle.
 	/// </summary>
 	[JsonPropertyName("itemGap")]
 	[DefaultValue("10")]
-	public double? ItemGap { get; set; } 
+	public double? ItemGap { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -146,7 +146,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -156,7 +156,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between title  component and the left side of the container.
@@ -167,7 +167,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("auto")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between title  component and the top side of the container.
@@ -178,7 +178,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("auto")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between title  component and the right side of the container.
@@ -189,7 +189,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("auto")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between title  component and the bottom side of the container.
@@ -200,7 +200,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("auto")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Background color of title, which is transparent by default.
@@ -211,7 +211,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("backgroundColor")]
 	[DefaultValue("transparent")]
-	public Color? BackgroundColor { get; set; } 
+	public Color? BackgroundColor { get; set; }
 
 	/// <summary>
 	/// Border color of title.
@@ -219,14 +219,14 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("#ccc")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// Border width of title.
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue("0")]
-	public double? BorderWidth { get; set; } 
+	public double? BorderWidth { get; set; }
 
 	/// <summary>
 	/// The radius of rounded corner.
@@ -238,7 +238,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("borderRadius")]
 	[DefaultValue(0)]
-	public BorderRadius? BorderRadius { get; set; } 
+	public BorderRadius? BorderRadius { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -252,7 +252,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -262,7 +262,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
@@ -271,7 +271,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
@@ -280,84 +280,84 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("zoom")]
 	[DefaultValue("area zooming")]
-	public string? Zoom { get; set; } 
+	public string? Zoom { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("back")]
 	[DefaultValue("restore area zooming")]
-	public string? Back { get; set; } 
+	public string? Back { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("line")]
 	[DefaultValue("Switch to Line Chart")]
-	public string? Line { get; set; } 
+	public string? Line { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("bar")]
 	[DefaultValue("Switch to Bar Chart")]
-	public string? Bar { get; set; } 
+	public string? Bar { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("stack")]
 	[DefaultValue("Stack")]
-	public string? Stack { get; set; } 
+	public string? Stack { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("tiled")]
 	[DefaultValue("Tile")]
-	public string? Tiled { get; set; } 
+	public string? Tiled { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("rect")]
 	[DefaultValue("Rectangle selection")]
-	public string? Rect { get; set; } 
+	public string? Rect { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("polygon")]
 	[DefaultValue("Polygon selection")]
-	public string? Polygon { get; set; } 
+	public string? Polygon { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("lineX")]
 	[DefaultValue("Horizontal selection")]
-	public string? LineX { get; set; } 
+	public string? LineX { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("lineY")]
 	[DefaultValue("Vertical selection")]
-	public string? LineY { get; set; } 
+	public string? LineY { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("keep")]
 	[DefaultValue("Keep previous selection")]
-	public string? Keep { get; set; } 
+	public string? Keep { get; set; }
 
 	/// <summary>
 	/// 
@@ -373,14 +373,14 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("offsetCenter")]
 	[DefaultValue("0,20%")]
-	public NumberOrStringArray? OffsetCenter { get; set; } 
+	public NumberOrStringArray? OffsetCenter { get; set; }
 
 	/// <summary>
 	/// text color.
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("'#464646'")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// font style.
@@ -389,7 +389,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("fontStyle")]
 	[DefaultValue("normal")]
-	public FontStyle? FontStyle { get; set; } 
+	public FontStyle? FontStyle { get; set; }
 
 	/// <summary>
 	/// font thick weight.
@@ -398,7 +398,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("fontWeight")]
 	[DefaultValue("normal")]
-	public FontWeight? FontWeight { get; set; } 
+	public FontWeight? FontWeight { get; set; }
 
 	/// <summary>
 	/// font family.
@@ -407,14 +407,14 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("fontFamily")]
 	[DefaultValue("sans-serif")]
-	public string? FontFamily { get; set; } 
+	public string? FontFamily { get; set; }
 
 	/// <summary>
 	/// font size.
 	/// </summary>
 	[JsonPropertyName("fontSize")]
 	[DefaultValue("16")]
-	public double? FontSize { get; set; } 
+	public double? FontSize { get; set; }
 
 	/// <summary>
 	/// Line height of the text fragment.
@@ -431,7 +431,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("lineHeight")]
 	[DefaultValue("12")]
-	public double? LineHeight { get; set; } 
+	public double? LineHeight { get; set; }
 
 	/// <summary>
 	/// the text fragment border type.
@@ -449,7 +449,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("borderType")]
 	[DefaultValue("solid")]
-	public LineType? BorderType { get; set; } 
+	public LineType? BorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -460,33 +460,33 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("borderDashOffset")]
 	[DefaultValue("0")]
-	public double? BorderDashOffset { get; set; } 
+	public double? BorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Width of text block.
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("100")]
-	public double? Width { get; set; } 
+	public double? Width { get; set; }
 
 	/// <summary>
 	/// Height of text block.
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("50")]
-	public double? Height { get; set; } 
+	public double? Height { get; set; }
 
 	/// <summary>
 	/// Stroke color of the text.
 	/// </summary>
 	[JsonPropertyName("textBorderColor")]
-	public Color? TextBorderColor { get; set; } 
+	public Color? TextBorderColor { get; set; }
 
 	/// <summary>
 	/// Stroke line width of the text.
 	/// </summary>
 	[JsonPropertyName("textBorderWidth")]
-	public double? TextBorderWidth { get; set; } 
+	public double? TextBorderWidth { get; set; }
 
 	/// <summary>
 	/// Stroke line type of the text.
@@ -504,7 +504,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("textBorderType")]
 	[DefaultValue("solid")]
-	public LineType? TextBorderType { get; set; } 
+	public LineType? TextBorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -515,35 +515,35 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("textBorderDashOffset")]
 	[DefaultValue("0")]
-	public double? TextBorderDashOffset { get; set; } 
+	public double? TextBorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Shadow color of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowColor")]
 	[DefaultValue("#000")]
-	public Color? TextShadowColor { get; set; } 
+	public Color? TextShadowColor { get; set; }
 
 	/// <summary>
 	/// Shadow blue of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowBlur")]
 	[DefaultValue(0)]
-	public double? TextShadowBlur { get; set; } 
+	public double? TextShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow X offset of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowOffsetX")]
 	[DefaultValue(0)]
-	public double? TextShadowOffsetX { get; set; } 
+	public double? TextShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Shadow Y offset of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowOffsetY")]
 	[DefaultValue(0)]
-	public double? TextShadowOffsetY { get; set; } 
+	public double? TextShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Determine how to display the text when it's overflow.
@@ -553,7 +553,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("overflow")]
 	[DefaultValue("none")]
-	public Overflow? Overflow { get; set; } 
+	public Overflow? Overflow { get; set; }
 
 	/// <summary>
 	/// Ellipsis to be displayed when overflow is set to truncate .
@@ -561,7 +561,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("ellipsis")]
 	[DefaultValue("...")]
-	public string? Ellipsis { get; set; } 
+	public string? Ellipsis { get; set; }
 
 	/// <summary>
 	/// "Rich text styles" can be defined in this rich property.
@@ -598,7 +598,7 @@ public partial class Title
 	/// For more details, see Rich Text please.
 	/// </summary>
 	[JsonPropertyName("rich")]
-	public Rich? Rich { get; set; } 
+	public Rich? Rich { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -606,6 +606,6 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("valueAnimation")]
 	[DefaultValue(true)]
-	public bool? ValueAnimation { get; set; } 
+	public bool? ValueAnimation { get; set; }
 
 }

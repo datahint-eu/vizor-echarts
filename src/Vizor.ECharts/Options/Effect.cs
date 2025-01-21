@@ -11,21 +11,21 @@ public partial class Effect
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue(false)]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// The duration of special effect, which unit is second.
 	/// </summary>
 	[JsonPropertyName("period")]
 	[DefaultValue(4)]
-	public double? Period { get; set; } 
+	public double? Period { get; set; }
 
 	/// <summary>
 	/// Effect animation delay.
 	/// Can be number or callback function.
 	/// </summary>
 	[JsonPropertyName("delay")]
-	public NumberOrFunction? Delay { get; set; } 
+	public NumberOrFunction? Delay { get; set; }
 
 	/// <summary>
 	/// If symbol movement of special effect has a constant speed, which unit is pixel per second.
@@ -33,7 +33,7 @@ public partial class Effect
 	/// </summary>
 	[JsonPropertyName("constantSpeed")]
 	[DefaultValue(0)]
-	public double? ConstantSpeed { get; set; } 
+	public double? ConstantSpeed { get; set; }
 
 	/// <summary>
 	/// The symbol of special effect.
@@ -58,7 +58,7 @@ public partial class Effect
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("circle")]
-	public string? Symbol { get; set; } 
+	public string? Symbol { get; set; }
 
 	/// <summary>
 	/// The symbol size of special effect, which could be set as single number such as 10 .
@@ -67,13 +67,13 @@ public partial class Effect
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(3)]
-	public NumberOrNumberArray? SymbolSize { get; set; } 
+	public NumberOrNumberArray? SymbolSize { get; set; }
 
 	/// <summary>
 	/// The color of special effect symbol, which defaults to be same with lineStyle.color .
 	/// </summary>
 	[JsonPropertyName("color")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// The length of trail of special effect.
@@ -82,14 +82,14 @@ public partial class Effect
 	/// </summary>
 	[JsonPropertyName("trailLength")]
 	[DefaultValue(0.2)]
-	public double? TrailLength { get; set; } 
+	public double? TrailLength { get; set; }
 
 	/// <summary>
 	/// Whether to loop the special effect animation.
 	/// </summary>
 	[JsonPropertyName("loop")]
 	[DefaultValue(true)]
-	public bool? Loop { get; set; } 
+	public bool? Loop { get; set; }
 
 	/// <summary>
 	/// Since v5.4.0   
@@ -97,6 +97,6 @@ public partial class Effect
 	/// </summary>
 	[JsonPropertyName("roundTrip")]
 	[DefaultValue(false)]
-	public bool? RoundTrip { get; set; } 
+	public bool? RoundTrip { get; set; }
 
 }

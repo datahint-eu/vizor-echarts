@@ -11,7 +11,7 @@ public partial class Calendar
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -25,7 +25,7 @@ public partial class Calendar
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -35,7 +35,7 @@ public partial class Calendar
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between calendar component and the left side of the container.
@@ -46,7 +46,7 @@ public partial class Calendar
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue(80)]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between calendar component and the top side of the container.
@@ -57,7 +57,7 @@ public partial class Calendar
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue(60)]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between calendar component and the right side of the container.
@@ -68,7 +68,7 @@ public partial class Calendar
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("auto")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between calendar component and the bottom side of the container.
@@ -79,7 +79,7 @@ public partial class Calendar
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("auto")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// The height of calendar coordinates.
@@ -89,7 +89,7 @@ public partial class Calendar
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("auto")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// The height of calendar coordinates.
@@ -99,7 +99,7 @@ public partial class Calendar
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("auto")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// Required, range of Calendar coordinates, support multiple formats.
@@ -117,7 +117,7 @@ public partial class Calendar
 	/// range: ['2017-01', '2017-02']
 	/// </summary>
 	[JsonPropertyName("range")]
-	public NumberOrStringArray? Range { get; set; } 
+	public NumberOrStringArray? Range { get; set; }
 
 	/// <summary>
 	/// The size of each rect of calendar coordinates, can be set to a single value or array, the first element is width and the second element is height.
@@ -141,7 +141,7 @@ public partial class Calendar
 	/// </summary>
 	[JsonPropertyName("cellSize")]
 	[DefaultValue("20")]
-	public CellSize? CellSize { get; set; } 
+	public CellSize? CellSize { get; set; }
 
 	/// <summary>
 	/// The layout orientation of calendar.
@@ -150,37 +150,37 @@ public partial class Calendar
 	/// </summary>
 	[JsonPropertyName("orient")]
 	[DefaultValue("horizontal")]
-	public Orient? Orient { get; set; } 
+	public Orient? Orient { get; set; }
 
 	/// <summary>
 	/// Calendar coordinates splitLine style.
 	/// </summary>
 	[JsonPropertyName("splitLine")]
-	public SplitLine? SplitLine { get; set; } 
+	public SplitLine? SplitLine { get; set; }
 
 	/// <summary>
 	/// Every rect style in calendar coordinates.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Day style in calendar coordinates.
 	/// </summary>
 	[JsonPropertyName("dayLabel")]
-	public DayLabel? DayLabel { get; set; } 
+	public DayLabel? DayLabel { get; set; }
 
 	/// <summary>
 	/// Month label in calendar coordinates.
 	/// </summary>
 	[JsonPropertyName("monthLabel")]
-	public MonthLabel? MonthLabel { get; set; } 
+	public MonthLabel? MonthLabel { get; set; }
 
 	/// <summary>
 	/// Year label in calendar coordinates.
 	/// </summary>
 	[JsonPropertyName("yearLabel")]
-	public YearLabel? YearLabel { get; set; } 
+	public YearLabel? YearLabel { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -188,6 +188,6 @@ public partial class Calendar
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 }

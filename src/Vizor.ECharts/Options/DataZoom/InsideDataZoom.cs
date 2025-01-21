@@ -14,14 +14,14 @@ public partial class InsideDataZoom : IDataZoom
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Whether disable inside zoom.
 	/// </summary>
 	[JsonPropertyName("disabled")]
 	[DefaultValue(false)]
-	public bool? Disabled { get; set; } 
+	public bool? Disabled { get; set; }
 
 	/// <summary>
 	/// Specify which xAxis is/are controlled by the dataZoom-inside when catesian coordinate system is used.
@@ -51,7 +51,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// }
 	/// </summary>
 	[JsonPropertyName("xAxisIndex")]
-	public NumberOrNumberArray? XAxisIndex { get; set; } 
+	public NumberOrNumberArray? XAxisIndex { get; set; }
 
 	/// <summary>
 	/// Specify which yAxis is/are controlled by the dataZoom-inside when catesian coordinate system is used.
@@ -81,7 +81,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// }
 	/// </summary>
 	[JsonPropertyName("yAxisIndex")]
-	public NumberOrNumberArray? YAxisIndex { get; set; } 
+	public NumberOrNumberArray? YAxisIndex { get; set; }
 
 	/// <summary>
 	/// Specify which radiusAxis is/are controlled by the dataZoom-inside when polar coordinate system is used.
@@ -108,7 +108,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// }
 	/// </summary>
 	[JsonPropertyName("radiusAxisIndex")]
-	public NumberOrNumberArray? RadiusAxisIndex { get; set; } 
+	public NumberOrNumberArray? RadiusAxisIndex { get; set; }
 
 	/// <summary>
 	/// Specify which angleAxis is/are controlled by the dataZoom-inside when polar coordinate system is used.
@@ -135,7 +135,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// }
 	/// </summary>
 	[JsonPropertyName("angleAxisIndex")]
-	public NumberOrNumberArray? AngleAxisIndex { get; set; } 
+	public NumberOrNumberArray? AngleAxisIndex { get; set; }
 
 	/// <summary>
 	/// Generally dataZoom component zoom or roam coordinate system through data filtering and set the windows of axes internally.
@@ -221,7 +221,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("filterMode")]
 	[DefaultValue("filter")]
-	public DataZoomFilterMode? FilterMode { get; set; } 
+	public DataZoomFilterMode? FilterMode { get; set; }
 
 	/// <summary>
 	/// The start percentage of the window out of the data extent, in the range of 0 ~ 100.
@@ -232,7 +232,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("start")]
 	[DefaultValue(0)]
-	public double? Start { get; set; } 
+	public double? Start { get; set; }
 
 	/// <summary>
 	/// The end percentage of the window out of the data extent, in the range of 0 ~ 100.
@@ -243,7 +243,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("end")]
 	[DefaultValue("100")]
-	public double? End { get; set; } 
+	public double? End { get; set; }
 
 	/// <summary>
 	/// The start absolute value of the window, not works when dataZoom-inside.start is set.
@@ -256,7 +256,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// More info about the relationship between dataZoom-inside.startValue and axis extent can be checked in dataZoom-inside.rangeMode .
 	/// </summary>
 	[JsonPropertyName("startValue")]
-	public NumberOrString? StartValue { get; set; } 
+	public NumberOrString? StartValue { get; set; }
 
 	/// <summary>
 	/// The end absolute value of the window, doesn't work when dataZoom-inside.end is set.
@@ -269,7 +269,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// More info about the relationship between dataZoom-inside.endValue and axis extent can be checked in dataZoom-inside.rangeMode .
 	/// </summary>
 	[JsonPropertyName("endValue")]
-	public NumberOrString? EndValue { get; set; } 
+	public NumberOrString? EndValue { get; set; }
 
 	/// <summary>
 	/// Used to restrict minimal window size, in percent, which value is in the range of [0, 100].
@@ -277,7 +277,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// If dataZoom-inside.minValueSpan is set, minSpan does not work any more.
 	/// </summary>
 	[JsonPropertyName("minSpan")]
-	public double? MinSpan { get; set; } 
+	public double? MinSpan { get; set; }
 
 	/// <summary>
 	/// Used to restrict maximal window size, in percent, which value is in the range of [0, 100].
@@ -285,7 +285,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// If dataZoom-inside.maxValueSpan is set, maxSpan does not work any more.
 	/// </summary>
 	[JsonPropertyName("maxSpan")]
-	public double? MaxSpan { get; set; } 
+	public double? MaxSpan { get; set; }
 
 	/// <summary>
 	/// Used to restrict minimal window size.
@@ -295,7 +295,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// In category axis it can be set as 5 to represent 5 categories.
 	/// </summary>
 	[JsonPropertyName("minValueSpan")]
-	public NumberOrString? MinValueSpan { get; set; } 
+	public NumberOrString? MinValueSpan { get; set; }
 
 	/// <summary>
 	/// Used to restrict maximal window size.
@@ -305,7 +305,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// In category axis it can be set as 5 to represent 5 categories.
 	/// </summary>
 	[JsonPropertyName("maxValueSpan")]
-	public NumberOrString? MaxValueSpan { get; set; } 
+	public NumberOrString? MaxValueSpan { get; set; }
 
 	/// <summary>
 	/// Specify whether the layout of dataZoom component is horizontal or vertical.
@@ -317,7 +317,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// 'vertical' : vertical.
 	/// </summary>
 	[JsonPropertyName("orient")]
-	public Orient? Orient { get; set; } 
+	public Orient? Orient { get; set; }
 
 	/// <summary>
 	/// Specify whether to lock the size of window (selected area).
@@ -326,7 +326,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("zoomLock")]
 	[DefaultValue(false)]
-	public bool? ZoomLock { get; set; } 
+	public bool? ZoomLock { get; set; }
 
 	/// <summary>
 	/// Specify the frame rate of views refreshing, with unit millisecond (ms).
@@ -337,7 +337,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("throttle")]
 	[DefaultValue("100")]
-	public double? Throttle { get; set; } 
+	public double? Throttle { get; set; }
 
 	/// <summary>
 	/// The format is [rangeModeForStart, rangeModeForEnd] .
@@ -360,7 +360,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// When we are using dynamic data (update data periodically via setOption ), if in 'value ' mode, the window will be kept in a fixed value range despite how data are appended, while if in 'percent' mode, whe window range will be changed alone with the appended data (suppose axis.min and axis.max are not specified).
 	/// </summary>
 	[JsonPropertyName("rangeMode")]
-	public NumberOrStringArray? RangeMode { get; set; } 
+	public NumberOrStringArray? RangeMode { get; set; }
 
 	/// <summary>
 	/// How to trigger zoom.
@@ -372,7 +372,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("zoomOnMouseWheel")]
 	[DefaultValue("true")]
-	public DataZoomOnMouse? ZoomOnMouseWheel { get; set; } 
+	public DataZoomOnMouse? ZoomOnMouseWheel { get; set; }
 
 	/// <summary>
 	/// How to trigger data window move.
@@ -384,7 +384,7 @@ public partial class InsideDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("moveOnMouseMove")]
 	[DefaultValue("true")]
-	public DataZoomOnMouse? MoveOnMouseMove { get; set; } 
+	public DataZoomOnMouse? MoveOnMouseMove { get; set; }
 
 	/// <summary>
 	/// How to trigger data window move.
@@ -396,13 +396,13 @@ public partial class InsideDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("moveOnMouseWheel")]
 	[DefaultValue("true")]
-	public DataZoomOnMouse? MoveOnMouseWheel { get; set; } 
+	public DataZoomOnMouse? MoveOnMouseWheel { get; set; }
 
 	/// <summary>
 	/// Whether to prevent default behavior of mouse move event.
 	/// </summary>
 	[JsonPropertyName("preventDefaultMouseMove")]
 	[DefaultValue("true")]
-	public bool? PreventDefaultMouseMove { get; set; } 
+	public bool? PreventDefaultMouseMove { get; set; }
 
 }

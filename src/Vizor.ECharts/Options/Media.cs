@@ -10,13 +10,13 @@ public partial class Media
 	/// If more than one properties used, it means "and".
 	/// </summary>
 	[JsonPropertyName("query")]
-	public Query? Query { get; set; } 
+	public Query? Query { get; set; }
 
 	/// <summary>
 	/// Each item of this array is an echarts option ( ECUnitOption ).
 	/// It will be applied when this query is matched.
 	/// </summary>
 	[JsonPropertyName("option")]
-	public Option? Option { get; set; } 
+	public Option? Option { get; set; }
 
 }

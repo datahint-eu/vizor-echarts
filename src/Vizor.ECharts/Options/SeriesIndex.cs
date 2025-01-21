@@ -9,9 +9,9 @@ namespace Vizor.ECharts;
 /// </summary>
 public partial class SeriesIndex
 {
-	public object? Line { get; set; } 
+	public object? Line { get; set; }
 
 	[JsonPropertyName("bar")]
-	public object? Bar { get; set; } 
+	public object? Bar { get; set; }
 
 }

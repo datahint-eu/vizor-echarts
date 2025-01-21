@@ -15,7 +15,7 @@ public partial class Force
 	/// You can also use circular layout 'circular' .
 	/// </summary>
 	[JsonPropertyName("initLayout")]
-	public string? InitLayout { get; set; } 
+	public string? InitLayout { get; set; }
 
 	/// <summary>
 	/// The repulsion factor between nodes.
@@ -26,7 +26,7 @@ public partial class Force
 	/// </summary>
 	[JsonPropertyName("repulsion")]
 	[DefaultValue("50")]
-	public NumberOrNumberArray? Repulsion { get; set; } 
+	public NumberOrNumberArray? Repulsion { get; set; }
 
 	/// <summary>
 	/// The gravity factor enforcing nodes approach to the center.
@@ -34,7 +34,7 @@ public partial class Force
 	/// </summary>
 	[JsonPropertyName("gravity")]
 	[DefaultValue("0.1")]
-	public double? Gravity { get; set; } 
+	public double? Gravity { get; set; }
 
 	/// <summary>
 	/// The distance between 2 nodes on edge.
@@ -46,7 +46,7 @@ public partial class Force
 	/// </summary>
 	[JsonPropertyName("edgeLength")]
 	[DefaultValue("30")]
-	public NumberOrNumberArray? EdgeLength { get; set; } 
+	public NumberOrNumberArray? EdgeLength { get; set; }
 
 	/// <summary>
 	/// Because the force-directed layout will be steady after several iterations, this parameter will be decide whether to show the iteration animation of layout.
@@ -54,7 +54,7 @@ public partial class Force
 	/// </summary>
 	[JsonPropertyName("layoutAnimation")]
 	[DefaultValue("true")]
-	public bool? LayoutAnimation { get; set; } 
+	public bool? LayoutAnimation { get; set; }
 
 	/// <summary>
 	/// Since v4.5.0   
@@ -65,6 +65,6 @@ public partial class Force
 	/// </summary>
 	[JsonPropertyName("friction")]
 	[DefaultValue("0.6")]
-	public double? Friction { get; set; } 
+	public double? Friction { get; set; }
 
 }

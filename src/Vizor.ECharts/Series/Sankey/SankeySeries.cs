@@ -14,13 +14,13 @@ public partial class SankeySeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -34,7 +34,7 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -44,7 +44,7 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between sankey component and the left side of the container.
@@ -55,7 +55,7 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("5%")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between sankey component and the top side of the container.
@@ -66,7 +66,7 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("5%")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between sankey component and the right side of the container.
@@ -75,7 +75,7 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("20%")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between sankey component and the bottom side of the container.
@@ -84,33 +84,33 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("5%")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Width of sankey component.
 	/// </summary>
 	[JsonPropertyName("width")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of sankey component.
 	/// </summary>
 	[JsonPropertyName("height")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// The node width of rectangle in Sankey diagram.
 	/// </summary>
 	[JsonPropertyName("nodeWidth")]
 	[DefaultValue("20")]
-	public double? NodeWidth { get; set; } 
+	public double? NodeWidth { get; set; }
 
 	/// <summary>
 	/// The gap between any two rectangles in each column of the Sankey diagram.
 	/// </summary>
 	[JsonPropertyName("nodeGap")]
 	[DefaultValue("8")]
-	public double? NodeGap { get; set; } 
+	public double? NodeGap { get; set; }
 
 	/// <summary>
 	/// Controls the horizontal alignment of nodes in the diagram.
@@ -126,7 +126,7 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("nodeAlign")]
 	[DefaultValue("justify")]
-	public SankeyNodeAlign? NodeAlign { get; set; } 
+	public SankeyNodeAlign? NodeAlign { get; set; }
 
 	/// <summary>
 	/// The iterations of layout, which is used to iteratively optimize the position of the nodes and edges in the Sankey diagram to reduce the overlapping between nodes and edges.
@@ -135,7 +135,7 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("layoutIterations")]
 	[DefaultValue("32")]
-	public double? LayoutIterations { get; set; } 
+	public double? LayoutIterations { get; set; }
 
 	/// <summary>
 	/// The layout direction of the nodes in the Sankey diagram, which can be horizontal from left to right or vertical from top to bottom.
@@ -143,7 +143,7 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("orient")]
 	[DefaultValue("horizontal")]
-	public Orient? Orient { get; set; } 
+	public Orient? Orient { get; set; }
 
 	/// <summary>
 	/// The drag-and-drop interaction of the node, which is enabled by default.
@@ -152,14 +152,14 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("draggable")]
 	[DefaultValue("true")]
-	public bool? Draggable { get; set; } 
+	public bool? Draggable { get; set; }
 
 	/// <summary>
 	/// Since v5.4.1   
 	/// The label style of each edge/link.
 	/// </summary>
 	[JsonPropertyName("edgeLabel")]
-	public EdgeLabel? EdgeLabel { get; set; } 
+	public EdgeLabel? EdgeLabel { get; set; }
 
 	/// <summary>
 	/// The setting of each layer of Sankey diagram.
@@ -194,13 +194,13 @@ public partial class SankeySeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("levels")]
-	public List<SankeySeriesLevel>? Levels { get; set; } 
+	public List<SankeySeriesLevel>? Levels { get; set; }
 
 	/// <summary>
 	/// label describes the text label style in each rectangular node.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -249,25 +249,25 @@ public partial class SankeySeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelLayout")]
-	public ObjectOrFunction? LabelLayout { get; set; } 
+	public ObjectOrFunction? LabelLayout { get; set; }
 
 	/// <summary>
 	/// The style of node rectangle in Sankey diagram.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// The edge style of Sankey diagram
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// Configurations of emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -275,7 +275,7 @@ public partial class SankeySeries : ISeries
 	/// Available when emphasis.focus is set.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -283,7 +283,7 @@ public partial class SankeySeries : ISeries
 	/// Available when selectedMode is set.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -336,13 +336,13 @@ public partial class SankeySeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("links")]
-	public object? Links { get; set; } 
+	public object? Links { get; set; }
 
 	/// <summary>
 	/// Equals to links
 	/// </summary>
 	[JsonPropertyName("edges")]
-	public object? Edges { get; set; } 
+	public object? Edges { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -350,14 +350,14 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -365,7 +365,7 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -375,7 +375,7 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -383,7 +383,7 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("linear")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -396,7 +396,7 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -406,14 +406,14 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -426,12 +426,12 @@ public partial class SankeySeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

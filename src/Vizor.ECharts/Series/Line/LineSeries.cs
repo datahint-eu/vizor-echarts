@@ -14,13 +14,13 @@ public partial class LineSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -29,7 +29,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("colorBy")]
 	[DefaultValue("series")]
-	public ColorBy? ColorBy { get; set; } 
+	public ColorBy? ColorBy { get; set; }
 
 	/// <summary>
 	/// The coordinate used in the series, whose options are:   
@@ -41,28 +41,28 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("coordinateSystem")]
 	[DefaultValue("cartesian2d")]
-	public string? CoordinateSystem { get; set; } 
+	public string? CoordinateSystem { get; set; }
 
 	/// <summary>
 	/// Index of x axis to combine with, which is  useful for multiple x axes in one chart.
 	/// </summary>
 	[JsonPropertyName("xAxisIndex")]
 	[DefaultValue(0)]
-	public int? XAxisIndex { get; set; } 
+	public int? XAxisIndex { get; set; }
 
 	/// <summary>
 	/// Index of y axis to combine with, which is  useful for multiple y axes in one chart.
 	/// </summary>
 	[JsonPropertyName("yAxisIndex")]
 	[DefaultValue(0)]
-	public int? YAxisIndex { get; set; } 
+	public int? YAxisIndex { get; set; }
 
 	/// <summary>
 	/// Index of polar coordinate to combine with, which is useful for multiple polar axes in one chart.
 	/// </summary>
 	[JsonPropertyName("polarIndex")]
 	[DefaultValue(0)]
-	public int? PolarIndex { get; set; } 
+	public int? PolarIndex { get; set; }
 
 	/// <summary>
 	/// Symbol of .
@@ -84,7 +84,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("circle")]
-	public StringOrFunction? Symbol { get; set; } 
+	public StringOrFunction? Symbol { get; set; }
 
 	/// <summary>
 	/// symbol size.
@@ -96,7 +96,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(4)]
-	public NumberArrayOrFunction? SymbolSize { get; set; } 
+	public NumberArrayOrFunction? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Rotate degree of  symbol.
@@ -109,14 +109,14 @@ public partial class LineSeries : ISeries
 	/// Callback is supported since 4.8.0 .
 	/// </summary>
 	[JsonPropertyName("symbolRotate")]
-	public NumberOrFunction? SymbolRotate { get; set; } 
+	public NumberOrFunction? SymbolRotate { get; set; }
 
 	/// <summary>
 	/// Whether to keep aspect for symbols in the form of path:// .
 	/// </summary>
 	[JsonPropertyName("symbolKeepAspect")]
 	[DefaultValue(false)]
-	public bool? SymbolKeepAspect { get; set; } 
+	public bool? SymbolKeepAspect { get; set; }
 
 	/// <summary>
 	/// Offset of  symbol relative to original position.
@@ -130,7 +130,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolOffset")]
 	[DefaultValue("[0, 0]")]
-	public double[]? SymbolOffset { get; set; } 
+	public double[]? SymbolOffset { get; set; }
 
 	/// <summary>
 	/// Whether to show symbol.
@@ -138,7 +138,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("showSymbol")]
 	[DefaultValue("true")]
-	public bool? ShowSymbol { get; set; } 
+	public bool? ShowSymbol { get; set; }
 
 	/// <summary>
 	/// Only work when main axis is 'category' axis ( axis.type is 'category' ).
@@ -150,14 +150,14 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("showAllSymbol")]
 	[DefaultValue("auto")]
-	public bool? ShowAllSymbol { get; set; } 
+	public bool? ShowAllSymbol { get; set; }
 
 	/// <summary>
 	/// Whether to enable highlighting chart when legend is being hovered.
 	/// </summary>
 	[JsonPropertyName("legendHoverLink")]
 	[DefaultValue("true")]
-	public bool? LegendHoverLink { get; set; } 
+	public bool? LegendHoverLink { get; set; }
 
 	/// <summary>
 	/// If stack the value.
@@ -171,7 +171,7 @@ public partial class LineSeries : ISeries
 	/// The effect of the below example could be seen through stack switching of toolbox on the top right corner:
 	/// </summary>
 	[JsonPropertyName("stack")]
-	public string? Stack { get; set; } 
+	public string? Stack { get; set; }
 
 	/// <summary>
 	/// Since v5.3.3   
@@ -183,21 +183,21 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("stackStrategy")]
 	[DefaultValue("samesign")]
-	public StackStrategy? StackStrategy { get; set; } 
+	public StackStrategy? StackStrategy { get; set; }
 
 	/// <summary>
 	/// The mouse style when mouse hovers on an element, the same as cursor property in CSS .
 	/// </summary>
 	[JsonPropertyName("cursor")]
 	[DefaultValue("pointer")]
-	public string? Cursor { get; set; } 
+	public string? Cursor { get; set; }
 
 	/// <summary>
 	/// Whether to connect the line across null points.
 	/// </summary>
 	[JsonPropertyName("connectNulls")]
 	[DefaultValue(false)]
-	public bool? ConnectNulls { get; set; } 
+	public bool? ConnectNulls { get; set; }
 
 	/// <summary>
 	/// Since v4.4.0   
@@ -216,7 +216,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("clip")]
 	[DefaultValue("true")]
-	public bool? Clip { get; set; } 
+	public bool? Clip { get; set; }
 
 	/// <summary>
 	/// Since v5.2.2   
@@ -224,7 +224,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("triggerLineEvent")]
 	[DefaultValue(false)]
-	public bool? TriggerLineEvent { get; set; } 
+	public bool? TriggerLineEvent { get; set; }
 
 	/// <summary>
 	/// Whether to show as a step line.
@@ -236,7 +236,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("step")]
 	[DefaultValue(false)]
-	public Step? Step { get; set; } 
+	public Step? Step { get; set; }
 
 	/// <summary>
 	/// Text label of , to explain some data information about graphic item like value, name and so on.
@@ -244,21 +244,21 @@ public partial class LineSeries : ISeries
 	/// In ECharts 3, to make the configuration structure flatter, label is taken to be at the same level with itemStyle , and has emphasis as itemStyle does.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Label on the end of line.
 	/// </summary>
 	[JsonPropertyName("endLabel")]
-	public EndLabel? EndLabel { get; set; } 
+	public EndLabel? EndLabel { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configuration of label guide line.
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -307,31 +307,31 @@ public partial class LineSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelLayout")]
-	public ObjectOrFunction? LabelLayout { get; set; } 
+	public ObjectOrFunction? LabelLayout { get; set; }
 
 	/// <summary>
 	/// The style of the symbol point of broken line.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Line style.
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// The style of area.
 	/// </summary>
 	[JsonPropertyName("areaStyle")]
-	public AreaStyle? AreaStyle { get; set; } 
+	public AreaStyle? AreaStyle { get; set; }
 
 	/// <summary>
 	/// Highlight style of the graphic.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -339,7 +339,7 @@ public partial class LineSeries : ISeries
 	/// Available when emphasis.focus is set.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -347,7 +347,7 @@ public partial class LineSeries : ISeries
 	/// Available when selectedMode is set.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -360,7 +360,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// Whether to show as smooth curve.
@@ -373,7 +373,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("smooth")]
 	[DefaultValue(false)]
-	public NumberOrBool? Smooth { get; set; } 
+	public NumberOrBool? Smooth { get; set; }
 
 	/// <summary>
 	/// Whether the broken line keep the monotonicity when it is smoothed.
@@ -386,7 +386,7 @@ public partial class LineSeries : ISeries
 	///   It is set as 'x' :
 	/// </summary>
 	[JsonPropertyName("smoothMonotone")]
-	public string? SmoothMonotone { get; set; } 
+	public string? SmoothMonotone { get; set; }
 
 	/// <summary>
 	/// The dowmsampling strategy used when the data size is much larger than pixel size.
@@ -398,7 +398,7 @@ public partial class LineSeries : ISeries
 	///  'average' Use average value of filter points  'max' Use maximum value of filter points  'min' Use minimum value of filter points  'sum' Use sum of filter points
 	/// </summary>
 	[JsonPropertyName("sampling")]
-	public string? Sampling { get; set; } 
+	public string? Sampling { get; set; }
 
 	/// <summary>
 	/// dimensions can be used to define dimension info for series.data or dataset.source .
@@ -442,7 +442,7 @@ public partial class LineSeries : ISeries
 	/// Otherwise, tooltip will displayed only value horizontally.
 	/// </summary>
 	[JsonPropertyName("dimensions")]
-	public string[]? Dimensions { get; set; } 
+	public string[]? Dimensions { get; set; }
 
 	/// <summary>
 	/// Define what is encoded to for each dimension of data .
@@ -567,7 +567,7 @@ public partial class LineSeries : ISeries
 	/// };
 	/// </summary>
 	[JsonPropertyName("encode")]
-	public Encode? Encode { get; set; } 
+	public Encode? Encode { get; set; }
 
 	/// <summary>
 	/// When dataset is used, seriesLayoutBy specifies whether the column or the row of dataset is mapped to the series, namely, the series is "layout" on columns or rows.
@@ -580,7 +580,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("seriesLayoutBy")]
 	[DefaultValue("column")]
-	public SeriesLayoutBy? SeriesLayoutBy { get; set; } 
+	public SeriesLayoutBy? SeriesLayoutBy { get; set; }
 
 	/// <summary>
 	/// If series.data is not specified, and dataset exists, the series will use dataset .
@@ -588,7 +588,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("datasetIndex")]
 	[DefaultValue(0)]
-	public int? DatasetIndex { get; set; } 
+	public int? DatasetIndex { get; set; }
 
 	/// <summary>
 	/// A groupID common to all data in the series.
@@ -704,26 +704,26 @@ public partial class LineSeries : ISeries
 	/// For example, line chart can break when encounter an empty value, and scatter chart do not display graphic elements for empty values.
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// Mark point in a chart.
 	/// </summary>
 	[JsonPropertyName("markPoint")]
-	public MarkPoint? MarkPoint { get; set; } 
+	public MarkPoint? MarkPoint { get; set; }
 
 	/// <summary>
 	/// Use a line in the chart to illustrate.
 	/// </summary>
 	[JsonPropertyName("markLine")]
-	public MarkLine? MarkLine { get; set; } 
+	public MarkLine? MarkLine { get; set; }
 
 	/// <summary>
 	/// Used to mark an area in chart.
 	/// For example, mark a time interval.
 	/// </summary>
 	[JsonPropertyName("markArea")]
-	public MarkArea? MarkArea { get; set; } 
+	public MarkArea? MarkArea { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in Line.
@@ -737,7 +737,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in Line, which controls order of drawing graphical components.
@@ -747,7 +747,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -755,14 +755,14 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -770,7 +770,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -780,7 +780,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -788,7 +788,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("linear")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -801,7 +801,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -811,14 +811,14 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -831,7 +831,7 @@ public partial class LineSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -847,12 +847,12 @@ public partial class LineSeries : ISeries
 	/// It is also possible to provide an object for more detailed configuration.
 	/// </summary>
 	[JsonPropertyName("universalTransition")]
-	public UniversalTransition? UniversalTransition { get; set; } 
+	public UniversalTransition? UniversalTransition { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

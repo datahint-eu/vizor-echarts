@@ -11,7 +11,7 @@ public partial class AngleAxis
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// The index of angle axis in Polar Coordinate.
@@ -19,7 +19,7 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("polarIndex")]
 	[DefaultValue(0)]
-	public int? PolarIndex { get; set; } 
+	public int? PolarIndex { get; set; }
 
 	/// <summary>
 	/// Starting angle of axis.
@@ -30,7 +30,7 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("startAngle")]
 	[DefaultValue("90")]
-	public double? StartAngle { get; set; } 
+	public double? StartAngle { get; set; }
 
 	/// <summary>
 	/// Whether the positive position of axis is clockwise.
@@ -40,7 +40,7 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("clockwise")]
 	[DefaultValue("true")]
-	public bool? Clockwise { get; set; } 
+	public bool? Clockwise { get; set; }
 
 	/// <summary>
 	/// Type of axis.
@@ -59,7 +59,7 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("type")]
 	[DefaultValue("category")]
-	public string? Type { get; set; } 
+	public string? Type { get; set; }
 
 	/// <summary>
 	/// The boundary gap on both sides of a coordinate axis.
@@ -73,7 +73,7 @@ public partial class AngleAxis
 	/// Example:  boundaryGap: ['20%', '20%']
 	/// </summary>
 	[JsonPropertyName("boundaryGap")]
-	public BoundaryGap? BoundaryGap { get; set; } 
+	public BoundaryGap? BoundaryGap { get; set; }
 
 	/// <summary>
 	/// The minimun value of axis.
@@ -93,7 +93,7 @@ public partial class AngleAxis
 	/// This function should return the min value of axis, or return null / undefined to make echarts use the auto calculated min value ( null / undefined return is only supported since v4.8.0 ).
 	/// </summary>
 	[JsonPropertyName("min")]
-	public NumberOrStringOrFunction? Min { get; set; } 
+	public NumberOrStringOrFunction? Min { get; set; }
 
 	/// <summary>
 	/// The maximum value of axis.
@@ -113,7 +113,7 @@ public partial class AngleAxis
 	/// This function should return the max value of axis, or return null / undefined to make echarts use the auto calculated max value ( null / undefined return is only supported since v4.8.0 ).
 	/// </summary>
 	[JsonPropertyName("max")]
-	public NumberOrStringOrFunction? Max { get; set; } 
+	public NumberOrStringOrFunction? Max { get; set; }
 
 	/// <summary>
 	/// It is available only in numerical axis, i.e., type : 'value'.
@@ -125,7 +125,7 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("scale")]
 	[DefaultValue(false)]
-	public bool? Scale { get; set; } 
+	public bool? Scale { get; set; }
 
 	/// <summary>
 	/// Number of segments that the axis is split into.
@@ -135,7 +135,7 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("splitNumber")]
 	[DefaultValue("5")]
-	public double? SplitNumber { get; set; } 
+	public double? SplitNumber { get; set; }
 
 	/// <summary>
 	/// Minimum gap between split lines.
@@ -148,7 +148,7 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("minInterval")]
 	[DefaultValue(0)]
-	public double? MinInterval { get; set; } 
+	public double? MinInterval { get; set; }
 
 	/// <summary>
 	/// Maximum gap between split lines.
@@ -160,7 +160,7 @@ public partial class AngleAxis
 	/// It is available only for axis of type 'value' or 'time'.
 	/// </summary>
 	[JsonPropertyName("maxInterval")]
-	public double? MaxInterval { get; set; } 
+	public double? MaxInterval { get; set; }
 
 	/// <summary>
 	/// Compulsively set segmentation interval for axis.
@@ -174,21 +174,21 @@ public partial class AngleAxis
 	/// Logged value should be passed for type : 'log' axis.
 	/// </summary>
 	[JsonPropertyName("interval")]
-	public double? Interval { get; set; } 
+	public double? Interval { get; set; }
 
 	/// <summary>
 	/// Base of logarithm, which is valid only for numeric axes with type : 'log'.
 	/// </summary>
 	[JsonPropertyName("logBase")]
 	[DefaultValue("10")]
-	public double? LogBase { get; set; } 
+	public double? LogBase { get; set; }
 
 	/// <summary>
 	/// Set this to true , to prevent interaction with the axis.
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Set this to true to enable triggering events.
@@ -207,19 +207,19 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("triggerEvent")]
 	[DefaultValue(false)]
-	public bool? TriggerEvent { get; set; } 
+	public bool? TriggerEvent { get; set; }
 
 	/// <summary>
 	/// Settings related to axis line.
 	/// </summary>
 	[JsonPropertyName("axisLine")]
-	public AxisLine? AxisLine { get; set; } 
+	public AxisLine? AxisLine { get; set; }
 
 	/// <summary>
 	/// Settings related to axis tick.
 	/// </summary>
 	[JsonPropertyName("axisTick")]
-	public AxisTick? AxisTick { get; set; } 
+	public AxisTick? AxisTick { get; set; }
 
 	/// <summary>
 	/// Since v4.6.0   
@@ -233,26 +233,26 @@ public partial class AngleAxis
 	/// 2) Using minor ticks in log axis.
 	/// </summary>
 	[JsonPropertyName("minorTick")]
-	public MinorTick? MinorTick { get; set; } 
+	public MinorTick? MinorTick { get; set; }
 
 	/// <summary>
 	/// Settings related to axis label.
 	/// </summary>
 	[JsonPropertyName("axisLabel")]
-	public AxisLabel? AxisLabel { get; set; } 
+	public AxisLabel? AxisLabel { get; set; }
 
 	/// <summary>
 	/// Split line of axis in grid area.
 	/// </summary>
 	[JsonPropertyName("splitLine")]
-	public SplitLine? SplitLine { get; set; } 
+	public SplitLine? SplitLine { get; set; }
 
 	/// <summary>
 	/// Since v4.6.0   
 	/// Minor split lines of axis in the grid area。It will align to the minorTick
 	/// </summary>
 	[JsonPropertyName("minorSplitLine")]
-	public MinorSplitLine? MinorSplitLine { get; set; } 
+	public MinorSplitLine? MinorSplitLine { get; set; }
 
 	/// <summary>
 	/// Split area of axis in grid area, not shown by default.
@@ -285,20 +285,20 @@ public partial class AngleAxis
 	/// }, 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// axisPointer settings on the axis.
 	/// </summary>
 	[JsonPropertyName("axisPointer")]
-	public AxisPointer? AxisPointer { get; set; } 
+	public AxisPointer? AxisPointer { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -306,7 +306,7 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -316,7 +316,7 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -324,7 +324,7 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -337,7 +337,7 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -347,14 +347,14 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Delay before updating animation, which supports callback function for different data to have different animation effects.
@@ -367,7 +367,7 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("animationDelayUpdate")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+	public NumberOrFunction? AnimationDelayUpdate { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in Angle Axis.
@@ -381,7 +381,7 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in Angle Axis, which controls order of drawing graphical components.
@@ -391,6 +391,6 @@ public partial class AngleAxis
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(0)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 }

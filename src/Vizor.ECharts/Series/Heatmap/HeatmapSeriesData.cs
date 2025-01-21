@@ -10,38 +10,38 @@ public partial class HeatmapSeriesData
 	/// Name of data item.
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Value of data item.
 	/// </summary>
 	[JsonPropertyName("value")]
-	public object? Value { get; set; } 
+	public object? Value { get; set; }
 
 	/// <summary>
 	/// The groupID of this data item.
 	/// groupID will be used to classify the data.
 	/// </summary>
 	[JsonPropertyName("groupId")]
-	public string? GroupId { get; set; } 
+	public string? GroupId { get; set; }
 
 	/// <summary>
 	/// It is valid with coordinateSystem of 'cartesian2d' value.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Style of a single data point.
 	/// It is valid with coordinateSystem of 'cartesian2d' value.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 }

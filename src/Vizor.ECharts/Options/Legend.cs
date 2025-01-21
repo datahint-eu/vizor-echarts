@@ -17,21 +17,21 @@ public partial class Legend
 	/// When 'scroll' used, these options below can be used for detailed configuration:   legend.scrollDataIndex  legend.pageButtonItemGap  legend.pageButtonGap  legend.pageButtonPosition  legend.pageFormatter  legend.pageIcons  legend.pageIconColor  legend.pageIconInactiveColor  legend.pageIconSize  legend.pageTextStyle  legend.animation  legend.animationDurationUpdate
 	/// </summary>
 	[JsonPropertyName("type")]
-	public LegendType? Type { get; set; } 
+	public LegendType? Type { get; set; }
 
 	/// <summary>
 	/// Component ID, not specified by default.
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -45,7 +45,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -55,7 +55,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between legend component and the left side of the container.
@@ -66,7 +66,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("auto")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between legend component and the top side of the container.
@@ -77,7 +77,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("auto")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between legend component and the right side of the container.
@@ -88,7 +88,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("auto")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between legend component and the bottom side of the container.
@@ -99,7 +99,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("auto")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Width of legend component.
@@ -107,7 +107,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("auto")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of legend component.
@@ -115,7 +115,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("auto")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// The layout orientation of legend.
@@ -124,7 +124,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("orient")]
 	[DefaultValue("horizontal")]
-	public Orient? Orient { get; set; } 
+	public Orient? Orient { get; set; }
 
 	/// <summary>
 	/// Legend marker and text aligning.
@@ -135,7 +135,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("align")]
 	[DefaultValue("auto")]
-	public HorizontalAlign? Align { get; set; } 
+	public HorizontalAlign? Align { get; set; }
 
 	/// <summary>
 	/// legend space around content.
@@ -157,42 +157,42 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("padding")]
 	[DefaultValue(5)]
-	public Padding? Padding { get; set; } 
+	public Padding? Padding { get; set; }
 
 	/// <summary>
 	/// The distance between each legend, horizontal distance in horizontal layout, and vertical distance in vertical layout.
 	/// </summary>
 	[JsonPropertyName("itemGap")]
 	[DefaultValue("10")]
-	public double? ItemGap { get; set; } 
+	public double? ItemGap { get; set; }
 
 	/// <summary>
 	/// Image width of legend symbol.
 	/// </summary>
 	[JsonPropertyName("itemWidth")]
 	[DefaultValue("25")]
-	public double? ItemWidth { get; set; } 
+	public double? ItemWidth { get; set; }
 
 	/// <summary>
 	/// Image height of legend symbol.
 	/// </summary>
 	[JsonPropertyName("itemHeight")]
 	[DefaultValue("14")]
-	public double? ItemHeight { get; set; } 
+	public double? ItemHeight { get; set; }
 
 	/// <summary>
 	/// Legend item style.
 	/// If its children have values as 'inherit' , the values are inherited from corresponding series options.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Legend line style.
 	/// If its children have values as 'inherit' , the values are inherited from corresponding series options.
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// Rotation of the symbol, which can be number | 'inherit' .
@@ -200,7 +200,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("symbolRotate")]
 	[DefaultValue("inherit")]
-	public NumberOrString? SymbolRotate { get; set; } 
+	public NumberOrString? SymbolRotate { get; set; }
 
 	/// <summary>
 	/// Formatter is used to format label of legend, which supports string template and callback function.
@@ -213,7 +213,7 @@ public partial class Legend
 	/// }
 	/// </summary>
 	[JsonPropertyName("formatter")]
-	public StringOrFunction? Formatter { get; set; } 
+	public StringOrFunction? Formatter { get; set; }
 
 	/// <summary>
 	/// Selected mode of legend, which controls whether series can be toggled displaying by clicking legends.
@@ -223,21 +223,21 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(true)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// Legend color when not selected.
 	/// </summary>
 	[JsonPropertyName("inactiveColor")]
 	[DefaultValue("#ccc")]
-	public Color? InactiveColor { get; set; } 
+	public Color? InactiveColor { get; set; }
 
 	/// <summary>
 	/// Legend border color when not selected.
 	/// </summary>
 	[JsonPropertyName("inactiveBorderColor")]
 	[DefaultValue("#ccc")]
-	public Color? InactiveBorderColor { get; set; } 
+	public Color? InactiveBorderColor { get; set; }
 
 	/// <summary>
 	/// Legend border width when not selected.
@@ -246,7 +246,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("inactiveBorderWidth")]
 	[DefaultValue("#ccc")]
-	public Color? InactiveBorderWidth { get; set; } 
+	public Color? InactiveBorderWidth { get; set; }
 
 	/// <summary>
 	/// State table of selected legend.
@@ -259,19 +259,19 @@ public partial class Legend
 	/// }
 	/// </summary>
 	[JsonPropertyName("selected")]
-	public Selected? Selected { get; set; } 
+	public Selected? Selected { get; set; }
 
 	/// <summary>
 	/// Legend text style.
 	/// </summary>
 	[JsonPropertyName("textStyle")]
-	public TextStyle? TextStyle { get; set; } 
+	public TextStyle? TextStyle { get; set; }
 
 	/// <summary>
 	/// Tooltip configuration for legend tooltip, which is similar to tooltip .
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 	/// <summary>
 	/// Icon of the legend items.
@@ -319,7 +319,7 @@ public partial class Legend
 	/// }]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// Background color of legend, which is transparent by default.
@@ -330,7 +330,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("backgroundColor")]
 	[DefaultValue("transparent")]
-	public Color? BackgroundColor { get; set; } 
+	public Color? BackgroundColor { get; set; }
 
 	/// <summary>
 	/// Border color of legend.
@@ -338,14 +338,14 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("#ccc")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// Border width of legend.
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue("1")]
-	public double? BorderWidth { get; set; } 
+	public double? BorderWidth { get; set; }
 
 	/// <summary>
 	/// The radius of rounded corner.
@@ -357,7 +357,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("borderRadius")]
 	[DefaultValue(0)]
-	public BorderRadius? BorderRadius { get; set; } 
+	public BorderRadius? BorderRadius { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -371,7 +371,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -381,7 +381,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
@@ -390,7 +390,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
@@ -399,7 +399,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// It works when legend.type is 'scroll' .
@@ -412,7 +412,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("scrollDataIndex")]
 	[DefaultValue(0)]
-	public int? ScrollDataIndex { get; set; } 
+	public int? ScrollDataIndex { get; set; }
 
 	/// <summary>
 	/// It works when legend.type is 'scroll' .
@@ -423,7 +423,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("pageButtonItemGap")]
 	[DefaultValue(5)]
-	public double? PageButtonItemGap { get; set; } 
+	public double? PageButtonItemGap { get; set; }
 
 	/// <summary>
 	/// It works when legend.type is 'scroll' .
@@ -433,7 +433,7 @@ public partial class Legend
 	/// See vertically scrollable legend or horizontally scrollable legend .
 	/// </summary>
 	[JsonPropertyName("pageButtonGap")]
-	public double? PageButtonGap { get; set; } 
+	public double? PageButtonGap { get; set; }
 
 	/// <summary>
 	/// It works when legend.type is 'scroll' .
@@ -446,7 +446,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("pageButtonPosition")]
 	[DefaultValue("end")]
-	public string? PageButtonPosition { get; set; } 
+	public string? PageButtonPosition { get; set; }
 
 	/// <summary>
 	/// It works when legend.type is 'scroll' .
@@ -463,7 +463,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("pageFormatter")]
 	[DefaultValue("{current}/{total}")]
-	public StringOrFunction? PageFormatter { get; set; } 
+	public StringOrFunction? PageFormatter { get; set; }
 
 	/// <summary>
 	/// It works when legend.type is 'scroll' .
@@ -471,7 +471,7 @@ public partial class Legend
 	/// The icons of page buttons.
 	/// </summary>
 	[JsonPropertyName("pageIcons")]
-	public PageIcons? PageIcons { get; set; } 
+	public PageIcons? PageIcons { get; set; }
 
 	/// <summary>
 	/// It works when legend.type is 'scroll' .
@@ -482,7 +482,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("pageIconColor")]
 	[DefaultValue("#2f4554")]
-	public Color? PageIconColor { get; set; } 
+	public Color? PageIconColor { get; set; }
 
 	/// <summary>
 	/// It works when legend.type is 'scroll' .
@@ -493,7 +493,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("pageIconInactiveColor")]
 	[DefaultValue("#aaa")]
-	public Color? PageIconInactiveColor { get; set; } 
+	public Color? PageIconInactiveColor { get; set; }
 
 	/// <summary>
 	/// It works when legend.type is 'scroll' .
@@ -505,7 +505,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("pageIconSize")]
 	[DefaultValue("15,15")]
-	public NumberArray? PageIconSize { get; set; } 
+	public NumberArray? PageIconSize { get; set; }
 
 	/// <summary>
 	/// It works when legend.type is 'scroll' .
@@ -513,27 +513,27 @@ public partial class Legend
 	/// The text style of page info.
 	/// </summary>
 	[JsonPropertyName("pageTextStyle")]
-	public PageTextStyle? PageTextStyle { get; set; } 
+	public PageTextStyle? PageTextStyle { get; set; }
 
 	/// <summary>
 	/// Whether to use animation when page scrolls.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Duration of the page scroll animation.
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("800")]
-	public double? AnimationDurationUpdate { get; set; } 
+	public double? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v4.4.0   
@@ -561,14 +561,14 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("selector")]
 	[DefaultValue(false)]
-	public Selector? Selector { get; set; } 
+	public Selector? Selector { get; set; }
 
 	/// <summary>
 	/// Since v4.4.0   
 	/// The text label style of the selector button, which is displayed by default.
 	/// </summary>
 	[JsonPropertyName("selectorLabel")]
-	public SelectorLabel? SelectorLabel { get; set; } 
+	public SelectorLabel? SelectorLabel { get; set; }
 
 	/// <summary>
 	/// Since v4.4.0   
@@ -577,7 +577,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("selectorPosition")]
 	[DefaultValue("auto")]
-	public StartOrEnd? SelectorPosition { get; set; } 
+	public StartOrEnd? SelectorPosition { get; set; }
 
 	/// <summary>
 	/// Since v4.4.0   
@@ -585,7 +585,7 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("selectorItemGap")]
 	[DefaultValue("7")]
-	public double? SelectorItemGap { get; set; } 
+	public double? SelectorItemGap { get; set; }
 
 	/// <summary>
 	/// Since v4.4.0   
@@ -593,6 +593,6 @@ public partial class Legend
 	/// </summary>
 	[JsonPropertyName("selectorButtonGap")]
 	[DefaultValue("10")]
-	public double? SelectorButtonGap { get; set; } 
+	public double? SelectorButtonGap { get; set; }
 
 }

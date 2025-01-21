@@ -14,7 +14,7 @@ public partial class CandlestickSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// The coordinate used in the series, whose options are:   
@@ -23,27 +23,27 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("coordinateSystem")]
 	[DefaultValue("cartesian2d")]
-	public string? CoordinateSystem { get; set; } 
+	public string? CoordinateSystem { get; set; }
 
 	/// <summary>
 	/// Index of x axis to combine with, which is  useful for multiple x axes in one chart.
 	/// </summary>
 	[JsonPropertyName("xAxisIndex")]
 	[DefaultValue(0)]
-	public int? XAxisIndex { get; set; } 
+	public int? XAxisIndex { get; set; }
 
 	/// <summary>
 	/// Index of y axis to combine with, which is  useful for multiple y axes in one chart.
 	/// </summary>
 	[JsonPropertyName("yAxisIndex")]
 	[DefaultValue(0)]
-	public int? YAxisIndex { get; set; } 
+	public int? YAxisIndex { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -52,21 +52,21 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("colorBy")]
 	[DefaultValue("series")]
-	public ColorBy? ColorBy { get; set; } 
+	public ColorBy? ColorBy { get; set; }
 
 	/// <summary>
 	/// Whether to enable highlighting chart when legend is being hovered.
 	/// </summary>
 	[JsonPropertyName("legendHoverLink")]
 	[DefaultValue("true")]
-	public bool? LegendHoverLink { get; set; } 
+	public bool? LegendHoverLink { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation when hovering on box.
 	/// </summary>
 	[JsonPropertyName("hoverAnimation")]
 	[DefaultValue(true)]
-	public bool? HoverAnimation { get; set; } 
+	public bool? HoverAnimation { get; set; }
 
 	/// <summary>
 	/// Layout method, whose values may be:   
@@ -77,7 +77,7 @@ public partial class CandlestickSeries : ISeries
 	/// The default value is decided by:   if there is a category axis:  if it is horizontal, use 'horizontal' ;  otherwise use 'vertical' ;    otherwise use 'horizontal' .
 	/// </summary>
 	[JsonPropertyName("layout")]
-	public string? Layout { get; set; } 
+	public string? Layout { get; set; }
 
 	/// <summary>
 	/// Specify bar width.
@@ -86,7 +86,7 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("barWidth")]
 	[DefaultValue("70%")]
-	public double? BarWidth { get; set; } 
+	public double? BarWidth { get; set; }
 
 	/// <summary>
 	/// Specify bar min width.
@@ -94,7 +94,7 @@ public partial class CandlestickSeries : ISeries
 	/// Auto adapt by default.
 	/// </summary>
 	[JsonPropertyName("barMinWidth")]
-	public NumberOrString? BarMinWidth { get; set; } 
+	public NumberOrString? BarMinWidth { get; set; }
 
 	/// <summary>
 	/// Specify bar max width.
@@ -102,19 +102,19 @@ public partial class CandlestickSeries : ISeries
 	/// Auto adapt by default.
 	/// </summary>
 	[JsonPropertyName("barMaxWidth")]
-	public NumberOrString? BarMaxWidth { get; set; } 
+	public NumberOrString? BarMaxWidth { get; set; }
 
 	/// <summary>
 	/// Item style of candlestick.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Emphasis style of candlestick.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -122,7 +122,7 @@ public partial class CandlestickSeries : ISeries
 	/// Available when emphasis.focus is set.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -130,7 +130,7 @@ public partial class CandlestickSeries : ISeries
 	/// Available when selectedMode is set.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -143,7 +143,7 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// Whether to enable the optimization of large-scale data.
@@ -155,14 +155,14 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("large")]
 	[DefaultValue(true)]
-	public bool? Large { get; set; } 
+	public bool? Large { get; set; }
 
 	/// <summary>
 	/// The threshold enabling the drawing optimization.
 	/// </summary>
 	[JsonPropertyName("largeThreshold")]
 	[DefaultValue("600")]
-	public double? LargeThreshold { get; set; } 
+	public double? LargeThreshold { get; set; }
 
 	/// <summary>
 	/// progressive specifies the amount of graphic elements that can be rendered within a frame (about 16ms) if "progressive rendering" enabled.
@@ -175,14 +175,14 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("progressive")]
 	[DefaultValue(3000)]
-	public double? Progressive { get; set; } 
+	public double? Progressive { get; set; }
 
 	/// <summary>
 	/// If current data amount is over the threshold, "progressive rendering" is enabled.
 	/// </summary>
 	[JsonPropertyName("progressiveThreshold")]
 	[DefaultValue(10000)]
-	public double? ProgressiveThreshold { get; set; } 
+	public double? ProgressiveThreshold { get; set; }
 
 	/// <summary>
 	/// Chunk approach, optional values:   'sequential' : slice data by data index.
@@ -190,7 +190,7 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("progressiveChunkMode")]
 	[DefaultValue("mod")]
-	public string? ProgressiveChunkMode { get; set; } 
+	public string? ProgressiveChunkMode { get; set; }
 
 	/// <summary>
 	/// dimensions can be used to define dimension info for series.data or dataset.source .
@@ -359,7 +359,7 @@ public partial class CandlestickSeries : ISeries
 	/// };
 	/// </summary>
 	[JsonPropertyName("encode")]
-	public Encode? Encode { get; set; } 
+	public Encode? Encode { get; set; }
 
 	/// <summary>
 	/// A groupID common to all data in the series.
@@ -386,26 +386,26 @@ public partial class CandlestickSeries : ISeries
 	/// They are:  [open, close, lowest, highest]  (namely: [opening value, closing value, lowest value, highest value])
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// Mark point in a chart.
 	/// </summary>
 	[JsonPropertyName("markPoint")]
-	public MarkPoint? MarkPoint { get; set; } 
+	public MarkPoint? MarkPoint { get; set; }
 
 	/// <summary>
 	/// Use a line in the chart to illustrate.
 	/// </summary>
 	[JsonPropertyName("markLine")]
-	public MarkLine? MarkLine { get; set; } 
+	public MarkLine? MarkLine { get; set; }
 
 	/// <summary>
 	/// Used to mark an area in chart.
 	/// For example, mark a time interval.
 	/// </summary>
 	[JsonPropertyName("markArea")]
-	public MarkArea? MarkArea { get; set; } 
+	public MarkArea? MarkArea { get; set; }
 
 	/// <summary>
 	/// Since v4.5.0   
@@ -424,7 +424,7 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("clip")]
 	[DefaultValue("true")]
-	public bool? Clip { get; set; } 
+	public bool? Clip { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in Candlestick .
@@ -438,7 +438,7 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in Candlestick , which controls order of drawing graphical components.
@@ -448,7 +448,7 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -456,7 +456,7 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -466,7 +466,7 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("300")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -474,7 +474,7 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("linear")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -487,7 +487,7 @@ public partial class CandlestickSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -503,12 +503,12 @@ public partial class CandlestickSeries : ISeries
 	/// It is also possible to provide an object for more detailed configuration.
 	/// </summary>
 	[JsonPropertyName("universalTransition")]
-	public UniversalTransition? UniversalTransition { get; set; } 
+	public UniversalTransition? UniversalTransition { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

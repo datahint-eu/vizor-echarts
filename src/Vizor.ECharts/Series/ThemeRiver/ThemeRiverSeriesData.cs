@@ -10,18 +10,18 @@ public partial class ThemeRiverSeriesData
 	/// the time attribute of time and theme.
 	/// </summary>
 	[JsonPropertyName("date")]
-	public string? Date { get; set; } 
+	public string? Date { get; set; }
 
 	/// <summary>
 	/// the value of an event or theme at a time point.
 	/// </summary>
 	[JsonPropertyName("value")]
-	public double? Value { get; set; } 
+	public double? Value { get; set; }
 
 	/// <summary>
 	/// the name of an event or theme.
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 }

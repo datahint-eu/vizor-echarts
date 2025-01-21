@@ -14,13 +14,13 @@ public partial class TreeSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -34,7 +34,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -44,7 +44,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between tree component and the left side of the container.
@@ -55,7 +55,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("12%")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between tree component and the top side of the container.
@@ -66,7 +66,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("12%")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between tree component and the right side of the container.
@@ -75,7 +75,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("12%")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between tree component and the bottom side of the container.
@@ -84,19 +84,19 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("12%")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Width of tree component.
 	/// </summary>
 	[JsonPropertyName("width")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of tree component.
 	/// </summary>
 	[JsonPropertyName("height")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// Center of current view-port.
@@ -106,14 +106,14 @@ public partial class TreeSeries : ISeries
 	/// Example:  center: [115.97, '30%']
 	/// </summary>
 	[JsonPropertyName("center")]
-	public NumberOrStringArray? Center { get; set; } 
+	public NumberOrStringArray? Center { get; set; }
 
 	/// <summary>
 	/// Zoom rate of current view-port.
 	/// </summary>
 	[JsonPropertyName("zoom")]
 	[DefaultValue(1)]
-	public double? Zoom { get; set; } 
+	public double? Zoom { get; set; }
 
 	/// <summary>
 	/// The layout of the tree, which can be orthogonal and radial .
@@ -125,7 +125,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("layout")]
 	[DefaultValue("orthogonal")]
-	public TreeLayout? Layout { get; set; } 
+	public TreeLayout? Layout { get; set; }
 
 	/// <summary>
 	/// The direction of the orthogonal layout in the tree diagram.
@@ -135,7 +135,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("orient")]
 	[DefaultValue("LR")]
-	public Orient? Orient { get; set; } 
+	public Orient? Orient { get; set; }
 
 	/// <summary>
 	/// Symbol of .
@@ -157,7 +157,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("circle")]
-	public StringOrFunction? Symbol { get; set; } 
+	public StringOrFunction? Symbol { get; set; }
 
 	/// <summary>
 	/// symbol size.
@@ -169,7 +169,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(7)]
-	public NumberArrayOrFunction? SymbolSize { get; set; } 
+	public NumberArrayOrFunction? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Rotate degree of  symbol.
@@ -182,14 +182,14 @@ public partial class TreeSeries : ISeries
 	/// Callback is supported since 4.8.0 .
 	/// </summary>
 	[JsonPropertyName("symbolRotate")]
-	public NumberOrFunction? SymbolRotate { get; set; } 
+	public NumberOrFunction? SymbolRotate { get; set; }
 
 	/// <summary>
 	/// Whether to keep aspect for symbols in the form of path:// .
 	/// </summary>
 	[JsonPropertyName("symbolKeepAspect")]
 	[DefaultValue(false)]
-	public bool? SymbolKeepAspect { get; set; } 
+	public bool? SymbolKeepAspect { get; set; }
 
 	/// <summary>
 	/// Offset of  symbol relative to original position.
@@ -203,7 +203,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolOffset")]
 	[DefaultValue("[0, 0]")]
-	public double[]? SymbolOffset { get; set; } 
+	public double[]? SymbolOffset { get; set; }
 
 	/// <summary>
 	/// Since v4.7.0   
@@ -215,7 +215,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("edgeShape")]
 	[DefaultValue("curve")]
-	public TreeEdgeShape? EdgeShape { get; set; } 
+	public TreeEdgeShape? EdgeShape { get; set; }
 
 	/// <summary>
 	/// This is the position where the polyline branches in the subtree when the shape of the edge is a polyline in the orthogonal layout .
@@ -226,7 +226,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("edgeForkPosition")]
 	[DefaultValue("50%")]
-	public string? EdgeForkPosition { get; set; } 
+	public string? EdgeForkPosition { get; set; }
 
 	/// <summary>
 	/// Whether to enable mouse zooming and translating.
@@ -236,7 +236,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("roam")]
 	[DefaultValue(false)]
-	public Roam? Roam { get; set; } 
+	public Roam? Roam { get; set; }
 
 	/// <summary>
 	/// Subtree collapses and expands interaction, default true .
@@ -250,7 +250,7 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("expandAndCollapse")]
 	[DefaultValue("true")]
-	public bool? ExpandAndCollapse { get; set; } 
+	public bool? ExpandAndCollapse { get; set; }
 
 	/// <summary>
 	/// The initial level (depth) of the tree.
@@ -262,19 +262,19 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("initialTreeDepth")]
 	[DefaultValue("2")]
-	public double? InitialTreeDepth { get; set; } 
+	public double? InitialTreeDepth { get; set; }
 
 	/// <summary>
 	/// The style of each node in the tree, where itemStyle.color represents the fill color of the node, to distinguish the state of the subtree corresponding to collapsing or expansion .
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// label describes the style of the text corresponding to each node.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -323,19 +323,19 @@ public partial class TreeSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelLayout")]
-	public ObjectOrFunction? LabelLayout { get; set; } 
+	public ObjectOrFunction? LabelLayout { get; set; }
 
 	/// <summary>
 	/// Defines the style of the tree edge.
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// Configurations of emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -343,7 +343,7 @@ public partial class TreeSeries : ISeries
 	/// Available when emphasis.focus is set.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -351,7 +351,7 @@ public partial class TreeSeries : ISeries
 	/// Available when selectedMode is set.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -364,13 +364,13 @@ public partial class TreeSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// Leaf node special configuration, such as the above tree diagram example, the leaf node and non-leaf node label location is different.
 	/// </summary>
 	[JsonPropertyName("leaves")]
-	public Leaves? Leaves { get; set; } 
+	public Leaves? Leaves { get; set; }
 
 	/// <summary>
 	/// TreeSeriesData or ExternalDataSource or ...
@@ -403,12 +403,12 @@ public partial class TreeSeries : ISeries
 	/// };
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

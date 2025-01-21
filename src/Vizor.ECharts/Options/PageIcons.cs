@@ -25,7 +25,7 @@ public partial class PageIcons
 	/// See vertically scrollable legend or horizontally scrollable legend .
 	/// </summary>
 	[JsonPropertyName("horizontal")]
-	public string[]? Horizontal { get; set; } 
+	public string[]? Horizontal { get; set; }
 
 	/// <summary>
 	/// The icons of page buttons when legend.orient is 'vertical' .
@@ -46,6 +46,6 @@ public partial class PageIcons
 	/// See vertically scrollable legend or horizontally scrollable legend .
 	/// </summary>
 	[JsonPropertyName("vertical")]
-	public string[]? Vertical { get; set; } 
+	public string[]? Vertical { get; set; }
 
 }

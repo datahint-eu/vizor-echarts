@@ -11,13 +11,13 @@ public partial class SunburstSeriesData
 	/// If contains children, value can be left unset, and sum of children values will be used in this case.
 	/// </summary>
 	[JsonPropertyName("value")]
-	public double? Value { get; set; } 
+	public double? Value { get; set; }
 
 	/// <summary>
 	/// Name displayed in each sector.
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Link address that redirects to when this sector is clicked.
@@ -26,7 +26,7 @@ public partial class SunburstSeriesData
 	/// See series-sunburst.data.target .
 	/// </summary>
 	[JsonPropertyName("link")]
-	public string? Link { get; set; } 
+	public string? Link { get; set; }
 
 	/// <summary>
 	/// Like target attribute of HTML 'a' , which can either be 'blank' or 'self' .
@@ -34,7 +34,7 @@ public partial class SunburstSeriesData
 	/// </summary>
 	[JsonPropertyName("target")]
 	[DefaultValue("blank")]
-	public string? Target { get; set; } 
+	public string? Target { get; set; }
 
 	/// <summary>
 	/// To specify the style of the label of the sector.
@@ -45,14 +45,14 @@ public partial class SunburstSeriesData
 	/// In ECharts 3, to make the configuration structure flatter, label is taken to be at the same level with itemStyle , and has emphasis as itemStyle does.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configuration of label guide line.
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
 	/// To specify the style of the sector of the sunburst chart.
@@ -63,37 +63,37 @@ public partial class SunburstSeriesData
 	/// Priority： series.data.itemStyle > series.levels.itemStyle > series.itemStyle 。
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public object? Emphasis { get; set; } 
+	public object? Emphasis { get; set; }
 
 	/// <summary>
 	/// Blur state.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public object? Blur { get; set; } 
+	public object? Blur { get; set; }
 
 	/// <summary>
 	/// Select state.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public object? Select { get; set; } 
+	public object? Select { get; set; }
 
 	/// <summary>
 	/// The children nodes defined recursively.
 	/// The structure is the same as series-sunburst.data .
 	/// </summary>
 	[JsonPropertyName("children")]
-	public List<SunburstSeriesData>? Children { get; set; } 
+	public List<SunburstSeriesData>? Children { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series data.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

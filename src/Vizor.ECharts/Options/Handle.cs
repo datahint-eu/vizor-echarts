@@ -11,7 +11,7 @@ public partial class Handle
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue(false)]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// The icon of the handle.
@@ -29,28 +29,28 @@ public partial class Handle
 	/// See the example of using image
 	/// </summary>
 	[JsonPropertyName("icon")]
-	public Icon? Icon { get; set; } 
+	public Icon? Icon { get; set; }
 
 	/// <summary>
 	/// The size of the handle, which can be set as a single value or an array ( [width, height] ).
 	/// </summary>
 	[JsonPropertyName("size")]
 	[DefaultValue("45,45")]
-	public NumberArray? Size { get; set; } 
+	public NumberArray? Size { get; set; }
 
 	/// <summary>
 	/// Distance from handle center to axis.
 	/// </summary>
 	[JsonPropertyName("margin")]
 	[DefaultValue("50")]
-	public double? Margin { get; set; } 
+	public double? Margin { get; set; }
 
 	/// <summary>
 	/// The color of the handle.
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("#333")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// Throttle rate of trigger view update when dragging handle, in ms.
@@ -58,7 +58,7 @@ public partial class Handle
 	/// </summary>
 	[JsonPropertyName("throttle")]
 	[DefaultValue("40")]
-	public double? Throttle { get; set; } 
+	public double? Throttle { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -71,7 +71,7 @@ public partial class Handle
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("3")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -79,20 +79,20 @@ public partial class Handle
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("#aaa")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("2")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 }

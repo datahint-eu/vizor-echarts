@@ -11,7 +11,7 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// The text color.
@@ -19,7 +19,7 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("#464646")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// font style.
@@ -28,7 +28,7 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("fontStyle")]
 	[DefaultValue("normal")]
-	public FontStyle? FontStyle { get; set; } 
+	public FontStyle? FontStyle { get; set; }
 
 	/// <summary>
 	/// font thick weight.
@@ -37,7 +37,7 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("fontWeight")]
 	[DefaultValue("normal")]
-	public FontWeight? FontWeight { get; set; } 
+	public FontWeight? FontWeight { get; set; }
 
 	/// <summary>
 	/// font family.
@@ -46,14 +46,14 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("fontFamily")]
 	[DefaultValue("sans-serif")]
-	public string? FontFamily { get; set; } 
+	public string? FontFamily { get; set; }
 
 	/// <summary>
 	/// font size.
 	/// </summary>
 	[JsonPropertyName("fontSize")]
 	[DefaultValue("30")]
-	public double? FontSize { get; set; } 
+	public double? FontSize { get; set; }
 
 	/// <summary>
 	/// Line height of the text fragment.
@@ -70,28 +70,28 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("lineHeight")]
 	[DefaultValue("12")]
-	public double? LineHeight { get; set; } 
+	public double? LineHeight { get; set; }
 
 	/// <summary>
 	/// The background color of detail.
 	/// </summary>
 	[JsonPropertyName("backgroundColor")]
 	[DefaultValue("transparent")]
-	public Color? BackgroundColor { get; set; } 
+	public Color? BackgroundColor { get; set; }
 
 	/// <summary>
 	/// The border color of detail.
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("#ccc")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// The border width of detail.
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue(0)]
-	public double? BorderWidth { get; set; } 
+	public double? BorderWidth { get; set; }
 
 	/// <summary>
 	/// the text fragment border type.
@@ -109,7 +109,7 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("borderType")]
 	[DefaultValue("solid")]
-	public LineType? BorderType { get; set; } 
+	public LineType? BorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -120,14 +120,14 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("borderDashOffset")]
 	[DefaultValue("0")]
-	public double? BorderDashOffset { get; set; } 
+	public double? BorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Border radius of the text fragment.
 	/// </summary>
 	[JsonPropertyName("borderRadius")]
 	[DefaultValue(0)]
-	public BorderRadius? BorderRadius { get; set; } 
+	public BorderRadius? BorderRadius { get; set; }
 
 	/// <summary>
 	/// Padding of the text fragment, for example:   padding: [3, 4, 5, 6] : represents padding of [top, right, bottom, left] .
@@ -138,61 +138,61 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("padding")]
 	[DefaultValue(0)]
-	public Padding? Padding { get; set; } 
+	public Padding? Padding { get; set; }
 
 	/// <summary>
 	/// Shadow color of the text block.
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("transparent")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Show blur of the text block.
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue(0)]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow X offset of the text block.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue(0)]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Shadow Y offset of the text block.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue(0)]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// The width of detail.
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("100")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// The height of detail.
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("40")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// Stroke color of the text.
 	/// </summary>
 	[JsonPropertyName("textBorderColor")]
-	public Color? TextBorderColor { get; set; } 
+	public Color? TextBorderColor { get; set; }
 
 	/// <summary>
 	/// Stroke line width of the text.
 	/// </summary>
 	[JsonPropertyName("textBorderWidth")]
-	public double? TextBorderWidth { get; set; } 
+	public double? TextBorderWidth { get; set; }
 
 	/// <summary>
 	/// Stroke line type of the text.
@@ -210,7 +210,7 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("textBorderType")]
 	[DefaultValue("solid")]
-	public LineType? TextBorderType { get; set; } 
+	public LineType? TextBorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -221,35 +221,35 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("textBorderDashOffset")]
 	[DefaultValue("0")]
-	public double? TextBorderDashOffset { get; set; } 
+	public double? TextBorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Shadow color of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowColor")]
 	[DefaultValue("#000")]
-	public Color? TextShadowColor { get; set; } 
+	public Color? TextShadowColor { get; set; }
 
 	/// <summary>
 	/// Shadow blue of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowBlur")]
 	[DefaultValue(0)]
-	public double? TextShadowBlur { get; set; } 
+	public double? TextShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow X offset of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowOffsetX")]
 	[DefaultValue(0)]
-	public double? TextShadowOffsetX { get; set; } 
+	public double? TextShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Shadow Y offset of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowOffsetY")]
 	[DefaultValue(0)]
-	public double? TextShadowOffsetY { get; set; } 
+	public double? TextShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Determine how to display the text when it's overflow.
@@ -259,7 +259,7 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("overflow")]
 	[DefaultValue("none")]
-	public Overflow? Overflow { get; set; } 
+	public Overflow? Overflow { get; set; }
 
 	/// <summary>
 	/// Ellipsis to be displayed when overflow is set to truncate .
@@ -267,7 +267,7 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("ellipsis")]
 	[DefaultValue("...")]
-	public string? Ellipsis { get; set; } 
+	public string? Ellipsis { get; set; }
 
 	/// <summary>
 	/// "Rich text styles" can be defined in this rich property.
@@ -304,7 +304,7 @@ public partial class Detail
 	/// For more details, see Rich Text please.
 	/// </summary>
 	[JsonPropertyName("rich")]
-	public Rich? Rich { get; set; } 
+	public Rich? Rich { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -312,7 +312,7 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("valueAnimation")]
 	[DefaultValue(true)]
-	public bool? ValueAnimation { get; set; } 
+	public bool? ValueAnimation { get; set; }
 
 	/// <summary>
 	/// The offset position relative to the center of gauge chart.
@@ -321,7 +321,7 @@ public partial class Detail
 	/// </summary>
 	[JsonPropertyName("offsetCenter")]
 	[DefaultValue("0,-40%")]
-	public CircleCenter? OffsetCenter { get; set; } 
+	public CircleCenter? OffsetCenter { get; set; }
 
 	/// <summary>
 	/// Formatter is used to format detail, which supports string template and callback function.
@@ -330,6 +330,6 @@ public partial class Detail
 	/// }
 	/// </summary>
 	[JsonPropertyName("formatter")]
-	public StringOrFunction? Formatter { get; set; } 
+	public StringOrFunction? Formatter { get; set; }
 
 }

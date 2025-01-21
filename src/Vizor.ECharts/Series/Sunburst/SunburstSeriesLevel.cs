@@ -11,7 +11,7 @@ public partial class SunburstSeriesLevel
 	/// The inner and outer radius of the current layer, noting that the radius of other layers will not be adaptive.
 	/// </summary>
 	[JsonPropertyName("radius")]
-	public CircleRadius? Radius { get; set; } 
+	public CircleRadius? Radius { get; set; }
 
 	/// <summary>
 	/// To specify the style of the label of the sector.
@@ -22,14 +22,14 @@ public partial class SunburstSeriesLevel
 	/// In ECharts 3, to make the configuration structure flatter, label is taken to be at the same level with itemStyle , and has emphasis as itemStyle does.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configuration of label guide line.
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
 	/// To specify the style of the sector of the sunburst chart.
@@ -40,24 +40,24 @@ public partial class SunburstSeriesLevel
 	/// Priority： series.data.itemStyle > series.levels.itemStyle > series.itemStyle 。
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public object? Emphasis { get; set; } 
+	public object? Emphasis { get; set; }
 
 	/// <summary>
 	/// Blur state.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public object? Blur { get; set; } 
+	public object? Blur { get; set; }
 
 	/// <summary>
 	/// Select state.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public object? Select { get; set; } 
+	public object? Select { get; set; }
 
 }

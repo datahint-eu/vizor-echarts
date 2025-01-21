@@ -14,7 +14,7 @@ public partial class ShadowStyle
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("rgba(150,150,150,0.3)")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -27,7 +27,7 @@ public partial class ShadowStyle
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -35,21 +35,21 @@ public partial class ShadowStyle
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Opacity of the component.
@@ -57,6 +57,6 @@ public partial class ShadowStyle
 	/// </summary>
 	[JsonPropertyName("opacity")]
 	[DefaultValue("1")]
-	public double? Opacity { get; set; } 
+	public double? Opacity { get; set; }
 
 }

@@ -10,25 +10,25 @@ public partial class Emphasis
 	/// Since v4.4.0
 	/// </summary>
 	[JsonPropertyName("selectorLabel")]
-	public SelectorLabel? SelectorLabel { get; set; } 
+	public SelectorLabel? SelectorLabel { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("handleStyle")]
-	public HandleStyle? HandleStyle { get; set; } 
+	public HandleStyle? HandleStyle { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("moveHandleStyle")]
-	public MoveHandleStyle? MoveHandleStyle { get; set; } 
+	public MoveHandleStyle? MoveHandleStyle { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("iconStyle")]
-	public IconStyle? IconStyle { get; set; } 
+	public IconStyle? IconStyle { get; set; }
 
 	/// <summary>
 	/// Since v5.3.0   
@@ -40,7 +40,7 @@ public partial class Emphasis
 	/// </summary>
 	[JsonPropertyName("disabled")]
 	[DefaultValue("false")]
-	public bool? Disabled { get; set; } 
+	public bool? Disabled { get; set; }
 
 	/// <summary>
 	/// Since v5.1.0   
@@ -54,31 +54,31 @@ public partial class Emphasis
 	/// </summary>
 	[JsonPropertyName("focus")]
 	[DefaultValue("none")]
-	public string? Focus { get; set; } 
+	public string? Focus { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Style of the checkpoint.
 	/// </summary>
 	[JsonPropertyName("checkpointStyle")]
-	public CheckpointStyle? CheckpointStyle { get; set; } 
+	public CheckpointStyle? CheckpointStyle { get; set; }
 
 	/// <summary>
 	/// Style of the control button.
 	/// </summary>
 	[JsonPropertyName("controlStyle")]
-	public ControlStyle? ControlStyle { get; set; } 
+	public ControlStyle? ControlStyle { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -87,7 +87,7 @@ public partial class Emphasis
 	/// </summary>
 	[JsonPropertyName("scale")]
 	[DefaultValue(true)]
-	public NumberOrBool? Scale { get; set; } 
+	public NumberOrBool? Scale { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -96,32 +96,32 @@ public partial class Emphasis
 	/// </summary>
 	[JsonPropertyName("blurScope")]
 	[DefaultValue("coordinateSystem")]
-	public string? BlurScope { get; set; } 
+	public string? BlurScope { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configuration of label guide line.
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("areaStyle")]
-	public AreaStyle? AreaStyle { get; set; } 
+	public AreaStyle? AreaStyle { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0
 	/// </summary>
 	[JsonPropertyName("endLabel")]
-	public EndLabel? EndLabel { get; set; } 
+	public EndLabel? EndLabel { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -130,18 +130,18 @@ public partial class Emphasis
 	/// </summary>
 	[JsonPropertyName("scaleSize")]
 	[DefaultValue("10")]
-	public double? ScaleSize { get; set; } 
+	public double? ScaleSize { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("upperLabel")]
-	public UpperLabel? UpperLabel { get; set; } 
+	public UpperLabel? UpperLabel { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("edgeLabel")]
-	public EdgeLabel? EdgeLabel { get; set; } 
+	public EdgeLabel? EdgeLabel { get; set; }
 
 }

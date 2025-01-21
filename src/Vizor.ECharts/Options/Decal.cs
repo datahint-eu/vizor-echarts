@@ -25,34 +25,34 @@ public partial class Decal
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("rect")]
-	public Icon? Symbol { get; set; } 
+	public Icon? Symbol { get; set; }
 
 	/// <summary>
 	/// Range of values: 0 to 1 , representing the size of symbol relative to decal.
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(1)]
-	public double? SymbolSize { get; set; } 
+	public double? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Whether or not to keep the aspect ratio of the pattern.
 	/// </summary>
 	[JsonPropertyName("symbolKeepAspect")]
 	[DefaultValue(true)]
-	public bool? SymbolKeepAspect { get; set; } 
+	public bool? SymbolKeepAspect { get; set; }
 
 	/// <summary>
 	/// For the color of the decal pattern, it is recommended to use a translucent color, which can be superimposed on the color of the series itself.
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("rgba(0, 0, 0, 0.2)")]
-	public string? Color { get; set; } 
+	public string? Color { get; set; }
 
 	/// <summary>
 	/// The background color of the decal will be over the color of the series itself, under the decal pattern.
 	/// </summary>
 	[JsonPropertyName("backgroundColor")]
-	public string? BackgroundColor { get; set; } 
+	public string? BackgroundColor { get; set; }
 
 	/// <summary>
 	/// The basic pattern of the decal pattern is an infinite loop in the form of Pattern - Blank - Pattern - Blank - Pattern - Blank both horizontally and vertically, respectively.
@@ -74,7 +74,7 @@ public partial class Decal
 	/// </summary>
 	[JsonPropertyName("dashArrayX")]
 	[DefaultValue(5)]
-	public NumberOrNumberArray? DashArrayX { get; set; } 
+	public NumberOrNumberArray? DashArrayX { get; set; }
 
 	/// <summary>
 	/// The basic pattern of the decal pattern is an infinite loop in the form of Pattern - Blank - Pattern - Blank - Pattern - Blank both horizontally and vertically, respectively.
@@ -93,14 +93,14 @@ public partial class Decal
 	/// </summary>
 	[JsonPropertyName("dashArrayY")]
 	[DefaultValue(5)]
-	public NumberOrNumberArray? DashArrayY { get; set; } 
+	public NumberOrNumberArray? DashArrayY { get; set; }
 
 	/// <summary>
 	/// The overall rotation angle (in radians) of the pattern, in the range from `-Math.
 	/// </summary>
 	[JsonPropertyName("rotation")]
 	[DefaultValue(0)]
-	public double? Rotation { get; set; } 
+	public double? Rotation { get; set; }
 
 	/// <summary>
 	/// The upper limit of the width of the generated pattern before it is duplicated.
@@ -108,7 +108,7 @@ public partial class Decal
 	/// </summary>
 	[JsonPropertyName("maxTileWidth")]
 	[DefaultValue(512)]
-	public double? MaxTileWidth { get; set; } 
+	public double? MaxTileWidth { get; set; }
 
 	/// <summary>
 	/// The upper limit of the height of the generated pattern before it repeats.
@@ -116,6 +116,6 @@ public partial class Decal
 	/// </summary>
 	[JsonPropertyName("maxTileHeight")]
 	[DefaultValue(512)]
-	public double? MaxTileHeight { get; set; } 
+	public double? MaxTileHeight { get; set; }
 
 }

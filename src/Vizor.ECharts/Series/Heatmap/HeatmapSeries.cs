@@ -14,13 +14,13 @@ public partial class HeatmapSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// The coordinate used in the series, whose options are:   
@@ -35,35 +35,35 @@ public partial class HeatmapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("coordinateSystem")]
 	[DefaultValue("cartesian2d")]
-	public string? CoordinateSystem { get; set; } 
+	public string? CoordinateSystem { get; set; }
 
 	/// <summary>
 	/// Index of x axis to combine with, which is  useful for multiple x axes in one chart.
 	/// </summary>
 	[JsonPropertyName("xAxisIndex")]
 	[DefaultValue(0)]
-	public int? XAxisIndex { get; set; } 
+	public int? XAxisIndex { get; set; }
 
 	/// <summary>
 	/// Index of y axis to combine with, which is  useful for multiple y axes in one chart.
 	/// </summary>
 	[JsonPropertyName("yAxisIndex")]
 	[DefaultValue(0)]
-	public int? YAxisIndex { get; set; } 
+	public int? YAxisIndex { get; set; }
 
 	/// <summary>
 	/// Index of geographic coordinate to combine with, which is useful for multiple geographic axes in one chart.
 	/// </summary>
 	[JsonPropertyName("geoIndex")]
 	[DefaultValue(0)]
-	public int? GeoIndex { get; set; } 
+	public int? GeoIndex { get; set; }
 
 	/// <summary>
 	/// Index of calendar coordinates to combine with, which is useful for multiple calendar coordinates in one chart.
 	/// </summary>
 	[JsonPropertyName("calendarIndex")]
 	[DefaultValue(0)]
-	public int? CalendarIndex { get; set; } 
+	public int? CalendarIndex { get; set; }
 
 	/// <summary>
 	/// Point size of each data point.
@@ -71,7 +71,7 @@ public partial class HeatmapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("pointSize")]
 	[DefaultValue(20)]
-	public double? PointSize { get; set; } 
+	public double? PointSize { get; set; }
 
 	/// <summary>
 	/// Blur size of each data point.
@@ -79,7 +79,7 @@ public partial class HeatmapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("blurSize")]
 	[DefaultValue(20)]
-	public double? BlurSize { get; set; } 
+	public double? BlurSize { get; set; }
 
 	/// <summary>
 	/// Minimum opacity.
@@ -87,7 +87,7 @@ public partial class HeatmapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("minOpacity")]
 	[DefaultValue(0)]
-	public double? MinOpacity { get; set; } 
+	public double? MinOpacity { get; set; }
 
 	/// <summary>
 	/// Maximum opacity.
@@ -95,7 +95,7 @@ public partial class HeatmapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("maxOpacity")]
 	[DefaultValue(1)]
-	public double? MaxOpacity { get; set; } 
+	public double? MaxOpacity { get; set; }
 
 	/// <summary>
 	/// progressive specifies the amount of graphic elements that can be rendered within a frame (about 16ms) if "progressive rendering" enabled.
@@ -108,20 +108,20 @@ public partial class HeatmapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("progressive")]
 	[DefaultValue(400)]
-	public double? Progressive { get; set; } 
+	public double? Progressive { get; set; }
 
 	/// <summary>
 	/// If current data amount is over the threshold, "progressive rendering" is enabled.
 	/// </summary>
 	[JsonPropertyName("progressiveThreshold")]
 	[DefaultValue(3000)]
-	public double? ProgressiveThreshold { get; set; } 
+	public double? ProgressiveThreshold { get; set; }
 
 	/// <summary>
 	/// Work for coordinateSystem : 'cartesian2d'.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -170,19 +170,19 @@ public partial class HeatmapSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelLayout")]
-	public ObjectOrFunction? LabelLayout { get; set; } 
+	public ObjectOrFunction? LabelLayout { get; set; }
 
 	/// <summary>
 	/// Work for coordinateSystem : 'cartesian2d'.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Configurations of emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -198,7 +198,7 @@ public partial class HeatmapSeries : ISeries
 	/// It is also possible to provide an object for more detailed configuration.
 	/// </summary>
 	[JsonPropertyName("universalTransition")]
-	public UniversalTransition? UniversalTransition { get; set; } 
+	public UniversalTransition? UniversalTransition { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -206,7 +206,7 @@ public partial class HeatmapSeries : ISeries
 	/// Available when emphasis.focus is set.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -214,7 +214,7 @@ public partial class HeatmapSeries : ISeries
 	/// Available when selectedMode is set.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -227,7 +227,7 @@ public partial class HeatmapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// Define what is encoded to for each dimension of data .
@@ -352,7 +352,7 @@ public partial class HeatmapSeries : ISeries
 	/// };
 	/// </summary>
 	[JsonPropertyName("encode")]
-	public Encode? Encode { get; set; } 
+	public Encode? Encode { get; set; }
 
 	/// <summary>
 	/// When dataset is used, seriesLayoutBy specifies whether the column or the row of dataset is mapped to the series, namely, the series is "layout" on columns or rows.
@@ -365,7 +365,7 @@ public partial class HeatmapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("seriesLayoutBy")]
 	[DefaultValue("column")]
-	public SeriesLayoutBy? SeriesLayoutBy { get; set; } 
+	public SeriesLayoutBy? SeriesLayoutBy { get; set; }
 
 	/// <summary>
 	/// If series.data is not specified, and dataset exists, the series will use dataset .
@@ -373,7 +373,7 @@ public partial class HeatmapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("datasetIndex")]
 	[DefaultValue(0)]
-	public int? DatasetIndex { get; set; } 
+	public int? DatasetIndex { get; set; }
 
 	/// <summary>
 	/// A groupID common to all data in the series.
@@ -489,26 +489,26 @@ public partial class HeatmapSeries : ISeries
 	/// For example, line chart can break when encounter an empty value, and scatter chart do not display graphic elements for empty values.
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// Mark point in a chart.
 	/// </summary>
 	[JsonPropertyName("markPoint")]
-	public MarkPoint? MarkPoint { get; set; } 
+	public MarkPoint? MarkPoint { get; set; }
 
 	/// <summary>
 	/// Use a line in the chart to illustrate.
 	/// </summary>
 	[JsonPropertyName("markLine")]
-	public MarkLine? MarkLine { get; set; } 
+	public MarkLine? MarkLine { get; set; }
 
 	/// <summary>
 	/// Used to mark an area in chart.
 	/// For example, mark a time interval.
 	/// </summary>
 	[JsonPropertyName("markArea")]
-	public MarkArea? MarkArea { get; set; } 
+	public MarkArea? MarkArea { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in heatmap.
@@ -522,7 +522,7 @@ public partial class HeatmapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in heatmap, which controls order of drawing graphical components.
@@ -532,7 +532,7 @@ public partial class HeatmapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -540,12 +540,12 @@ public partial class HeatmapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

@@ -12,7 +12,7 @@ public partial class Dataset
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Source data.
@@ -41,7 +41,7 @@ public partial class Dataset
 	/// More details about dataset can be checked in the tutorial .
 	/// </summary>
 	[JsonPropertyName("source")]
-	public object? Source { get; set; } 
+	public object? Source { get; set; }
 
 	/// <summary>
 	/// dimensions can be used to define dimension info for series.data or dataset.source .
@@ -85,7 +85,7 @@ public partial class Dataset
 	/// Otherwise, tooltip will displayed only value horizontally.
 	/// </summary>
 	[JsonPropertyName("dimensions")]
-	public string[]? Dimensions { get; set; } 
+	public string[]? Dimensions { get; set; }
 
 	/// <summary>
 	/// Whether the first row/column of dataset.source represents dimension names .
@@ -99,7 +99,7 @@ public partial class Dataset
 	/// Note: the first row/column means that if series.seriesLayoutBy is set as 'column' , pick the first row, otherwise, if it is set as 'row' , pick the first column.
 	/// </summary>
 	[JsonPropertyName("sourceHeader")]
-	public NumberOrBool? SourceHeader { get; set; } 
+	public NumberOrBool? SourceHeader { get; set; }
 
 	/// <summary>
 	/// See the tutorial of data transform .
@@ -136,7 +136,7 @@ public partial class Dataset
 	/// See the tutorial of data transform .
 	/// </summary>
 	[JsonPropertyName("fromDatasetIndex")]
-	public int? FromDatasetIndex { get; set; } 
+	public int? FromDatasetIndex { get; set; }
 
 	/// <summary>
 	/// Specify the input dataset for dataset.transform .
@@ -144,7 +144,7 @@ public partial class Dataset
 	/// See the tutorial of data transform .
 	/// </summary>
 	[JsonPropertyName("fromDatasetId")]
-	public string? FromDatasetId { get; set; } 
+	public string? FromDatasetId { get; set; }
 
 	/// <summary>
 	/// If a dataset.transform produces more than one result, we can use fromTransformResult to retrieve some certain result.
@@ -155,6 +155,6 @@ public partial class Dataset
 	/// See the tutorial of data transform .
 	/// </summary>
 	[JsonPropertyName("fromTransformResult")]
-	public double? FromTransformResult { get; set; } 
+	public double? FromTransformResult { get; set; }
 
 }

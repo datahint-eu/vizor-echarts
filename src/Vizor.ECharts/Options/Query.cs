@@ -11,14 +11,14 @@ public partial class Query
 	/// </summary>
 	[JsonPropertyName("minWidth")]
 	[DefaultValue("undefined")]
-	public double? MinWidth { get; set; } 
+	public double? MinWidth { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("maxHeight")]
 	[DefaultValue("undefined")]
-	public double? MaxHeight { get; set; } 
+	public double? MaxHeight { get; set; }
 
 	/// <summary>
 	/// That is the radio of width / height .
@@ -26,6 +26,6 @@ public partial class Query
 	/// </summary>
 	[JsonPropertyName("minAspectRatio")]
 	[DefaultValue("undefined")]
-	public double? MinAspectRatio { get; set; } 
+	public double? MinAspectRatio { get; set; }
 
 }

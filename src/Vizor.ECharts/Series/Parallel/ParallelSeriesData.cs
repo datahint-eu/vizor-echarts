@@ -10,19 +10,19 @@ public partial class ParallelSeriesData
 	/// The name of a data item.
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// The value of a data item.
 	/// </summary>
 	[JsonPropertyName("value")]
-	public object? Value { get; set; } 
+	public object? Value { get; set; }
 
 	/// <summary>
 	/// Line style.
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// Line color.
@@ -32,14 +32,14 @@ public partial class ParallelSeriesData
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("#000")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// line width.
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue(2)]
-	public double? Width { get; set; } 
+	public double? Width { get; set; }
 
 	/// <summary>
 	/// line type. Possible values are:   'solid'  'dashed'  'dotted'   
@@ -88,7 +88,7 @@ public partial class ParallelSeriesData
 	/// </summary>
 	[JsonPropertyName("dashOffset")]
 	[DefaultValue("0")]
-	public double? DashOffset { get; set; } 
+	public double? DashOffset { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -102,7 +102,7 @@ public partial class ParallelSeriesData
 	/// </summary>
 	[JsonPropertyName("cap")]
 	[DefaultValue("butt")]
-	public LineCap? Cap { get; set; } 
+	public LineCap? Cap { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -119,7 +119,7 @@ public partial class ParallelSeriesData
 	/// </summary>
 	[JsonPropertyName("join")]
 	[DefaultValue("bevel")]
-	public LineJoin? Join { get; set; } 
+	public LineJoin? Join { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -133,7 +133,7 @@ public partial class ParallelSeriesData
 	/// </summary>
 	[JsonPropertyName("miterLimit")]
 	[DefaultValue("10")]
-	public double? MiterLimit { get; set; } 
+	public double? MiterLimit { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -146,7 +146,7 @@ public partial class ParallelSeriesData
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -154,21 +154,21 @@ public partial class ParallelSeriesData
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Opacity of the component.
@@ -176,12 +176,12 @@ public partial class ParallelSeriesData
 	/// </summary>
 	[JsonPropertyName("opacity")]
 	[DefaultValue("0.45")]
-	public double? Opacity { get; set; } 
+	public double? Opacity { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 }

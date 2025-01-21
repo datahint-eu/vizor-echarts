@@ -10,6 +10,6 @@ public partial class Rich
 	/// 
 	/// </summary>
 	[JsonPropertyName("RichStyleName")]
-	public RichStyleName? RichStyleName { get; set; } 
+	public RichStyleName? RichStyleName { get; set; }
 
 }

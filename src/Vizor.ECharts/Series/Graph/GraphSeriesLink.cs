@@ -11,66 +11,66 @@ public partial class GraphSeriesLink
 	/// Can also be a number representing the node index.
 	/// </summary>
 	[JsonPropertyName("source")]
-	public NumberOrString? Source { get; set; } 
+	public NumberOrString? Source { get; set; }
 
 	/// <summary>
 	/// A string representing the name of target node on edge.
 	/// Can also be a number representing node index.
 	/// </summary>
 	[JsonPropertyName("target")]
-	public NumberOrString? Target { get; set; } 
+	public NumberOrString? Target { get; set; }
 
 	/// <summary>
 	/// value of edge, can be mapped to edge length in force graph.
 	/// </summary>
 	[JsonPropertyName("value")]
-	public double? Value { get; set; } 
+	public double? Value { get; set; }
 
 	/// <summary>
 	/// Line style of edges.
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Emphasis state of specified edge.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Blur state of specified edge.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Select state of specified edge.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Symbol of edge ends.
 	/// Can be an array with two item to specify two ends, or a string specifies both ends.
 	/// </summary>
 	[JsonPropertyName("symbol")]
-	public Icon? Symbol { get; set; } 
+	public Icon? Symbol { get; set; }
 
 	/// <summary>
 	/// Symbol size of edge ends.
 	/// Can be an array with two item to specify two ends, or a string specifies both ends.
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
-	public NumberOrStringArray? SymbolSize { get; set; } 
+	public NumberOrStringArray? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Since v4.5.0   
@@ -78,6 +78,6 @@ public partial class GraphSeriesLink
 	/// </summary>
 	[JsonPropertyName("ignoreForceLayout")]
 	[DefaultValue(false)]
-	public bool? IgnoreForceLayout { get; set; } 
+	public bool? IgnoreForceLayout { get; set; }
 
 }

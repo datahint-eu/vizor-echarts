@@ -21,7 +21,7 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 	/// If unsure, leave the default value or use EChart.GenerateRandomId()
 	/// </summary>
 	[Parameter]
-	public string Id { get; set; } = "chart" + GenerateRandomId();
+	public string Id { get; set; }= "chart" + GenerateRandomId();
 
 	[Parameter]
 	public string? CssClass { get; set; }
@@ -42,7 +42,7 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 	public ChartGroup? Group { get; set; }
 
 	[Parameter]
-	public ChartRenderer Renderer { get; set; } = ChartRenderer.Svg;
+	public ChartRenderer Renderer { get; set; }= ChartRenderer.Svg;
 
 	/// <summary>
 	/// Custom list of JsonConverters.
@@ -59,7 +59,7 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 	/// see https://www.meziantou.net/avoid-performance-issue-with-jsonserializer-by-reusing-the-same-instance-of-json.htm
 	/// </summary>
 	[Parameter]
-	public bool CacheJsonSerializerOptions { get; set; } = true;
+	public bool CacheJsonSerializerOptions { get; set; }= true;
 
 	/// <summary>
 	/// Geo maps, see https://echarts.apache.org/en/api.html#echarts.registerMap

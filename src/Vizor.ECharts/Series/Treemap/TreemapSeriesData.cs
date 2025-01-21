@@ -15,20 +15,20 @@ public partial class TreemapSeriesData
 	/// See details in series-treemp.levels.
 	/// </summary>
 	[JsonPropertyName("value")]
-	public NumberOrNumberArray? Value { get; set; } 
+	public NumberOrNumberArray? Value { get; set; }
 
 	/// <summary>
 	/// id is not mandatory.
 	/// But if using API, id is used to locate node.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Show the description text in rectangle.
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// treemap is able to map any dimensions of data to visual.
@@ -45,7 +45,7 @@ public partial class TreemapSeriesData
 	/// </summary>
 	[JsonPropertyName("visualDimension")]
 	[DefaultValue(0)]
-	public double? VisualDimension { get; set; } 
+	public double? VisualDimension { get; set; }
 
 	/// <summary>
 	/// The minimal value of current level.
@@ -55,7 +55,7 @@ public partial class TreemapSeriesData
 	/// </summary>
 	[JsonPropertyName("visualMin")]
 	[DefaultValue("0")]
-	public double? VisualMin { get; set; } 
+	public double? VisualMin { get; set; }
 
 	/// <summary>
 	/// The maximal value of current level.
@@ -65,7 +65,7 @@ public partial class TreemapSeriesData
 	/// </summary>
 	[JsonPropertyName("visualMax")]
 	[DefaultValue("100")]
-	public double? VisualMax { get; set; } 
+	public double? VisualMax { get; set; }
 
 	/// <summary>
 	/// A color list for a level.
@@ -78,7 +78,7 @@ public partial class TreemapSeriesData
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("color")]
-	public Color[]? Color { get; set; } 
+	public Color[]? Color { get; set; }
 
 	/// <summary>
 	/// It indicates the range of tranparent rate (color alpha) for nodes in a level  
@@ -94,7 +94,7 @@ public partial class TreemapSeriesData
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("colorAlpha")]
-	public double[]? ColorAlpha { get; set; } 
+	public double[]? ColorAlpha { get; set; }
 
 	/// <summary>
 	/// It indicates the range of saturation (color alpha) for nodes in a level.
@@ -110,7 +110,7 @@ public partial class TreemapSeriesData
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("colorSaturation")]
-	public double? ColorSaturation { get; set; } 
+	public double? ColorSaturation { get; set; }
 
 	/// <summary>
 	/// Specify the rule according to which each node obtain color from color list .
@@ -139,7 +139,7 @@ public partial class TreemapSeriesData
 	/// </summary>
 	[JsonPropertyName("colorMappingBy")]
 	[DefaultValue("index")]
-	public ColorMappingBy? ColorMappingBy { get; set; } 
+	public ColorMappingBy? ColorMappingBy { get; set; }
 
 	/// <summary>
 	/// A node will not be shown when its area size is smaller than this value (unit: px square).
@@ -155,7 +155,7 @@ public partial class TreemapSeriesData
 	/// </summary>
 	[JsonPropertyName("visibleMin")]
 	[DefaultValue("10")]
-	public double? VisibleMin { get; set; } 
+	public double? VisibleMin { get; set; }
 
 	/// <summary>
 	/// Children will not be shown when area size of a node is smaller than this value (unit: px square).
@@ -171,7 +171,7 @@ public partial class TreemapSeriesData
 	/// </summary>
 	[JsonPropertyName("childrenVisibleMin")]
 	[DefaultValue("10")]
-	public double? ChildrenVisibleMin { get; set; } 
+	public double? ChildrenVisibleMin { get; set; }
 
 	/// <summary>
 	/// label decribes the style of the label in each node.
@@ -181,7 +181,7 @@ public partial class TreemapSeriesData
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// upperLabel is used to specify whether show label when the node has children.
@@ -197,7 +197,7 @@ public partial class TreemapSeriesData
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("upperLabel")]
-	public UpperLabel? UpperLabel { get; set; } 
+	public UpperLabel? UpperLabel { get; set; }
 
 	/// <summary>
 	/// Tps: In treemap, itemStyle attribute could appear in more than one places:     It could appear in sereis-treemap , indicating the unified setting of the series.
@@ -205,27 +205,27 @@ public partial class TreemapSeriesData
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Blur state.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Select state.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Enable hyperlink jump when clicking on node.
@@ -234,7 +234,7 @@ public partial class TreemapSeriesData
 	/// See series-treemap.data.target .
 	/// </summary>
 	[JsonPropertyName("link")]
-	public string? Link { get; set; } 
+	public string? Link { get; set; }
 
 	/// <summary>
 	/// The same meaning as target in html 'a' label, See series-treemap.data.link .
@@ -242,18 +242,18 @@ public partial class TreemapSeriesData
 	/// </summary>
 	[JsonPropertyName("target")]
 	[DefaultValue("blank")]
-	public string? Target { get; set; } 
+	public string? Target { get; set; }
 
 	/// <summary>
 	/// child nodes, recursive definition, configurations are the same as series-treemap.data .
 	/// </summary>
 	[JsonPropertyName("children")]
-	public List<TreemapSeriesData>? Children { get; set; } 
+	public List<TreemapSeriesData>? Children { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series data.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

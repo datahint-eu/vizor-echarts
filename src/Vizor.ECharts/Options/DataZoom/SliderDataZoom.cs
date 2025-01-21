@@ -14,7 +14,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Whether to show the  component.
@@ -22,41 +22,41 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// The background color of the component.
 	/// </summary>
 	[JsonPropertyName("backgroundColor")]
 	[DefaultValue("rgba(47,69,84,0)")]
-	public Color? BackgroundColor { get; set; } 
+	public Color? BackgroundColor { get; set; }
 
 	/// <summary>
 	/// The style of data shadow.
 	/// </summary>
 	[JsonPropertyName("dataBackground")]
-	public DataBackground? DataBackground { get; set; } 
+	public DataBackground? DataBackground { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Styles of selected data shadow.
 	/// </summary>
 	[JsonPropertyName("selectedDataBackground")]
-	public SelectedDataBackground? SelectedDataBackground { get; set; } 
+	public SelectedDataBackground? SelectedDataBackground { get; set; }
 
 	/// <summary>
 	/// The color to fill selected area.
 	/// </summary>
 	[JsonPropertyName("fillerColor")]
 	[DefaultValue("rgba(167,183,204,0.4)")]
-	public Color? FillerColor { get; set; } 
+	public Color? FillerColor { get; set; }
 
 	/// <summary>
 	/// The color of border.
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("#ddd")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// Icon shape of handle, which supports path string.
@@ -73,7 +73,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// For example:  'path://M30.9,53.2C16.8,53.2,5.3,41.7,5.3,27.6S16.8,2,30.9,2C45,2,56.4,13.5,56.4,27.6S45,53.2,30.9,53.2z M30.9,3.5C17.6,3.5,6.8,14.4,6.8,27.6c0,13.3,10.8,24.1,24.101,24.1C44.2,51.7,55,40.9,55,27.6C54.9,14.4,44.1,3.5,30.9,3.5z M36.9,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H36c0.5,0,0.9,0.4,0.9,1V35.8z M27.8,35.8 c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H27c0.5,0,0.9,0.4,0.9,1L27.8,35.8L27.8,35.8z'
 	/// </summary>
 	[JsonPropertyName("handleIcon")]
-	public Icon? HandleIcon { get; set; } 
+	public Icon? HandleIcon { get; set; }
 
 	/// <summary>
 	/// The size of control handle.
@@ -82,14 +82,14 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("handleSize")]
 	[DefaultValue("100%")]
-	public NumberOrString? HandleSize { get; set; } 
+	public NumberOrString? HandleSize { get; set; }
 
 	/// <summary>
 	/// Style of handle.
 	/// Please refer to area-simple example .
 	/// </summary>
 	[JsonPropertyName("handleStyle")]
-	public HandleStyle? HandleStyle { get; set; } 
+	public HandleStyle? HandleStyle { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -107,7 +107,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// For example:  'path://M30.9,53.2C16.8,53.2,5.3,41.7,5.3,27.6S16.8,2,30.9,2C45,2,56.4,13.5,56.4,27.6S45,53.2,30.9,53.2z M30.9,3.5C17.6,3.5,6.8,14.4,6.8,27.6c0,13.3,10.8,24.1,24.101,24.1C44.2,51.7,55,40.9,55,27.6C54.9,14.4,44.1,3.5,30.9,3.5z M36.9,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H36c0.5,0,0.9,0.4,0.9,1V35.8z M27.8,35.8 c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H27c0.5,0,0.9,0.4,0.9,1L27.8,35.8L27.8,35.8z'
 	/// </summary>
 	[JsonPropertyName("moveHandleIcon")]
-	public Icon? MoveHandleIcon { get; set; } 
+	public Icon? MoveHandleIcon { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -115,14 +115,14 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("moveHandleSize")]
 	[DefaultValue("7")]
-	public double? MoveHandleSize { get; set; } 
+	public double? MoveHandleSize { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Style of move handle.
 	/// </summary>
 	[JsonPropertyName("moveHandleStyle")]
-	public MoveHandleStyle? MoveHandleStyle { get; set; } 
+	public MoveHandleStyle? MoveHandleStyle { get; set; }
 
 	/// <summary>
 	/// Precision of label if in number form.
@@ -130,7 +130,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("labelPrecision")]
 	[DefaultValue("auto")]
-	public NumberOrString? LabelPrecision { get; set; } 
+	public NumberOrString? LabelPrecision { get; set; }
 
 	/// <summary>
 	/// The formatter tool for the label.
@@ -150,21 +150,21 @@ public partial class SliderDataZoom : IDataZoom
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelFormatter")]
-	public StringOrFunction? LabelFormatter { get; set; } 
+	public StringOrFunction? LabelFormatter { get; set; }
 
 	/// <summary>
 	/// Whether to show detail, that is, show the detailed data information when dragging.
 	/// </summary>
 	[JsonPropertyName("showDetail")]
 	[DefaultValue("true")]
-	public bool? ShowDetail { get; set; } 
+	public bool? ShowDetail { get; set; }
 
 	/// <summary>
 	/// Whether to show data shadow in dataZoom-silder component, to indicate the data tendency in brief.
 	/// </summary>
 	[JsonPropertyName("showDataShadow")]
 	[DefaultValue("auto")]
-	public string? ShowDataShadow { get; set; } 
+	public string? ShowDataShadow { get; set; }
 
 	/// <summary>
 	/// Whether to update view while dragging.
@@ -172,13 +172,13 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("realtime")]
 	[DefaultValue("true")]
-	public bool? Realtime { get; set; } 
+	public bool? Realtime { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("textStyle")]
-	public object? TextStyle { get; set; } 
+	public object? TextStyle { get; set; }
 
 	/// <summary>
 	/// Specify which xAxis is/are controlled by the dataZoom-slider when catesian coordinate system is used.
@@ -208,7 +208,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// }
 	/// </summary>
 	[JsonPropertyName("xAxisIndex")]
-	public NumberOrNumberArray? XAxisIndex { get; set; } 
+	public NumberOrNumberArray? XAxisIndex { get; set; }
 
 	/// <summary>
 	/// Specify which yAxis is/are controlled by the dataZoom-slider when catesian coordinate system is used.
@@ -238,7 +238,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// }
 	/// </summary>
 	[JsonPropertyName("yAxisIndex")]
-	public NumberOrNumberArray? YAxisIndex { get; set; } 
+	public NumberOrNumberArray? YAxisIndex { get; set; }
 
 	/// <summary>
 	/// Specify which radiusAxis is/are controlled by the dataZoom-slider when polar coordinate system is used.
@@ -265,7 +265,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// }
 	/// </summary>
 	[JsonPropertyName("radiusAxisIndex")]
-	public NumberOrNumberArray? RadiusAxisIndex { get; set; } 
+	public NumberOrNumberArray? RadiusAxisIndex { get; set; }
 
 	/// <summary>
 	/// Specify which angleAxis is/are controlled by the dataZoom-slider when polar coordinate system is used.
@@ -292,7 +292,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// }
 	/// </summary>
 	[JsonPropertyName("angleAxisIndex")]
-	public NumberOrNumberArray? AngleAxisIndex { get; set; } 
+	public NumberOrNumberArray? AngleAxisIndex { get; set; }
 
 	/// <summary>
 	/// Generally dataZoom component zoom or roam coordinate system through data filtering and set the windows of axes internally.
@@ -378,7 +378,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("filterMode")]
 	[DefaultValue("filter")]
-	public DataZoomFilterMode? FilterMode { get; set; } 
+	public DataZoomFilterMode? FilterMode { get; set; }
 
 	/// <summary>
 	/// The start percentage of the window out of the data extent, in the range of 0 ~ 100.
@@ -389,7 +389,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("start")]
 	[DefaultValue(0)]
-	public double? Start { get; set; } 
+	public double? Start { get; set; }
 
 	/// <summary>
 	/// The end percentage of the window out of the data extent, in the range of 0 ~ 100.
@@ -400,7 +400,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("end")]
 	[DefaultValue("100")]
-	public double? End { get; set; } 
+	public double? End { get; set; }
 
 	/// <summary>
 	/// The start absolute value of the window, not works when dataZoom-slider.start is set.
@@ -413,7 +413,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// More info about the relationship between dataZoom-slider.startValue and axis extent can be checked in dataZoom-slider.rangeMode .
 	/// </summary>
 	[JsonPropertyName("startValue")]
-	public NumberOrString? StartValue { get; set; } 
+	public NumberOrString? StartValue { get; set; }
 
 	/// <summary>
 	/// The end absolute value of the window, doesn't work when dataZoom-slider.end is set.
@@ -426,7 +426,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// More info about the relationship between dataZoom-slider.endValue and axis extent can be checked in dataZoom-slider.rangeMode .
 	/// </summary>
 	[JsonPropertyName("endValue")]
-	public NumberOrString? EndValue { get; set; } 
+	public NumberOrString? EndValue { get; set; }
 
 	/// <summary>
 	/// Used to restrict minimal window size, in percent, which value is in the range of [0, 100].
@@ -434,7 +434,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// If dataZoom-slider.minValueSpan is set, minSpan does not work any more.
 	/// </summary>
 	[JsonPropertyName("minSpan")]
-	public double? MinSpan { get; set; } 
+	public double? MinSpan { get; set; }
 
 	/// <summary>
 	/// Used to restrict maximal window size, in percent, which value is in the range of [0, 100].
@@ -442,7 +442,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// If dataZoom-slider.maxValueSpan is set, maxSpan does not work any more.
 	/// </summary>
 	[JsonPropertyName("maxSpan")]
-	public double? MaxSpan { get; set; } 
+	public double? MaxSpan { get; set; }
 
 	/// <summary>
 	/// Used to restrict minimal window size.
@@ -452,7 +452,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// In category axis it can be set as 5 to represent 5 categories.
 	/// </summary>
 	[JsonPropertyName("minValueSpan")]
-	public NumberOrString? MinValueSpan { get; set; } 
+	public NumberOrString? MinValueSpan { get; set; }
 
 	/// <summary>
 	/// Used to restrict maximal window size.
@@ -462,7 +462,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// In category axis it can be set as 5 to represent 5 categories.
 	/// </summary>
 	[JsonPropertyName("maxValueSpan")]
-	public NumberOrString? MaxValueSpan { get; set; } 
+	public NumberOrString? MaxValueSpan { get; set; }
 
 	/// <summary>
 	/// Specify whether the layout of dataZoom component is horizontal or vertical.
@@ -474,7 +474,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// 'vertical' : vertical.
 	/// </summary>
 	[JsonPropertyName("orient")]
-	public Orient? Orient { get; set; } 
+	public Orient? Orient { get; set; }
 
 	/// <summary>
 	/// Specify whether to lock the size of window (selected area).
@@ -483,7 +483,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("zoomLock")]
 	[DefaultValue(false)]
-	public bool? ZoomLock { get; set; } 
+	public bool? ZoomLock { get; set; }
 
 	/// <summary>
 	/// Specify the frame rate of views refreshing, with unit millisecond (ms).
@@ -494,7 +494,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("throttle")]
 	[DefaultValue("100")]
-	public double? Throttle { get; set; } 
+	public double? Throttle { get; set; }
 
 	/// <summary>
 	/// The format is [rangeModeForStart, rangeModeForEnd] .
@@ -517,7 +517,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// When we are using dynamic data (update data periodically via setOption ), if in 'value ' mode, the window will be kept in a fixed value range despite how data are appended, while if in 'percent' mode, whe window range will be changed alone with the appended data (suppose axis.min and axis.max are not specified).
 	/// </summary>
 	[JsonPropertyName("rangeMode")]
-	public NumberOrStringArray? RangeMode { get; set; } 
+	public NumberOrStringArray? RangeMode { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -531,7 +531,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -541,7 +541,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between dataZoom-slider component and the left side of the container.
@@ -552,7 +552,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("auto")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between dataZoom-slider component and the top side of the container.
@@ -563,7 +563,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("auto")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between dataZoom-slider component and the right side of the container.
@@ -574,7 +574,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("auto")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between dataZoom-slider component and the bottom side of the container.
@@ -585,7 +585,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("auto")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Width of dataZoom-slider component.
@@ -595,7 +595,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("30")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of dataZoom-slider component.
@@ -605,7 +605,7 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("30")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -613,20 +613,20 @@ public partial class SliderDataZoom : IDataZoom
 	/// </summary>
 	[JsonPropertyName("brushSelect")]
 	[DefaultValue(true)]
-	public bool? BrushSelect { get; set; } 
+	public bool? BrushSelect { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Style of brushing area.
 	/// </summary>
 	[JsonPropertyName("brushStyle")]
-	public BrushStyle? BrushStyle { get; set; } 
+	public BrushStyle? BrushStyle { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Style when highlighted.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 }

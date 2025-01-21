@@ -14,14 +14,14 @@ public partial class BackgroundStyle
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("rgba(180, 180, 180, 0.2)")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// The border color of bar.
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("#000")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// The border width of bar.
@@ -29,7 +29,7 @@ public partial class BackgroundStyle
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue(0)]
-	public double? BorderWidth { get; set; } 
+	public double? BorderWidth { get; set; }
 
 	/// <summary>
 	/// Border type.
@@ -37,7 +37,7 @@ public partial class BackgroundStyle
 	/// </summary>
 	[JsonPropertyName("borderType")]
 	[DefaultValue("solid")]
-	public LineType? BorderType { get; set; } 
+	public LineType? BorderType { get; set; }
 
 	/// <summary>
 	/// The radius of rounded corner.
@@ -49,7 +49,7 @@ public partial class BackgroundStyle
 	/// </summary>
 	[JsonPropertyName("borderRadius")]
 	[DefaultValue(0)]
-	public BorderRadius? BorderRadius { get; set; } 
+	public BorderRadius? BorderRadius { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -62,7 +62,7 @@ public partial class BackgroundStyle
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -70,21 +70,21 @@ public partial class BackgroundStyle
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Opacity of the component.
@@ -92,6 +92,6 @@ public partial class BackgroundStyle
 	/// </summary>
 	[JsonPropertyName("opacity")]
 	[DefaultValue("1")]
-	public double? Opacity { get; set; } 
+	public double? Opacity { get; set; }
 
 }

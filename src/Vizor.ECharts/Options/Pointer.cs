@@ -11,7 +11,7 @@ public partial class Pointer
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -19,7 +19,7 @@ public partial class Pointer
 	/// </summary>
 	[JsonPropertyName("showAbove")]
 	[DefaultValue("true")]
-	public bool? ShowAbove { get; set; } 
+	public bool? ShowAbove { get; set; }
 
 	/// <summary>
 	/// Since v5.0   
@@ -37,7 +37,7 @@ public partial class Pointer
 	/// For example:  'path://M30.9,53.2C16.8,53.2,5.3,41.7,5.3,27.6S16.8,2,30.9,2C45,2,56.4,13.5,56.4,27.6S45,53.2,30.9,53.2z M30.9,3.5C17.6,3.5,6.8,14.4,6.8,27.6c0,13.3,10.8,24.1,24.101,24.1C44.2,51.7,55,40.9,55,27.6C54.9,14.4,44.1,3.5,30.9,3.5z M36.9,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H36c0.5,0,0.9,0.4,0.9,1V35.8z M27.8,35.8 c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H27c0.5,0,0.9,0.4,0.9,1L27.8,35.8L27.8,35.8z'
 	/// </summary>
 	[JsonPropertyName("icon")]
-	public Icon? Icon { get; set; } 
+	public Icon? Icon { get; set; }
 
 	/// <summary>
 	/// Since v5.0   
@@ -47,21 +47,21 @@ public partial class Pointer
 	/// </summary>
 	[JsonPropertyName("offsetCenter")]
 	[DefaultValue("0,0")]
-	public NumberOrStringArray? OffsetCenter { get; set; } 
+	public NumberOrStringArray? OffsetCenter { get; set; }
 
 	/// <summary>
 	/// The length of pointer which could be absolute value and also the percentage relative to radius .
 	/// </summary>
 	[JsonPropertyName("length")]
 	[DefaultValue("60%")]
-	public NumberOrString? Length { get; set; } 
+	public NumberOrString? Length { get; set; }
 
 	/// <summary>
 	/// The width of pointer.
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("6")]
-	public double? Width { get; set; } 
+	public double? Width { get; set; }
 
 	/// <summary>
 	/// Since v5.0   
@@ -69,12 +69,12 @@ public partial class Pointer
 	/// </summary>
 	[JsonPropertyName("keepAspect")]
 	[DefaultValue("false")]
-	public bool? KeepAspect { get; set; } 
+	public bool? KeepAspect { get; set; }
 
 	/// <summary>
 	/// The style of pointer.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 }

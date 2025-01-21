@@ -11,14 +11,14 @@ public partial class Toolbox
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Whether to show toolbox component.
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue(true)]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// The layout orientation of toolbox's icon.
@@ -27,14 +27,14 @@ public partial class Toolbox
 	/// </summary>
 	[JsonPropertyName("orient")]
 	[DefaultValue("horizontal")]
-	public Orient? Orient { get; set; } 
+	public Orient? Orient { get; set; }
 
 	/// <summary>
 	/// The size of toolbox's icon.
 	/// </summary>
 	[JsonPropertyName("itemSize")]
 	[DefaultValue("15")]
-	public double? ItemSize { get; set; } 
+	public double? ItemSize { get; set; }
 
 	/// <summary>
 	/// The gap between each icon of toolbox.
@@ -42,14 +42,14 @@ public partial class Toolbox
 	/// </summary>
 	[JsonPropertyName("itemGap")]
 	[DefaultValue("8")]
-	public double? ItemGap { get; set; } 
+	public double? ItemGap { get; set; }
 
 	/// <summary>
 	/// Whether to show the title of each tool icon when mouse hovers.
 	/// </summary>
 	[JsonPropertyName("showTitle")]
 	[DefaultValue("true")]
-	public bool? ShowTitle { get; set; } 
+	public bool? ShowTitle { get; set; }
 
 	/// <summary>
 	/// The configuration item for each tool.
@@ -80,20 +80,20 @@ public partial class Toolbox
 	/// }
 	/// </summary>
 	[JsonPropertyName("feature")]
-	public Feature? Feature { get; set; } 
+	public Feature? Feature { get; set; }
 
 	/// <summary>
 	/// The style setting of Shared icon.
 	/// Since icon label is displayed only when hovering on the icon, the label configuration options are available under emphasis .
 	/// </summary>
 	[JsonPropertyName("iconStyle")]
-	public IconStyle? IconStyle { get; set; } 
+	public IconStyle? IconStyle { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -107,7 +107,7 @@ public partial class Toolbox
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -117,7 +117,7 @@ public partial class Toolbox
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between toolbox component and the left side of the container.
@@ -128,7 +128,7 @@ public partial class Toolbox
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("auto")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between toolbox component and the top side of the container.
@@ -139,7 +139,7 @@ public partial class Toolbox
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("auto")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between toolbox component and the right side of the container.
@@ -150,7 +150,7 @@ public partial class Toolbox
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("auto")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between toolbox component and the bottom side of the container.
@@ -161,7 +161,7 @@ public partial class Toolbox
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("auto")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Width of toolbox component.
@@ -169,7 +169,7 @@ public partial class Toolbox
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("auto")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of toolbox component.
@@ -177,7 +177,7 @@ public partial class Toolbox
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("auto")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// Tooltip configuration for toolbox tooltip, which is similar to tooltip .
@@ -215,6 +215,6 @@ public partial class Toolbox
 	/// }
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

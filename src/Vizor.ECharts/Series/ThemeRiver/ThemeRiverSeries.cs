@@ -14,13 +14,13 @@ public partial class ThemeRiverSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -29,7 +29,7 @@ public partial class ThemeRiverSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("colorBy")]
 	[DefaultValue("data")]
-	public ColorBy? ColorBy { get; set; } 
+	public ColorBy? ColorBy { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -43,7 +43,7 @@ public partial class ThemeRiverSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -53,7 +53,7 @@ public partial class ThemeRiverSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between thmemRiver component and the left side of the container.
@@ -64,7 +64,7 @@ public partial class ThemeRiverSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("5%")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between thmemRiver component and the top side of the container.
@@ -75,7 +75,7 @@ public partial class ThemeRiverSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("5%")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between thmemRiver component and the right side of the container.
@@ -84,7 +84,7 @@ public partial class ThemeRiverSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("5%")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between thmemRiver component and the bottom side of the container.
@@ -93,13 +93,13 @@ public partial class ThemeRiverSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("5%")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Width of thmemRiver component.
 	/// </summary>
 	[JsonPropertyName("width")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of thmemRiver component.
@@ -107,7 +107,7 @@ public partial class ThemeRiverSeries : ISeries
 	/// Notes: The positional information of the whole theme river view reuses the positional information of a single time axis, which are left, top, right and bottom.
 	/// </summary>
 	[JsonPropertyName("height")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// coordinate.
@@ -115,34 +115,34 @@ public partial class ThemeRiverSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("coordinateSystem")]
 	[DefaultValue("single")]
-	public string? CoordinateSystem { get; set; } 
+	public string? CoordinateSystem { get; set; }
 
 	/// <summary>
 	/// The boundary gap of the direction orthogonal with coordinate axis in diagram, which is set to adjust the diagram position, keeping it on the screen center instead of the upside or downside of the screen.
 	/// </summary>
 	[JsonPropertyName("boundaryGap")]
 	[DefaultValue("[10%, 10%]")]
-	public BoundaryGap? BoundaryGap { get; set; } 
+	public BoundaryGap? BoundaryGap { get; set; }
 
 	/// <summary>
 	/// The index of single time axis, which defaults to be 0 because it contains only one axis.
 	/// </summary>
 	[JsonPropertyName("singleAxisIndex")]
 	[DefaultValue(0)]
-	public int? SingleAxisIndex { get; set; } 
+	public int? SingleAxisIndex { get; set; }
 
 	/// <summary>
 	/// label describes style of text labels with which each ribbon-shape river branch corresponds in theme river.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configuration of label guide line.
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -191,33 +191,33 @@ public partial class ThemeRiverSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelLayout")]
-	public ObjectOrFunction? LabelLayout { get; set; } 
+	public ObjectOrFunction? LabelLayout { get; set; }
 
 	/// <summary>
 	/// style of each ribbon-shape river branch in theme river.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Configurations of emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configurations of blur state.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configurations of select state.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -263,12 +263,12 @@ public partial class ThemeRiverSeries : ISeries
 	/// From what is mentioned, we could set default value on any position of a complete time period.
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

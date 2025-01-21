@@ -14,13 +14,13 @@ public partial class MapSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -29,7 +29,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("colorBy")]
 	[DefaultValue("series")]
-	public ColorBy? ColorBy { get; set; } 
+	public ColorBy? ColorBy { get; set; }
 
 	/// <summary>
 	/// Map name registered in registerMap .
@@ -68,7 +68,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("map")]
 	[DefaultValue("")]
-	public string? Map { get; set; } 
+	public string? Map { get; set; }
 
 	/// <summary>
 	/// Whether to enable mouse zooming and translating.
@@ -78,7 +78,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("roam")]
 	[DefaultValue(false)]
-	public Roam? Roam { get; set; } 
+	public Roam? Roam { get; set; }
 
 	/// <summary>
 	/// Since v5.3.0   
@@ -105,7 +105,7 @@ public partial class MapSeries : ISeries
 	/// Note: Custom projections are only useful when using GeoJSON as a data source.
 	/// </summary>
 	[JsonPropertyName("projection")]
-	public Projection? Projection { get; set; } 
+	public Projection? Projection { get; set; }
 
 	/// <summary>
 	/// Center of current view-port.
@@ -115,7 +115,7 @@ public partial class MapSeries : ISeries
 	/// Example:  center: [115.97, '30%']
 	/// </summary>
 	[JsonPropertyName("center")]
-	public NumberOrStringArray? Center { get; set; } 
+	public NumberOrStringArray? Center { get; set; }
 
 	/// <summary>
 	/// Used to scale aspect of geo.
@@ -125,7 +125,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("aspectScale")]
 	[DefaultValue(0.75)]
-	public double? AspectScale { get; set; } 
+	public double? AspectScale { get; set; }
 
 	/// <summary>
 	/// Two dimension array.
@@ -148,14 +148,14 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zoom")]
 	[DefaultValue(1)]
-	public double? Zoom { get; set; } 
+	public double? Zoom { get; set; }
 
 	/// <summary>
 	/// Limit of scaling, with min and max .
 	/// 1 by default.
 	/// </summary>
 	[JsonPropertyName("scaleLimit")]
-	public ScaleLimit? ScaleLimit { get; set; } 
+	public ScaleLimit? ScaleLimit { get; set; }
 
 	/// <summary>
 	/// Name mapping for customized areas.
@@ -164,7 +164,7 @@ public partial class MapSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("nameMap")]
-	public NameMap? NameMap { get; set; } 
+	public NameMap? NameMap { get; set; }
 
 	/// <summary>
 	/// Since v4.8.0   
@@ -181,7 +181,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("nameProperty")]
 	[DefaultValue("name")]
-	public string? NameProperty { get; set; } 
+	public string? NameProperty { get; set; }
 
 	/// <summary>
 	/// Selected mode decides whether multiple selecting is supported.
@@ -190,7 +190,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// Text label of , to explain some data information about graphic item like value, name and so on.
@@ -198,25 +198,25 @@ public partial class MapSeries : ISeries
 	/// In ECharts 3, to make the configuration structure flatter, label is taken to be at the same level with itemStyle , and has emphasis as itemStyle does.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Graphic style of Map Area Border, emphasis is the style when it is highlighted, like being hovered by mouse, or highlighted via legend connect.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Map area style in highlighted state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Map area style in selected state.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -230,7 +230,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -240,7 +240,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between  component and the left side of the container.
@@ -251,7 +251,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("auto")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between  component and the top side of the container.
@@ -262,7 +262,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("auto")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between  component and the right side of the container.
@@ -273,7 +273,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("auto")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between  component and the bottom side of the container.
@@ -284,7 +284,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("auto")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// layoutCenter and layoutSize provides layout strategy other than left/right/top/bottom/width/height .
@@ -299,14 +299,14 @@ public partial class MapSeries : ISeries
 	/// After setting these two values, left/right/top/bottom/width/height becomes invalid.
 	/// </summary>
 	[JsonPropertyName("layoutCenter")]
-	public NumberOrStringArray? LayoutCenter { get; set; } 
+	public NumberOrStringArray? LayoutCenter { get; set; }
 
 	/// <summary>
 	/// Size of map, see layoutCenter for more information.
 	/// Percentage relative to screen width, and absolute pixel values are supported.
 	/// </summary>
 	[JsonPropertyName("layoutSize")]
-	public NumberOrString? LayoutSize { get; set; } 
+	public NumberOrString? LayoutSize { get; set; }
 
 	/// <summary>
 	/// In default case, map series create exclusive geo component for themselves.
@@ -318,7 +318,7 @@ public partial class MapSeries : ISeries
 	/// For example:
 	/// </summary>
 	[JsonPropertyName("geoIndex")]
-	public int? GeoIndex { get; set; } 
+	public int? GeoIndex { get; set; }
 
 	/// <summary>
 	/// Value of multiple series with the same map type can use this option to get a statistical value.
@@ -327,14 +327,14 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("mapValueCalculation")]
 	[DefaultValue("sum")]
-	public string? MapValueCalculation { get; set; } 
+	public string? MapValueCalculation { get; set; }
 
 	/// <summary>
 	/// Show the symbol in related area (dot of series symbol).
 	/// Available when legend component exists.
 	/// </summary>
 	[JsonPropertyName("showLegendSymbol")]
-	public bool? ShowLegendSymbol { get; set; } 
+	public bool? ShowLegendSymbol { get; set; }
 
 	/// <summary>
 	/// When dataset is used, seriesLayoutBy specifies whether the column or the row of dataset is mapped to the series, namely, the series is "layout" on columns or rows.
@@ -347,7 +347,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("seriesLayoutBy")]
 	[DefaultValue("column")]
-	public SeriesLayoutBy? SeriesLayoutBy { get; set; } 
+	public SeriesLayoutBy? SeriesLayoutBy { get; set; }
 
 	/// <summary>
 	/// If series.data is not specified, and dataset exists, the series will use dataset .
@@ -355,7 +355,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("datasetIndex")]
 	[DefaultValue(0)]
-	public int? DatasetIndex { get; set; } 
+	public int? DatasetIndex { get; set; }
 
 	/// <summary>
 	/// A groupID common to all data in the series.
@@ -364,7 +364,7 @@ public partial class MapSeries : ISeries
 	/// If you are using the dataset component to represent the data, it is recommended to use encode.itemGroupID to specify which dimension is encoded as the groupID.
 	/// </summary>
 	[JsonPropertyName("dataGroupId")]
-	public string? DataGroupId { get; set; } 
+	public string? DataGroupId { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -413,7 +413,7 @@ public partial class MapSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelLayout")]
-	public ObjectOrFunction? LabelLayout { get; set; } 
+	public ObjectOrFunction? LabelLayout { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -454,26 +454,26 @@ public partial class MapSeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// Mark point in a chart.
 	/// </summary>
 	[JsonPropertyName("markPoint")]
-	public MarkPoint? MarkPoint { get; set; } 
+	public MarkPoint? MarkPoint { get; set; }
 
 	/// <summary>
 	/// Use a line in the chart to illustrate.
 	/// </summary>
 	[JsonPropertyName("markLine")]
-	public MarkLine? MarkLine { get; set; } 
+	public MarkLine? MarkLine { get; set; }
 
 	/// <summary>
 	/// Used to mark an area in chart.
 	/// For example, mark a time interval.
 	/// </summary>
 	[JsonPropertyName("markArea")]
-	public MarkArea? MarkArea { get; set; } 
+	public MarkArea? MarkArea { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -481,7 +481,7 @@ public partial class MapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -497,12 +497,12 @@ public partial class MapSeries : ISeries
 	/// It is also possible to provide an object for more detailed configuration.
 	/// </summary>
 	[JsonPropertyName("universalTransition")]
-	public UniversalTransition? UniversalTransition { get; set; } 
+	public UniversalTransition? UniversalTransition { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

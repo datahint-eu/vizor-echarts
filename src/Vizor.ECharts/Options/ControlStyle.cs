@@ -12,42 +12,42 @@ public partial class ControlStyle
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// Whether to show play button.
 	/// </summary>
 	[JsonPropertyName("showPlayBtn")]
 	[DefaultValue("true")]
-	public bool? ShowPlayBtn { get; set; } 
+	public bool? ShowPlayBtn { get; set; }
 
 	/// <summary>
 	/// Whether to show previous button.
 	/// </summary>
 	[JsonPropertyName("showPrevBtn")]
 	[DefaultValue("true")]
-	public bool? ShowPrevBtn { get; set; } 
+	public bool? ShowPrevBtn { get; set; }
 
 	/// <summary>
 	/// Whether to show next button.
 	/// </summary>
 	[JsonPropertyName("showNextBtn")]
 	[DefaultValue("true")]
-	public bool? ShowNextBtn { get; set; } 
+	public bool? ShowNextBtn { get; set; }
 
 	/// <summary>
 	/// Size of control button , in pixels (px).
 	/// </summary>
 	[JsonPropertyName("itemSize")]
 	[DefaultValue("22")]
-	public double? ItemSize { get; set; } 
+	public double? ItemSize { get; set; }
 
 	/// <summary>
 	/// Interval between control button , in pixels (px).
 	/// </summary>
 	[JsonPropertyName("itemGap")]
 	[DefaultValue("12")]
-	public double? ItemGap { get; set; } 
+	public double? ItemGap { get; set; }
 
 	/// <summary>
 	/// the location of control button .
@@ -58,7 +58,7 @@ public partial class ControlStyle
 	/// </summary>
 	[JsonPropertyName("position")]
 	[DefaultValue("left")]
-	public Position? Position { get; set; } 
+	public Position? Position { get; set; }
 
 	/// <summary>
 	/// Icon of play status for play button .
@@ -75,7 +75,7 @@ public partial class ControlStyle
 	/// For example:  'path://M30.9,53.2C16.8,53.2,5.3,41.7,5.3,27.6S16.8,2,30.9,2C45,2,56.4,13.5,56.4,27.6S45,53.2,30.9,53.2z M30.9,3.5C17.6,3.5,6.8,14.4,6.8,27.6c0,13.3,10.8,24.1,24.101,24.1C44.2,51.7,55,40.9,55,27.6C54.9,14.4,44.1,3.5,30.9,3.5z M36.9,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H36c0.5,0,0.9,0.4,0.9,1V35.8z M27.8,35.8 c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H27c0.5,0,0.9,0.4,0.9,1L27.8,35.8L27.8,35.8z'
 	/// </summary>
 	[JsonPropertyName("playIcon")]
-	public Icon? PlayIcon { get; set; } 
+	public Icon? PlayIcon { get; set; }
 
 	/// <summary>
 	/// Icon of stop status for play button .
@@ -92,7 +92,7 @@ public partial class ControlStyle
 	/// For example:  'path://M30.9,53.2C16.8,53.2,5.3,41.7,5.3,27.6S16.8,2,30.9,2C45,2,56.4,13.5,56.4,27.6S45,53.2,30.9,53.2z M30.9,3.5C17.6,3.5,6.8,14.4,6.8,27.6c0,13.3,10.8,24.1,24.101,24.1C44.2,51.7,55,40.9,55,27.6C54.9,14.4,44.1,3.5,30.9,3.5z M36.9,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H36c0.5,0,0.9,0.4,0.9,1V35.8z M27.8,35.8 c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H27c0.5,0,0.9,0.4,0.9,1L27.8,35.8L27.8,35.8z'
 	/// </summary>
 	[JsonPropertyName("stopIcon")]
-	public Icon? StopIcon { get; set; } 
+	public Icon? StopIcon { get; set; }
 
 	/// <summary>
 	/// Icon of previous button .
@@ -109,7 +109,7 @@ public partial class ControlStyle
 	/// For example:  'path://M30.9,53.2C16.8,53.2,5.3,41.7,5.3,27.6S16.8,2,30.9,2C45,2,56.4,13.5,56.4,27.6S45,53.2,30.9,53.2z M30.9,3.5C17.6,3.5,6.8,14.4,6.8,27.6c0,13.3,10.8,24.1,24.101,24.1C44.2,51.7,55,40.9,55,27.6C54.9,14.4,44.1,3.5,30.9,3.5z M36.9,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H36c0.5,0,0.9,0.4,0.9,1V35.8z M27.8,35.8 c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H27c0.5,0,0.9,0.4,0.9,1L27.8,35.8L27.8,35.8z'
 	/// </summary>
 	[JsonPropertyName("prevIcon")]
-	public Icon? PrevIcon { get; set; } 
+	public Icon? PrevIcon { get; set; }
 
 	/// <summary>
 	/// Icon of next button .
@@ -126,7 +126,7 @@ public partial class ControlStyle
 	/// For example:  'path://M30.9,53.2C16.8,53.2,5.3,41.7,5.3,27.6S16.8,2,30.9,2C45,2,56.4,13.5,56.4,27.6S45,53.2,30.9,53.2z M30.9,3.5C17.6,3.5,6.8,14.4,6.8,27.6c0,13.3,10.8,24.1,24.101,24.1C44.2,51.7,55,40.9,55,27.6C54.9,14.4,44.1,3.5,30.9,3.5z M36.9,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H36c0.5,0,0.9,0.4,0.9,1V35.8z M27.8,35.8 c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H27c0.5,0,0.9,0.4,0.9,1L27.8,35.8L27.8,35.8z'
 	/// </summary>
 	[JsonPropertyName("nextIcon")]
-	public Icon? NextIcon { get; set; } 
+	public Icon? NextIcon { get; set; }
 
 	/// <summary>
 	/// color.
@@ -136,14 +136,14 @@ public partial class ControlStyle
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("#A4B1D7")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// border color, whose format is similar to that of color .
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("#A4B1D7")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// border width.
@@ -154,7 +154,7 @@ public partial class ControlStyle
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue(1)]
-	public double? BorderWidth { get; set; } 
+	public double? BorderWidth { get; set; }
 
 	/// <summary>
 	/// border type.
@@ -172,7 +172,7 @@ public partial class ControlStyle
 	/// </summary>
 	[JsonPropertyName("borderType")]
 	[DefaultValue("solid")]
-	public LineType? BorderType { get; set; } 
+	public LineType? BorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -183,7 +183,7 @@ public partial class ControlStyle
 	/// </summary>
 	[JsonPropertyName("borderDashOffset")]
 	[DefaultValue("0")]
-	public double? BorderDashOffset { get; set; } 
+	public double? BorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -197,7 +197,7 @@ public partial class ControlStyle
 	/// </summary>
 	[JsonPropertyName("borderCap")]
 	[DefaultValue("butt")]
-	public LineCap? BorderCap { get; set; } 
+	public LineCap? BorderCap { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -214,7 +214,7 @@ public partial class ControlStyle
 	/// </summary>
 	[JsonPropertyName("borderJoin")]
 	[DefaultValue("bevel")]
-	public LineJoin? BorderJoin { get; set; } 
+	public LineJoin? BorderJoin { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -228,7 +228,7 @@ public partial class ControlStyle
 	/// </summary>
 	[JsonPropertyName("borderMiterLimit")]
 	[DefaultValue("10")]
-	public double? BorderMiterLimit { get; set; } 
+	public double? BorderMiterLimit { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -241,7 +241,7 @@ public partial class ControlStyle
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -249,21 +249,21 @@ public partial class ControlStyle
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Opacity of the component.
@@ -271,6 +271,6 @@ public partial class ControlStyle
 	/// </summary>
 	[JsonPropertyName("opacity")]
 	[DefaultValue("1")]
-	public double? Opacity { get; set; } 
+	public double? Opacity { get; set; }
 
 }

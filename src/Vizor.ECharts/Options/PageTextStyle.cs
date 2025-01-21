@@ -11,7 +11,7 @@ public partial class PageTextStyle
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("#333")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// font style.
@@ -20,7 +20,7 @@ public partial class PageTextStyle
 	/// </summary>
 	[JsonPropertyName("fontStyle")]
 	[DefaultValue("normal")]
-	public FontStyle? FontStyle { get; set; } 
+	public FontStyle? FontStyle { get; set; }
 
 	/// <summary>
 	/// font thick weight.
@@ -29,7 +29,7 @@ public partial class PageTextStyle
 	/// </summary>
 	[JsonPropertyName("fontWeight")]
 	[DefaultValue("normal")]
-	public FontWeight? FontWeight { get; set; } 
+	public FontWeight? FontWeight { get; set; }
 
 	/// <summary>
 	/// font family.
@@ -38,14 +38,14 @@ public partial class PageTextStyle
 	/// </summary>
 	[JsonPropertyName("fontFamily")]
 	[DefaultValue("sans-serif")]
-	public string? FontFamily { get; set; } 
+	public string? FontFamily { get; set; }
 
 	/// <summary>
 	/// font size.
 	/// </summary>
 	[JsonPropertyName("fontSize")]
 	[DefaultValue("12")]
-	public double? FontSize { get; set; } 
+	public double? FontSize { get; set; }
 
 	/// <summary>
 	/// Line height of the text fragment.
@@ -62,33 +62,33 @@ public partial class PageTextStyle
 	/// </summary>
 	[JsonPropertyName("lineHeight")]
 	[DefaultValue("12")]
-	public double? LineHeight { get; set; } 
+	public double? LineHeight { get; set; }
 
 	/// <summary>
 	/// Width of text block.
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("100")]
-	public double? Width { get; set; } 
+	public double? Width { get; set; }
 
 	/// <summary>
 	/// Height of text block.
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("50")]
-	public double? Height { get; set; } 
+	public double? Height { get; set; }
 
 	/// <summary>
 	/// Stroke color of the text.
 	/// </summary>
 	[JsonPropertyName("textBorderColor")]
-	public Color? TextBorderColor { get; set; } 
+	public Color? TextBorderColor { get; set; }
 
 	/// <summary>
 	/// Stroke line width of the text.
 	/// </summary>
 	[JsonPropertyName("textBorderWidth")]
-	public double? TextBorderWidth { get; set; } 
+	public double? TextBorderWidth { get; set; }
 
 	/// <summary>
 	/// Stroke line type of the text.
@@ -106,7 +106,7 @@ public partial class PageTextStyle
 	/// </summary>
 	[JsonPropertyName("textBorderType")]
 	[DefaultValue("solid")]
-	public LineType? TextBorderType { get; set; } 
+	public LineType? TextBorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -117,35 +117,35 @@ public partial class PageTextStyle
 	/// </summary>
 	[JsonPropertyName("textBorderDashOffset")]
 	[DefaultValue("0")]
-	public double? TextBorderDashOffset { get; set; } 
+	public double? TextBorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Shadow color of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowColor")]
 	[DefaultValue("#000")]
-	public Color? TextShadowColor { get; set; } 
+	public Color? TextShadowColor { get; set; }
 
 	/// <summary>
 	/// Shadow blue of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowBlur")]
 	[DefaultValue(0)]
-	public double? TextShadowBlur { get; set; } 
+	public double? TextShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow X offset of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowOffsetX")]
 	[DefaultValue(0)]
-	public double? TextShadowOffsetX { get; set; } 
+	public double? TextShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Shadow Y offset of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowOffsetY")]
 	[DefaultValue(0)]
-	public double? TextShadowOffsetY { get; set; } 
+	public double? TextShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Determine how to display the text when it's overflow.
@@ -155,7 +155,7 @@ public partial class PageTextStyle
 	/// </summary>
 	[JsonPropertyName("overflow")]
 	[DefaultValue("none")]
-	public Overflow? Overflow { get; set; } 
+	public Overflow? Overflow { get; set; }
 
 	/// <summary>
 	/// Ellipsis to be displayed when overflow is set to truncate .
@@ -163,6 +163,6 @@ public partial class PageTextStyle
 	/// </summary>
 	[JsonPropertyName("ellipsis")]
 	[DefaultValue("...")]
-	public string? Ellipsis { get; set; } 
+	public string? Ellipsis { get; set; }
 
 }

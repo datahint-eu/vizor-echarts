@@ -14,13 +14,13 @@ public partial class PictorialBarSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -29,14 +29,14 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("colorBy")]
 	[DefaultValue("series")]
-	public ColorBy? ColorBy { get; set; } 
+	public ColorBy? ColorBy { get; set; }
 
 	/// <summary>
 	/// Whether to enable highlighting chart when legend is being hovered.
 	/// </summary>
 	[JsonPropertyName("legendHoverLink")]
 	[DefaultValue("true")]
-	public bool? LegendHoverLink { get; set; } 
+	public bool? LegendHoverLink { get; set; }
 
 	/// <summary>
 	/// The coordinate used in the series, whose options are:   
@@ -45,28 +45,28 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("coordinateSystem")]
 	[DefaultValue("cartesian2d")]
-	public string? CoordinateSystem { get; set; } 
+	public string? CoordinateSystem { get; set; }
 
 	/// <summary>
 	/// Index of x axis to combine with, which is  useful for multiple x axes in one chart.
 	/// </summary>
 	[JsonPropertyName("xAxisIndex")]
 	[DefaultValue(0)]
-	public int? XAxisIndex { get; set; } 
+	public int? XAxisIndex { get; set; }
 
 	/// <summary>
 	/// Index of y axis to combine with, which is  useful for multiple y axes in one chart.
 	/// </summary>
 	[JsonPropertyName("yAxisIndex")]
 	[DefaultValue(0)]
-	public int? YAxisIndex { get; set; } 
+	public int? YAxisIndex { get; set; }
 
 	/// <summary>
 	/// The mouse style when mouse hovers on an element, the same as cursor property in CSS .
 	/// </summary>
 	[JsonPropertyName("cursor")]
 	[DefaultValue("pointer")]
-	public string? Cursor { get; set; } 
+	public string? Cursor { get; set; }
 
 	/// <summary>
 	/// Text label of , to explain some data information about graphic item like value, name and so on.
@@ -74,14 +74,14 @@ public partial class PictorialBarSeries : ISeries
 	/// In ECharts 3, to make the configuration structure flatter, label is taken to be at the same level with itemStyle , and has emphasis as itemStyle does.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configuration of label guide line.
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -130,19 +130,19 @@ public partial class PictorialBarSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelLayout")]
-	public ObjectOrFunction? LabelLayout { get; set; } 
+	public ObjectOrFunction? LabelLayout { get; set; }
 
 	/// <summary>
 	/// Graphic style of , emphasis is the style when it is highlighted, like being hovered by mouse, or highlighted via legend connect.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Configurations of emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -150,7 +150,7 @@ public partial class PictorialBarSeries : ISeries
 	/// Available when emphasis.focus is set.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -158,7 +158,7 @@ public partial class PictorialBarSeries : ISeries
 	/// Available when selectedMode is set.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -171,7 +171,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// The width of the bar.
@@ -184,7 +184,7 @@ public partial class PictorialBarSeries : ISeries
 	/// This attribute should be set on the last 'pictorialBar' series in the coodinate system, then it will be adopted by all 'pictorialBar' series in the coordinate system.
 	/// </summary>
 	[JsonPropertyName("barWidth")]
-	public NumberOrString? BarWidth { get; set; } 
+	public NumberOrString? BarWidth { get; set; }
 
 	/// <summary>
 	/// The maximum width of the bar.
@@ -198,7 +198,7 @@ public partial class PictorialBarSeries : ISeries
 	/// This attribute should be set on the last 'pictorialBar' series in the coodinate system, then it will be adopted by all 'pictorialBar' series in the coordinate system.
 	/// </summary>
 	[JsonPropertyName("barMaxWidth")]
-	public NumberOrString? BarMaxWidth { get; set; } 
+	public NumberOrString? BarMaxWidth { get; set; }
 
 	/// <summary>
 	/// The minimum width of the bar.
@@ -213,7 +213,7 @@ public partial class PictorialBarSeries : ISeries
 	/// This attribute should be set on the last 'pictorialBar' series in the coodinate system, then it will be adopted by all 'pictorialBar' series in the coordinate system.
 	/// </summary>
 	[JsonPropertyName("barMinWidth")]
-	public NumberOrString? BarMinWidth { get; set; } 
+	public NumberOrString? BarMinWidth { get; set; }
 
 	/// <summary>
 	/// The minimum width of bar.
@@ -221,7 +221,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("barMinHeight")]
 	[DefaultValue(0)]
-	public double? BarMinHeight { get; set; } 
+	public double? BarMinHeight { get; set; }
 
 	/// <summary>
 	/// The minimum angle of bar.
@@ -230,7 +230,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("barMinAngle")]
 	[DefaultValue(0)]
-	public double? BarMinAngle { get; set; } 
+	public double? BarMinAngle { get; set; }
 
 	/// <summary>
 	/// The gap between bars between different series, is a percent value like '30%' , which means 30% of the bar width.
@@ -244,7 +244,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("barGap")]
 	[DefaultValue("-100%")]
-	public string? BarGap { get; set; } 
+	public string? BarGap { get; set; }
 
 	/// <summary>
 	/// The bar gap of a single series, defaults to be 20% of the category gap, can be set as a fixed value.
@@ -254,7 +254,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("barCategoryGap")]
 	[DefaultValue("20%")]
-	public string? BarCategoryGap { get; set; } 
+	public string? BarCategoryGap { get; set; }
 
 	/// <summary>
 	/// Specify the type of graphic elements.
@@ -295,7 +295,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("circle")]
-	public string? Symbol { get; set; } 
+	public string? Symbol { get; set; }
 
 	/// <summary>
 	/// Symbol size.
@@ -338,7 +338,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue("100%,100%")]
-	public NumberOrStringArray? SymbolSize { get; set; } 
+	public NumberOrStringArray? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Specify the location of the graphic elements.
@@ -370,7 +370,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolPosition")]
 	[DefaultValue("start")]
-	public StartOrEndOrCenter? SymbolPosition { get; set; } 
+	public StartOrEndOrCenter? SymbolPosition { get; set; }
 
 	/// <summary>
 	/// Specify the offset of graphic element according to its original position.
@@ -404,7 +404,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolOffset")]
 	[DefaultValue("0,0")]
-	public double[]? SymbolOffset { get; set; } 
+	public double[]? SymbolOffset { get; set; }
 
 	/// <summary>
 	/// The degree of the rotation of a graphic element.
@@ -433,7 +433,7 @@ public partial class PictorialBarSeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("symbolRotate")]
-	public double? SymbolRotate { get; set; } 
+	public double? SymbolRotate { get; set; }
 
 	/// <summary>
 	/// Whether to repeat a graphic element.
@@ -469,7 +469,7 @@ public partial class PictorialBarSeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("symbolRepeat")]
-	public PictorialSymbolRepeat? SymbolRepeat { get; set; } 
+	public PictorialSymbolRepeat? SymbolRepeat { get; set; }
 
 	/// <summary>
 	/// When symbolRepeat is used, symbolRepeatDirection specifies the render order of the repeated graphic elements.
@@ -505,7 +505,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolRepeatDirection")]
 	[DefaultValue("start")]
-	public StartOrEnd? SymbolRepeatDirection { get; set; } 
+	public StartOrEnd? SymbolRepeatDirection { get; set; }
 
 	/// <summary>
 	/// Specify margin of both sides of a graphic element.
@@ -547,7 +547,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolMargin")]
 	[DefaultValue("0,0")]
-	public NumberOrString? SymbolMargin { get; set; } 
+	public NumberOrString? SymbolMargin { get; set; }
 
 	/// <summary>
 	/// Whether to clip graphic elements.
@@ -585,7 +585,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolClip")]
 	[DefaultValue(false)]
-	public bool? SymbolClip { get; set; } 
+	public bool? SymbolClip { get; set; }
 
 	/// <summary>
 	/// Defines a bounding area availble for the graphic elements.
@@ -644,7 +644,7 @@ public partial class PictorialBarSeries : ISeries
 	/// }]
 	/// </summary>
 	[JsonPropertyName("symbolBoundingData")]
-	public double? SymbolBoundingData { get; set; } 
+	public double? SymbolBoundingData { get; set; }
 
 	/// <summary>
 	/// Image can be used as the pattern of graphic elements.
@@ -686,7 +686,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("symbolPatternSize")]
 	[DefaultValue("400")]
-	public double? SymbolPatternSize { get; set; } 
+	public double? SymbolPatternSize { get; set; }
 
 	/// <summary>
 	/// Whether to enable hover animation.
@@ -714,7 +714,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("hoverAnimation")]
 	[DefaultValue(false)]
-	public bool? HoverAnimation { get; set; } 
+	public bool? HoverAnimation { get; set; }
 
 	/// <summary>
 	/// dimensions can be used to define dimension info for series.data or dataset.source .
@@ -883,7 +883,7 @@ public partial class PictorialBarSeries : ISeries
 	/// };
 	/// </summary>
 	[JsonPropertyName("encode")]
-	public Encode? Encode { get; set; } 
+	public Encode? Encode { get; set; }
 
 	/// <summary>
 	/// A groupID common to all data in the series.
@@ -1000,26 +1000,26 @@ public partial class PictorialBarSeries : ISeries
 	/// For example, line chart can break when encounter an empty value, and scatter chart do not display graphic elements for empty values.
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// Mark point in a chart.
 	/// </summary>
 	[JsonPropertyName("markPoint")]
-	public MarkPoint? MarkPoint { get; set; } 
+	public MarkPoint? MarkPoint { get; set; }
 
 	/// <summary>
 	/// Use a line in the chart to illustrate.
 	/// </summary>
 	[JsonPropertyName("markLine")]
-	public MarkLine? MarkLine { get; set; } 
+	public MarkLine? MarkLine { get; set; }
 
 	/// <summary>
 	/// Used to mark an area in chart.
 	/// For example, mark a time interval.
 	/// </summary>
 	[JsonPropertyName("markArea")]
-	public MarkArea? MarkArea { get; set; } 
+	public MarkArea? MarkArea { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in Pictorial bar chart .
@@ -1033,7 +1033,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in Pictorial bar chart , which controls order of drawing graphical components.
@@ -1043,7 +1043,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -1051,14 +1051,14 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Whether to enable animation.
 	/// </summary>
 	[JsonPropertyName("animation")]
 	[DefaultValue("true")]
-	public bool? Animation { get; set; } 
+	public bool? Animation { get; set; }
 
 	/// <summary>
 	/// Whether to set graphic number threshold to animation.
@@ -1066,7 +1066,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationThreshold")]
 	[DefaultValue(2000)]
-	public double? AnimationThreshold { get; set; } 
+	public double? AnimationThreshold { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -1076,7 +1076,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -1084,7 +1084,7 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Time for animation to complete, which supports callback function for different data to have different animation effect:  animationDurationUpdate: function (idx) {
@@ -1094,14 +1094,14 @@ public partial class PictorialBarSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDurationUpdate")]
 	[DefaultValue("1000")]
-	public NumberOrFunction? AnimationDurationUpdate { get; set; } 
+	public NumberOrFunction? AnimationDurationUpdate { get; set; }
 
 	/// <summary>
 	/// Easing method used for animation.
 	/// </summary>
 	[JsonPropertyName("animationEasingUpdate")]
 	[DefaultValue("cubicOut")]
-	public AnimationEasing? AnimationEasingUpdate { get; set; } 
+	public AnimationEasing? AnimationEasingUpdate { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
@@ -1117,12 +1117,12 @@ public partial class PictorialBarSeries : ISeries
 	/// It is also possible to provide an object for more detailed configuration.
 	/// </summary>
 	[JsonPropertyName("universalTransition")]
-	public UniversalTransition? UniversalTransition { get; set; } 
+	public UniversalTransition? UniversalTransition { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

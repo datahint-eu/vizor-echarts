@@ -11,7 +11,7 @@ public partial class RichStyleName
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("null")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// font style.
@@ -20,7 +20,7 @@ public partial class RichStyleName
 	/// </summary>
 	[JsonPropertyName("fontStyle")]
 	[DefaultValue("normal")]
-	public FontStyle? FontStyle { get; set; } 
+	public FontStyle? FontStyle { get; set; }
 
 	/// <summary>
 	/// font thick weight.
@@ -29,7 +29,7 @@ public partial class RichStyleName
 	/// </summary>
 	[JsonPropertyName("fontWeight")]
 	[DefaultValue("normal")]
-	public FontWeight? FontWeight { get; set; } 
+	public FontWeight? FontWeight { get; set; }
 
 	/// <summary>
 	/// font family.
@@ -38,14 +38,14 @@ public partial class RichStyleName
 	/// </summary>
 	[JsonPropertyName("fontFamily")]
 	[DefaultValue("sans-serif")]
-	public string? FontFamily { get; set; } 
+	public string? FontFamily { get; set; }
 
 	/// <summary>
 	/// font size.
 	/// </summary>
 	[JsonPropertyName("fontSize")]
 	[DefaultValue("12")]
-	public double? FontSize { get; set; } 
+	public double? FontSize { get; set; }
 
 	/// <summary>
 	/// Horizontal alignment of text, automatic by default.
@@ -62,7 +62,7 @@ public partial class RichStyleName
 	/// }
 	/// </summary>
 	[JsonPropertyName("align")]
-	public HorizontalAlign? Align { get; set; } 
+	public HorizontalAlign? Align { get; set; }
 
 	/// <summary>
 	/// Vertical alignment of text, automatic by default.
@@ -79,7 +79,7 @@ public partial class RichStyleName
 	/// }
 	/// </summary>
 	[JsonPropertyName("verticalAlign")]
-	public VerticalAlign? VerticalAlign { get; set; } 
+	public VerticalAlign? VerticalAlign { get; set; }
 
 	/// <summary>
 	/// Line height of the text fragment.
@@ -96,7 +96,7 @@ public partial class RichStyleName
 	/// </summary>
 	[JsonPropertyName("lineHeight")]
 	[DefaultValue("12")]
-	public double? LineHeight { get; set; } 
+	public double? LineHeight { get; set; }
 
 	/// <summary>
 	/// Background color of the text fragment.
@@ -115,21 +115,21 @@ public partial class RichStyleName
 	/// </summary>
 	[JsonPropertyName("backgroundColor")]
 	[DefaultValue("#fff")]
-	public Color? BackgroundColor { get; set; } 
+	public Color? BackgroundColor { get; set; }
 
 	/// <summary>
 	/// Border color of the text fragment.
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("#fff")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// Border width of the text fragment.
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue(0)]
-	public double? BorderWidth { get; set; } 
+	public double? BorderWidth { get; set; }
 
 	/// <summary>
 	/// the text fragment border type.
@@ -147,7 +147,7 @@ public partial class RichStyleName
 	/// </summary>
 	[JsonPropertyName("borderType")]
 	[DefaultValue("solid")]
-	public LineType? BorderType { get; set; } 
+	public LineType? BorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -158,14 +158,14 @@ public partial class RichStyleName
 	/// </summary>
 	[JsonPropertyName("borderDashOffset")]
 	[DefaultValue("0")]
-	public double? BorderDashOffset { get; set; } 
+	public double? BorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Border radius of the text fragment.
 	/// </summary>
 	[JsonPropertyName("borderRadius")]
 	[DefaultValue(0)]
-	public BorderRadius? BorderRadius { get; set; } 
+	public BorderRadius? BorderRadius { get; set; }
 
 	/// <summary>
 	/// Padding of the text fragment, for example:   padding: [3, 4, 5, 6] : represents padding of [top, right, bottom, left] .
@@ -176,35 +176,35 @@ public partial class RichStyleName
 	/// </summary>
 	[JsonPropertyName("padding")]
 	[DefaultValue(0)]
-	public Padding? Padding { get; set; } 
+	public Padding? Padding { get; set; }
 
 	/// <summary>
 	/// Shadow color of the text block.
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("transparent")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Show blur of the text block.
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue(0)]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow X offset of the text block.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue(0)]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Shadow Y offset of the text block.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue(0)]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Width of the text block.
@@ -220,7 +220,7 @@ public partial class RichStyleName
 	/// Notice, width and height only work when rich specified.
 	/// </summary>
 	[JsonPropertyName("width")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of the text block.
@@ -232,19 +232,19 @@ public partial class RichStyleName
 	/// Notice, width and height only work when rich specified.
 	/// </summary>
 	[JsonPropertyName("height")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// Stroke color of the text.
 	/// </summary>
 	[JsonPropertyName("textBorderColor")]
-	public Color? TextBorderColor { get; set; } 
+	public Color? TextBorderColor { get; set; }
 
 	/// <summary>
 	/// Stroke line width of the text.
 	/// </summary>
 	[JsonPropertyName("textBorderWidth")]
-	public double? TextBorderWidth { get; set; } 
+	public double? TextBorderWidth { get; set; }
 
 	/// <summary>
 	/// Stroke line type of the text.
@@ -262,7 +262,7 @@ public partial class RichStyleName
 	/// </summary>
 	[JsonPropertyName("textBorderType")]
 	[DefaultValue("solid")]
-	public LineType? TextBorderType { get; set; } 
+	public LineType? TextBorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -273,34 +273,34 @@ public partial class RichStyleName
 	/// </summary>
 	[JsonPropertyName("textBorderDashOffset")]
 	[DefaultValue("0")]
-	public double? TextBorderDashOffset { get; set; } 
+	public double? TextBorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Shadow color of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowColor")]
 	[DefaultValue("#000")]
-	public Color? TextShadowColor { get; set; } 
+	public Color? TextShadowColor { get; set; }
 
 	/// <summary>
 	/// Shadow blue of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowBlur")]
 	[DefaultValue(0)]
-	public double? TextShadowBlur { get; set; } 
+	public double? TextShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow X offset of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowOffsetX")]
 	[DefaultValue(0)]
-	public double? TextShadowOffsetX { get; set; } 
+	public double? TextShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Shadow Y offset of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowOffsetY")]
 	[DefaultValue(0)]
-	public double? TextShadowOffsetY { get; set; } 
+	public double? TextShadowOffsetY { get; set; }
 
 }

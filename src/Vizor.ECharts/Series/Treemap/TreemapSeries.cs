@@ -14,13 +14,13 @@ public partial class TreemapSeries : ISeries
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -34,7 +34,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -44,7 +44,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between treemap  component and the left side of the container.
@@ -55,7 +55,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("center")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between treemap  component and the top side of the container.
@@ -66,7 +66,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("middle")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between treemap  component and the right side of the container.
@@ -77,7 +77,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("auto")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between treemap  component and the bottom side of the container.
@@ -88,21 +88,21 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("auto")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Width of treemap  component.
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("80%")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of treemap  component.
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("80%")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// The expected square ratio.
@@ -112,7 +112,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("squareRatio")]
 	[DefaultValue("0.75")]
-	public double? SquareRatio { get; set; } 
+	public double? SquareRatio { get; set; }
 
 	/// <summary>
 	/// When leafDepth is set, the feature "drill down" is enabled, which means when clicking a tree node, this node will be set as root and its children will be shown.
@@ -125,14 +125,14 @@ public partial class TreemapSeries : ISeries
 	/// An example about drill down:
 	/// </summary>
 	[JsonPropertyName("leafDepth")]
-	public double? LeafDepth { get; set; } 
+	public double? LeafDepth { get; set; }
 
 	/// <summary>
 	/// Marker when the node is able to be drilled down.
 	/// </summary>
 	[JsonPropertyName("drillDownIcon")]
 	[DefaultValue("▶")]
-	public string? DrillDownIcon { get; set; } 
+	public string? DrillDownIcon { get; set; }
 
 	/// <summary>
 	/// Whether to enable dragging roam (move and zoom).
@@ -143,7 +143,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("roam")]
 	[DefaultValue(true)]
-	public Roam? Roam { get; set; } 
+	public Roam? Roam { get; set; }
 
 	/// <summary>
 	/// The behaviour when clicking a node.
@@ -153,7 +153,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("nodeClick")]
 	[DefaultValue("zoomToNode")]
-	public TreemapNodeClick? NodeClick { get; set; } 
+	public TreemapNodeClick? NodeClick { get; set; }
 
 	/// <summary>
 	/// The treemap will be auto zoomed to a appropriate ratio when a node is clicked (when nodeClick is set as 'zoomToNode' and no drill down happens).
@@ -161,7 +161,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("zoomToNodeRatio")]
 	[DefaultValue("0.1")]
-	public double? ZoomToNodeRatio { get; set; } 
+	public double? ZoomToNodeRatio { get; set; }
 
 	/// <summary>
 	/// treemap is able to map any dimensions of data to visual.
@@ -178,7 +178,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("visualDimension")]
 	[DefaultValue(0)]
-	public double? VisualDimension { get; set; } 
+	public double? VisualDimension { get; set; }
 
 	/// <summary>
 	/// The minimal value of current level.
@@ -188,7 +188,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("visualMin")]
 	[DefaultValue("0")]
-	public double? VisualMin { get; set; } 
+	public double? VisualMin { get; set; }
 
 	/// <summary>
 	/// The maximal value of current level.
@@ -198,7 +198,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("visualMax")]
 	[DefaultValue("100")]
-	public double? VisualMax { get; set; } 
+	public double? VisualMax { get; set; }
 
 	/// <summary>
 	/// It indicates the range of tranparent rate (color alpha) for nodes of the series  
@@ -214,7 +214,7 @@ public partial class TreemapSeries : ISeries
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("colorAlpha")]
-	public double[]? ColorAlpha { get; set; } 
+	public double[]? ColorAlpha { get; set; }
 
 	/// <summary>
 	/// It indicates the range of saturation (color alpha) for nodes  of the series.
@@ -230,7 +230,7 @@ public partial class TreemapSeries : ISeries
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("colorSaturation")]
-	public double? ColorSaturation { get; set; } 
+	public double? ColorSaturation { get; set; }
 
 	/// <summary>
 	/// Specify the rule according to which each node obtain color from color list .
@@ -259,7 +259,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("colorMappingBy")]
 	[DefaultValue("index")]
-	public ColorMappingBy? ColorMappingBy { get; set; } 
+	public ColorMappingBy? ColorMappingBy { get; set; }
 
 	/// <summary>
 	/// A node will not be shown when its area size is smaller than this value (unit: px square).
@@ -275,7 +275,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("visibleMin")]
 	[DefaultValue("10")]
-	public double? VisibleMin { get; set; } 
+	public double? VisibleMin { get; set; }
 
 	/// <summary>
 	/// Children will not be shown when area size of a node is smaller than this value (unit: px square).
@@ -291,7 +291,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("childrenVisibleMin")]
 	[DefaultValue("10")]
-	public double? ChildrenVisibleMin { get; set; } 
+	public double? ChildrenVisibleMin { get; set; }
 
 	/// <summary>
 	/// label decribes the style of the label in each node.
@@ -301,7 +301,7 @@ public partial class TreemapSeries : ISeries
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// upperLabel is used to specify whether show label when the node has children.
@@ -317,7 +317,7 @@ public partial class TreemapSeries : ISeries
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("upperLabel")]
-	public UpperLabel? UpperLabel { get; set; } 
+	public UpperLabel? UpperLabel { get; set; }
 
 	/// <summary>
 	/// Tps: In treemap, itemStyle attribute could appear in more than one places:     It could appear in sereis-treemap , indicating the unified setting of the series.
@@ -325,27 +325,27 @@ public partial class TreemapSeries : ISeries
 	///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Emphasis state.
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Blur state.
 	/// </summary>
 	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; } 
+	public Blur? Blur { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Select state.
 	/// </summary>
 	[JsonPropertyName("select")]
-	public Select? Select { get; set; } 
+	public Select? Select { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -358,20 +358,20 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("selectedMode")]
 	[DefaultValue(false)]
-	public SelectionMode? SelectedMode { get; set; } 
+	public SelectionMode? SelectedMode { get; set; }
 
 	/// <summary>
 	/// To show the path of the current node.
 	/// </summary>
 	[JsonPropertyName("breadcrumb")]
-	public Breadcrumb? Breadcrumb { get; set; } 
+	public Breadcrumb? Breadcrumb { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Configuration of label guide line.
 	/// </summary>
 	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; } 
+	public LabelLine? LabelLine { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -420,7 +420,7 @@ public partial class TreemapSeries : ISeries
 	/// }
 	/// </summary>
 	[JsonPropertyName("labelLayout")]
-	public ObjectOrFunction? LabelLayout { get; set; } 
+	public ObjectOrFunction? LabelLayout { get; set; }
 
 	/// <summary>
 	/// Multiple Levels Configuration  
@@ -561,7 +561,7 @@ public partial class TreemapSeries : ISeries
 	/// ]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 	/// <summary>
 	/// Whether to ignore mouse events.
@@ -569,7 +569,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
-	public bool? Silent { get; set; } 
+	public bool? Silent { get; set; }
 
 	/// <summary>
 	/// Duration of the first animation, which supports callback function for different data to have different animation effect:  animationDuration: function (idx) {
@@ -579,7 +579,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDuration")]
 	[DefaultValue("1500")]
-	public NumberOrFunction? AnimationDuration { get; set; } 
+	public NumberOrFunction? AnimationDuration { get; set; }
 
 	/// <summary>
 	/// Easing method used for the first animation.
@@ -587,7 +587,7 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationEasing")]
 	[DefaultValue("quinticInOut")]
-	public AnimationEasing? AnimationEasing { get; set; } 
+	public AnimationEasing? AnimationEasing { get; set; }
 
 	/// <summary>
 	/// Delay before updating the first animation, which supports callback function for different data to have different animation effect.
@@ -600,12 +600,12 @@ public partial class TreemapSeries : ISeries
 	/// </summary>
 	[JsonPropertyName("animationDelay")]
 	[DefaultValue(0)]
-	public NumberOrFunction? AnimationDelay { get; set; } 
+	public NumberOrFunction? AnimationDelay { get; set; }
 
 	/// <summary>
 	/// tooltip settings in this series.
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

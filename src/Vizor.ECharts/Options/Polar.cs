@@ -11,7 +11,7 @@ public partial class Polar
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -25,7 +25,7 @@ public partial class Polar
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -35,7 +35,7 @@ public partial class Polar
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Center position of Polar coordinate, the first of which is the horizontal position, and the second is the vertical position.
@@ -50,7 +50,7 @@ public partial class Polar
 	/// </summary>
 	[JsonPropertyName("center")]
 	[DefaultValue("[50%, 50%]")]
-	public double[]? Center { get; set; } 
+	public double[]? Center { get; set; }
 
 	/// <summary>
 	/// Radius of Polar coordinate.
@@ -61,7 +61,7 @@ public partial class Polar
 	/// </summary>
 	[JsonPropertyName("radius")]
 	[DefaultValue("0%, 75%")]
-	public CircleRadius? Radius { get; set; } 
+	public CircleRadius? Radius { get; set; }
 
 	/// <summary>
 	/// tooltip settings in the coordinate system component.
@@ -74,6 +74,6 @@ public partial class Polar
 	/// Configured in each item of series.data : series.data.tooltip
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }

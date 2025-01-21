@@ -11,7 +11,7 @@ public partial class MarkPointData
 	/// </summary>
 	[JsonPropertyName("name")]
 	[DefaultValue("")]
-	public string? Name { get; set; } 
+	public string? Name { get; set; }
 
 	/// <summary>
 	/// Special label types, are used to label maximum value, minimum value and so on.
@@ -21,13 +21,13 @@ public partial class MarkPointData
 	///  'average' average value.
 	/// </summary>
 	[JsonPropertyName("type")]
-	public MarkPointType? Type { get; set; } 
+	public MarkPointType? Type { get; set; }
 
 	/// <summary>
 	/// Available when using type it is used to assign maximum value and minimum value in dimensions, it could be 0 (xAxis, radiusAxis), 1 (yAxis, angleAxis), and use the first value axis dimension by default.
 	/// </summary>
 	[JsonPropertyName("valueIndex")]
-	public int? ValueIndex { get; set; } 
+	public int? ValueIndex { get; set; }
 
 	/// <summary>
 	/// Works only when type is assigned.
@@ -35,7 +35,7 @@ public partial class MarkPointData
 	/// It may be the direct name of a dimension, like x , or angle for line charts, or open , or close for candlestick charts.
 	/// </summary>
 	[JsonPropertyName("valueDim")]
-	public string? ValueDim { get; set; } 
+	public string? ValueDim { get; set; }
 
 	/// <summary>
 	/// Coordinates of the starting point or ending point, whose format depends on the coordinate of the series.
@@ -65,27 +65,27 @@ public partial class MarkPointData
 	/// }
 	/// </summary>
 	[JsonPropertyName("coord")]
-	public NumberOrStringArray? Coord { get; set; } 
+	public NumberOrStringArray? Coord { get; set; }
 
 	/// <summary>
 	/// X position according to container, in pixel.
 	/// </summary>
 	[JsonPropertyName("x")]
 	[DefaultValue("0")]
-	public double? X { get; set; } 
+	public double? X { get; set; }
 
 	/// <summary>
 	/// Y position according to container, in pixel.
 	/// </summary>
 	[JsonPropertyName("y")]
 	[DefaultValue("0")]
-	public double? Y { get; set; } 
+	public double? Y { get; set; }
 
 	/// <summary>
 	/// Label value, which can be ignored.
 	/// </summary>
 	[JsonPropertyName("value")]
-	public double? Value { get; set; } 
+	public double? Value { get; set; }
 
 	/// <summary>
 	/// Symbol of .
@@ -105,7 +105,7 @@ public partial class MarkPointData
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("circle")]
-	public Icon? Symbol { get; set; } 
+	public Icon? Symbol { get; set; }
 
 	/// <summary>
 	/// symbol size.
@@ -113,7 +113,7 @@ public partial class MarkPointData
 	/// For example, [20, 10] means symbol width is 20 , and height is 10 .
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
-	public NumberOrNumberArray? SymbolSize { get; set; } 
+	public NumberOrNumberArray? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Rotate degree of  symbol.
@@ -121,14 +121,14 @@ public partial class MarkPointData
 	/// Note that when symbol is set to be 'arrow' in markLine , symbolRotate value will be ignored, and compulsively use tangent angle.
 	/// </summary>
 	[JsonPropertyName("symbolRotate")]
-	public double? SymbolRotate { get; set; } 
+	public double? SymbolRotate { get; set; }
 
 	/// <summary>
 	/// Whether to keep aspect for symbols in the form of path:// .
 	/// </summary>
 	[JsonPropertyName("symbolKeepAspect")]
 	[DefaultValue(false)]
-	public bool? SymbolKeepAspect { get; set; } 
+	public bool? SymbolKeepAspect { get; set; }
 
 	/// <summary>
 	/// Offset of  symbol relative to original position.
@@ -142,24 +142,24 @@ public partial class MarkPointData
 	/// </summary>
 	[JsonPropertyName("symbolOffset")]
 	[DefaultValue("[0, 0]")]
-	public double[]? SymbolOffset { get; set; } 
+	public double[]? SymbolOffset { get; set; }
 
 	/// <summary>
 	/// Mark point style.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 }

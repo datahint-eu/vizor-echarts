@@ -14,7 +14,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Specify the min dataValue for the visualMap component.
@@ -23,7 +23,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// Notice that min and max should be specified explicitly, and be [0, 200] by default, but not dataMin and dataMax in series.data.
 	/// </summary>
 	[JsonPropertyName("min")]
-	public double? Min { get; set; } 
+	public double? Min { get; set; }
 
 	/// <summary>
 	/// Specify the max dataValue for the visualMap component.
@@ -32,7 +32,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// Notice that min and max should be specified explicitly, and be [0, 200] by default, but not dataMin and dataMax in series.data.
 	/// </summary>
 	[JsonPropertyName("max")]
-	public double? Max { get; set; } 
+	public double? Max { get; set; }
 
 	/// <summary>
 	/// Specify selected range, that is, the dataValue corresponding to the two handles.
@@ -62,7 +62,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// range gotten by getOption is always an Array , but not null or undefined .
 	/// </summary>
 	[JsonPropertyName("range")]
-	public double[]? Range { get; set; } 
+	public double[]? Range { get; set; }
 
 	/// <summary>
 	/// Whether show handles, which can be dragged to adjust "selected range".
@@ -72,7 +72,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("calculable")]
 	[DefaultValue(false)]
-	public bool? Calculable { get; set; } 
+	public bool? Calculable { get; set; }
 
 	/// <summary>
 	/// Whether to update view in real time when dragging a handle.
@@ -83,7 +83,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("realtime")]
 	[DefaultValue("true")]
-	public bool? Realtime { get; set; } 
+	public bool? Realtime { get; set; }
 
 	/// <summary>
 	/// Whether to inverse the layout of visualMap component.
@@ -96,28 +96,28 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("inverse")]
 	[DefaultValue(false)]
-	public bool? Inverse { get; set; } 
+	public bool? Inverse { get; set; }
 
 	/// <summary>
 	/// The decimal precision of label, defaults to be 0 (no decimals).
 	/// </summary>
 	[JsonPropertyName("precision")]
 	[DefaultValue(0)]
-	public double? Precision { get; set; } 
+	public double? Precision { get; set; }
 
 	/// <summary>
 	/// The width of the main bar of visualMap component.
 	/// </summary>
 	[JsonPropertyName("itemWidth")]
 	[DefaultValue("20")]
-	public double? ItemWidth { get; set; } 
+	public double? ItemWidth { get; set; }
 
 	/// <summary>
 	/// The height of the main bar of visualMap component.
 	/// </summary>
 	[JsonPropertyName("itemHeight")]
 	[DefaultValue("140")]
-	public double? ItemHeight { get; set; } 
+	public double? ItemHeight { get; set; }
 
 	/// <summary>
 	/// Specify the position of handles and labels, against the main bar.
@@ -129,7 +129,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("align")]
 	[DefaultValue("auto")]
-	public HorizontalAlign? Align { get; set; } 
+	public HorizontalAlign? Align { get; set; }
 
 	/// <summary>
 	/// The label text on both ends, such as ['High', 'Low'] .
@@ -138,7 +138,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// See visualMap.inverse .
 	/// </summary>
 	[JsonPropertyName("text")]
-	public string[]? Text { get; set; } 
+	public string[]? Text { get; set; }
 
 	/// <summary>
 	/// The distance between the ends of the main bar and the label, with unit px.
@@ -146,7 +146,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("textGap")]
 	[DefaultValue("10")]
-	public double? TextGap { get; set; } 
+	public double? TextGap { get; set; }
 
 	/// <summary>
 	/// Whether to show visualMap-continuous component.
@@ -154,7 +154,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue(true)]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// Specify which dimension should be used to fetch dataValue from series.data , and then map them to visual channel.
@@ -171,7 +171,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// Use the last dimension of data by default.
 	/// </summary>
 	[JsonPropertyName("dimension")]
-	public NumberOrString? Dimension { get; set; } 
+	public NumberOrString? Dimension { get; set; }
 
 	/// <summary>
 	/// Specify visual mapping should be performed on which series, from which series.data is fetched.
@@ -179,7 +179,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// All series are used by default.
 	/// </summary>
 	[JsonPropertyName("seriesIndex")]
-	public NumberOrNumberArray? SeriesIndex { get; set; } 
+	public NumberOrNumberArray? SeriesIndex { get; set; }
 
 	/// <summary>
 	/// hoverLink enable highlight certain graphical elements of chart when mouse hovers on some place of visualMap component that is coresponding to those graphical elements by visual mapping.
@@ -188,7 +188,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("hoverLink")]
 	[DefaultValue(true)]
-	public bool? HoverLink { get; set; } 
+	public bool? HoverLink { get; set; }
 
 	/// <summary>
 	/// Define visual channels that will mapped from dataValues that are in selected range .
@@ -382,7 +382,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// If you dont want it, set inRange: {color: null} to disable it.
 	/// </summary>
 	[JsonPropertyName("inRange")]
-	public VisualMapRange? InRange { get; set; } 
+	public VisualMapRange? InRange { get; set; }
 
 	/// <summary>
 	/// Define visual channels that will mapped from dataValues that are out of selected range .
@@ -391,14 +391,14 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// See available configurations in visualMap-continuous.inRange
 	/// </summary>
 	[JsonPropertyName("outOfRange")]
-	public VisualMapRange? OutOfRange { get; set; } 
+	public VisualMapRange? OutOfRange { get; set; }
 
 	/// <summary>
 	/// Property inRange and outOfRange can be set within property controller , which means those inRange and outOfRange are only used on the controller ( visualMap component itself), but are not used on chart (series).
 	/// This property is useful in some scenarios when the view of controller needs to be customized in detail.
 	/// </summary>
 	[JsonPropertyName("controller")]
-	public Controller? Controller { get; set; } 
+	public Controller? Controller { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -412,7 +412,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -422,7 +422,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(4)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between visualMap  component and the left side of the container.
@@ -433,7 +433,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue(0)]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between visualMap  component and the top side of the container.
@@ -444,7 +444,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("auto")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between visualMap  component and the right side of the container.
@@ -453,7 +453,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("auto")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between visualMap  component and the bottom side of the container.
@@ -462,14 +462,14 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue(0)]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// How to layout the visualMap component, 'horizontal' or 'vertical' .
 	/// </summary>
 	[JsonPropertyName("orient")]
 	[DefaultValue("vertical")]
-	public Orient? Orient { get; set; } 
+	public Orient? Orient { get; set; }
 
 	/// <summary>
 	/// visualMap-continuous space around content.
@@ -491,28 +491,28 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("padding")]
 	[DefaultValue(5)]
-	public Padding? Padding { get; set; } 
+	public Padding? Padding { get; set; }
 
 	/// <summary>
 	/// background color of visualMap component.
 	/// </summary>
 	[JsonPropertyName("backgroundColor")]
 	[DefaultValue("rgba(0,0,0,0)")]
-	public Color? BackgroundColor { get; set; } 
+	public Color? BackgroundColor { get; set; }
 
 	/// <summary>
 	/// border color of visualMap component.
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("#ccc")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// border width of visualMap component, with unit: px.
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue(0)]
-	public double? BorderWidth { get; set; } 
+	public double? BorderWidth { get; set; }
 
 	/// <summary>
 	/// This property remains only for compatibility with ECharts2, and is not recommended in ECharts3.
@@ -523,13 +523,13 @@ public partial class ContinuousVisualMap : IVisualMap
 	[JsonPropertyName("color")]
 	[DefaultValue("[#bf444c, #d88273, #f6efa6]")]
 	[Obsolete]
-	public string[]? Color { get; set; } 
+	public string[]? Color { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("textStyle")]
-	public object? TextStyle { get; set; } 
+	public object? TextStyle { get; set; }
 
 	/// <summary>
 	/// the formatter tool for label.
@@ -541,7 +541,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// }
 	/// </summary>
 	[JsonPropertyName("formatter")]
-	public StringOrFunction? Formatter { get; set; } 
+	public StringOrFunction? Formatter { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -559,7 +559,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// For example:  'path://M30.9,53.2C16.8,53.2,5.3,41.7,5.3,27.6S16.8,2,30.9,2C45,2,56.4,13.5,56.4,27.6S45,53.2,30.9,53.2z M30.9,3.5C17.6,3.5,6.8,14.4,6.8,27.6c0,13.3,10.8,24.1,24.101,24.1C44.2,51.7,55,40.9,55,27.6C54.9,14.4,44.1,3.5,30.9,3.5z M36.9,35.8c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H36c0.5,0,0.9,0.4,0.9,1V35.8z M27.8,35.8 c0,0.601-0.4,1-0.9,1h-1.3c-0.5,0-0.9-0.399-0.9-1V19.5c0-0.6,0.4-1,0.9-1H27c0.5,0,0.9,0.4,0.9,1L27.8,35.8L27.8,35.8z'
 	/// </summary>
 	[JsonPropertyName("handleIcon")]
-	public Icon? HandleIcon { get; set; } 
+	public Icon? HandleIcon { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -568,14 +568,14 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("handleSize")]
 	[DefaultValue("120%")]
-	public NumberOrString? HandleSize { get; set; } 
+	public NumberOrString? HandleSize { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
 	/// Style of drag handle.
 	/// </summary>
 	[JsonPropertyName("handleStyle")]
-	public HandleStyle? HandleStyle { get; set; } 
+	public HandleStyle? HandleStyle { get; set; }
 
 	/// <summary>
 	/// Icon of indicator.
@@ -584,7 +584,7 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("indicatorIcon")]
 	[DefaultValue("circle")]
-	public Icon? IndicatorIcon { get; set; } 
+	public Icon? IndicatorIcon { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -593,12 +593,12 @@ public partial class ContinuousVisualMap : IVisualMap
 	/// </summary>
 	[JsonPropertyName("indicatorSize")]
 	[DefaultValue("50%")]
-	public NumberOrString? IndicatorSize { get; set; } 
+	public NumberOrString? IndicatorSize { get; set; }
 
 	/// <summary>
 	/// Style of indicator.
 	/// </summary>
 	[JsonPropertyName("indicatorStyle")]
-	public IndicatorStyle? IndicatorStyle { get; set; } 
+	public IndicatorStyle? IndicatorStyle { get; set; }
 
 }

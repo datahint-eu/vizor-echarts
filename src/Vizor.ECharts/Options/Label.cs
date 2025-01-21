@@ -13,7 +13,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue(false)]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// The precision of value in label.
@@ -22,7 +22,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("precision")]
 	[DefaultValue("auto")]
-	public NumberOrString? Precision { get; set; } 
+	public NumberOrString? Precision { get; set; }
 
 	/// <summary>
 	/// The formatter of label.
@@ -114,21 +114,21 @@ public partial class Label
 	/// }
 	/// </summary>
 	[JsonPropertyName("formatter")]
-	public StringOrFunction? Formatter { get; set; } 
+	public StringOrFunction? Formatter { get; set; }
 
 	/// <summary>
 	/// Distance between label and axis.
 	/// </summary>
 	[JsonPropertyName("margin")]
 	[DefaultValue(3)]
-	public double? Margin { get; set; } 
+	public double? Margin { get; set; }
 
 	/// <summary>
 	/// text color.
 	/// </summary>
 	[JsonPropertyName("color")]
 	[DefaultValue("'#fff'")]
-	public Color? Color { get; set; } 
+	public Color? Color { get; set; }
 
 	/// <summary>
 	/// font style.
@@ -137,7 +137,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("fontStyle")]
 	[DefaultValue("normal")]
-	public FontStyle? FontStyle { get; set; } 
+	public FontStyle? FontStyle { get; set; }
 
 	/// <summary>
 	/// font thick weight.
@@ -146,7 +146,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("fontWeight")]
 	[DefaultValue("normal")]
-	public FontWeight? FontWeight { get; set; } 
+	public FontWeight? FontWeight { get; set; }
 
 	/// <summary>
 	/// font family.
@@ -155,14 +155,14 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("fontFamily")]
 	[DefaultValue("sans-serif")]
-	public string? FontFamily { get; set; } 
+	public string? FontFamily { get; set; }
 
 	/// <summary>
 	/// font size.
 	/// </summary>
 	[JsonPropertyName("fontSize")]
 	[DefaultValue("12")]
-	public double? FontSize { get; set; } 
+	public double? FontSize { get; set; }
 
 	/// <summary>
 	/// Line height of the text fragment.
@@ -179,33 +179,33 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("lineHeight")]
 	[DefaultValue("12")]
-	public double? LineHeight { get; set; } 
+	public double? LineHeight { get; set; }
 
 	/// <summary>
 	/// Width of text block.
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("100")]
-	public double? Width { get; set; } 
+	public double? Width { get; set; }
 
 	/// <summary>
 	/// Height of text block.
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("50")]
-	public double? Height { get; set; } 
+	public double? Height { get; set; }
 
 	/// <summary>
 	/// Stroke color of the text.
 	/// </summary>
 	[JsonPropertyName("textBorderColor")]
-	public Color? TextBorderColor { get; set; } 
+	public Color? TextBorderColor { get; set; }
 
 	/// <summary>
 	/// Stroke line width of the text.
 	/// </summary>
 	[JsonPropertyName("textBorderWidth")]
-	public double? TextBorderWidth { get; set; } 
+	public double? TextBorderWidth { get; set; }
 
 	/// <summary>
 	/// Stroke line type of the text.
@@ -223,7 +223,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("textBorderType")]
 	[DefaultValue("solid")]
-	public LineType? TextBorderType { get; set; } 
+	public LineType? TextBorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -234,35 +234,35 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("textBorderDashOffset")]
 	[DefaultValue("0")]
-	public double? TextBorderDashOffset { get; set; } 
+	public double? TextBorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Shadow color of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowColor")]
 	[DefaultValue("#000")]
-	public Color? TextShadowColor { get; set; } 
+	public Color? TextShadowColor { get; set; }
 
 	/// <summary>
 	/// Shadow blue of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowBlur")]
 	[DefaultValue(0)]
-	public double? TextShadowBlur { get; set; } 
+	public double? TextShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow X offset of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowOffsetX")]
 	[DefaultValue(0)]
-	public double? TextShadowOffsetX { get; set; } 
+	public double? TextShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Shadow Y offset of the text itself.
 	/// </summary>
 	[JsonPropertyName("textShadowOffsetY")]
 	[DefaultValue(0)]
-	public double? TextShadowOffsetY { get; set; } 
+	public double? TextShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Determine how to display the text when it's overflow.
@@ -272,7 +272,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("overflow")]
 	[DefaultValue("none")]
-	public Overflow? Overflow { get; set; } 
+	public Overflow? Overflow { get; set; }
 
 	/// <summary>
 	/// Ellipsis to be displayed when overflow is set to truncate .
@@ -280,7 +280,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("ellipsis")]
 	[DefaultValue("...")]
-	public string? Ellipsis { get; set; } 
+	public string? Ellipsis { get; set; }
 
 	/// <summary>
 	/// axisPointer space around content.
@@ -302,27 +302,27 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("padding")]
 	[DefaultValue("[5, 7, 5, 7]")]
-	public Padding? Padding { get; set; } 
+	public Padding? Padding { get; set; }
 
 	/// <summary>
 	/// Background color of label, the same as axis.axisLine.lineStyle.color by default.
 	/// </summary>
 	[JsonPropertyName("backgroundColor")]
 	[DefaultValue("auto")]
-	public string? BackgroundColor { get; set; } 
+	public string? BackgroundColor { get; set; }
 
 	/// <summary>
 	/// Border color of label.
 	/// </summary>
 	[JsonPropertyName("borderColor")]
-	public string? BorderColor { get; set; } 
+	public string? BorderColor { get; set; }
 
 	/// <summary>
 	/// Border width of label.
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue(0)]
-	public string? BorderWidth { get; set; } 
+	public string? BorderWidth { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -335,7 +335,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("3")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -343,21 +343,21 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("#aaa")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// Label position.
@@ -373,7 +373,7 @@ public partial class Label
 	/// See: label position .
 	/// </summary>
 	[JsonPropertyName("position")]
-	public LabelPosition? Position { get; set; } 
+	public LabelPosition? Position { get; set; }
 
 	/// <summary>
 	/// Distance to the host graphic element.
@@ -384,7 +384,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("distance")]
 	[DefaultValue("5")]
-	public double? Distance { get; set; } 
+	public double? Distance { get; set; }
 
 	/// <summary>
 	/// Rotate label, from -90 degree to 90, positive value represents rotate anti-clockwise.
@@ -393,14 +393,14 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("rotate")]
 	[DefaultValue("0")]
-	public NumberOrString? Rotate { get; set; } 
+	public NumberOrString? Rotate { get; set; }
 
 	/// <summary>
 	/// Whether to move text slightly.
 	/// For example: [30, 40] means move 30 horizontally and move 40 vertically.
 	/// </summary>
 	[JsonPropertyName("offset")]
-	public double[]? Offset { get; set; } 
+	public double[]? Offset { get; set; }
 
 	/// <summary>
 	/// Horizontal alignment of text, automatic by default.
@@ -417,7 +417,7 @@ public partial class Label
 	/// }
 	/// </summary>
 	[JsonPropertyName("align")]
-	public HorizontalAlign? Align { get; set; } 
+	public HorizontalAlign? Align { get; set; }
 
 	/// <summary>
 	/// Vertical alignment of text, automatic by default.
@@ -434,7 +434,7 @@ public partial class Label
 	/// }
 	/// </summary>
 	[JsonPropertyName("verticalAlign")]
-	public VerticalAlign? VerticalAlign { get; set; } 
+	public VerticalAlign? VerticalAlign { get; set; }
 
 	/// <summary>
 	/// the text fragment border type.
@@ -452,7 +452,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("borderType")]
 	[DefaultValue("solid")]
-	public LineType? BorderType { get; set; } 
+	public LineType? BorderType { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
@@ -463,14 +463,14 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("borderDashOffset")]
 	[DefaultValue("0")]
-	public double? BorderDashOffset { get; set; } 
+	public double? BorderDashOffset { get; set; }
 
 	/// <summary>
 	/// Border radius of the text fragment.
 	/// </summary>
 	[JsonPropertyName("borderRadius")]
 	[DefaultValue(0)]
-	public BorderRadius? BorderRadius { get; set; } 
+	public BorderRadius? BorderRadius { get; set; }
 
 	/// <summary>
 	/// "Rich text styles" can be defined in this rich property.
@@ -507,7 +507,7 @@ public partial class Label
 	/// For more details, see Rich Text please.
 	/// </summary>
 	[JsonPropertyName("rich")]
-	public Rich? Rich { get; set; } 
+	public Rich? Rich { get; set; }
 
 	/// <summary>
 	/// Interval of label .
@@ -515,7 +515,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("interval")]
 	[DefaultValue("auto")]
-	public NumberOrString? Interval { get; set; } 
+	public NumberOrString? Interval { get; set; }
 
 	/// <summary>
 	/// Label aligning policy.
@@ -528,7 +528,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("alignTo")]
 	[DefaultValue("none")]
-	public LabelAlignTo? AlignTo { get; set; } 
+	public LabelAlignTo? AlignTo { get; set; }
 
 	/// <summary>
 	/// The horizontal distance between text edges and viewport when label.position is 'outer' and label.alignTo is 'edge' .
@@ -540,7 +540,7 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("edgeDistance")]
 	[DefaultValue("20%")]
-	public NumberOrString? EdgeDistance { get; set; } 
+	public NumberOrString? EdgeDistance { get; set; }
 
 	/// <summary>
 	/// The horizontal distance between text and viewport when label.position is 'outer' and label.alignTo is 'none' or 'labelLine' .
@@ -548,20 +548,20 @@ public partial class Label
 	/// </summary>
 	[JsonPropertyName("bleedMargin")]
 	[DefaultValue("10")]
-	public double? BleedMargin { get; set; } 
+	public double? BleedMargin { get; set; }
 
 	/// <summary>
 	/// Distance between label line and text.
 	/// </summary>
 	[JsonPropertyName("distanceToLabelLine")]
 	[DefaultValue("5")]
-	public double? DistanceToLabelLine { get; set; } 
+	public double? DistanceToLabelLine { get; set; }
 
 	/// <summary>
 	/// If angle of data piece is smaller than this value (in degrees), then text is not displayed.
 	/// This is used for hiding text for small piece of data.
 	/// </summary>
 	[JsonPropertyName("minAngle")]
-	public double? MinAngle { get; set; } 
+	public double? MinAngle { get; set; }
 
 }

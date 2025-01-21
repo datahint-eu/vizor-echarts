@@ -11,7 +11,7 @@ public partial class Brush
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Use the buttons in toolbox.
@@ -26,7 +26,7 @@ public partial class Brush
 	/// </summary>
 	[JsonPropertyName("toolbox")]
 	[DefaultValue("[rect, polygon, keep, clear]")]
-	public ToolboxBrushType[]? Toolbox { get; set; } 
+	public ToolboxBrushType[]? Toolbox { get; set; }
 
 	/// <summary>
 	/// Links interaction between selected items in different series.
@@ -57,14 +57,14 @@ public partial class Brush
 	/// };
 	/// </summary>
 	[JsonPropertyName("brushLink")]
-	public Icon? BrushLink { get; set; } 
+	public Icon? BrushLink { get; set; }
 
 	/// <summary>
 	/// Assigns which of the series can use brush selecting, whose value can be:   'all' : all series;  'Array' : series index array;  'number' : certain series index.
 	/// </summary>
 	[JsonPropertyName("seriesIndex")]
 	[DefaultValue("all")]
-	public MultiIndex? SeriesIndex { get; set; } 
+	public MultiIndex? SeriesIndex { get; set; }
 
 	/// <summary>
 	/// Assigns which of the geo can use brush selecting.
@@ -112,7 +112,7 @@ public partial class Brush
 	/// };
 	/// </summary>
 	[JsonPropertyName("geoIndex")]
-	public MultiIndex? GeoIndex { get; set; } 
+	public MultiIndex? GeoIndex { get; set; }
 
 	/// <summary>
 	/// Assigns which of the xAxisIndex can use brush selecting.
@@ -160,7 +160,7 @@ public partial class Brush
 	/// };
 	/// </summary>
 	[JsonPropertyName("xAxisIndex")]
-	public MultiIndex? XAxisIndex { get; set; } 
+	public MultiIndex? XAxisIndex { get; set; }
 
 	/// <summary>
 	/// Assigns which of the yAxisIndex can use brush selecting.
@@ -208,7 +208,7 @@ public partial class Brush
 	/// };
 	/// </summary>
 	[JsonPropertyName("yAxisIndex")]
-	public MultiIndex? YAxisIndex { get; set; } 
+	public MultiIndex? YAxisIndex { get; set; }
 
 	/// <summary>
 	/// Default type of brush.
@@ -216,21 +216,21 @@ public partial class Brush
 	/// </summary>
 	[JsonPropertyName("brushType")]
 	[DefaultValue("rect")]
-	public BrushType? BrushType { get; set; } 
+	public BrushType? BrushType { get; set; }
 
 	/// <summary>
 	/// Default brush mode, whose value can be:   'single' : for single selection;  'multiple' : for multiple selection.
 	/// </summary>
 	[JsonPropertyName("brushMode")]
 	[DefaultValue("single")]
-	public string? BrushMode { get; set; } 
+	public string? BrushMode { get; set; }
 
 	/// <summary>
 	/// Determines whether a selected box can be changed in shape or translated.
 	/// </summary>
 	[JsonPropertyName("transformable")]
 	[DefaultValue(true)]
-	public bool? Transformable { get; set; } 
+	public bool? Transformable { get; set; }
 
 	/// <summary>
 	/// Default brush style, whose value is:  {
@@ -240,7 +240,7 @@ public partial class Brush
 	/// },
 	/// </summary>
 	[JsonPropertyName("brushStyle")]
-	public BrushStyle? BrushStyle { get; set; } 
+	public BrushStyle? BrushStyle { get; set; }
 
 	/// <summary>
 	/// By default, brushSelected is always triggered when selection-box is selected or moved, to tell the outside about the event.
@@ -257,7 +257,7 @@ public partial class Brush
 	/// </summary>
 	[JsonPropertyName("throttleType")]
 	[DefaultValue("fixRate")]
-	public string? ThrottleType { get; set; } 
+	public string? ThrottleType { get; set; }
 
 	/// <summary>
 	/// 0 for disabling throttle.
@@ -276,14 +276,14 @@ public partial class Brush
 	/// </summary>
 	[JsonPropertyName("throttleDelay")]
 	[DefaultValue(0)]
-	public double? ThrottleDelay { get; set; } 
+	public double? ThrottleDelay { get; set; }
 
 	/// <summary>
 	/// Defined whether clearing all select-boxes on click is enabled when brush.brushMode is 'single' .
 	/// </summary>
 	[JsonPropertyName("removeOnClick")]
 	[DefaultValue(true)]
-	public bool? RemoveOnClick { get; set; } 
+	public bool? RemoveOnClick { get; set; }
 
 	/// <summary>
 	/// Defines visual effects of items in selection.
@@ -300,7 +300,7 @@ public partial class Brush
 	/// In most cases, inBrush can be left unassigned, in which case default visual configuration remains.
 	/// </summary>
 	[JsonPropertyName("inBrush")]
-	public InBrush? InBrush { get; set; } 
+	public InBrush? InBrush { get; set; }
 
 	/// <summary>
 	/// Defines visual effects of items out of selection.
@@ -323,7 +323,7 @@ public partial class Brush
 	/// }
 	/// </summary>
 	[JsonPropertyName("outOfBrush")]
-	public OutOfBrush? OutOfBrush { get; set; } 
+	public OutOfBrush? OutOfBrush { get; set; }
 
 	/// <summary>
 	/// z-index of brush cover box.
@@ -331,6 +331,6 @@ public partial class Brush
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(10000)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 }

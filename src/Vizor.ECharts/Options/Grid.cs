@@ -11,14 +11,14 @@ public partial class Grid
 	/// If specified, it can be used to refer the component in option or API.
 	/// </summary>
 	[JsonPropertyName("id")]
-	public string? Id { get; set; } 
+	public string? Id { get; set; }
 
 	/// <summary>
 	/// Whether to show the grid in rectangular coordinate.
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("false")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -32,7 +32,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -42,7 +42,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between grid  component and the left side of the container.
@@ -53,7 +53,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("10%")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between grid  component and the top side of the container.
@@ -64,7 +64,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue(60)]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between grid  component and the right side of the container.
@@ -73,7 +73,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("10%")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between grid  component and the bottom side of the container.
@@ -82,7 +82,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue(60)]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// Width of grid  component.
@@ -90,7 +90,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("width")]
 	[DefaultValue("auto")]
-	public NumberOrString? Width { get; set; } 
+	public NumberOrString? Width { get; set; }
 
 	/// <summary>
 	/// Height of grid  component.
@@ -98,7 +98,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("height")]
 	[DefaultValue("auto")]
-	public NumberOrString? Height { get; set; } 
+	public NumberOrString? Height { get; set; }
 
 	/// <summary>
 	/// Whether the grid region contains axis tick label of axis.
@@ -110,7 +110,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("containLabel")]
 	[DefaultValue("false")]
-	public bool? ContainLabel { get; set; } 
+	public bool? ContainLabel { get; set; }
 
 	/// <summary>
 	/// Background color of grid, which is transparent by default.
@@ -123,7 +123,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("backgroundColor")]
 	[DefaultValue("transparent")]
-	public Color? BackgroundColor { get; set; } 
+	public Color? BackgroundColor { get; set; }
 
 	/// <summary>
 	/// Border color of grid.
@@ -133,7 +133,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("borderColor")]
 	[DefaultValue("#ccc")]
-	public Color? BorderColor { get; set; } 
+	public Color? BorderColor { get; set; }
 
 	/// <summary>
 	/// Border width of grid.
@@ -142,7 +142,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("borderWidth")]
 	[DefaultValue("1")]
-	public double? BorderWidth { get; set; } 
+	public double? BorderWidth { get; set; }
 
 	/// <summary>
 	/// Size of shadow blur.
@@ -156,7 +156,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("shadowBlur")]
 	[DefaultValue("")]
-	public double? ShadowBlur { get; set; } 
+	public double? ShadowBlur { get; set; }
 
 	/// <summary>
 	/// Shadow color.
@@ -166,7 +166,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("shadowColor")]
 	[DefaultValue("")]
-	public Color? ShadowColor { get; set; } 
+	public Color? ShadowColor { get; set; }
 
 	/// <summary>
 	/// Offset distance on the horizontal direction of shadow.
@@ -175,7 +175,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("shadowOffsetX")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetX { get; set; } 
+	public double? ShadowOffsetX { get; set; }
 
 	/// <summary>
 	/// Offset distance on the vertical direction of shadow.
@@ -184,7 +184,7 @@ public partial class Grid
 	/// </summary>
 	[JsonPropertyName("shadowOffsetY")]
 	[DefaultValue("0")]
-	public double? ShadowOffsetY { get; set; } 
+	public double? ShadowOffsetY { get; set; }
 
 	/// <summary>
 	/// tooltip settings in the coordinate system component.
@@ -197,6 +197,6 @@ public partial class Grid
 	/// Configured in each item of series.data : series.data.tooltip
 	/// </summary>
 	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; } 
+	public Tooltip? Tooltip { get; set; }
 
 }
