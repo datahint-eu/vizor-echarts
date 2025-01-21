@@ -117,6 +117,11 @@ window.vizorECharts = {
 
 	initChart: async function (id, theme, initOptions, chartOptions, mapOptions, fetchOptions) {
 		var chart = echarts.init(document.getElementById(id), theme, JSON.parse(initOptions));
+
+		// see issue #20: Size to fit container: Width="auto" not working
+		window.addEventListener('resize', function () {
+			chart.resize();
+		});
 		vizorECharts.charts.set(id, chart);
 
 		// show loading animation

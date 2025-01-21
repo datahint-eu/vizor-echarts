@@ -7,7 +7,7 @@
 //   npm install echarts echarts-stat --save
 //
 // to build:
-//   ./node_modules/.bin/gulp
+//   .\node_modules\.bin\gulp
 
 var path = require('path'),
 	rename = require('gulp-rename'),
