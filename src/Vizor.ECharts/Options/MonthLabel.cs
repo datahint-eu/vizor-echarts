@@ -445,4 +445,12 @@ public partial class MonthLabel
 	[JsonPropertyName("rich")]
 	public Rich? Rich { get; set; }
 
+	/// <summary>
+	/// Since v5.6.0
+	/// Whether to ignore mouse events. Default value is false, for triggering and responding to mouse events.
+	/// </summary>
+	[JsonPropertyName("silent")]
+	[DefaultValue(false)]
+	public bool? Silent { get; set; }
+
 }
