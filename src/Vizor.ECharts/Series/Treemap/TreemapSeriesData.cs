@@ -256,4 +256,11 @@ public partial class TreemapSeriesData
 	[JsonPropertyName("tooltip")]
 	public Tooltip? Tooltip { get; set; }
 
+	/// <summary>
+	/// Since v5.6.0
+	/// The mouse style when mouse hovers on an element, the same as cursor property in CSS .
+	/// </summary>
+	[JsonPropertyName("cursor")]
+	[DefaultValue("pointer")]
+	public string? Cursor { get; set; }
 }
