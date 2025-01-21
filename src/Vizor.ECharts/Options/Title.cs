@@ -364,7 +364,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("clear")]
 	[DefaultValue("Clear selection")]
-	public string? Clear { get; set; } 
+	public string? Clear { get; set; }
 
 	/// <summary>
 	/// The offset position relative to the center of gauge chart.
@@ -373,7 +373,7 @@ public partial class Title
 	/// </summary>
 	[JsonPropertyName("offsetCenter")]
 	[DefaultValue("0,20%")]
-	public double[]? OffsetCenter { get; set; } 
+	public NumberOrStringArray? OffsetCenter { get; set; } 
 
 	/// <summary>
 	/// text color.

@@ -47,7 +47,7 @@ public partial class Pointer
 	/// </summary>
 	[JsonPropertyName("offsetCenter")]
 	[DefaultValue("0,0")]
-	public double[]? OffsetCenter { get; set; } 
+	public NumberOrStringArray? OffsetCenter { get; set; } 
 
 	/// <summary>
 	/// The length of pointer which could be absolute value and also the percentage relative to radius .
