@@ -146,6 +146,13 @@ public partial class TreemapSeries : ISeries
 	public Roam? Roam { get; set; }
 
 	/// <summary>
+	/// Since v5.5.1
+	/// Limit of scaling, with min and max.
+	/// </summary>
+	[JsonPropertyName("scaleLimit")]
+	public ScaleLimit? ScaleLimit { get; set; }
+
+	/// <summary>
 	/// The behaviour when clicking a node.
 	/// Optional values are:   false : Do nothing after clicked.
 	///  'zoomToNode' : Zoom to clicked node.
