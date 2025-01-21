@@ -33,6 +33,13 @@ public partial class AngleAxis
 	public double? StartAngle { get; set; }
 
 	/// <summary>
+	/// Since v5.5.0
+	/// Ending angle of axis. null by default, standing for a whole circle.
+	/// </summary>
+	[JsonPropertyName("endAngle")]
+	public double? EndAngle { get; set; }
+
+	/// <summary>
 	/// Whether the positive position of axis is clockwise.
 	/// True for clockwise by default.
 	///  
