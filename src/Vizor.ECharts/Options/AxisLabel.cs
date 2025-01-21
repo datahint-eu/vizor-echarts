@@ -1,4 +1,3 @@
-
 using System.ComponentModel;
 using System.Text.Json.Serialization;
 
@@ -191,6 +190,24 @@ public partial class AxisLabel
 	/// </summary>
 	[JsonPropertyName("showMaxLabel")]
 	public bool? ShowMaxLabel { get; set; }
+
+	/// <summary>
+	///string
+	/// Since v5.5.0
+	/// Alignment of the label of the min tick. If set to be null, it's the same with other labels.
+	/// Options are: left, center, right, null (default)
+	/// </summary>
+	[JsonPropertyName("alignMinLabel")]
+	public HorizontalAlign? AlignMinLabel { get; set; }
+
+	/// <summary>
+	///string
+	/// Since v5.5.0
+	/// Alignment of the label of the max tick. If set to be null, it's the same with other labels.
+	/// Options are: left, center, right, null (default)
+	/// </summary>
+	[JsonPropertyName("alignMaxLabel ")]
+	public HorizontalAlign? AlignMaxLabel { get; set; }
 
 	/// <summary>
 	/// Since v5.2.0   
