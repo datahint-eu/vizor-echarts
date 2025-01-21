@@ -1,4 +1,3 @@
-
 using System.ComponentModel;
 using System.Text.Json.Serialization;
 
@@ -478,6 +477,17 @@ public partial class Tooltip
 	[JsonPropertyName("appendToBody")]
 	[DefaultValue("false")]
 	public bool? AppendToBody { get; set; }
+
+
+	/// <summary>
+	/// Since v5.5.0
+	/// Which DOM element to append the tooltip to. Only available when using renderMode 'html'.
+	/// The default value is null, which means that the tooltip's DOM node will be added as a descendant node of the chart’s DOM container.
+	/// However, this approach can cause the tooltip to be truncated if it extends beyond the container, due to ancestors of the chart's DOM container having overflow: hidden set.
+	/// This issue can be partially addressed using tooltip.confine, but it may not cover all scenarios.
+	/// </summary>
+	[JsonPropertyName("appendTo")]
+	public StringOrFunction? AppendTo { get; set; }
 
 	/// <summary>
 	/// Since v5.0.0   
