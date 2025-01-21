@@ -12,7 +12,7 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("show")]
 	[DefaultValue("true")]
-	public bool? Show { get; set; } 
+	public bool? Show { get; set; }
 
 	/// <summary>
 	/// This attribute has only one valid value as slider by now.
@@ -20,7 +20,7 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("type")]
 	[DefaultValue("slider")]
-	public string? Type { get; set; } 
+	public string? Type { get; set; }
 
 	/// <summary>
 	/// Type of axis, whose values may be:   'value' Numeric axis, which is suitable for continuous data.
@@ -31,7 +31,7 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("axisType")]
 	[DefaultValue("time")]
-	public AxisType? AxisType { get; set; } 
+	public AxisType? AxisType { get; set; }
 
 	/// <summary>
 	/// Indicates which is the currently selected item.
@@ -39,42 +39,42 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("currentIndex")]
 	[DefaultValue(0)]
-	public int? CurrentIndex { get; set; } 
+	public int? CurrentIndex { get; set; }
 
 	/// <summary>
 	/// Whether to play automatically.
 	/// </summary>
 	[JsonPropertyName("autoPlay")]
 	[DefaultValue(false)]
-	public bool? AutoPlay { get; set; } 
+	public bool? AutoPlay { get; set; }
 
 	/// <summary>
 	/// Whether supports playing reversely.
 	/// </summary>
 	[JsonPropertyName("rewind")]
 	[DefaultValue(false)]
-	public bool? Rewind { get; set; } 
+	public bool? Rewind { get; set; }
 
 	/// <summary>
 	/// Whether to loop playing.
 	/// </summary>
 	[JsonPropertyName("loop")]
 	[DefaultValue("true")]
-	public bool? Loop { get; set; } 
+	public bool? Loop { get; set; }
 
 	/// <summary>
 	/// Indicates play speed (gap time between two state), whose unit is millisecond.
 	/// </summary>
 	[JsonPropertyName("playInterval")]
 	[DefaultValue("2000")]
-	public double? PlayInterval { get; set; } 
+	public double? PlayInterval { get; set; }
 
 	/// <summary>
 	/// Whether the view updates in real time during dragging the control dot.
 	/// </summary>
 	[JsonPropertyName("realtime")]
 	[DefaultValue("true")]
-	public bool? Realtime { get; set; } 
+	public bool? Realtime { get; set; }
 
 	/// <summary>
 	/// When initializing, a switchableOption corresponding to the current time tick are merged into baseOption to form the finalOption .
@@ -95,14 +95,14 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("replaceMerge")]
 	[DefaultValue("undefined")]
-	public Icon? ReplaceMerge { get; set; } 
+	public object? ReplaceMerge { get; set; }
 
 	/// <summary>
 	/// Position of the play button, whose valid values are 'left' and 'right' .
 	/// </summary>
 	[JsonPropertyName("controlPosition")]
 	[DefaultValue("left")]
-	public LeftOrRight? ControlPosition { get; set; } 
+	public LeftOrRight? ControlPosition { get; set; }
 
 	/// <summary>
 	/// zlevel value of all graphical elements in .
@@ -116,7 +116,7 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("zlevel")]
 	[DefaultValue(0)]
-	public double? Zlevel { get; set; } 
+	public double? Zlevel { get; set; }
 
 	/// <summary>
 	/// z value of all graphical elements in , which controls order of drawing graphical components.
@@ -126,7 +126,7 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("z")]
 	[DefaultValue(2)]
-	public double? Z { get; set; } 
+	public double? Z { get; set; }
 
 	/// <summary>
 	/// Distance between timeline component and the left side of the container.
@@ -137,7 +137,7 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("left")]
 	[DefaultValue("auto")]
-	public NumberOrString? Left { get; set; } 
+	public NumberOrString? Left { get; set; }
 
 	/// <summary>
 	/// Distance between timeline component and the top side of the container.
@@ -148,7 +148,7 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("top")]
 	[DefaultValue("auto")]
-	public NumberOrString? Top { get; set; } 
+	public NumberOrString? Top { get; set; }
 
 	/// <summary>
 	/// Distance between timeline component and the right side of the container.
@@ -159,7 +159,7 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("right")]
 	[DefaultValue("auto")]
-	public NumberOrString? Right { get; set; } 
+	public NumberOrString? Right { get; set; }
 
 	/// <summary>
 	/// Distance between timeline component and the bottom side of the container.
@@ -170,7 +170,7 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("bottom")]
 	[DefaultValue("auto")]
-	public NumberOrString? Bottom { get; set; } 
+	public NumberOrString? Bottom { get; set; }
 
 	/// <summary>
 	/// timeline space around content.
@@ -192,7 +192,7 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("padding")]
 	[DefaultValue(5)]
-	public Padding? Padding { get; set; } 
+	public Padding? Padding { get; set; }
 
 	/// <summary>
 	/// Orientation of the component, whose valid values are:   'vertical' : vertical layout.
@@ -200,14 +200,14 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("orient")]
 	[DefaultValue("horizontal")]
-	public Orient? Orient { get; set; } 
+	public Orient? Orient { get; set; }
 
 	/// <summary>
 	/// Whether to put the timeline component reversely, which makes the elements in the front to be at the end.
 	/// </summary>
 	[JsonPropertyName("inverse")]
 	[DefaultValue(false)]
-	public bool? Inverse { get; set; } 
+	public bool? Inverse { get; set; }
 
 	/// <summary>
 	/// Symbol of timeline.
@@ -227,7 +227,7 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("symbol")]
 	[DefaultValue("circle")]
-	public Icon? Symbol { get; set; } 
+	public Icon? Symbol { get; set; }
 
 	/// <summary>
 	/// timeline symbol size.
@@ -236,7 +236,7 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("symbolSize")]
 	[DefaultValue(10)]
-	public NumberOrNumberArray? SymbolSize { get; set; } 
+	public NumberOrNumberArray? SymbolSize { get; set; }
 
 	/// <summary>
 	/// Rotate degree of timeline symbol.
@@ -244,14 +244,14 @@ public partial class Timeline
 	/// Note that when symbol is set to be 'arrow' in markLine , symbolRotate value will be ignored, and compulsively use tangent angle.
 	/// </summary>
 	[JsonPropertyName("symbolRotate")]
-	public double? SymbolRotate { get; set; } 
+	public double? SymbolRotate { get; set; }
 
 	/// <summary>
 	/// Whether to keep aspect for symbols in the form of path:// .
 	/// </summary>
 	[JsonPropertyName("symbolKeepAspect")]
 	[DefaultValue(false)]
-	public bool? SymbolKeepAspect { get; set; } 
+	public bool? SymbolKeepAspect { get; set; }
 
 	/// <summary>
 	/// Offset of timeline symbol relative to original position.
@@ -265,50 +265,50 @@ public partial class Timeline
 	/// </summary>
 	[JsonPropertyName("symbolOffset")]
 	[DefaultValue("[0, 0]")]
-	public double[]? SymbolOffset { get; set; } 
+	public double[]? SymbolOffset { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("lineStyle")]
-	public LineStyle? LineStyle { get; set; } 
+	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
 	/// Label axis, emphasis is the highlighted style of text.
 	/// For instance, text style in emphasis would be used when mouse hovers or legend connects.
 	/// </summary>
 	[JsonPropertyName("label")]
-	public Label? Label { get; set; } 
+	public Label? Label { get; set; }
 
 	/// <summary>
 	/// Graphic style of timeline , emphasis is the style when it is highlighted, like being hovered by mouse, or highlighted via legend connect.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; } 
+	public ItemStyle? ItemStyle { get; set; }
 
 	/// <summary>
 	/// Style of the selected item ( checkpoint ).
 	/// </summary>
 	[JsonPropertyName("checkpointStyle")]
-	public CheckpointStyle? CheckpointStyle { get; set; } 
+	public CheckpointStyle? CheckpointStyle { get; set; }
 
 	/// <summary>
 	/// The style of control button , which includes: play button , previous button , and next button .
 	/// </summary>
 	[JsonPropertyName("controlStyle")]
-	public ControlStyle? ControlStyle { get; set; } 
+	public ControlStyle? ControlStyle { get; set; }
 
 	/// <summary>
 	/// Styles of line, labels and symbols in progress.
 	/// </summary>
 	[JsonPropertyName("progress")]
-	public Progress? Progress { get; set; } 
+	public Progress? Progress { get; set; }
 
 	/// <summary>
 	/// 
 	/// </summary>
 	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; } 
+	public Emphasis? Emphasis { get; set; }
 
 	/// <summary>
 	/// timeline data.
@@ -347,6 +347,6 @@ public partial class Timeline
 	/// ]
 	/// </summary>
 	[JsonPropertyName("data")]
-	public object? Data { get; set; } 
+	public object? Data { get; set; }
 
 }

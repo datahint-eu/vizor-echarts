@@ -1,13 +1,14 @@
 ﻿// Following steps are required to install gulp: see https://gulpjs.com/docs/en/getting-started/quick-start/
 // npm install --global gulp-cli
 //
-// in the project dir:
+// for first time initialization in the project dir:
 //   npm init
 //   npm install --save-dev gulp gulp-rename gulp-clean gulp-concat gulp-minify child_process
 //   npm install echarts echarts-stat --save
 //
 // to build:
-//   .\node_modules\.bin\gulp
+//    npm install
+//    gulp or ( .\node_modules\.bin\gulp)
 
 var path = require('path'),
 	rename = require('gulp-rename'),

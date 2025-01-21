@@ -1,9 +1,9 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Text.Json.Serialization;
-using System.Text.Json;
-using Microsoft.AspNetCore.Components;
-using Vizor.ECharts.Internal;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using System.Diagnostics.CodeAnalysis;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using Vizor.ECharts.Internal;
 
 namespace Vizor.ECharts;
 
@@ -55,7 +55,7 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 	/// <summary>
 	/// Prefer to re-use the same JsonSerializerOptions. (default = true)
 	/// Setting this to false is generally a bad idea, unless you know what you are doing.
-	/// 
+	///
 	/// see https://www.meziantou.net/avoid-performance-issue-with-jsonserializer-by-reusing-the-same-instance-of-json.htm
 	/// </summary>
 	[Parameter]
@@ -112,6 +112,17 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 		try
 		{
 			objRef?.Dispose();
+		}
+		catch { }
+	}
+
+	public async ValueTask ClearAsync()
+	{
+		GC.SuppressFinalize(this);
+
+		try
+		{
+			await JSRuntime.InvokeVoidAsync("vizorECharts.clearChart", Id);
 		}
 		catch { }
 	}

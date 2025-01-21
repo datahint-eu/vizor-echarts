@@ -12,9 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Vizor.ECharts\Vizor.ECharts.csproj" />
+		<ProjectReference Include="..\Vizor.ECharts\Vizor.ECharts.csproj" />
 	</ItemGroup>
-
-
 
 </Project>
