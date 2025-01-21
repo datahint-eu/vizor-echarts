@@ -217,6 +217,13 @@ public partial class AxisLabel
 	public bool? HideOverlap { get; set; }
 
 	/// <summary>
+	/// Since v5.5.1
+	/// To customize label positions.
+	/// </summary>
+	[JsonPropertyName("customValues")]
+	public double[]? CustomValues { get; set; }
+
+	/// <summary>
 	/// Color of axis label is set to be axisLine.lineStyle.color by default.
 	/// Callback function is supported, in the following format:  (val: string) => Color  
 	/// Parameter is the text of label, and return value is the color.

@@ -61,6 +61,13 @@ public partial class AxisTick
 	public LineStyle? LineStyle { get; set; }
 
 	/// <summary>
+	/// Since v5.5.1
+	/// To customize tick positions.
+	/// </summary>
+	[JsonPropertyName("customValues")]
+	public double[]? CustomValues { get; set; }
+
+	/// <summary>
 	/// The split scale number between split line.
 	/// </summary>
 	[JsonPropertyName("splitNumber")]
