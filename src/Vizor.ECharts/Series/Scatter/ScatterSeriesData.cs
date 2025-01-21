@@ -26,6 +26,13 @@ public partial class ScatterSeriesData
 	public string? GroupId { get; set; }
 
 	/// <summary>
+	/// Since v5.5.0
+	/// The group ID of the child data of a data item. This option is introduced to make multiple levels drilldown and aggregation animation possilbe.
+	/// </summary>
+	[JsonPropertyName("childGroupId")]
+	public string? ChildGroupId { get; set; }
+
+	/// <summary>
 	/// Symbol of single data.
 	///  
 	/// Icon types provided by ECharts includes  

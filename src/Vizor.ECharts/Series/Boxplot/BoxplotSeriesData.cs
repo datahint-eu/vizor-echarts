@@ -27,6 +27,13 @@ public partial class BoxplotSeriesData
 	public string? GroupId { get; set; }
 
 	/// <summary>
+	/// Since v5.5.0
+	/// The group ID of the child data of a data item. This option is introduced to make multiple levels drilldown and aggregation animation possilbe.
+	/// </summary>
+	[JsonPropertyName("childGroupId")]
+	public string? ChildGroupId { get; set; }
+
+	/// <summary>
 	/// Style of a single data.
 	/// </summary>
 	[JsonPropertyName("itemStyle")]
