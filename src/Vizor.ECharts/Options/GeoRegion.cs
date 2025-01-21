@@ -20,7 +20,9 @@ public partial class GeoRegion
 	public bool? Selected { get; set; }
 
 	/// <summary>
+	/// Since v5.6.0
 	/// Set this to true, to prevent interaction with the axis.
+	/// Whether to ignore mouse events. Default value is false, for triggering and responding to mouse events.
 	/// </summary>
 	[JsonPropertyName("silent")]
 	[DefaultValue(false)]
@@ -65,5 +67,4 @@ public partial class GeoRegion
 	/// </summary>
 	[JsonPropertyName("tooltip")]
 	public Tooltip? Tooltip { get; set; }
-
 }
