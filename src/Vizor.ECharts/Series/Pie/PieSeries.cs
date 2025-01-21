@@ -1,4 +1,3 @@
-
 using System.ComponentModel;
 using System.Text.Json.Serialization;
 
@@ -106,12 +105,29 @@ public partial class PieSeries : ISeries
 	public double? StartAngle { get; set; }
 
 	/// <summary>
+	/// Since v5.5.0
+	/// The end angle, the default value is 'auto'.
+	/// When the value is 'auto', the end angle is calculated automatically based on startAngle to ensure it is a complete circle.
+	/// </summary>
+	[JsonPropertyName("endAngle")]
+	[DefaultValue("auto")]
+	public NumberOrString? EndAngle { get; set; }
+
+	/// <summary>
 	/// The minimum angle of sector (0 ~ 360).
 	/// It prevents some sector from being too small when value is small, which will affect user interaction.
 	/// </summary>
 	[JsonPropertyName("minAngle")]
 	[DefaultValue("0")]
 	public double? MinAngle { get; set; }
+
+	/// <summary>
+	/// Since v5.5.0
+	/// The interval angle between the sectors (0 ~ 360).
+	/// </summary>
+	[JsonPropertyName("padAngle")]
+	[DefaultValue("0")]
+	public double? PadAngle { get; set; }
 
 	/// <summary>
 	/// If a sector is less than this angle (0 ~ 360), label and labelLine will not be displayed.
