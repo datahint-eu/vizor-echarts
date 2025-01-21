@@ -15,6 +15,22 @@ public partial class SplitLine
 	public bool? Show { get; set; }
 
 	/// <summary>
+	/// Since v5.6.0
+	/// Whether to show the splitLine of the min tick.
+	/// </summary>
+	[JsonPropertyName("showMinLine")]
+	[DefaultValue("true")]
+	public bool? ShowMinLine { get; set; }
+
+	/// <summary>
+	/// Since v5.6.0
+	/// Whether to show the splitLine of the max tick.
+	/// </summary>
+	[JsonPropertyName("showMaxLine")]
+	[DefaultValue("true")]
+	public bool? ShowMaxLine { get; set; }
+
+	/// <summary>
 	/// Interval of Axis splitLine, which is available in category axis.
 	///  is set to be the same as axisLabel.interval by default.
 	///  
