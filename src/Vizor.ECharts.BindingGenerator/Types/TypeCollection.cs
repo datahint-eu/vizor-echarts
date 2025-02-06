@@ -26,7 +26,7 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("blendMode", typeof(BlendMode)));
 		AddMappedEnumType(new MappedEnumType("borderCap", typeof(LineCap)));
 		AddMappedEnumType(new MappedEnumType("borderJoin", typeof(LineJoin)));
-		AddMappedEnumType(new MappedEnumType("borderRadius", typeof(Radius)));
+		AddMappedEnumType(new MappedEnumType("borderRadius", typeof(BorderRadius)));
 		AddMappedEnumType(new MappedEnumType("borderType", typeof(LineType)));
 		AddMappedEnumType(new MappedEnumType("boundaryGap", typeof(BoundaryGap)));
 		AddMappedEnumType(new MappedEnumType("brushType", typeof(BrushType)));
@@ -46,7 +46,7 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("orthogonalOrient", typeof(OrthogonalOrient)));
 		AddMappedEnumType(new MappedEnumType("overflow", typeof(Overflow)));
 		AddMappedEnumType(new MappedEnumType("padding", typeof(Padding)));
-		AddMappedEnumType(new MappedEnumType("radius", typeof(Radius)));
+		AddMappedEnumType(new MappedEnumType("radius", typeof(CircleRadius)));
 		AddMappedEnumType(new MappedEnumType("roam", typeof(Roam)));
 		AddMappedEnumType(new MappedEnumType("selectedMode", typeof(SelectionMode)));
 		AddMappedEnumType(new MappedEnumType("selector", typeof(Selector)));
@@ -56,11 +56,11 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("step", typeof(Step)));
 		AddMappedEnumType(new MappedEnumType("textAlign", typeof(HorizontalAlign)));
 		AddMappedEnumType(new MappedEnumType("textBorderType", typeof(LineType)));
-		AddMappedEnumType(new MappedEnumType("textBorderRadius", typeof(Radius)));
+		AddMappedEnumType(new MappedEnumType("textBorderRadius", typeof(BorderRadius)));
 		AddMappedEnumType(new MappedEnumType("textPadding", typeof(Padding)));
 		AddMappedEnumType(new MappedEnumType("textVerticalAlign", typeof(VerticalAlign)));
 		AddMappedEnumType(new MappedEnumType("tooltipOrder", typeof(TooltipOrder)));
-		AddMappedEnumType(new MappedEnumType("tooltipRenderMode", typeof(RenderMode)));
+		AddMappedEnumType(new MappedEnumType("renderMode", typeof(TooltipRenderMode)));
 		AddMappedEnumType(new MappedEnumType("tooltipTrigger", typeof(TooltipTrigger)));
 		AddMappedEnumType(new MappedEnumType("tooltipTriggerOn", typeof(TriggerOn)));
 		AddMappedEnumType(new MappedEnumType("triggerOn", typeof(TriggerOn)));
@@ -79,7 +79,7 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("join", typeof(LineJoin)), "lineStyle", "crossStyle", "ParallelSeriesData");
 
 		AddMappedEnumType(new MappedEnumType("order", typeof(TooltipOrder)), "tooltip");
-		AddMappedEnumType(new MappedEnumType("renderMode", typeof(RenderMode)), "tooltip");
+		AddMappedEnumType(new MappedEnumType("renderMode", typeof(TooltipRenderMode)), "tooltip");
 		AddMappedEnumType(new MappedEnumType("trigger", typeof(TooltipTrigger)), "tooltip");
 
 		AddMappedEnumType(new MappedEnumType("position", typeof(TopOrBottom)), "xAxis");
@@ -125,8 +125,8 @@ internal class TypeCollection
 		AddMappedEnumType(new MappedEnumType("effectType", typeof(ScatterEffectType)), "EffectScatterSeries");
 
 		AddMappedEnumType(new MappedEnumType("roseType", typeof(PieRoseType)), "PieSeries");
-		AddMappedEnumType(new MappedEnumType("radius", typeof(PieRadius)), "PieSeries");
-		AddMappedEnumType(new MappedEnumType("center", typeof(PieCenter)), "PieSeries");
+		AddMappedEnumType(new MappedEnumType("radius", typeof(CircleRadius)), "PieSeries");
+		AddMappedEnumType(new MappedEnumType("center", typeof(CircleCenter)), "PieSeries");
 
 		AddMappedEnumType(new MappedEnumType("filterMode", typeof(DataZoomFilterMode)), "InsideDataZoom", "SliderDataZoom");
 		AddMappedEnumType(new MappedEnumType("zoomOnMouseWheel", typeof(DataZoomOnMouse)), "InsideDataZoom");
