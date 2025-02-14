@@ -42,11 +42,23 @@ public partial class ChartOptions
 	/// In ECharts 2.x, there could only be one single grid component at most in a single echarts instance.
 	/// But in ECharts 3, there is no limitation.
 	///  
-	/// Following is an example of Anscombe Quartet:
 	/// </summary>
 	[JsonPropertyName("grid")]
-	public Grid? Grid { get; set; }
+	public object? GridObject { get; set; }
 
+	[JsonIgnore]
+	public Grid? Grid
+	{
+		get => GridObject as Grid;
+		set => GridObject = value;
+	}
+
+	[JsonIgnore]
+	public List<Grid>? GridList
+	{
+		get => GridObject as List<Grid>;
+		set => GridObject = value;
+	}
 	/// <summary>
 	/// The x axis in cartesian(rectangular) coordinate.
 	/// Usually a single grid component can place at most 2 x axis, one on the bottom and another on the top.
