@@ -1,68 +1,113 @@
 ﻿@using Vizor.ECharts;
 
-<Vizor.ECharts.EChart Options="@options" DataLoader="LoadChartData" Width="800px" Height="400px" />
+<Vizor.ECharts.EChart Options="@options" DataLoader="LoadChartData" Width="800px" Height="400px" OnDatazoom="DatazoomEvent" />
+
+<div class="card">
+    <div class="card-header">Selection</div>
+    <div class="card-body">
+        @if (datazoomData != null)
+        {
+            @foreach (var datazoom_item in datazoomData.DatazoomItems)
+            {
+                <div class="row">
+                    <div class="col">
+                        <dl>
+                            <dt>Type</dt>
+                            <dd>@(datazoom_item.Type)</dd>
+
+                            <dt>Startvalue</dt>
+                            <dd>@(datazoom_item.StartValue)</dd>
+
+                            <dt>Endvalue</dt>
+                            <dd>@(datazoom_item.EndValue)</dd>
+
+                            <dt>Start percent</dt>
+                            <dd>@(datazoom_item.StartPercent)</dd>
+
+                            <dt>End percent</dt>
+                            <dd>@(datazoom_item.EndPercent)</dd>
+                        </dl>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
 
 @code {
 
-	// roughly based on https://echarts.apache.org/examples/en/editor.html?c=area-time-axis
+    private EventDatazoom? datazoomData;
 
-	private ChartOptions options = new()
-		{
-			Tooltip = new()
-			{
-				Trigger = TooltipTrigger.Axis,
-			},
-			Toolbox = new()
-			{
-				Feature = new()
-				{
-					DataZoom = new()
-					{
-						YAxisIndex = "none"
-					}
-				}
-			},
-			XAxis = new()
-			{
-				Type = AxisType.Time,
-				BoundaryGap = false
-			},
-			YAxis = new()
-			{
-				Type = AxisType.Value,
-				BoundaryGap = new(0, "100%")
-			},
-			DataZoom = new()
-			{
-				new InsideDataZoom()
-				{
-					Start = 0,
-					End = 20
-				}
-			},
-			Series = new()
-			{
-				new LineSeries()
-				{
-					AreaStyle = new() {},
-					ShowSymbol = false,
-					Smooth = true
-				}
-			}
-		};
+    // roughly based on https://echarts.apache.org/examples/en/editor.html?c=area-time-axis
 
-	private void LoadChartData()
-	{
-		var now = new DateTime(2023, 08, 01);
+    private ChartOptions options = new()
+        {
+            Tooltip = new()
+            {
+                Trigger = TooltipTrigger.Axis,
+            },
+            Toolbox = new()
+            {
+                Feature = new()
+                {
+                    DataZoom = new()
+                    {
+                        YAxisIndex = "none"
+                    }
+                }
+            },
+            XAxis = new()
+            {
+                Type = AxisType.Time,
+                BoundaryGap = false
+            },
+            YAxis = new()
+            {
+                Type = AxisType.Value,
+                BoundaryGap = new(0, "100%")
+            },
+            DataZoom = new()
+            {
+                new InsideDataZoom()
+                {
+                    Start = 0,
+                    End = 20
+                },
+                new SliderDataZoom(){
+                    Start = 0,
+                    End = 20
+                }
+            },
+            Series = new()
+            {
+                new LineSeries()
+                {
+                    AreaStyle = new() {},
+                    ShowSymbol = false,
+                    Smooth = true
+                }
+            }
+        };
 
-		var values = new List<SeriesData<DateTime, int>>(24 * 60 * 7);
-		var rnd = new Random();
+    private void LoadChartData()
+    {
+        var now = new DateTime(2023, 08, 01);
 
-		for (int i = 0; i < 24 * 60 * 7; ++i)
-		{
-			values.Add(new (now + TimeSpan.FromMinutes(i), rnd.Next(350)));
-		}
+        var values = new List<SeriesData<DateTime, int>>(24 * 60 * 7);
+        var rnd = new Random();
 
-		(options.Series![0] as LineSeries)!.Data = values;
-	}
+        for (int i = 0; i < 24 * 60 * 7; ++i)
+        {
+            values.Add(new(now + TimeSpan.FromMinutes(i), rnd.Next(350)));
+        }
+
+        (options.Series![0] as LineSeries)!.Data = values;
+    }
+
+    private void DatazoomEvent(EventDatazoom evt)
+    {
+        datazoomData = evt;
+        InvokeAsync(StateHasChanged);
+    }
 }

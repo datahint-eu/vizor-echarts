@@ -82,8 +82,12 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 	[Parameter]
 	public EventCallback<EventParams> OnChartClick { get; set; }
 
+	[Parameter]
+	public EventCallback<EventDatazoom> OnDatazoom { get; set; }
+
 	[DynamicDependency(nameof(HandleChartClick))]
-	public EChartBase()
+    [DynamicDependency(nameof(HandleDatazoom))]
+    public EChartBase()
 	{
 	}
 
@@ -198,4 +202,14 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 			await OnChartClick.InvokeAsync(p);
 		}
 	}
+
+    [JSInvokable("HandleDatazoom")]
+    public async Task HandleDatazoom(EventDatazoom p)
+    {
+        if (OnDatazoom.HasDelegate)
+        {
+            await OnDatazoom.InvokeAsync(p);
+        }
+    }
+
 }
