@@ -14,78 +14,83 @@
 @code {
 
 
-	protected override async Task OnAfterRenderAsync(bool firstRender)
-	{
-		// echarts.init the very first time the component is rendered
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // echarts.init the very first time the component is rendered
 
-		if (!firstRender)
-			return;
+        if (!firstRender)
+            return;
 
-		if (Options == null)
-			throw new ArgumentException("Options property must be set");
+        if (Options == null)
+            throw new ArgumentException("Options property must be set");
 
-		// init the serializer options if required
-		jsonOpts ??= CreateSerializerOptions();
+        // init the serializer options if required
+        jsonOpts ??= CreateSerializerOptions();
 
-		// register the chart in a group if available
-		Group?.Add(this);
+        // register the chart in a group if available
+        Group?.Add(this);
 
-		// options passed to echarts.init
-		var initOptions = JsonSerializer.Serialize(new
-		{
-			renderer = Renderer.ToJsParam(),
-			width = Width,
-			height = Height
-		});
+        // options passed to echarts.init
+        var initOptions = JsonSerializer.Serialize(new
+        {
+            renderer = Renderer.ToJsParam(),
+            width = Width,
+            height = Height
+        });
 
 #if DEBUG
 		// enable console.log in debug mode
 		await JSRuntime.InvokeVoidAsync("vizorECharts.changeLogging", true);
 #endif
 
-		if (DataLoader.HasDelegate)
-		{
-			// init the chart without any data
-			await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, initOptions, null /*chartOpts*/, null /*mapOpts*/, null /*fetchOptions*/);
+        if (DataLoader.HasDelegate)
+        {
+            // init the chart without any data
+            await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, initOptions, null /*chartOpts*/, null /*mapOpts*/, null /*fetchOptions*/);
 
-			// retrieve the data
-			if (DataLoader.HasDelegate)
-			{
-				await DataLoader.InvokeAsync();
-			}
+            // retrieve the data
+            if (DataLoader.HasDelegate)
+            {
+                await DataLoader.InvokeAsync();
+            }
 
-			// serialize all required data
-			(var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: true);
+            // serialize all required data
+            (var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: true);
 
-			// update the chart
-			await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", Id, chartOpts, mapOpts, fetchOpts);
-		}
-		else
-		{
-			// serialize all required data
-			(var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: true);
+            // update the chart
+            await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", Id, chartOpts, mapOpts, fetchOpts);
+        }
+        else
+        {
+            // serialize all required data
+            (var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: true);
 
-			//TODO: also pass DotNetObjectReference.Create(this) ?
-			await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, initOptions, chartOpts, mapOpts, fetchOpts);
-		}
-		
-		// listen for events if needed
-		if (OnChartClick.HasDelegate)
-		{
-			await JSRuntime.InvokeVoidAsync("vizorECharts.attachClickEvent", Id, objRef);
-		}
-	}
+            //TODO: also pass DotNetObjectReference.Create(this) ?
+            await JSRuntime.InvokeVoidAsync("vizorECharts.initChart", Id, Theme, initOptions, chartOpts, mapOpts, fetchOpts);
+        }
 
-	public override async Task UpdateAsync(bool executeDataLoader = true)
-	{
-		if (executeDataLoader && DataLoader.HasDelegate)
-		{
-			await DataLoader.InvokeAsync();
-		}
+        // listen for events if needed
+        if (OnChartClick.HasDelegate)
+        {
+            await JSRuntime.InvokeVoidAsync("vizorECharts.attachClickEvent", Id, objRef);
+        }
 
-		// serialize all required data
-		(var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: false);
+        if (OnDatazoom.HasDelegate)
+        {
+            await JSRuntime.InvokeVoidAsync("vizorECharts.attachDatazoomEvent", Id, objRef);
+        }
+    }
 
-		await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", Id, chartOpts, mapOpts, fetchOpts);
-	}
+    public override async Task UpdateAsync(bool executeDataLoader = true)
+    {
+        if (executeDataLoader && DataLoader.HasDelegate)
+        {
+            await DataLoader.InvokeAsync();
+        }
+
+        // serialize all required data
+        (var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: false);
+
+        await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", Id, chartOpts, mapOpts, fetchOpts);
+    }
 }
