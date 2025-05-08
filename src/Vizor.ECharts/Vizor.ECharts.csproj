@@ -46,9 +46,11 @@
 
 	<ItemGroup>
 		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+		<None Include="bundleconfig.json" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<Content Remove="bundleconfig.json" />
 		<Content Remove="package.json" />
 	</ItemGroup>
 

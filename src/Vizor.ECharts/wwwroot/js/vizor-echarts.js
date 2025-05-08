@@ -169,7 +169,7 @@ window.vizorECharts = {
 
 		// iterate through the options and map all JS functions / external data sources
 		// set the chart options
-		chart.setOption(parsedOptions);
+		chart.setOption(parsedOptions, true);
 
 		// hide the loading animation
 		chart.hideLoading();
@@ -197,6 +197,34 @@ window.vizorECharts = {
 		});
 	},
 
+	attachDatazoomEvent: function (id, objRef) {
+		var chart = vizorECharts.charts.get(id);
+		if (chart == null) {
+			console.error("Failed to retrieve chart " + id);
+			return;
+		}
+
+		// Call the JSInvokable .NET method
+		chart.on('dataZoom', function (params) {
+			if (vizorECharts.logging) {
+				console.log("dataZoom");
+				console.log(params);
+			}
+
+			var eventresult = {};
+			eventresult.datazoomItems = [];
+			var option = chart.getOption();
+			for (const datazoom of option.dataZoom) {
+				eventresult.datazoomItems.push({ type: datazoom.type, startValue: datazoom.startValue, endValue: datazoom.endValue, start: datazoom.start, end: datazoom.end });
+				if (vizorECharts.logging) {
+					console.log(datazoom);
+				}
+			}
+
+			objRef.invokeMethodAsync('HandleDatazoom', eventresult);
+		});
+	},
+
 	clearChart: function (id) {
 		var chart = vizorECharts.charts.get(id);
 		if (chart == null) {
@@ -205,6 +233,7 @@ window.vizorECharts = {
 		}
 
 		chart.clear();
+		chart.resize();
 	},
 
 	disposeChart: function (id) {
