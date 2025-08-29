@@ -15,13 +15,7 @@
 
 	protected override void OnInitialized()
 	{
-		graph = new ExternalDataSource("/data/les-miserables.json", ExternalDataFetchAs.Json)
-		{
-			AfterLoad = new JavascriptFunction(@"function (graph) {
-				graph.nodes.forEach(function (node) { node.symbolSize = 5; });
-				return graph;
-			}")
-		};
+			graph = new ExternalDataSource("/data/les-miserables.json", ExternalDataFetchAs.Json);
 
 		options = new()
 		{
@@ -48,6 +42,7 @@
 					Links = new ExternalDataSourceRef(graph, "links"),
 					Categories = new ExternalDataSourceRef(graph, "categories"),
 					Roam = Roam.True,
+					SymbolSize = 5,
 					Label = new()
 					{
 						Position = LabelPosition.Right

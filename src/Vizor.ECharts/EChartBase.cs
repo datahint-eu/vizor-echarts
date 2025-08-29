@@ -169,6 +169,9 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 		jsonOpts.Converters.Add(new DateTimeJsonConverter());
 		jsonOpts.Converters.Add(new DateTimeOffsetJsonConverter());
 		jsonOpts.Converters.Add(new SeriesDataConverterFactory());
+		
+		// Add polymorphic converter for IMapDefinition to properly serialize SvgMapDefinition and GeoMapDefinition
+		jsonOpts.Converters.Add(new PolymorphicJsonConverter<IMapDefinition>());
 
 		// register extra JSON converters if needed
 		if (JsonConverters != null)

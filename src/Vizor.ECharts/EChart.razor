@@ -83,9 +83,14 @@
 			await DataLoader.InvokeAsync();
 		}
 
-		// serialize all required data
-		(var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: false);
+		// serialize all required data - always serialize maps to ensure they're registered
+		(var chartOpts, var mapOpts, var fetchOpts) = Serialize(serializeMapOpts: true);
 
 		await JSRuntime.InvokeVoidAsync("vizorECharts.updateChart", Id, chartOpts, mapOpts, fetchOpts);
+	}
+	
+	public async Task ResizeAsync()
+	{
+		await JSRuntime.InvokeVoidAsync("vizorECharts.resizeChart", Id);
 	}
 }
