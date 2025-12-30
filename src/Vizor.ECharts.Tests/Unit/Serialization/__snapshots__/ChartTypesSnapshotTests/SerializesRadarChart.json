@@ -1,0 +1,33 @@
+﻿{
+  "radar": {
+    "indicator": [
+      {
+        "name": "Sales",
+        "max": 100
+      },
+      {
+        "name": "Quality",
+        "max": 100
+      },
+      {
+        "name": "Support",
+        "max": 100
+      }
+    ]
+  },
+  "series": [
+    {
+      "type": "radar",
+      "data": [
+        {
+          "value": [
+            90,
+            80,
+            85
+          ],
+          "name": "Q1"
+        }
+      ]
+    }
+  ]
+}

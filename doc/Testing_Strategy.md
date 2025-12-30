@@ -369,6 +369,33 @@ Examples:
 
 ---
 
+## Assertion Best Practices
+
+**MSTest Guidelines** (no third-party libraries):
+
+1. **Object comparison**: `Assert.AreEqual(expected, actual, message)`
+2. **JSON comparison**: Parse with `JsonDocument` for structure validation
+3. **Collection comparison**: `CollectionAssert.AreEqual(expected, actual)`
+4. **String checks** (MSTEST0037):
+   - ✅ Use `Assert.Contains(substring, actualString)` 
+   - ✅ Use `Assert.DoesNotContain(substring, actualString)`
+   - ❌ Avoid `Assert.IsTrue(str.Contains(...))` or `Assert.IsFalse(str.Contains(...))`
+5. **Null checks**: `Assert.IsNull()` / `Assert.IsNotNull()`
+6. **Boolean checks**: `Assert.IsTrue()` / `Assert.IsFalse()` (but prefer specific assertions when available)
+
+**Example**:
+```csharp
+// Good
+Assert.Contains("\"type\":\"line\"", json);
+Assert.DoesNotContain("\"series\"", json);
+
+// Avoid (triggers MSTEST0037 warning)
+Assert.IsTrue(json.Contains("\"type\":\"line\""));
+Assert.IsFalse(json.Contains("\"series\""));
+```
+
+---
+
 ## Test Data Isolation & Reusability
 
 ### Principles

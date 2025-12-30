@@ -1,0 +1,40 @@
+﻿{
+  "title": {
+    "text": "Pie Chart",
+    "left": "center"
+  },
+  "legend": {
+    "left": "left",
+    "orient": "vertical"
+  },
+  "tooltip": {
+    "trigger": "item"
+  },
+  "series": [
+    {
+      "type": "pie",
+      "emphasis": {
+        "itemStyle": {
+          "shadowBlur": 10,
+          "shadowColor": "rgba(0, 0, 0, 0.5)",
+          "shadowOffsetX": 0
+        }
+      },
+      "radius": "50%",
+      "data": [
+        {
+          "value": 335,
+          "name": "Direct"
+        },
+        {
+          "value": 234,
+          "name": "Email"
+        },
+        {
+          "value": 1548,
+          "name": "Search"
+        }
+      ]
+    }
+  ]
+}

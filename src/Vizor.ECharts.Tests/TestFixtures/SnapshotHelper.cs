@@ -16,10 +16,11 @@ internal static class SnapshotHelper
         string testClassName,
         string testMethodName,
         JsonSerializerOptions serializerOptions,
+        bool skipNormalization = false,
         [CallerFilePath] string filePath = "")
     {
         string actualJson = JsonSerializer.Serialize(actual, serializerOptions);
-        string normalizedActual = NormalizeJson(actualJson);
+        string normalizedActual = skipNormalization ? actualJson : NormalizeJson(actualJson);
 
         string snapshotDir = Path.Combine(
             Path.GetDirectoryName(filePath)!,

@@ -1,0 +1,15 @@
+﻿{
+  "series": [
+    {
+      "type": "gauge",
+      "data": [
+        {
+          "value": 75,
+          "name": "Score"
+        }
+      ],
+      "min": 0,
+      "max": 100
+    }
+  ]
+}
