@@ -7,25 +7,25 @@ namespace Vizor.ECharts.BindingGenerator.Types;
 /// </summary>
 internal class EnumOrFunctionType : IPropertyType
 {
-	public EnumOrFunctionType(string enumTypeName)
-	{
-		EnumTypeName = enumTypeName;
-	}
+    public EnumOrFunctionType(string enumTypeName)
+    {
+        EnumTypeName = enumTypeName;
+    }
 
-	/// <summary>
-	/// The name of the enum type (e.g., "FunnelSortOrder", "SortOrder")
-	/// </summary>
-	public string EnumTypeName { get; }
+    /// <summary>
+    /// The name of the enum type (e.g., "FunnelSortOrder", "SortOrder")
+    /// </summary>
+    public string EnumTypeName { get; }
 
-	/// <summary>
-	/// Returns "EnumOrFunction" to identify this special type
-	/// </summary>
-	public string Name => "EnumOrFunction";
+    /// <summary>
+    /// Returns "EnumOrFunction" to identify this special type
+    /// </summary>
+    public string Name => "EnumOrFunction";
 
-	/// <summary>
-	/// The backing field type is always "object" to support both enum and function forms
-	/// </summary>
-	public string DotNetType => "object";
+    /// <summary>
+    /// The backing field type is always "object" to support both enum and function forms
+    /// </summary>
+    public string DotNetType => "object";
 
-	public string? TypeWarning { get; set; }
+    public string? TypeWarning { get; set; }
 }

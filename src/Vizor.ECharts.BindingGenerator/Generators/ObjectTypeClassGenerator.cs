@@ -1,183 +1,183 @@
-﻿using Vizor.ECharts.BindingGenerator.Types;
+using Vizor.ECharts.BindingGenerator.Types;
 
 namespace Vizor.ECharts.BindingGenerator.Generators;
 
 internal class ObjectTypeClassGenerator
 {
-	private readonly ObjectType objectType;
+    private readonly ObjectType objectType;
 
-	private readonly string optionsFile;
+    private readonly string optionsFile;
 
-	public ObjectTypeClassGenerator(string outputDir, ObjectType objectType)
-	{
-		this.objectType = objectType;
+    public ObjectTypeClassGenerator(string outputDir, ObjectType objectType)
+    {
+        this.objectType = objectType;
 
-		string dir = outputDir;
-		if (objectType.TypeGroup.Contains("Series"))
-		{
-			var idx = objectType.Name.IndexOf("Series");
-			if (idx > 0)
-			{
-				var seriesName = objectType.Name[0..idx];
-				dir = Path.Combine(outputDir, "Series", seriesName);
-			}
-		}
-		else if (objectType.TypeGroup != "Options")
-		{
-			dir = Path.Combine(outputDir, "Options", objectType.TypeGroup);
-		}
-		else
-		{
-			dir = Path.Combine(outputDir, "Options");
-		}
+        string dir = outputDir;
+        if (objectType.TypeGroup.Contains("Series"))
+        {
+            var idx = objectType.Name.IndexOf("Series");
+            if (idx > 0)
+            {
+                var seriesName = objectType.Name[0..idx];
+                dir = Path.Combine(outputDir, "Series", seriesName);
+            }
+        }
+        else if (objectType.TypeGroup != "Options")
+        {
+            dir = Path.Combine(outputDir, "Options", objectType.TypeGroup);
+        }
+        else
+        {
+            dir = Path.Combine(outputDir, "Options");
+        }
 
-		if (dir != outputDir && !Directory.Exists(dir))
-			Directory.CreateDirectory(dir);
+        if (dir != outputDir && !Directory.Exists(dir))
+            Directory.CreateDirectory(dir);
 
-		optionsFile = Path.Combine(dir, objectType.DotNetType + ".cs");
-	}
+        optionsFile = Path.Combine(dir, objectType.DotNetType + ".cs");
+    }
 
-	public string OptionsFile => optionsFile;
+    public string OptionsFile => optionsFile;
 
-	public void Generate()
-	{
-		using var writer = new CSharpCodeWriter(optionsFile);
-		writer.WriteNotice();
-		writer.EmptyLine();
+    public void Generate()
+    {
+        using var writer = new CSharpCodeWriter(optionsFile);
+        writer.WriteNotice();
+        writer.EmptyLine();
 
-		writer.WriteUsing("System.ComponentModel");
-		writer.WriteUsing("System.Text.Json.Serialization");
-		writer.EmptyLine();
+        writer.WriteUsing("System.ComponentModel");
+        writer.WriteUsing("System.Text.Json.Serialization");
+        writer.EmptyLine();
 
-		writer.WriteNamespace("Vizor.ECharts");
-		writer.EmptyLine();
+        writer.WriteNamespace("Vizor.ECharts");
+        writer.EmptyLine();
 
-		writer.WriteClassDeclaration(objectType.DotNetType);
-		writer.OpenBrace();
+        writer.WriteClassDeclaration(objectType.DotNetType);
+        writer.OpenBrace();
 
-		foreach (var prop in objectType.Properties)
-		{
-			if (prop.MappedType == null)
-			{
-				writer.WriteLine($"//TODO: {prop.PropertyName}");
-			}
-			else if (prop.MappedType is SingleOrArrayType singleOrArray)
-			{
-				// Generate three properties for single-or-array pattern:
-				// 1. Object backing field with [JsonPropertyName]
-				// 2. Single accessor with [JsonIgnore]
-				// 3. List accessor with [JsonIgnore]
+        foreach (var prop in objectType.Properties)
+        {
+            if (prop.MappedType == null)
+            {
+                writer.WriteLine($"//TODO: {prop.PropertyName}");
+            }
+            else if (prop.MappedType is SingleOrArrayType singleOrArray)
+            {
+                // Generate three properties for single-or-array pattern:
+                // 1. Object backing field with [JsonPropertyName]
+                // 2. Single accessor with [JsonIgnore]
+                // 3. List accessor with [JsonIgnore]
 
-				writer.WriteDocumentation(prop.Description);
-				writer.WriteLine($"[JsonPropertyName(\"{prop.Name}\")]");
-				writer.WriteDefaultValueAttribute(prop.Default);
-				writer.WriteLine($"public object? {prop.PropertyName}Object {{ get; set; }}");
-				writer.EmptyLine();
+                writer.WriteDocumentation(prop.Description);
+                writer.WriteLine($"[JsonPropertyName(\"{prop.Name}\")]");
+                writer.WriteDefaultValueAttribute(prop.Default);
+                writer.WriteLine($"public object? {prop.PropertyName}Object {{ get; set; }}");
+                writer.EmptyLine();
 
-				writer.WriteDocumentation(prop.Description);
-				writer.WriteLine($"[JsonIgnore]");
-				writer.WriteLine($"public {singleOrArray.InnerTypeName}? {prop.PropertyName}");
-				writer.OpenBrace();
-				writer.WriteLine($"\tget => {prop.PropertyName}Object as {singleOrArray.InnerTypeName};");
-				writer.WriteLine($"\tset => {prop.PropertyName}Object = value;");
-				writer.CloseBrace();
-				writer.EmptyLine();
+                writer.WriteDocumentation(prop.Description);
+                writer.WriteLine($"[JsonIgnore]");
+                writer.WriteLine($"public {singleOrArray.InnerTypeName}? {prop.PropertyName}");
+                writer.OpenBrace();
+                writer.WriteLine($"\tget => {prop.PropertyName}Object as {singleOrArray.InnerTypeName};");
+                writer.WriteLine($"\tset => {prop.PropertyName}Object = value;");
+                writer.CloseBrace();
+                writer.EmptyLine();
 
-				writer.WriteDocumentation(prop.Description);
-				writer.WriteLine($"[JsonIgnore]");
-				writer.WriteLine($"public List<{singleOrArray.InnerTypeName}>? {prop.PropertyName}List");
-				writer.OpenBrace();
-				writer.WriteLine($"\tget => {prop.PropertyName}Object as List<{singleOrArray.InnerTypeName}>;");
-				writer.WriteLine($"\tset => {prop.PropertyName}Object = value;");
-				writer.CloseBrace();
-				writer.EmptyLine();
-			}
-			else if (prop.MappedType is EnumOrFunctionType enumOrFunc)
-			{
-				// Generate three properties for enum-or-function pattern:
-				// 1. Object backing field with [JsonPropertyName]
-				// 2. Enum accessor with [JsonIgnore]
-				// 3. Function accessor with [JsonIgnore]
+                writer.WriteDocumentation(prop.Description);
+                writer.WriteLine($"[JsonIgnore]");
+                writer.WriteLine($"public List<{singleOrArray.InnerTypeName}>? {prop.PropertyName}List");
+                writer.OpenBrace();
+                writer.WriteLine($"\tget => {prop.PropertyName}Object as List<{singleOrArray.InnerTypeName}>;");
+                writer.WriteLine($"\tset => {prop.PropertyName}Object = value;");
+                writer.CloseBrace();
+                writer.EmptyLine();
+            }
+            else if (prop.MappedType is EnumOrFunctionType enumOrFunc)
+            {
+                // Generate three properties for enum-or-function pattern:
+                // 1. Object backing field with [JsonPropertyName]
+                // 2. Enum accessor with [JsonIgnore]
+                // 3. Function accessor with [JsonIgnore]
 
-				writer.WriteDocumentation(prop.Description);
-				writer.WriteLine($"[JsonPropertyName(\"{prop.Name}\")]");
-				writer.WriteDefaultValueAttribute(prop.Default);
-				writer.WriteLine($"public object? {prop.PropertyName}Object {{ get; set; }}");
-				writer.EmptyLine();
+                writer.WriteDocumentation(prop.Description);
+                writer.WriteLine($"[JsonPropertyName(\"{prop.Name}\")]");
+                writer.WriteDefaultValueAttribute(prop.Default);
+                writer.WriteLine($"public object? {prop.PropertyName}Object {{ get; set; }}");
+                writer.EmptyLine();
 
-				writer.WriteDocumentation(prop.Description);
-				writer.WriteLine($"[JsonIgnore]");
-				writer.WriteLine($"public {enumOrFunc.EnumTypeName}? {prop.PropertyName}");
-				writer.OpenBrace();
-				writer.WriteLine($"\tget => ({enumOrFunc.EnumTypeName}?){prop.PropertyName}Object;");
-				writer.WriteLine($"\tset => {prop.PropertyName}Object = value;");
-				writer.CloseBrace();
-				writer.EmptyLine();
+                writer.WriteDocumentation(prop.Description);
+                writer.WriteLine($"[JsonIgnore]");
+                writer.WriteLine($"public {enumOrFunc.EnumTypeName}? {prop.PropertyName}");
+                writer.OpenBrace();
+                writer.WriteLine($"\tget => ({enumOrFunc.EnumTypeName}?){prop.PropertyName}Object;");
+                writer.WriteLine($"\tset => {prop.PropertyName}Object = value;");
+                writer.CloseBrace();
+                writer.EmptyLine();
 
-				writer.WriteDocumentation($"A {prop.Name} function.");
-				writer.WriteLine($"[JsonIgnore]");
-				writer.WriteLine($"public JavascriptFunction? {prop.PropertyName}Function");
-				writer.OpenBrace();
-				writer.WriteLine($"\tget => {prop.PropertyName}Object as JavascriptFunction;");
-				writer.WriteLine($"\tset => {prop.PropertyName}Object = value;");
-				writer.CloseBrace();
-				writer.EmptyLine();
-			}
-			else
-			{
-				// the 'type' property of anyOf objects is mandatory
-				string defaultAssign = string.Empty;
-				if (objectType.TypeGroup != "Options" && prop.Name == "type")
-				{
-					defaultAssign = GetDefaultAssign(prop.Default);
-				}
+                writer.WriteDocumentation($"A {prop.Name} function.");
+                writer.WriteLine($"[JsonIgnore]");
+                writer.WriteLine($"public JavascriptFunction? {prop.PropertyName}Function");
+                writer.OpenBrace();
+                writer.WriteLine($"\tget => {prop.PropertyName}Object as JavascriptFunction;");
+                writer.WriteLine($"\tset => {prop.PropertyName}Object = value;");
+                writer.CloseBrace();
+                writer.EmptyLine();
+            }
+            else
+            {
+                // the 'type' property of anyOf objects is mandatory
+                string defaultAssign = string.Empty;
+                if (objectType.TypeGroup != "Options" && prop.Name == "type")
+                {
+                    defaultAssign = GetDefaultAssign(prop.Default);
+                }
 
-				writer.WriteDocumentation(prop.Description);
-				writer.WriteLine($"[JsonPropertyName(\"{prop.Name}\")]");
-				writer.WriteDefaultValueAttribute(prop.Default);
+                writer.WriteDocumentation(prop.Description);
+                writer.WriteLine($"[JsonPropertyName(\"{prop.Name}\")]");
+                writer.WriteDefaultValueAttribute(prop.Default);
 
-				if (prop.MappedType.TypeWarning != null)
-				{
-					writer.WriteLine($"//TODO: Type Warning: {prop.MappedType.TypeWarning}");
-				}
+                if (prop.MappedType.TypeWarning != null)
+                {
+                    writer.WriteLine($"//TODO: Type Warning: {prop.MappedType.TypeWarning}");
+                }
 
-				writer.WriteLine($"public {prop.MappedType.DotNetType}? {prop.PropertyName} {{ get; set; }} {defaultAssign}");
-				writer.EmptyLine();
-			}
-		}
+                writer.WriteLine($"public {prop.MappedType.DotNetType}? {prop.PropertyName} {{ get; set; }} {defaultAssign}");
+                writer.EmptyLine();
+            }
+        }
 
-		writer.CloseBrace();
-	}
+        writer.CloseBrace();
+    }
 
-	private string GetDefaultAssign(object? defaultValue)
-	{
-		if (defaultValue == null)
-			return string.Empty;
+    private string GetDefaultAssign(object? defaultValue)
+    {
+        if (defaultValue == null)
+            return string.Empty;
 
-		if (defaultValue is string str)
-		{
-			return $" = \"{str}\";";
-		}
-		else if (defaultValue is bool b)
-		{
-			return $" = {b.ToString().ToLower()};";
-		}
-		else if (defaultValue is double d)
-		{
-			if ((d - (int)d) != 0)
-			{
-				// doubles with fractional part --> always write .
-				return $" = {d.ToString(System.Globalization.CultureInfo.InvariantCulture)};";
-			}
-			else
-			{
-				// integers
-				return $" = {d};";
-			}
-		}
-		else
-		{
-			return $" = {defaultValue};";
-		}
-	}
+        if (defaultValue is string str)
+        {
+            return $" = \"{str}\";";
+        }
+        else if (defaultValue is bool b)
+        {
+            return $" = {b.ToString().ToLower()};";
+        }
+        else if (defaultValue is double d)
+        {
+            if ((d - (int)d) != 0)
+            {
+                // doubles with fractional part --> always write .
+                return $" = {d.ToString(System.Globalization.CultureInfo.InvariantCulture)};";
+            }
+            else
+            {
+                // integers
+                return $" = {d};";
+            }
+        }
+        else
+        {
+            return $" = {defaultValue};";
+        }
+    }
 }

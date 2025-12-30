@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
@@ -10,45 +10,45 @@ namespace Vizor.ECharts;
 [JsonConverter(typeof(AxisLineSymbolConverter))]
 public class AxisLineSymbol
 {
-	public AxisLineSymbol(Icon both)
-	{
-		Start = both;
-		End = both;
-		AreSame = true;
-	}
+    public AxisLineSymbol(Icon both)
+    {
+        Start = both;
+        End = both;
+        AreSame = true;
+    }
 
-	public AxisLineSymbol(Icon start, Icon end)
-	{
-		Start = start;
-		End = end;
-		AreSame = false;
-	}
+    public AxisLineSymbol(Icon start, Icon end)
+    {
+        Start = start;
+        End = end;
+        AreSame = false;
+    }
 
-	public Icon Start { get; }
-	public Icon End { get; }
+    public Icon Start { get; }
+    public Icon End { get; }
 
-	internal bool AreSame { get; }
+    internal bool AreSame { get; }
 }
 
 public class AxisLineSymbolConverter : JsonConverter<AxisLineSymbol>
 {
-	public override AxisLineSymbol Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-	{
-		throw new NotImplementedException("Deserialization is not implemented for AxisLineSymbol.");
-	}
+    public override AxisLineSymbol Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        throw new NotImplementedException("Deserialization is not implemented for AxisLineSymbol.");
+    }
 
-	public override void Write(Utf8JsonWriter writer, AxisLineSymbol value, JsonSerializerOptions options)
-	{
-		if (value.AreSame)
-		{
-			IconConverter.Instance.Write(writer, value.Start, options);
-		}
-		else
-		{
-			writer.WriteStartArray();
-			IconConverter.Instance.Write(writer, value.Start, options);
-			IconConverter.Instance.Write(writer, value.End, options);
-			writer.WriteEndArray();
-		}
-	}
+    public override void Write(Utf8JsonWriter writer, AxisLineSymbol value, JsonSerializerOptions options)
+    {
+        if (value.AreSame)
+        {
+            IconConverter.Instance.Write(writer, value.Start, options);
+        }
+        else
+        {
+            writer.WriteStartArray();
+            IconConverter.Instance.Write(writer, value.Start, options);
+            IconConverter.Instance.Write(writer, value.End, options);
+            writer.WriteEndArray();
+        }
+    }
 }

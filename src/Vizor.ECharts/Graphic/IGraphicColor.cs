@@ -1,6 +1,6 @@
-﻿namespace Vizor.ECharts;
+namespace Vizor.ECharts;
 
 public interface IGraphicColor
 {
-	string Type { get; }
+    string Type { get; }
 }

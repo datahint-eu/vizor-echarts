@@ -1,17 +1,17 @@
-﻿namespace Vizor.ECharts.BindingGenerator.Types;
+namespace Vizor.ECharts.BindingGenerator.Types;
 
 internal class GenericListType : IPropertyType
 {
-	private readonly IPropertyType genericArgument;
+    private readonly IPropertyType genericArgument;
 
-	public GenericListType(IPropertyType genericArgument)
-	{
-		this.genericArgument = genericArgument;
-	}
+    public GenericListType(IPropertyType genericArgument)
+    {
+        this.genericArgument = genericArgument;
+    }
 
-	public string Name => "array";
+    public string Name => "array";
 
-	public string DotNetType => $"List<{genericArgument.DotNetType}>";
+    public string DotNetType => $"List<{genericArgument.DotNetType}>";
 
-	public string? TypeWarning { get; set; }
+    public string? TypeWarning { get; set; }
 }

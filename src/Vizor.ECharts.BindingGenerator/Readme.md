@@ -1,4 +1,4 @@
-﻿# Remarks
+# Remarks
 
 This tool was used to generate 80-90% of the initial binding.
 It is good enough to generate the bulk of the bindings, but the last bits and pieces are hand tuned.
