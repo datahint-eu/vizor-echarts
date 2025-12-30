@@ -371,28 +371,95 @@ Examples:
 
 ## Assertion Best Practices
 
-**MSTest Guidelines** (no third-party libraries):
+**MSTest Guidelines** (enforced by MSTEST0037 analyzer):
 
-1. **Object comparison**: `Assert.AreEqual(expected, actual, message)`
-2. **JSON comparison**: Parse with `JsonDocument` for structure validation
-3. **Collection comparison**: `CollectionAssert.AreEqual(expected, actual)`
-4. **String checks** (MSTEST0037):
-   - ✅ Use `Assert.Contains(substring, actualString)` 
-   - ✅ Use `Assert.DoesNotContain(substring, actualString)`
-   - ❌ Avoid `Assert.IsTrue(str.Contains(...))` or `Assert.IsFalse(str.Contains(...))`
-5. **Null checks**: `Assert.IsNull()` / `Assert.IsNotNull()`
-6. **Boolean checks**: `Assert.IsTrue()` / `Assert.IsFalse()` (but prefer specific assertions when available)
-
-**Example**:
+### 1. String Containment
 ```csharp
-// Good
-Assert.Contains("\"type\":\"line\"", json);
-Assert.DoesNotContain("\"series\"", json);
+// ✅ Use specific assertions (string first, substring second)
+Assert.Contains("substring to find", actualString);
+Assert.DoesNotContain("unwanted substring", actualString);
 
-// Avoid (triggers MSTEST0037 warning)
-Assert.IsTrue(json.Contains("\"type\":\"line\""));
-Assert.IsFalse(json.Contains("\"series\""));
+// ⚠️ Parameter order: substring FIRST, string to search SECOND
+Assert.Contains("[", jsonArray);      // ✅ Correct: search for "[" in jsonArray
+Assert.Contains(jsonArray, "[");      // ❌ Wrong: search for jsonArray in "["
+
+// ❌ Avoid generic boolean checks
+Assert.IsTrue(str.Contains("text"));   // MSTEST0037 warning
+Assert.IsFalse(str.Contains("text"));  // MSTEST0037 warning
 ```
+
+### 2. Collection Checks
+```csharp
+// ✅ Use specific assertions
+Assert.IsNotEmpty(collection);
+Assert.IsEmpty(collection);
+
+// ❌ Avoid
+Assert.IsTrue(collection.Count > 0);   // MSTEST0037 warning
+Assert.IsTrue(collection.Any());        // MSTEST0037 warning
+```
+
+### 3. Numeric Comparisons
+```csharp
+// ✅ Use specific assertions (note parameter order!)
+Assert.IsGreaterThan(lowerBound, actualValue);           // actualValue > lowerBound
+Assert.IsGreaterThanOrEqualTo(lowerBound, actualValue);  // actualValue >= lowerBound
+Assert.IsLessThan(upperBound, actualValue);              // actualValue < upperBound
+Assert.IsLessThanOrEqualTo(upperBound, actualValue);     // actualValue <= upperBound
+
+// ❌ Avoid
+Assert.IsTrue(value >= 10);  // MSTEST0037 warning
+
+// ⚠️ CRITICAL: Parameter order is BOUND FIRST, ACTUAL VALUE SECOND
+//    This is the opposite of Assert.AreEqual!
+Assert.IsGreaterThanOrEqualTo(10, actualValue);  // ✅ Correct: tests if actualValue >= 10
+Assert.IsGreaterThanOrEqualTo(actualValue, 10);  // ❌ Wrong: tests if 10 >= actualValue
+
+// Example: Testing collection count
+Assert.IsGreaterThanOrEqualTo(10, unionTypes.Count);  // ✅ Correct: Count must be >= 10
+Assert.IsGreaterThanOrEqualTo(unionTypes.Count, 10);  // ❌ Wrong: 10 must be >= Count
+```
+
+### 4. Equality Checks
+```csharp
+// ✅ Use AreEqual for value comparisons
+Assert.AreEqual(expected, actual);
+Assert.AreEqual("Vizor.ECharts", type.Namespace);
+
+// ❌ Avoid
+Assert.IsTrue(obj.Property == "value");  // MSTEST0037 warning
+```
+
+### 5. Boolean Checks
+```csharp
+// ✅ Use for actual boolean conditions
+Assert.IsTrue(condition);
+Assert.IsFalse(condition);
+Assert.IsTrue(value.HasValue);  // Checking nullable bool
+
+// ❌ Don't use for comparisons
+Assert.IsTrue(a == b);  // Use Assert.AreEqual instead
+```
+
+### 6. Null Checks
+```csharp
+Assert.IsNull(value);
+Assert.IsNotNull(value);
+```
+
+### 7. JSON Structure Validation
+```csharp
+// Parse with JsonDocument for structure checks
+var doc = JsonDocument.Parse(json);
+Assert.IsTrue(doc.RootElement.TryGetProperty("series", out var series));
+Assert.AreEqual(JsonValueKind.Array, series.ValueKind);
+```
+
+### Why These Conventions?
+- **Clearer error messages**: "Expected string to contain 'test' but it was 'other'"
+- **Better IDE integration**: Tooling provides better quick fixes
+- **Consistent with best practices**: Follows modern testing guidelines
+- **Enforced by analyzer**: .editorconfig MSTEST0037 rule prevents violations
 
 ---
 

@@ -198,7 +198,17 @@ internal abstract class BasePhase
 		// first try mapping enum types by name
 		if (typeCollection.TryGetMappedEnumType(prop.Name, parent.Name, out var mappedEnumType))
 			return mappedEnumType;
-
+	// detect single-or-array pattern (Grid, XAxis, YAxis, etc.)
+	// These properties accept either a single object or an array of objects
+	if (IsArrayAndObject(optProp) && optProp.ItemType != null)
+	{
+		// The ItemType contains the object type (e.g., Grid, XAxis, YAxis)
+		var innerType = optProp.ItemType;
+		if (innerType is IObjectType objType)
+		{
+			return new SingleOrArrayType(objType.DotNetType);
+		}
+	}
 		// matching based on types: simple first
 		if (optProp.Types.Count == 1)
 		{
@@ -245,6 +255,8 @@ internal abstract class BasePhase
 			{
 				case ("boolean", "number"):
 					return new MappedCustomType(typeof(NumberOrBool));
+				case ("boolean", "string"):
+					return new MappedCustomType(typeof(BoolOrString));
 				case ("number", "string"):
 					return new MappedCustomType(typeof(NumberOrString));
 				case ("icon", "string"):
@@ -269,11 +281,27 @@ internal abstract class BasePhase
 					return new MappedCustomType(typeof(ColorOrFunction));
 				case ("color", "number"): // specific case for borderColorSaturation
 					return new SimpleType("double");
-			}
+			case ("enum", "function"):
+				// Enum + Function pattern (e.g., FunnelSeries.Sort)
+				// Need to determine the enum type from the enum options
+				if (typeCollection.TryGetMappedEnumType(prop.Name, parent.Name, out var enumType) && enumType != null)
+				{
+					return new EnumOrFunctionType(enumType.DotNetType);
+				}
+				else
+				{
+					// Fallback if enum type not found
+					Console.WriteLine($"WARNING: Could not resolve enum type for '{prop.Name}' in '{parent.Name}' with enum+function pattern");
+					return new SimpleType("object")
+					{
+						TypeWarning = $"enum,function type '{prop.Name}' in '{parent.Name}' could not resolve enum type"
+					};
+				}
 		}
+	}
 
-		// even more complex matching
-		if (optProp.Types is ["function", "number", "string"])
+	// even more complex matching
+	if (optProp.Types is ["function", "number", "string"])
 		{
 			return new MappedCustomType(typeof(NumberOrStringOrFunction));
 		}
@@ -292,6 +320,10 @@ internal abstract class BasePhase
 		else if (optProp.Types is ["array", "number", "vector"])
 		{
 			return new MappedCustomType(typeof(NumberArray));
+		}
+		else if (optProp.Types is ["array", "number", "string"])
+		{
+			return new MappedCustomType(typeof(NumberOrStringArray));
 		}
 
 		// give additional enum warning if any of the types is an enum
@@ -325,6 +357,17 @@ internal abstract class BasePhase
 		}
 
 		return true;
+	}
+
+	/// <summary>
+	/// Detects if a property accepts both array and object types (e.g., Grid, XAxis, YAxis)
+	/// </summary>
+	protected bool IsArrayAndObject(OptionProperty optProp)
+	{
+		return optProp.Types != null && 
+		       optProp.Types.Contains("array") && 
+		       optProp.Types.Contains("object") &&
+		       optProp.Types.Count == 2;
 	}
 
 	protected string GetPropertyList(ObjectType objectType)
