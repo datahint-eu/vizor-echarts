@@ -10,16 +10,15 @@
 //    npm install
 //    gulp or ( .\node_modules\.bin\gulp)
 
-var path = require('path'),
+const path = require('path'),
 	rename = require('gulp-rename'),
-	clean = require('gulp-clean'),
 	gulp = require('gulp'),
 	sass = require('gulp-sass')(require('sass')),
 	postcss = require('gulp-postcss'),
 	cleancss = require('gulp-clean-css'),
 	concat = require('gulp-concat'),
 	minify = require('gulp-minify');
-var exec = require("child_process").exec;
+const exec = require("child_process").exec;
 
 var vizorScripts = './Scripts';
 var wwwroot = path.resolve(__dirname, "wwwroot");
@@ -43,10 +42,9 @@ var destPaths = {
 };
 
 
-gulp.task('clean', () => {
-	return gulp.src(
-		[path.resolve(wwwroot, 'js/**')])
-		.pipe(clean());
+gulp.task('clean', async () => {
+	const { deleteAsync } = await import('del');
+	return deleteAsync([path.resolve(wwwroot, 'js/**')]);
 });
 
 gulp.task('buildJs', () => {

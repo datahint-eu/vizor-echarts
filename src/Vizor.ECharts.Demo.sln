@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vizor.ECharts.Samples", "Vi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vizor.ECharts.Sandbox", "Vizor.ECharts.Sandbox\Vizor.ECharts.Sandbox.csproj", "{F6530FCA-5924-4333-ADAC-71B567C111E2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vizor.ECharts.Tests", "Vizor.ECharts.Tests\Vizor.ECharts.Tests.csproj", "{D184CA1E-DB9B-46D8-903D-18F0A19E70D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F6530FCA-5924-4333-ADAC-71B567C111E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6530FCA-5924-4333-ADAC-71B567C111E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6530FCA-5924-4333-ADAC-71B567C111E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D184CA1E-DB9B-46D8-903D-18F0A19E70D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D184CA1E-DB9B-46D8-903D-18F0A19E70D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D184CA1E-DB9B-46D8-903D-18F0A19E70D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D184CA1E-DB9B-46D8-903D-18F0A19E70D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

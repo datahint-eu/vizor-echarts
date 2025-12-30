@@ -1,0 +1,27 @@
+﻿{
+  "title": {
+    "text": "Line Chart"
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "type": "line",
+      "name": "S1",
+      "data": [
+        10,
+        20,
+        30
+      ]
+    }
+  ]
+}
