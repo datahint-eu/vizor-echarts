@@ -1,6 +1,3 @@
-using CommandLine.Text;
-using CommandLine;
-
 namespace Vizor.ECharts.BindingGenerator;
 
 [Verb("typeinfo", HelpText = "Analyze type information")]

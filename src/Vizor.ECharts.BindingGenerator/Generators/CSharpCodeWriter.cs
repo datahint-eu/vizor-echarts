@@ -1,7 +1,5 @@
 using System.Net;
 using System.Text;
-using HtmlAgilityPack;
-using Microsoft.Extensions.Primitives;
 
 namespace Vizor.ECharts.BindingGenerator.Generators;
 
@@ -192,10 +190,29 @@ internal sealed class CSharpCodeWriter : IDisposable
         if (humanReadable == null)
             return;
 
+        // Check if any line contains XML special characters
+        bool needsCData = humanReadable.Any(line => 
+            line.Contains('<') || line.Contains('>') || 
+            line.Contains('&') || line.Contains('"') || line.Contains('\''));
+
         WriteLine("/// <summary>");
 
-        foreach (var line in humanReadable)
-            WriteLine($"/// {line}");
+        if (needsCData)
+        {
+            WriteLine("/// <![CDATA[");
+            foreach (var line in humanReadable)
+            {
+                WriteLine($"/// {line}");
+            }
+            WriteLine("/// ]]>");
+        }
+        else
+        {
+            foreach (var line in humanReadable)
+            {
+                WriteLine($"/// {line}");
+            }
+        }
 
         WriteLine("/// </summary>");
     }

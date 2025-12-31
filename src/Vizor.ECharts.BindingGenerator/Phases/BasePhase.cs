@@ -1,9 +1,5 @@
-using System;
 using System.Data;
-using System.Diagnostics;
 using System.Text.Json;
-using Vizor.ECharts.BindingGenerator.Types;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Vizor.ECharts.BindingGenerator.Phases;
 
@@ -240,7 +236,7 @@ internal abstract class BasePhase
                 case "color":
                     return new MappedCustomType(typeof(Color));
                 case "function":
-                    return new MappedCustomType(typeof(Function));
+                    return new MappedCustomType(typeof(JavascriptFunction));
                 case "array":
                     return typeCollection.MapArrayType(parent, optProp, prop);
                 case "*":

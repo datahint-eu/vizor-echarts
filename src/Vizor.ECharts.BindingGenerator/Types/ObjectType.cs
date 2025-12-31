@@ -1,7 +1,3 @@
-using System.Diagnostics;
-using System.Text.Json;
-using System.Xml.Linq;
-
 namespace Vizor.ECharts.BindingGenerator.Types;
 
 internal class ObjectType : IPropertyType, IObjectType

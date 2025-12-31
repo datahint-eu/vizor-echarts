@@ -1,9 +1,4 @@
 using System.Text.Json;
-using System.Text.Json.Nodes;
-using Vizor.ECharts.BindingGenerator.Types;
-using Vizor.ECharts.BindingGenerator.Generators;
-using Vizor.ECharts.BindingGenerator.Phases;
-using System.Data;
 
 namespace Vizor.ECharts.BindingGenerator;
 

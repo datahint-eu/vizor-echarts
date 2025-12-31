@@ -1,5 +1,4 @@
 using System.Text.Json;
-using Vizor.ECharts;
 
 namespace Vizor.ECharts.BindingGenerator.Types;
 

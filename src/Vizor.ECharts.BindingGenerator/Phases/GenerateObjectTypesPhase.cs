@@ -1,6 +1,4 @@
-using System.Data;
 using System.Text.Json;
-using Vizor.ECharts.BindingGenerator.Types;
 
 namespace Vizor.ECharts.BindingGenerator.Phases;
 
