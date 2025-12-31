@@ -1,3 +1,5 @@
+using Vizor.ECharts.BindingGenerator.Types;
+
 namespace Vizor.ECharts.BindingGenerator.Generators;
 
 internal class ObjectTypeClassGenerator

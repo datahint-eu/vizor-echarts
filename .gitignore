@@ -9,3 +9,4 @@ x64/
 node_modules/
 .vs/
 /src/Vizor.ECharts/package-lock.json
+/src/Vizor.EChartsGen/

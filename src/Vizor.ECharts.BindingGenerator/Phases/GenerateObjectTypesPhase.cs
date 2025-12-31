@@ -1,5 +1,7 @@
 using System.Text.Json;
 
+using Vizor.ECharts.BindingGenerator.Types;
+
 namespace Vizor.ECharts.BindingGenerator.Phases;
 
 internal class GenerateObjectTypesPhase : BasePhase

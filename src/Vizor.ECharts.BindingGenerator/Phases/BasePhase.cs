@@ -1,15 +1,21 @@
 using System.Data;
 using System.Text.Json;
+using Vizor.ECharts.BindingGenerator.Diagnostics;
+using Vizor.ECharts.BindingGenerator.Types;
 
 namespace Vizor.ECharts.BindingGenerator.Phases;
 
 internal abstract class BasePhase
 {
     protected readonly TypeCollection typeCollection;
+    protected readonly DiagnosticCollector diagnosticCollector;
+    protected readonly TypePatternRegistry patternRegistry;
 
     public BasePhase(TypeCollection typeCollection)
     {
         this.typeCollection = typeCollection;
+        this.diagnosticCollector = new DiagnosticCollector();
+        this.patternRegistry = new TypePatternRegistry(typeCollection);
     }
 
     internal abstract void Run(JsonElement root);
@@ -191,9 +197,23 @@ internal abstract class BasePhase
         if (optProp.Types == null || optProp.Types.Count == 0)
             throw new ArgumentException($"JSON property '{prop.Name}' could not be mapped: no type info available");
 
+        var propertyPath = $"{parent.Name}.{prop.Name}";
+        var types = optProp.Types.OrderBy(t => t).ToList();
+
+        // Special case: property-specific custom type mappings
+        if (prop.Name == "position" && parent.Name == "tooltip" && string.Join(",", types) == "array,string")
+        {
+            var tooltipPosType = new MappedCustomType(typeof(TooltipPosition));
+            diagnosticCollector.RecordSupported(propertyPath, types, tooltipPosType.DotNetType);
+            return tooltipPosType;
+        }
+
         // first try mapping enum types by name
-        if (typeCollection.TryGetMappedEnumType(prop.Name, parent.Name, out var mappedEnumType))
+        if (typeCollection.TryGetMappedEnumType(prop.Name, parent.Name, out var mappedEnumType) && mappedEnumType != null)
+        {
+            diagnosticCollector.RecordSupported(propertyPath, types, mappedEnumType.DotNetType);
             return mappedEnumType;
+        }
         // detect single-or-array pattern (Grid, XAxis, YAxis, etc.)
         // These properties accept either a single object or an array of objects
         if (IsArrayAndObject(optProp) && optProp.ItemType != null)
@@ -202,140 +222,182 @@ internal abstract class BasePhase
             var innerType = optProp.ItemType;
             if (innerType is IObjectType objType)
             {
-                return new SingleOrArrayType(objType.DotNetType);
+                var singleOrArrayType = new SingleOrArrayType(objType.DotNetType);
+                diagnosticCollector.RecordSupported(propertyPath, types, $"SingleOrArrayType<{objType.DotNetType}>");
+                return singleOrArrayType;
             }
         }
         // matching based on types: simple first
         if (optProp.Types.Count == 1)
         {
+            IPropertyType? result = null;
+            
             switch (optProp.Types[0])
             {
                 case "object":
-                    return ParseObjectType(optProp, prop.Name, prop.Value, dataPrefix: prop.Name, typeGroup: "Options");
+                    result = ParseObjectType(optProp, prop.Name, prop.Value, dataPrefix: prop.Name, typeGroup: "Options");
+                    break;
+                case "string":
+                    result = new SimpleType("string");
+                    break;
+                case "number":
+                    // special case: we don't want to use double for indices
+                    result = prop.Name.Contains("index", StringComparison.InvariantCultureIgnoreCase)
+                        ? new SimpleType("int")
+                        : new SimpleType("double");
+                    break;
+                case "boolean":
+                    result = new SimpleType("bool");
+                    break;
+                case "color":
+                    result = new MappedCustomType(typeof(Color));
+                    break;
+                case "function":
+                    result = new MappedCustomType(typeof(JavascriptFunction));
+                    break;
+                case "array":
+                    result = typeCollection.MapArrayType(parent, optProp, prop);
+                    break;
+                case "*":
+                    result = new SimpleType("object");
+                    break;
+                case "percentvector":
+                case "vector":
+                    // percentvector: array of 2 elements (number or percent string)
+                    // vector: array of 2 elements (numbers)
+                    result = new SimpleType("double[]");
+                    break;
                 case "enum":
                     // don't care that fontFamily/cursor isn't mapped, warn about all other unmapped types
                     if (prop.Name != "fontFamily" && prop.Name != "cursor")
                     {
                         Console.WriteLine($"WARNING: enum type '{prop.Name}' in '{parent.Name}' with values '{string.Join(',', optProp.EnumOptions ?? Array.Empty<string>())}' is not mapped");
+                        diagnosticCollector.RecordUnsupported(
+                            propertyPath,
+                            types,
+                            "string",
+                            patternRegistry.GenerateSuggestion(types, string.Join(',', optProp.EnumOptions ?? Array.Empty<string>())));
                         return new SimpleType("string")
                         {
                             TypeWarning = $"enum type '{prop.Name}' in '{parent.Name}' with values '{string.Join(',', optProp.EnumOptions ?? Array.Empty<string>())}' is not mapped"
                         };
                     }
-                    return new SimpleType("string");
-                case "string":
-                    return new SimpleType("string");
-                case "number":
-                    // special case: we don't want to use double for indices
-                    if (prop.Name.Contains("index", StringComparison.InvariantCultureIgnoreCase))
-                        return new SimpleType("int");
-                    else
-                        return new SimpleType("double");
-                case "boolean":
-                    return new SimpleType("bool");
-                case "color":
-                    return new MappedCustomType(typeof(Color));
-                case "function":
-                    return new MappedCustomType(typeof(JavascriptFunction));
-                case "array":
-                    return typeCollection.MapArrayType(parent, optProp, prop);
-                case "*":
-                    return new SimpleType("object");
+                    result = new SimpleType("string");
+                    break;
+            }
+            
+            if (result != null)
+            {
+                var resultType = result switch
+                {
+                    SimpleType st => st.DotNetType,
+                    MappedCustomType mct => mct.DotNetType,
+                    IObjectType ot => ot.DotNetType,
+                    _ => "object"
+                };
+                diagnosticCollector.RecordSupported(propertyPath, types, resultType);
+                return result;
             }
         }
 
-        // complex matching
-        if (optProp.Types.Count == 2)
+        // complex matching - use pattern registry
+        if (optProp.Types.Count >= 2)
         {
-            switch (optProp.Types[0], optProp.Types[1])
+            // Try pattern registry lookup
+            if (patternRegistry.TryGetMappedType(types, parent.Name, out var mappedTypeObj))
             {
-                case ("boolean", "number"):
-                    return new MappedCustomType(typeof(NumberOrBool));
-                case ("boolean", "string"):
-                    return new MappedCustomType(typeof(BoolOrString));
-                case ("number", "string"):
-                    return new MappedCustomType(typeof(NumberOrString));
-                case ("icon", "string"):
-                    return new MappedEnumType(prop.Name, typeof(Icon));
-                case ("array", "string"):
-                    //TODO: 'symbol' --> not MappedEnumType ??
-                    return new MappedEnumType(prop.Name, typeof(Icon));
-                case ("array", "number"):
-                    return new MappedCustomType(typeof(NumberOrNumberArray));
-                case ("function", "string"):
-                    return new MappedCustomType(typeof(StringOrFunction));
-                case ("function", "number"):
-                    return new MappedCustomType(typeof(NumberOrFunction));
-                case ("function", "object"):
-                    return new MappedCustomType(typeof(ObjectOrFunction));
-                case ("array", "percentvector"):
-                case ("array", "vector"):
-                    return new SimpleType("double[]");
-                case ("array", "color"):
-                    return new MappedCustomType(typeof(ColorArray));
-                case ("color", "function"):
-                    return new MappedCustomType(typeof(ColorOrFunction));
-                case ("color", "number"): // specific case for borderColorSaturation
-                    return new SimpleType("double");
-                case ("enum", "function"):
-                    // Enum + Function pattern (e.g., FunnelSeries.Sort)
-                    // Need to determine the enum type from the enum options
+                // Use the mapped type directly if it's not an enum+function special case
+                if (types.Contains("enum") && types.Contains("function"))
+                {
                     if (typeCollection.TryGetMappedEnumType(prop.Name, parent.Name, out var enumType) && enumType != null)
                     {
-                        return new EnumOrFunctionType(enumType.DotNetType);
+                        var result = new EnumOrFunctionType(enumType.DotNetType);
+                        diagnosticCollector.RecordPartiallySupported(
+                            propertyPath,
+                            types,
+                            $"EnumOrFunctionType<{enumType.DotNetType}>",
+                            "Uses typed accessor pattern");
+                        return result;
                     }
                     else
                     {
-                        // Fallback if enum type not found
                         Console.WriteLine($"WARNING: Could not resolve enum type for '{prop.Name}' in '{parent.Name}' with enum+function pattern");
+                        diagnosticCollector.RecordUnsupported(
+                            propertyPath,
+                            types,
+                            "object",
+                            "Could not resolve enum type - consider adding enum mapping");
                         return new SimpleType("object")
                         {
                             TypeWarning = $"enum,function type '{prop.Name}' in '{parent.Name}' could not resolve enum type"
                         };
                     }
+                }
+                
+                // Use the type directly from pattern registry
+                if (mappedTypeObj != null)
+                {
+                    var resultType = mappedTypeObj switch
+                    {
+                        SimpleType st => st.DotNetType,
+                        MappedCustomType mct => mct.DotNetType,
+                        MappedEnumType met => met.DotNetType,
+                        _ => "object"
+                    };
+                    diagnosticCollector.RecordSupported(propertyPath, types, resultType);
+                    return mappedTypeObj;
+                }
+            }
+            
+            // Check if partially supported
+            if (patternRegistry.IsPartiallySupported(types))
+            {
+                Console.WriteLine($"INFO: Partially supported pattern '{string.Join(',', types)}' for '{propertyPath}' - using object");
+                diagnosticCollector.RecordPartiallySupported(
+                    propertyPath,
+                    types,
+                    "object",
+                    patternRegistry.GenerateSuggestion(types) ?? "Consider implementing typed accessor pattern");
+                return new SimpleType("object")
+                {
+                    TypeWarning = $"Partially supported pattern '{string.Join(',', types)}' for '{prop.Name}'"
+                };
             }
         }
 
-        // even more complex matching
-        if (optProp.Types is ["function", "number", "string"])
-        {
-            return new MappedCustomType(typeof(NumberOrStringOrFunction));
-        }
-        else if (optProp.Types is ["function", "icon", "string"])
-        {
-            return new MappedCustomType(typeof(StringOrFunction));
-        }
-        else if (optProp.Types is ["date", "number", "string"])
-        {
-            return new MappedCustomType(typeof(NumberOrString)); // has implicit datetime support
-        }
-        else if (optProp.Types is ["array", "function", "number"])
-        {
-            return new MappedCustomType(typeof(NumberArrayOrFunction));
-        }
-        else if (optProp.Types is ["array", "number", "vector"])
-        {
-            return new MappedCustomType(typeof(NumberArray));
-        }
-        else if (optProp.Types is ["array", "number", "string"])
-        {
-            return new MappedCustomType(typeof(NumberOrStringArray));
-        }
-
-        // give additional enum warning if any of the types is an enum
+        // Fallback: unsupported pattern
         var typeList = string.Join(',', optProp.Types ?? Enumerable.Empty<string>());
         if (optProp.Types?.Contains("enum") ?? false)
         {
             Console.WriteLine($"WARNING: {typeList} type '{prop.Name}' in '{parent.Name}' with values '{string.Join(',', optProp.EnumOptions ?? Array.Empty<string>())}' is not mapped");
+            diagnosticCollector.RecordUnsupported(
+                propertyPath,
+                types,
+                "object",
+                patternRegistry.GenerateSuggestion(types, string.Join(',', optProp.EnumOptions ?? Array.Empty<string>())));
         }
-
-        Console.WriteLine($"ERROR: Failed to map property '{prop.Name}' in type '{parent.Name}' with types '{typeList}'");
-        //throw new ArgumentException($"Failed to map property '{prop.Name}' in type '{parent.Name}' with types '{string.Join(',', optProp.Types ?? Enumerable.Empty<string>())}'");
+        else
+        {
+            Console.WriteLine($"ERROR: Failed to map property '{prop.Name}' in type '{parent.Name}' with types '{typeList}'");
+            diagnosticCollector.RecordUnsupported(
+                propertyPath,
+                types,
+                "object",
+                patternRegistry.GenerateSuggestion(types));
+        }
 
         return new SimpleType("object")
         {
             TypeWarning = $"Failed to map property '{prop.Name}' in type '{parent.Name}' with types '{typeList}'"
         };
+    }
+    
+    /// <summary>
+    /// Generate a diagnostic report after processing
+    /// </summary>
+    public DiagnosticReport GenerateDiagnosticReport()
+    {
+        return diagnosticCollector.GenerateReport();
     }
 
     protected bool CompareType(ObjectType lookupType, ObjectType objType)

@@ -1,3 +1,7 @@
+using CommandLine;
+
+using Vizor.ECharts.BindingGenerator;
+
 try
 {
     Parser.Default.ParseArguments<GenerateOptionBindingOptions, GenerateTypeInfoOptions>(args)

@@ -1,6 +1,9 @@
 using System.Text.Json;
 using System.Data;
 
+using Vizor.ECharts.BindingGenerator.Types;
+using Vizor.ECharts.BindingGenerator.Phases;
+
 namespace Vizor.ECharts.BindingGenerator;
 
 internal class GenerateTypeInfoTool

@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Vizor.ECharts\Vizor.ECharts.csproj" />
+    <ProjectReference Include="..\Vizor.ECharts.BindingGenerator\Vizor.ECharts.BindingGenerator.csproj" />
   </ItemGroup>
 
 </Project>

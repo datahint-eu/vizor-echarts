@@ -1,3 +1,6 @@
+using CommandLine.Text;
+using CommandLine;
+
 namespace Vizor.ECharts.BindingGenerator;
 
 [Verb("option-binding", HelpText = "Generate C# code based on Apache ECharts documentation")]

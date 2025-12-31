@@ -1,5 +1,9 @@
 using System.Text.Json;
 
+using Vizor.ECharts.BindingGenerator.Generators;
+using Vizor.ECharts.BindingGenerator.Phases;
+using Vizor.ECharts.BindingGenerator.Types;
+
 namespace Vizor.ECharts.BindingGenerator;
 
 internal class GenerateOptionBindingTool

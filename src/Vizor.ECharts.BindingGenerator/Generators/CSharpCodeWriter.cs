@@ -1,6 +1,8 @@
 using System.Net;
 using System.Text;
 
+using HtmlAgilityPack;
+
 namespace Vizor.ECharts.BindingGenerator.Generators;
 
 internal sealed class CSharpCodeWriter : IDisposable
