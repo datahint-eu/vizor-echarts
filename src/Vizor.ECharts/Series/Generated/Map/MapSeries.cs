@@ -14,7 +14,7 @@ public partial class MapSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("map")]
-    public string? Type { get; set; }  = "map";
+    public string Type { get; init; }  = "map";
 
     /// <summary>
     /// Component ID, not specified by default.

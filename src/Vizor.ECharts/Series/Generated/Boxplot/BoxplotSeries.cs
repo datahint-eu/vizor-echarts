@@ -14,7 +14,7 @@ public partial class BoxplotSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("boxplot")]
-    public string? Type { get; set; }  = "boxplot";
+    public string Type { get; init; }  = "boxplot";
 
     /// <summary>
     /// Component ID, not specified by default.

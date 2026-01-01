@@ -68,14 +68,15 @@ internal class ObjectTypeClassGenerator
             else if (prop.MappedType is SingleOrArrayType singleOrArray)
             {
                 // Generate three properties for single-or-array pattern:
-                // 1. Object backing field with [JsonPropertyName]
+                // 1. Internal object backing field with [JsonPropertyName] and [JsonInclude]
                 // 2. Single accessor with [JsonIgnore]
                 // 3. List accessor with [JsonIgnore]
 
                 writer.WriteDocumentation(prop.Description);
                 writer.WriteLine($"[JsonPropertyName(\"{prop.Name}\")]");
+                writer.WriteLine($"[JsonInclude]");
                 writer.WriteDefaultValueAttribute(prop.Default);
-                writer.WriteLine($"public object? {prop.PropertyName}Object {{ get; set; }}");
+                writer.WriteLine($"internal object? {prop.PropertyName}Object {{ get; set; }}");
                 writer.EmptyLine();
 
                 writer.WriteDocumentation(prop.Description);
@@ -99,14 +100,15 @@ internal class ObjectTypeClassGenerator
             else if (prop.MappedType is EnumOrFunctionType enumOrFunc)
             {
                 // Generate three properties for enum-or-function pattern:
-                // 1. Object backing field with [JsonPropertyName]
-                // 2. Enum accessor with [JsonIgnore]
-                // 3. Function accessor with [JsonIgnore]
+                // 1. Internal object backing field with [JsonPropertyName] and [JsonInclude]
+                // 2. Public enum accessor with [JsonIgnore]
+                // 3. Public function accessor with [JsonIgnore]
 
                 writer.WriteDocumentation(prop.Description);
                 writer.WriteLine($"[JsonPropertyName(\"{prop.Name}\")]");
                 writer.WriteDefaultValueAttribute(prop.Default);
-                writer.WriteLine($"public object? {prop.PropertyName}Object {{ get; set; }}");
+                writer.WriteLine($"[JsonInclude]");
+                writer.WriteLine($"internal object? {prop.PropertyName}Object {{ get; set; }}");
                 writer.EmptyLine();
 
                 writer.WriteDocumentation(prop.Description);
@@ -129,9 +131,10 @@ internal class ObjectTypeClassGenerator
             }
             else
             {
-                // the 'type' property of anyOf objects is mandatory
+                // the 'type' property of anyOf objects is mandatory and non-nullable
                 string defaultAssign = string.Empty;
-                if (objectType.TypeGroup != "Options" && prop.Name == "type")
+                bool isTypeProperty = objectType.TypeGroup != "Options" && prop.Name == "type";
+                if (isTypeProperty)
                 {
                     defaultAssign = GetDefaultAssign(prop.Default);
                 }
@@ -145,7 +148,10 @@ internal class ObjectTypeClassGenerator
                     writer.WriteLine($"//TODO: Type Warning: {prop.MappedType.TypeWarning}");
                 }
 
-                writer.WriteLine($"public {prop.MappedType.DotNetType}? {prop.PropertyName} {{ get; set; }} {defaultAssign}");
+                // Type property is non-nullable and init-only (required by ISeries/IDataZoom interfaces)
+                string nullableMarker = isTypeProperty ? "" : "?";
+                string accessors = isTypeProperty ? "get; init;" : "get; set;";
+                writer.WriteLine($"public {prop.MappedType.DotNetType}{nullableMarker} {prop.PropertyName} {{ {accessors} }} {defaultAssign}");
                 writer.EmptyLine();
             }
         }

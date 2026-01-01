@@ -14,7 +14,7 @@ public partial class GraphSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("graph")]
-    public string? Type { get; set; }  = "graph";
+    public string Type { get; init; }  = "graph";
 
     /// <summary>
     /// Component ID, not specified by default.

@@ -14,7 +14,7 @@ public partial class FunnelSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("funnel")]
-    public string? Type { get; set; }  = "funnel";
+    public string Type { get; init; }  = "funnel";
 
     /// <summary>
     /// Component ID, not specified by default.
@@ -94,8 +94,31 @@ public partial class FunnelSeries
     /// </summary>
     [JsonPropertyName("sort")]
     [DefaultValue("descending")]
-    //TODO: Type Warning: Partially supported pattern 'enum,function' for 'sort'
-    public object? Sort { get; set; } 
+    [JsonInclude]
+    internal object? SortObject { get; set; }
+
+    /// <summary>
+    /// <![CDATA[
+    /// Data sorting, which can be whether 'ascending' , 'descending' , 'none' (in data order) or a function, which is the same as Array.prototype.sort(function (a, b) { ...
+    /// }) ;
+    /// ]]>
+    /// </summary>
+    [JsonIgnore]
+    public FunnelSortOrder? Sort
+    {
+        	get => (FunnelSortOrder?)SortObject;
+        	set => SortObject = value;
+    }
+
+    /// <summary>
+    /// A sort function.
+    /// </summary>
+    [JsonIgnore]
+    public JavascriptFunction? SortFunction
+    {
+        	get => SortObject as JavascriptFunction;
+        	set => SortObject = value;
+    }
 
     /// <summary>
     /// Gap between each trapezoid.

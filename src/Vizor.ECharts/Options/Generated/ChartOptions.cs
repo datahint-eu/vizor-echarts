@@ -46,7 +46,42 @@ public partial class ChartOptions
     /// Following is an example of Anscombe Quartet:
     /// </summary>
     [JsonPropertyName("grid")]
-    public Grid? Grid { get; set; } 
+    [JsonInclude]
+    internal object? GridObject { get; set; }
+
+    /// <summary>
+    /// Drawing grid in rectangular coordinate.
+    /// In a single grid, at most two X and Y axes each is allowed.
+    /// Line chart , bar chart , and scatter chart (bubble chart) can be drawn in grid.
+    ///  
+    /// In ECharts 2.x, there could only be one single grid component at most in a single echarts instance.
+    /// But in ECharts 3, there is no limitation.
+    ///  
+    /// Following is an example of Anscombe Quartet:
+    /// </summary>
+    [JsonIgnore]
+    public Grid? Grid
+    {
+        	get => GridObject as Grid;
+        	set => GridObject = value;
+    }
+
+    /// <summary>
+    /// Drawing grid in rectangular coordinate.
+    /// In a single grid, at most two X and Y axes each is allowed.
+    /// Line chart , bar chart , and scatter chart (bubble chart) can be drawn in grid.
+    ///  
+    /// In ECharts 2.x, there could only be one single grid component at most in a single echarts instance.
+    /// But in ECharts 3, there is no limitation.
+    ///  
+    /// Following is an example of Anscombe Quartet:
+    /// </summary>
+    [JsonIgnore]
+    public List<Grid>? GridList
+    {
+        	get => GridObject as List<Grid>;
+        	set => GridObject = value;
+    }
 
     /// <summary>
     /// The x axis in cartesian(rectangular) coordinate.
@@ -54,7 +89,32 @@ public partial class ChartOptions
     /// offset can be used to avoid overlap when you need to put more than two x axis.
     /// </summary>
     [JsonPropertyName("xAxis")]
-    public XAxis? XAxis { get; set; } 
+    [JsonInclude]
+    internal object? XAxisObject { get; set; }
+
+    /// <summary>
+    /// The x axis in cartesian(rectangular) coordinate.
+    /// Usually a single grid component can place at most 2 x axis, one on the bottom and another on the top.
+    /// offset can be used to avoid overlap when you need to put more than two x axis.
+    /// </summary>
+    [JsonIgnore]
+    public XAxis? XAxis
+    {
+        	get => XAxisObject as XAxis;
+        	set => XAxisObject = value;
+    }
+
+    /// <summary>
+    /// The x axis in cartesian(rectangular) coordinate.
+    /// Usually a single grid component can place at most 2 x axis, one on the bottom and another on the top.
+    /// offset can be used to avoid overlap when you need to put more than two x axis.
+    /// </summary>
+    [JsonIgnore]
+    public List<XAxis>? XAxisList
+    {
+        	get => XAxisObject as List<XAxis>;
+        	set => XAxisObject = value;
+    }
 
     /// <summary>
     /// The y axis in cartesian(rectangular) coordinate.
@@ -62,7 +122,32 @@ public partial class ChartOptions
     /// offset can be used to avoid overlap when you need to put more than two y axis.
     /// </summary>
     [JsonPropertyName("yAxis")]
-    public YAxis? YAxis { get; set; } 
+    [JsonInclude]
+    internal object? YAxisObject { get; set; }
+
+    /// <summary>
+    /// The y axis in cartesian(rectangular) coordinate.
+    /// Usually a single grid component can place at most 2 y axis, one on the left and another on the right.
+    /// offset can be used to avoid overlap when you need to put more than two y axis.
+    /// </summary>
+    [JsonIgnore]
+    public YAxis? YAxis
+    {
+        	get => YAxisObject as YAxis;
+        	set => YAxisObject = value;
+    }
+
+    /// <summary>
+    /// The y axis in cartesian(rectangular) coordinate.
+    /// Usually a single grid component can place at most 2 y axis, one on the left and another on the right.
+    /// offset can be used to avoid overlap when you need to put more than two y axis.
+    /// </summary>
+    [JsonIgnore]
+    public List<YAxis>? YAxisList
+    {
+        	get => YAxisObject as List<YAxis>;
+        	set => YAxisObject = value;
+    }
 
     /// <summary>
     /// Polar coordinate can be used in scatter and line chart.
@@ -690,7 +775,254 @@ public partial class ChartOptions
     /// ]]>
     /// </summary>
     [JsonPropertyName("parallel")]
-    public Parallel? Parallel { get; set; } 
+    [JsonInclude]
+    internal object? ParallelObject { get; set; }
+
+    /// <summary>
+    /// <![CDATA[
+    /// Introduction about Parallel coordinates  
+    /// Parallel Coordinates is a common way of visualizing high-dimensional geometry and analyzing multivariate data.
+    ///  
+    /// For example, series-parallel.data is the following data:  [
+    ///     [1,  55,  9,   56,  0.46,  18,  6,  'good'],
+    ///     [2,  25,  11,  21,  0.65,  34,  9,  'excellent'],
+    ///     [3,  56,  7,   63,  0.3,   14,  5,  'good'],
+    ///     [4,  33,  7,   29,  0.33,  16,  6,  'excellent'],
+    ///     { // Data item can also be an Object, so that perticular settings of its line can be set here.
+    ///         value: [5,  42,  24,  44,  0.76,  40,  16, 'excellent']
+    ///         lineStyle: {...},
+    ///     }
+    ///     ...
+    /// ]  
+    /// In data above, each row is a "data item", and each column represents a "dimension".
+    /// For example, the meanings of columns above are: "data", "AQI", "PM2.5", "PM10", "carbon monoxide level", "nitrogen dioxide level", and "sulfur dioxide level".
+    ///  
+    /// Parallel coordinates are often used to visualize multi-dimension data shown above.
+    /// Each axis represents a dimension (namely, a column), and each line represents a data item.
+    /// Data can be brush-selected on axes.
+    /// For example:   
+    /// Brief about Configuration  
+    /// Basic configuration parallel coordinates is shown as follow:  option = {
+    ///     parallelAxis: [                     // Definitions of axes.
+    ///         {dim: 0, name: schema[0].text}, // Each axis has a 'dim' attribute, representing dimension index in data.
+    ///         {dim: 1, name: schema[1].text},
+    ///         {dim: 2, name: schema[2].text},
+    ///         {dim: 3, name: schema[3].text},
+    ///         {dim: 4, name: schema[4].text},
+    ///         {dim: 5, name: schema[5].text},
+    ///         {dim: 6, name: schema[6].text},
+    ///         {dim: 7, name: schema[7].text,
+    ///             type: 'category',           // Also supports category data.
+    ///             data: ['Excellent', 'good', 'light pollution', 'moderate pollution', 'heavy pollution', 'severe pollution']
+    ///         }
+    ///     ],
+    ///     parallel: {                         // Definition of a parallel coordinate system.
+    ///         left: '5%',                     // Location of parallel coordinate system.
+    ///         right: '13%',
+    ///         bottom: '10%',
+    ///         top: '20%',
+    ///         parallelAxisDefault: {          // A pattern for axis definition, which can avoid repeating in `parallelAxis`.
+    ///             type: 'value',
+    ///             nameLocation: 'end',
+    ///             nameGap: 20
+    ///         }
+    ///     },
+    ///     series: [                           // Here the three series sharing the same parallel coordinate system.
+    ///         {
+    ///             name: 'Beijing',
+    ///             type: 'parallel',           // The type of this series is 'parallel'
+    ///             data: [
+    ///                 [1,  55,  9,   56,  0.46,  18,  6,  'good'],
+    ///                 [2,  25,  11,  21,  0.65,  34,  9,  'excellent'],
+    ///                 ...
+    ///             ]
+    ///         },
+    ///         {
+    ///             name: 'Shanghai',
+    ///             type: 'parallel',
+    ///             data: [
+    ///                 [3,  56,  7,   63,  0.3,   14,  5,  'good'],
+    ///                 [4,  33,  7,   29,  0.33,  16,  6,  'excellent'],
+    ///                 ...
+    ///             ]
+    ///         },
+    ///         {
+    ///             name: 'Guangzhou',
+    ///             type: 'parallel',
+    ///             data: [
+    ///                 [4,  33,  7,   29,  0.33,  16,  6,  'excellent'],
+    ///                 [5,  42,  24,  44,  0.76,  40,  16, 'excellent'],
+    ///                 ...
+    ///             ]
+    ///         }
+    ///     ]
+    /// };  
+    /// Three components are involved here: parallel , parallelAxis , series-parallel   
+    /// parallel  
+    /// This component is the coordinate system.
+    /// One or more series (like "Beijing", "Shanghai", and "Guangzhou" in the above example) can share one coordinate system.
+    ///  
+    /// Like other coordinate systems, multiple parallel coordinate systems can be created in one echarts instance.
+    ///  
+    /// Position setting is also carried out here.
+    ///   
+    /// parallelAxis  
+    /// This is axis configuration.
+    /// Multiple axes are needed in parallel coordinates.
+    ///  
+    ///  parallelAxis.parallelIndex is used to specify which coordinate system this axis belongs to.
+    /// The first coordinate system is used by default.
+    ///   
+    /// series-parallel  
+    /// This is the definition of parallel series, which will be drawn on parallel coordinate system.
+    ///  
+    ///  parallelAxis.parallelIndex is used to specify which coordinate system this axis belongs to.
+    /// The first coordinate system is used by default.
+    ///    
+    /// Notes and Best Practices  
+    /// When configuring multiple parallelAxis , there might be some common attributes in each axis configuration.
+    /// To avoid writing them repeatedly, they can be put under parallel.parallelAxisDefault .
+    /// Before initializing axis, configurations in parallel.parallelAxisDefault will be merged into parallelAxis to generate the final axis configuration.
+    ///  
+    /// If data is too large and cause bad performance  
+    /// It is suggested to set series-parallel.lineStyle.width to be 0.5 (or less), which may improve performance significantly.
+    ///  
+    /// Display High-Dimension Data  
+    /// When dimension number is extremely large, say, more than 50 dimensions, there will be more than 50 axes, which may hardly display in a page.
+    ///  
+    /// In this case, you may use parallel.axisExpandable to improve the display.
+    /// See this example:
+    /// ]]>
+    /// </summary>
+    [JsonIgnore]
+    public Parallel? Parallel
+    {
+        	get => ParallelObject as Parallel;
+        	set => ParallelObject = value;
+    }
+
+    /// <summary>
+    /// <![CDATA[
+    /// Introduction about Parallel coordinates  
+    /// Parallel Coordinates is a common way of visualizing high-dimensional geometry and analyzing multivariate data.
+    ///  
+    /// For example, series-parallel.data is the following data:  [
+    ///     [1,  55,  9,   56,  0.46,  18,  6,  'good'],
+    ///     [2,  25,  11,  21,  0.65,  34,  9,  'excellent'],
+    ///     [3,  56,  7,   63,  0.3,   14,  5,  'good'],
+    ///     [4,  33,  7,   29,  0.33,  16,  6,  'excellent'],
+    ///     { // Data item can also be an Object, so that perticular settings of its line can be set here.
+    ///         value: [5,  42,  24,  44,  0.76,  40,  16, 'excellent']
+    ///         lineStyle: {...},
+    ///     }
+    ///     ...
+    /// ]  
+    /// In data above, each row is a "data item", and each column represents a "dimension".
+    /// For example, the meanings of columns above are: "data", "AQI", "PM2.5", "PM10", "carbon monoxide level", "nitrogen dioxide level", and "sulfur dioxide level".
+    ///  
+    /// Parallel coordinates are often used to visualize multi-dimension data shown above.
+    /// Each axis represents a dimension (namely, a column), and each line represents a data item.
+    /// Data can be brush-selected on axes.
+    /// For example:   
+    /// Brief about Configuration  
+    /// Basic configuration parallel coordinates is shown as follow:  option = {
+    ///     parallelAxis: [                     // Definitions of axes.
+    ///         {dim: 0, name: schema[0].text}, // Each axis has a 'dim' attribute, representing dimension index in data.
+    ///         {dim: 1, name: schema[1].text},
+    ///         {dim: 2, name: schema[2].text},
+    ///         {dim: 3, name: schema[3].text},
+    ///         {dim: 4, name: schema[4].text},
+    ///         {dim: 5, name: schema[5].text},
+    ///         {dim: 6, name: schema[6].text},
+    ///         {dim: 7, name: schema[7].text,
+    ///             type: 'category',           // Also supports category data.
+    ///             data: ['Excellent', 'good', 'light pollution', 'moderate pollution', 'heavy pollution', 'severe pollution']
+    ///         }
+    ///     ],
+    ///     parallel: {                         // Definition of a parallel coordinate system.
+    ///         left: '5%',                     // Location of parallel coordinate system.
+    ///         right: '13%',
+    ///         bottom: '10%',
+    ///         top: '20%',
+    ///         parallelAxisDefault: {          // A pattern for axis definition, which can avoid repeating in `parallelAxis`.
+    ///             type: 'value',
+    ///             nameLocation: 'end',
+    ///             nameGap: 20
+    ///         }
+    ///     },
+    ///     series: [                           // Here the three series sharing the same parallel coordinate system.
+    ///         {
+    ///             name: 'Beijing',
+    ///             type: 'parallel',           // The type of this series is 'parallel'
+    ///             data: [
+    ///                 [1,  55,  9,   56,  0.46,  18,  6,  'good'],
+    ///                 [2,  25,  11,  21,  0.65,  34,  9,  'excellent'],
+    ///                 ...
+    ///             ]
+    ///         },
+    ///         {
+    ///             name: 'Shanghai',
+    ///             type: 'parallel',
+    ///             data: [
+    ///                 [3,  56,  7,   63,  0.3,   14,  5,  'good'],
+    ///                 [4,  33,  7,   29,  0.33,  16,  6,  'excellent'],
+    ///                 ...
+    ///             ]
+    ///         },
+    ///         {
+    ///             name: 'Guangzhou',
+    ///             type: 'parallel',
+    ///             data: [
+    ///                 [4,  33,  7,   29,  0.33,  16,  6,  'excellent'],
+    ///                 [5,  42,  24,  44,  0.76,  40,  16, 'excellent'],
+    ///                 ...
+    ///             ]
+    ///         }
+    ///     ]
+    /// };  
+    /// Three components are involved here: parallel , parallelAxis , series-parallel   
+    /// parallel  
+    /// This component is the coordinate system.
+    /// One or more series (like "Beijing", "Shanghai", and "Guangzhou" in the above example) can share one coordinate system.
+    ///  
+    /// Like other coordinate systems, multiple parallel coordinate systems can be created in one echarts instance.
+    ///  
+    /// Position setting is also carried out here.
+    ///   
+    /// parallelAxis  
+    /// This is axis configuration.
+    /// Multiple axes are needed in parallel coordinates.
+    ///  
+    ///  parallelAxis.parallelIndex is used to specify which coordinate system this axis belongs to.
+    /// The first coordinate system is used by default.
+    ///   
+    /// series-parallel  
+    /// This is the definition of parallel series, which will be drawn on parallel coordinate system.
+    ///  
+    ///  parallelAxis.parallelIndex is used to specify which coordinate system this axis belongs to.
+    /// The first coordinate system is used by default.
+    ///    
+    /// Notes and Best Practices  
+    /// When configuring multiple parallelAxis , there might be some common attributes in each axis configuration.
+    /// To avoid writing them repeatedly, they can be put under parallel.parallelAxisDefault .
+    /// Before initializing axis, configurations in parallel.parallelAxisDefault will be merged into parallelAxis to generate the final axis configuration.
+    ///  
+    /// If data is too large and cause bad performance  
+    /// It is suggested to set series-parallel.lineStyle.width to be 0.5 (or less), which may improve performance significantly.
+    ///  
+    /// Display High-Dimension Data  
+    /// When dimension number is extremely large, say, more than 50 dimensions, there will be more than 50 axes, which may hardly display in a page.
+    ///  
+    /// In this case, you may use parallel.axisExpandable to improve the display.
+    /// See this example:
+    /// ]]>
+    /// </summary>
+    [JsonIgnore]
+    public List<Parallel>? ParallelList
+    {
+        	get => ParallelObject as List<Parallel>;
+        	set => ParallelObject = value;
+    }
 
     /// <summary>
     /// <![CDATA[
@@ -819,7 +1151,32 @@ public partial class ChartOptions
     /// For example:
     /// </summary>
     [JsonPropertyName("singleAxis")]
-    public SingleAxis? SingleAxis { get; set; } 
+    [JsonInclude]
+    internal object? SingleAxisObject { get; set; }
+
+    /// <summary>
+    /// An axis with a single dimension.
+    /// It can be used to display data in one dimension.
+    /// For example:
+    /// </summary>
+    [JsonIgnore]
+    public SingleAxis? SingleAxis
+    {
+        	get => SingleAxisObject as SingleAxis;
+        	set => SingleAxisObject = value;
+    }
+
+    /// <summary>
+    /// An axis with a single dimension.
+    /// It can be used to display data in one dimension.
+    /// For example:
+    /// </summary>
+    [JsonIgnore]
+    public List<SingleAxis>? SingleAxisList
+    {
+        	get => SingleAxisObject as List<SingleAxis>;
+        	set => SingleAxisObject = value;
+    }
 
     /// <summary>
     /// <![CDATA[
@@ -1207,7 +1564,68 @@ public partial class ChartOptions
     /// Besides, cellSize can be specified to fix the size of each cell of calendar.
     /// </summary>
     [JsonPropertyName("calendar")]
-    public Calendar? Calendar { get; set; } 
+    [JsonInclude]
+    internal object? CalendarObject { get; set; }
+
+    /// <summary>
+    /// Calendar coordinates.
+    ///  
+    /// In ECharts, we are very creative to achieve the calendar chart, by using the calendar coordinates to achieve the calendar chart,
+    /// as shown in the following example, we can use calendar coordinates in heatmap, scatter, effectScatter, and graph.
+    ///  
+    /// Example of using heatmap in calendar coordinates:   
+    /// Example of using effectScatter in calendar coordinates:   
+    /// Example of using graph in calendar coordinates:   
+    /// By combining calendar coordinate system and charts, you may be able to create more wonderful effects.
+    ///  
+    /// Display Text in Calendar , Display Pies in Calendar   
+    /// Calendar layout  
+    /// Calendar coordinate system can be placed horizontally or vertically.
+    /// By convention, the heatmap calendar is horizontal.
+    /// But if we need bigger cell size in other cases, the total width may be too wide.
+    /// So calendar.orient can help in this case.
+    ///   
+    /// Adapt to container size  
+    /// Calendar coordinate system can be configured to adapt to container size, which is useful when page size is not sure.
+    /// First of all, like other components, those location and size configurations can be specified on canlendar: left  right  top  bottom  width  height , which make calendar possible to modify its size according to container size.
+    /// Besides, cellSize can be specified to fix the size of each cell of calendar.
+    /// </summary>
+    [JsonIgnore]
+    public Calendar? Calendar
+    {
+        	get => CalendarObject as Calendar;
+        	set => CalendarObject = value;
+    }
+
+    /// <summary>
+    /// Calendar coordinates.
+    ///  
+    /// In ECharts, we are very creative to achieve the calendar chart, by using the calendar coordinates to achieve the calendar chart,
+    /// as shown in the following example, we can use calendar coordinates in heatmap, scatter, effectScatter, and graph.
+    ///  
+    /// Example of using heatmap in calendar coordinates:   
+    /// Example of using effectScatter in calendar coordinates:   
+    /// Example of using graph in calendar coordinates:   
+    /// By combining calendar coordinate system and charts, you may be able to create more wonderful effects.
+    ///  
+    /// Display Text in Calendar , Display Pies in Calendar   
+    /// Calendar layout  
+    /// Calendar coordinate system can be placed horizontally or vertically.
+    /// By convention, the heatmap calendar is horizontal.
+    /// But if we need bigger cell size in other cases, the total width may be too wide.
+    /// So calendar.orient can help in this case.
+    ///   
+    /// Adapt to container size  
+    /// Calendar coordinate system can be configured to adapt to container size, which is useful when page size is not sure.
+    /// First of all, like other components, those location and size configurations can be specified on canlendar: left  right  top  bottom  width  height , which make calendar possible to modify its size according to container size.
+    /// Besides, cellSize can be specified to fix the size of each cell of calendar.
+    /// </summary>
+    [JsonIgnore]
+    public List<Calendar>? CalendarList
+    {
+        	get => CalendarObject as List<Calendar>;
+        	set => CalendarObject = value;
+    }
 
     /// <summary>
     /// dataset component is published since ECharts 4.
@@ -1217,7 +1635,36 @@ public partial class ChartOptions
     /// More details about dataset can be checked in the tutorial .
     /// </summary>
     [JsonPropertyName("dataset")]
-    public Dataset? Dataset { get; set; } 
+    [JsonInclude]
+    internal object? DatasetObject { get; set; }
+
+    /// <summary>
+    /// dataset component is published since ECharts 4.
+    /// dataset brings convenience in data management separated with styles and enables data reuse by different series.
+    /// More importantly, it enables data encoding from data to visual, which brings convenience in some scenarios.
+    ///  
+    /// More details about dataset can be checked in the tutorial .
+    /// </summary>
+    [JsonIgnore]
+    public Dataset? Dataset
+    {
+        	get => DatasetObject as Dataset;
+        	set => DatasetObject = value;
+    }
+
+    /// <summary>
+    /// dataset component is published since ECharts 4.
+    /// dataset brings convenience in data management separated with styles and enables data reuse by different series.
+    /// More importantly, it enables data encoding from data to visual, which brings convenience in some scenarios.
+    ///  
+    /// More details about dataset can be checked in the tutorial .
+    /// </summary>
+    [JsonIgnore]
+    public List<Dataset>? DatasetList
+    {
+        	get => DatasetObject as List<Dataset>;
+        	set => DatasetObject = value;
+    }
 
     /// <summary>
     /// The W3C has developed the WAI-ARIA , the Accessible Rich Internet Applications Suite, which is dedicated to making web content and web applications accessible.

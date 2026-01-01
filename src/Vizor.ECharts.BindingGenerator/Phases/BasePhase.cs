@@ -11,6 +11,24 @@ internal abstract class BasePhase
     protected readonly DiagnosticCollector diagnosticCollector;
     protected readonly TypePatternRegistry patternRegistry;
 
+    /// <summary>
+    /// Properties that can accept either a single object or an array of objects
+    /// in ECharts, even though option.json only marks them as type: ["Object"].
+    /// These properties support multiple instances (e.g., multiple grids, multiple axes).
+    /// </summary>
+    protected static readonly HashSet<string> MultiInstanceProperties = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "grid",
+        "xAxis",
+        "yAxis",
+        "dataset",
+        "calendar",
+        "dataZoom",
+        "visualMap",
+        "parallel",
+        "singleAxis"
+    };
+
     public BasePhase(TypeCollection typeCollection)
     {
         this.typeCollection = typeCollection;
@@ -245,17 +263,37 @@ internal abstract class BasePhase
         }
 
         // first try mapping enum types by name
-        if (typeCollection.TryGetMappedEnumType(prop.Name, parent.Name, out var mappedEnumType) && mappedEnumType != null)
+        // BUT: if this is an enum+function pattern, skip this and let the complex matching handle it
+        bool isEnumAndFunction = types.Contains("enum") && types.Contains("function");
+        if (!isEnumAndFunction && typeCollection.TryGetMappedEnumType(prop.Name, parent.Name, out var mappedEnumType) && mappedEnumType != null)
         {
             diagnosticCollector.RecordSupported(propertyPath, types, mappedEnumType.DotNetType);
             return mappedEnumType;
         }
         // detect single-or-array pattern (Grid, XAxis, YAxis, etc.)
         // These properties accept either a single object or an array of objects
-        if (IsArrayAndObject(optProp) && optProp.ItemType != null)
+        if (IsArrayAndObject(optProp))
         {
-            // The ItemType contains the object type (e.g., Grid, XAxis, YAxis)
-            var innerType = optProp.ItemType;
+            IPropertyType? innerType = null;
+
+            // For known multi-instance properties without ItemType, create it from the property itself
+            if (optProp.ItemType == null && 
+                MultiInstanceProperties.Contains(prop.Name) &&
+                (optProp.ParentType == null || 
+                 string.IsNullOrEmpty(optProp.ParentType.Name) ||
+                 optProp.ParentType.Name == "ChartOptions" ||
+                 optProp.ParentType.Name == "option"))
+            {
+                // The object type should already exist or will be created by ParseObjectType
+                // Use the property's own object definition as the inner type
+                innerType = ParseObjectType(optProp, prop.Name, prop.Value, dataPrefix: prop.Name, typeGroup: "Options");
+                optProp.ItemType = innerType;
+            }
+            else
+            {
+                innerType = optProp.ItemType;
+            }
+
             if (innerType is IObjectType objType)
             {
                 var singleOrArrayType = new SingleOrArrayType(objType.DotNetType);
@@ -339,37 +377,37 @@ internal abstract class BasePhase
         // complex matching - use pattern registry
         if (optProp.Types.Count >= 2)
         {
+            // Special case: enum+function pattern - generate EnumOrFunctionType with typed accessors
+            if (types.Contains("enum") && types.Contains("function"))
+            {
+                if (typeCollection.TryGetMappedEnumType(prop.Name, parent.DotNetType, out var enumType) && enumType != null)
+                {
+                    var result = new EnumOrFunctionType(enumType.DotNetType);
+                    diagnosticCollector.RecordPartiallySupported(
+                        propertyPath,
+                        types,
+                        $"EnumOrFunctionType<{enumType.DotNetType}>",
+                        "Uses typed accessor pattern");
+                    return result;
+                }
+                else
+                {
+                    Console.WriteLine($"WARNING: Could not resolve enum type for '{prop.Name}' in '{parent.DotNetType}' with enum+function pattern");
+                    diagnosticCollector.RecordUnsupported(
+                        propertyPath,
+                        types,
+                        "object",
+                        "Could not resolve enum type - consider adding enum mapping");
+                    return new SimpleType("object")
+                    {
+                        TypeWarning = $"enum,function type '{prop.Name}' in '{parent.DotNetType}' could not resolve enum type"
+                    };
+                }
+            }
+            
             // Try pattern registry lookup
             if (patternRegistry.TryGetMappedType(types, parent.Name, out var mappedTypeObj))
             {
-                // Use the mapped type directly if it's not an enum+function special case
-                if (types.Contains("enum") && types.Contains("function"))
-                {
-                    if (typeCollection.TryGetMappedEnumType(prop.Name, parent.Name, out var enumType) && enumType != null)
-                    {
-                        var result = new EnumOrFunctionType(enumType.DotNetType);
-                        diagnosticCollector.RecordPartiallySupported(
-                            propertyPath,
-                            types,
-                            $"EnumOrFunctionType<{enumType.DotNetType}>",
-                            "Uses typed accessor pattern");
-                        return result;
-                    }
-                    else
-                    {
-                        Console.WriteLine($"WARNING: Could not resolve enum type for '{prop.Name}' in '{parent.Name}' with enum+function pattern");
-                        diagnosticCollector.RecordUnsupported(
-                            propertyPath,
-                            types,
-                            "object",
-                            "Could not resolve enum type - consider adding enum mapping");
-                        return new SimpleType("object")
-                        {
-                            TypeWarning = $"enum,function type '{prop.Name}' in '{parent.Name}' could not resolve enum type"
-                        };
-                    }
-                }
-                
                 // Use the type directly from pattern registry
                 if (mappedTypeObj != null)
                 {
@@ -454,14 +492,41 @@ internal abstract class BasePhase
     }
 
     /// <summary>
-    /// Detects if a property accepts both array and object types (e.g., Grid, XAxis, YAxis)
+    /// Detects if a property accepts both array and object types (e.g., Grid, XAxis, YAxis).
+    /// Returns true if:
+    /// 1. The property explicitly has both "array" and "object" types in option.json, OR
+    /// 2. The property is in the known MultiInstanceProperties list and has type "object"
     /// </summary>
     protected bool IsArrayAndObject(OptionProperty optProp)
     {
-        return optProp.Types != null &&
-               optProp.Types.Contains("array") &&
-               optProp.Types.Contains("object") &&
-               optProp.Types.Count == 2;
+        // Explicit array+object declaration in option.json
+        if (optProp.Types != null &&
+            optProp.Types.Contains("array") &&
+            optProp.Types.Contains("object") &&
+            optProp.Types.Count == 2)
+        {
+            return true;
+        }
+
+        // Known multi-instance properties that option.json marks as only "object"
+        // but actually accept arrays in ECharts
+        if (optProp.Types != null &&
+            optProp.Types.Count == 1 &&
+            optProp.Types[0] == "object" &&
+            MultiInstanceProperties.Contains(optProp.Name))
+        {
+            // Check if this is a top-level property in ChartOptions
+            // ParentType might be null during initial parsing, so we also check if ParentType.Name is null/empty
+            if (optProp.ParentType == null || 
+                string.IsNullOrEmpty(optProp.ParentType.Name) ||
+                optProp.ParentType.Name == "ChartOptions" ||
+                optProp.ParentType.Name == "option")
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     protected string GetPropertyList(ObjectType objectType)

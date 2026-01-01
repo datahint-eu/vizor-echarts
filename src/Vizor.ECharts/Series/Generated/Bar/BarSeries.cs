@@ -14,7 +14,7 @@ public partial class BarSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("bar")]
-    public string? Type { get; set; }  = "bar";
+    public string Type { get; init; }  = "bar";
 
     /// <summary>
     /// Component ID, not specified by default.

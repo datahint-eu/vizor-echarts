@@ -14,7 +14,7 @@ public partial class PieSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("pie")]
-    public string? Type { get; set; }  = "pie";
+    public string Type { get; init; }  = "pie";
 
     /// <summary>
     /// Component ID, not specified by default.

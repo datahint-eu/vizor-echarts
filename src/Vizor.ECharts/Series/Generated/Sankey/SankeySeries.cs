@@ -14,7 +14,7 @@ public partial class SankeySeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("sankey")]
-    public string? Type { get; set; }  = "sankey";
+    public string Type { get; init; }  = "sankey";
 
     /// <summary>
     /// Component ID, not specified by default.

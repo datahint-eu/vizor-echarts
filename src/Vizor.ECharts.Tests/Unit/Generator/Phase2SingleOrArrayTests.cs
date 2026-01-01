@@ -187,9 +187,9 @@ public class Phase2SingleOrArrayTests
 		var singleGrid = new Grid { Left = "10%" };
 		var gridList = new List<Grid> { new Grid { Left = "0%" }, new Grid { Right = "0%" } };
 
-		// Act - Set via GridObject
-		options1.GridObject = singleGrid;
-		options2.GridObject = gridList;
+		// Act - Set via public Grid/GridList accessors
+		options1.Grid = singleGrid;
+		options2.GridList = gridList;
 
 		// Assert - Grid accessor should work for single
 		Assert.IsNotNull(options1.Grid);

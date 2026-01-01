@@ -14,7 +14,7 @@ public partial class TreemapSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("treemap")]
-    public string? Type { get; set; }  = "treemap";
+    public string Type { get; init; }  = "treemap";
 
     /// <summary>
     /// Component ID, not specified by default.

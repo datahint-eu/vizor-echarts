@@ -110,12 +110,14 @@ internal class TypeCollection
         AddMappedEnumType(new MappedEnumType("edgeShape", typeof(TreeEdgeShape)), "TreeSeries");
 
         AddMappedEnumType(new MappedEnumType("funnelAlign", typeof(FunnelAlign)), "FunnelSeries");
+        AddMappedEnumType(new MappedEnumType("sort", typeof(FunnelSortOrder)), "FunnelSeries");
 
         AddMappedEnumType(new MappedEnumType("nodeAlign", typeof(SankeyNodeAlign)), "SankeySeries");
 
         AddMappedEnumType(new MappedEnumType("layout", typeof(GraphLayout)), "GraphSeries");
 
         AddMappedEnumType(new MappedEnumType("nodeClick", typeof(SunburstNodeClick)), "SunburstSeries");
+        AddMappedEnumType(new MappedEnumType("sort", typeof(SortOrder)), "SunburstSeries");
 
         AddMappedEnumType(new MappedEnumType("symbolRepeatDirection", typeof(StartOrEnd)), "PictorialBarSeries", "PictorialBarSeriesData");
         AddMappedEnumType(new MappedEnumType("symbolPosition", typeof(StartOrEndOrCenter)), "PictorialBarSeries", "PictorialBarSeriesData");

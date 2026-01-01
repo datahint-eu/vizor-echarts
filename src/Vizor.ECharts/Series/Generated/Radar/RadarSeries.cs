@@ -14,7 +14,7 @@ public partial class RadarSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("radar")]
-    public string? Type { get; set; }  = "radar";
+    public string Type { get; init; }  = "radar";
 
     /// <summary>
     /// Component ID, not specified by default.

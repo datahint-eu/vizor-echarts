@@ -14,7 +14,7 @@ public partial class LineSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("line")]
-    public string? Type { get; set; }  = "line";
+    public string Type { get; init; }  = "line";
 
     /// <summary>
     /// Component ID, not specified by default.

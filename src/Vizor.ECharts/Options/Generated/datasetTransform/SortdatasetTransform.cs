@@ -14,7 +14,7 @@ public partial class SortdatasetTransform
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("sort")]
-    public string? Type { get; set; }  = "sort";
+    public string Type { get; init; }  = "sort";
 
     /// <summary>
     /// <![CDATA[

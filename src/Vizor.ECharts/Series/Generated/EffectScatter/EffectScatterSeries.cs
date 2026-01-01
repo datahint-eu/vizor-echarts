@@ -14,7 +14,7 @@ public partial class EffectScatterSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("effectScatter")]
-    public string? Type { get; set; }  = "effectScatter";
+    public string Type { get; init; }  = "effectScatter";
 
     /// <summary>
     /// Component ID, not specified by default.

@@ -14,7 +14,7 @@ public partial class HeatmapSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("heatmap")]
-    public string? Type { get; set; }  = "heatmap";
+    public string Type { get; init; }  = "heatmap";
 
     /// <summary>
     /// Component ID, not specified by default.

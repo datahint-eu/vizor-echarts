@@ -14,7 +14,7 @@ public partial class FilterdatasetTransform
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("filter")]
-    public string? Type { get; set; }  = "filter";
+    public string Type { get; init; }  = "filter";
 
     /// <summary>
     /// <![CDATA[

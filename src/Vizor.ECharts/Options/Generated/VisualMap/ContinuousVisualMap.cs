@@ -14,7 +14,7 @@ public partial class ContinuousVisualMap
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("continuous")]
-    public string? Type { get; set; }  = "continuous";
+    public string Type { get; init; }  = "continuous";
 
     /// <summary>
     /// Component ID, not specified by default.

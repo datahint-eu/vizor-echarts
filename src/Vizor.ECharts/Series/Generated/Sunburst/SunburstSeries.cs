@@ -14,7 +14,7 @@ public partial class SunburstSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("sunburst")]
-    public string? Type { get; set; }  = "sunburst";
+    public string Type { get; init; }  = "sunburst";
 
     /// <summary>
     /// Component ID, not specified by default.
@@ -146,8 +146,33 @@ public partial class SunburstSeries
     /// </summary>
     [JsonPropertyName("sort")]
     [DefaultValue("desc")]
-    //TODO: Type Warning: Partially supported pattern 'enum,function' for 'sort'
-    public object? Sort { get; set; } 
+    [JsonInclude]
+    internal object? SortObject { get; set; }
+
+    /// <summary>
+    /// <![CDATA[
+    /// Sorting method that sectors use based on value , which is the sum of children when not set.
+    /// The default value 'desc' states for descending order, while it can also be set to be 'asc' for ascending order, or null for not sorting, or callback function like:  function(nodeA, nodeB) {
+    ///     return nodeA.getValue() - nodeB.getValue();
+    /// }
+    /// ]]>
+    /// </summary>
+    [JsonIgnore]
+    public SortOrder? Sort
+    {
+        	get => (SortOrder?)SortObject;
+        	set => SortObject = value;
+    }
+
+    /// <summary>
+    /// A sort function.
+    /// </summary>
+    [JsonIgnore]
+    public JavascriptFunction? SortFunction
+    {
+        	get => SortObject as JavascriptFunction;
+        	set => SortObject = value;
+    }
 
     /// <summary>
     /// If there is no name , whether need to render it.

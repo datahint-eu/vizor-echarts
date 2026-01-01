@@ -14,7 +14,7 @@ public partial class GaugeSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("gauge")]
-    public string? Type { get; set; }  = "gauge";
+    public string Type { get; init; }  = "gauge";
 
     /// <summary>
     /// Component ID, not specified by default.

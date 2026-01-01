@@ -14,7 +14,7 @@ public partial class ParallelSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("parallel")]
-    public string? Type { get; set; }  = "parallel";
+    public string Type { get; init; }  = "parallel";
 
     /// <summary>
     /// Component ID, not specified by default.

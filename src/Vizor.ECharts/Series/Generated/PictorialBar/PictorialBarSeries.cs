@@ -14,7 +14,7 @@ public partial class PictorialBarSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("pictorialBar")]
-    public string? Type { get; set; }  = "pictorialBar";
+    public string Type { get; init; }  = "pictorialBar";
 
     /// <summary>
     /// Component ID, not specified by default.

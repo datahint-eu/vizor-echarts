@@ -14,7 +14,7 @@ public partial class CandlestickSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("candlestick")]
-    public string? Type { get; set; }  = "candlestick";
+    public string Type { get; init; }  = "candlestick";
 
     /// <summary>
     /// Component ID, not specified by default.

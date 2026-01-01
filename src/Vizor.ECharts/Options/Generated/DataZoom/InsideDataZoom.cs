@@ -14,7 +14,7 @@ public partial class InsideDataZoom
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("inside")]
-    public string? Type { get; set; }  = "inside";
+    public string Type { get; init; }  = "inside";
 
     /// <summary>
     /// Component ID, not specified by default.

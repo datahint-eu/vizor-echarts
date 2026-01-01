@@ -14,7 +14,7 @@ public partial class ThemeRiverSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("themeRiver")]
-    public string? Type { get; set; }  = "themeRiver";
+    public string Type { get; init; }  = "themeRiver";
 
     /// <summary>
     /// Component ID, not specified by default.

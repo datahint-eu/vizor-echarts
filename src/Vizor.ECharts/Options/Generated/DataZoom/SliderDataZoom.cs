@@ -14,7 +14,7 @@ public partial class SliderDataZoom
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("slider")]
-    public string? Type { get; set; }  = "slider";
+    public string Type { get; init; }  = "slider";
 
     /// <summary>
     /// Component ID, not specified by default.

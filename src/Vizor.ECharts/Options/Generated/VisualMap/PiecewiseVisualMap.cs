@@ -14,7 +14,7 @@ public partial class PiecewiseVisualMap
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("piecewise")]
-    public string? Type { get; set; }  = "piecewise";
+    public string Type { get; init; }  = "piecewise";
 
     /// <summary>
     /// Component ID, not specified by default.

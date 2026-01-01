@@ -14,7 +14,7 @@ public partial class CustomSeries
     /// </summary>
     [JsonPropertyName("type")]
     [DefaultValue("custom")]
-    public string? Type { get; set; }  = "custom";
+    public string Type { get; init; }  = "custom";
 
     /// <summary>
     /// Component ID, not specified by default.
