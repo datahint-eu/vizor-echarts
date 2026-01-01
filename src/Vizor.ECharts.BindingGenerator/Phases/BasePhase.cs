@@ -55,6 +55,21 @@ internal abstract class BasePhase
             propName = "RichStyleName";
         }
 
+        // special case: all *AxisData types are identical, use shared AxisData
+        if (propName.EndsWith("AxisData") && (propName == "xAxisData" || propName == "yAxisData" || 
+                                               propName == "angleAxisData" || propName == "radiusAxisData" ||
+                                               propName == "parallelAxisData" || propName == "singleAxisData"))
+        {
+            // Return the shared AxisData type instead of creating separate ones
+            return typeCollection.GetOrCreateSharedType("AxisData", "Options");
+        }
+
+        // special case: ParallelAxisDefaultData is identical to AxisData
+        if (propName == "parallelAxisDefaultData")
+        {
+            return typeCollection.GetOrCreateSharedType("AxisData", "Options");
+        }
+
         // create a new type --> we parse the type completely, so we can do a (deep) duplicate check
         var objType = new ObjectType(parent, propName, typeGroup);
 
@@ -206,6 +221,19 @@ internal abstract class BasePhase
             var tooltipPosType = new MappedCustomType(typeof(TooltipPosition));
             diagnosticCollector.RecordSupported(propertyPath, types, tooltipPosType.DotNetType);
             return tooltipPosType;
+        }
+
+        // Special case: Axis type property should use AxisType enum
+        if (prop.Name == "type" && (parent.Name == "xAxis" || parent.Name == "yAxis" || 
+                                     parent.Name == "angleAxis" || parent.Name == "radiusAxis" ||
+                                     parent.Name == "parallelAxis" || parent.Name == "singleAxis" ||
+                                     parent.Name == "parallelAxisDefault"))
+        {
+            if (typeCollection.TryGetMappedEnumType("axisType", parent.Name, out var axisTypeEnum) && axisTypeEnum != null)
+            {
+                diagnosticCollector.RecordSupported(propertyPath, types, axisTypeEnum.DotNetType);
+                return axisTypeEnum;
+            }
         }
 
         // first try mapping enum types by name

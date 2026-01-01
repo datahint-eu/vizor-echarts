@@ -49,6 +49,10 @@ internal class GenerateOptionBindingTool
         // write regular option type classes
         foreach (var objType in typeCollection.ListObjectTypesToGenerate())
         {
+            // Skip shared hand-coded types
+            if (objType.IsShared)
+                continue;
+
             var generator = new ObjectTypeClassGenerator(options.OutputDirectory, objType);
             generator.Generate();
         }

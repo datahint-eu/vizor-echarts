@@ -7,7 +7,9 @@
 	// see https://echarts.apache.org/examples/en/editor.html?c=scatter-punchCard
 
 	private static readonly string[] hours = new string[] { "12a", "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12p", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p" };
-	private static readonly string[] days = new string[] { "Saturday", "Friday", "Thursday", "Wednesday", "Tuesday", "Monday", "Sunday" };
+	@* private static readonly string[] days = new string[] { "Saturday", "Friday", "Thursday", "Wednesday", "Tuesday", "Monday", "Sunday" }; *@
+	private static readonly AxisData[] days = new AxisData[] { new AxisData() { Value = "Saturday" }, new AxisData() { Value = "Friday" }, new AxisData() { Value = "Thursday" }, new AxisData() { Value = "Wednesday" }, new AxisData() { Value = "Tuesday" }, new AxisData() { Value = "Monday" }, new AxisData() { Value = "Sunday" } };
+
 
 	private static JavascriptFunction dataFunc = new(@"
 function getData() {
@@ -26,7 +28,7 @@ function getData() {
 			},
 			Legend = new()
 			{
-				Data = new string[] { "Punch Card" },
+				Data = new List<LegendData>() { new LegendData() { Name ="Punch Card" } },
 				Left = "right"
 			},
 			Tooltip = new()

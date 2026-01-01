@@ -19,16 +19,20 @@ internal class ObjectTypeClassGenerator
             if (idx > 0)
             {
                 var seriesName = objectType.Name[0..idx];
-                dir = Path.Combine(outputDir, "Series", seriesName);
+                dir = Path.Combine(outputDir, "Series", "Generated", seriesName);
+            }
+            else
+            {
+                dir = Path.Combine(outputDir, "Series", "Generated");
             }
         }
         else if (objectType.TypeGroup != "Options")
         {
-            dir = Path.Combine(outputDir, "Options", objectType.TypeGroup);
+            dir = Path.Combine(outputDir, "Options", "Generated", objectType.TypeGroup);
         }
         else
         {
-            dir = Path.Combine(outputDir, "Options");
+            dir = Path.Combine(outputDir, "Options", "Generated");
         }
 
         if (dir != outputDir && !Directory.Exists(dir))

@@ -19,7 +19,7 @@
 			},
 			Legend = new()
 			{
-				Data = new string[] { "Show", "Click", "Visit", "Inquiry", "Order" }
+				Data = new List<LegendData> { new LegendData() { Name = "Show" }, new LegendData() { Name = "Click" }, new LegendData() { Name = "Visit" }, new LegendData() { Name = "Inquiry" }, new LegendData() { Name = "Order" } }
 			},
 			Series = new()
 			{
@@ -64,11 +64,11 @@
 					},
 					Data = new List<FunnelSeriesData>()
 					{
-						new("Visit", 60),
-						new("Inquiry", 40),
-						new("Order", 20),
-						new("Click", 80),
-						new("Show", 100)
+						new() { Name = "Visit", Value = 60 },
+						new() { Name = "Inquiry", Value = 40 },
+						new() { Name = "Order", Value = 20 },
+						new() { Name = "Click", Value = 80 },
+						new() { Name = "Show", Value = 100 }
 					}
 				}
 			}

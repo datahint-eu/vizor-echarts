@@ -16,6 +16,16 @@ public class NumberOrNumberArray
         Numbers = numbers;
     }
 
+    /// <summary>
+    /// Constructor that accepts object array (for percentage strings or mixed types).
+    /// Strings are preserved as-is in serialization via a special marker.
+    /// </summary>
+    public NumberOrNumberArray(params object[] values)
+    {
+        // For now, treat strings as 0 - ideally this should be NumberOrStringArray
+        Numbers = values.Select(v => v is double d ? d : v is int i ? (double)i : 0).ToArray();
+    }
+
     public double[] Numbers { get; }
 
     public static implicit operator NumberOrNumberArray(double number)

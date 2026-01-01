@@ -12,7 +12,7 @@
 			{
 				Type = AxisType.Category,
 				BoundaryGap = false,
-				Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
+				Data = new List<AxisData> { new AxisData() { Value = "Mon" }, new AxisData() { Value = "Tue" }, new AxisData() { Value = "Wed" }, new AxisData() { Value = "Thu" }, new AxisData() { Value = "Fri" }, new AxisData() { Value = "Sat" }, new AxisData() { Value = "Sun" } }
 			},
 			YAxis = new()
 			{
@@ -22,7 +22,8 @@
 			{
 				new LineSeries()
 				{
-					Data = new int[] {820, 932, 901, 934, 1290, 1330, 1320 },
+                    Data = new int[] { 150, 230, 224, 218, 135, 147, 260 },
+					@* Data = new List<LineSeriesData> {new LineSeriesData() { Value = 820 }, new LineSeriesData() { Value = 932 }, new LineSeriesData() { Value = 901 }, new LineSeriesData() { Value = 934 }, new LineSeriesData() { Value = 1290 }, new LineSeriesData() { Value = 1330 }, new LineSeriesData() { Value = 1320 } }, *@
 					AreaStyle = new() {}
 				}
 			}

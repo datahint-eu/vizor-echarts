@@ -151,8 +151,8 @@
 		var firstSeries = options.Series![0] as GaugeSeries;
 		var secondSeries = options.Series![1] as GaugeSeries;
 
-		(firstSeries!.Data as List<GaugeSeriesData>)![0].Value = randomVal;
-		(secondSeries!.Data as List<GaugeSeriesData>)![0].Value = randomVal;
+		(firstSeries!.Data as SeriesDataList<GaugeSeriesData>)![0].Value = randomVal;
+		(secondSeries!.Data as SeriesDataList<GaugeSeriesData>)![0].Value = randomVal;
 
 		await chart.UpdateAsync();
 	}

@@ -400,6 +400,36 @@ public JavascriptFunction? TypeAsFunction
 
 ---
 
+## Future Improvements
+
+### Use Arrays for Static Configuration Data
+
+**Rationale**: Many ECharts properties contain static configuration data that is set once during initialization and rarely modified. Using arrays instead of Lists would:
+- Reduce memory overhead (no List capacity management)
+- Improve cache locality and serialization performance
+- Better convey immutability intent
+- More idiomatic for read-only configuration
+
+**Affected Properties**:
+- `Legend.Data` → change `List<LegendData>?` to `LegendData[]?`
+- All axis `Data` properties → change `List<AxisData>?` to `AxisData[]?` in:
+  - `XAxis.Data`
+  - `YAxis.Data`
+  - `AngleAxis.Data`
+  - `RadiusAxis.Data`
+  - `ParallelAxis.Data`
+  - `SingleAxis.Data`
+- Consider other static data collections (series data arrays, radar indicators, etc.)
+
+**Implementation**:
+- Add logic in generator to detect "data" properties and emit arrays instead of Lists
+- Alternatively, add explicit property mappings in BasePhase for known static data types
+- Breaking change - requires updates to all sample/test code
+
+**Priority**: Medium (quality-of-life improvement, not blocking functionality)
+
+---
+
 ## Next Steps
 
 1. **Review & validate** this plan with team

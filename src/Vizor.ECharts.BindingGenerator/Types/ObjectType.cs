@@ -29,4 +29,9 @@ internal class ObjectType : IPropertyType, IObjectType
     public string Path => Parent == null ? string.Empty : Parent.Path + "." + Name;
 
     public string? TypeWarning { get; set; }
+
+    /// <summary>
+    /// Indicates this is a shared hand-coded type that should not be generated.
+    /// </summary>
+    public bool IsShared { get; set; }
 }

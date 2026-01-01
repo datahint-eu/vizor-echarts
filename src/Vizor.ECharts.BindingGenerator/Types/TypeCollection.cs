@@ -152,6 +152,30 @@ internal class TypeCollection
         // did we succeed in determining the item type ?
         if (optProp.ItemType != null)
         {
+            // Use SeriesDataList for series data properties to support implicit conversions from arrays
+            if (prop.Name == "data" && parent.Name.EndsWith("Series"))
+            {
+                return new SeriesDataListType(optProp.ItemType);
+            }
+            
+            // Use DataList for axis/legend data properties that need string array support
+            if (prop.Name == "data")
+            {
+                string parentName = parent.Name;
+                // Check for axis types (note: parent.Name is lowercase from JSON)
+                if (parentName == "xAxis" || parentName == "yAxis" || parentName == "angleAxis" || 
+                    parentName == "radiusAxis" || parentName == "parallelAxis" || parentName == "parallelAxisDefault" ||
+                    parentName == "singleAxis")
+                {
+                    return new DataListType(optProp.ItemType);
+                }
+                // Check for legend
+                if (parentName == "legend")
+                {
+                    return new DataListType(optProp.ItemType);
+                }
+            }
+            
             return new GenericListType(optProp.ItemType);
         }
 
@@ -222,6 +246,22 @@ internal class TypeCollection
         }
 
         return mergedType;
+    }
+
+    public ObjectType GetOrCreateSharedType(string typeName, string typeGroup)
+    {
+        // Check if shared type already exists
+        if (objectTypeLookup.TryGetValue(typeName, out var existingType))
+        {
+            return existingType;
+        }
+
+        // Create new shared type for hand-coded class
+        var sharedType = new ObjectType(null, typeName, typeGroup: typeGroup);
+        sharedType.IsShared = true; // Mark as shared/hand-coded
+        objectTypeLookup.Add(typeName, sharedType);
+
+        return sharedType;
     }
 
     private void AddMappedEnumType(MappedEnumType mappedType, params string[]? specificObjectTypes)
