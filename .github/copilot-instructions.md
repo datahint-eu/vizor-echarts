@@ -65,14 +65,35 @@ DEBUG builds auto-enable `vizorECharts.changeLogging(true)`, logging serialized 
 
 **Rarely rerun generator.** Only when upgrading ECharts major version:
 1. Build echarts-doc repo (`npm run build` → generates option.json).
-2. Delete `src/Vizor.ECharts/GenOptions` and `GenSeries` folders.
-3. Run: `option-binding --input <path/to/option.json> --output src/Vizor.ECharts`
+2. Delete `src/Vizor.ECharts/Options/Generated` and `src/Vizor.ECharts/Series/Generated` folders.
+3. Run: `dotnet run --project src/Vizor.ECharts.BindingGenerator -- option-binding --input <path/to/option.json> --output src/Vizor.ECharts`
 4. Fix any compile errors (generator isn't 100% perfect).
-5. Merge hand-tuned overrides back in (search existing csproj for `<Compile Remove>` entries).
+5. **Hand-tuned overrides remain unchanged**: Files like `Series/Sankey/SankeySeriesLevel.cs` (outside Generated folders) are manually maintained and will NOT be regenerated. These are intentional architectural customizations.
+6. Verify hand-tuned files still compile against newly generated types. Update manually if needed.
 
-See [src/Vizor.ECharts.BindingGenerator/Readme.md](src/Vizor.ECharts.BindingGenerator/Readme.md) for details.
+See [src/Vizor.ECharts.BindingGenerator/Readme.md](src/Vizor.ECharts.BindingGenerator/Readme.md) for details on identifying and maintaining hand-tuned files.
 
-## Enum Mapping Convention
+## Hand-Tuned Overrides Pattern
+
+Some generated types are intentionally customized and maintained outside the Generated folders:
+
+### Structure
+- **Auto-generated**: `Series/Generated/Sankey/SankeySeriesLevels.cs` (in Generated subfolder, has "AUTO GENERATED" header)
+- **Hand-tuned**: `Series/Sankey/SankeySeriesLevel.cs` (outside Generated, manually maintained, typically partial class)
+
+### How to Identify
+- Files WITH `// AUTO GENERATED - DO NOT EDIT` header in `Options/Generated/` or `Series/Generated/` → regenerated automatically
+- Files WITHOUT header, located outside Generated folders → hand-maintained overrides
+
+### When Hand-Tuning is Necessary
+- API improvements or naming changes (e.g., singular vs. plural for clarity)
+- Custom type conversions or serialization logic
+- Architectural customizations that differ from option.json
+
+### Maintenance Requirement
+- Hand-tuned files are **NOT automatically updated** by the generator
+- Must manually update when underlying generated types change
+- Verify compilation after running generator on new option.json
 Global enum mappings in [src/Vizor.ECharts.BindingGenerator/Types/TypeCollection.cs](src/Vizor.ECharts.BindingGenerator/Types/TypeCollection.cs) `AddMappedEnumType` calls. When a JSON property name maps to multiple possible enums (e.g., `"type"` can be `LineType` or `LegendType` depending on parent object), specify parent type as context: `AddMappedEnumType(new(...), "lineStyle")`.
 
 ## Testing Patterns

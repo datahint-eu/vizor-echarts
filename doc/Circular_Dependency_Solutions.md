@@ -14,7 +14,7 @@ Attempted approach: Use a `GENERATOR_BUILD` configuration flag to conditionally 
 ### Why This Doesn't Work:
 - Generator needs `typeof()` references to hand-coded utility types: `Color`, `NumberOrString`, `JavascriptFunction`, etc.
 - Cannot exclude generated files globally - hand-coded Series classes reference generated types (e.g., `Emphasis`, `Blur`, `Select`, `Label`)
-- Some generated files are in mixed folders: `Series/Sankey/SankeySeriesLink.cs` is generated but `Series/Sankey/` folder contains hand-coded files
+- Some files in folders like `Series/Sankey/` are intentionally hand-tuned overrides (e.g., `SankeySeriesLevel.cs`) - these reference generated types and are maintained manually
 - Excluding by glob pattern `Series/Generated/**/*.cs` is not sufficient
 
 ### Why This Won't Work Even With More Specific Exclusions:
