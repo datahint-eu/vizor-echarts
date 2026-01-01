@@ -180,14 +180,14 @@ public partial class Detail
     public double? ShadowOffsetY { get; set; } 
 
     /// <summary>
-    /// The width of detail. Can be a pixel number (e.g., 100) or a percentage string (e.g., "60%").
+    /// The width of detail.
     /// </summary>
     [JsonPropertyName("width")]
     [DefaultValue("100")]
     public NumberOrString? Width { get; set; } 
 
     /// <summary>
-    /// The height of detail. Can be a pixel number (e.g., 40) or a percentage string (e.g., "40%").
+    /// The height of detail.
     /// </summary>
     [JsonPropertyName("height")]
     [DefaultValue("40")]

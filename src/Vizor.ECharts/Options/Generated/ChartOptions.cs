@@ -273,7 +273,7 @@ public partial class ChartOptions
     /// ]]>
     /// </summary>
     [JsonPropertyName("dataZoom")]
-    public List<object>? DataZoom { get; set; } 
+    public List<IDataZoom>? DataZoom { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -1230,7 +1230,7 @@ public partial class ChartOptions
     public object? Aria { get; set; } 
 
     [JsonPropertyName("series")]
-    public List<object>? Series { get; set; } 
+    public List<ISeries>? Series { get; set; } 
 
     /// <summary>
     /// <![CDATA[

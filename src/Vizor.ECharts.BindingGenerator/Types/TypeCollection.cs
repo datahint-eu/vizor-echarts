@@ -149,6 +149,27 @@ internal class TypeCollection
 
     public IPropertyType? MapArrayType(ObjectType parent, OptionProperty optProp, JsonProperty prop)
     {
+        // FIRST: Check for special cases that should override ItemType determination
+        // These must come before ItemType processing to ensure they take priority
+        // Note: Use parent.DotNetType (not parent.Name which is empty for root)
+        switch (prop.Name, parent.DotNetType)
+        {
+            case ("series", "ChartOptions"):
+                // Use typed list of ISeries for type safety instead of List<object>
+                return new GenericListType(new SimpleType("ISeries"));
+            case ("dataZoom", "ChartOptions"):
+                // Use typed list of IDataZoom for type safety instead of List<object>
+                return new GenericListType(new SimpleType("IDataZoom"));
+            case ("nodes", "SankeySeries"):
+                return new GenericListType(new SimpleType("SankeySeriesData"));
+            case ("edges", "SankeySeries"):
+                return new GenericListType(new SimpleType("SankeySeriesLinks"));
+            case ("nodes", "GraphSeries"):
+                return new GenericListType(new SimpleType("GraphSeriesData"));
+            case ("edges", "GraphSeries"):
+                return new GenericListType(new SimpleType("GraphSeriesLinks"));
+        }
+
         // did we succeed in determining the item type ?
         if (optProp.ItemType != null)
         {
@@ -179,19 +200,7 @@ internal class TypeCollection
             return new GenericListType(optProp.ItemType);
         }
 
-        // special cases: these are often aliases
-        switch (prop.Name, parent.Name)
-        {
-            case ("nodes", "SankeySeries"):
-                return new GenericListType(new SimpleType("SankeySeriesData"));
-            case ("edges", "SankeySeries"):
-                return new GenericListType(new SimpleType("SankeySeriesLinks"));
-            case ("nodes", "GraphSeries"):
-                return new GenericListType(new SimpleType("GraphSeriesData"));
-            case ("edges", "GraphSeries"):
-                return new GenericListType(new SimpleType("GraphSeriesLinks"));
-        }
-
+        // no ItemType, fallback to List<object> with warning
         //Console.WriteLine($"WARNING: array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>");
         return new ObjectListType()
         {

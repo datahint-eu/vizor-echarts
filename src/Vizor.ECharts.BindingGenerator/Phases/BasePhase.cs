@@ -223,6 +223,14 @@ internal abstract class BasePhase
             return tooltipPosType;
         }
 
+        // Special case: Detail.Width and Detail.Height should accept both numbers and percentage strings
+        if ((prop.Name == "width" || prop.Name == "height") && parent.DotNetType == "Detail")
+        {
+            var numberOrStringType = new MappedCustomType(typeof(NumberOrString));
+            diagnosticCollector.RecordSupported(propertyPath, types, numberOrStringType.DotNetType);
+            return numberOrStringType;
+        }
+
         // Special case: Axis type property should use AxisType enum
         if (prop.Name == "type" && (parent.Name == "xAxis" || parent.Name == "yAxis" || 
                                      parent.Name == "angleAxis" || parent.Name == "radiusAxis" ||
