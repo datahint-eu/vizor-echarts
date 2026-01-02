@@ -57,6 +57,22 @@ internal class GenerateOptionBindingTool
             generator.Generate();
         }
 
+        // Generate ISeries interface with all JsonDerivedType attributes
+        var seriesTypes = typeCollection.ListObjectTypesToGenerate()
+            .Where(t => t.TypeGroup == "Series" && !t.IsShared && 
+                t.Name.EndsWith("Series") && 
+                !t.Name.EndsWith("SeriesData") && 
+                !t.Name.EndsWith("SeriesLevel") && 
+                !t.Name.EndsWith("SeriesLink") && 
+                !t.Name.EndsWith("SeriesCategory"))
+            .ToList();
+        
+        if (seriesTypes.Count > 0)
+        {
+            var iSeriesGenerator = new ISeriesInterfaceGenerator(options.OutputDirectory, seriesTypes);
+            iSeriesGenerator.Generate();
+        }
+
         Console.WriteLine("done.");
 
         return 0;
