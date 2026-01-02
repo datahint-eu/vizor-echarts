@@ -22,8 +22,7 @@ public partial class MagicType
     /// ]]>
     /// </summary>
     [JsonPropertyName("type")]
-    //TODO: Type Warning: array type 'type' in 'magicType' will be mapped to List<object>
-    public List<object>? Type { get; set; } 
+    public string[]? Type { get; set; } 
 
     /// <summary>
     /// Title for different types, can be configured separately.

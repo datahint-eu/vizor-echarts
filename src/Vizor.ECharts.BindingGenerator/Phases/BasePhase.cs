@@ -373,6 +373,14 @@ internal abstract class BasePhase
                 return result;
             }
             
+            // Special case: type property in MagicType should be string[]? for chart type names
+            if (prop.Name == "type" && parent.DotNetType == "MagicType")
+            {
+                result = new SimpleType("string[]");
+                diagnosticCollector.RecordSupported(propertyPath, types, "string[]");
+                return result;
+            }
+            
             switch (optProp.Types[0])
             {
                 case "object":
