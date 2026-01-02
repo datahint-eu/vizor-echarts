@@ -19,7 +19,7 @@ public partial class RadarSeriesData
     /// Numerical value of a single data item.
     /// </summary>
     [JsonPropertyName("value")]
-    public double? Value { get; set; } 
+    public object? Value { get; set; } 
 
     /// <summary>
     /// <![CDATA[

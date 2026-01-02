@@ -365,6 +365,14 @@ internal abstract class BasePhase
                 return result;
             }
             
+            // Special case: value property in RadarSeriesData should accept array or single value
+            if (prop.Name == "value" && parent.DotNetType == "RadarSeriesData")
+            {
+                result = new SimpleType("object");
+                diagnosticCollector.RecordSupported(propertyPath, types, "object");
+                return result;
+            }
+            
             switch (optProp.Types[0])
             {
                 case "object":
