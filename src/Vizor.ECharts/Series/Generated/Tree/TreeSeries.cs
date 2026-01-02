@@ -441,7 +441,7 @@ public partial class TreeSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public DataData? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// tooltip settings in this series.

@@ -349,6 +349,13 @@ internal abstract class BasePhase
                 return result;
             }
             
+            // Special case: data property in TreeSeries should remain as object? for flexibility
+            if (prop.Name == "data" && parent.DotNetType == "TreeSeries")
+            {
+                result = new SimpleType("object");
+                diagnosticCollector.RecordSupported(propertyPath, types, "object");
+                return result;
+            }
             
             switch (optProp.Types[0])
             {
