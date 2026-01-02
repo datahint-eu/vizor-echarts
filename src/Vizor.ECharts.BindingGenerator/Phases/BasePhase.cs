@@ -357,6 +357,14 @@ internal abstract class BasePhase
                 return result;
             }
             
+            // Special case: transform property in Dataset should be SingleOrArrayType<IDatasetTransform>
+            if (prop.Name == "transform" && parent.DotNetType == "Dataset")
+            {
+                result = new SingleOrArrayType("IDatasetTransform");
+                diagnosticCollector.RecordSupported(propertyPath, types, "SingleOrArrayType<IDatasetTransform>");
+                return result;
+            }
+            
             switch (optProp.Types[0])
             {
                 case "object":
