@@ -349,6 +349,7 @@ internal abstract class BasePhase
                 return result;
             }
             
+            
             switch (optProp.Types[0])
             {
                 case "object":
