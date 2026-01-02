@@ -149,7 +149,7 @@ public partial class GaugeSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<GaugeSeriesData>? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// The minimum data value which map to minAngle .

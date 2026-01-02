@@ -462,8 +462,7 @@ public partial class BarSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("dimensions")]
-    //TODO: Type Warning: array type 'dimensions' in 'BarSeries' will be mapped to List<object>
-    public List<object>? Dimensions { get; set; } 
+    public string[]? Dimensions { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -734,7 +733,7 @@ public partial class BarSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<BarSeriesData>? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// <![CDATA[

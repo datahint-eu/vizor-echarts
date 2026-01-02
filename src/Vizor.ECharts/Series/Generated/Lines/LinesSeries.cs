@@ -277,7 +277,7 @@ public partial class LinesSeries
     /// The data set of lines.
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<LinesSeriesData>? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// Mark point in a chart.

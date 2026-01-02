@@ -290,8 +290,7 @@ public partial class CustomSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("dimensions")]
-    //TODO: Type Warning: array type 'dimensions' in 'CustomSeries' will be mapped to List<object>
-    public List<object>? Dimensions { get; set; } 
+    public string[]? Dimensions { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -562,7 +561,7 @@ public partial class CustomSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<CustomSeriesData>? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// <![CDATA[

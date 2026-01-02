@@ -334,7 +334,7 @@ public partial class SankeySeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<SankeySeriesData>? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// Equals to data

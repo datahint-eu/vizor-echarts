@@ -529,7 +529,7 @@ public partial class HeatmapSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<HeatmapSeriesData>? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// Mark point in a chart.

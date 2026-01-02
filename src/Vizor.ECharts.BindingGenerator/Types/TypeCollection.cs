@@ -162,6 +162,14 @@ internal class TypeCollection
             case ("dataZoom", "ChartOptions"):
                 // Use typed list of IDataZoom for type safety instead of List<object>
                 return new GenericListType(new SimpleType("IDataZoom"));
+            case ("dimensions", "Dataset"):
+            case ("dimensions", _) when parent.DotNetType.EndsWith("Series"):
+                // Use string array (full union type support planned for future)
+                return new SimpleType("string[]");
+            case ("text", "ContinuousVisualMap"):
+            case ("text", "PiecewiseVisualMap"):
+                // Use string array for text labels
+                return new SimpleType("string[]");
             case ("nodes", "SankeySeries"):
                 return new GenericListType(new SimpleType("SankeySeriesData"));
             case ("edges", "SankeySeries"):
@@ -175,10 +183,11 @@ internal class TypeCollection
         // did we succeed in determining the item type ?
         if (optProp.ItemType != null)
         {
-            // Use SeriesDataList for series data properties to support implicit conversions from arrays
+            // For series data properties, use object? for maximum flexibility
+            // ECharts data can be arrays, objects, JavascriptFunction, or dataset references
             if (prop.Name == "data" && parent.Name.EndsWith("Series"))
             {
-                return new SeriesDataListType(optProp.ItemType);
+                return new SimpleType("object");
             }
             
             // Use DataList for axis/legend data properties that need string array support

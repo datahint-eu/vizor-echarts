@@ -284,7 +284,7 @@ public partial class ThemeRiverSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<ThemeRiverSeriesData>? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// tooltip settings in this series.

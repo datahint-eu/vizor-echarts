@@ -13,8 +13,8 @@ public partial class PiecewiseVisualMap
     /// Allows: VisualMap = new PiecewiseVisualMap() { ... }
     /// Instead of requiring: VisualMap = new List&lt;object&gt; { new PiecewiseVisualMap() { ... } }
     /// </summary>
-    public static implicit operator List<object>(PiecewiseVisualMap visualMap)
+    public static implicit operator List<object>(PiecewiseVisualMap? visualMap)
     {
-        return visualMap == null ? null : new List<object> { visualMap };
+        return visualMap == null ? new List<object>() : new List<object> { visualMap };
     }
 }

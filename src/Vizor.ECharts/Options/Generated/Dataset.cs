@@ -92,8 +92,7 @@ public partial class Dataset
     /// ]]>
     /// </summary>
     [JsonPropertyName("dimensions")]
-    //TODO: Type Warning: array type 'dimensions' in 'dataset' will be mapped to List<object>
-    public List<object>? Dimensions { get; set; } 
+    public string[]? Dimensions { get; set; } 
 
     /// <summary>
     /// <![CDATA[

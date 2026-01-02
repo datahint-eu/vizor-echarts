@@ -608,7 +608,7 @@ public partial class TreemapSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<TreemapSeriesData>? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// Whether to ignore mouse events.

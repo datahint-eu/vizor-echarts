@@ -155,8 +155,7 @@ public partial class ContinuousVisualMap
     /// ]]>
     /// </summary>
     [JsonPropertyName("text")]
-    //TODO: Type Warning: array type 'text' in 'ContinuousVisualMap' will be mapped to List<object>
-    public List<object>? Text { get; set; } 
+    public string[]? Text { get; set; } 
 
     /// <summary>
     /// The distance between the ends of the main bar and the label, with unit px.

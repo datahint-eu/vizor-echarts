@@ -13,8 +13,8 @@ public partial class ContinuousVisualMap
     /// Allows: VisualMap = new ContinuousVisualMap() { ... }
     /// Instead of requiring: VisualMap = new List&lt;object&gt; { new ContinuousVisualMap() { ... } }
     /// </summary>
-    public static implicit operator List<object>(ContinuousVisualMap visualMap)
+    public static implicit operator List<object>(ContinuousVisualMap? visualMap)
     {
-        return visualMap == null ? null : new List<object> { visualMap };
+        return visualMap == null ? new List<object>() : new List<object> { visualMap };
     }
 }

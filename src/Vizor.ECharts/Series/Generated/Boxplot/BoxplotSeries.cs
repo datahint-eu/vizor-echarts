@@ -185,8 +185,7 @@ public partial class BoxplotSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("dimensions")]
-    //TODO: Type Warning: array type 'dimensions' in 'BoxplotSeries' will be mapped to List<object>
-    public List<object>? Dimensions { get; set; } 
+    public string[]? Dimensions { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -352,7 +351,7 @@ public partial class BoxplotSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<BoxplotSeriesData>? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// Mark point in a chart.

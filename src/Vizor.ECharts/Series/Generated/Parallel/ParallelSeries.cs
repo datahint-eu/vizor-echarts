@@ -151,7 +151,7 @@ public partial class ParallelSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<ParallelSeriesData>? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// zlevel value of all graphical elements in parallel.

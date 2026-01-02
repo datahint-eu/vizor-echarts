@@ -862,8 +862,7 @@ public partial class PictorialBarSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("dimensions")]
-    //TODO: Type Warning: array type 'dimensions' in 'PictorialBarSeries' will be mapped to List<object>
-    public List<object>? Dimensions { get; set; } 
+    public string[]? Dimensions { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -1111,7 +1110,7 @@ public partial class PictorialBarSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<PictorialBarSeriesData>? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// Mark point in a chart.

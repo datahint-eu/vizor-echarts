@@ -212,8 +212,7 @@ public partial class PiecewiseVisualMap
     /// ]]>
     /// </summary>
     [JsonPropertyName("text")]
-    //TODO: Type Warning: array type 'text' in 'PiecewiseVisualMap' will be mapped to List<object>
-    public List<object>? Text { get; set; } 
+    public string[]? Text { get; set; } 
 
     /// <summary>
     /// The distance between the ends of the graphical elements for pieces and the labels, with unit px.

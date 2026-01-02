@@ -259,8 +259,7 @@ public partial class CandlestickSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("dimensions")]
-    //TODO: Type Warning: array type 'dimensions' in 'CandlestickSeries' will be mapped to List<object>
-    public List<object>? Dimensions { get; set; } 
+    public string[]? Dimensions { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -418,7 +417,7 @@ public partial class CandlestickSeries
     /// They are:  [open, close, lowest, highest]  (namely: [opening value, closing value, lowest value, highest value])
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<CandlestickSeriesData>? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// Mark point in a chart.

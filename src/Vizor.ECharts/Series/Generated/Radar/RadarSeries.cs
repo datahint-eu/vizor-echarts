@@ -262,7 +262,7 @@ public partial class RadarSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<RadarSeriesData>? Data { get; set; } 
+    public object? Data { get; set; } 
 
     /// <summary>
     /// zlevel value of all graphical elements in Radar.
