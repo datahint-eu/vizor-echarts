@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class HeatmapSeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("heatmap")]
-    public string Type { get; init; }  = "heatmap";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

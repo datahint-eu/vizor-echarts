@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class TreeSeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("tree")]
-    public string Type { get; init; }  = "tree";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

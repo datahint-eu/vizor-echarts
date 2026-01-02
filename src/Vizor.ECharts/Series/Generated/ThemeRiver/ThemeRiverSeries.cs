@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class ThemeRiverSeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("themeRiver")]
-    public string Type { get; init; }  = "themeRiver";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

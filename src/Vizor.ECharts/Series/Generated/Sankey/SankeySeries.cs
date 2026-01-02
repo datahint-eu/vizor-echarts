@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class SankeySeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("sankey")]
-    public string Type { get; init; }  = "sankey";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

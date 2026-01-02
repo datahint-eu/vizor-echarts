@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class PieSeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("pie")]
-    public string Type { get; init; }  = "pie";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class RadarSeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("radar")]
-    public string Type { get; init; }  = "radar";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

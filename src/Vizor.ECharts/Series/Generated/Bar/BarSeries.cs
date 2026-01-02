@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class BarSeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("bar")]
-    public string Type { get; init; }  = "bar";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

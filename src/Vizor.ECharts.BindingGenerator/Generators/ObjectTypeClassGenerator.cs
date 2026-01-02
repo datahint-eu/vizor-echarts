@@ -131,6 +131,13 @@ internal class ObjectTypeClassGenerator
             }
             else
             {
+                // Skip 'type' property for Series - it's handled by polymorphic serialization
+                bool isSeriesTypeProperty = objectType.TypeGroup == "Series" && prop.Name == "type";
+                if (isSeriesTypeProperty)
+                {
+                    continue; // Skip generating the type property for series
+                }
+
                 // the 'type' property of anyOf objects is mandatory and non-nullable
                 string defaultAssign = string.Empty;
                 bool isTypeProperty = objectType.TypeGroup != "Options" && prop.Name == "type";

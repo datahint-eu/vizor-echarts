@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class LinesSeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("lines")]
-    public string Type { get; init; }  = "lines";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

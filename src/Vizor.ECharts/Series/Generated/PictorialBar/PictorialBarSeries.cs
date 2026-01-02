@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class PictorialBarSeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("pictorialBar")]
-    public string Type { get; init; }  = "pictorialBar";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

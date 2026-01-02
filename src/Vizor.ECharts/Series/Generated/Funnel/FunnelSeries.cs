@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class FunnelSeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("funnel")]
-    public string Type { get; init; }  = "funnel";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

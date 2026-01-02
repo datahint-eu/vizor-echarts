@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class BoxplotSeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("boxplot")]
-    public string Type { get; init; }  = "boxplot";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

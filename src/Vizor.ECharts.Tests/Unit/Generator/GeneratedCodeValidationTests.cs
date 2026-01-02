@@ -27,23 +27,25 @@ public class GeneratedCodeValidationTests
     }
 
     [TestMethod]
-    public void GeneratedSeriesHaveTypeProperty()
+    public void SeriesUsesPolymorphicSerialization()
     {
-        var assembly = typeof(ChartOptions).Assembly;
-        var seriesTypes = assembly.GetTypes()
-            .Where(t => typeof(ISeries).IsAssignableFrom(t)
-                     && t.IsClass
-                     && !t.IsAbstract)
-            .ToList();
+        // Verify ISeries interface has JsonPolymorphic attribute for .NET 10 polymorphic serialization
+        var iSeriesType = typeof(ISeries);
+        var polymorphicAttr = iSeriesType.GetCustomAttribute<System.Text.Json.Serialization.JsonPolymorphicAttribute>();
+        
+        Assert.IsNotNull(polymorphicAttr, "ISeries should have JsonPolymorphic attribute");
+        Assert.AreEqual("type", polymorphicAttr.TypeDiscriminatorPropertyName, 
+            "Type discriminator should be 'type'");
 
-        Assert.IsGreaterThanOrEqualTo(10, seriesTypes.Count, "Should have at least 10 series types");
+        // Verify series types are registered with JsonDerivedType attributes
+        var derivedTypeAttrs = iSeriesType.GetCustomAttributes<System.Text.Json.Serialization.JsonDerivedTypeAttribute>().ToList();
+        Assert.IsGreaterThanOrEqualTo(20, derivedTypeAttrs.Count, 
+            "Should have at least 20 series types registered");
 
-        foreach (var seriesType in seriesTypes)
-        {
-            var typeProperty = seriesType.GetProperty("Type");
-            Assert.IsNotNull(typeProperty, $"{seriesType.Name} should have Type property");
-            Assert.AreEqual(typeof(string), typeProperty.PropertyType);
-        }
+        // Verify some common series are registered
+        var barSeriesAttr = derivedTypeAttrs.FirstOrDefault(a => a.TypeDiscriminator?.ToString() == "bar");
+        Assert.IsNotNull(barSeriesAttr, "BarSeries should be registered");
+        Assert.AreEqual(typeof(BarSeries), barSeriesAttr.DerivedType);
     }
 
     [TestMethod]

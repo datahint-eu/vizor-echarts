@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class ParallelSeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("parallel")]
-    public string Type { get; init; }  = "parallel";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

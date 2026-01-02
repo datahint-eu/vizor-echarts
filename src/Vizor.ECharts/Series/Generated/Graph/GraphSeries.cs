@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class GraphSeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("graph")]
-    public string Type { get; init; }  = "graph";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

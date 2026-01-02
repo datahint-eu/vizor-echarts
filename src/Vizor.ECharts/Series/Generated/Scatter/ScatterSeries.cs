@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class ScatterSeries
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("scatter")]
-    public string Type { get; init; }  = "scatter";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>
