@@ -44,6 +44,22 @@ public class StringArray
         var values = icons.Select(i => i.Type?.ToString().ToLowerInvariant() ?? i.Url ?? string.Empty).ToArray();
         return new StringArray(values);
     }
+
+    /// <summary>
+    /// Allow implicit conversion from double[] to StringArray (for numeric arrays like [5, 20]).
+    /// </summary>
+    public static implicit operator StringArray(double[] values)
+    {
+        return new StringArray(values.Select(v => v.ToString()).ToArray());
+    }
+
+    /// <summary>
+    /// Allow implicit conversion from double to StringArray (for single numeric values).
+    /// </summary>
+    public static implicit operator StringArray(double value)
+    {
+        return new StringArray(value.ToString());
+    }
 }
 
 public class StringArrayConverter : JsonConverter<StringArray>
