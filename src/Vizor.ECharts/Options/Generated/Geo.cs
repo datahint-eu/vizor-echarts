@@ -325,8 +325,7 @@ public partial class Geo
     /// ]]>
     /// </summary>
     [JsonPropertyName("layoutCenter")]
-    //TODO: Type Warning: array type 'layoutCenter' in 'geo' will be mapped to List<object>
-    public List<object>? LayoutCenter { get; set; } 
+    public NumberOrStringArray? LayoutCenter { get; set; } 
 
     /// <summary>
     /// Size of map, see layoutCenter for more information.

@@ -341,6 +341,14 @@ internal abstract class BasePhase
                 return result;
             }
             
+            // Special case: layoutCenter in Geo should be NumberOrStringArray
+            if (prop.Name == "layoutCenter" && parent.DotNetType == "Geo")
+            {
+                result = new MappedCustomType(typeof(NumberOrStringArray));
+                diagnosticCollector.RecordSupported(propertyPath, types, "NumberOrStringArray");
+                return result;
+            }
+            
             switch (optProp.Types[0])
             {
                 case "object":
