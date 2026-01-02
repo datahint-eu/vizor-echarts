@@ -332,6 +332,15 @@ internal abstract class BasePhase
                 }
             }
             
+            // Special case: children property in TreemapSeriesData should be List<TreemapSeriesData>
+            if (prop.Name == "children" && parent.DotNetType == "TreemapSeriesData")
+            {
+                // Return a list of the parent type (recursive structure)
+                result = new GenericListType(parent);
+                diagnosticCollector.RecordSupported(propertyPath, types, $"List<{parent.DotNetType}>");
+                return result;
+            }
+            
             switch (optProp.Types[0])
             {
                 case "object":
