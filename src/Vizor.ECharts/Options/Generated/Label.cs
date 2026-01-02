@@ -420,7 +420,7 @@ public partial class Label
     /// </summary>
     [JsonPropertyName("rotate")]
     [DefaultValue("0")]
-    public double? Rotate { get; set; } 
+    public NumberOrString? Rotate { get; set; } 
 
     /// <summary>
     /// Whether to move text slightly.

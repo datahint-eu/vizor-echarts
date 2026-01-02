@@ -381,6 +381,14 @@ internal abstract class BasePhase
                 return result;
             }
             
+            // Special case: rotate property in Label should be NumberOrString? for rotation values or "radial"
+            if (prop.Name == "rotate" && parent.DotNetType == "Label")
+            {
+                result = new MappedCustomType(typeof(NumberOrString));
+                diagnosticCollector.RecordSupported(propertyPath, types, "NumberOrString");
+                return result;
+            }
+            
             switch (optProp.Types[0])
             {
                 case "object":
