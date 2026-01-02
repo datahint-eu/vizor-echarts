@@ -319,6 +319,19 @@ internal abstract class BasePhase
         {
             IPropertyType? result = null;
             
+            // Special case: parallelAxis is defined as Object in option.json but should be List<ParallelAxis>
+            if (prop.Name == "parallelAxis" && parent.DotNetType == "ChartOptions")
+            {
+                // Create the ParallelAxis object type if needed
+                var parallelAxisType = ParseObjectType(optProp, prop.Name, prop.Value, dataPrefix: prop.Name, typeGroup: "Options");
+                if (parallelAxisType is ObjectType objType)
+                {
+                    result = new GenericListType(objType);
+                    diagnosticCollector.RecordSupported(propertyPath, types, $"List<{objType.DotNetType}>");
+                    return result;
+                }
+            }
+            
             switch (optProp.Types[0])
             {
                 case "object":
