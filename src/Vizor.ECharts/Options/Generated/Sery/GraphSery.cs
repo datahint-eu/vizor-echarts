@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class GraphSeries
+public partial class GraphSery
 {
     /// <summary>
     /// 
@@ -130,7 +130,8 @@ public partial class GraphSeries
     /// </summary>
     [JsonPropertyName("layout")]
     [DefaultValue("none")]
-    public GraphLayout? Layout { get; set; } 
+    //TODO: Type Warning: enum type 'layout' in 'GraphSery' with values 'none,force,circular' is not mapped
+    public string? Layout { get; set; } 
 
     /// <summary>
     /// Configuration about circular layout.
@@ -403,7 +404,7 @@ public partial class GraphSeries
     /// categories can also be used in legend .
     /// </summary>
     [JsonPropertyName("categories")]
-    public List<GraphSeriesCategory>? Categories { get; set; } 
+    public List<GraphSeryCategory>? Categories { get; set; } 
 
     /// <summary>
     /// For the situation where there are multiple links between nodes, the curveness of each link is automatically calculated, not enabled by default.
@@ -442,13 +443,14 @@ public partial class GraphSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<GraphSeriesData>? Data { get; set; } 
+    public List<GraphSeryData>? Data { get; set; } 
 
     /// <summary>
     /// Alias of data
     /// </summary>
     [JsonPropertyName("nodes")]
-    public List<GraphSeriesData>? Nodes { get; set; } 
+    //TODO: Type Warning: array type 'nodes' in 'GraphSery' will be mapped to List<object>
+    public List<object>? Nodes { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -463,13 +465,14 @@ public partial class GraphSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("links")]
-    public List<GraphSeriesLink>? Links { get; set; } 
+    public List<GraphSeryLink>? Links { get; set; } 
 
     /// <summary>
     /// Alias of links
     /// </summary>
     [JsonPropertyName("edges")]
-    public List<GraphSeriesLink>? Edges { get; set; } 
+    //TODO: Type Warning: array type 'edges' in 'GraphSery' will be mapped to List<object>
+    public List<object>? Edges { get; set; } 
 
     /// <summary>
     /// Mark point in a chart.

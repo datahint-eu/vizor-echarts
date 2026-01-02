@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class TreemapSeries
+public partial class TreemapSery
 {
     /// <summary>
     /// 
@@ -250,7 +250,7 @@ public partial class TreemapSeries
     ///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
     /// </summary>
     [JsonPropertyName("colorAlpha")]
-    //TODO: Type Warning: array type 'colorAlpha' in 'TreemapSeries' will be mapped to List<object>
+    //TODO: Type Warning: array type 'colorAlpha' in 'TreemapSery' will be mapped to List<object>
     public List<object>? ColorAlpha { get; set; } 
 
     /// <summary>
@@ -556,7 +556,7 @@ public partial class TreemapSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("levels")]
-    public List<TreemapSeriesLevel>? Levels { get; set; } 
+    public List<TreemapSeryLevel>? Levels { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -608,7 +608,7 @@ public partial class TreemapSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<TreemapSeriesData>? Data { get; set; } 
+    public List<TreemapSeryData>? Data { get; set; } 
 
     /// <summary>
     /// Whether to ignore mouse events.

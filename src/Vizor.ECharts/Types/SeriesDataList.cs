@@ -103,6 +103,14 @@ public class SeriesDataList<T> where T : class
     public static implicit operator SeriesDataList<T>(List<SeriesData<DateTime, int, int>> values) => 
         new() { _data = values };
 
+    // Implicit conversion from List<object> for mixed/dynamic data (e.g., test fixtures)
+    public static implicit operator SeriesDataList<T>(List<object> values) => 
+        new() { _data = values };
+
+    // Implicit conversion from object[] for mixed/dynamic data
+    public static implicit operator SeriesDataList<T>(object[] values) => 
+        new() { _data = values.ToList() };
+
     /// <summary>
     /// Gets or sets an item in the underlying list by index.
     /// Only works when the internal data is a List&lt;T&gt;.

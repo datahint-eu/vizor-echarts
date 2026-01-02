@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class GraphSeriesLinks
+public partial class GraphSeryLink
 {
     /// <summary>
     /// A string representing the name of source node on edge.

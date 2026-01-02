@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class TreemapSeriesLevels
+public partial class TreemapSeryLevel
 {
     /// <summary>
     /// <![CDATA[
@@ -63,7 +63,7 @@ public partial class TreemapSeriesLevels
     ///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
     /// </summary>
     [JsonPropertyName("color")]
-    //TODO: Type Warning: array type 'color' in 'TreemapSeriesLevels' will be mapped to List<object>
+    //TODO: Type Warning: array type 'color' in 'TreemapSeryLevel' will be mapped to List<object>
     public List<object>? Color { get; set; } 
 
     /// <summary>
@@ -80,7 +80,7 @@ public partial class TreemapSeriesLevels
     ///      It could appear in each node of series-treemap.data , indicating the particular setting of each node.
     /// </summary>
     [JsonPropertyName("colorAlpha")]
-    //TODO: Type Warning: array type 'colorAlpha' in 'TreemapSeriesLevels' will be mapped to List<object>
+    //TODO: Type Warning: array type 'colorAlpha' in 'TreemapSeryLevel' will be mapped to List<object>
     public List<object>? ColorAlpha { get; set; } 
 
     /// <summary>

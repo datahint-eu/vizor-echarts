@@ -18,6 +18,15 @@ public class JavascriptFunction
     {
         return new JavascriptFunction(function);
     }
+
+    /// <summary>
+    /// Implicit conversion from JavascriptFunction to string for property assignments.
+    /// Returns the raw JavaScript function code.
+    /// </summary>
+    public static implicit operator string(JavascriptFunction jsFunc)
+    {
+        return jsFunc?.Function ?? "";
+    }
 }
 
 public class JavascriptFunctionConverter : JsonConverter<JavascriptFunction>

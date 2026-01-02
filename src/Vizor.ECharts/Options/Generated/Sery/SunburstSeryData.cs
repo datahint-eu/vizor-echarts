@@ -7,14 +7,41 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class SunburstSeriesLevels
+public partial class SunburstSeryData
 {
     /// <summary>
-    /// Since v5.2.0   
-    /// The inner and outer radius of the current layer, noting that the radius of other layers will not be adaptive.
+    /// Value for each item.
+    /// If contains children, value can be left unset, and sum of children values will be used in this case.
     /// </summary>
-    [JsonPropertyName("radius")]
-    public CircleRadius? Radius { get; set; } 
+    [JsonPropertyName("value")]
+    public double? Value { get; set; } 
+
+    /// <summary>
+    /// Name displayed in each sector.
+    /// </summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Link address that redirects to when this sector is clicked.
+    /// Only useful when series-sunburst.nodeClick is set to be 'link' .
+    ///  
+    /// See series-sunburst.data.target .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("link")]
+    public string? Link { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Like target attribute of HTML <a> , which can either be 'blank' or 'self' .
+    /// See series-sunburst.data.link .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("target")]
+    [DefaultValue("blank")]
+    public string? Target { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -66,5 +93,19 @@ public partial class SunburstSeriesLevels
     /// </summary>
     [JsonPropertyName("select")]
     public object? Select { get; set; } 
+
+    /// <summary>
+    /// The children nodes defined recursively.
+    /// The structure is the same as series-sunburst.data .
+    /// </summary>
+    [JsonPropertyName("children")]
+    //TODO: Type Warning: array type 'children' in 'SunburstSeryData' will be mapped to List<object>
+    public List<object>? Children { get; set; } 
+
+    /// <summary>
+    /// tooltip settings in this series data.
+    /// </summary>
+    [JsonPropertyName("tooltip")]
+    public Tooltip? Tooltip { get; set; } 
 
 }

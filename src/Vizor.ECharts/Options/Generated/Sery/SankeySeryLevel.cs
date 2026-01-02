@@ -7,25 +7,20 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class SankeySeriesLinks
+public partial class SankeySeryLevel
 {
     /// <summary>
-    /// The name of source node of edge
+    /// Specify which layer is set, value starts from 0.
     /// </summary>
-    [JsonPropertyName("source")]
-    public string? Source { get; set; } 
+    [JsonPropertyName("depth")]
+    [DefaultValue("0")]
+    public double? Depth { get; set; } 
 
     /// <summary>
-    /// The name of target node of edge
+    /// 
     /// </summary>
-    [JsonPropertyName("target")]
-    public string? Target { get; set; } 
-
-    /// <summary>
-    /// The value of edge, which decides the width of edge.
-    /// </summary>
-    [JsonPropertyName("value")]
-    public double? Value { get; set; } 
+    [JsonPropertyName("label")]
+    public Label? Label { get; set; } 
 
     /// <summary>
     /// Since v5.4.1   
@@ -35,7 +30,13 @@ public partial class SankeySeriesLinks
     public EdgeLabel? EdgeLabel { get; set; } 
 
     /// <summary>
-    /// The line style of edge.
+    /// 
+    /// </summary>
+    [JsonPropertyName("itemStyle")]
+    public ItemStyle? ItemStyle { get; set; } 
+
+    /// <summary>
+    /// 
     /// </summary>
     [JsonPropertyName("lineStyle")]
     public LineStyle? LineStyle { get; set; } 

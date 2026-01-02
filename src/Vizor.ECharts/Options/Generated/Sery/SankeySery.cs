@@ -7,14 +7,14 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class SunburstSeries
+public partial class SankeySery
 {
     /// <summary>
     /// 
     /// </summary>
     [JsonPropertyName("type")]
-    [DefaultValue("sunburst")]
-    public string Type { get; init; }  = "sunburst";
+    [DefaultValue("sankey")]
+    public string Type { get; init; }  = "sankey";
 
     /// <summary>
     /// Component ID, not specified by default.
@@ -55,165 +55,170 @@ public partial class SunburstSeries
 
     /// <summary>
     /// <![CDATA[
-    /// Center position of Sunburst chart, the first of which is the horizontal position, and the second is the vertical position.
+    /// Distance between sankey component and the left side of the container.
     ///  
-    /// Percentage is supported.
-    /// When set in percentage, the item is relative to the container width, and the second item to the height.
+    /// left can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' ; and it can also be 'left' , 'center' , or 'right' .
     ///  
-    /// Example:  // Set to absolute pixel values
-    /// center: [400, 300]
-    /// // Set to relative percent
-    /// center: ['50%', '50%']
+    /// If the left value is set to be 'left' , 'center' , or 'right' , then the component will be aligned automatically based on position.
     /// ]]>
     /// </summary>
-    [JsonPropertyName("center")]
-    [DefaultValue("[50%, 50%]")]
-    public NumberOrNumberArray? Center { get; set; } 
+    [JsonPropertyName("left")]
+    [DefaultValue("5%")]
+    public NumberOrString? Left { get; set; } 
 
     /// <summary>
     /// <![CDATA[
-    /// Radius of Sunburst chart.
-    /// Value can be:   number : Specify outside radius directly.
-    ///  string : For example, '20%' , means that the outside radius is 20% of the viewport size (the little one between width and height of the chart container).
-    ///    Array.<number|string> : The first item specifies the inside radius, and the second item specifies the outside radius.
-    /// Each item follows the definitions above.
+    /// Distance between sankey component and the top side of the container.
+    ///  
+    /// top can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' ; and it can also be 'top' , 'middle' , or 'bottom' .
+    ///  
+    /// If the top value is set to be 'top' , 'middle' , or 'bottom' , then the component will be aligned automatically based on position.
     /// ]]>
     /// </summary>
-    [JsonPropertyName("radius")]
-    [DefaultValue("0%, 75%")]
-    public CircleRadius? Radius { get; set; } 
+    [JsonPropertyName("top")]
+    [DefaultValue("5%")]
+    public NumberOrString? Top { get; set; } 
 
     /// <summary>
     /// <![CDATA[
-    /// The data structure of series-sunburst.data is like tree.
-    /// For example:  [{
-    ///     name: 'parent1',
-    ///     value: 10,          // value of parent node can be left unset, and sum of
-    ///                         // children values will be used in this case.
-    ///                         // If is set, and is larger than sum of children nodes,
-    ///                         // the reset can be used for other parts in parent.
-    ///     children: [{
-    ///         value: 5,
-    ///         name: 'child1',
-    ///         children: [{
-    ///             value: 2,
-    ///             name: 'grandchild1',
-    ///             itemStyle: {
-    ///                 // every data can have its own itemStyle,
-    ///                 // which will overwrites series.itemStyle and level.itemStyle
-    ///             },
-    ///             label: {
-    ///                 // label style, the same to above
-    ///             }
-    ///         }]
-    ///     }, {
-    ///         value: 3,
-    ///         name: 'child2'
-    ///     }],
+    /// Distance between sankey component and the right side of the container.
+    ///  
+    /// right can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("right")]
+    [DefaultValue("20%")]
+    public NumberOrString? Right { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Distance between sankey component and the bottom side of the container.
+    ///  
+    /// bottom can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("bottom")]
+    [DefaultValue("5%")]
+    public NumberOrString? Bottom { get; set; } 
+
+    /// <summary>
+    /// Width of sankey component.
+    /// </summary>
+    [JsonPropertyName("width")]
+    public NumberOrString? Width { get; set; } 
+
+    /// <summary>
+    /// Height of sankey component.
+    /// </summary>
+    [JsonPropertyName("height")]
+    public NumberOrString? Height { get; set; } 
+
+    /// <summary>
+    /// The node width of rectangle in Sankey diagram.
+    /// </summary>
+    [JsonPropertyName("nodeWidth")]
+    [DefaultValue("20")]
+    public double? NodeWidth { get; set; } 
+
+    /// <summary>
+    /// The gap between any two rectangles in each column of the Sankey diagram.
+    /// </summary>
+    [JsonPropertyName("nodeGap")]
+    [DefaultValue("8")]
+    public double? NodeGap { get; set; } 
+
+    /// <summary>
+    /// Controls the horizontal alignment of nodes in the diagram.
+    ///  
+    /// May be:   
+    /// left : initial nodes (those with no incoming links) are aligned to the left of the diagram.
+    ///   
+    /// right : terminal nodes (those with no outgoing links) are aligned to the right of the diagram.
+    ///   
+    /// justify : initial and terminal nodes are aligned on the left and right edges.
+    ///    
+    /// Note when orient is vertical , nodeAlign controls vertical alignment.
+    /// </summary>
+    [JsonPropertyName("nodeAlign")]
+    [DefaultValue("justify")]
+    //TODO: Type Warning: enum type 'nodeAlign' in 'SankeySery' with values 'justify,left,right' is not mapped
+    public string? NodeAlign { get; set; } 
+
+    /// <summary>
+    /// The iterations of layout, which is used to iteratively optimize the position of the nodes and edges in the Sankey diagram to reduce the overlapping between nodes and edges.
+    /// The default value is 32 .
+    /// If you want the order of the nodes in the chart to be the same with the order in the original data , you can set the value to be 0 .
+    /// </summary>
+    [JsonPropertyName("layoutIterations")]
+    [DefaultValue("32")]
+    public double? LayoutIterations { get; set; } 
+
+    /// <summary>
+    /// The layout direction of the nodes in the Sankey diagram, which can be horizontal from left to right or vertical from top to bottom.
+    /// The corresponding parameter values ​​are horizontal or vertical .
+    /// </summary>
+    [JsonPropertyName("orient")]
+    [DefaultValue("horizontal")]
+    public Orient? Orient { get; set; } 
+
+    /// <summary>
+    /// The drag-and-drop interaction of the node, which is enabled by default.
+    /// After opening, the user can drag any node in the Sankey diagram to any position.
+    /// To turn this interaction off, simply set the value to false .
+    /// </summary>
+    [JsonPropertyName("draggable")]
+    [DefaultValue("true")]
+    public bool? Draggable { get; set; } 
+
+    /// <summary>
+    /// Since v5.4.1   
+    /// The label style of each edge/link.
+    /// </summary>
+    [JsonPropertyName("edgeLabel")]
+    public EdgeLabel? EdgeLabel { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// The setting of each layer of Sankey diagram.
+    /// Can be set layer by layer, as follows:  levels: [{
+    ///     depth: 0,
     ///     itemStyle: {
-    ///         // itemStyle of parent1, which will not be inherited for children
+    ///         color: '#fbb4ae'
     ///     },
-    ///     label: {
-    ///         // label of parent1, which will not be inherited for children
+    ///     lineStyle: {
+    ///         color: 'source',
+    ///         opacity: 0.6
     ///     }
     /// }, {
-    ///     name: 'parent2',
-    ///     value: 4
+    ///     depth: 1,
+    ///     itemStyle: {
+    ///         color: '#b3cde3'
+    ///     },
+    ///     lineStyle: {
+    ///         color: 'source',
+    ///         opacity: 0.6
+    ///     }
+    /// }]  
+    /// You can also only set a certain layer:  levels: [{
+    ///     depth: 3,
+    ///     itemStyle: {
+    ///         color: '#fbb4ae'
+    ///     },
+    ///     lineStyle: {
+    ///         color: 'source',
+    ///         opacity: 0.6
+    ///     }
     /// }]
     /// ]]>
     /// </summary>
-    [JsonPropertyName("data")]
-    public SeriesDataList<SunburstSeriesData>? Data { get; set; } 
+    [JsonPropertyName("levels")]
+    public List<SankeySeryLevel>? Levels { get; set; } 
 
     /// <summary>
-    /// <![CDATA[
-    /// The action of clicking a sector, which can be:   false : nothing happens.
-    ///  'rootToNode' : use the clicked sector as root.
-    ///  'link' ：if link is set, the page will redirect to it.
-    /// ]]>
-    /// </summary>
-    [JsonPropertyName("nodeClick")]
-    [DefaultValue("rootToNode")]
-    public SunburstNodeClick? NodeClick { get; set; } 
-
-    /// <summary>
-    /// <![CDATA[
-    /// Sorting method that sectors use based on value , which is the sum of children when not set.
-    /// The default value 'desc' states for descending order, while it can also be set to be 'asc' for ascending order, or null for not sorting, or callback function like:  function(nodeA, nodeB) {
-    ///     return nodeA.getValue() - nodeB.getValue();
-    /// }
-    /// ]]>
-    /// </summary>
-    [JsonPropertyName("sort")]
-    [DefaultValue("desc")]
-    [JsonInclude]
-    internal object? SortObject { get; set; }
-
-    /// <summary>
-    /// <![CDATA[
-    /// Sorting method that sectors use based on value , which is the sum of children when not set.
-    /// The default value 'desc' states for descending order, while it can also be set to be 'asc' for ascending order, or null for not sorting, or callback function like:  function(nodeA, nodeB) {
-    ///     return nodeA.getValue() - nodeB.getValue();
-    /// }
-    /// ]]>
-    /// </summary>
-    [JsonIgnore]
-    public SortOrder? Sort
-    {
-        	get => (SortOrder?)SortObject;
-        	set => SortObject = value;
-    }
-
-    /// <summary>
-    /// A sort function.
-    /// </summary>
-    [JsonIgnore]
-    public JavascriptFunction? SortFunction
-    {
-        	get => SortObject as JavascriptFunction;
-        	set => SortObject = value;
-    }
-
-    /// <summary>
-    /// If there is no name , whether need to render it.
-    /// </summary>
-    [JsonPropertyName("renderLabelForZeroData")]
-    [DefaultValue(false)]
-    public bool? RenderLabelForZeroData { get; set; } 
-
-    /// <summary>
-    /// Whether the layout of sectors of sunburst chart is clockwise.
-    /// </summary>
-    [JsonPropertyName("clockwise")]
-    [DefaultValue("true")]
-    public bool? Clockwise { get; set; } 
-
-    /// <summary>
-    /// The start angle, which range is [0, 360].
-    /// </summary>
-    [JsonPropertyName("startAngle")]
-    [DefaultValue("90")]
-    public double? StartAngle { get; set; } 
-
-    /// <summary>
-    /// <![CDATA[
-    /// To specify the style of the label of the sector.
-    ///  
-    /// Priority： series.data.label > series.levels.label > series.label 。  
-    /// Text label of sunburst chart, to explain some data information about graphic item like value, name and so on.
-    /// label is placed under itemStyle in ECharts 2.x.
-    /// In ECharts 3, to make the configuration structure flatter, label is taken to be at the same level with itemStyle , and has emphasis as itemStyle does.
-    /// ]]>
+    /// label describes the text label style in each rectangular node.
     /// </summary>
     [JsonPropertyName("label")]
     public Label? Label { get; set; } 
-
-    /// <summary>
-    /// Since v5.0.0   
-    /// Configuration of label guide line.
-    /// </summary>
-    [JsonPropertyName("labelLine")]
-    public LabelLine? LabelLine { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -267,37 +272,38 @@ public partial class SunburstSeries
     public ObjectOrFunction? LabelLayout { get; set; } 
 
     /// <summary>
-    /// <![CDATA[
-    /// To specify the style of the sector of the sunburst chart.
-    ///  
-    /// You can specify the style of all sectors with series.itemStyle , or specify the style of each level of sectors with series.levels.itemStyle , or specify a specific style for each sector with series.data.itemStyle .
-    /// The priority is from low to high, that is, if series.data.itemStyle is defined, it will override series.itemStyle and series.levels.itemStyle .
-    ///  
-    /// Priority： series.data.itemStyle > series.levels.itemStyle > series.itemStyle 。
-    /// ]]>
+    /// The style of node rectangle in Sankey diagram.
     /// </summary>
     [JsonPropertyName("itemStyle")]
     public ItemStyle? ItemStyle { get; set; } 
 
     /// <summary>
+    /// The edge style of Sankey diagram
+    /// </summary>
+    [JsonPropertyName("lineStyle")]
+    public LineStyle? LineStyle { get; set; } 
+
+    /// <summary>
     /// Configurations of emphasis state.
     /// </summary>
     [JsonPropertyName("emphasis")]
-    public object? Emphasis { get; set; } 
+    public Emphasis? Emphasis { get; set; } 
 
     /// <summary>
+    /// Since v5.0.0   
     /// Configurations of blur state.
     /// Available when emphasis.focus is set.
     /// </summary>
     [JsonPropertyName("blur")]
-    public object? Blur { get; set; } 
+    public Blur? Blur { get; set; } 
 
     /// <summary>
-    /// Configurations of select state.
+    /// Since v5.0.0   
+    /// Configurations of selected state.
     /// Available when selectedMode is set.
     /// </summary>
     [JsonPropertyName("select")]
-    public object? Select { get; set; } 
+    public Select? Select { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -316,42 +322,58 @@ public partial class SunburstSeries
 
     /// <summary>
     /// <![CDATA[
-    /// Multiple levels  
-    /// Sunburst chart has a leveled structure.
-    /// To make it convenient, we provide a levels option, which is an array.
-    /// The first element of it is for returning to parent node when data mining.
-    /// The following elements are for levels from center to outside.
-    ///  
-    /// For example, if we don't want the data mining, and want to set the most inside sector to be red, and text to be blue, we can set the option like:  series: {
-    ///     // ...
-    ///     levels: [
-    ///         {
-    ///             // Blank setting for data mining
-    ///         },
-    ///         {
-    ///             // The most inside level
-    ///             itemStyle: {
-    ///                 color: 'red'
-    ///             },
-    ///             label: {
-    ///                 color: 'blue'
-    ///             }
-    ///         },
-    ///         {
-    ///             // The second level
-    ///         }
-    ///     ]
-    /// }
+    /// The nodes list of the sankey diagram.
+    ///  data: [{
+    ///     name: 'node1',
+    ///     // This attribute decides the layer of the current node.
+    ///     depth: 0
+    /// }, {
+    ///     name: 'node2',
+    ///     depth: 1
+    /// }]  
+    /// Notice: The name of the node cannot be repeated.
     /// ]]>
     /// </summary>
-    [JsonPropertyName("levels")]
-    public List<SunburstSeriesLevel>? Levels { get; set; } 
+    [JsonPropertyName("data")]
+    public List<SankeySeryData>? Data { get; set; } 
 
     /// <summary>
-    /// tooltip settings in this series.
+    /// Equals to data
     /// </summary>
-    [JsonPropertyName("tooltip")]
-    public Tooltip? Tooltip { get; set; } 
+    [JsonPropertyName("nodes")]
+    //TODO: Type Warning: array type 'nodes' in 'SankeySery' will be mapped to List<object>
+    public List<object>? Nodes { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// The links between nodes.
+    /// Notes: The Sankey diagram theoretically only supports Directed Acyclic Graph(DAG), so please make sure that there is no cycle in the links.
+    /// For instance:  links: [{
+    ///     source: 'n1',
+    ///     target: 'n2'
+    /// }, {
+    ///     source: 'n2',
+    ///     target: 'n3'
+    /// }]
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("links")]
+    public List<SankeySeryLink>? Links { get; set; } 
+
+    /// <summary>
+    /// Equals to links
+    /// </summary>
+    [JsonPropertyName("edges")]
+    //TODO: Type Warning: array type 'edges' in 'SankeySery' will be mapped to List<object>
+    public List<object>? Edges { get; set; } 
+
+    /// <summary>
+    /// Whether to ignore mouse events.
+    /// Default value is false, for triggering and responding to mouse events.
+    /// </summary>
+    [JsonPropertyName("silent")]
+    [DefaultValue(false)]
+    public bool? Silent { get; set; } 
 
     /// <summary>
     /// Whether to enable animation.
@@ -383,7 +405,7 @@ public partial class SunburstSeries
     /// Varied easing effects can be found at easing effect example .
     /// </summary>
     [JsonPropertyName("animationEasing")]
-    [DefaultValue("cubicOut")]
+    [DefaultValue("linear")]
     public AnimationEasing? AnimationEasing { get; set; } 
 
     /// <summary>
@@ -428,5 +450,11 @@ public partial class SunburstSeries
     [JsonPropertyName("animationDelayUpdate")]
     [DefaultValue(0)]
     public NumberOrFunction? AnimationDelayUpdate { get; set; } 
+
+    /// <summary>
+    /// tooltip settings in this series.
+    /// </summary>
+    [JsonPropertyName("tooltip")]
+    public Tooltip? Tooltip { get; set; } 
 
 }

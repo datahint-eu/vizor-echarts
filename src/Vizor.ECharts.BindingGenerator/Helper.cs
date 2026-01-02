@@ -20,6 +20,38 @@ internal static class Helper
         return sb.ToString();
     }
 
+    /// <summary>
+    /// Singularize a plural property name for use as a type name in array items.
+    /// For example: "links" -> "link", "levels" -> "level", "items" -> "item"
+    /// Special cases: "series" stays "series" (singular and plural are the same)
+    /// </summary>
+    public static string Singularize(this string input)
+    {
+        if (string.IsNullOrEmpty(input))
+            return input;
+
+        // Special cases where singular and plural are the same
+        if (input.Equals("series", StringComparison.OrdinalIgnoreCase))
+            return input;
+
+        // Common plural forms
+        if (input.EndsWith("ies", StringComparison.OrdinalIgnoreCase))
+            return input[..^3] + "y";
+        if (input.EndsWith("ves", StringComparison.OrdinalIgnoreCase))
+            return input[..^3] + "f";
+        if (input.EndsWith("xes", StringComparison.OrdinalIgnoreCase) || 
+            input.EndsWith("zes", StringComparison.OrdinalIgnoreCase) ||
+            input.EndsWith("ches", StringComparison.OrdinalIgnoreCase) ||
+            input.EndsWith("shes", StringComparison.OrdinalIgnoreCase))
+            return input[..^2];
+        if (input.EndsWith("es", StringComparison.OrdinalIgnoreCase))
+            return input[..^2];
+        if (input.EndsWith("s", StringComparison.OrdinalIgnoreCase) && !input.EndsWith("ss", StringComparison.OrdinalIgnoreCase))
+            return input[..^1];
+
+        return input;
+    }
+
     public static List<string> ParsePropertyTypes(JsonElement value)
     {
         List<string> types = new();

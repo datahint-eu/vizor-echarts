@@ -189,7 +189,11 @@ internal abstract class BasePhase
             // we need to define an item type, e.g. MediaItem and pass this to the MapType function
             // MapType can then generate List<MediaItem> instead of List<object>
 
-            var itemName = parentType.Name + Helper.ToClassName(propName);
+            // Singularize the property name for array items: "links" -> "link", "levels" -> "level"
+            var singularPropName = propName.Singularize();
+            var itemName = parentType.Name + Helper.ToClassName(singularPropName);
+            if (propName != singularPropName)
+                Console.WriteLine($"DEBUG: Singularized '{propName}' -> '{singularPropName}' for type '{itemName}'");
             optProp.ItemType = ParseObjectType(optProp, itemName, itemsProp, dataPrefix: itemName, typeGroup: parentType.TypeGroup ?? "Options");
         }
 
@@ -243,6 +247,15 @@ internal abstract class BasePhase
 
         // Special case: Detail.Width and Detail.Height should accept both numbers and percentage strings
         if ((prop.Name == "width" || prop.Name == "height") && parent.DotNetType == "Detail")
+        {
+            var numberOrStringType = new MappedCustomType(typeof(NumberOrString));
+            diagnosticCollector.RecordSupported(propertyPath, types, numberOrStringType.DotNetType);
+            return numberOrStringType;
+        }
+
+        // Special case: dimension property accepts both numeric dimension indices and string dimension names
+        // ECharts examples show usage like: dimension: 1, dimension: 2 (numeric) or dimension: 'sales', dimension: 'profit' (string)
+        if (prop.Name == "dimension" && string.Join(",", types) == "string")
         {
             var numberOrStringType = new MappedCustomType(typeof(NumberOrString));
             diagnosticCollector.RecordSupported(propertyPath, types, numberOrStringType.DotNetType);

@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class SunburstSeries
+public partial class SunburstSery
 {
     /// <summary>
     /// 
@@ -123,7 +123,7 @@ public partial class SunburstSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("data")]
-    public SeriesDataList<SunburstSeriesData>? Data { get; set; } 
+    public List<SunburstSeryData>? Data { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -134,7 +134,8 @@ public partial class SunburstSeries
     /// </summary>
     [JsonPropertyName("nodeClick")]
     [DefaultValue("rootToNode")]
-    public SunburstNodeClick? NodeClick { get; set; } 
+    //TODO: Type Warning: Failed to map property 'nodeClick' in type 'SunburstSery' with types 'boolean,enum'
+    public object? NodeClick { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -146,33 +147,8 @@ public partial class SunburstSeries
     /// </summary>
     [JsonPropertyName("sort")]
     [DefaultValue("desc")]
-    [JsonInclude]
-    internal object? SortObject { get; set; }
-
-    /// <summary>
-    /// <![CDATA[
-    /// Sorting method that sectors use based on value , which is the sum of children when not set.
-    /// The default value 'desc' states for descending order, while it can also be set to be 'asc' for ascending order, or null for not sorting, or callback function like:  function(nodeA, nodeB) {
-    ///     return nodeA.getValue() - nodeB.getValue();
-    /// }
-    /// ]]>
-    /// </summary>
-    [JsonIgnore]
-    public SortOrder? Sort
-    {
-        	get => (SortOrder?)SortObject;
-        	set => SortObject = value;
-    }
-
-    /// <summary>
-    /// A sort function.
-    /// </summary>
-    [JsonIgnore]
-    public JavascriptFunction? SortFunction
-    {
-        	get => SortObject as JavascriptFunction;
-        	set => SortObject = value;
-    }
+    //TODO: Type Warning: enum,function type 'sort' in 'SunburstSery' could not resolve enum type
+    public object? Sort { get; set; } 
 
     /// <summary>
     /// If there is no name , whether need to render it.
@@ -345,7 +321,7 @@ public partial class SunburstSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("levels")]
-    public List<SunburstSeriesLevel>? Levels { get; set; } 
+    public List<SunburstSeryLevel>? Levels { get; set; } 
 
     /// <summary>
     /// tooltip settings in this series.

@@ -7,8 +7,15 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class Geo
+public partial class MapSery
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    [JsonPropertyName("type")]
+    [DefaultValue("map")]
+    public string Type { get; init; }  = "map";
+
     /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
@@ -17,27 +24,38 @@ public partial class Geo
     public string? Id { get; set; } 
 
     /// <summary>
-    /// Whether to show the geo component.
+    /// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
     /// </summary>
-    [JsonPropertyName("show")]
-    [DefaultValue(true)]
-    public bool? Show { get; set; } 
+    [JsonPropertyName("name")]
+    public string? Name { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v5.2.0   
+    /// The policy to take color from option.color .
+    /// Valid values:   'series' : assigns the colors in the palette by series, so that all data in the same series are in the same color;  'data' : assigns colors in the palette according to data items, with each data item using a different color.
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("colorBy")]
+    [DefaultValue("series")]
+    public ColorBy? ColorBy { get; set; } 
 
     /// <summary>
     /// <![CDATA[
     /// Map name registered in registerMap .
     ///  
-    /// Use geoJSON  $.get('map/china_geo.json', function (chinaJson) {
+    /// Use geoJSON  $.get('map/china_geo.json', function (geoJson) {
     ///     echarts.registerMap('china', {geoJSON: geoJson});
     ///     var chart = echarts.init(document.getElementById('main'));
     ///     chart.setOption({
-    ///         geo: [{
+    ///         series: [{
+    ///             type: 'map',
     ///             map: 'china',
     ///             ...
     ///         }]
     ///     });
     /// });  
-    /// See also geoJSON hexbin .
+    /// See also USA Population Estimates .
     ///  
     /// The demo above shows that ECharts can uses geoJSON format as map outline.
     /// You can use third-party geoJSON data (like maps ) and register them into ECharts.
@@ -46,13 +64,14 @@ public partial class Geo
     ///     echarts.registerMap('topo', {svg: svg});
     ///     var chart = echarts.init(document.getElementById('main'));
     ///     chart.setOption({
-    ///         geo: [{
+    ///         series: [{
+    ///             type: 'map',
     ///             map: 'topo',
     ///             ...
     ///         }]
     ///     });
     /// });  
-    /// See also Flight Seatmap .
+    /// See also Beef Cuts .
     ///  
     /// The demo above shows that SVG format can be used in ECharts.
     /// See more info in SVG Base Map .
@@ -105,17 +124,15 @@ public partial class Geo
 
     /// <summary>
     /// <![CDATA[
-    /// Center of current view-port, in longitude and latitude by default.
-    /// Use the projected coordinates if projection is set.
+    /// Center of current view-port.
+    /// It can be an array containing two number s in pixels or string s in percentage relative to the container width/height.
+    /// string is supported from version 5.3.3 .
     ///  
-    /// Example:  center: [115.97, 29.71]  projection: {
-    ///     projection: (pt) => project(pt)
-    /// },
-    /// center: project([115.97, 29.71])
+    /// Example:  center: [115.97, '30%']
     /// ]]>
     /// </summary>
     [JsonPropertyName("center")]
-    //TODO: Type Warning: array type 'center' in 'geo' will be mapped to List<object>
+    //TODO: Type Warning: array type 'center' in 'MapSery' will be mapped to List<object>
     public List<object>? Center { get; set; } 
 
     /// <summary>
@@ -144,7 +161,7 @@ public partial class Geo
     /// ]]>
     /// </summary>
     [JsonPropertyName("boundingCoords")]
-    //TODO: Type Warning: array type 'boundingCoords' in 'geo' will be mapped to List<object>
+    //TODO: Type Warning: array type 'boundingCoords' in 'MapSery' will be mapped to List<object>
     public List<object>? BoundingCoords { get; set; } 
 
     /// <summary>
@@ -226,13 +243,6 @@ public partial class Geo
     /// </summary>
     [JsonPropertyName("select")]
     public Select? Select { get; set; } 
-
-    /// <summary>
-    /// Since v5.1.0   
-    /// Map area style in blurred state.
-    /// </summary>
-    [JsonPropertyName("blur")]
-    public Blur? Blur { get; set; } 
 
     /// <summary>
     /// zlevel value of all graphical elements in .
@@ -325,7 +335,7 @@ public partial class Geo
     /// ]]>
     /// </summary>
     [JsonPropertyName("layoutCenter")]
-    //TODO: Type Warning: array type 'layoutCenter' in 'geo' will be mapped to List<object>
+    //TODO: Type Warning: array type 'layoutCenter' in 'MapSery' will be mapped to List<object>
     public List<object>? LayoutCenter { get; set; } 
 
     /// <summary>
@@ -336,21 +346,176 @@ public partial class Geo
     public NumberOrString? LayoutSize { get; set; } 
 
     /// <summary>
+    /// In default case, map series create exclusive geo component for themselves.
+    /// But geoIndex can be used to specify an outer geo component , which can be shared with other series like pie .
+    /// Moreover, the region color of the outer geo component can be controlled by the map series (via visualMap ).
+    ///  
+    /// When geoIndex specified, series-map.map other style configurations like series-map.itemStyle will not work, but corresponding configurations in geo component will be used.
+    ///  
+    /// For example:
+    /// </summary>
+    [JsonPropertyName("geoIndex")]
+    public int? GeoIndex { get; set; } 
+
+    /// <summary>
     /// <![CDATA[
-    /// Configure style for specified regions.
-    /// For example:  regions: [{
-    ///     name: 'Guangdong',
-    ///     itemStyle: {
-    ///         areaColor: 'red',
-    ///         color: 'red'
-    ///     }
-    /// }]  
-    /// The region color can also be controlled by map series.
-    /// See series-map.geoIndex .
+    /// Value of multiple series with the same map type can use this option to get a statistical value.
+    ///  
+    /// Supported statistical methods:   'sum'  'average'  'max'  'min'
     /// ]]>
     /// </summary>
-    [JsonPropertyName("regions")]
-    public List<GeoRegion>? Regions { get; set; } 
+    [JsonPropertyName("mapValueCalculation")]
+    [DefaultValue("sum")]
+    public string? MapValueCalculation { get; set; } 
+
+    /// <summary>
+    /// Show the symbol in related area (dot of series symbol).
+    /// Available when legend component exists.
+    /// </summary>
+    [JsonPropertyName("showLegendSymbol")]
+    public bool? ShowLegendSymbol { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// When dataset is used, seriesLayoutBy specifies whether the column or the row of dataset is mapped to the series, namely, the series is "layout" on columns or rows.
+    /// Optional values:   'column': by default, the columns of dataset are mapped the series.
+    /// In this case, each column represents a dimension.
+    ///  'row'：the rows of dataset are mapped to the series.
+    /// In this case, each row represents a dimension.
+    ///   
+    /// Check this example .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("seriesLayoutBy")]
+    [DefaultValue("column")]
+    public SeriesLayoutBy? SeriesLayoutBy { get; set; } 
+
+    /// <summary>
+    /// If series.data is not specified, and dataset exists, the series will use dataset .
+    /// datasetIndex specifies which dataset will be used.
+    /// </summary>
+    [JsonPropertyName("datasetIndex")]
+    [DefaultValue(0)]
+    public int? DatasetIndex { get; set; } 
+
+    /// <summary>
+    /// A group ID assigned to all data items in the series.
+    ///  
+    /// This option has a lower priority than groupId , which means when groupId is specified for a certain data item the dataGroupId will be simply ignored for that data item.
+    /// For more information, please see series.data.groupId .
+    /// </summary>
+    [JsonPropertyName("dataGroupId")]
+    public string? DataGroupId { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v5.0.0   
+    /// Unified layout configuration of labels.
+    ///  
+    /// It provide a chance to adjust the labels' (x, y) position, alignment based on the original layout each series provides.
+    ///  
+    /// This option can be a callback with following parameters.
+    ///  // corresponding index of data
+    /// dataIndex: number
+    /// // corresponding type of data.
+    /// Only available in graph, in which it can be 'node' or 'edge'
+    /// dataType?: string
+    /// // corresponding index of series
+    /// seriesIndex: number
+    /// // Displayed text of label.
+    /// text: string
+    /// // Bounding rectangle of label.
+    /// labelRect: {x: number, y: number, width: number, height: number}
+    /// // Horizontal alignment of label.
+    /// align: 'left' | 'center' | 'right'
+    /// // Vertical alignment of label.
+    /// verticalAlign: 'top' | 'middle' | 'bottom'
+    /// // Bounding rectangle of the element corresponding to.
+    /// rect: {x: number, y: number, width: number, height: number}
+    /// // Default points array of labelLine.
+    /// Currently only provided in pie and funnel series.
+    /// // It's null in other series.
+    /// labelLinePoints?: number[][]  
+    /// Example:  
+    /// Align the labels on the right.
+    /// Left 10px margin to the edge.
+    ///  labelLayout(params) {
+    ///     return {
+    ///         x: params.rect.x + 10,
+    ///         y: params.rect.y + params.rect.height / 2,
+    ///         verticalAlign: 'middle',
+    ///         align: 'left'
+    ///     }
+    /// }  
+    /// Set the text size based on the size of element bounding rectangle.
+    ///  labelLayout(params) {
+    ///     return {
+    ///         fontSize: Math.max(params.rect.width / 10, 5)
+    ///     };
+    /// }
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("labelLayout")]
+    public ObjectOrFunction? LabelLayout { get; set; } 
+
+    /// <summary>
+    /// Since v5.0.0   
+    /// Configuration of label guide line.
+    /// </summary>
+    [JsonPropertyName("labelLine")]
+    public LabelLine? LabelLine { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Data array of map series, which can be a single data value, like:  [12, 34, 56, 10, 23]  
+    /// Or, if need extra dimensions for components like visualMap to map to graphic attributes like color, it can also be in the form of array.
+    /// For example:  [[12, 14], [34, 50], [56, 30], [10, 15], [23, 10]]  
+    /// In this case, we can assign the second value in each array item to visualMap component.
+    ///  
+    /// More likely, we need to assign name to each data item, in which case each item should be an object:  [{
+    ///     // name of date item
+    ///     name: 'data1',
+    ///     // value of date item is 8
+    ///     value: 10
+    /// }, {
+    ///     name: 'data2',
+    ///     value: 20
+    /// }]  
+    /// Each data item can be further customized:  [{
+    ///     name: 'data1',
+    ///     value: 10
+    /// }, {
+    ///     // name of data item
+    ///     name: 'data2',
+    ///     value : 56,
+    ///     // user-defined label format that only useful for this data item
+    ///     label: {},
+    ///     // user-defined special itemStyle that only useful for this data item
+    ///     itemStyle:{}
+    /// }]
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("data")]
+    public List<MapSeryData>? Data { get; set; } 
+
+    /// <summary>
+    /// Mark point in a chart.
+    /// </summary>
+    [JsonPropertyName("markPoint")]
+    public MarkPoint? MarkPoint { get; set; } 
+
+    /// <summary>
+    /// Use a line in the chart to illustrate.
+    /// </summary>
+    [JsonPropertyName("markLine")]
+    public MarkLine? MarkLine { get; set; } 
+
+    /// <summary>
+    /// Used to mark an area in chart.
+    /// For example, mark a time interval.
+    /// </summary>
+    [JsonPropertyName("markArea")]
+    public MarkArea? MarkArea { get; set; } 
 
     /// <summary>
     /// Whether to ignore mouse events.
@@ -361,15 +526,25 @@ public partial class Geo
     public bool? Silent { get; set; } 
 
     /// <summary>
-    /// Since v5.1.0   
-    /// tooltip settings in the coordinate system component.
+    /// <![CDATA[
+    /// Since v5.2.0   
+    /// Configuration related to universal transition animation.
     ///  
-    /// General Introduction:  
-    /// tooltip can be configured on different places:   
-    /// Configured on global: tooltip   
-    /// Configured in a coordinate system: grid.tooltip , polar.tooltip , single.tooltip   
-    /// Configured in a series: series.tooltip   
-    /// Configured in each item of series.data : series.data.tooltip
+    /// Universal Transition provides the ability to morph between any series.
+    /// With this feature enabled, each time setOption , transitions between series with the same id will be automatically associated with each other.
+    ///  
+    /// One-to-many or many-to-one animations such as drill-down, aggregation, etc.
+    /// can also be achieved by specifying data items' groupId and childGroupId .
+    ///  
+    /// This can be enabled directly by configuring universalTransition: true in the series.
+    /// It is also possible to provide an object for more detailed configuration.
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("universalTransition")]
+    public UniversalTransition? UniversalTransition { get; set; } 
+
+    /// <summary>
+    /// tooltip settings in this series.
     /// </summary>
     [JsonPropertyName("tooltip")]
     public Tooltip? Tooltip { get; set; } 

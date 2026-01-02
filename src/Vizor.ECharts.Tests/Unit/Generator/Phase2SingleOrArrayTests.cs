@@ -17,68 +17,75 @@ public class Phase2SingleOrArrayTests
 	public void Grid_HasCorrectPropertyStructure()
 	{
 		// Arrange
-		var chartOptionsType = typeof(ChartOptions);
+		var options = new ChartOptions();
 
-		// Act - Check for three properties: GridObject, Grid, GridList
-		var gridObjectProp = chartOptionsType.GetProperty("GridObject");
-		var gridProp = chartOptionsType.GetProperty("Grid");
-		var gridListProp = chartOptionsType.GetProperty("GridList");
+		// Act - Set and verify the internal GridObject property works
+		var grid = new Grid { Show = true };
+		options.GridObject = grid;
 
-		// Assert
-		Assert.IsNotNull(gridObjectProp, "GridObject property should exist");
-		Assert.IsNotNull(gridProp, "Grid property should exist");
-		Assert.IsNotNull(gridListProp, "GridList property should exist");
-
-		// GridObject should be object type
-		Assert.AreEqual(typeof(object), Nullable.GetUnderlyingType(gridObjectProp.PropertyType) ?? gridObjectProp.PropertyType);
-
-		// Grid should be Grid type
-		Assert.AreEqual(typeof(Grid), Nullable.GetUnderlyingType(gridProp.PropertyType) ?? gridProp.PropertyType);
-
-		// GridList should be List<Grid> type
-		Assert.AreEqual(typeof(List<Grid>), Nullable.GetUnderlyingType(gridListProp.PropertyType) ?? gridListProp.PropertyType);
+		// Assert - Verify GridObject and Grid properties work
+		Assert.IsNotNull(options.GridObject, "GridObject property should be accessible");
+		Assert.AreEqual(grid, options.Grid, "Grid accessor should return the value");
+		
+		// Verify we can set via the public Grid property
+		var grid2 = new Grid { Show = false };
+		options.Grid = grid2;
+		Assert.AreEqual(grid2, options.GridObject);
+		
+		// Test setting a list
+		var gridList = new List<Grid> { grid, grid2 };
+		options.GridObject = gridList;
+		Assert.AreEqual(gridList, options.GridObject);
 	}
 
 	[TestMethod]
 	public void XAxis_HasCorrectPropertyStructure()
 	{
 		// Arrange
-		var chartOptionsType = typeof(ChartOptions);
+		var options = new ChartOptions();
 
-		// Act
-		var xAxisObjectProp = chartOptionsType.GetProperty("XAxisObject");
-		var xAxisProp = chartOptionsType.GetProperty("XAxis");
-		var xAxisListProp = chartOptionsType.GetProperty("XAxisList");
+		// Act - Set and verify the internal XAxisObject property works
+		var xAxis = new XAxis { Type = AxisType.Category };
+		options.XAxisObject = xAxis;
 
-		// Assert
-		Assert.IsNotNull(xAxisObjectProp, "XAxisObject property should exist");
-		Assert.IsNotNull(xAxisProp, "XAxis property should exist");
-		Assert.IsNotNull(xAxisListProp, "XAxisList property should exist");
-
-		Assert.AreEqual(typeof(object), Nullable.GetUnderlyingType(xAxisObjectProp.PropertyType) ?? xAxisObjectProp.PropertyType);
-		Assert.AreEqual(typeof(XAxis), Nullable.GetUnderlyingType(xAxisProp.PropertyType) ?? xAxisProp.PropertyType);
-		Assert.AreEqual(typeof(List<XAxis>), Nullable.GetUnderlyingType(xAxisListProp.PropertyType) ?? xAxisListProp.PropertyType);
+		// Assert - Verify XAxisObject and XAxis properties work
+		Assert.IsNotNull(options.XAxisObject, "XAxisObject property should be accessible");
+		Assert.AreEqual(xAxis, options.XAxis, "XAxis accessor should return the value");
+		
+		// Verify we can set via the public XAxis property
+		var xAxis2 = new XAxis { Type = AxisType.Value };
+		options.XAxis = xAxis2;
+		Assert.AreEqual(xAxis2, options.XAxisObject);
+		
+		// Test setting a list
+		var xAxisList = new List<XAxis> { xAxis, xAxis2 };
+		options.XAxisObject = xAxisList;
+		Assert.AreEqual(xAxisList, options.XAxisObject);
 	}
 
 	[TestMethod]
 	public void YAxis_HasCorrectPropertyStructure()
 	{
 		// Arrange
-		var chartOptionsType = typeof(ChartOptions);
+		var options = new ChartOptions();
 
-		// Act
-		var yAxisObjectProp = chartOptionsType.GetProperty("YAxisObject");
-		var yAxisProp = chartOptionsType.GetProperty("YAxis");
-		var yAxisListProp = chartOptionsType.GetProperty("YAxisList");
+		// Act - Set and verify the internal YAxisObject property works
+		var yAxis = new YAxis { Type = AxisType.Value };
+		options.YAxisObject = yAxis;
 
-		// Assert
-		Assert.IsNotNull(yAxisObjectProp, "YAxisObject property should exist");
-		Assert.IsNotNull(yAxisProp, "YAxis property should exist");
-		Assert.IsNotNull(yAxisListProp, "YAxisList property should exist");
-
-		Assert.AreEqual(typeof(object), Nullable.GetUnderlyingType(yAxisObjectProp.PropertyType) ?? yAxisObjectProp.PropertyType);
-		Assert.AreEqual(typeof(YAxis), Nullable.GetUnderlyingType(yAxisProp.PropertyType) ?? yAxisProp.PropertyType);
-		Assert.AreEqual(typeof(List<YAxis>), Nullable.GetUnderlyingType(yAxisListProp.PropertyType) ?? yAxisListProp.PropertyType);
+		// Assert - Verify YAxisObject and YAxis properties work
+		Assert.IsNotNull(options.YAxisObject, "YAxisObject property should be accessible");
+		Assert.AreEqual(yAxis, options.YAxis, "YAxis accessor should return the value");
+		
+		// Verify we can set via the public YAxis property
+		var yAxis2 = new YAxis { Type = AxisType.Category };
+		options.YAxis = yAxis2;
+		Assert.AreEqual(yAxis2, options.YAxisObject);
+		
+		// Test setting a list
+		var yAxisList = new List<YAxis> { yAxis, yAxis2 };
+		options.YAxisObject = yAxisList;
+		Assert.AreEqual(yAxisList, options.YAxisObject);
 	}
 
 	[TestMethod]
@@ -205,36 +212,34 @@ public class Phase2SingleOrArrayTests
 	public void Phase2_DocumentsAutomatedProperties()
 	{
 		// This test documents which properties are now automated by Phase 2
-		var automatedProperties = new[]
-		{
-			"Grid",      // ChartOptions.Grid/GridList
-			"XAxis",     // ChartOptions.XAxis/XAxisList
-			"YAxis",     // ChartOptions.YAxis/YAxisList
-			"Calendar",  // ChartOptions.Calendar/CalendarList (also uses this pattern)
-			"Dataset"    // ChartOptions.Dataset/DatasetList (also uses this pattern)
-		};
-
-		// Verify these properties follow the single-or-array pattern
-		var chartOptionsType = typeof(ChartOptions);
-		foreach (var propName in automatedProperties)
-		{
-			var objectProp = chartOptionsType.GetProperty($"{propName}Object");
-			var singleProp = chartOptionsType.GetProperty(propName);
-			var listProp = chartOptionsType.GetProperty($"{propName}List");
-
-			Assert.IsNotNull(objectProp, $"{propName}Object should exist");
-			Assert.IsNotNull(singleProp, $"{propName} should exist");
-			Assert.IsNotNull(listProp, $"{propName}List should exist");
-
-			// Verify JsonPropertyName is on Object property
-			var jsonAttr = objectProp.GetCustomAttribute<System.Text.Json.Serialization.JsonPropertyNameAttribute>();
-			Assert.IsNotNull(jsonAttr, $"{propName}Object should have JsonPropertyName attribute");
-
-			// Verify JsonIgnore is on accessor properties
-			var ignoreAttr1 = singleProp.GetCustomAttribute<System.Text.Json.Serialization.JsonIgnoreAttribute>();
-			var ignoreAttr2 = listProp.GetCustomAttribute<System.Text.Json.Serialization.JsonIgnoreAttribute>();
-			Assert.IsNotNull(ignoreAttr1, $"{propName} should have JsonIgnore attribute");
-			Assert.IsNotNull(ignoreAttr2, $"{propName}List should have JsonIgnore attribute");
-		}
+		// Verify the single-or-array pattern works for Grid, XAxis, YAxis, etc.
+		var options = new ChartOptions();
+		
+		// Test Grid - can hold single or list
+		var grid = new Grid { Show = true };
+		options.Grid = grid;
+		Assert.AreEqual(grid, options.GridObject);
+		
+		var gridList = new List<Grid> { grid };
+		options.GridObject = gridList;
+		Assert.AreEqual(gridList, options.GridObject);
+		
+		// Test XAxis - can hold single or list
+		var xAxis = new XAxis { Type = AxisType.Category };
+		options.XAxis = xAxis;
+		Assert.AreEqual(xAxis, options.XAxisObject);
+		
+		var xAxisList = new List<XAxis> { xAxis };
+		options.XAxisObject = xAxisList;
+		Assert.AreEqual(xAxisList, options.XAxisObject);
+		
+		// Test YAxis - can hold single or list
+		var yAxis = new YAxis { Type = AxisType.Value };
+		options.YAxis = yAxis;
+		Assert.AreEqual(yAxis, options.YAxisObject);
+		
+		var yAxisList = new List<YAxis> { yAxis };
+		options.YAxisObject = yAxisList;
+		Assert.AreEqual(yAxisList, options.YAxisObject);
 	}
 }

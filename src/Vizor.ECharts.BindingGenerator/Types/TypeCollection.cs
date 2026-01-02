@@ -165,11 +165,11 @@ internal class TypeCollection
             case ("nodes", "SankeySeries"):
                 return new GenericListType(new SimpleType("SankeySeriesData"));
             case ("edges", "SankeySeries"):
-                return new GenericListType(new SimpleType("SankeySeriesLinks"));
+                return new GenericListType(new SimpleType("SankeySeriesLink"));
             case ("nodes", "GraphSeries"):
                 return new GenericListType(new SimpleType("GraphSeriesData"));
             case ("edges", "GraphSeries"):
-                return new GenericListType(new SimpleType("GraphSeriesLinks"));
+                return new GenericListType(new SimpleType("GraphSeriesLink"));
         }
 
         // did we succeed in determining the item type ?

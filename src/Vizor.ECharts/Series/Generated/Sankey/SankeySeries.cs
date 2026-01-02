@@ -211,7 +211,7 @@ public partial class SankeySeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("levels")]
-    public List<SankeySeriesLevels>? Levels { get; set; } 
+    public List<SankeySeriesLevel>? Levels { get; set; } 
 
     /// <summary>
     /// label describes the text label style in each rectangular node.
@@ -356,13 +356,13 @@ public partial class SankeySeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("links")]
-    public List<SankeySeriesLinks>? Links { get; set; } 
+    public List<SankeySeriesLink>? Links { get; set; } 
 
     /// <summary>
     /// Equals to links
     /// </summary>
     [JsonPropertyName("edges")]
-    public List<SankeySeriesLinks>? Edges { get; set; } 
+    public List<SankeySeriesLink>? Edges { get; set; } 
 
     /// <summary>
     /// Whether to ignore mouse events.
