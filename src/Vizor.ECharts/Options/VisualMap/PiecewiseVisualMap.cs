@@ -17,4 +17,14 @@ public partial class PiecewiseVisualMap
     {
         return visualMap == null ? new List<object>() : new List<object> { visualMap };
     }
+    
+    /// <summary>
+    /// Implicit conversion: List&lt;VisualMapPiece&gt; → List&lt;VisualMapPiece&gt;
+    /// Allows direct assignment of VisualMapPiece lists to Pieces property.
+    /// This supports the pattern: Pieces = GetPieces()
+    /// </summary>
+    public void SetPieces(List<VisualMapPiece> pieces)
+    {
+        Pieces = pieces;
+    }
 }

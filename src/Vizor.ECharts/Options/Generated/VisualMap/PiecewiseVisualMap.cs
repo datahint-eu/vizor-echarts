@@ -67,8 +67,7 @@ public partial class PiecewiseVisualMap
     /// ]]>
     /// </summary>
     [JsonPropertyName("pieces")]
-    //TODO: Type Warning: array type 'pieces' in 'PiecewiseVisualMap' will be mapped to List<object>
-    public List<object>? Pieces { get; set; } 
+    public List<VisualMapPiece>? Pieces { get; set; } 
 
     /// <summary>
     /// <![CDATA[

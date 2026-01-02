@@ -389,6 +389,14 @@ internal abstract class BasePhase
                 return result;
             }
             
+            // Special case: pieces property in PiecewiseVisualMap should be List<VisualMapPiece>?
+            if (prop.Name == "pieces" && parent.DotNetType == "PiecewiseVisualMap")
+            {
+                result = new GenericListType(new SimpleType("VisualMapPiece"));
+                diagnosticCollector.RecordSupported(propertyPath, types, "List<VisualMapPiece>");
+                return result;
+            }
+            
             switch (optProp.Types[0])
             {
                 case "object":
