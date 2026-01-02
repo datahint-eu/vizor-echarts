@@ -406,6 +406,14 @@ internal abstract class BasePhase
                 return result;
             }
             
+            // Special case: links in SankeySeries should be object? for List<T>, array, or ExternalDataSourceRef
+            if (prop.Name == "links" && parent.DotNetType == "SankeySeries")
+            {
+                result = new SimpleType("object");
+                diagnosticCollector.RecordSupported(propertyPath, types, "object");
+                return result;
+            }
+            
             switch (optProp.Types[0])
             {
                 case "object":

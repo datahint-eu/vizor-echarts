@@ -168,6 +168,18 @@ internal class ObjectTypeClassGenerator
                     writer.CloseBrace();
                     writer.EmptyLine();
                 }
+
+                // Special case: SankeySeries.Links should have type-safe accessor
+                if (objectType.Name == "SankeySeries" && prop.Name == "links")
+                {
+                    writer.WriteLine($"[JsonIgnore]");
+                    writer.WriteLine($"public List<SankeySeriesLink>? LinksList");
+                    writer.OpenBrace();
+                    writer.WriteLine($"\tget => {prop.PropertyName} as List<SankeySeriesLink>;");
+                    writer.WriteLine($"\tset => {prop.PropertyName} = value;");
+                    writer.CloseBrace();
+                    writer.EmptyLine();
+                }
             }
         }
 

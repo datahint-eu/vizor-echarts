@@ -356,7 +356,14 @@ public partial class SankeySeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("links")]
-    public List<SankeySeriesLink>? Links { get; set; } 
+    public object? Links { get; set; } 
+
+    [JsonIgnore]
+    public List<SankeySeriesLink>? LinksList
+    {
+        	get => Links as List<SankeySeriesLink>;
+        	set => Links = value;
+    }
 
     /// <summary>
     /// Equals to links
