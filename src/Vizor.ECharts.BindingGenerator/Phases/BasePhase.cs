@@ -397,6 +397,15 @@ internal abstract class BasePhase
                 return result;
             }
             
+            // Special case: links and categories in GraphSeries should be object? for List<T> or ExternalDataSourceRef
+            if ((prop.Name == "links" && parent.DotNetType == "GraphSeries") ||
+                (prop.Name == "categories" && parent.DotNetType == "GraphSeries"))
+            {
+                result = new SimpleType("object");
+                diagnosticCollector.RecordSupported(propertyPath, types, "object");
+                return result;
+            }
+            
             switch (optProp.Types[0])
             {
                 case "object":

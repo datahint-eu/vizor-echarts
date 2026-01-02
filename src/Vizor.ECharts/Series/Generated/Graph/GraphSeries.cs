@@ -403,7 +403,14 @@ public partial class GraphSeries
     /// categories can also be used in legend .
     /// </summary>
     [JsonPropertyName("categories")]
-    public List<GraphSeriesCategory>? Categories { get; set; } 
+    public object? Categories { get; set; } 
+
+    [JsonIgnore]
+    public List<GraphSeriesCategory>? CategoriesList
+    {
+        	get => Categories as List<GraphSeriesCategory>;
+        	set => Categories = value;
+    }
 
     /// <summary>
     /// For the situation where there are multiple links between nodes, the curveness of each link is automatically calculated, not enabled by default.
@@ -463,7 +470,14 @@ public partial class GraphSeries
     /// ]]>
     /// </summary>
     [JsonPropertyName("links")]
-    public List<GraphSeriesLink>? Links { get; set; } 
+    public object? Links { get; set; } 
+
+    [JsonIgnore]
+    public List<GraphSeriesLink>? LinksList
+    {
+        	get => Links as List<GraphSeriesLink>;
+        	set => Links = value;
+    }
 
     /// <summary>
     /// Alias of links
