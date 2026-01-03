@@ -131,11 +131,14 @@ internal class ObjectTypeClassGenerator
             }
             else
             {
-                // Skip 'type' property for Series - it's handled by polymorphic serialization
-                bool isSeriesTypeProperty = objectType.TypeGroup == "Series" && prop.Name == "type";
-                if (isSeriesTypeProperty)
+                // Skip 'type' property for Series and DataZoom - handled by polymorphic serialization
+                bool isPolymorphicTypeProperty = 
+                    (objectType.TypeGroup == "Series" || objectType.Name.EndsWith("DataZoom")) && 
+                    prop.Name == "type";
+                
+                if (isPolymorphicTypeProperty)
                 {
-                    continue; // Skip generating the type property for series
+                    continue; // Skip generating the type property
                 }
 
                 // the 'type' property of anyOf objects is mandatory and non-nullable

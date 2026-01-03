@@ -10,13 +10,6 @@ namespace Vizor.ECharts;
 public partial class InsideDataZoom
 {
     /// <summary>
-    /// 
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("inside")]
-    public string Type { get; init; }  = "inside";
-
-    /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.
     /// </summary>

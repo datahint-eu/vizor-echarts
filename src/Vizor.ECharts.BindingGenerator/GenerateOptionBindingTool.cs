@@ -69,8 +69,29 @@ internal class GenerateOptionBindingTool
         
         if (seriesTypes.Count > 0)
         {
-            var iSeriesGenerator = new ISeriesInterfaceGenerator(options.OutputDirectory, seriesTypes);
+            var iSeriesGenerator = new PolymorphicInterfaceGenerator(
+                options.OutputDirectory, 
+                "ISeries",
+                "Series",
+                seriesTypes,
+                "Series");
             iSeriesGenerator.Generate();
+        }
+
+        // Generate IDataZoom interface with all JsonDerivedType attributes
+        var dataZoomTypes = typeCollection.ListObjectTypesToGenerate()
+            .Where(t => !t.IsShared && t.Name.EndsWith("DataZoom"))
+            .ToList();
+        
+        if (dataZoomTypes.Count > 0)
+        {
+            var iDataZoomGenerator = new PolymorphicInterfaceGenerator(
+                options.OutputDirectory,
+                "IDataZoom",
+                "Options/DataZoom",
+                dataZoomTypes,
+                "DataZoom");
+            iDataZoomGenerator.Generate();
         }
 
         Console.WriteLine("done.");
