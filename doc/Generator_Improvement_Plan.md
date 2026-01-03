@@ -1,5 +1,7 @@
 # Generator Improvement Plan: Comprehensive Type Mapping
 
+> **Note**: This document focuses on **type mapping completeness**. For code quality improvements (refactoring, logging, error handling), see [Generator_Code_Quality_Improvements.md](Generator_Code_Quality_Improvements.md).
+
 ## Goal
 Generate strong types for **all** ECharts properties, eliminating `object` fallbacks (except truly dynamic cases) and providing clear diagnostics for unsupported type patterns.
 

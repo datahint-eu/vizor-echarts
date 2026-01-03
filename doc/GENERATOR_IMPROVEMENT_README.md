@@ -18,6 +18,14 @@ This directory contains the complete specification for improving the vizor-echar
 - **Additional Custom Types** - Close remaining gaps (101 TODO markers)
 - **MapType() Refactoring** - Simplify using registry more extensively
 
+### 🔧 Code Quality Improvements
+See [Generator_Code_Quality_Improvements.md](Generator_Code_Quality_Improvements.md) for maintainability & developer experience enhancements:
+- Extract MapType() into focused sub-methods (400+ lines → 4 methods <150 lines each)
+- Replace Console.WriteLine with structured logging
+- Configuration-driven special case registry
+- Comprehensive error handling
+- Activate diagnostic report generation
+
 ### 🔮 Future Enhancements
 - **Abstractions Layer** - Break circular dependency (see Circular_Dependency_Solutions.md)
 - **Dimensions Strong Typing** - Enhanced dataset dimension types
@@ -40,7 +48,15 @@ This directory contains the complete specification for improving the vizor-echar
    - Implementation strategy
    - Success criteria and risk mitigation
 
-3. **[Generator_Improvement_Summary.md](Generator_Improvement_Summary.md)** (10 min read)
+3. **[Generator_Code_Quality_Improvements.md](Generator_Code_Quality_Improvements.md)** (15 min read)
+   - Code quality assessment and priorities
+   - Refactoring recommendations (MapType() extraction)
+   - Logging system design
+   - Error handling improvements
+   - Configuration-driven special cases
+   - Implementation sequence and success metrics
+
+4. **[Generator_Improvement_Summary.md](Generator_Improvement_Summary.md)** (10 min read)
    - Visual flowcharts (before/after)
    - Type support matrix
    - Implementation timeline
@@ -48,7 +64,7 @@ This directory contains the complete specification for improving the vizor-echar
    - Risk assessment
 
 ### Implementation Details
-4. **[Generator_Implementation_Guide.md](Generator_Implementation_Guide.md)** (30 min read)
+5. **[Generator_Implementation_Guide.md](Generator_Implementation_Guide.md)** (30 min read)
    - Complete code examples for all 3 new classes:
      - `TypeMappingDiagnostic.cs`
      - `DiagnosticCollector.cs`
@@ -59,7 +75,7 @@ This directory contains the complete specification for improving the vizor-echar
    - Test examples
 
 ### Context
-5. **[Manual_Implementation_Analysis.md](Manual_Implementation_Analysis.md)** (existing)
+6. **[Manual_Implementation_Analysis.md](Manual_Implementation_Analysis.md)** (existing)
    - Baseline analysis of current unsupported patterns
    - Existing custom types inventory
    - Pattern categorization
