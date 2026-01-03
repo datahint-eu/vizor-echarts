@@ -8,7 +8,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class CustomSeries
+public partial class CustomSeries : ISeries
 {
     /// <summary>
     /// Component ID, not specified by default.

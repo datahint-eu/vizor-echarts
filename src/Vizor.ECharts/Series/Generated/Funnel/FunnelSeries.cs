@@ -8,7 +8,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class FunnelSeries
+public partial class FunnelSeries : ISeries
 {
     /// <summary>
     /// Component ID, not specified by default.

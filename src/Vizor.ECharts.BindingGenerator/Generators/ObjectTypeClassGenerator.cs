@@ -57,8 +57,11 @@ internal class ObjectTypeClassGenerator
         writer.WriteNamespace("Vizor.ECharts");
         writer.EmptyLine();
 
-        // Add ISeries interface for series types
-        var baseTypes = objectType.TypeGroup.Contains("Series") ? new[] { "ISeries" } : Array.Empty<string>();
+        // Add ISeries interface only for actual series classes (not data classes)
+        var isSeries = objectType.TypeGroup.Contains("Series") && 
+                       objectType.DotNetType.EndsWith("Series") && 
+                       !objectType.DotNetType.EndsWith("SeriesData");
+        var baseTypes = isSeries ? new[] { "ISeries" } : Array.Empty<string>();
         writer.WriteClassDeclaration(objectType.DotNetType, baseTypes);
         writer.OpenBrace();
 

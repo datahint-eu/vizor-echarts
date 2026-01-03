@@ -8,7 +8,7 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class TreemapSeries
+public partial class TreemapSeries : ISeries
 {
     /// <summary>
     /// Component ID, not specified by default.
