@@ -53,14 +53,17 @@ internal static class ChartOptionsBuilder
             Title = new() { Text = "Scatter with Visual Map" },
             XAxis = new() { Type = AxisType.Value },
             YAxis = new() { Type = AxisType.Value },
-            VisualMap = new ContinuousVisualMap
+            VisualMap = new List<object>
             {
-                Min = 0,
-                Max = 100,
-                Dimension = 2,
-                InRange = new()
+                new ContinuousVisualMap
                 {
-                    Color = new Color[] { "#50a3ba", "#eac736", "#d94e5d" }
+                    Min = 0,
+                    Max = 100,
+                    Dimension = 2,
+                    InRange = new()
+                    {
+                        Color = new Color[] { "#50a3ba", "#eac736", "#d94e5d" }
+                    }
                 }
             },
             Series = new List<ISeries>

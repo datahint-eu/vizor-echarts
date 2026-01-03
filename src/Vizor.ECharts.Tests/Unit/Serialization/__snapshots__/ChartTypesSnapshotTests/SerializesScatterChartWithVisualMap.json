@@ -8,19 +8,21 @@
   "yAxis": {
     "type": "value"
   },
-  "visualMap": {
-    "type": "continuous",
-    "min": 0,
-    "max": 100,
-    "dimension": 2,
-    "inRange": {
-      "color": [
-        "#50a3ba",
-        "#eac736",
-        "#d94e5d"
-      ]
+  "visualMap": [
+    {
+      "type": "continuous",
+      "min": 0,
+      "max": 100,
+      "dimension": 2,
+      "inRange": {
+        "color": [
+          "#50a3ba",
+          "#eac736",
+          "#d94e5d"
+        ]
+      }
     }
-  },
+  ],
   "series": [
     {
       "type": "scatter",
