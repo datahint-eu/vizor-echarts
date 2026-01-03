@@ -50,7 +50,14 @@ public class GeneratorCoverageTests
     [TestMethod]
     public void ListAllGeneratedSeriesTypes()
     {
-        var seriesDir = Path.Combine(GetEChartsProjectRoot(), "Series");
+        // Look in Generated subfolder where generator outputs series types
+        var seriesDir = Path.Combine(GetEChartsProjectRoot(), "Series", "Generated");
+        
+        if (!Directory.Exists(seriesDir))
+        {
+            Assert.Fail($"Generated series directory not found: {seriesDir}");
+        }
+        
         var seriesTypes = Directory.GetDirectories(seriesDir)
             .Select(d => new DirectoryInfo(d).Name)
             .OrderBy(s => s)
