@@ -84,6 +84,12 @@ DEBUG builds auto-enable `vizorECharts.changeLogging(true)`, logging serialized 
 6. **Hand-tuned overrides remain unchanged**: Files like `Series/Sankey/SankeySeriesLevel.cs` (outside Generated folders) are manually maintained and will NOT be regenerated. These are intentional architectural customizations.
 7. Verify hand-tuned files still compile against newly generated types. Update manually if needed.
 
+**Option.json Locations**:
+- **Current version (5.6.0)**: [src/Vizor.ECharts.BindingGenerator/echart-options/5.6.0/option.json](src/Vizor.ECharts.BindingGenerator/echart-options/5.6.0/option.json)
+- **Future version (6.0.0)**: Will be added to `src/Vizor.ECharts.BindingGenerator/echart-options/6.0.0/option.json` when upgrading
+- **Source**: Generated from https://github.com/apache/echarts-doc repository by running `npm run build`
+- **Version tracking**: Generator automatically extracts version from input path (e.g., "5.6.0" from "echart-options/5.6.0/option.json") and includes it in generated file headers
+
 See [src/Vizor.ECharts.BindingGenerator/Readme.md](src/Vizor.ECharts.BindingGenerator/Readme.md) for details on identifying and maintaining hand-tuned files.
 
 ## Hand-Tuned Overrides Pattern

@@ -5,12 +5,13 @@ namespace Vizor.ECharts.BindingGenerator.Generators;
 internal class ObjectTypeClassGenerator
 {
     private readonly ObjectType objectType;
-
     private readonly string optionsFile;
+    private readonly string? echartsVersion;
 
-    public ObjectTypeClassGenerator(string outputDir, ObjectType objectType)
+    public ObjectTypeClassGenerator(string outputDir, ObjectType objectType, string? echartsVersion = null)
     {
         this.objectType = objectType;
+        this.echartsVersion = echartsVersion;
 
         string dir = outputDir;
         if (objectType.TypeGroup.Contains("Series"))
@@ -46,7 +47,7 @@ internal class ObjectTypeClassGenerator
     public void Generate()
     {
         using var writer = new CSharpCodeWriter(optionsFile);
-        writer.WriteNotice();
+        writer.WriteNotice(echartsVersion);
         writer.EmptyLine();
 
         writer.WriteUsing("System.ComponentModel");

@@ -12,19 +12,22 @@ internal class PolymorphicInterfaceGenerator
     private readonly string subFolder;
     private readonly List<ObjectType> types;
     private readonly string typeSuffix;
+    private readonly string? echartsVersion;
 
     public PolymorphicInterfaceGenerator(
         string outputDirectory, 
         string interfaceName,
         string subFolder,
         IEnumerable<ObjectType> types,
-        string typeSuffix)
+        string typeSuffix,
+        string? echartsVersion = null)
     {
         this.outputDirectory = outputDirectory;
         this.interfaceName = interfaceName;
         this.subFolder = subFolder;
         this.types = types.OrderBy(t => t.Name).ToList();
         this.typeSuffix = typeSuffix;
+        this.echartsVersion = echartsVersion;
     }
 
     public void Generate()
@@ -33,7 +36,7 @@ internal class PolymorphicInterfaceGenerator
         
         using var writer = new CSharpCodeWriter(outputFile);
         
-        writer.WriteNotice();
+        writer.WriteNotice(echartsVersion);
         writer.WriteUsing("System.Text.Json.Serialization");
         writer.EmptyLine();
         writer.WriteNamespace("Vizor.ECharts");

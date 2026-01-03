@@ -24,6 +24,23 @@ internal class GenerateOptionBindingTool
             return 1;
         }
 
+        // Extract ECharts version from input path (e.g., "5.6.0" from "echart-options/5.6.0/option.json")
+        string? echartsVersion = null;
+        var pathParts = options.InputFile.Replace("\\", "/").Split('/');
+        for (int i = 0; i < pathParts.Length - 1; i++)
+        {
+            if (pathParts[i] == "echart-options" && i + 1 < pathParts.Length)
+            {
+                var candidate = pathParts[i + 1];
+                // Only accept if it's not a filename (has no extension) or looks like a version folder
+                if (!candidate.Contains('.') || candidate.Split('.').Length >= 3)
+                {
+                    echartsVersion = candidate;
+                    break;
+                }
+            }
+        }
+
         // parse the input JSON
         var jsonOptions = new JsonDocumentOptions
         {
@@ -53,7 +70,7 @@ internal class GenerateOptionBindingTool
             if (objType.IsShared)
                 continue;
 
-            var generator = new ObjectTypeClassGenerator(options.OutputDirectory, objType);
+            var generator = new ObjectTypeClassGenerator(options.OutputDirectory, objType, echartsVersion);
             generator.Generate();
         }
 
@@ -74,7 +91,8 @@ internal class GenerateOptionBindingTool
                 "ISeries",
                 "Series",
                 seriesTypes,
-                "Series");
+                "Series",
+                echartsVersion);
             iSeriesGenerator.Generate();
         }
 
@@ -90,7 +108,8 @@ internal class GenerateOptionBindingTool
                 "IDataZoom",
                 "Options/DataZoom",
                 dataZoomTypes,
-                "DataZoom");
+                "DataZoom",
+                echartsVersion);
             iDataZoomGenerator.Generate();
         }
 
