@@ -202,36 +202,29 @@ public void MapWarningsToManualImplementations()
 	[TestMethod]
 	public void AnalyzeGeneratorMappingPatterns()
 	{
-		// Read BasePhase.cs to understand current Generator capabilities
+		// Read TypePatternRegistry.cs to understand current Generator capabilities
 		var projectRoot = GetEChartsProjectRoot();
 		var generatorRoot = Path.GetFullPath(Path.Combine(projectRoot, "..", "Vizor.ECharts.BindingGenerator"));
-		var basePhaseFile = Path.Combine(generatorRoot, "Phases", "BasePhase.cs");
+		var registryFile = Path.Combine(generatorRoot, "Types", "TypePatternRegistry.cs");
 
-		if (!File.Exists(basePhaseFile))
+		if (!File.Exists(registryFile))
 		{
-			Assert.Inconclusive("BasePhase.cs not found");
+			Assert.Inconclusive("TypePatternRegistry.cs not found");
 			return;
 		}
 
-		var content = File.ReadAllText(basePhaseFile);
+		var content = File.ReadAllText(registryFile);
 
-		// Extract all type pattern matches from switch cases
+		// Extract all type pattern mappings from SupportedPatterns dictionary
 		var patterns = new List<string>();
-		var matches = System.Text.RegularExpressions.Regex.Matches(content,
-			@"case \(""([^""]+)"", ""([^""]+)""\):");
+		
+		// Pattern: { "type1,type2", typeof(CustomType) },
+		var dictionaryMatches = System.Text.RegularExpressions.Regex.Matches(content,
+			@"\{\s*""([^""]+)"",\s*typeof\([^)]+\)\s*\}");
 
-		foreach (System.Text.RegularExpressions.Match match in matches)
+		foreach (System.Text.RegularExpressions.Match match in dictionaryMatches)
 		{
-			patterns.Add($"{match.Groups[1].Value},{match.Groups[2].Value}");
-		}
-
-		// Also find the 3-type patterns
-		var threeTypeMatches = System.Text.RegularExpressions.Regex.Matches(content,
-			@"if \(optProp\.Types is \[""([^""]+)"", ""([^""]+)"", ""([^""]+)""\]\)");
-
-		foreach (System.Text.RegularExpressions.Match match in threeTypeMatches)
-		{
-			patterns.Add($"{match.Groups[1].Value},{match.Groups[2].Value},{match.Groups[3].Value}");
+			patterns.Add(match.Groups[1].Value);
 		}
 
 		Console.WriteLine($"Generator currently handles {patterns.Count} type combination patterns:");
@@ -256,7 +249,9 @@ public void MapWarningsToManualImplementations()
 					return match.Success ? match.Groups[1].Value : null;
 				})
 				.Where(p => p != null)
-				.Distinct()			.OfType<string>()				.ToList();
+				.Distinct()
+				.OfType<string>()
+				.ToList();
 
 			Console.WriteLine($"\nUnmapped patterns in warnings.txt: {unmappedPatterns.Count}");
 			foreach (var pattern in unmappedPatterns!)
