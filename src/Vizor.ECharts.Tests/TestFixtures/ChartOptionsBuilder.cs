@@ -53,7 +53,7 @@ internal static class ChartOptionsBuilder
             Title = new() { Text = "Scatter with Visual Map" },
             XAxis = new() { Type = AxisType.Value },
             YAxis = new() { Type = AxisType.Value },
-            VisualMap = new List<object>
+            VisualMapList = new List<IVisualMap>
             {
                 new ContinuousVisualMap
                 {

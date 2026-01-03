@@ -113,6 +113,23 @@ internal class GenerateOptionBindingTool
             iDataZoomGenerator.Generate();
         }
 
+        // Generate IVisualMap interface with all JsonDerivedType attributes
+        var visualMapTypes = typeCollection.ListObjectTypesToGenerate()
+            .Where(t => !t.IsShared && t.Name.EndsWith("VisualMap"))
+            .ToList();
+        
+        if (visualMapTypes.Count > 0)
+        {
+            var iVisualMapGenerator = new PolymorphicInterfaceGenerator(
+                options.OutputDirectory,
+                "IVisualMap",
+                "Options/VisualMap",
+                visualMapTypes,
+                "VisualMap",
+                echartsVersion);
+            iVisualMapGenerator.Generate();
+        }
+
         Console.WriteLine("done.");
 
         return 0;

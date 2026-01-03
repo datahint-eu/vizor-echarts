@@ -61,7 +61,14 @@ internal class ObjectTypeClassGenerator
         var isSeries = objectType.TypeGroup.Contains("Series") && 
                        objectType.DotNetType.EndsWith("Series") && 
                        !objectType.DotNetType.EndsWith("SeriesData");
-        var baseTypes = isSeries ? new[] { "ISeries" } : Array.Empty<string>();
+        
+        // Add IVisualMap interface for VisualMap types
+        var isVisualMap = objectType.TypeGroup == "VisualMap" && 
+                          objectType.DotNetType.EndsWith("VisualMap");
+        
+        var baseTypes = isSeries ? new[] { "ISeries" } : 
+                        isVisualMap ? new[] { "IVisualMap" } : 
+                        Array.Empty<string>();
         writer.WriteClassDeclaration(objectType.DotNetType, baseTypes);
         writer.OpenBrace();
 
@@ -137,9 +144,9 @@ internal class ObjectTypeClassGenerator
             }
             else
             {
-                // Skip 'type' property for Series and DataZoom - handled by polymorphic serialization
+                // Skip 'type' property for polymorphic types (Series, DataZoom, VisualMap) - handled by polymorphic serialization
                 bool isPolymorphicTypeProperty = 
-                    (objectType.TypeGroup == "Series" || objectType.Name.EndsWith("DataZoom")) && 
+                    (objectType.TypeGroup == "Series" || objectType.Name.EndsWith("DataZoom") || objectType.TypeGroup == "VisualMap") && 
                     prop.Name == "type";
                 
                 if (isPolymorphicTypeProperty)

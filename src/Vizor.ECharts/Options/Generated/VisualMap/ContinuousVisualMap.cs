@@ -8,15 +8,8 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class ContinuousVisualMap
+public partial class ContinuousVisualMap : IVisualMap
 {
-    /// <summary>
-    /// Used to determine that it is a continuous visualMap component.
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("continuous")]
-    public string Type { get; init; }  = "continuous";
-
     /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.

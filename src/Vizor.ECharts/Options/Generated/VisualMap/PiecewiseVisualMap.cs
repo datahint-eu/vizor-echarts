@@ -8,15 +8,8 @@ using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
-public partial class PiecewiseVisualMap
+public partial class PiecewiseVisualMap : IVisualMap
 {
-    /// <summary>
-    /// Used to determine it is a piecewise visualMap component.
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DefaultValue("piecewise")]
-    public string Type { get; init; }  = "piecewise";
-
     /// <summary>
     /// Component ID, not specified by default.
     /// If specified, it can be used to refer the component in option or API.

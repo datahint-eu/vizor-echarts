@@ -162,6 +162,9 @@ internal class TypeCollection
             case ("dataZoom", "ChartOptions"):
                 // Use typed list of IDataZoom for type safety instead of List<object>
                 return new GenericListType(new SimpleType("IDataZoom"));
+            case ("visualMap", "ChartOptions"):
+                // Allow single visualMap object or array of visual maps
+                return new SingleOrArrayType("IVisualMap");
             case ("dimensions", "Dataset"):
             case ("dimensions", _) when parent.DotNetType.EndsWith("Series"):
                 // Use string array (full union type support planned for future)

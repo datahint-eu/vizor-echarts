@@ -416,7 +416,130 @@ public partial class ChartOptions
     /// ]]>
     /// </summary>
     [JsonPropertyName("visualMap")]
-    public List<object>? VisualMap { get; set; } 
+    [JsonInclude]
+    internal object? VisualMapObject { get; set; }
+
+    /// <summary>
+    /// <![CDATA[
+    /// visualMap is a type of component for visual encoding, which maps the data to visual channels, including:   symbol : Type of symbol.
+    ///  symbolSize : Symbol size.
+    ///  color : Symbol color.
+    ///  colorAlpha : Symbol alpha channel.
+    ///  opacity : Opacity of symbol and others (like labels).
+    ///  colorLightness : Lightness in HSL .
+    ///  colorSaturation : Saturation in HSL .
+    ///  colorHue : Hue in HSL .
+    ///   
+    /// Multiple visualMap component could be defined in a chart instance, which enable that different dimensions of a series data are mapped to different visual channels.
+    ///  
+    /// visualMap could be defined as Piecewise (visualMapPiecewise) or Continuous (visualMapContinuous) , which is distinguished by the property type .
+    /// For instance:  option = {
+    ///     visualMap: [
+    ///         { // the first visualMap component
+    ///             type: 'continuous', // defined to be continuous visualMap
+    ///             ...
+    ///         },
+    ///         { // the second visualMap component
+    ///             type: 'piecewise', // defined to be piecewise visualMap
+    ///             ...
+    ///         }
+    ///     ],
+    ///     ...
+    /// };  
+    /// 
+    ///  ✦ Configure mapping ✦  
+    /// The dimension of series.data can be specified by visualMap.dimension , from which the value can be retrieved and mapped onto visual channels, which can be defined in visualMap.inRange and visualMap.outOfRange .
+    ///  
+    /// 
+    /// In series that controlled by visualMap, if a data item needs to escape from controlled by visualMap, you can set like this:  series: {
+    ///     type: '...',
+    ///     data: [
+    ///         {name: 'Shanghai', value: 251},
+    ///         {name: 'Haikou', value: 21},
+    ///         // Mark as `visualMap: false`, then this item does not controlled by visualMap any more,
+    ///         // and series visual config (like color, symbol, ...) can be used to this item.
+    ///         {name: 'Beijing', value: 821, },
+    ///         ...
+    ///     ]
+    /// } 
+    /// 
+    ///  ✦ The relationship between visualMap of ECharts3 and dataRange of ECharts2 ✦  
+    /// visualMap is renamed from the dataRange of ECharts2, and the scope of functionalities are extended a lot.
+    /// The configurations of dataRange are still compatible in ECharts3, which automatically convert them to visualMap .
+    /// It is recommended to use visualMap instead of dataRange in ECharts3.
+    ///  
+    /// 
+    ///  ✦ The detailed configurations of visualMap are elaborated as follows.
+    /// ✦
+    /// ]]>
+    /// </summary>
+    [JsonIgnore]
+    public IVisualMap? VisualMap
+    {
+        	get => VisualMapObject as IVisualMap;
+        	set => VisualMapObject = value;
+    }
+
+    /// <summary>
+    /// <![CDATA[
+    /// visualMap is a type of component for visual encoding, which maps the data to visual channels, including:   symbol : Type of symbol.
+    ///  symbolSize : Symbol size.
+    ///  color : Symbol color.
+    ///  colorAlpha : Symbol alpha channel.
+    ///  opacity : Opacity of symbol and others (like labels).
+    ///  colorLightness : Lightness in HSL .
+    ///  colorSaturation : Saturation in HSL .
+    ///  colorHue : Hue in HSL .
+    ///   
+    /// Multiple visualMap component could be defined in a chart instance, which enable that different dimensions of a series data are mapped to different visual channels.
+    ///  
+    /// visualMap could be defined as Piecewise (visualMapPiecewise) or Continuous (visualMapContinuous) , which is distinguished by the property type .
+    /// For instance:  option = {
+    ///     visualMap: [
+    ///         { // the first visualMap component
+    ///             type: 'continuous', // defined to be continuous visualMap
+    ///             ...
+    ///         },
+    ///         { // the second visualMap component
+    ///             type: 'piecewise', // defined to be piecewise visualMap
+    ///             ...
+    ///         }
+    ///     ],
+    ///     ...
+    /// };  
+    /// 
+    ///  ✦ Configure mapping ✦  
+    /// The dimension of series.data can be specified by visualMap.dimension , from which the value can be retrieved and mapped onto visual channels, which can be defined in visualMap.inRange and visualMap.outOfRange .
+    ///  
+    /// 
+    /// In series that controlled by visualMap, if a data item needs to escape from controlled by visualMap, you can set like this:  series: {
+    ///     type: '...',
+    ///     data: [
+    ///         {name: 'Shanghai', value: 251},
+    ///         {name: 'Haikou', value: 21},
+    ///         // Mark as `visualMap: false`, then this item does not controlled by visualMap any more,
+    ///         // and series visual config (like color, symbol, ...) can be used to this item.
+    ///         {name: 'Beijing', value: 821, },
+    ///         ...
+    ///     ]
+    /// } 
+    /// 
+    ///  ✦ The relationship between visualMap of ECharts3 and dataRange of ECharts2 ✦  
+    /// visualMap is renamed from the dataRange of ECharts2, and the scope of functionalities are extended a lot.
+    /// The configurations of dataRange are still compatible in ECharts3, which automatically convert them to visualMap .
+    /// It is recommended to use visualMap instead of dataRange in ECharts3.
+    ///  
+    /// 
+    ///  ✦ The detailed configurations of visualMap are elaborated as follows.
+    /// ✦
+    /// ]]>
+    /// </summary>
+    [JsonIgnore]
+    public List<IVisualMap>? VisualMapList
+    {
+        	get => VisualMapObject as List<IVisualMap>;
+        	set => VisualMapObject = value;
+    }
 
     /// <summary>
     /// Tooltip component.
