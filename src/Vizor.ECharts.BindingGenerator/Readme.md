@@ -27,6 +27,37 @@ When the generator runs:
 - They are NOT automatically updated by the generator
 - Check git history to see which files were moved out and customized during development
 
+## Polymorphic Interface Generation
+
+The generator automatically creates polymorphic interfaces using .NET 10's `[JsonPolymorphic]` serialization:
+
+### ISeries Interface
+- **Location**: `Series/Generated/ISeries.cs`
+- **Purpose**: Base interface for all series types (LineSeries, BarSeries, etc.)
+- **Attributes**: 
+  - `[JsonPolymorphic(TypeDiscriminatorPropertyName = "type")]` on interface
+  - `[JsonDerivedType(typeof(ConcreteType), "discriminator")]` for each series
+- **Discriminators**: Extracted from `type` property default values in option.json
+- **Result**: No explicit `Type` property needed in concrete series classes—serializer adds discriminator automatically
+
+### IDataZoom Interface
+- **Location**: `Options/DataZoom/Generated/IDataZoom.cs`
+- **Purpose**: Base interface for DataZoom types (InsideDataZoom, SliderDataZoom)
+- **Pattern**: Same as ISeries—polymorphic serialization with discriminators
+- **Result**: No explicit `Type` property in DataZoom classes
+
+### How It Works
+1. **PolymorphicInterfaceGenerator** scans all types matching pattern (e.g., `*Series`, `*DataZoom`)
+2. Extracts discriminator from each type's `type` property default value
+3. Generates interface with `[JsonPolymorphic]` and all `[JsonDerivedType]` attributes
+4. **ObjectTypeClassGenerator** skips `Type` property for these classes (discriminator handled by serializer)
+
+### Benefits
+- Interfaces stay in sync with generated types automatically
+- No manual maintenance of JsonDerivedType attributes
+- Type-safe polymorphic serialization for List<ISeries> and List<IDataZoom>
+- All properties serialize correctly (not just base interface properties)
+
 # How to generate
 
  - Download the latest version of https://github.com/apache/echarts-doc

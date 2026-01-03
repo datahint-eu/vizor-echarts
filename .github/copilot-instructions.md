@@ -3,6 +3,15 @@
 ## Project Overview
 - **Purpose**: Blazor wrapper around Apache ECharts; main library targets .NET 10.
 - **Structure**: src/Vizor.ECharts (core), src/Vizor.ECharts.Demo (Blazor server demo), src/Vizor.ECharts.Samples (area-based samples), src/Vizor.ECharts.Tests (unit tests via MSTest), src/Vizor.ECharts.BindingGenerator (code generation utility).
+- **Documentation**: Detailed technical documentation is in the [doc/](doc/) folder, covering generator architecture, testing strategy, circular dependency solutions, memory profiling, and implementation guides.
+
+## External References
+Official Apache ECharts documentation and resources:
+- **Examples Gallery**: https://echarts.apache.org/examples/en/index.html - Official ECharts examples (translate JavaScript to C#)
+- **Cheat Sheet**: https://echarts.apache.org/en/cheat-sheet.html - Quick reference for common patterns
+- **Option Documentation**: https://echarts.apache.org/en/option.html - Complete API reference for chart options
+- **Tutorial**: https://echarts.apache.org/en/tutorial.html - In-depth guides (e.g., Dataset usage)
+- **Online Editor**: https://echarts.apache.org/examples/en/editor.html - Test ECharts code snippets before translating to C#
 
 ## Core Architecture & Interop Flow
 
@@ -14,8 +23,11 @@
 - Actual option/series types in [src/Vizor.ECharts/Options](src/Vizor.ECharts/Options) and [src/Vizor.ECharts/Series](src/Vizor.ECharts/Series).
 - **Most files auto-generated** from ECharts option.json; preserve `[JsonPropertyName]` attributes and property naming conventions.
 
-### Series Typing & Polymorphic Data
-- Each series implements `ISeries` with its `type` literal (e.g., [src/Vizor.ECharts/Series/Line/LineSeries.cs](src/Vizor.ECharts/Series/Line/LineSeries.cs)).
+### Series Typing & Polymorphic Serialization
+- Each series implements `ISeries` interface (auto-generated in [src/Vizor.ECharts/Series/Generated/ISeries.cs](src/Vizor.ECharts/Series/Generated/ISeries.cs)).
+- Uses **[.NET 10 polymorphic serialization](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/polymorphism)**: `[JsonPolymorphic(TypeDiscriminatorPropertyName = "type")]` on ISeries interface, with `[JsonDerivedType]` attributes for each series type (e.g., `LineSeries`, `BarSeries`).
+- **No explicit Type property** in series classes—discriminator added automatically by serializer during JSON output.
+- Same pattern applies to `IDataZoom` ([src/Vizor.ECharts/Options/DataZoom/Generated/IDataZoom.cs](src/Vizor.ECharts/Options/DataZoom/Generated/IDataZoom.cs)) with `InsideDataZoom` and `SliderDataZoom`.
 - Polymorphic series data handled by [src/Vizor.ECharts/Types/SeriesDataConverterFactory.cs](src/Vizor.ECharts/Types/SeriesDataConverterFactory.cs).
 - `SeriesData<T>`, `SeriesData<T,U>`, and `SeriesData<T,U,V>` generics serialize correctly via factory pattern.
 
@@ -67,9 +79,10 @@ DEBUG builds auto-enable `vizorECharts.changeLogging(true)`, logging serialized 
 1. Build echarts-doc repo (`npm run build` → generates option.json).
 2. Delete `src/Vizor.ECharts/Options/Generated` and `src/Vizor.ECharts/Series/Generated` folders.
 3. Run: `dotnet run --project src/Vizor.ECharts.BindingGenerator -- option-binding --input <path/to/option.json> --output src/Vizor.ECharts`
-4. Fix any compile errors (generator isn't 100% perfect).
-5. **Hand-tuned overrides remain unchanged**: Files like `Series/Sankey/SankeySeriesLevel.cs` (outside Generated folders) are manually maintained and will NOT be regenerated. These are intentional architectural customizations.
-6. Verify hand-tuned files still compile against newly generated types. Update manually if needed.
+4. **Polymorphic interfaces auto-generated**: Generator creates `ISeries.cs` and `IDataZoom.cs` in their respective Generated folders with .NET 10 `[JsonPolymorphic]`/`[JsonDerivedType]` attributes. Discriminators extracted from type property defaults in option.json.
+5. Fix any compile errors (generator isn't 100% perfect).
+6. **Hand-tuned overrides remain unchanged**: Files like `Series/Sankey/SankeySeriesLevel.cs` (outside Generated folders) are manually maintained and will NOT be regenerated. These are intentional architectural customizations.
+7. Verify hand-tuned files still compile against newly generated types. Update manually if needed.
 
 See [src/Vizor.ECharts.BindingGenerator/Readme.md](src/Vizor.ECharts.BindingGenerator/Readme.md) for details on identifying and maintaining hand-tuned files.
 
@@ -107,5 +120,17 @@ Global enum mappings in [src/Vizor.ECharts.BindingGenerator/Types/TypeCollection
 - **Theme** optional; null renders with default theme.
 - **Click events** attached via `vizorECharts.attachClickEvent` → calls `HandleChartClick` on component.
 - **Interop contract**: JS expects JSON strings for options/maps/fetchOpts. Null options show loading spinner only.
+
+## Additional Documentation
+For detailed technical documentation, see files in the [doc/](doc/) folder:
+- **Circular_Dependency_Solutions.md** - Generator ↔ Vizor.ECharts circular dependency discussion and future abstractions layer plan
+- **Generator_Implementation_Guide.md** - Code examples for generator improvements
+- **Generator_Improvement_Plan.md** - Detailed specification for type mapping improvements
+- **GENERATOR_IMPROVEMENT_EXECUTIVE_SUMMARY.md** - High-level generator improvement overview
+- **Manual_Implementation_Analysis.md** - Analysis of existing type patterns
+- **Testing_Strategy.md** - Test infrastructure and patterns
+- **Memory_Profiling.md** - Performance optimization guidance
+- **Node_Build_Toolchain.md** - JS build process documentation
+- **VizorECharts_JS_Interop.md** - JavaScript interop architecture
 
 Feel free to propose additions if key workflows or patterns are missing.
