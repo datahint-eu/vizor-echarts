@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Data;
 
+using Vizor.ECharts.BindingGenerator.Diagnostics;
 using Vizor.ECharts.BindingGenerator.Types;
 using Vizor.ECharts.BindingGenerator.Phases;
 
@@ -27,8 +28,9 @@ internal class GenerateTypeInfoTool
 
         // process the input JSON
         var typeCollection = new TypeCollection();
+        var diagnosticCollector = new DiagnosticCollector();
         var phases = new List<BasePhase> {
-            new GenerateObjectTypesPhase(typeCollection)
+            new GenerateObjectTypesPhase(typeCollection, diagnosticCollector)
         };
 
         foreach (var phase in phases)
@@ -37,7 +39,10 @@ internal class GenerateTypeInfoTool
         }
 
         // print information about duplicates
-        using var fs = new FileStream("typeinfo.txt", FileMode.Create, FileAccess.Write);
+        var outputDirectory = Directory.GetCurrentDirectory();
+        var typeinfoPath = Path.Combine(outputDirectory, "typeinfo.txt");
+        
+        using var fs = new FileStream(typeinfoPath, FileMode.Create, FileAccess.Write);
         using var writer = new StreamWriter(fs);
         foreach (var pair in typeCollection.TypesWithDuplicates)
         {
@@ -57,6 +62,14 @@ internal class GenerateTypeInfoTool
                 writer.WriteLine();
             }
         }
+
+        // Generate diagnostic report in same folder as typeinfo.txt
+        var report = diagnosticCollector.GenerateReport();
+        var reportPath = Path.Combine(outputDirectory, "TypePatternAnalysisReport.md");
+        File.WriteAllText(reportPath, report.ToMarkdown());
+        
+        var (supported, partial, unsupported, investigation, total) = diagnosticCollector.GetSummary();
+        Console.WriteLine($"Pattern Report: {supported}/{total} supported ({partial} partial, {unsupported} unsupported, {investigation} investigation)");
 
         Console.WriteLine("done.");
 

@@ -1,5 +1,5 @@
 
-#RichStyleName: 377 (similarity: 377)
+#RichStyleName: 366 (similarity: 366)
 #	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,padding,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
 	.ThemeRiverSeries.select.label.rich.RichStyleName
 	.ThemeRiverSeries.blur.label.rich.RichStyleName
@@ -59,10 +59,10 @@
 	.FunnelSeries.blur.label.rich.RichStyleName
 	.FunnelSeries.emphasis.label.rich.RichStyleName
 	.FunnelSeries.label.rich.RichStyleName
-	.SankeySeries.SankeySeriesLinks.select.edgeLabel.rich.RichStyleName
-	.SankeySeries.SankeySeriesLinks.blur.edgeLabel.rich.RichStyleName
-	.SankeySeries.SankeySeriesLinks.emphasis.edgeLabel.rich.RichStyleName
-	.SankeySeries.SankeySeriesLinks.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLink.select.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLink.blur.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLink.emphasis.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLink.edgeLabel.rich.RichStyleName
 	.SankeySeries.SankeySeriesData.select.label.rich.RichStyleName
 	.SankeySeries.SankeySeriesData.blur.label.rich.RichStyleName
 	.SankeySeries.SankeySeriesData.emphasis.label.rich.RichStyleName
@@ -74,14 +74,14 @@
 	.SankeySeries.emphasis.edgeLabel.rich.RichStyleName
 	.SankeySeries.emphasis.label.rich.RichStyleName
 	.SankeySeries.label.rich.RichStyleName
-	.SankeySeries.SankeySeriesLevels.select.edgeLabel.rich.RichStyleName
-	.SankeySeries.SankeySeriesLevels.select.label.rich.RichStyleName
-	.SankeySeries.SankeySeriesLevels.blur.edgeLabel.rich.RichStyleName
-	.SankeySeries.SankeySeriesLevels.blur.label.rich.RichStyleName
-	.SankeySeries.SankeySeriesLevels.emphasis.edgeLabel.rich.RichStyleName
-	.SankeySeries.SankeySeriesLevels.emphasis.label.rich.RichStyleName
-	.SankeySeries.SankeySeriesLevels.edgeLabel.rich.RichStyleName
-	.SankeySeries.SankeySeriesLevels.label.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.select.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.select.label.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.blur.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.blur.label.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.emphasis.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.emphasis.label.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.label.rich.RichStyleName
 	.SankeySeries.edgeLabel.rich.RichStyleName
 	.GraphSeries.markArea.blur.label.rich.RichStyleName
 	.GraphSeries.markArea.emphasis.label.rich.RichStyleName
@@ -94,18 +94,18 @@
 	.GraphSeries.markPoint.blur.label.rich.RichStyleName
 	.GraphSeries.markPoint.emphasis.label.rich.RichStyleName
 	.GraphSeries.markPoint.label.rich.RichStyleName
-	.GraphSeries.GraphSeriesLinks.select.label.rich.RichStyleName
-	.GraphSeries.GraphSeriesLinks.blur.label.rich.RichStyleName
-	.GraphSeries.GraphSeriesLinks.emphasis.label.rich.RichStyleName
-	.GraphSeries.GraphSeriesLinks.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesLink.select.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesLink.blur.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesLink.emphasis.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesLink.label.rich.RichStyleName
 	.GraphSeries.GraphSeriesData.select.label.rich.RichStyleName
 	.GraphSeries.GraphSeriesData.blur.label.rich.RichStyleName
 	.GraphSeries.GraphSeriesData.emphasis.label.rich.RichStyleName
 	.GraphSeries.GraphSeriesData.label.rich.RichStyleName
-	.GraphSeries.GraphSeriesCategories.select.label.rich.RichStyleName
-	.GraphSeries.GraphSeriesCategories.blur.label.rich.RichStyleName
-	.GraphSeries.GraphSeriesCategories.emphasis.label.rich.RichStyleName
-	.GraphSeries.GraphSeriesCategories.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesCategory.select.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesCategory.blur.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesCategory.emphasis.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesCategory.label.rich.RichStyleName
 	.GraphSeries.select.edgeLabel.rich.RichStyleName
 	.GraphSeries.select.label.rich.RichStyleName
 	.GraphSeries.blur.edgeLabel.rich.RichStyleName
@@ -189,7 +189,7 @@
 	.BoxplotSeries.markPoint.blur.label.rich.RichStyleName
 	.BoxplotSeries.markPoint.emphasis.label.rich.RichStyleName
 	.BoxplotSeries.markPoint.label.rich.RichStyleName
-	.SunburstSeries.SunburstSeriesLevels.label.rich.RichStyleName
+	.SunburstSeries.SunburstSeriesLevel.label.rich.RichStyleName
 	.SunburstSeries.label.rich.RichStyleName
 	.SunburstSeries.SunburstSeriesData.label.rich.RichStyleName
 	.TreemapSeries.TreemapSeriesData.select.upperLabel.rich.RichStyleName
@@ -200,14 +200,14 @@
 	.TreemapSeries.TreemapSeriesData.emphasis.label.rich.RichStyleName
 	.TreemapSeries.TreemapSeriesData.upperLabel.rich.RichStyleName
 	.TreemapSeries.TreemapSeriesData.label.rich.RichStyleName
-	.TreemapSeries.TreemapSeriesLevels.select.upperLabel.rich.RichStyleName
-	.TreemapSeries.TreemapSeriesLevels.select.label.rich.RichStyleName
-	.TreemapSeries.TreemapSeriesLevels.blur.upperLabel.rich.RichStyleName
-	.TreemapSeries.TreemapSeriesLevels.blur.label.rich.RichStyleName
-	.TreemapSeries.TreemapSeriesLevels.emphasis.upperLabel.rich.RichStyleName
-	.TreemapSeries.TreemapSeriesLevels.emphasis.label.rich.RichStyleName
-	.TreemapSeries.TreemapSeriesLevels.upperLabel.rich.RichStyleName
-	.TreemapSeries.TreemapSeriesLevels.label.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.select.upperLabel.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.select.label.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.blur.upperLabel.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.blur.label.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.emphasis.upperLabel.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.emphasis.label.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.upperLabel.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.label.rich.RichStyleName
 	.TreemapSeries.breadcrumb.emphasis.itemStyle.textStyle.rich.RichStyleName
 	.TreemapSeries.breadcrumb.itemStyle.textStyle.rich.RichStyleName
 	.TreemapSeries.select.upperLabel.rich.RichStyleName
@@ -218,10 +218,6 @@
 	.TreemapSeries.emphasis.label.rich.RichStyleName
 	.TreemapSeries.upperLabel.rich.RichStyleName
 	.TreemapSeries.label.rich.RichStyleName
-	.TreeSeries.dataData.select.label.rich.RichStyleName
-	.TreeSeries.dataData.blur.label.rich.RichStyleName
-	.TreeSeries.dataData.emphasis.label.rich.RichStyleName
-	.TreeSeries.dataData.label.rich.RichStyleName
 	.TreeSeries.leaves.select.label.rich.RichStyleName
 	.TreeSeries.leaves.blur.label.rich.RichStyleName
 	.TreeSeries.leaves.emphasis.label.rich.RichStyleName
@@ -343,34 +339,27 @@
 	.timeline.emphasis.label.rich.RichStyleName
 	.timeline.progress.label.rich.RichStyleName
 	.timeline.label.rich.RichStyleName
-	.singleAxis.singleAxisData.textStyle.rich.RichStyleName
 	.singleAxis.axisLabel.rich.RichStyleName
 	.singleAxis.nameTextStyle.rich.RichStyleName
-	.parallelAxis.parallelAxisData.textStyle.rich.RichStyleName
 	.parallelAxis.axisLabel.rich.RichStyleName
 	.parallelAxis.nameTextStyle.rich.RichStyleName
-	.parallel.parallelAxisDefault.parallelAxisDefaultData.textStyle.rich.RichStyleName
 	.parallel.parallelAxisDefault.axisLabel.rich.RichStyleName
 	.parallel.parallelAxisDefault.nameTextStyle.rich.RichStyleName
-	.geo.geoRegions.blur.label.rich.RichStyleName
-	.geo.geoRegions.select.label.rich.RichStyleName
-	.geo.geoRegions.emphasis.label.rich.RichStyleName
-	.geo.geoRegions.label.rich.RichStyleName
+	.geo.geoRegion.blur.label.rich.RichStyleName
+	.geo.geoRegion.select.label.rich.RichStyleName
+	.geo.geoRegion.emphasis.label.rich.RichStyleName
+	.geo.geoRegion.label.rich.RichStyleName
 	.geo.blur.label.rich.RichStyleName
 	.geo.select.label.rich.RichStyleName
 	.geo.emphasis.label.rich.RichStyleName
 	.geo.label.rich.RichStyleName
 	.radar.axisLabel.rich.RichStyleName
 	.radar.axisName.rich.RichStyleName
-	.angleAxis.angleAxisData.textStyle.rich.RichStyleName
 	.angleAxis.axisLabel.rich.RichStyleName
-	.radiusAxis.radiusAxisData.textStyle.rich.RichStyleName
 	.radiusAxis.axisLabel.rich.RichStyleName
 	.radiusAxis.nameTextStyle.rich.RichStyleName
-	.yAxis.yAxisData.textStyle.rich.RichStyleName
 	.yAxis.axisLabel.rich.RichStyleName
 	.yAxis.nameTextStyle.rich.RichStyleName
-	.xAxis.xAxisData.textStyle.rich.RichStyleName
 	.xAxis.axisLabel.rich.RichStyleName
 	.xAxis.nameTextStyle.rich.RichStyleName
 	.legend.selectorLabel.rich.RichStyleName
@@ -380,7 +369,7 @@
 	.title.textStyle.rich.RichStyleName
 
 
-#rich: 377 (similarity: 377)
+#rich: 366 (similarity: 366)
 #	RichStyleName
 	.ThemeRiverSeries.select.label.rich
 	.ThemeRiverSeries.blur.label.rich
@@ -440,10 +429,10 @@
 	.FunnelSeries.blur.label.rich
 	.FunnelSeries.emphasis.label.rich
 	.FunnelSeries.label.rich
-	.SankeySeries.SankeySeriesLinks.select.edgeLabel.rich
-	.SankeySeries.SankeySeriesLinks.blur.edgeLabel.rich
-	.SankeySeries.SankeySeriesLinks.emphasis.edgeLabel.rich
-	.SankeySeries.SankeySeriesLinks.edgeLabel.rich
+	.SankeySeries.SankeySeriesLink.select.edgeLabel.rich
+	.SankeySeries.SankeySeriesLink.blur.edgeLabel.rich
+	.SankeySeries.SankeySeriesLink.emphasis.edgeLabel.rich
+	.SankeySeries.SankeySeriesLink.edgeLabel.rich
 	.SankeySeries.SankeySeriesData.select.label.rich
 	.SankeySeries.SankeySeriesData.blur.label.rich
 	.SankeySeries.SankeySeriesData.emphasis.label.rich
@@ -455,14 +444,14 @@
 	.SankeySeries.emphasis.edgeLabel.rich
 	.SankeySeries.emphasis.label.rich
 	.SankeySeries.label.rich
-	.SankeySeries.SankeySeriesLevels.select.edgeLabel.rich
-	.SankeySeries.SankeySeriesLevels.select.label.rich
-	.SankeySeries.SankeySeriesLevels.blur.edgeLabel.rich
-	.SankeySeries.SankeySeriesLevels.blur.label.rich
-	.SankeySeries.SankeySeriesLevels.emphasis.edgeLabel.rich
-	.SankeySeries.SankeySeriesLevels.emphasis.label.rich
-	.SankeySeries.SankeySeriesLevels.edgeLabel.rich
-	.SankeySeries.SankeySeriesLevels.label.rich
+	.SankeySeries.SankeySeriesLevel.select.edgeLabel.rich
+	.SankeySeries.SankeySeriesLevel.select.label.rich
+	.SankeySeries.SankeySeriesLevel.blur.edgeLabel.rich
+	.SankeySeries.SankeySeriesLevel.blur.label.rich
+	.SankeySeries.SankeySeriesLevel.emphasis.edgeLabel.rich
+	.SankeySeries.SankeySeriesLevel.emphasis.label.rich
+	.SankeySeries.SankeySeriesLevel.edgeLabel.rich
+	.SankeySeries.SankeySeriesLevel.label.rich
 	.SankeySeries.edgeLabel.rich
 	.GraphSeries.markArea.blur.label.rich
 	.GraphSeries.markArea.emphasis.label.rich
@@ -475,18 +464,18 @@
 	.GraphSeries.markPoint.blur.label.rich
 	.GraphSeries.markPoint.emphasis.label.rich
 	.GraphSeries.markPoint.label.rich
-	.GraphSeries.GraphSeriesLinks.select.label.rich
-	.GraphSeries.GraphSeriesLinks.blur.label.rich
-	.GraphSeries.GraphSeriesLinks.emphasis.label.rich
-	.GraphSeries.GraphSeriesLinks.label.rich
+	.GraphSeries.GraphSeriesLink.select.label.rich
+	.GraphSeries.GraphSeriesLink.blur.label.rich
+	.GraphSeries.GraphSeriesLink.emphasis.label.rich
+	.GraphSeries.GraphSeriesLink.label.rich
 	.GraphSeries.GraphSeriesData.select.label.rich
 	.GraphSeries.GraphSeriesData.blur.label.rich
 	.GraphSeries.GraphSeriesData.emphasis.label.rich
 	.GraphSeries.GraphSeriesData.label.rich
-	.GraphSeries.GraphSeriesCategories.select.label.rich
-	.GraphSeries.GraphSeriesCategories.blur.label.rich
-	.GraphSeries.GraphSeriesCategories.emphasis.label.rich
-	.GraphSeries.GraphSeriesCategories.label.rich
+	.GraphSeries.GraphSeriesCategory.select.label.rich
+	.GraphSeries.GraphSeriesCategory.blur.label.rich
+	.GraphSeries.GraphSeriesCategory.emphasis.label.rich
+	.GraphSeries.GraphSeriesCategory.label.rich
 	.GraphSeries.select.edgeLabel.rich
 	.GraphSeries.select.label.rich
 	.GraphSeries.blur.edgeLabel.rich
@@ -570,7 +559,7 @@
 	.BoxplotSeries.markPoint.blur.label.rich
 	.BoxplotSeries.markPoint.emphasis.label.rich
 	.BoxplotSeries.markPoint.label.rich
-	.SunburstSeries.SunburstSeriesLevels.label.rich
+	.SunburstSeries.SunburstSeriesLevel.label.rich
 	.SunburstSeries.label.rich
 	.SunburstSeries.SunburstSeriesData.label.rich
 	.TreemapSeries.TreemapSeriesData.select.upperLabel.rich
@@ -581,14 +570,14 @@
 	.TreemapSeries.TreemapSeriesData.emphasis.label.rich
 	.TreemapSeries.TreemapSeriesData.upperLabel.rich
 	.TreemapSeries.TreemapSeriesData.label.rich
-	.TreemapSeries.TreemapSeriesLevels.select.upperLabel.rich
-	.TreemapSeries.TreemapSeriesLevels.select.label.rich
-	.TreemapSeries.TreemapSeriesLevels.blur.upperLabel.rich
-	.TreemapSeries.TreemapSeriesLevels.blur.label.rich
-	.TreemapSeries.TreemapSeriesLevels.emphasis.upperLabel.rich
-	.TreemapSeries.TreemapSeriesLevels.emphasis.label.rich
-	.TreemapSeries.TreemapSeriesLevels.upperLabel.rich
-	.TreemapSeries.TreemapSeriesLevels.label.rich
+	.TreemapSeries.TreemapSeriesLevel.select.upperLabel.rich
+	.TreemapSeries.TreemapSeriesLevel.select.label.rich
+	.TreemapSeries.TreemapSeriesLevel.blur.upperLabel.rich
+	.TreemapSeries.TreemapSeriesLevel.blur.label.rich
+	.TreemapSeries.TreemapSeriesLevel.emphasis.upperLabel.rich
+	.TreemapSeries.TreemapSeriesLevel.emphasis.label.rich
+	.TreemapSeries.TreemapSeriesLevel.upperLabel.rich
+	.TreemapSeries.TreemapSeriesLevel.label.rich
 	.TreemapSeries.breadcrumb.emphasis.itemStyle.textStyle.rich
 	.TreemapSeries.breadcrumb.itemStyle.textStyle.rich
 	.TreemapSeries.select.upperLabel.rich
@@ -599,10 +588,6 @@
 	.TreemapSeries.emphasis.label.rich
 	.TreemapSeries.upperLabel.rich
 	.TreemapSeries.label.rich
-	.TreeSeries.dataData.select.label.rich
-	.TreeSeries.dataData.blur.label.rich
-	.TreeSeries.dataData.emphasis.label.rich
-	.TreeSeries.dataData.label.rich
 	.TreeSeries.leaves.select.label.rich
 	.TreeSeries.leaves.blur.label.rich
 	.TreeSeries.leaves.emphasis.label.rich
@@ -724,34 +709,27 @@
 	.timeline.emphasis.label.rich
 	.timeline.progress.label.rich
 	.timeline.label.rich
-	.singleAxis.singleAxisData.textStyle.rich
 	.singleAxis.axisLabel.rich
 	.singleAxis.nameTextStyle.rich
-	.parallelAxis.parallelAxisData.textStyle.rich
 	.parallelAxis.axisLabel.rich
 	.parallelAxis.nameTextStyle.rich
-	.parallel.parallelAxisDefault.parallelAxisDefaultData.textStyle.rich
 	.parallel.parallelAxisDefault.axisLabel.rich
 	.parallel.parallelAxisDefault.nameTextStyle.rich
-	.geo.geoRegions.blur.label.rich
-	.geo.geoRegions.select.label.rich
-	.geo.geoRegions.emphasis.label.rich
-	.geo.geoRegions.label.rich
+	.geo.geoRegion.blur.label.rich
+	.geo.geoRegion.select.label.rich
+	.geo.geoRegion.emphasis.label.rich
+	.geo.geoRegion.label.rich
 	.geo.blur.label.rich
 	.geo.select.label.rich
 	.geo.emphasis.label.rich
 	.geo.label.rich
 	.radar.axisLabel.rich
 	.radar.axisName.rich
-	.angleAxis.angleAxisData.textStyle.rich
 	.angleAxis.axisLabel.rich
-	.radiusAxis.radiusAxisData.textStyle.rich
 	.radiusAxis.axisLabel.rich
 	.radiusAxis.nameTextStyle.rich
-	.yAxis.yAxisData.textStyle.rich
 	.yAxis.axisLabel.rich
 	.yAxis.nameTextStyle.rich
-	.xAxis.xAxisData.textStyle.rich
 	.xAxis.axisLabel.rich
 	.xAxis.nameTextStyle.rich
 	.legend.selectorLabel.rich
@@ -761,7 +739,7 @@
 	.title.textStyle.rich
 
 
-#textStyle: 63 (similarity: 1,1,52,9)
+#textStyle: 55 (similarity: 1,1,51,2)
 #	color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,overflow,rich,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
 	.title.textStyle
 
@@ -796,7 +774,6 @@
 	.TreemapSeries.tooltip.textStyle
 	.TreemapSeries.TreemapSeriesData.tooltip.textStyle
 	.TreeSeries.tooltip.textStyle
-	.TreeSeries.dataData.tooltip.textStyle
 	.RadarSeries.tooltip.textStyle
 	.RadarSeries.RadarSeriesData.tooltip.textStyle
 	.EffectScatterSeries.tooltip.textStyle
@@ -812,7 +789,7 @@
 	.parallelAxis.tooltip.textStyle
 	.parallel.parallelAxisDefault.tooltip.textStyle
 	.geo.tooltip.textStyle
-	.geo.geoRegions.tooltip.textStyle
+	.geo.geoRegion.tooltip.textStyle
 	.tooltip.textStyle
 	.angleAxis.tooltip.textStyle
 	.radiusAxis.tooltip.textStyle
@@ -825,13 +802,6 @@
 #	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,overflow,padding,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
 	.TreemapSeries.breadcrumb.emphasis.itemStyle.textStyle
 	.TreemapSeries.breadcrumb.itemStyle.textStyle
-	.singleAxis.singleAxisData.textStyle
-	.parallelAxis.parallelAxisData.textStyle
-	.parallel.parallelAxisDefault.parallelAxisDefaultData.textStyle
-	.angleAxis.angleAxisData.textStyle
-	.radiusAxis.radiusAxisData.textStyle
-	.yAxis.yAxisData.textStyle
-	.xAxis.xAxisData.textStyle
 
 
 #subtextStyle: 1 (similarity: 1)
@@ -878,7 +848,7 @@
 	.SunburstSeries.itemStyle.decal
 	.SunburstSeries.SunburstSeriesData.itemStyle.decal
 	.TreemapSeries.TreemapSeriesData.itemStyle.decal
-	.TreemapSeries.TreemapSeriesLevels.itemStyle.decal
+	.TreemapSeries.TreemapSeriesLevel.itemStyle.decal
 	.TreemapSeries.itemStyle.decal
 	.RadarSeries.itemStyle.decal
 	.PieSeries.PieSeriesData.itemStyle.decal
@@ -890,7 +860,7 @@
 	.legend.itemStyle.decal
 
 
-#itemStyle: 255 (similarity: 17,14,175,2,9,6,9,3,9,2,8,1)
+#itemStyle: 251 (similarity: 17,14,171,2,9,6,9,3,9,2,8,1)
 #	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,decal,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
 	.CustomSeries.CustomSeriesData.itemStyle
 	.CustomSeries.itemStyle
@@ -917,10 +887,10 @@
 	.MapSeries.select.itemStyle
 	.MapSeries.emphasis.itemStyle
 	.MapSeries.itemStyle
-	.geo.geoRegions.blur.itemStyle
-	.geo.geoRegions.select.itemStyle
-	.geo.geoRegions.emphasis.itemStyle
-	.geo.geoRegions.itemStyle
+	.geo.geoRegion.blur.itemStyle
+	.geo.geoRegion.select.itemStyle
+	.geo.geoRegion.emphasis.itemStyle
+	.geo.geoRegion.itemStyle
 	.geo.blur.itemStyle
 	.geo.select.itemStyle
 	.geo.emphasis.itemStyle
@@ -964,10 +934,10 @@
 	.SankeySeries.select.itemStyle
 	.SankeySeries.blur.itemStyle
 	.SankeySeries.emphasis.itemStyle
-	.SankeySeries.SankeySeriesLevels.select.itemStyle
-	.SankeySeries.SankeySeriesLevels.blur.itemStyle
-	.SankeySeries.SankeySeriesLevels.emphasis.itemStyle
-	.SankeySeries.SankeySeriesLevels.itemStyle
+	.SankeySeries.SankeySeriesLevel.select.itemStyle
+	.SankeySeries.SankeySeriesLevel.blur.itemStyle
+	.SankeySeries.SankeySeriesLevel.emphasis.itemStyle
+	.SankeySeries.SankeySeriesLevel.itemStyle
 	.GraphSeries.markArea.itemStyle
 	.GraphSeries.markPoint.markPointData.emphasis.itemStyle
 	.GraphSeries.markPoint.markPointData.itemStyle
@@ -978,10 +948,10 @@
 	.GraphSeries.GraphSeriesData.blur.itemStyle
 	.GraphSeries.GraphSeriesData.emphasis.itemStyle
 	.GraphSeries.GraphSeriesData.itemStyle
-	.GraphSeries.GraphSeriesCategories.select.itemStyle
-	.GraphSeries.GraphSeriesCategories.blur.itemStyle
-	.GraphSeries.GraphSeriesCategories.emphasis.itemStyle
-	.GraphSeries.GraphSeriesCategories.itemStyle
+	.GraphSeries.GraphSeriesCategory.select.itemStyle
+	.GraphSeries.GraphSeriesCategory.blur.itemStyle
+	.GraphSeries.GraphSeriesCategory.emphasis.itemStyle
+	.GraphSeries.GraphSeriesCategory.itemStyle
 	.GraphSeries.select.itemStyle
 	.GraphSeries.blur.itemStyle
 	.GraphSeries.emphasis.itemStyle
@@ -1026,10 +996,6 @@
 	.BoxplotSeries.select.itemStyle
 	.BoxplotSeries.blur.itemStyle
 	.BoxplotSeries.emphasis.itemStyle
-	.TreeSeries.dataData.select.itemStyle
-	.TreeSeries.dataData.blur.itemStyle
-	.TreeSeries.dataData.emphasis.itemStyle
-	.TreeSeries.dataData.itemStyle
 	.TreeSeries.leaves.select.itemStyle
 	.TreeSeries.leaves.blur.itemStyle
 	.TreeSeries.leaves.emphasis.itemStyle
@@ -1129,7 +1095,7 @@
 #	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderRadius,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
 	.HeatmapSeries.HeatmapSeriesData.itemStyle
 	.HeatmapSeries.itemStyle
-	.SunburstSeries.SunburstSeriesLevels.itemStyle
+	.SunburstSeries.SunburstSeriesLevel.itemStyle
 	.PieSeries.PieSeriesData.select.itemStyle
 	.PieSeries.PieSeriesData.blur.itemStyle
 	.PieSeries.PieSeriesData.emphasis.itemStyle
@@ -1139,16 +1105,16 @@
 
 #	borderColor,borderColorSaturation,borderRadius,borderWidth,color,decal,gapWidth,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
 	.TreemapSeries.TreemapSeriesData.itemStyle
-	.TreemapSeries.TreemapSeriesLevels.itemStyle
+	.TreemapSeries.TreemapSeriesLevel.itemStyle
 	.TreemapSeries.itemStyle
 
 #	color
 	.TreemapSeries.TreemapSeriesData.select.itemStyle
 	.TreemapSeries.TreemapSeriesData.blur.itemStyle
 	.TreemapSeries.TreemapSeriesData.emphasis.itemStyle
-	.TreemapSeries.TreemapSeriesLevels.select.itemStyle
-	.TreemapSeries.TreemapSeriesLevels.blur.itemStyle
-	.TreemapSeries.TreemapSeriesLevels.emphasis.itemStyle
+	.TreemapSeries.TreemapSeriesLevel.select.itemStyle
+	.TreemapSeries.TreemapSeriesLevel.blur.itemStyle
+	.TreemapSeries.TreemapSeriesLevel.emphasis.itemStyle
 	.TreemapSeries.select.itemStyle
 	.TreemapSeries.blur.itemStyle
 	.TreemapSeries.emphasis.itemStyle
@@ -1171,7 +1137,7 @@
 	.FunnelSeries.FunnelSeriesData.itemStyle
 
 
-#lineStyle: 226 (similarity: 2,175,1,24,11,12,1)
+#lineStyle: 222 (similarity: 2,175,1,24,7,12,1)
 #	cap,color,dashOffset,inactiveColor,inactiveWidth,join,miterLimit,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,type,width
 	.legend.legendData.lineStyle
 	.legend.lineStyle
@@ -1232,15 +1198,15 @@
 	.CandlestickSeries.markLine.emphasis.lineStyle
 	.BoxplotSeries.markLine.blur.lineStyle
 	.BoxplotSeries.markLine.emphasis.lineStyle
-	.SunburstSeries.SunburstSeriesLevels.labelLine.lineStyle
+	.SunburstSeries.SunburstSeriesLevel.labelLine.lineStyle
 	.SunburstSeries.labelLine.lineStyle
 	.SunburstSeries.SunburstSeriesData.labelLine.lineStyle
 	.TreemapSeries.TreemapSeriesData.select.labelLine.lineStyle
 	.TreemapSeries.TreemapSeriesData.blur.labelLine.lineStyle
 	.TreemapSeries.TreemapSeriesData.emphasis.labelLine.lineStyle
-	.TreemapSeries.TreemapSeriesLevels.select.labelLine.lineStyle
-	.TreemapSeries.TreemapSeriesLevels.blur.labelLine.lineStyle
-	.TreemapSeries.TreemapSeriesLevels.emphasis.labelLine.lineStyle
+	.TreemapSeries.TreemapSeriesLevel.select.labelLine.lineStyle
+	.TreemapSeries.TreemapSeriesLevel.blur.labelLine.lineStyle
+	.TreemapSeries.TreemapSeriesLevel.emphasis.labelLine.lineStyle
 	.TreemapSeries.labelLine.lineStyle
 	.TreemapSeries.select.labelLine.lineStyle
 	.TreemapSeries.blur.labelLine.lineStyle
@@ -1361,10 +1327,10 @@
 	.GaugeSeries.markLine.lineStyle
 	.FunnelSeries.markLine.lineStyle
 	.GraphSeries.markLine.lineStyle
-	.GraphSeries.GraphSeriesLinks.select.lineStyle
-	.GraphSeries.GraphSeriesLinks.blur.lineStyle
-	.GraphSeries.GraphSeriesLinks.emphasis.lineStyle
-	.GraphSeries.GraphSeriesLinks.lineStyle
+	.GraphSeries.GraphSeriesLink.select.lineStyle
+	.GraphSeries.GraphSeriesLink.blur.lineStyle
+	.GraphSeries.GraphSeriesLink.emphasis.lineStyle
+	.GraphSeries.GraphSeriesLink.lineStyle
 	.GraphSeries.select.lineStyle
 	.GraphSeries.blur.lineStyle
 	.GraphSeries.emphasis.lineStyle
@@ -1383,10 +1349,6 @@
 	.LineSeries.markLine.lineStyle
 
 #	color,curveness,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,width
-	.TreeSeries.dataData.select.lineStyle
-	.TreeSeries.dataData.blur.lineStyle
-	.TreeSeries.dataData.emphasis.lineStyle
-	.TreeSeries.dataData.lineStyle
 	.TreeSeries.leaves.select.lineStyle
 	.TreeSeries.leaves.blur.lineStyle
 	.TreeSeries.leaves.emphasis.lineStyle
@@ -1396,18 +1358,18 @@
 	.TreeSeries.lineStyle
 
 #	color,curveness,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
-	.SankeySeries.SankeySeriesLinks.select.lineStyle
-	.SankeySeries.SankeySeriesLinks.blur.lineStyle
-	.SankeySeries.SankeySeriesLinks.emphasis.lineStyle
-	.SankeySeries.SankeySeriesLinks.lineStyle
+	.SankeySeries.SankeySeriesLink.select.lineStyle
+	.SankeySeries.SankeySeriesLink.blur.lineStyle
+	.SankeySeries.SankeySeriesLink.emphasis.lineStyle
+	.SankeySeries.SankeySeriesLink.lineStyle
 	.SankeySeries.select.lineStyle
 	.SankeySeries.blur.lineStyle
 	.SankeySeries.emphasis.lineStyle
 	.SankeySeries.lineStyle
-	.SankeySeries.SankeySeriesLevels.select.lineStyle
-	.SankeySeries.SankeySeriesLevels.blur.lineStyle
-	.SankeySeries.SankeySeriesLevels.emphasis.lineStyle
-	.SankeySeries.SankeySeriesLevels.lineStyle
+	.SankeySeries.SankeySeriesLevel.select.lineStyle
+	.SankeySeries.SankeySeriesLevel.blur.lineStyle
+	.SankeySeries.SankeySeriesLevel.emphasis.lineStyle
+	.SankeySeries.SankeySeriesLevel.lineStyle
 
 #	color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,width
 	.GaugeSeries.axisLine.lineStyle
@@ -1418,7 +1380,7 @@
 	.legend.selected
 
 
-#tooltip: 52 (similarity: 2,3,6,1,2,38)
+#tooltip: 51 (similarity: 2,3,6,1,2,37)
 #	
 	.toolbox.tooltip
 	.legend.tooltip
@@ -1441,7 +1403,7 @@
 
 #	backgroundColor,borderColor,borderWidth,extraCssText,formatter,padding,position,show,textStyle,valueFormatter
 	.geo.tooltip
-	.geo.geoRegions.tooltip
+	.geo.geoRegion.tooltip
 
 #	backgroundColor,borderColor,borderWidth,extraCssText,formatter,padding,position,textStyle,valueFormatter
 	.CustomSeries.tooltip
@@ -1470,7 +1432,6 @@
 	.TreemapSeries.tooltip
 	.TreemapSeries.TreemapSeriesData.tooltip
 	.TreeSeries.tooltip
-	.TreeSeries.dataData.tooltip
 	.RadarSeries.tooltip
 	.RadarSeries.RadarSeriesData.tooltip
 	.EffectScatterSeries.tooltip
@@ -1505,7 +1466,7 @@
 	.legend.emphasis.selectorLabel
 
 
-#emphasis: 113 (similarity: 1,1,6,1,1,1,1,48,16,3,6,1,4,1,1,1,2,1,2,2,2,3,1,2,1,1,1,1,1)
+#emphasis: 112 (similarity: 1,1,6,1,1,1,1,48,16,3,6,1,4,1,1,1,1,1,2,2,2,3,1,2,1,1,1,1,1)
 #	selectorLabel
 	.legend.emphasis
 
@@ -1524,7 +1485,7 @@
 	.geo.emphasis
 
 #	itemStyle,label
-	.geo.geoRegions.emphasis
+	.geo.geoRegion.emphasis
 
 #	checkpointStyle,controlStyle,itemStyle,label
 	.timeline.emphasis
@@ -1547,7 +1508,7 @@
 	.GraphSeries.markPoint.markPointData.emphasis
 	.GraphSeries.markPoint.emphasis
 	.GraphSeries.GraphSeriesData.emphasis
-	.GraphSeries.GraphSeriesCategories.emphasis
+	.GraphSeries.GraphSeriesCategory.emphasis
 	.LinesSeries.markArea.emphasis
 	.LinesSeries.markPoint.markPointData.emphasis
 	.LinesSeries.markPoint.emphasis
@@ -1587,7 +1548,7 @@
 	.GaugeSeries.markLine.emphasis
 	.FunnelSeries.markLine.emphasis
 	.GraphSeries.markLine.emphasis
-	.GraphSeries.GraphSeriesLinks.emphasis
+	.GraphSeries.GraphSeriesLink.emphasis
 	.LinesSeries.markLine.emphasis
 	.LinesSeries.LinesSeriesData.emphasis
 	.MapSeries.markLine.emphasis
@@ -1632,7 +1593,6 @@
 	.TreeSeries.emphasis
 
 #	disabled,itemStyle,label,lineStyle
-	.TreeSeries.dataData.emphasis
 	.TreeSeries.leaves.emphasis
 
 #	blurScope,disabled,focus,itemStyle,label,labelLine,upperLabel
@@ -1644,7 +1604,7 @@
 
 #	disabled,itemStyle,label,labelLine,upperLabel
 	.TreemapSeries.TreemapSeriesData.emphasis
-	.TreemapSeries.TreemapSeriesLevels.emphasis
+	.TreemapSeries.TreemapSeriesLevel.emphasis
 
 #	blurScope,disabled,focus,itemStyle
 	.CandlestickSeries.emphasis
@@ -1669,13 +1629,13 @@
 	.GraphSeries.emphasis
 
 #	disabled,edgeLabel,itemStyle,label,lineStyle
-	.SankeySeries.SankeySeriesLevels.emphasis
+	.SankeySeries.SankeySeriesLevel.emphasis
 
 #	blurScope,disabled,edgeLabel,focus,itemStyle,label,lineStyle
 	.SankeySeries.emphasis
 
 #	disabled,edgeLabel,lineStyle
-	.SankeySeries.SankeySeriesLinks.emphasis
+	.SankeySeries.SankeySeriesLink.emphasis
 
 
 #legend: 1 (similarity: 1)
@@ -1683,7 +1643,7 @@
 	.legend
 
 
-#label: 318 (similarity: 10,161,1,2,13,11,43,42,1,3,1,3,2,1,1,2,3,7,6,1,1,3)
+#label: 314 (similarity: 10,161,1,2,13,10,40,42,1,3,1,3,2,1,1,2,3,7,6,1,1,3)
 #	backgroundColor,borderColor,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,margin,overflow,padding,precision,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
 	.singleAxis.tooltip.axisPointer.label
 	.singleAxis.axisPointer.label
@@ -1727,7 +1687,7 @@
 	.SankeySeries.select.label
 	.SankeySeries.blur.label
 	.SankeySeries.emphasis.label
-	.SankeySeries.SankeySeriesLevels.label
+	.SankeySeries.SankeySeriesLevel.label
 	.GraphSeries.markArea.blur.label
 	.GraphSeries.markArea.emphasis.label
 	.GraphSeries.markArea.label
@@ -1736,7 +1696,7 @@
 	.GraphSeries.markPoint.blur.label
 	.GraphSeries.markPoint.emphasis.label
 	.GraphSeries.markPoint.label
-	.GraphSeries.GraphSeriesCategories.label
+	.GraphSeries.GraphSeriesCategory.label
 	.GraphSeries.select.label
 	.GraphSeries.blur.label
 	.GraphSeries.emphasis.label
@@ -1785,9 +1745,9 @@
 	.TreemapSeries.TreemapSeriesData.select.label
 	.TreemapSeries.TreemapSeriesData.blur.label
 	.TreemapSeries.TreemapSeriesData.emphasis.label
-	.TreemapSeries.TreemapSeriesLevels.select.label
-	.TreemapSeries.TreemapSeriesLevels.blur.label
-	.TreemapSeries.TreemapSeriesLevels.emphasis.label
+	.TreemapSeries.TreemapSeriesLevel.select.label
+	.TreemapSeries.TreemapSeriesLevel.blur.label
+	.TreemapSeries.TreemapSeriesLevel.emphasis.label
 	.TreemapSeries.select.label
 	.TreemapSeries.blur.label
 	.TreemapSeries.emphasis.label
@@ -1850,10 +1810,10 @@
 	.LineSeries.select.label
 	.LineSeries.blur.label
 	.LineSeries.emphasis.label
-	.geo.geoRegions.blur.label
-	.geo.geoRegions.select.label
-	.geo.geoRegions.emphasis.label
-	.geo.geoRegions.label
+	.geo.geoRegion.blur.label
+	.geo.geoRegion.select.label
+	.geo.geoRegion.emphasis.label
+	.geo.geoRegion.label
 	.geo.blur.label
 	.geo.select.label
 	.geo.emphasis.label
@@ -1872,7 +1832,7 @@
 	.GraphSeries.label
 	.MapSeries.label
 	.TreemapSeries.TreemapSeriesData.label
-	.TreemapSeries.TreemapSeriesLevels.label
+	.TreemapSeries.TreemapSeriesLevel.label
 	.TreemapSeries.label
 	.TreeSeries.label
 	.RadarSeries.label
@@ -1887,7 +1847,6 @@
 	.GraphSeries.GraphSeriesData.label
 	.HeatmapSeries.HeatmapSeriesData.label
 	.HeatmapSeries.label
-	.TreeSeries.dataData.label
 	.RadarSeries.RadarSeriesData.label
 	.EffectScatterSeries.EffectScatterSeriesData.label
 	.ScatterSeries.ScatterSeriesData.label
@@ -1901,25 +1860,22 @@
 	.SankeySeries.SankeySeriesData.select.label
 	.SankeySeries.SankeySeriesData.blur.label
 	.SankeySeries.SankeySeriesData.emphasis.label
-	.SankeySeries.SankeySeriesLevels.select.label
-	.SankeySeries.SankeySeriesLevels.blur.label
-	.SankeySeries.SankeySeriesLevels.emphasis.label
-	.GraphSeries.GraphSeriesLinks.select.label
-	.GraphSeries.GraphSeriesLinks.blur.label
-	.GraphSeries.GraphSeriesLinks.emphasis.label
+	.SankeySeries.SankeySeriesLevel.select.label
+	.SankeySeries.SankeySeriesLevel.blur.label
+	.SankeySeries.SankeySeriesLevel.emphasis.label
+	.GraphSeries.GraphSeriesLink.select.label
+	.GraphSeries.GraphSeriesLink.blur.label
+	.GraphSeries.GraphSeriesLink.emphasis.label
 	.GraphSeries.GraphSeriesData.select.label
 	.GraphSeries.GraphSeriesData.blur.label
 	.GraphSeries.GraphSeriesData.emphasis.label
-	.GraphSeries.GraphSeriesCategories.select.label
-	.GraphSeries.GraphSeriesCategories.blur.label
-	.GraphSeries.GraphSeriesCategories.emphasis.label
+	.GraphSeries.GraphSeriesCategory.select.label
+	.GraphSeries.GraphSeriesCategory.blur.label
+	.GraphSeries.GraphSeriesCategory.emphasis.label
 	.HeatmapSeries.HeatmapSeriesData.emphasis.label
 	.HeatmapSeries.select.label
 	.HeatmapSeries.blur.label
 	.HeatmapSeries.emphasis.label
-	.TreeSeries.dataData.select.label
-	.TreeSeries.dataData.blur.label
-	.TreeSeries.dataData.emphasis.label
 	.TreeSeries.leaves.select.label
 	.TreeSeries.leaves.blur.label
 	.TreeSeries.leaves.emphasis.label
@@ -2004,7 +1960,7 @@
 	.SunburstSeries.SunburstSeriesData.label
 
 #	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,minAngle,offset,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
-	.SunburstSeries.SunburstSeriesLevels.label
+	.SunburstSeries.SunburstSeriesLevel.label
 
 #	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,minMargin,offset,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
 	.MapSeries.MapSeriesData.label
@@ -2019,7 +1975,7 @@
 	.LinesSeries.label
 
 #	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,overflow,padding,position,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
-	.GraphSeries.GraphSeriesLinks.label
+	.GraphSeries.GraphSeriesLink.label
 	.LinesSeries.LinesSeriesData.select.label
 	.LinesSeries.LinesSeriesData.blur.label
 	.LinesSeries.LinesSeriesData.emphasis.label
@@ -2245,11 +2201,6 @@
 	.radar.splitArea
 
 
-#xAxisData: 1 (similarity: 1)
-#	textStyle,value
-	.xAxis.xAxisData
-
-
 #handle: 6 (similarity: 6)
 #	color,icon,margin,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,size,throttle
 	.singleAxis.axisPointer.handle
@@ -2265,11 +2216,6 @@
 	.xAxis
 
 
-#yAxisData: 1 (similarity: 1)
-#	textStyle,value
-	.yAxis.yAxisData
-
-
 #yAxis: 1 (similarity: 1)
 #	alignTicks,animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,axisLabel,axisLine,axisPointer,axisTick,boundaryGap,data,gridIndex,id,interval,inverse,logBase,max,maxInterval,min,minInterval,minorSplitLine,minorTick,name,nameGap,nameLocation,nameRotate,nameTextStyle,nameTruncate,offset,position,scale,show,silent,splitArea,splitLine,splitNumber,startValue,tooltip,triggerEvent,type,z,zlevel
 	.yAxis
@@ -2280,19 +2226,9 @@
 	.polar
 
 
-#radiusAxisData: 1 (similarity: 1)
-#	textStyle,value
-	.radiusAxis.radiusAxisData
-
-
 #radiusAxis: 1 (similarity: 1)
 #	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,axisLabel,axisLine,axisPointer,axisTick,boundaryGap,data,id,interval,inverse,logBase,max,maxInterval,min,minInterval,minorSplitLine,minorTick,name,nameGap,nameLocation,nameRotate,nameTextStyle,nameTruncate,polarIndex,scale,silent,splitArea,splitLine,splitNumber,startValue,tooltip,triggerEvent,type,z,zlevel
 	.radiusAxis
-
-
-#angleAxisData: 1 (similarity: 1)
-#	textStyle,value
-	.angleAxis.angleAxisData
 
 
 #angleAxis: 1 (similarity: 1)
@@ -2519,18 +2455,18 @@
 	.geo.nameMap
 
 
-#select: 42 (similarity: 7,1,1,14,2,3,3,4,3,3,1)
+#select: 41 (similarity: 7,1,1,14,2,2,3,4,3,3,1)
 #	disabled,itemStyle,label
 	.SankeySeries.SankeySeriesData.select
 	.GraphSeries.GraphSeriesData.select
-	.GraphSeries.GraphSeriesCategories.select
+	.GraphSeries.GraphSeriesCategory.select
 	.MapSeries.select
 	.HeatmapSeries.select
 	.LineSeries.LineSeriesData.select
 	.geo.select
 
 #	itemStyle,label
-	.geo.geoRegions.select
+	.geo.geoRegion.select
 
 #	areaStyle,disabled,endLabel,itemStyle,label,labelLine,lineStyle
 	.LineSeries.select
@@ -2556,13 +2492,12 @@
 	.RadarSeries.select
 
 #	disabled,itemStyle,label,lineStyle
-	.TreeSeries.dataData.select
 	.TreeSeries.leaves.select
 	.TreeSeries.select
 
 #	disabled,itemStyle,label,labelLine,upperLabel
 	.TreemapSeries.TreemapSeriesData.select
-	.TreemapSeries.TreemapSeriesLevels.select
+	.TreemapSeries.TreemapSeriesLevel.select
 	.TreemapSeries.select
 
 #	disabled,itemStyle
@@ -2572,20 +2507,20 @@
 	.BoxplotSeries.select
 
 #	disabled,label,lineStyle
-	.GraphSeries.GraphSeriesLinks.select
+	.GraphSeries.GraphSeriesLink.select
 	.LinesSeries.LinesSeriesData.select
 	.LinesSeries.select
 
 #	disabled,edgeLabel,itemStyle,label,lineStyle
 	.SankeySeries.select
-	.SankeySeries.SankeySeriesLevels.select
+	.SankeySeries.SankeySeriesLevel.select
 	.GraphSeries.select
 
 #	disabled,edgeLabel,lineStyle
-	.SankeySeries.SankeySeriesLinks.select
+	.SankeySeries.SankeySeriesLink.select
 
 
-#blur: 82 (similarity: 35,1,17,13,2,3,3,4,3,1)
+#blur: 81 (similarity: 35,1,17,13,2,2,3,4,3,1)
 #	itemStyle,label
 	.PictorialBarSeries.markArea.blur
 	.PictorialBarSeries.markPoint.blur
@@ -2597,7 +2532,7 @@
 	.GraphSeries.markArea.blur
 	.GraphSeries.markPoint.blur
 	.GraphSeries.GraphSeriesData.blur
-	.GraphSeries.GraphSeriesCategories.blur
+	.GraphSeries.GraphSeriesCategory.blur
 	.LinesSeries.markArea.blur
 	.LinesSeries.markPoint.blur
 	.MapSeries.markArea.blur
@@ -2620,7 +2555,7 @@
 	.LineSeries.markArea.blur
 	.LineSeries.markPoint.blur
 	.LineSeries.LineSeriesData.blur
-	.geo.geoRegions.blur
+	.geo.geoRegion.blur
 	.geo.blur
 
 #	areaStyle,endLabel,itemStyle,label,labelLine,lineStyle
@@ -2631,7 +2566,7 @@
 	.GaugeSeries.markLine.blur
 	.FunnelSeries.markLine.blur
 	.GraphSeries.markLine.blur
-	.GraphSeries.GraphSeriesLinks.blur
+	.GraphSeries.GraphSeriesLink.blur
 	.LinesSeries.markLine.blur
 	.LinesSeries.LinesSeriesData.blur
 	.LinesSeries.blur
@@ -2665,13 +2600,12 @@
 	.RadarSeries.blur
 
 #	itemStyle,label,lineStyle
-	.TreeSeries.dataData.blur
 	.TreeSeries.leaves.blur
 	.TreeSeries.blur
 
 #	itemStyle,label,labelLine,upperLabel
 	.TreemapSeries.TreemapSeriesData.blur
-	.TreemapSeries.TreemapSeriesLevels.blur
+	.TreemapSeries.TreemapSeriesLevel.blur
 	.TreemapSeries.blur
 
 #	itemStyle
@@ -2682,26 +2616,21 @@
 
 #	edgeLabel,itemStyle,label,lineStyle
 	.SankeySeries.blur
-	.SankeySeries.SankeySeriesLevels.blur
+	.SankeySeries.SankeySeriesLevel.blur
 	.GraphSeries.blur
 
 #	edgeLabel,lineStyle
-	.SankeySeries.SankeySeriesLinks.blur
+	.SankeySeries.SankeySeriesLink.blur
 
 
-#geoRegions: 1 (similarity: 1)
+#geoRegion: 1 (similarity: 1)
 #	blur,emphasis,itemStyle,label,name,select,selected,silent,tooltip
-	.geo.geoRegions
+	.geo.geoRegion
 
 
 #geo: 1 (similarity: 1)
 #	aspectScale,blur,bottom,boundingCoords,center,emphasis,id,itemStyle,label,layoutCenter,layoutSize,left,map,nameMap,nameProperty,projection,regions,right,roam,scaleLimit,select,selectedMode,show,silent,tooltip,top,z,zlevel,zoom
 	.geo
-
-
-#parallelAxisDefaultData: 1 (similarity: 1)
-#	textStyle,value
-	.parallel.parallelAxisDefault.parallelAxisDefaultData
 
 
 #parallelAxisDefault: 1 (similarity: 1)
@@ -2719,19 +2648,9 @@
 	.parallelAxis.areaSelectStyle
 
 
-#parallelAxisData: 1 (similarity: 1)
-#	textStyle,value
-	.parallelAxis.parallelAxisData
-
-
 #parallelAxis: 1 (similarity: 1)
 #	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,areaSelectStyle,axisLabel,axisLine,axisTick,boundaryGap,data,dim,id,interval,inverse,logBase,max,maxInterval,min,minInterval,minorTick,name,nameGap,nameLocation,nameRotate,nameTextStyle,nameTruncate,parallelIndex,realtime,scale,silent,splitNumber,startValue,tooltip,triggerEvent,type
 	.parallelAxis
-
-
-#singleAxisData: 1 (similarity: 1)
-#	textStyle,value
-	.singleAxis.singleAxisData
 
 
 #singleAxis: 1 (similarity: 1)
@@ -2849,13 +2768,13 @@
 	.FunnelSeries.emphasis.labelLine
 	.MapSeries.MapSeriesData.select.labelLine
 	.MapSeries.MapSeriesData.emphasis.labelLine
-	.SunburstSeries.SunburstSeriesLevels.labelLine
+	.SunburstSeries.SunburstSeriesLevel.labelLine
 	.TreemapSeries.TreemapSeriesData.select.labelLine
 	.TreemapSeries.TreemapSeriesData.blur.labelLine
 	.TreemapSeries.TreemapSeriesData.emphasis.labelLine
-	.TreemapSeries.TreemapSeriesLevels.select.labelLine
-	.TreemapSeries.TreemapSeriesLevels.blur.labelLine
-	.TreemapSeries.TreemapSeriesLevels.emphasis.labelLine
+	.TreemapSeries.TreemapSeriesLevel.select.labelLine
+	.TreemapSeries.TreemapSeriesLevel.blur.labelLine
+	.TreemapSeries.TreemapSeriesLevel.emphasis.labelLine
 	.TreemapSeries.select.labelLine
 	.TreemapSeries.blur.labelLine
 	.TreemapSeries.emphasis.labelLine
@@ -3083,11 +3002,6 @@
 	.TreeSeries.leaves
 
 
-#dataData: 1 (similarity: 1)
-#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,blur,collapsed,emphasis,itemStyle,label,lineStyle,name,select,tooltip,value
-	.TreeSeries.dataData
-
-
 #TreeSeries: 1 (similarity: 1)
 #	blur,bottom,center,data,edgeForkPosition,edgeShape,emphasis,expandAndCollapse,height,id,initialTreeDepth,itemStyle,label,labelLayout,layout,leaves,left,lineStyle,name,orient,right,roam,select,selectedMode,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,tooltip,top,type,width,z,zlevel,zoom
 	.TreeSeries
@@ -3099,10 +3013,10 @@
 	.TreemapSeries.TreemapSeriesData.blur.upperLabel
 	.TreemapSeries.TreemapSeriesData.emphasis.upperLabel
 	.TreemapSeries.TreemapSeriesData.upperLabel
-	.TreemapSeries.TreemapSeriesLevels.select.upperLabel
-	.TreemapSeries.TreemapSeriesLevels.blur.upperLabel
-	.TreemapSeries.TreemapSeriesLevels.emphasis.upperLabel
-	.TreemapSeries.TreemapSeriesLevels.upperLabel
+	.TreemapSeries.TreemapSeriesLevel.select.upperLabel
+	.TreemapSeries.TreemapSeriesLevel.blur.upperLabel
+	.TreemapSeries.TreemapSeriesLevel.emphasis.upperLabel
+	.TreemapSeries.TreemapSeriesLevel.upperLabel
 	.TreemapSeries.select.upperLabel
 	.TreemapSeries.blur.upperLabel
 	.TreemapSeries.emphasis.upperLabel
@@ -3114,9 +3028,9 @@
 	.TreemapSeries.breadcrumb
 
 
-#TreemapSeriesLevels: 1 (similarity: 1)
+#TreemapSeriesLevel: 1 (similarity: 1)
 #	blur,childrenVisibleMin,color,colorAlpha,colorMappingBy,colorSaturation,emphasis,itemStyle,label,select,upperLabel,visibleMin,visualDimension,visualMax,visualMin
-	.TreemapSeries.TreemapSeriesLevels
+	.TreemapSeries.TreemapSeriesLevel
 
 
 #TreemapSeriesData: 1 (similarity: 1)
@@ -3134,9 +3048,9 @@
 	.SunburstSeries.SunburstSeriesData
 
 
-#SunburstSeriesLevels: 1 (similarity: 1)
+#SunburstSeriesLevel: 1 (similarity: 1)
 #	blur,emphasis,itemStyle,label,labelLine,radius,select
-	.SunburstSeries.SunburstSeriesLevels
+	.SunburstSeries.SunburstSeriesLevel
 
 
 #SunburstSeries: 1 (similarity: 1)
@@ -3227,23 +3141,23 @@
 	.GraphSeries.edgeLabel
 
 #	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,offset,overflow,padding,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
-	.SankeySeries.SankeySeriesLinks.select.edgeLabel
-	.SankeySeries.SankeySeriesLinks.blur.edgeLabel
-	.SankeySeries.SankeySeriesLinks.emphasis.edgeLabel
-	.SankeySeries.SankeySeriesLinks.edgeLabel
+	.SankeySeries.SankeySeriesLink.select.edgeLabel
+	.SankeySeries.SankeySeriesLink.blur.edgeLabel
+	.SankeySeries.SankeySeriesLink.emphasis.edgeLabel
+	.SankeySeries.SankeySeriesLink.edgeLabel
 	.SankeySeries.select.edgeLabel
 	.SankeySeries.blur.edgeLabel
 	.SankeySeries.emphasis.edgeLabel
-	.SankeySeries.SankeySeriesLevels.select.edgeLabel
-	.SankeySeries.SankeySeriesLevels.blur.edgeLabel
-	.SankeySeries.SankeySeriesLevels.emphasis.edgeLabel
-	.SankeySeries.SankeySeriesLevels.edgeLabel
+	.SankeySeries.SankeySeriesLevel.select.edgeLabel
+	.SankeySeries.SankeySeriesLevel.blur.edgeLabel
+	.SankeySeries.SankeySeriesLevel.emphasis.edgeLabel
+	.SankeySeries.SankeySeriesLevel.edgeLabel
 	.SankeySeries.edgeLabel
 
 
-#GraphSeriesCategories: 1 (similarity: 1)
+#GraphSeriesCategory: 1 (similarity: 1)
 #	blur,emphasis,itemStyle,label,name,select,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize
-	.GraphSeries.GraphSeriesCategories
+	.GraphSeries.GraphSeriesCategory
 
 
 #GraphSeriesData: 1 (similarity: 1)
@@ -3251,9 +3165,9 @@
 	.GraphSeries.GraphSeriesData
 
 
-#GraphSeriesLinks: 1 (similarity: 1)
+#GraphSeriesLink: 1 (similarity: 1)
 #	blur,emphasis,ignoreForceLayout,label,lineStyle,select,source,symbol,symbolSize,target,value
-	.GraphSeries.GraphSeriesLinks
+	.GraphSeries.GraphSeriesLink
 
 
 #GraphSeries: 1 (similarity: 1)
@@ -3261,9 +3175,9 @@
 	.GraphSeries
 
 
-#SankeySeriesLevels: 1 (similarity: 1)
+#SankeySeriesLevel: 1 (similarity: 1)
 #	blur,depth,edgeLabel,emphasis,itemStyle,label,lineStyle,select
-	.SankeySeries.SankeySeriesLevels
+	.SankeySeries.SankeySeriesLevel
 
 
 #SankeySeriesData: 1 (similarity: 1)
@@ -3271,9 +3185,9 @@
 	.SankeySeries.SankeySeriesData
 
 
-#SankeySeriesLinks: 1 (similarity: 1)
+#SankeySeriesLink: 1 (similarity: 1)
 #	blur,edgeLabel,emphasis,lineStyle,select,source,target,value
-	.SankeySeries.SankeySeriesLinks
+	.SankeySeries.SankeySeriesLink
 
 
 #SankeySeries: 1 (similarity: 1)

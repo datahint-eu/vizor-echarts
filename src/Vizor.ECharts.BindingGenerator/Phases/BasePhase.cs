@@ -29,10 +29,10 @@ internal abstract class BasePhase
         "singleAxis"
     };
 
-    public BasePhase(TypeCollection typeCollection)
+    public BasePhase(TypeCollection typeCollection, DiagnosticCollector diagnosticCollector)
     {
         this.typeCollection = typeCollection;
-        this.diagnosticCollector = new DiagnosticCollector();
+        this.diagnosticCollector = diagnosticCollector;
         this.patternRegistry = new TypePatternRegistry(typeCollection);
     }
 

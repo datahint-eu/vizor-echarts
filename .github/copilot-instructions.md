@@ -50,6 +50,38 @@ Use `ChartGroup` ([src/Vizor.ECharts/ChartGroup.cs](src/Vizor.ECharts/ChartGroup
 - camelCase JSON convention via shared serializer.
 - Custom `JsonConverters` parameter: use consistently or disable caching.
 
+## Diagnostic Report & Pattern Analysis
+
+The generator produces **TypePatternAnalysisReport.md** showing type mapping coverage:
+
+### How to Access
+- **Location**: `src/Vizor.ECharts.BindingGenerator/` (same directory as `typeinfo.txt`)
+- **Triggered**: Automatically generated when running either:
+  - `dotnet run -- option-binding --input <path/to/option.json> --output src/Vizor.ECharts`
+  - `dotnet run -- typeinfo --input <path/to/option.json>`
+
+### Report Contents
+```
+# Type Pattern Analysis Report
+Generated: 2026-01-04
+
+## Summary
+- Total properties analyzed: 37,348
+- ✅ Fully supported: 37,330 (99.95%)
+- ⚠️ Partially supported: 2 (0.01%)
+- ❌ Unsupported: 16 (0.04%)
+- 🔍 Requires investigation: 0 (0%)
+
+## Unsupported Patterns
+[Details on which properties fall back to object/string]
+[Sorted by frequency and impact]
+```
+
+### Using Report for Phase 4 (Close Gaps)
+- Review unsupported patterns to prioritize next custom types
+- High-frequency patterns get implementation priority
+- Report tracks progress across generator runs
+
 ## Build & Test Workflows
 
 ### .NET Build & Run
@@ -79,10 +111,11 @@ DEBUG builds auto-enable `vizorECharts.changeLogging(true)`, logging serialized 
 1. Build echarts-doc repo (`npm run build` → generates option.json).
 2. Delete `src/Vizor.ECharts/Options/Generated` and `src/Vizor.ECharts/Series/Generated` folders.
 3. Run: `dotnet run --project src/Vizor.ECharts.BindingGenerator -- option-binding --input <path/to/option.json> --output src/Vizor.ECharts`
-4. **Polymorphic interfaces auto-generated**: Generator creates `ISeries.cs` and `IDataZoom.cs` in their respective Generated folders with .NET 10 `[JsonPolymorphic]`/`[JsonDerivedType]` attributes. Discriminators extracted from type property defaults in option.json.
-5. Fix any compile errors (generator isn't 100% perfect).
-6. **Hand-tuned overrides remain unchanged**: Files like `Series/Sankey/SankeySeriesLevel.cs` (outside Generated folders) are manually maintained and will NOT be regenerated. These are intentional architectural customizations.
-7. Verify hand-tuned files still compile against newly generated types. Update manually if needed.
+4. **Diagnostic Report Generated**: `TypePatternAnalysisReport.md` is automatically created in the BindingGenerator directory (same location as `typeinfo.txt`), showing type mapping coverage and unsupported patterns.
+5. **Polymorphic interfaces auto-generated**: Generator creates `ISeries.cs` and `IDataZoom.cs` in their respective Generated folders with .NET 10 `[JsonPolymorphic]`/`[JsonDerivedType]` attributes. Discriminators extracted from type property defaults in option.json.
+6. Fix any compile errors (generator isn't 100% perfect).
+7. **Hand-tuned overrides remain unchanged**: Files like `Series/Sankey/SankeySeriesLevel.cs` (outside Generated folders) are manually maintained and will NOT be regenerated. These are intentional architectural customizations.
+8. Verify hand-tuned files still compile against newly generated types. Update manually if needed.
 
 **Option.json Locations**:
 - **Current version (5.6.0)**: [src/Vizor.ECharts.BindingGenerator/echart-options/5.6.0/option.json](src/Vizor.ECharts.BindingGenerator/echart-options/5.6.0/option.json)

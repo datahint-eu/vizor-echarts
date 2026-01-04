@@ -1,5 +1,6 @@
 using System.Text.Json;
 
+using Vizor.ECharts.BindingGenerator.Diagnostics;
 using Vizor.ECharts.BindingGenerator.Generators;
 using Vizor.ECharts.BindingGenerator.Phases;
 using Vizor.ECharts.BindingGenerator.Types;
@@ -51,8 +52,9 @@ internal class GenerateOptionBindingTool
 
         // process the input JSON
         var typeCollection = new TypeCollection();
+        var diagnosticCollector = new DiagnosticCollector();
         var phases = new List<BasePhase> {
-            new GenerateObjectTypesPhase(typeCollection)
+            new GenerateObjectTypesPhase(typeCollection, diagnosticCollector)
         };
 
         foreach (var phase in phases)
@@ -129,6 +131,16 @@ internal class GenerateOptionBindingTool
                 echartsVersion);
             iVisualMapGenerator.Generate();
         }
+
+        // Generate diagnostic report in same folder as working directory (where typeinfo.txt is written)
+        var report = diagnosticCollector.GenerateReport();
+        var outputDirectory = Directory.GetCurrentDirectory();
+        var reportPath = Path.Combine(outputDirectory, "TypePatternAnalysisReport.md");
+        File.WriteAllText(reportPath, report.ToMarkdown());
+        
+        var (supported, partial, unsupported, investigation, total) = diagnosticCollector.GetSummary();
+        Console.WriteLine($"Pattern Report: {supported}/{total} supported ({partial} partial, {unsupported} unsupported, {investigation} investigation)");
+        Console.WriteLine($"Report written to: {reportPath}");
 
         Console.WriteLine("done.");
 

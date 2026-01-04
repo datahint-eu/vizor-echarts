@@ -1,13 +1,14 @@
 using System.Text.Json;
 
+using Vizor.ECharts.BindingGenerator.Diagnostics;
 using Vizor.ECharts.BindingGenerator.Types;
 
 namespace Vizor.ECharts.BindingGenerator.Phases;
 
 internal class GenerateObjectTypesPhase : BasePhase
 {
-    public GenerateObjectTypesPhase(TypeCollection typeCollection)
-        : base(typeCollection)
+    public GenerateObjectTypesPhase(TypeCollection typeCollection, DiagnosticCollector diagnosticCollector)
+        : base(typeCollection, diagnosticCollector)
     {
     }
 
