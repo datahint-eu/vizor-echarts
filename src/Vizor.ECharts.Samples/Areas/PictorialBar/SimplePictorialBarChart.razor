@@ -1,6 +1,6 @@
 @using Vizor.ECharts;
 
-<Vizor.ECharts.EChart Options="@options" Width="auto" Height="400px" />
+<Vizor.ECharts.EChart Options="@options" Width="500px" Height="400px" />
 
 @code {
 
@@ -81,6 +81,7 @@
 					}
 				}
 			},
+            AnimationDuration = 500,
 			Series = new()
 			{
 				new PictorialBarSeries()
@@ -97,6 +98,13 @@
 					SymbolRepeat = PictorialSymbolRepeatType.True,
 					SymbolSize = new("80%", "60%"),
 					BarCategoryGap = "40%",
+                    UniversalTransition = new()
+                    {
+                        Enabled = true,
+                        Delay =  new JavascriptFunction(@"function (index, total) {
+                            return (idx / total) * 1000;
+                        }")
+                    },
 					Data = new List<PictorialBarSeriesData>()
 					{
 						new(reindeer, 157),
@@ -121,6 +129,13 @@
 					SymbolRepeat = PictorialSymbolRepeatType.True,
 					SymbolSize = new("80%", "60%"),
 					BarCategoryGap = "40%",
+                    UniversalTransition = new()
+                    {
+                        Enabled = true,
+                        Delay =  new JavascriptFunction(@"function (index, total) {
+                            return (idx / total) * 1000;
+                        }")
+                    },
 					Data = new List<PictorialBarSeriesData>()
 					{
 						new(reindeer, 184),

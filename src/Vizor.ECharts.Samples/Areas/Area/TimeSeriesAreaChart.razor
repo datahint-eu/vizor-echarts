@@ -11,6 +11,9 @@
 			Tooltip = new()
 			{
 				Trigger = TooltipTrigger.Axis,
+                Position = new JavascriptFunction(@"function (pt) {
+                  return [pt[0], '10%'];
+                }")
 			},
 			Toolbox = new()
 			{
@@ -22,6 +25,11 @@
 					}
 				}
 			},
+            Title = new()
+            {
+                Left = "center",
+                Text = "Time Series Area Chart"
+            },
 			XAxis = new()
 			{
 				Type = AxisType.Time,
@@ -38,13 +46,19 @@
 				{
 					Start = 0,
 					End = 20
-				}
+				}, 
+                new SliderDataZoom()
+                {
+                    Start = 0,
+                    End = 20
+                }
 			},
 			Series = new()
 			{
 				new LineSeries()
 				{
 					AreaStyle = new() {},
+                    Name = "Fake data",
 					ShowSymbol = false,
 					Smooth = true
 				}
@@ -54,13 +68,15 @@
 	private void LoadChartData()
 	{
 		var now = new DateTime(2023, 08, 01);
-
-		var values = new List<SeriesData<DateTime, int>>(24 * 60 * 7);
+        @* var minutes = 20000; *@
+        var minutes = (24 * 60 * 7); // one week of minute data
+        @* minutes *= 30;  // increase to 30 weeks *@
+		var values = new List<SeriesData<DateTime, int>>(minutes);
 		var rnd = new Random();
 
-		for (int i = 0; i < 24 * 60 * 7; ++i)
+		for (int i = 0; i < minutes; ++i)
 		{
-			values.Add(new (now + TimeSpan.FromMinutes(i), rnd.Next(350)));
+			values.Add(new (now + TimeSpan.FromMinutes(i), 150-rnd.Next(350)));
 		}
 
 		(options.Series![0] as LineSeries)!.Data = values;
