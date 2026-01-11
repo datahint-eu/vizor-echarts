@@ -253,6 +253,22 @@ internal abstract class BasePhase
             return numberOrStringType;
         }
 
+        // Special case: cellSize in Calendar should allow percentage strings
+        if (prop.Name == "cellSize" && (parent.DotNetType == "Calendar"))
+        {
+            var cellSizeType = new MappedCustomType(typeof(CellSize));
+            diagnosticCollector.RecordSupported(propertyPath, types, cellSizeType.DotNetType);
+            return cellSizeType;
+        }
+
+        // Special case: symbolSize in PictorialBar should allow percentage strings
+        if (prop.Name == "symbolSize" && (parent.DotNetType == "PictorialBarSeries" || parent.DotNetType == "PictorialBarSeriesData"))
+        {
+            var numberOrStringArray = new MappedCustomType(typeof(NumberOrStringArray));
+            diagnosticCollector.RecordSupported(propertyPath, types, numberOrStringArray.DotNetType);
+            return numberOrStringArray;
+        }
+
         // Special case: dimension property accepts both numeric dimension indices and string dimension names
         // ECharts examples show usage like: dimension: 1, dimension: 2 (numeric) or dimension: 'sales', dimension: 'profit' (string)
         if (prop.Name == "dimension" && string.Join(",", types) == "string")
@@ -348,7 +364,7 @@ internal abstract class BasePhase
                 diagnosticCollector.RecordSupported(propertyPath, types, "NumberOrStringArray");
                 return result;
             }
-            
+
             // Special case: data property in TreeSeries should remain as object? for flexibility
             if (prop.Name == "data" && parent.DotNetType == "TreeSeries")
             {

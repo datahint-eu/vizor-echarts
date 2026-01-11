@@ -162,7 +162,7 @@ public partial class PictorialBarSeriesData
     /// </summary>
     [JsonPropertyName("symbolSize")]
     [DefaultValue("100%,100%")]
-    public NumberOrNumberArray? SymbolSize { get; set; } 
+    public NumberOrStringArray? SymbolSize { get; set; } 
 
     /// <summary>
     /// <![CDATA[
