@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -41,9 +41,45 @@ public partial class EndLabel
     public NumberOrNumberArray? Offset { get; set; } 
 
     /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// The space around the label to escape from overlapping.
+    /// The unit is px.
+    ///  
+    /// Notice: textMargin is applied on the label's local bounding rect, that is, if there is a rotate specified on the label, apply textMargin on the non-rotated label first, and then apply the rotation.
+    ///   
+    /// The name is textMargin because historically the name margin has been used for a different purpose.
+    ///   
+    /// Examples:  // Set margin to be 5, means [5, 5, 5, 5]
+    /// textMargin: 5
+    /// // Set the top and bottom margin to be 5, and left and right margin to be 10
+    /// textMargin: [5, 10]
+    /// // Set each of the four margin separately
+    /// textMargin: [
+    ///     5,  // up
+    ///     10, // right
+    ///     5,  // down
+    ///     10, // left
+    /// ]
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("textMargin")]
+    public NumberOrNumberArray? TextMargin { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
     /// Since v5.0.0   
     /// Minimal margin between labels.
     /// Used when label has layout .
+    ///  
+    /// minMargin conveys a similar meaning to textMargin , but with a different nuance.
+    /// If unsure, just use textMargin ; it basically covers minMargin and can provide a more compact layout for rotated labels in some scenarios.
+    ///   
+    /// TL;DR: The difference:   The minimal gap (if applicable) between two labels is label1.minMargin/2 + label2.minMargin/2 , or label1.textMargin[number] + label2.textMargin[number] .
+    ///  If rotate is specified on a label,  minMargin : first rotate the label, forming a new rect by the min/max of x/y from the four corner points (that is a expanded bounding rect), and finally minMargin is applied on the new rect.
+    ///  textMargin : first applied on the label's local bounding rect, and then rotate.
+    ///    Data type: minMargin should be only number , textMargin can be number | number[] (follow CSS margin).
+    /// ]]>
     /// </summary>
     [JsonPropertyName("minMargin")]
     public double? MinMargin { get; set; } 
@@ -496,6 +532,37 @@ public partial class EndLabel
     /// </summary>
     [JsonPropertyName("rich")]
     public Rich? Rich { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// Whether rich text inherits plain text style.
+    ///  
+    /// This option is just for backward compatibility.
+    ///   
+    /// The label.rich / textStyle.rich  fontStyle , fontWeight , fontSize , fontFamily , textShadowColor , textShadowBlur , textShadowOffsetX , textShadowOffsetY are changed to inherit the corresponding plain label styles since echarts v6.
+    /// You can use richInheritPlainLabel: false to restore it.
+    /// For example,  option = {
+    ///     richInheritPlainLabel: false, // In most cases, this is enough.
+    ///     xxx1: {
+    ///         // Can also set it here to only control this label.
+    ///         label: {
+    ///             richInheritPlainLabel: false,
+    ///             rich: {/* ...
+    /// */},
+    ///         }
+    ///     },
+    ///     xxx2: {
+    ///         textStyle: {
+    ///             richInheritPlainLabel: false,
+    ///             rich: {/* ...
+    /// */},
+    ///         }
+    ///     }
+    /// }
+    /// </summary>
+    [JsonPropertyName("richInheritPlainLabel")]
+    [DefaultValue(true)]
+    public bool? RichInheritPlainLabel { get; set; } 
 
     /// <summary>
     /// Whether to enable text animation of value change.

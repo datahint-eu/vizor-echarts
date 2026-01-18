@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -43,8 +43,7 @@ public partial class MarkLine
     /// For example,  symbolOffset: [
     ///     [-10, 20],    // offset of starting symbol
     ///     ['50%', 100]  // offset of ending symbol
-    /// ]   
-    /// Since v5.1.0
+    /// ]  Since v5.1.0
     /// ]]>
     /// </summary>
     [JsonPropertyName("symbolOffset")]
@@ -154,6 +153,16 @@ public partial class MarkLine
     /// </summary>
     [JsonPropertyName("data")]
     public object? Data { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// Components with smaller z values may be overwritten by those with larger z values.
+    ///  
+    /// z has a lower priority to zlevel , and will not create new Canvas.
+    /// </summary>
+    [JsonPropertyName("z")]
+    [DefaultValue(5)]
+    public double? Z { get; set; } 
 
     /// <summary>
     /// Whether to enable animation.

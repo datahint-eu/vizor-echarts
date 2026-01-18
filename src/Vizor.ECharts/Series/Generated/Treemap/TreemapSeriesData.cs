@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -249,6 +249,9 @@ public partial class TreemapSeriesData
     /// It is available when series-treemap.nodeClick is 'link' .
     ///  
     /// See series-treemap.data.target .
+    ///   [WARNING]: This URL string is accepted directly without any internal sanitization.
+    /// Security risks must be considered if it comes from untrusted sources.
+    /// See document "Security Guidelines" for recommendations on safe usage.
     /// ]]>
     /// </summary>
     [JsonPropertyName("link")]

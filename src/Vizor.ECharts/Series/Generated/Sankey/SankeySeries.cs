@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -49,9 +49,9 @@ public partial class SankeySeries : ISeries
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between sankey component and the left side of the container.
+    /// Distance between sankey series and the left side of the container.
     ///  
-    /// left can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' ; and it can also be 'left' , 'center' , or 'right' .
+    /// left can be a pixel value like 20 ; it can also be a percentage value relative to the container width like '20%' ; and it can also be 'left' , 'center' , or 'right' .
     ///  
     /// If the left value is set to be 'left' , 'center' , or 'right' , then the component will be aligned automatically based on position.
     /// ]]>
@@ -62,9 +62,9 @@ public partial class SankeySeries : ISeries
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between sankey component and the top side of the container.
+    /// Distance between sankey series and the top side of the container.
     ///  
-    /// top can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' ; and it can also be 'top' , 'middle' , or 'bottom' .
+    /// top can be a pixel value like 20 ; it can also be a percentage value relative to the container height like '20%' ; and it can also be 'top' , 'middle' , or 'bottom' .
     ///  
     /// If the top value is set to be 'top' , 'middle' , or 'bottom' , then the component will be aligned automatically based on position.
     /// ]]>
@@ -75,9 +75,9 @@ public partial class SankeySeries : ISeries
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between sankey component and the right side of the container.
+    /// Distance between sankey series and the right side of the container.
     ///  
-    /// right can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' .
+    /// right can be a pixel value like 20 ; it can also be a percentage value relative to the container width like '20%' .
     /// ]]>
     /// </summary>
     [JsonPropertyName("right")]
@@ -86,9 +86,9 @@ public partial class SankeySeries : ISeries
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between sankey component and the bottom side of the container.
+    /// Distance between sankey series and the bottom side of the container.
     ///  
-    /// bottom can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' .
+    /// bottom can be a pixel value like 20 ; it can also be a percentage value relative to the container height like '20%' .
     /// ]]>
     /// </summary>
     [JsonPropertyName("bottom")]
@@ -96,16 +96,134 @@ public partial class SankeySeries : ISeries
     public NumberOrString? Bottom { get; set; } 
 
     /// <summary>
-    /// Width of sankey component.
+    /// <![CDATA[
+    /// Width of sankey series.
+    ///  
+    /// width can be a pixel value like 20 ; it can also be a percentage value relative to the container width like '20%' .
+    /// ]]>
     /// </summary>
     [JsonPropertyName("width")]
     public NumberOrString? Width { get; set; } 
 
     /// <summary>
-    /// Height of sankey component.
+    /// <![CDATA[
+    /// Height of sankey series.
+    ///  
+    /// height can be a pixel value like 20 ; it can also be a percentage value relative to the container height like '20%' .
+    /// ]]>
     /// </summary>
     [JsonPropertyName("height")]
     public NumberOrString? Height { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// Specifies another coordinate system component on which this series-sankey is laid out.
+    ///  
+    /// Options:   
+    /// null / undefined / 'none'  
+    /// Not laid out in any coordinate system; instead, laid out independently.
+    ///     
+    /// 'calendar'  
+    /// Lay out based on a calendar coordinate system .
+    /// When multiple calendar coordinate systems exist within an ECharts instance, the corresponding system should be specified using calendarIndex or calendarId .
+    ///     
+    /// 'matrix'  
+    /// Lay out based on a matrix coordinate system .
+    /// When multiple matrix coordinate systems exist within an ECharts instance, the corresponding system should be specified using matrixIndex or matrixId .
+    ///    
+    /// Support for series and component layout on coordinate systems:  
+    /// The leftmost column lists the series and components that will be laid out (coordinate systems themselves are also components), and the topmost row lists the coordinate systems that can be laid out on.
+    ///      no coord sys  grid (cartesian2d)  polar  geo  singleAxis  radar  parallel  calendar  matrix      grid (cartesian2d)  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    polar  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    geo  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    singleAxis  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    calendar  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ❌  ❌    matrix  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ❌  ❌    series-line  ❌  ✅  ✅  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-bar  ❌  ✅  ✅  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-pie  ✅  ✅  ✅  ✅  ✅  ❌  ❌  ✅  ✅    series-scatter  ❌  ✅  ✅  ✅  ✅  ❌  ❌  ✅  ✅    series-effectScatter  ❌  ✅  ✅  ✅  ✅  ❌  ❌  ✅  ✅    series-radar  ❌  ❌  ❌  ❌  ❌  ✅  ❌  ❌ (✅ if via radar coord sys)  ❌ (✅ if via radar coord sys)    series-tree  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-treemap  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-sunburst  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-boxplot  ❌  ✅  ❌  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-candlestick  ❌  ✅  ❌  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-heatmap  ❌  ✅  ❌  ✅  ❌  ❌  ❌  ✅  ✅    series-map  ✅ (create a geo coord sys exclusively)  ❌  ❌  ✅  ❌  ❌  ❌  ✅  ✅    series-parallel  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ❌ (✅ if via parallel coord sys)  ❌ (✅ if via parallel coord sys)    series-lines  ❌  ✅  ✅  ✅  ✅  ❌  ❌  ❌ (✅ if via another coord sys like geo )  ❌ (✅ if via another coord sys like geo )    series-graph  ✅ (create a "view" coord sys exclusively)  ✅  ✅  ✅  ❌  ❌  ❌  ✅  ✅    series-sankey  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-funnel  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-gauge  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-pictorialBar  ❌  ✅  ✅  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-themeRiver  ❌  ❌  ❌  ❌  ✅  ❌  ❌  ❌ (✅ if via another coord sys like singleAxis )  ❌ (✅ if via another coord sys like singleAxis )    series-chord  ✅  ✅  ✅  ✅  ✅  ❌  ❌  ✅  ✅    title  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    legend  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    dataZoom  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    visualMap  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    toolbox  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    timeline  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    thumbnail  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅     
+    /// See also series-sankey.coordinateSystemUsage .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("coordinateSystem")]
+    [DefaultValue("none")]
+    public string? CoordinateSystem { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// Specify how to lay out this series-sankey based on the specified coordinateSystem .
+    ///  
+    /// In most cases, there is no need to specify coordinateSystemUsage , unless the default behavior is unexpected.
+    ///  
+    /// Options:   
+    /// 'data' :  
+    /// Each data item of a series (e.g., each series.data[i] ) is laid out separately based on the specified coordinate system.
+    /// Currently no non-series component supports coordinateSystemUsage: 'data' .
+    ///   
+    /// 'box' : (Not applicable in series-sankey )  
+    /// The entire series or component is laid out as a whole based on the specified coordinate system - that is, the overall bounding rect or basic anchor point is calculated relative to the system.
+    ///   For example, a grid component can be laid out in a matrix coordinate system or a calendar coordinate system , where its layout rectangle is calculated by the specified series-sankey.coords in that system.
+    /// See example sparkline in matrix .
+    ///  For example, a pie series or a chord series can be laid out in a geo coordinate system or a cartesian2d coordinate system , where the center is calculated by the specified series-pie.coords or series-pie.center in that system.
+    /// See example pie in geo .
+    ///     
+    /// Only a few series support both coordinateSystemUsage: 'data' and coordinateSystemUsage: 'box' , such as series-graph , series-map .
+    /// For examle, in this example (coordinateSystemUsage: 'data') , each node of a graph series is laid out on a matrix coordinate system, while in this example (coordinateSystemUsage: 'box') , the entire graph series is laid out within a matrix cell.
+    ///  
+    /// Most series only support coordinateSystemUsage: 'data' - such as series-line , series-bar , series-scatter , etc.
+    /// Meanwhile, some series only support coordinateSystemUsage: 'box' - such as series-pie ( example: pie in geo ), series-tree , series-treemap , series-sankey , etc.
+    ///  
+    /// See also series-sankey.coordinateSystem .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("coordinateSystemUsage")]
+    [DefaultValue("data")]
+    public string? CoordinateSystemUsage { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// When coordinateSystemUsage is 'box' , coord is used as the input to the coordinate system and calculate the layout rectangle or anchor point.
+    ///  
+    /// Examples: sparkline in matrix , grpah in matrix .
+    ///   
+    /// Note: when coordinateSystemUsage is 'data' , the input of coordinate system is series.data[i] rather than this coord .
+    ///   
+    /// The format this coord is defined by each coordinate system, and it's the same as the second parameter of chart.convertToPixel .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("coord")]
+    public NumberOrStringArray? Coord { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// The index of the calendar coordinate system to base on.
+    /// When mutiple calendar exist within an ECharts instance, use this to specify the corresponding calendar .
+    /// </summary>
+    [JsonPropertyName("calendarIndex")]
+    [DefaultValue(0)]
+    public int? CalendarIndex { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// The id of the calendar coordinate system to base on.
+    /// When mutiple calendar exist within an ECharts instance, use this to specify the corresponding calendar .
+    /// </summary>
+    [JsonPropertyName("calendarId")]
+    [DefaultValue("undefined")]
+    public double? CalendarId { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// The index of the matrix coordinate system to base on.
+    /// When mutiple matrix exist within an ECharts instance, use this to specify the corresponding matrix .
+    /// </summary>
+    [JsonPropertyName("matrixIndex")]
+    [DefaultValue(0)]
+    public int? MatrixIndex { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// The id of the matrix coordinate system to base on.
+    /// When mutiple matrix exist within an ECharts instance, use this to specify the corresponding matrix .
+    /// </summary>
+    [JsonPropertyName("matrixId")]
+    [DefaultValue("undefined")]
+    public double? MatrixId { get; set; } 
 
     /// <summary>
     /// The node width of rectangle in Sankey diagram.
@@ -162,6 +280,91 @@ public partial class SankeySeries : ISeries
     [JsonPropertyName("draggable")]
     [DefaultValue("true")]
     public bool? Draggable { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// center specifies which point on the graphic elements should be placed at the center of the viewport (i.e., typically, the center of the canvas).
+    ///  
+    /// center is typically used in control or fetch the position of graphic elements when roamming is performed.
+    /// When roaming, the values in center and zoom will be modified correspondingly.
+    ///  
+    /// Notice: the values in center are based on the original layout coordinates, rather than the viewport (canvas) coordinates.
+    /// If you intend to adjust the position and size of graphic elements by viewport coordinates, use series-sankey.left / .right / .top / .bottom / .width / .height .
+    ///  
+    /// Using absolute numbers in center is unfeasible, as the absolute numbers typically represent the original coordinates, which is calculated by auto-layout strategy and is not user-determinable.
+    ///  
+    /// A percentage string can also be used in center , like '30%' , based on the bounding rect.
+    /// You can use '0%' to place the top or left of bounding rect to the center of the viewport (typically, canvas), or use '100%' to place the right or bottom to the center of the viewport, or use '50%' to place the entire graphic elements at the the center of the viewport.
+    /// For example:  center: [115, '30%']
+    /// // Place the top of graphic elements to the center of the viewport (canvas)
+    /// center: [115, '0%']
+    /// // Place the left of graphic elements to the center of the viewport (canvas)
+    /// center: ['0%', 13]
+    /// // Place the bottom of graphic elements to the center of the viewport (canvas)
+    /// center: [115, '100%']
+    /// // Place the right of graphic elements to the center of the viewport (canvas)
+    /// center: ['100%', 13]
+    /// // Place graphic elements at center of the viewport (canvas)
+    /// center: ['50%', '50%']   
+    /// The percentage string is introduced since v5.3.3 .
+    /// It is initially based on canvas width/height.
+    /// But that is not reasonable, and then changed to be based on the bounding rect since v6.0.0 .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("center")]
+    [DefaultValue("50%,50%")]
+    public NumberOrStringArray? Center { get; set; } 
+
+    /// <summary>
+    /// Zoom rate of current viewport.
+    ///  
+    /// The value less than 1 indicates zooming out, while the value greater than 1 indicates zooming in.
+    ///  
+    /// When roaming , the values in center and zoom will be modified correspondingly.
+    /// </summary>
+    [JsonPropertyName("zoom")]
+    [DefaultValue("1")]
+    public double? Zoom { get; set; } 
+
+    /// <summary>
+    /// Limit of zooming , with min and max .
+    ///  
+    /// The value less than 1 indicates zooming out, while the value greater than 1 indicates zooming in.
+    /// </summary>
+    [JsonPropertyName("scaleLimit")]
+    public ScaleLimit? ScaleLimit { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Whether to enable mouse or touch roam (move and zoom).
+    /// Optional values are:   false : roam is disabled.
+    ///  'scale' or 'zoom' : zoom only.
+    ///  'move' or 'pan' : move (translation) only.
+    ///  true : both zoom and move (translation) are available.
+    ///   
+    /// When roaming, the values in center and zoom will be modified correspondingly.
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("roam")]
+    [DefaultValue(false)]
+    public Roam? Roam { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// Roaming can be triggered by mouse dragging or mouse wheel.
+    ///  
+    /// Options:   
+    /// 'selfRect' :  
+    /// The roaming can only be triggered on the bounding rect of the graphic elements.
+    ///   
+    /// 'global' :  
+    /// The roaming can be triggered in canvas globally.
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("roamTrigger")]
+    [DefaultValue("global")]
+    public string? RoamTrigger { get; set; } 
 
     /// <summary>
     /// Since v5.4.1   

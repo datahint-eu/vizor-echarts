@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -327,6 +327,37 @@ public partial class Detail
     public Rich? Rich { get; set; } 
 
     /// <summary>
+    /// Since v6.0.0   
+    /// Whether rich text inherits plain text style.
+    ///  
+    /// This option is just for backward compatibility.
+    ///   
+    /// The label.rich / textStyle.rich  fontStyle , fontWeight , fontSize , fontFamily , textShadowColor , textShadowBlur , textShadowOffsetX , textShadowOffsetY are changed to inherit the corresponding plain label styles since echarts v6.
+    /// You can use richInheritPlainLabel: false to restore it.
+    /// For example,  option = {
+    ///     richInheritPlainLabel: false, // In most cases, this is enough.
+    ///     xxx1: {
+    ///         // Can also set it here to only control this label.
+    ///         label: {
+    ///             richInheritPlainLabel: false,
+    ///             rich: {/* ...
+    /// */},
+    ///         }
+    ///     },
+    ///     xxx2: {
+    ///         textStyle: {
+    ///             richInheritPlainLabel: false,
+    ///             rich: {/* ...
+    /// */},
+    ///         }
+    ///     }
+    /// }
+    /// </summary>
+    [JsonPropertyName("richInheritPlainLabel")]
+    [DefaultValue(true)]
+    public bool? RichInheritPlainLabel { get; set; } 
+
+    /// <summary>
     /// Since v5.0.0   
     /// Whether to enable text animation of value change.
     /// </summary>
@@ -341,7 +372,7 @@ public partial class Detail
     /// </summary>
     [JsonPropertyName("offsetCenter")]
     [DefaultValue("0,-40%")]
-    public NumberOrNumberArray? OffsetCenter { get; set; } 
+    public NumberOrStringArray? OffsetCenter { get; set; } 
 
     /// <summary>
     /// Formatter is used to format detail, which supports string template and callback function.

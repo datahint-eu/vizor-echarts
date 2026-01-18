@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -43,9 +43,9 @@ public partial class SingleAxis
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between single component and the left side of the container.
+    /// Distance between undefined component and the left side of the container.
     ///  
-    /// left can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' ; and it can also be 'left' , 'center' , or 'right' .
+    /// left can be a pixel value like 20 ; it can also be a percentage value relative to the container width like '20%' ; and it can also be 'left' , 'center' , or 'right' .
     ///  
     /// If the left value is set to be 'left' , 'center' , or 'right' , then the component will be aligned automatically based on position.
     /// ]]>
@@ -56,9 +56,9 @@ public partial class SingleAxis
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between single component and the top side of the container.
+    /// Distance between undefined component and the top side of the container.
     ///  
-    /// top can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' ; and it can also be 'top' , 'middle' , or 'bottom' .
+    /// top can be a pixel value like 20 ; it can also be a percentage value relative to the container height like '20%' ; and it can also be 'top' , 'middle' , or 'bottom' .
     ///  
     /// If the top value is set to be 'top' , 'middle' , or 'bottom' , then the component will be aligned automatically based on position.
     /// ]]>
@@ -69,9 +69,9 @@ public partial class SingleAxis
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between single component and the right side of the container.
+    /// Distance between undefined component and the right side of the container.
     ///  
-    /// right can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' .
+    /// right can be a pixel value like 20 ; it can also be a percentage value relative to the container width like '20%' .
     /// ]]>
     /// </summary>
     [JsonPropertyName("right")]
@@ -80,9 +80,9 @@ public partial class SingleAxis
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between single component and the bottom side of the container.
+    /// Distance between undefined component and the bottom side of the container.
     ///  
-    /// bottom can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' .
+    /// bottom can be a pixel value like 20 ; it can also be a percentage value relative to the container height like '20%' .
     /// ]]>
     /// </summary>
     [JsonPropertyName("bottom")]
@@ -90,16 +90,24 @@ public partial class SingleAxis
     public NumberOrString? Bottom { get; set; } 
 
     /// <summary>
+    /// <![CDATA[
     /// Width of single component.
     /// Adaptive by default.
+    ///  
+    /// width can be a pixel value like 20 ; it can also be a percentage value relative to the container width like '20%' .
+    /// ]]>
     /// </summary>
     [JsonPropertyName("width")]
     [DefaultValue("auto")]
     public NumberOrString? Width { get; set; } 
 
     /// <summary>
+    /// <![CDATA[
     /// Height of single component.
     /// Adaptive by default.
+    ///  
+    /// height can be a pixel value like 20 ; it can also be a percentage value relative to the container height like '20%' .
+    /// ]]>
     /// </summary>
     [JsonPropertyName("height")]
     [DefaultValue("auto")]
@@ -231,7 +239,7 @@ public partial class SingleAxis
     /// <![CDATA[
     /// The maximum value of axis.
     ///  
-    /// It can be set to a special value 'dataMax' so that the minimum value on this axis is set to be the maximum label.
+    /// It can be set to a special value 'dataMax' so that the maximum value on this axis is set to be the maximum label.
     ///  
     /// It will be automatically computed to make sure axis tick is equally distributed when not set.
     ///  
@@ -352,7 +360,7 @@ public partial class SingleAxis
     ///     // Click on value label to trigger event.
     ///     value: '',
     ///     // Name of axis.
-    ///     // Click on laben name to trigger event.
+    ///     // Click on label name to trigger event.
     ///     name: ''
     /// }
     /// ]]>

@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -200,7 +200,7 @@ public partial class ParallelAxis
     /// <![CDATA[
     /// The maximum value of axis.
     ///  
-    /// It can be set to a special value 'dataMax' so that the minimum value on this axis is set to be the maximum label.
+    /// It can be set to a special value 'dataMax' so that the maximum value on this axis is set to be the maximum label.
     ///  
     /// It will be automatically computed to make sure axis tick is equally distributed when not set.
     ///  
@@ -321,7 +321,7 @@ public partial class ParallelAxis
     ///     // Click on value label to trigger event.
     ///     value: '',
     ///     // Name of axis.
-    ///     // Click on laben name to trigger event.
+    ///     // Click on label name to trigger event.
     ///     name: ''
     /// }
     /// ]]>

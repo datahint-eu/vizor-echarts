@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -232,7 +232,7 @@ public partial class PictorialBarSeriesData
     /// </summary>
     [JsonPropertyName("symbolOffset")]
     [DefaultValue("0,0")]
-    public NumberOrNumberArray? SymbolOffset { get; set; } 
+    public NumberOrStringArray? SymbolOffset { get; set; } 
 
     /// <summary>
     /// The degree of the rotation of a graphic element.

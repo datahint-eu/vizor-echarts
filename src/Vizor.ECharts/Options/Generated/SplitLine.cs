@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -32,9 +32,9 @@ public partial class SplitLine
     /// Whether to show the splitLine of the max tick.
     /// Defaults to true .
     /// </summary>
-    [JsonPropertyName("showMaxLabel")]
+    [JsonPropertyName("showMaxLine")]
     [DefaultValue(true)]
-    public bool? ShowMaxLabel { get; set; } 
+    public bool? ShowMaxLine { get; set; } 
 
     /// <summary>
     /// <![CDATA[

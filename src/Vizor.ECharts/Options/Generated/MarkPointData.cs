@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -89,6 +89,24 @@ public partial class MarkPointData
     [JsonPropertyName("y")]
     [DefaultValue("0")]
     public double? Y { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// Specify the relationship of overlap between graphic elements.
+    /// A bigger value means higher.
+    /// </summary>
+    [JsonPropertyName("z2")]
+    public double? Z2 { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// Options: 'container' or 'coordinate' .
+    /// Specify whether the positions of x and y are relative to the entire chart container ( 'container' , default) or the grid coordinate system ( 'coordinate' ).
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("relativeTo")]
+    public string? RelativeTo { get; set; } 
 
     /// <summary>
     /// Label value, which can be ignored.

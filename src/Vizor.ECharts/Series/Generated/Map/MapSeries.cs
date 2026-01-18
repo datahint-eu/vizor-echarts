@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -77,18 +77,6 @@ public partial class MapSeries : ISeries
 
     /// <summary>
     /// <![CDATA[
-    /// Whether to enable mouse zooming and translating.
-    /// false by default.
-    /// If either zooming or translating is wanted, it can be set to 'scale' or 'move' .
-    /// Otherwise, set it to be true to enable both.
-    /// ]]>
-    /// </summary>
-    [JsonPropertyName("roam")]
-    [DefaultValue(false)]
-    public Roam? Roam { get; set; } 
-
-    /// <summary>
-    /// <![CDATA[
     /// Since v5.3.0   
     /// For custom map projection, at least two methods project , unproject should be provided to calculate the coordinates after projection and before projection respectively.
     ///  
@@ -118,11 +106,40 @@ public partial class MapSeries : ISeries
 
     /// <summary>
     /// <![CDATA[
-    /// Center of current view-port.
-    /// It can be an array containing two number s in pixels or string s in percentage relative to the container width/height.
-    /// string is supported from version 5.3.3 .
+    /// center specifies which point on the source map should be placed at the center of the viewport (i.e., typically, the center of the canvas).
     ///  
-    /// Example:  center: [115.97, '30%']
+    /// center is typically used in control or fetch the position of source map when roamming is performed.
+    /// When roaming, the values in center and zoom will be modified correspondingly.
+    ///  
+    /// Notice: the values in center are based on the original layout coordinates, rather than the viewport (canvas) coordinates.
+    /// If you intend to adjust the position and size of source map by viewport coordinates, use series-map.left / .right / .top / .bottom / .width / .height or series-map.layoutCenter / layoutSize .
+    ///  
+    /// center is in longitude and latitude by default.
+    /// Use the projected coordinates if proejction is set.
+    ///  
+    /// Example:  // Place this [lng, lat] at the center of the viewport (canvas).
+    /// center: [115.97, 29.71]  projection: {
+    ///     projection: (pt) => project(pt)
+    /// },
+    /// center: project([115.97, 29.71])  
+    /// A percentage string can also be used in center , like '30%' , based on the bounding rect(determined min/max latitude/longitude, or min/max projected coordinates if proejction is set).
+    /// You can use '0%' to place the top or left of bounding rect to the center of the viewport (typically, canvas), or use '100%' to place the right or bottom to the center of the viewport, or use '50%' to place the entire source map at the the center of the viewport.
+    /// For example:  center: [115, '30%']
+    /// // Place the top of source map to the center of the viewport (canvas)
+    /// center: [115, '0%']
+    /// // Place the left of source map to the center of the viewport (canvas)
+    /// center: ['0%', 13]
+    /// // Place the bottom of source map to the center of the viewport (canvas)
+    /// center: [115, '100%']
+    /// // Place the right of source map to the center of the viewport (canvas)
+    /// center: ['100%', 13]
+    /// // Place source map at center of the viewport (canvas)
+    /// center: ['50%', '50%']   
+    /// The percentage string is introduced since v5.3.3 .
+    /// It is initially based on canvas width/height.
+    /// But that is not reasonable, and then changed to be based on the bounding rect since v6.0.0 .
+    ///   
+    /// See geo roam indicator example to understand the concept.
     /// ]]>
     /// </summary>
     [JsonPropertyName("center")]
@@ -130,10 +147,72 @@ public partial class MapSeries : ISeries
     public List<object>? Center { get; set; } 
 
     /// <summary>
-    /// Used to scale aspect of geo.
-    /// Will be ignored if projection is set.
+    /// Zoom rate of current viewport.
     ///  
-    /// The final aspect is calculated by: geoBoundingRect.width / geoBoundingRect.height * aspectScale .
+    /// The value less than 1 indicates zooming out, while the value greater than 1 indicates zooming in.
+    ///  
+    /// When roaming , the values in center and zoom will be modified correspondingly.
+    ///  
+    /// See geo roam indicator example to understand the concept.
+    /// </summary>
+    [JsonPropertyName("zoom")]
+    [DefaultValue(1)]
+    public double? Zoom { get; set; } 
+
+    /// <summary>
+    /// Limit of zooming , with min and max .
+    ///  
+    /// The value less than 1 indicates zooming out, while the value greater than 1 indicates zooming in.
+    /// </summary>
+    [JsonPropertyName("scaleLimit")]
+    public ScaleLimit? ScaleLimit { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Whether to enable mouse or touch roam (move and zoom).
+    /// Optional values are:   false : roam is disabled.
+    ///  'scale' or 'zoom' : zoom only.
+    ///  'move' or 'pan' : move (translation) only.
+    ///  true : both zoom and move (translation) are available.
+    ///   
+    /// When roaming, the values in center and zoom will be modified correspondingly.
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("roam")]
+    [DefaultValue(false)]
+    public Roam? Roam { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// Roaming can be triggered by mouse dragging or mouse wheel.
+    ///  
+    /// Options:   
+    /// 'selfRect' :  
+    /// The roaming can only be triggered on the bounding rect of the graphic elements.
+    ///   
+    /// 'global' :  
+    /// If clip: true , the roaming can only be triggered at any position within the clipped area.
+    /// Otherwise it can be triggered in canvas globally.
+    ///    
+    /// See geo roam indicator example to understand the concept.
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("roamTrigger")]
+    [DefaultValue("selfRect")]
+    public string? RoamTrigger { get; set; } 
+
+    /// <summary>
+    /// Used to scale aspect of geo.
+    /// It will be ignored if proejction is set.
+    ///  
+    /// The final calculated pixelWidth and pixelHeight of the map will satisfy pixelWidth / pixelHeight = lngSpan / latSpan * aspectScale (assume proejction is not specified, and preserveAspect is truthy).
+    ///  
+    /// If no proejction is applied, the latitudes and longitudes in GeoJSON are linearly mapped to pixel coordinates diarectly.
+    /// aspectScale offers a simple way to visually compensates for the distortion caused by the fact that the longitudinal spacing shrinks as latitude increases.
+    /// For example, an aspectScale can be roughly calculated as aspectScale = Math.cos(center_latitude * Maht.PI / 180) , which is similar to a sinusoidal projection.
+    ///  
+    /// See example .
     /// </summary>
     [JsonPropertyName("aspectScale")]
     [DefaultValue(0.75)]
@@ -157,19 +236,6 @@ public partial class MapSeries : ISeries
     [JsonPropertyName("boundingCoords")]
     //TODO: Type Warning: array type 'boundingCoords' in 'MapSeries' will be mapped to List<object>
     public List<object>? BoundingCoords { get; set; } 
-
-    /// <summary>
-    /// Zoom rate of current view-port.
-    /// </summary>
-    [JsonPropertyName("zoom")]
-    [DefaultValue(1)]
-    public double? Zoom { get; set; } 
-
-    /// <summary>
-    /// Limit of scaling, with min and max .
-    /// </summary>
-    [JsonPropertyName("scaleLimit")]
-    public ScaleLimit? ScaleLimit { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -264,11 +330,16 @@ public partial class MapSeries : ISeries
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between  component and the left side of the container.
+    /// Distance between map series and the left side of the container.
     ///  
-    /// left can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' ; and it can also be 'left' , 'center' , or 'right' .
+    /// left can be a pixel value like 20 ; it can also be a percentage value relative to the container width like '20%' ; and it can also be 'left' , 'center' , or 'right' .
     ///  
     /// If the left value is set to be 'left' , 'center' , or 'right' , then the component will be aligned automatically based on position.
+    ///   
+    /// Note: If the graphic elements are unexpectedly distorted, see preserveAspect .
+    ///    
+    /// Note: There are two rectangular layout approaches for series-map.
+    /// You can use either one:   series-map.left / .right / .top / .bottom / .width / .height  series-map.layoutCenter / .layoutSize
     /// ]]>
     /// </summary>
     [JsonPropertyName("left")]
@@ -277,11 +348,16 @@ public partial class MapSeries : ISeries
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between  component and the top side of the container.
+    /// Distance between map series and the top side of the container.
     ///  
-    /// top can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' ; and it can also be 'top' , 'middle' , or 'bottom' .
+    /// top can be a pixel value like 20 ; it can also be a percentage value relative to the container height like '20%' ; and it can also be 'top' , 'middle' , or 'bottom' .
     ///  
     /// If the top value is set to be 'top' , 'middle' , or 'bottom' , then the component will be aligned automatically based on position.
+    ///   
+    /// Note: If the graphic elements are unexpectedly distorted, see preserveAspect .
+    ///    
+    /// Note: There are two rectangular layout approaches for series-map.
+    /// You can use either one:   series-map.left / .right / .top / .bottom / .width / .height  series-map.layoutCenter / .layoutSize
     /// ]]>
     /// </summary>
     [JsonPropertyName("top")]
@@ -290,11 +366,16 @@ public partial class MapSeries : ISeries
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between  component and the right side of the container.
+    /// Distance between map series and the right side of the container.
     ///  
-    /// right can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' .
+    /// right can be a pixel value like 20 ; it can also be a percentage value relative to the container width like '20%' .
     ///  
     /// Adaptive by default.
+    ///   
+    /// Note: If the graphic elements are unexpectedly distorted, see preserveAspect .
+    ///    
+    /// Note: There are two rectangular layout approaches for series-map.
+    /// You can use either one:   series-map.left / .right / .top / .bottom / .width / .height  series-map.layoutCenter / .layoutSize
     /// ]]>
     /// </summary>
     [JsonPropertyName("right")]
@@ -303,11 +384,16 @@ public partial class MapSeries : ISeries
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between  component and the bottom side of the container.
+    /// Distance between map series and the bottom side of the container.
     ///  
-    /// bottom can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' .
+    /// bottom can be a pixel value like 20 ; it can also be a percentage value relative to the container height like '20%' .
     ///  
     /// Adaptive by default.
+    ///   
+    /// Note: If the graphic elements are unexpectedly distorted, see preserveAspect .
+    ///    
+    /// Note: There are two rectangular layout approaches for series-map.
+    /// You can use either one:   series-map.left / .right / .top / .bottom / .width / .height  series-map.layoutCenter / .layoutSize
     /// ]]>
     /// </summary>
     [JsonPropertyName("bottom")]
@@ -316,16 +402,44 @@ public partial class MapSeries : ISeries
 
     /// <summary>
     /// <![CDATA[
-    /// layoutCenter and layoutSize provides layout strategy other than left/right/top/bottom/width/height .
+    /// Width of map series.
+    /// Adaptive by default.
     ///  
-    /// When using left/right/top/bottom/width/height , it is hard to put the map inside a box area with a fixed width-height ratio.
-    /// In this case, layoutCenter attribute can be used to define the center position of map, and layoutSize can be used to define the size of map.
+    /// width can be a pixel value like 20 ; it can also be a percentage value relative to the container width like '20%' .
+    ///   
+    /// Note: If the graphic elements are unexpectedly distorted, see preserveAspect .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("width")]
+    [DefaultValue("auto")]
+    public NumberOrString? Width { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Height of map series.
+    /// Adaptive by default.
+    ///  
+    /// height can be a pixel value like 20 ; it can also be a percentage value relative to the container height like '20%' .
+    ///   
+    /// Note: If the graphic elements are unexpectedly distorted, see preserveAspect .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("height")]
+    [DefaultValue("auto")]
+    public NumberOrString? Height { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// layoutCenter and layoutSize can specify the rectangular area allocated to map series, where layoutCenter defines the center position of the area, and layoutSize defines the size of the area.
     /// For example:  layoutCenter: ['30%', '30%'],
     /// // If width-height ratio is larger than 1, then width is set to be 100.
     /// // Otherwise, height is set to be 100.
     /// // This makes sure that it will not exceed the area of 100x100
     /// layoutSize: 100  
     /// After setting these two values, left/right/top/bottom/width/height becomes invalid.
+    ///   
+    /// Note: There are two rectangular layout approaches for series-map.
+    /// You can use either one:   series-map.left / .right / .top / .bottom / .width / .height  series-map.layoutCenter / .layoutSize
     /// ]]>
     /// </summary>
     [JsonPropertyName("layoutCenter")]
@@ -334,22 +448,179 @@ public partial class MapSeries : ISeries
 
     /// <summary>
     /// Size of map, see layoutCenter for more information.
-    /// Percentage relative to screen width, and absolute pixel values are supported.
+    /// Percentage relative to container width/height, and absolute pixel values are supported.
+    ///   
+    /// Note: There are two rectangular layout approaches for series-map.
+    /// You can use either one:   series-map.left / .right / .top / .bottom / .width / .height  series-map.layoutCenter / .layoutSize
     /// </summary>
     [JsonPropertyName("layoutSize")]
     public NumberOrString? LayoutSize { get; set; } 
 
     /// <summary>
-    /// In default case, map series create exclusive geo component for themselves.
-    /// But geoIndex can be used to specify an outer geo component , which can be shared with other series like pie .
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// aspect ratio here refers to width / height .
+    ///  
+    /// "preserve aspect" refers whether to preserve the aspect ratio of the original bounding rect of the content to be rendered.
+    ///  
+    /// A rectangular area allocated to map series is determined by series-map.left / .right / .top / .bottom / .width / .height / .aspectScale .
+    ///  
+    /// But the aspect ratio of this rectangle may not match that of the content's original bounding rect, which may cause distortion.
+    ///  
+    /// Options of preserveAspect :   null / undefined / false (default): The original aspect ratio of the content will not be preserved, but stretched to fill the map series rectangular area , which may cause distortion.
+    ///  'contain' / true : The original aspect ratio of the content is preserved; the bounding rect of the content are fully contained by the map series rectangular area , and scaled up as much as possible to meet the map series rectangular area .
+    /// preserveAspectAlign and preserveAspectVerticalAlign can be used to adjust the position in this case.
+    ///  'cover' : The original aspect ratio of the content is preserved; the bounding rect of the content covers the map series rectangular area , and scaled down as much as possible to meet the map series rectangular area .
+    /// preserveAspectAlign and preserveAspectVerticalAlign can be used to adjust the position in this case.
+    ///   
+    /// Notice: When using layoutCenter and layoutSize , the aspect radio is always preserved, regardless of this preserveAspect .
+    ///  
+    /// See geo roam indicator example to understand the concept.
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("preserveAspect")]
+    [DefaultValue("false")]
+    public BoolOrString? PreserveAspect { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// Options: 'left' | 'right' | 'center' .
+    ///  
+    /// See preserveAspect .
+    ///  
+    /// See geo roam indicator example to understand the concept.
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("preserveAspectAlign")]
+    [DefaultValue("center")]
+    //TODO: Type Warning: enum type 'preserveAspectAlign' in 'MapSeries' with values 'left,right,center' is not mapped
+    public string? PreserveAspectAlign { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// Options: 'top' | 'bottom' | 'middle' .
+    ///  
+    /// See preserveAspect .
+    ///  
+    /// See geo roam indicator example to understand the concept.
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("preserveAspectVerticalAlign")]
+    [DefaultValue("middle")]
+    //TODO: Type Warning: enum type 'preserveAspectVerticalAlign' in 'MapSeries' with values 'top,bottom,middle' is not mapped
+    public string? PreserveAspectVerticalAlign { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// A rectangular area allocated to map series is determined by series-map.left / .right / .top / .bottom / .width / .height / .aspectScale .
+    ///  
+    /// clip specifies whether to hide the outside part of the map with respect to the allocated rect.
+    ///  
+    /// See example:  geo roam indicator .
+    /// </summary>
+    [JsonPropertyName("clip")]
+    [DefaultValue(false)]
+    public bool? Clip { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Specifies another coordinate system component on which this series-map is laid out.
+    ///  
+    /// Options:   
+    /// 'geo'  
+    /// Lay out based on a geographic coordinate system .
+    /// When multiple geographic coordinate systems exist within an ECharts instance, the corresponding system should be specified using geoIndex or geoId .
+    ///    
+    /// Support for series and component layout on coordinate systems:  
+    /// The leftmost column lists the series and components that will be laid out (coordinate systems themselves are also components), and the topmost row lists the coordinate systems that can be laid out on.
+    ///      no coord sys  grid (cartesian2d)  polar  geo  singleAxis  radar  parallel  calendar  matrix      grid (cartesian2d)  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    polar  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    geo  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    singleAxis  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    calendar  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ❌  ❌    matrix  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ❌  ❌    series-line  ❌  ✅  ✅  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-bar  ❌  ✅  ✅  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-pie  ✅  ✅  ✅  ✅  ✅  ❌  ❌  ✅  ✅    series-scatter  ❌  ✅  ✅  ✅  ✅  ❌  ❌  ✅  ✅    series-effectScatter  ❌  ✅  ✅  ✅  ✅  ❌  ❌  ✅  ✅    series-radar  ❌  ❌  ❌  ❌  ❌  ✅  ❌  ❌ (✅ if via radar coord sys)  ❌ (✅ if via radar coord sys)    series-tree  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-treemap  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-sunburst  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-boxplot  ❌  ✅  ❌  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-candlestick  ❌  ✅  ❌  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-heatmap  ❌  ✅  ❌  ✅  ❌  ❌  ❌  ✅  ✅    series-map  ✅ (create a geo coord sys exclusively)  ❌  ❌  ✅  ❌  ❌  ❌  ✅  ✅    series-parallel  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ❌ (✅ if via parallel coord sys)  ❌ (✅ if via parallel coord sys)    series-lines  ❌  ✅  ✅  ✅  ✅  ❌  ❌  ❌ (✅ if via another coord sys like geo )  ❌ (✅ if via another coord sys like geo )    series-graph  ✅ (create a "view" coord sys exclusively)  ✅  ✅  ✅  ❌  ❌  ❌  ✅  ✅    series-sankey  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-funnel  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-gauge  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-pictorialBar  ❌  ✅  ✅  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-themeRiver  ❌  ❌  ❌  ❌  ✅  ❌  ❌  ❌ (✅ if via another coord sys like singleAxis )  ❌ (✅ if via another coord sys like singleAxis )    series-chord  ✅  ✅  ✅  ✅  ✅  ❌  ❌  ✅  ✅    title  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    legend  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    dataZoom  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    visualMap  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    toolbox  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    timeline  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    thumbnail  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅     
+    /// See also series-map.coordinateSystemUsage .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("coordinateSystem")]
+    [DefaultValue("geo")]
+    public string? CoordinateSystem { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// Specify how to lay out this series-map based on the specified coordinateSystem .
+    ///  
+    /// In most cases, there is no need to specify coordinateSystemUsage , unless the default behavior is unexpected.
+    ///  
+    /// Options:   
+    /// 'data' :  
+    /// Each data item of a series (e.g., each series.data[i] ) is laid out separately based on the specified coordinate system.
+    /// Currently no non-series component supports coordinateSystemUsage: 'data' .
+    ///   
+    /// 'box' : (Not applicable in series-map )  
+    /// The entire series or component is laid out as a whole based on the specified coordinate system - that is, the overall bounding rect or basic anchor point is calculated relative to the system.
+    ///   For example, a grid component can be laid out in a matrix coordinate system or a calendar coordinate system , where its layout rectangle is calculated by the specified series-map.coords in that system.
+    /// See example sparkline in matrix .
+    ///  For example, a pie series or a chord series can be laid out in a geo coordinate system or a cartesian2d coordinate system , where the center is calculated by the specified series-pie.coords or series-pie.center in that system.
+    /// See example pie in geo .
+    ///     
+    /// Only a few series support both coordinateSystemUsage: 'data' and coordinateSystemUsage: 'box' , such as series-graph , series-map .
+    /// For examle, in this example (coordinateSystemUsage: 'data') , each node of a graph series is laid out on a matrix coordinate system, while in this example (coordinateSystemUsage: 'box') , the entire graph series is laid out within a matrix cell.
+    ///  
+    /// Most series only support coordinateSystemUsage: 'data' - such as series-line , series-bar , series-scatter , etc.
+    /// Meanwhile, some series only support coordinateSystemUsage: 'box' - such as series-pie ( example: pie in geo ), series-tree , series-treemap , series-sankey , etc.
+    ///  
+    /// See also series-map.coordinateSystem .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("coordinateSystemUsage")]
+    [DefaultValue("data")]
+    public string? CoordinateSystemUsage { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// When coordinateSystemUsage is 'box' , coord is used as the input to the coordinate system and calculate the layout rectangle or anchor point.
+    ///  
+    /// Examples: sparkline in matrix , grpah in matrix .
+    ///   
+    /// Note: when coordinateSystemUsage is 'data' , the input of coordinate system is series.data[i] rather than this coord .
+    ///   
+    /// The format this coord is defined by each coordinate system, and it's the same as the second parameter of chart.convertToPixel .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("coord")]
+    public NumberOrStringArray? Coord { get; set; } 
+
+    /// <summary>
+    /// The index of the geographic coordinate system to base on.
+    /// When mutiple geographic exist within an ECharts instance, use this to specify the corresponding geographic .
+    ///  
+    /// When geoIndex and geoId is not specified, map series creates an exclusive geo component for itself.
+    /// geoIndex or geoId can be used to specify an outer geo component , which can be shared with other series like pie .
     /// Moreover, the region color of the outer geo component can be controlled by the map series (via visualMap ).
     ///  
-    /// When geoIndex specified, series-map.map other style configurations like series-map.itemStyle will not work, but corresponding configurations in geo component will be used.
+    /// When geoIndex or geoId is specified, series-map.map other style configurations like series-map.itemStyle will not work, but corresponding configurations in geo component will be used.
     ///  
-    /// For example:
+    /// See example : geo-choropleth-scatter
     /// </summary>
     [JsonPropertyName("geoIndex")]
+    [DefaultValue(0)]
     public int? GeoIndex { get; set; } 
+
+    /// <summary>
+    /// The id of the geographic coordinate system to base on.
+    /// When mutiple geographic exist within an ECharts instance, use this to specify the corresponding geographic .
+    ///  
+    /// When geoIndex and geoId is not specified, map series creates an exclusive geo component for itself.
+    /// geoIndex or geoId can be used to specify an outer geo component , which can be shared with other series like pie .
+    /// Moreover, the region color of the outer geo component can be controlled by the map series (via visualMap ).
+    ///  
+    /// When geoIndex or geoId specified, series-map.map other style configurations like series-map.itemStyle will not work, but corresponding configurations in geo component will be used.
+    ///  
+    /// See example : geo-choropleth-scatter
+    /// </summary>
+    [JsonPropertyName("geoId")]
+    [DefaultValue("undefined")]
+    public double? GeoId { get; set; } 
 
     /// <summary>
     /// <![CDATA[

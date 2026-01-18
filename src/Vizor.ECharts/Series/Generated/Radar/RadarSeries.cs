@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -35,7 +35,7 @@ public partial class RadarSeries : ISeries
     public ColorBy? ColorBy { get; set; } 
 
     /// <summary>
-    /// Index of radar component that radar chart uses.
+    /// Index of radar (coordinate system) component that radar chart uses.
     /// </summary>
     [JsonPropertyName("radarIndex")]
     public int? RadarIndex { get; set; } 

@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -182,7 +182,30 @@ public partial class Tooltip
     /// Example:  formatter: '{b0}: {c0}<br />{b1}: {c1}'  
     /// 2.
     /// Callback function  
-    /// The format of callback function:  (params: Object|Array, ticket: string, callback: (ticket: string, html: string)) => string | HTMLElement | HTMLElement[]  
+    /// The format of callback function:  (params: Object|Array, ticket: string, callback: (ticket: string, html: string | HTMLElement | HTMLElement[])) => string | HTMLElement | HTMLElement[]   [WARNING]:  tooltip is implemented in HTML (unless tooltip.renderMode is set as richText ), allowing users to customize the HTML in this way.
+    /// The content in the HTML must be properly escaped before being passed in.
+    /// Security risks must be considered when using it.
+    /// See document "Security Guidelines" for recommendations on safe usage.
+    ///  
+    /// HTML-escaping must be enforced before passing the HTML to ECharts.
+    /// For example,  {
+    ///     tooltip: {
+    ///         formatter: params => {
+    ///             const { name, value } = params;
+    ///             // HTML-escaping must be performed.
+    ///             // Otherwise, the rendering may be incorrect if `name` or
+    ///             // `value` contain special charactors like '<', '>', etc.
+    ///             // Additionally, unescaped strings may introduces XSS risks
+    ///             // if `name` or `value` come from untrusted sources, where
+    ///             // malicious code may be injected into that strings.
+    ///             return echarts.format.encodeHTML(name)
+    ///                 + '<b>' + echarts.format.encodeHTML(value) + '</b>';
+    ///             // NOTE: `echarts.format.encodeHTML` is an utility that converts special
+    ///             //  characters ('&', '<', '>', '"', "'") to their corresponding HTML entities.
+    ///             //  This is just an example -- any HTML-escaping utility can be used.
+    ///         }
+    ///     }
+    /// }  
     /// The first parameter params is the data that the formatter needs.
     /// Its format is shown as follows:  {
     ///     componentType: 'series',
@@ -329,11 +352,10 @@ public partial class Tooltip
     /// Since v5.3.0   
     /// Callback function for formatting the value section in tooltip.
     ///  
-    /// Interface:  (value: number | string, dataIndex: number) => string   
-    /// dataIndex is provided since v5.5.0 .
-    ///   
+    /// Interface:  (value: number | string, dataIndex: number) => string   dataIndex is provided since v5.5.0   
     /// Example:  // Add $ prefix
-    /// valueFormatter: (value) => '$' + value.toFixed(2)
+    /// valueFormatter: (value) => '$' + value.toFixed(2)   
+    /// [NOTE]: Different from tooltip.formater , raw HTML is NOT accepted in this approach -- the returned content will be escaped internally before rendering.
     /// ]]>
     /// </summary>
     [JsonPropertyName("valueFormatter")]
@@ -400,7 +422,9 @@ public partial class Tooltip
     /// <![CDATA[
     /// Extra CSS style for floating layer.
     /// The following is an example for adding shadow.
-    ///  extraCssText: 'box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);'
+    ///  extraCssText: 'box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);'   [WARNING]:  tooltip is implemented in HTML (unless tooltip.renderMode is set as richText ), allowing users to customize the CSS text of the box in this way.
+    /// Security risks must be considered if the CSS text comes from untrusted sources.
+    /// See document "Security Guidelines" for recommendations on safe usage.
     /// ]]>
     /// </summary>
     [JsonPropertyName("extraCssText")]
@@ -564,6 +588,20 @@ public partial class Tooltip
     [JsonPropertyName("transitionDuration")]
     [DefaultValue("0.4")]
     public double? TransitionDuration { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// Whether to enable the display transition.
+    ///  
+    /// By default, the tooltip uses the opacity fading to make itself invisible rather than setting the DOM element's display property to 'none' .
+    /// This might cause the scrollbar to be always visible when the tooltip content size is large, even if the tooltip is already invisible.
+    /// In this scenario, or if you just want no fading, you can set this option to false to disable the display transition.
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("displayTransition")]
+    [DefaultValue("true")]
+    public bool? DisplayTransition { get; set; } 
 
     /// <summary>
     /// <![CDATA[
