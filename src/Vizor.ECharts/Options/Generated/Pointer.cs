@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -53,7 +53,7 @@ public partial class Pointer
     /// </summary>
     [JsonPropertyName("offsetCenter")]
     [DefaultValue("0,0")]
-    public NumberOrNumberArray? OffsetCenter { get; set; } 
+    public NumberOrStringArray? OffsetCenter { get; set; } 
 
     /// <summary>
     /// The length of pointer which could be absolute value and also the percentage relative to radius .

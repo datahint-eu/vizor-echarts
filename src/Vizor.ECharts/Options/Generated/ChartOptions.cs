@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -37,13 +37,19 @@ public partial class ChartOptions
     public Legend? Legend { get; set; } 
 
     /// <summary>
-    /// Drawing grid in rectangular coordinate.
-    /// In a single grid, at most two X and Y axes each is allowed.
-    /// Line chart , bar chart , and scatter chart (bubble chart) can be drawn in grid.
+    /// The grid component is a rectangular container, used to lay out two-dimensional rectangular coordinate system (also known as cartesian2d coordinate system).
     ///  
+    /// A cartesian2d coordinate system is composed fo an xAxis and a yAxis .
+    /// Multiple cartesian2d coordinate systems can be arranged within a single grid component - that is, multiple xAxis and multiple yAxis instances can be configured within one grid component .
+    ///  
+    /// An xAxis or a yAxis can be shared by multiple cartesian2d coordinate systems.
+    /// For example, one xAxis and two yAxis form two cartesian2d coordinate systems.
+    ///  
+    /// Line chart , bar chart , and scatter chart (bubble chart) , etc., can be drawn in grid component .
+    ///   
     /// In ECharts 2.x, there could only be one single grid component at most in a single echarts instance.
-    /// But in ECharts 3, there is no limitation.
-    ///  
+    /// But since ECharts 3, there is no limitation.
+    ///   
     /// Following is an example of Anscombe Quartet:
     /// </summary>
     [JsonPropertyName("grid")]
@@ -51,13 +57,19 @@ public partial class ChartOptions
     internal object? GridObject { get; set; }
 
     /// <summary>
-    /// Drawing grid in rectangular coordinate.
-    /// In a single grid, at most two X and Y axes each is allowed.
-    /// Line chart , bar chart , and scatter chart (bubble chart) can be drawn in grid.
+    /// The grid component is a rectangular container, used to lay out two-dimensional rectangular coordinate system (also known as cartesian2d coordinate system).
     ///  
+    /// A cartesian2d coordinate system is composed fo an xAxis and a yAxis .
+    /// Multiple cartesian2d coordinate systems can be arranged within a single grid component - that is, multiple xAxis and multiple yAxis instances can be configured within one grid component .
+    ///  
+    /// An xAxis or a yAxis can be shared by multiple cartesian2d coordinate systems.
+    /// For example, one xAxis and two yAxis form two cartesian2d coordinate systems.
+    ///  
+    /// Line chart , bar chart , and scatter chart (bubble chart) , etc., can be drawn in grid component .
+    ///   
     /// In ECharts 2.x, there could only be one single grid component at most in a single echarts instance.
-    /// But in ECharts 3, there is no limitation.
-    ///  
+    /// But since ECharts 3, there is no limitation.
+    ///   
     /// Following is an example of Anscombe Quartet:
     /// </summary>
     [JsonIgnore]
@@ -68,13 +80,19 @@ public partial class ChartOptions
     }
 
     /// <summary>
-    /// Drawing grid in rectangular coordinate.
-    /// In a single grid, at most two X and Y axes each is allowed.
-    /// Line chart , bar chart , and scatter chart (bubble chart) can be drawn in grid.
+    /// The grid component is a rectangular container, used to lay out two-dimensional rectangular coordinate system (also known as cartesian2d coordinate system).
     ///  
+    /// A cartesian2d coordinate system is composed fo an xAxis and a yAxis .
+    /// Multiple cartesian2d coordinate systems can be arranged within a single grid component - that is, multiple xAxis and multiple yAxis instances can be configured within one grid component .
+    ///  
+    /// An xAxis or a yAxis can be shared by multiple cartesian2d coordinate systems.
+    /// For example, one xAxis and two yAxis form two cartesian2d coordinate systems.
+    ///  
+    /// Line chart , bar chart , and scatter chart (bubble chart) , etc., can be drawn in grid component .
+    ///   
     /// In ECharts 2.x, there could only be one single grid component at most in a single echarts instance.
-    /// But in ECharts 3, there is no limitation.
-    ///  
+    /// But since ECharts 3, there is no limitation.
+    ///   
     /// Following is an example of Anscombe Quartet:
     /// </summary>
     [JsonIgnore]
@@ -1410,7 +1428,7 @@ public partial class ChartOptions
     ///  
     /// Those graphic type are supported.
     ///  
-    /// image , text , circle , sector , ring , polygon , polyline , rect , line , bezierCurve , arc , group ,  
+    /// image , text , circle , sector , ring , polygon , polyline , rect , line , bezierCurve , arc , compoundPath , group ,  
     /// This example shows how to make a watermark and text block:   
     /// This example use hidden graphic elements to implement dragging:   
     /// Graphic Component Configuration  
@@ -1752,6 +1770,48 @@ public partial class ChartOptions
     }
 
     /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// Matrix coordinate system component.
+    ///  
+    /// The matrix coordinate system, like a table, can serve as the layout system of data items in a series, mainly used to display the relationship and interaction of multi-dimensional data.
+    /// It presents data in the form of a rectangular grid, where each grid unit (or "cell") represents the value of a specific data point in series like series.heatmap , series.scatter , series.custom , etc.
+    /// The entire layout is displayed in rows and columns to express the relationship of two-dimensional or higher-dimensional data.
+    ///  
+    /// The matrix coordinate system can also serve as the layout system of the box of series like series.pie , series.tree , etc., or another coordinate systems like grid (i.e., Cartesian coordinate system), geo , polar , etc., or plain components like legend , dataZoom , etc.
+    /// This character enables mini charts to be laid out in a table, or enables the layout approach like CSS grid layout .
+    /// Currently all the series and components can be laid out within a matrix.
+    /// matrix can also be used purely as table for data texts.
+    ///  
+    /// Correlation heat map using heat map in matrix coordinate system:   
+    /// Correlation scatter plot using scatter plot in matrix coordinate system:   
+    /// Correlation graph using relationship graph in matrix coordinate system:   
+    /// Correlation pie chart using pie chart in matrix coordinate system.
+    /// The example below shows multi-level X data:   
+    /// Confusion matrix using custom series in matrix coordinate system:   
+    /// Mini charts are laid out in a table:    
+    /// And other mini charts examples: matrix mini bar example .
+    ///  
+    /// By flexibly using the combination of chart series, coordinate systems, and APIs, richer effects can be achieved.
+    ///  
+    /// Reference:   Cell locating and reference: see the description in matrix.body.data
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("matrix")]
+    public Matrix? Matrix { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// Thumbnail component.
+    ///  
+    /// Currently it only supports series.graph .
+    ///  
+    /// Examples: graph NPM , graph Webkit dep .
+    /// </summary>
+    [JsonPropertyName("thumbnail")]
+    public Thumbnail? Thumbnail { get; set; } 
+
+    /// <summary>
     /// dataset component is published since ECharts 4.
     /// dataset brings convenience in data management separated with styles and enables data reuse by different series.
     /// More importantly, it enables data encoding from data to visual, which brings convenience in some scenarios.
@@ -2010,11 +2070,46 @@ public partial class ChartOptions
     ///   
     /// Notice: the setting only affects "display time", not "parse time".
     /// For how time value (like 1491339540396 , '2013-01-04' , ...) is parsed in echarts, see the time part in date .
+    ///  
+    /// Notice: if you set useUTC: true and use the helper method echarts.time.format (or other similar third-party methods), it should also be configured to format in UTC.
+    /// For example,  // The third param `true` indicates that format time based on UTC.
+    /// const timeStrUTC = echarts.time.format(value, '{yyyy}-{MM}-{dd} {hh}:{mm}:{ss}', true);
     /// ]]>
     /// </summary>
     [JsonPropertyName("useUTC")]
     [DefaultValue(false)]
     public bool? UseUTC { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// Whether rich text inherits plain text style.
+    ///  
+    /// This option is just for backward compatibility.
+    ///   
+    /// The label.rich / textStyle.rich  fontStyle , fontWeight , fontSize , fontFamily , textShadowColor , textShadowBlur , textShadowOffsetX , textShadowOffsetY are changed to inherit the corresponding plain label styles since echarts v6.
+    /// You can use richInheritPlainLabel: false to restore it.
+    /// For example,  option = {
+    ///     richInheritPlainLabel: false, // In most cases, this is enough.
+    ///     xxx1: {
+    ///         // Can also set it here to only control this label.
+    ///         label: {
+    ///             richInheritPlainLabel: false,
+    ///             rich: {/* ...
+    /// */},
+    ///         }
+    ///     },
+    ///     xxx2: {
+    ///         textStyle: {
+    ///             richInheritPlainLabel: false,
+    ///             rich: {/* ...
+    /// */},
+    ///         }
+    ///     }
+    /// }
+    /// </summary>
+    [JsonPropertyName("richInheritPlainLabel")]
+    [DefaultValue(true)]
+    public bool? RichInheritPlainLabel { get; set; } 
 
     /// <summary>
     /// Option array used in timeline .

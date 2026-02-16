@@ -14,10 +14,10 @@
     "gulp-postcss": "^10.0.0",
     "gulp-rename": "^2.1.0",
     "gulp-sass": "^6.0.1",
-    "sass": "^1.97.1"
+    "sass": "^1.97.2"
   },
   "dependencies": {
-    "echarts": "^5.6.0",
+    "echarts": "^6.0.0",
     "echarts-stat": "^1.2.0"
   },
   "scripts": {

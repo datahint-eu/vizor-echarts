@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -15,6 +15,10 @@ public partial class SaveAsImage
     /// File suffix of the image saved.
     ///   If the renderer is set to be 'canvas' when chart initialized (default), then 'png' (default) and 'jpg' are supported.
     ///  If the renderer is set to be 'svg' when when chart initialized , then only 'svg' is supported for type ( 'svg' type is supported since v4.8.0 ).
+    ///    [WARNING]: This value will be used as the file extension.
+    /// However, it has not historically been validated internally.
+    /// So do not input an invalid value; otherwise, security risks have to be considered.
+    /// See document "Security Guidelines" for recommendations on safe usage.
     /// ]]>
     /// </summary>
     [JsonPropertyName("type")]
@@ -22,7 +26,13 @@ public partial class SaveAsImage
     public ImageType? Type { get; set; } 
 
     /// <summary>
-    /// Name to save the image, whose default value is title.text .
+    /// <![CDATA[
+    /// Name (file stem) to save the image.
+    /// If it is not provided, title[0].text (if any) has historically been used.
+    /// The full download filename is {name}.{type}   [WARNING]: It is recommended to always specify this name explicitly, and do not use text from untrusted sources.
+    /// Otherwise, correctness and security risks for a filename have to be considered.
+    /// See document "Security Guidelines" for recommendations on safe usage.
+    /// ]]>
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; } 

@@ -1,16 +1,20 @@
 # Type Pattern Analysis Report
-Generated: 2026-01-11 19:10:00
+Generated: 2026-01-18 19:10:10
 
 ## Summary
-- Total properties analyzed: 37348
-- ✅ Fully supported: 37330 (100%)
+- Total properties analyzed: 39020
+- ✅ Fully supported: 38990 (99,9%)
 - ⚠️ Partially supported: 2 (0%)
-- ❌ Unsupported: 16 (0%)
+- ❌ Unsupported: 28 (0,1%)
 - 🔍 Requires investigation: 0 (0%)
 
 ## Unsupported Patterns (Sorted by Frequency)
 
-### array,enum,number (4 occurrences)
+### enum (10 occurrences)
+**Examples**: geo.preserveAspectAlign, geo.preserveAspectVerticalAlign, dividerLineStyle.cap
+**Suggestion**: Add enum type mapping: AddMappedEnumType(new MappedEnumType("{propName}", typeof(???)), "{parentName}");
+
+### array,enum,number (6 occurrences)
 **Examples**: crossStyle.type, crossStyle.type, crossStyle.type
 **Suggestion**: Pattern 'array,enum,number' is complex - investigate if typed accessor pattern is appropriate
 

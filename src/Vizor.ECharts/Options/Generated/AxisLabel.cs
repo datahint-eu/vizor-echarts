@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -67,10 +67,35 @@ public partial class AxisLabel
     /// Example:  // Use string template; template variable is the default label of axis {value}
     /// formatter: '{value} kg'
     /// // Use callback.
-    /// formatter: function (value, index) {
+    /// formatter: function (value, index, extra?) {
     ///     return value + 'kg';
     /// }   
-    /// For axes of time type : 'time' , formatter supports the following forms:   String Templates : an easy and fast way to make frequently used date/time template, formed in string  Callback Functions : customized formatter to make complex format, formed in Function  Cascading Templates : to adopt different formatters for different time granularity, formed in object   
+    /// 
+    ///  
+    /// When axis break is used  
+    /// The break info can be obtained from the extra param:  type AxisLabelFormatterExtraBreakPart = {
+    ///     // If this label is a axis break start or end.
+    ///     break?: {
+    ///         type: 'start' | 'end';
+    ///         // The parsed `start`/`end`, always be numbers, and has been
+    ///         // sorted and intersection removed, therefore, they may not
+    ///         // equal to the original input of `start`/`end`.
+    ///         start: number;
+    ///         end: number;
+    ///     }
+    /// }
+    /// formatter = function (value, index, extra: AxisLabelFormatterExtraBreakPart) {
+    ///     if (extra && extra.break) {
+    ///         console.log(extra.break);
+    ///     }
+    ///     return value + 'kg';
+    /// }  
+    /// Notice: null checking must be performed.
+    ///   
+    /// 
+    ///  
+    /// For a time axis ( xAxis.type: 'time' )  
+    /// formatter supports the following forms:   String Templates : an easy and fast way to make frequently used date/time template, formed in string  Callback Functions : customized formatter to make complex format, formed in Function  Cascading Templates : to adopt different formatters for different time granularity, formed in object   
     /// Next, we are going to introduce these three forms one by one.
     ///  
     /// String Templates  
@@ -103,6 +128,17 @@ public partial class AxisLabel
     ///         texts.unshift(date.getFullYear());
     ///     }
     ///     return texts.join('/');
+    /// }
+    /// 
+    /// // Moreover, `echarts.time.format` can be used:
+    /// formatter: function (value, index) {
+    ///     // Follow the template rules above.
+    ///     const timeStrLocal = echarts.time.format(value, '{yyyy}-{MM}-{dd} {hh}:{mm}:{ss}');
+    ///     // The third param `true` indicates that format time based on UTC.
+    ///     const timeStrUTC = echarts.time.format(value, '{yyyy}-{MM}-{dd} {hh}:{mm}:{ss}', true);
+    ///     // Notice, if using UTC, https://echarts.apache.org/en/option.html#useUTC need to be also set as `true`
+    ///     // for consistency.
+    ///     return timeStrLocal;
     /// }  
     /// Cascading Templates  
     /// Sometimes, we wish to use different formats for different time granularity.
@@ -613,6 +649,37 @@ public partial class AxisLabel
     /// </summary>
     [JsonPropertyName("rich")]
     public Rich? Rich { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// Whether rich text inherits plain text style.
+    ///  
+    /// This option is just for backward compatibility.
+    ///   
+    /// The label.rich / textStyle.rich  fontStyle , fontWeight , fontSize , fontFamily , textShadowColor , textShadowBlur , textShadowOffsetX , textShadowOffsetY are changed to inherit the corresponding plain label styles since echarts v6.
+    /// You can use richInheritPlainLabel: false to restore it.
+    /// For example,  option = {
+    ///     richInheritPlainLabel: false, // In most cases, this is enough.
+    ///     xxx1: {
+    ///         // Can also set it here to only control this label.
+    ///         label: {
+    ///             richInheritPlainLabel: false,
+    ///             rich: {/* ...
+    /// */},
+    ///         }
+    ///     },
+    ///     xxx2: {
+    ///         textStyle: {
+    ///             richInheritPlainLabel: false,
+    ///             rich: {/* ...
+    /// */},
+    ///         }
+    ///     }
+    /// }
+    /// </summary>
+    [JsonPropertyName("richInheritPlainLabel")]
+    [DefaultValue(true)]
+    public bool? RichInheritPlainLabel { get; set; } 
 
     /// <summary>
     /// <![CDATA[

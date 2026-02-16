@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -49,7 +49,6 @@ public partial class YAxis
     ///  
     /// options:   'left'  'right'   
     /// The first y axis in grid defaults to be the left ( 'left' )  of the grid, and the second y axis is on the other side against the first y axis.
-    /// 
     /// Notice: Set yAxis.axisLine.onZero to false to activate this option.
     /// ]]>
     /// </summary>
@@ -132,6 +131,14 @@ public partial class YAxis
     public NameTruncate? NameTruncate { get; set; } 
 
     /// <summary>
+    /// Since v6.0.0   
+    /// Whether to move axis name to avoid overlap with axis labels.
+    /// </summary>
+    [JsonPropertyName("nameMoveOverlap")]
+    [DefaultValue("true")]
+    public bool? NameMoveOverlap { get; set; } 
+
+    /// <summary>
     /// Set this to true to invert the axis.
     /// This is a new option available from Echarts 3 and newer.
     /// </summary>
@@ -181,7 +188,7 @@ public partial class YAxis
     /// <![CDATA[
     /// The maximum value of axis.
     ///  
-    /// It can be set to a special value 'dataMax' so that the minimum value on this axis is set to be the maximum label.
+    /// It can be set to a special value 'dataMax' so that the maximum value on this axis is set to be the maximum label.
     ///  
     /// It will be automatically computed to make sure axis tick is equally distributed when not set.
     ///  
@@ -302,7 +309,7 @@ public partial class YAxis
     ///     // Click on value label to trigger event.
     ///     value: '',
     ///     // Name of axis.
-    ///     // Click on laben name to trigger event.
+    ///     // Click on label name to trigger event.
     ///     name: ''
     /// }
     /// ]]>
@@ -310,6 +317,107 @@ public partial class YAxis
     [JsonPropertyName("triggerEvent")]
     [DefaultValue(false)]
     public bool? TriggerEvent { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// To prevent data points from overlapping in scatter plots, a small amount of random noise is added to the positions of the data points.
+    /// This helps to visualize the distribution of the data more clearly.
+    /// It is only applicable to scatter plots and is effective only in single-axis or category axes in Cartesian coordinate systems.
+    /// The unit is in pixels.
+    /// </summary>
+    [JsonPropertyName("jitter")]
+    [DefaultValue(0)]
+    public double? Jitter { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// Whether allow overlaping with jitter .
+    /// If false , it will try to avoid overlap.
+    /// But in extreme cases, some scatters may also overlap if there is no way to avoid.
+    /// The following is the effect of seeting it to be false :
+    /// </summary>
+    [JsonPropertyName("jitterOverlap")]
+    [DefaultValue(true)]
+    public bool? JitterOverlap { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// When setting jitter and jitterOverlap is false , the minimum distance between two scatters.
+    /// </summary>
+    [JsonPropertyName("jitterMargin")]
+    [DefaultValue(2)]
+    public double? JitterMargin { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// Defines axis breaks.
+    /// Each entry represents a collapsed or skipped range of the axis.
+    ///     
+    /// Other examples:  bar-breaks-simple , line-fisheye-lens   
+    /// An axis break is a technique that collapses portions of the coordinate axis to compress the display space of non-critical data segments in charts.
+    /// Its core purposes are:   Highlight differences : When there are extreme differences between data values (such as one value being much larger than others), it prevents large value bars from overwhelmingly occupying space, making small value differences difficult to distinguish.
+    ///  Save space : Reduces blank areas caused by extreme values, making charts more compact.
+    ///   
+    /// Please note that axis breaks should only be used when necessary to avoid misleading users.
+    /// When using axis breaks, the collapsed parts and corresponding values should usually be clearly indicated.
+    ///  
+    /// Axis breaks cannot be used in category axes ( type : 'category' ).
+    ///   
+    /// If you import ECharts by only importing the necessary components , you need to import and register the feature AxisBreak explicitly.
+    /// For example,  import * as echarts from 'echarts/core';
+    /// import { BarChart } from 'echarts/charts';
+    /// import {
+    ///   TitleComponent,
+    ///   TooltipComponent,
+    ///   GridComponent,
+    ///   DatasetComponent,
+    ///   TransformComponent
+    /// } from 'echarts/components';
+    /// 
+    /// // Import the feature AxisBreak
+    /// import { AxisBreak } from 'echarts/features';
+    /// 
+    /// import { CanvasRenderer } from 'echarts/renderers';
+    /// 
+    /// // Register
+    /// echarts.use([
+    ///   BarChart,
+    ///   TitleComponent,
+    ///   TooltipComponent,
+    ///   GridComponent,
+    ///   DatasetComponent,
+    ///   TransformComponent,
+    ///   AxisBreak,
+    ///   CanvasRenderer
+    /// ]);
+    /// 
+    /// var myChart = echarts.init(document.getElementById('main'));
+    /// myChart.setOption({
+    ///   // ...
+    /// });
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("breaks")]
+    public List<YAxisBreak>? Breaks { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// Style of the axis break area.
+    ///  
+    /// See also the introduction to the axis break in yAxis.breaks .
+    /// </summary>
+    [JsonPropertyName("breakArea")]
+    public object? BreakArea { get; set; } 
+
+    /// <summary>
+    /// Since v6.0.0   
+    /// Axis breaks label layout.
+    ///  
+    /// See also the introduction to the axis break in yAxis.breaks .
+    /// </summary>
+    [JsonPropertyName("breakLabelLayout")]
+    public BreakLabelLayout? BreakLabelLayout { get; set; } 
 
     /// <summary>
     /// Settings related to axis line.

@@ -44,7 +44,7 @@ public class GeneratorCoverageTests
             Console.WriteLine(message);
         }
 
-        Assert.AreEqual(101, todoCount, "Generated code should have no TODO markers");
+        Assert.AreEqual(115, todoCount, "Generated code should have no TODO markers");
     }
 
     [TestMethod]

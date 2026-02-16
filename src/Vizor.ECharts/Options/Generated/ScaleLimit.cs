@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -11,13 +11,13 @@ namespace Vizor.ECharts;
 public partial class ScaleLimit
 {
     /// <summary>
-    /// Minimum scaling
+    /// Minimum zoom
     /// </summary>
     [JsonPropertyName("min")]
     public double? Min { get; set; } 
 
     /// <summary>
-    /// Maximum scaling
+    /// Maximum zoom
     /// </summary>
     [JsonPropertyName("max")]
     public double? Max { get; set; } 

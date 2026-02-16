@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 using System.Text.Json.Serialization;
@@ -10,6 +10,7 @@ namespace Vizor.ECharts;
 [JsonDerivedType(typeof(BarSeries), "bar")]
 [JsonDerivedType(typeof(BoxplotSeries), "boxplot")]
 [JsonDerivedType(typeof(CandlestickSeries), "candlestick")]
+[JsonDerivedType(typeof(ChordSeries), "chord")]
 [JsonDerivedType(typeof(CustomSeries), "custom")]
 [JsonDerivedType(typeof(EffectScatterSeries), "effectScatter")]
 [JsonDerivedType(typeof(FunnelSeries), "funnel")]

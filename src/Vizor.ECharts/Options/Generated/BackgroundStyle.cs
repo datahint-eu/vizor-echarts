@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -11,34 +11,47 @@ namespace Vizor.ECharts;
 public partial class BackgroundStyle
 {
     /// <summary>
-    /// Bar color.
+    /// Entire matrix area  color.
     ///   
     /// Supports setting as solid color using rgb(255,255,255) , rgba(255,255,255,1) , #fff , etc.
     /// Also supports setting as gradient color and pattern fill, see option.color for details
     /// </summary>
     [JsonPropertyName("color")]
-    [DefaultValue("rgba(180, 180, 180, 0.2)")]
+    [DefaultValue("none")]
     public Color? Color { get; set; } 
 
     /// <summary>
-    /// The border color of bar.
+    /// Entire matrix area  border color, whose format is similar to that of color .
     /// </summary>
     [JsonPropertyName("borderColor")]
-    [DefaultValue("#000")]
+    [DefaultValue("#ccc")]
     public Color? BorderColor { get; set; } 
 
     /// <summary>
-    /// The border width of bar.
-    /// defaults to have no border.
+    /// Entire matrix area  border width.
+    /// No border when it is set to be 0.
+    ///  
+    /// Entire matrix area  border width.
+    /// No border when it is set to be 0.
     /// </summary>
     [JsonPropertyName("borderWidth")]
-    [DefaultValue(0)]
+    [DefaultValue(1)]
     public double? BorderWidth { get; set; } 
 
     /// <summary>
     /// <![CDATA[
-    /// Border type.
-    /// Can be 'dashed' , 'dotted' .
+    /// Entire matrix area  border type.
+    ///  
+    /// Possible values are:   'solid'  'dashed'  'dotted'   
+    /// Since v5.0.0 , it can also be a number or a number array to specify the dash array of the line.
+    /// With borderDashOffset , we can make the line style more flexible.
+    ///  
+    /// For example：  {
+    /// 
+    /// borderType: [5, 10],
+    /// 
+    /// borderDashOffset: 5
+    /// }
     /// ]]>
     /// </summary>
     [JsonPropertyName("borderType")]
@@ -46,16 +59,64 @@ public partial class BackgroundStyle
     public LineType? BorderType { get; set; } 
 
     /// <summary>
-    /// The radius of rounded corner.
-    /// Its unit is px.
-    /// And it supports use array to respectively specify the 4 corner radiuses.
+    /// Since v5.0.0   
+    /// To set the line dash offset.
+    /// With borderType , we can make the line style more flexible.
     ///  
-    /// For example:  borderRadius: 5, // consistently set the size of 4 rounded corners
-    /// borderRadius: [5, 5, 0, 0] // (clockwise upper left, upper right, bottom right and bottom left)
+    /// Refer to MDN lineDashOffset for more details.
     /// </summary>
-    [JsonPropertyName("borderRadius")]
-    [DefaultValue(0)]
-    public BorderRadius? BorderRadius { get; set; } 
+    [JsonPropertyName("borderDashOffset")]
+    [DefaultValue("0")]
+    public double? BorderDashOffset { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v5.0.0   
+    /// To specify how to draw the end points of the line.
+    /// Possible values are:   'butt' : The ends of lines are squared off at the endpoints.
+    ///  'round' : The ends of lines are rounded.
+    ///  'square' : The ends of lines are squared off by adding a box with an equal width and half the height of the line's thickness.
+    ///   
+    /// Default value is 'butt' .
+    /// Refer to MDN lineCap for more details.
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("borderCap")]
+    [DefaultValue("butt")]
+    public LineCap? BorderCap { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v5.0.0   
+    /// To determine the shape used to join two line segments where they meet.
+    ///  
+    /// Possible values are:   'bevel' : Fills an additional triangular area between the common endpoint of connected segments, and the separate outside rectangular corners of each segment.
+    ///  'round' : Rounds off the corners of a shape by filling an additional sector of disc centered at the common endpoint of connected segments.
+    /// The radius for these rounded corners is equal to the line width.
+    ///  'miter' : Connected segments are joined by extending their outside edges to connect at a single point, with the effect of filling an additional lozenge-shaped area.
+    /// This setting is affected by the borderMiterLimit property.
+    ///   
+    /// Default value is 'bevel' .
+    /// Refer to MDN lineJoin for more details.
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("borderJoin")]
+    [DefaultValue("bevel")]
+    public LineJoin? BorderJoin { get; set; } 
+
+    /// <summary>
+    /// Since v5.0.0   
+    /// To set the miter limit ratio.
+    /// Only works when borderJoin is set as miter .
+    ///  
+    /// Default value is 10 .
+    /// Negative、 0 、 Infinity and NaN values are ignored.
+    ///  
+    /// Refer to MDN miterLimit for more details.
+    /// </summary>
+    [JsonPropertyName("borderMiterLimit")]
+    [DefaultValue("10")]
+    public double? BorderMiterLimit { get; set; } 
 
     /// <summary>
     /// <![CDATA[
@@ -101,5 +162,17 @@ public partial class BackgroundStyle
     [JsonPropertyName("opacity")]
     [DefaultValue("1")]
     public double? Opacity { get; set; } 
+
+    /// <summary>
+    /// The radius of rounded corner.
+    /// Its unit is px.
+    /// And it supports use array to respectively specify the 4 corner radiuses.
+    ///  
+    /// For example:  borderRadius: 5, // consistently set the size of 4 rounded corners
+    /// borderRadius: [5, 5, 0, 0] // (clockwise upper left, upper right, bottom right and bottom left)
+    /// </summary>
+    [JsonPropertyName("borderRadius")]
+    [DefaultValue(0)]
+    public BorderRadius? BorderRadius { get; set; } 
 
 }
