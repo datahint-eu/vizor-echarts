@@ -1,0 +1,49 @@
+{
+  "title": {
+    "text": "Scatter with Visual Map"
+  },
+  "xAxis": {
+    "type": "value"
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "visualMap": [
+    {
+      "type": "continuous",
+      "min": 0,
+      "max": 100,
+      "dimension": 2,
+      "inRange": {
+        "color": [
+          "#50a3ba",
+          "#eac736",
+          "#d94e5d"
+        ]
+      }
+    }
+  ],
+  "series": [
+    {
+      "type": "scatter",
+      "symbolSize": 20,
+      "data": [
+        [
+          10,
+          20,
+          30
+        ],
+        [
+          15,
+          25,
+          50
+        ],
+        [
+          20,
+          30,
+          80
+        ]
+      ]
+    }
+  ]
+}

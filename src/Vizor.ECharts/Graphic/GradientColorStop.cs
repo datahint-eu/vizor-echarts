@@ -1,4 +1,4 @@
-﻿namespace Vizor.ECharts;
+namespace Vizor.ECharts;
 
 /// <summary>
 /// See https://github.com/ecomfe/zrender/blob/master/src/graphic/Gradient.ts
@@ -7,10 +7,10 @@ public class GradientColorStop
 {
     public GradientColorStop(double offset, Color color)
     {
-		Offset = offset;
-		Color = color;
-	}
+        Offset = offset;
+        Color = color;
+    }
 
-	public double Offset { get; set; }
-	public Color Color { get; set; }
+    public double Offset { get; set; }
+    public Color Color { get; set; }
 }

@@ -1,73 +1,26 @@
-
-using System.ComponentModel;
-using System.Text.Json.Serialization;
-
 namespace Vizor.ECharts;
 
+/// <summary>
+/// Hand-tuned override for FunnelSeriesData to provide convenience constructors.
+/// Complements the auto-generated partial class in Series/Generated/Funnel/FunnelSeriesData.cs
+/// </summary>
 public partial class FunnelSeriesData
 {
+    /// <summary>
+    /// Parameterless constructor for property initialization.
+    /// </summary>
     public FunnelSeriesData()
     {
     }
 
+    /// <summary>
+    /// Convenience constructor to initialize funnel data with name and value.
+    /// </summary>
+    /// <param name="name">The name of the data item.</param>
+    /// <param name="value">The numeric value of the data item.</param>
     public FunnelSeriesData(string name, double value)
     {
-		Name = name;
-		Value = value;
-	}
-
-    /// <summary>
-    /// the name of data item.
-    /// </summary>
-    [JsonPropertyName("name")]
-	public string? Name { get; set; }
-
-	/// <summary>
-	/// data value.
-	/// </summary>
-	[JsonPropertyName("value")]
-	public double? Value { get; set; }
-
-	/// <summary>
-	/// Graphic style of , emphasis is the style when it is highlighted, like being hovered by mouse, or highlighted via legend connect.
-	/// </summary>
-	[JsonPropertyName("itemStyle")]
-	public ItemStyle? ItemStyle { get; set; }
-
-	/// <summary>
-	/// The label configuration of a single data item.
-	/// </summary>
-	[JsonPropertyName("label")]
-	public Label? Label { get; set; }
-
-	/// <summary>
-	/// 
-	/// </summary>
-	[JsonPropertyName("labelLine")]
-	public LabelLine? LabelLine { get; set; }
-
-	/// <summary>
-	/// 
-	/// </summary>
-	[JsonPropertyName("emphasis")]
-	public Emphasis? Emphasis { get; set; }
-
-	/// <summary>
-	/// Since v5.0.0
-	/// </summary>
-	[JsonPropertyName("blur")]
-	public Blur? Blur { get; set; }
-
-	/// <summary>
-	/// Since v5.0.0
-	/// </summary>
-	[JsonPropertyName("select")]
-	public Select? Select { get; set; }
-
-	/// <summary>
-	/// tooltip settings in this series data.
-	/// </summary>
-	[JsonPropertyName("tooltip")]
-	public Tooltip? Tooltip { get; set; }
-
+        Name = name;
+        Value = value;
+    }
 }

@@ -1,4 +1,4 @@
-﻿namespace Vizor.ECharts;
+namespace Vizor.ECharts;
 
 public partial class ChartOptions
 {

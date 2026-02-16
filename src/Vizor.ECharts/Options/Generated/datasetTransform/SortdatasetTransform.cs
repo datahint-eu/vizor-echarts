@@ -1,0 +1,57 @@
+// AUTO GENERATED - DO NOT EDIT - All changes will be lost
+// ECharts Version: 5.6.0
+// http://www.datahint.eu/
+
+
+using System.ComponentModel;
+using System.Text.Json.Serialization;
+
+namespace Vizor.ECharts;
+
+public partial class SortdatasetTransform
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    [JsonPropertyName("type")]
+    [DefaultValue("sort")]
+    public string Type { get; init; }  = "sort";
+
+    /// <summary>
+    /// <![CDATA[
+    /// The condition of transform "sort".
+    ///  
+    /// See the tutorial of data transform .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("config")]
+    public object? Config { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// When using data transform, we might run into the trouble that the final chart do not display correctly but we do not know where the config is wrong.
+    /// There is a property transform.print might help in such case.
+    /// ( transform.print is only available in dev environment).
+    ///  option = {
+    ///     dataset: [{
+    ///         source: [ ...
+    /// ]
+    ///     }, {
+    ///         transform: {
+    ///             type: 'filter',
+    ///             config: { ...
+    /// }
+    ///             // The result of this transform will be printed
+    ///             // in dev tool via `console.log`.
+    ///             print: true
+    ///         }
+    ///     }],
+    ///     ...
+    /// }
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("print")]
+    [DefaultValue(false)]
+    public bool? Print { get; set; } 
+
+}

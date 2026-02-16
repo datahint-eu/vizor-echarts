@@ -5,16 +5,16 @@
 
 	logging: false,
 
-	changeLogging: function (b) {
+	changeLogging(b) {
 		vizorECharts.logging = b;
 	},
 
-	getChart: function (id) {
+	getChart(id) {
 		return vizorECharts.charts.get(id);
 	},
 
-	getDataSource: function (fetchId) {
-		var data = vizorECharts.dataSources.get(fetchId);
+	getDataSource(fetchId) {
+		const data = vizorECharts.dataSources.get(fetchId);
 
 		if (vizorECharts.logging) {
 			console.log(`GET CACHED FETCH ${fetchId}`);
@@ -24,7 +24,7 @@
 		return data;
 	},
 
-	evaluatePath: function (data, pathExpression) {
+	evaluatePath(data, pathExpression) {
 		const pathSegments = pathExpression.split('.');
 		let currentObj = data;
 
@@ -38,13 +38,13 @@
 		return currentObj;
 	},
 
-	fetchExternalData: async function (chart, fetchOptions) {
-		if (fetchOptions == null)
+	async fetchExternalData(chart, fetchOptions) {
+		if (fetchOptions === null)
 			return;
 
 		chart.__dataSources = [];
 
-		for (item of JSON.parse(fetchOptions)) {
+		for (const item of JSON.parse(fetchOptions)) {
 			if (vizorECharts.logging) {
 				console.log(`FETCH ${item.id}`);
 				console.log(item);
@@ -52,16 +52,16 @@
 
 			const response = await fetch(item.url, item.options);
 			if (!response.ok) {
-				throw new Error('Failed to fetch external chart data: url=' + url);
+				throw new Error(`Failed to fetch external chart data: url=${item.url}`);
 			}
 
 			// parse the response as JSON
-			var data = null;
-			if (item.fetchAs == "json") {
+			let data = null;
+			if (item.fetchAs === "json") {
 				data = await response.json();
 
 				// replace the object with the fetched data
-				if (item.path != null) {
+				if (item.path !== null) {
 					try {
 						data = vizorECharts.evaluatePath(data, item.path);
 					} catch (error) {
@@ -69,7 +69,7 @@
 						console.log(error);
 					}
 				}
-			} else if (item.fetchAs == "string") {
+			} else if (item.fetchAs === "string") {
 				data = await response.text();
 			}
 
@@ -78,7 +78,7 @@
 			}
 
 			// execute the afterLoad function if required
-			if (item.afterLoad != null) {
+			if (item.afterLoad !== null) {
 				try {
 					const func = eval(`(${item.afterLoad})`)
 					data = func(data);
@@ -96,12 +96,12 @@
 		}
 	},
 
-	registerMaps: function (chart, mapOptions) {
-		if (mapOptions == null)
+	registerMaps(chart, mapOptions) {
+		if (mapOptions === null)
 			return;
 
-		var parsedOptions = eval('(' + mapOptions + ')');
-		for (item of parsedOptions) {
+		const parsedOptions = eval('(' + mapOptions + ')');
+		for (const item of parsedOptions) {
 			if (vizorECharts.logging) {
 				console.log("MAP");
 				console.log(item);
@@ -115,19 +115,22 @@
 		}
 	},
 
-	initChart: async function (id, theme, initOptions, chartOptions, mapOptions, fetchOptions) {
-		var chart = echarts.init(document.getElementById(id), theme, JSON.parse(initOptions));
+	async initChart(id, theme, initOptions, chartOptions, mapOptions, fetchOptions) {
+		const chart = echarts.init(document.getElementById(id), theme, JSON.parse(initOptions));
 
 		// see issue #20: Size to fit container: Width="auto" not working
-		window.addEventListener('resize', function () {
+		const resizeHandler = function () {
 			chart.resize();
-		});
+		};
+		window.addEventListener('resize', resizeHandler);
+		chart.__resizeHandler = resizeHandler;  // Store reference on chart
+
 		vizorECharts.charts.set(id, chart);
 
 		// show loading animation
 		chart.showLoading();
 
-		if (chartOptions == null)
+		if (chartOptions === null)
 			return;
 
 		// fetch external data if needed
@@ -137,7 +140,7 @@
 		await vizorECharts.registerMaps(chart, mapOptions);
 
 		// parse the options
-		var parsedOptions = eval('(' + chartOptions + ')');
+		const parsedOptions = eval('(' + chartOptions + ')');
 
 		if (vizorECharts.logging) {
 			console.log("CHART");
@@ -151,9 +154,9 @@
 		chart.hideLoading();
 	},
 
-	updateChart: async function (id, chartOptions, mapOptions, fetchOptions) {
-		var chart = vizorECharts.charts.get(id);
-		if (chart == null) {
+	async updateChart(id, chartOptions, mapOptions, fetchOptions) {
+		const chart = vizorECharts.charts.get(id);
+		if (chart === null) {
 			console.error("Failed to retrieve chart " + id);
 			return;
 		}
@@ -165,7 +168,7 @@
 		await vizorECharts.registerMaps(chart, mapOptions);
 
 		// parse the options
-		var parsedOptions = eval('(' + chartOptions + ')');
+		const parsedOptions = eval('(' + chartOptions + ')');
 
 		// iterate through the options and map all JS functions / external data sources
 		// set the chart options
@@ -175,15 +178,15 @@
 		chart.hideLoading();
 	},
 
-	attachClickEvent: function (id, objRef) {
-		var chart = vizorECharts.charts.get(id);
-		if (chart == null) {
+	attachClickEvent(id, objRef) {
+		const chart = vizorECharts.charts.get(id);
+		if (chart === null) {
 			console.error("Failed to retrieve chart " + id);
 			return;
 		}
 
 		// Call the JSInvokable .NET method
-		chart.on('click', function (params) {
+		chart.on('click', (params) => {
 			if (vizorECharts.logging) {
 				console.log("CLICK");
 				console.log(params);
@@ -197,9 +200,9 @@
 		});
 	},
 
-	clearChart: function (id) {
-		var chart = vizorECharts.charts.get(id);
-		if (chart == null) {
+	clearChart(id) {
+		const chart = vizorECharts.charts.get(id);
+		if (chart === null) {
 			console.error("Failed to clear chart " + id);
 			return;
 		}
@@ -207,9 +210,9 @@
 		chart.clear();
 	},
 
-	disposeChart: function (id) {
-		var chart = vizorECharts.charts.get(id);
-		if (chart == null) {
+	disposeChart(id) {
+		const chart = vizorECharts.charts.get(id);
+		if (chart === null) {
 			console.error("Failed to dispose chart " + id);
 			return;
 		}
@@ -220,7 +223,11 @@
 				window.vizorECharts.dataSources.delete(id);
 			});
 		}
-
+		// remove resize listener
+		if (chart.__resizeHandler) {
+			window.removeEventListener('resize', chart.__resizeHandler);
+		}
+		// dispose the chart instance
 		echarts.dispose(chart)
 		vizorECharts.charts.delete(id);
 	}

@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
@@ -9,10 +9,10 @@ namespace Vizor.ECharts;
 [JsonConverter(typeof(CamelCaseEnumConverter<ToolboxBrushType>))]
 public enum ToolboxBrushType
 {
-	Rect,
-	Polygon,
-	LineX,
-	LineY,
-	Keep,
-	Clear
+    Rect,
+    Polygon,
+    LineX,
+    LineY,
+    Keep,
+    Clear
 }

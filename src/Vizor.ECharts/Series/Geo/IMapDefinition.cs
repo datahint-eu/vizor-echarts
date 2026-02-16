@@ -1,4 +1,4 @@
-﻿namespace Vizor.ECharts;
+namespace Vizor.ECharts;
 
 /// <summary>
 /// See https://echarts.apache.org/en/api.html#echarts.registerMap

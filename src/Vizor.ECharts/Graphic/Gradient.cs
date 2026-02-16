@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
 
@@ -7,15 +7,15 @@ namespace Vizor.ECharts;
 /// </summary>
 public abstract class Gradient : IGraphicColor
 {
-	[JsonPropertyName("type")]
-	public abstract string Type { get; }
+    [JsonPropertyName("type")]
+    public abstract string Type { get; }
 
-	[JsonPropertyName("id")]
-	public int? Id { get; set; }
+    [JsonPropertyName("id")]
+    public int? Id { get; set; }
 
-	[JsonPropertyName("colorStops")]
-	public GradientColorStop[]? ColorStops { get; set; }
+    [JsonPropertyName("colorStops")]
+    public GradientColorStop[]? ColorStops { get; set; }
 
-	[JsonPropertyName("global")]
-	public bool? Global { get; set; }
+    [JsonPropertyName("global")]
+    public bool? Global { get; set; }
 }

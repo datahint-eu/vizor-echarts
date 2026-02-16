@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Vizor.ECharts;
@@ -22,15 +22,15 @@ public class Icon
     public string? Url { get; }
     public IconType? Type { get; }
 
-	public static implicit operator Icon(string url)
-	{
-		return new Icon(url);
-	}
+    public static implicit operator Icon(string url)
+    {
+        return new Icon(url);
+    }
 
-	public static implicit operator Icon(IconType type)
-	{
-		return new Icon(type);
-	}
+    public static implicit operator Icon(IconType type)
+    {
+        return new Icon(type);
+    }
 }
 
 public enum IconType
@@ -48,9 +48,9 @@ public enum IconType
 
 public class IconConverter : JsonConverter<Icon>
 {
-	private static readonly IconConverter instance = new();
+    private static readonly IconConverter instance = new();
 
-	public override Icon Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override Icon Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         throw new NotImplementedException("Deserialization is not implemented for Icon.");
     }
@@ -67,5 +67,5 @@ public class IconConverter : JsonConverter<Icon>
         }
     }
 
-	public static IconConverter Instance => instance;
+    public static IconConverter Instance => instance;
 }

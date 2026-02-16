@@ -255,3 +255,10 @@ See [full example](https://github.com/datahint-eu/vizor-echarts/blob/main/src/Vi
 See [Issues](https://github.com/datahint-eu/vizor-echarts/issues) for a list of open tasks/bugs.
 
 Please provide a runnable sample using the [ECharts Online Editor](https://echarts.apache.org/examples/en/editor.html) and a description of what is wrong with the C# mapping.
+
+# Project Lineage & Branching
+
+- **Upstream**: This repository began as a fork of the original Vizor.ECharts project (now inactive). That upstream state is retained for reference only.
+- **Active branch**: `dev` contains the maintained code. Plan: promote `dev` to the primary `main` branch after detaching from the fork (no upstream updates expected).
+- **Releases**: Build and pack from the active branch (currently `dev`; will move to `main` after the promotion step).
+- **Contributions**: Open pull requests against the active branch; avoid reviving the upstream fork since it is unmaintained.

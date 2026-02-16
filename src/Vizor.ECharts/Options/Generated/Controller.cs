@@ -1,0 +1,31 @@
+// AUTO GENERATED - DO NOT EDIT - All changes will be lost
+// ECharts Version: 5.6.0
+// http://www.datahint.eu/
+
+
+using System.ComponentModel;
+using System.Text.Json.Serialization;
+
+namespace Vizor.ECharts;
+
+public partial class Controller
+{
+    /// <summary>
+    /// Define visual channels that will mapped from dataValues that are in selected range .
+    /// User can interact with visualMap component and make a selected range by mouse or touch.
+    ///  
+    /// See available configurations in visualMap-continuous.inRange
+    /// </summary>
+    [JsonPropertyName("inRange")]
+    public InRange? InRange { get; set; } 
+
+    /// <summary>
+    /// Define visual channels that will mapped from dataValues that are out of selected range .
+    /// User can interact with visualMap component and make a selected range by mouse or touch.
+    ///  
+    /// See available configurations in visualMap-continuous.inRange
+    /// </summary>
+    [JsonPropertyName("outOfRange")]
+    public OutOfRange? OutOfRange { get; set; } 
+
+}

@@ -1,0 +1,42 @@
+{
+  "title": {
+    "text": "DataZoom Example"
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "dataZoom": [
+    {
+      "type": "inside",
+      "xAxisIndex": 0
+    },
+    {
+      "type": "slider",
+      "xAxisIndex": 0,
+      "start": 10,
+      "end": 90
+    }
+  ],
+  "tooltip": {
+    "trigger": "axis",
+    "formatter": function(params) { return params[0].name + ': ' + params[0].value; }
+  },
+  "series": [
+    {
+      "type": "line",
+      "data": [
+        10,
+        20,
+        30
+      ]
+    }
+  ]
+}

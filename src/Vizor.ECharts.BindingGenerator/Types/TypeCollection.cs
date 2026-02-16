@@ -1,248 +1,310 @@
-﻿using System.Text.Json;
-using Vizor.ECharts;
+using System.Text.Json;
 
 namespace Vizor.ECharts.BindingGenerator.Types;
 
 internal class TypeCollection
 {
-	private readonly Dictionary<string, Dictionary<string, MappedEnumType>> enumTypesMappedByName = new();
+    private readonly Dictionary<string, Dictionary<string, MappedEnumType>> enumTypesMappedByName = new();
 
-	private readonly Dictionary<string, List<ObjectType>> allObjectTypesWithDuplicates = new();
-	private readonly Dictionary<string, ObjectType> objectTypeLookup = new();
+    private readonly Dictionary<string, List<ObjectType>> allObjectTypesWithDuplicates = new();
+    private readonly Dictionary<string, ObjectType> objectTypeLookup = new();
 
-	private readonly ObjectType chartOptions = new(null, "", "ChartOptions", "Options");
+    private readonly ObjectType chartOptions = new(null, "", "ChartOptions", "Options");
 
-	public TypeCollection()
-	{
-		AddMappedEnumType(new MappedEnumType("align", typeof(HorizontalAlign)));
-		AddMappedEnumType(new MappedEnumType("animationEasing", typeof(AnimationEasing)));
-		AddMappedEnumType(new MappedEnumType("animationEasingUpdate", typeof(AnimationEasing)));
-		AddMappedEnumType(new MappedEnumType("animationType", typeof(AnimationType)));
-		AddMappedEnumType(new MappedEnumType("animationTypeUpdate", typeof(AnimationTypeUpdate)));
-		AddMappedEnumType(new MappedEnumType("axisExpandTriggerOn", typeof(TriggerOn)));
-		AddMappedEnumType(new MappedEnumType("axisPosition", typeof(TopOrBottom)));
-		AddMappedEnumType(new MappedEnumType("axisSymbol", typeof(AxisSymbol)));
-		AddMappedEnumType(new MappedEnumType("axisType", typeof(AxisType)));
-		AddMappedEnumType(new MappedEnumType("blendMode", typeof(BlendMode)));
-		AddMappedEnumType(new MappedEnumType("borderCap", typeof(LineCap)));
-		AddMappedEnumType(new MappedEnumType("borderJoin", typeof(LineJoin)));
-		AddMappedEnumType(new MappedEnumType("borderRadius", typeof(Radius)));
-		AddMappedEnumType(new MappedEnumType("borderType", typeof(LineType)));
-		AddMappedEnumType(new MappedEnumType("boundaryGap", typeof(BoundaryGap)));
-		AddMappedEnumType(new MappedEnumType("brushType", typeof(BrushType)));
-		AddMappedEnumType(new MappedEnumType("colorBy", typeof(ColorBy)));
-		AddMappedEnumType(new MappedEnumType("colorMappingBy", typeof(ColorMappingBy)));
-		AddMappedEnumType(new MappedEnumType("emphasisBlurScope", typeof(EmphasisBlurScope)));
-		AddMappedEnumType(new MappedEnumType("emphasisFocus", typeof(EmphasisFocus)));
-		AddMappedEnumType(new MappedEnumType("fontStyle", typeof(FontStyle)));
-		AddMappedEnumType(new MappedEnumType("fontWeight", typeof(FontWeight)));
-		AddMappedEnumType(new MappedEnumType("horizontalAlign", typeof(HorizontalAlign)));
-		AddMappedEnumType(new MappedEnumType("icon", typeof(Icon)));
-		AddMappedEnumType(new MappedEnumType("legendType", typeof(LegendType)));
-		AddMappedEnumType(new MappedEnumType("lineCoordinateSystem", typeof(LineCoordinateSystem)));
-		AddMappedEnumType(new MappedEnumType("lineType", typeof(LineType)));
-		AddMappedEnumType(new MappedEnumType("nameLocation", typeof(NameLocation)));
-		AddMappedEnumType(new MappedEnumType("orient", typeof(Orient)));
-		AddMappedEnumType(new MappedEnumType("orthogonalOrient", typeof(OrthogonalOrient)));
-		AddMappedEnumType(new MappedEnumType("overflow", typeof(Overflow)));
-		AddMappedEnumType(new MappedEnumType("padding", typeof(Padding)));
-		AddMappedEnumType(new MappedEnumType("radius", typeof(Radius)));
-		AddMappedEnumType(new MappedEnumType("roam", typeof(Roam)));
-		AddMappedEnumType(new MappedEnumType("selectedMode", typeof(SelectionMode)));
-		AddMappedEnumType(new MappedEnumType("selector", typeof(Selector)));
-		AddMappedEnumType(new MappedEnumType("seriesLayoutBy", typeof(SeriesLayoutBy)));
-		AddMappedEnumType(new MappedEnumType("showEffectOn", typeof(ShowEffectOn)));
-		AddMappedEnumType(new MappedEnumType("stackStrategy", typeof(StackStrategy)));
-		AddMappedEnumType(new MappedEnumType("step", typeof(Step)));
-		AddMappedEnumType(new MappedEnumType("textAlign", typeof(HorizontalAlign)));
-		AddMappedEnumType(new MappedEnumType("textBorderType", typeof(LineType)));
-		AddMappedEnumType(new MappedEnumType("textBorderRadius", typeof(Radius)));
-		AddMappedEnumType(new MappedEnumType("textPadding", typeof(Padding)));
-		AddMappedEnumType(new MappedEnumType("textVerticalAlign", typeof(VerticalAlign)));
-		AddMappedEnumType(new MappedEnumType("tooltipOrder", typeof(TooltipOrder)));
-		AddMappedEnumType(new MappedEnumType("tooltipRenderMode", typeof(RenderMode)));
-		AddMappedEnumType(new MappedEnumType("tooltipTrigger", typeof(TooltipTrigger)));
-		AddMappedEnumType(new MappedEnumType("tooltipTriggerOn", typeof(TriggerOn)));
-		AddMappedEnumType(new MappedEnumType("triggerOn", typeof(TriggerOn)));
-		AddMappedEnumType(new MappedEnumType("treeLayout", typeof(TreeLayout)));
-		AddMappedEnumType(new MappedEnumType("verticalAlign", typeof(VerticalAlign)));
-
-
-
-		AddMappedEnumType(new MappedEnumType("type", typeof(LineType)), "lineStyle");
-		AddMappedEnumType(new MappedEnumType("type", typeof(LegendType)), "legend");
-		AddMappedEnumType(new MappedEnumType("type", typeof(ImageType)), "saveAsImage");
-		AddMappedEnumType(new MappedEnumType("type", typeof(AxisPointerType)), "axisPointer");
-		AddMappedEnumType(new MappedEnumType("type", typeof(MarkPointType)), "markPointData");
-
-		AddMappedEnumType(new MappedEnumType("cap", typeof(LineCap)), "lineStyle", "crossStyle", "ParallelSeriesData");
-		AddMappedEnumType(new MappedEnumType("join", typeof(LineJoin)), "lineStyle", "crossStyle", "ParallelSeriesData");
-
-		AddMappedEnumType(new MappedEnumType("order", typeof(TooltipOrder)), "tooltip");
-		AddMappedEnumType(new MappedEnumType("renderMode", typeof(RenderMode)), "tooltip");
-		AddMappedEnumType(new MappedEnumType("trigger", typeof(TooltipTrigger)), "tooltip");
-
-		AddMappedEnumType(new MappedEnumType("position", typeof(TopOrBottom)), "xAxis");
-		AddMappedEnumType(new MappedEnumType("shape", typeof(RadarShape)), "radar");
-
-		AddMappedEnumType(new MappedEnumType("status", typeof(AxisPointerStatus)), "axisPointer");
-		AddMappedEnumType(new MappedEnumType("symbol", typeof(AxisLineSymbol)), "axisLine");
-
-		AddMappedEnumType(new MappedEnumType("alignTo", typeof(LabelAlignTo)), "label");
-
-		AddMappedEnumType(new MappedEnumType("selectorPosition", typeof(StartOrEnd)), "legend");
-		AddMappedEnumType(new MappedEnumType("position", typeof(StartOrEnd)), "dayLabel");
-		AddMappedEnumType(new MappedEnumType("position", typeof(StartOrEnd)), "monthLabel");
-		AddMappedEnumType(new MappedEnumType("position", typeof(Position)), "yearLabel");
-		AddMappedEnumType(new MappedEnumType("position", typeof(Position)), "controlStyle");
-		AddMappedEnumType(new MappedEnumType("position", typeof(LeftOrRight)), "yAxis");
-		AddMappedEnumType(new MappedEnumType("controlPosition", typeof(LeftOrRight)), "timeline");
-		AddMappedEnumType(new MappedEnumType("layout", typeof(HorizontalOrVertical)), "parallel");
-		AddMappedEnumType(new MappedEnumType("position", typeof(LabelPosition)), "label", "upperLabel");
-
-		AddMappedEnumType(new MappedEnumType("seriesIndex", typeof(MultiIndex)), "brush");
-		AddMappedEnumType(new MappedEnumType("geoIndex", typeof(MultiIndex)), "brush");
-		AddMappedEnumType(new MappedEnumType("xAxisIndex", typeof(MultiIndex)), "brush", "dataZoom");
-		AddMappedEnumType(new MappedEnumType("yAxisIndex", typeof(MultiIndex)), "brush", "dataZoom");
+    public TypeCollection()
+    {
+        AddMappedEnumType(new MappedEnumType("align", typeof(HorizontalAlign)));
+        AddMappedEnumType(new MappedEnumType("animationEasing", typeof(AnimationEasing)));
+        AddMappedEnumType(new MappedEnumType("animationEasingUpdate", typeof(AnimationEasing)));
+        AddMappedEnumType(new MappedEnumType("animationType", typeof(AnimationType)));
+        AddMappedEnumType(new MappedEnumType("animationTypeUpdate", typeof(AnimationTypeUpdate)));
+        AddMappedEnumType(new MappedEnumType("axisExpandTriggerOn", typeof(TriggerOn)));
+        AddMappedEnumType(new MappedEnumType("axisPosition", typeof(TopOrBottom)));
+        AddMappedEnumType(new MappedEnumType("axisSymbol", typeof(AxisSymbol)));
+        AddMappedEnumType(new MappedEnumType("axisType", typeof(AxisType)));
+        AddMappedEnumType(new MappedEnumType("blendMode", typeof(BlendMode)));
+        AddMappedEnumType(new MappedEnumType("borderCap", typeof(LineCap)));
+        AddMappedEnumType(new MappedEnumType("borderJoin", typeof(LineJoin)));
+        AddMappedEnumType(new MappedEnumType("borderRadius", typeof(BorderRadius)));
+        AddMappedEnumType(new MappedEnumType("borderType", typeof(LineType)));
+        AddMappedEnumType(new MappedEnumType("boundaryGap", typeof(BoundaryGap)));
+        AddMappedEnumType(new MappedEnumType("brushType", typeof(BrushType)));
+        AddMappedEnumType(new MappedEnumType("colorBy", typeof(ColorBy)));
+        AddMappedEnumType(new MappedEnumType("colorMappingBy", typeof(ColorMappingBy)));
+        AddMappedEnumType(new MappedEnumType("emphasisBlurScope", typeof(EmphasisBlurScope)));
+        AddMappedEnumType(new MappedEnumType("emphasisFocus", typeof(EmphasisFocus)));
+        AddMappedEnumType(new MappedEnumType("fontStyle", typeof(FontStyle)));
+        AddMappedEnumType(new MappedEnumType("fontWeight", typeof(FontWeight)));
+        AddMappedEnumType(new MappedEnumType("horizontalAlign", typeof(HorizontalAlign)));
+        AddMappedEnumType(new MappedEnumType("icon", typeof(Icon)));
+        AddMappedEnumType(new MappedEnumType("legendType", typeof(LegendType)));
+        AddMappedEnumType(new MappedEnumType("lineCoordinateSystem", typeof(LineCoordinateSystem)));
+        AddMappedEnumType(new MappedEnumType("lineType", typeof(LineType)));
+        AddMappedEnumType(new MappedEnumType("nameLocation", typeof(NameLocation)));
+        AddMappedEnumType(new MappedEnumType("orient", typeof(Orient)));
+        AddMappedEnumType(new MappedEnumType("orthogonalOrient", typeof(OrthogonalOrient)));
+        AddMappedEnumType(new MappedEnumType("overflow", typeof(Overflow)));
+        AddMappedEnumType(new MappedEnumType("padding", typeof(Padding)));
+        AddMappedEnumType(new MappedEnumType("radius", typeof(CircleRadius)));
+        AddMappedEnumType(new MappedEnumType("roam", typeof(Roam)));
+        AddMappedEnumType(new MappedEnumType("selectedMode", typeof(SelectionMode)));
+        AddMappedEnumType(new MappedEnumType("selector", typeof(Selector)));
+        AddMappedEnumType(new MappedEnumType("seriesLayoutBy", typeof(SeriesLayoutBy)));
+        AddMappedEnumType(new MappedEnumType("showEffectOn", typeof(ShowEffectOn)));
+        AddMappedEnumType(new MappedEnumType("stackStrategy", typeof(StackStrategy)));
+        AddMappedEnumType(new MappedEnumType("step", typeof(Step)));
+        AddMappedEnumType(new MappedEnumType("textAlign", typeof(HorizontalAlign)));
+        AddMappedEnumType(new MappedEnumType("textBorderType", typeof(LineType)));
+        AddMappedEnumType(new MappedEnumType("textBorderRadius", typeof(BorderRadius)));
+        AddMappedEnumType(new MappedEnumType("textPadding", typeof(Padding)));
+        AddMappedEnumType(new MappedEnumType("textVerticalAlign", typeof(VerticalAlign)));
+        AddMappedEnumType(new MappedEnumType("tooltipOrder", typeof(TooltipOrder)));
+        AddMappedEnumType(new MappedEnumType("renderMode", typeof(TooltipRenderMode)));
+        AddMappedEnumType(new MappedEnumType("tooltipTrigger", typeof(TooltipTrigger)));
+        AddMappedEnumType(new MappedEnumType("tooltipTriggerOn", typeof(TriggerOn)));
+        AddMappedEnumType(new MappedEnumType("triggerOn", typeof(TriggerOn)));
+        AddMappedEnumType(new MappedEnumType("treeLayout", typeof(TreeLayout)));
+        AddMappedEnumType(new MappedEnumType("verticalAlign", typeof(VerticalAlign)));
 
 
 
-		AddMappedEnumType(new MappedEnumType("layout", typeof(TreeLayout)), "TreeSeries");
-		AddMappedEnumType(new MappedEnumType("edgeShape", typeof(TreeEdgeShape)), "TreeSeries");
+        AddMappedEnumType(new MappedEnumType("type", typeof(LineType)), "lineStyle");
+        AddMappedEnumType(new MappedEnumType("type", typeof(LegendType)), "legend");
+        AddMappedEnumType(new MappedEnumType("type", typeof(ImageType)), "saveAsImage");
+        AddMappedEnumType(new MappedEnumType("type", typeof(AxisPointerType)), "axisPointer");
+        AddMappedEnumType(new MappedEnumType("type", typeof(MarkPointType)), "markPointData");
 
-		AddMappedEnumType(new MappedEnumType("funnelAlign", typeof(FunnelAlign)), "FunnelSeries");
+        AddMappedEnumType(new MappedEnumType("cap", typeof(LineCap)), "lineStyle", "crossStyle", "ParallelSeriesData");
+        AddMappedEnumType(new MappedEnumType("join", typeof(LineJoin)), "lineStyle", "crossStyle", "ParallelSeriesData");
 
-		AddMappedEnumType(new MappedEnumType("nodeAlign", typeof(SankeyNodeAlign)), "SankeySeries");
+        AddMappedEnumType(new MappedEnumType("order", typeof(TooltipOrder)), "tooltip");
+        AddMappedEnumType(new MappedEnumType("renderMode", typeof(TooltipRenderMode)), "tooltip");
+        AddMappedEnumType(new MappedEnumType("trigger", typeof(TooltipTrigger)), "tooltip");
 
-		AddMappedEnumType(new MappedEnumType("layout", typeof(GraphLayout)), "GraphSeries");
+        AddMappedEnumType(new MappedEnumType("position", typeof(TopOrBottom)), "xAxis");
+        AddMappedEnumType(new MappedEnumType("shape", typeof(RadarShape)), "radar");
 
-		AddMappedEnumType(new MappedEnumType("nodeClick", typeof(SunburstNodeClick)), "SunburstSeries");
+        AddMappedEnumType(new MappedEnumType("status", typeof(AxisPointerStatus)), "axisPointer");
+        AddMappedEnumType(new MappedEnumType("symbol", typeof(AxisLineSymbol)), "axisLine");
 
-		AddMappedEnumType(new MappedEnumType("symbolRepeatDirection", typeof(StartOrEnd)), "PictorialBarSeries", "PictorialBarSeriesData");
-		AddMappedEnumType(new MappedEnumType("symbolPosition", typeof(StartOrEndOrCenter)), "PictorialBarSeries", "PictorialBarSeriesData");
-		AddMappedEnumType(new MappedEnumType("symbolRepeat", typeof(PictorialSymbolRepeat)), "PictorialBarSeries", "PictorialBarSeriesData");
+        AddMappedEnumType(new MappedEnumType("alignTo", typeof(LabelAlignTo)), "label");
 
-		AddMappedEnumType(new MappedEnumType("effectType", typeof(ScatterEffectType)), "EffectScatterSeries");
+        AddMappedEnumType(new MappedEnumType("selectorPosition", typeof(StartOrEnd)), "legend");
+        AddMappedEnumType(new MappedEnumType("position", typeof(StartOrEnd)), "dayLabel");
+        AddMappedEnumType(new MappedEnumType("position", typeof(StartOrEnd)), "monthLabel");
+        AddMappedEnumType(new MappedEnumType("position", typeof(Position)), "yearLabel");
+        AddMappedEnumType(new MappedEnumType("position", typeof(Position)), "controlStyle");
+        AddMappedEnumType(new MappedEnumType("position", typeof(LeftOrRight)), "yAxis");
+        AddMappedEnumType(new MappedEnumType("controlPosition", typeof(LeftOrRight)), "timeline");
+        AddMappedEnumType(new MappedEnumType("layout", typeof(HorizontalOrVertical)), "parallel");
+        AddMappedEnumType(new MappedEnumType("position", typeof(LabelPosition)), "label", "upperLabel");
 
-		AddMappedEnumType(new MappedEnumType("roseType", typeof(PieRoseType)), "PieSeries");
-		AddMappedEnumType(new MappedEnumType("radius", typeof(PieRadius)), "PieSeries");
-		AddMappedEnumType(new MappedEnumType("center", typeof(PieCenter)), "PieSeries");
+        AddMappedEnumType(new MappedEnumType("seriesIndex", typeof(MultiIndex)), "brush");
+        AddMappedEnumType(new MappedEnumType("geoIndex", typeof(MultiIndex)), "brush");
+        AddMappedEnumType(new MappedEnumType("xAxisIndex", typeof(MultiIndex)), "brush", "dataZoom");
+        AddMappedEnumType(new MappedEnumType("yAxisIndex", typeof(MultiIndex)), "brush", "dataZoom");
 
-		AddMappedEnumType(new MappedEnumType("filterMode", typeof(DataZoomFilterMode)), "InsideDataZoom", "SliderDataZoom");
-		AddMappedEnumType(new MappedEnumType("zoomOnMouseWheel", typeof(DataZoomOnMouse)), "InsideDataZoom");
-		AddMappedEnumType(new MappedEnumType("moveOnMouseMove", typeof(DataZoomOnMouse)), "InsideDataZoom");
-		AddMappedEnumType(new MappedEnumType("moveOnMouseWheel", typeof(DataZoomOnMouse)), "InsideDataZoom");
-	}
 
-	public ObjectType ChartOptions => chartOptions;
 
-	public IReadOnlyDictionary<string, List<ObjectType>> TypesWithDuplicates => allObjectTypesWithDuplicates;
+        AddMappedEnumType(new MappedEnumType("layout", typeof(TreeLayout)), "TreeSeries");
+        AddMappedEnumType(new MappedEnumType("edgeShape", typeof(TreeEdgeShape)), "TreeSeries");
 
-	public IEnumerable<ObjectType> ListObjectTypesToGenerate()
-	{
-		yield return chartOptions;
+        AddMappedEnumType(new MappedEnumType("funnelAlign", typeof(FunnelAlign)), "FunnelSeries");
+        AddMappedEnumType(new MappedEnumType("sort", typeof(FunnelSortOrder)), "FunnelSeries");
 
-		foreach (var objectType in objectTypeLookup.Values)
-			yield return objectType;
-	}
+        AddMappedEnumType(new MappedEnumType("nodeAlign", typeof(SankeyNodeAlign)), "SankeySeries");
 
-	public bool TryGetObjectType(string name, out ObjectType? objectType) => objectTypeLookup.TryGetValue(name, out objectType);
+        AddMappedEnumType(new MappedEnumType("layout", typeof(GraphLayout)), "GraphSeries");
 
-	public IPropertyType? MapArrayType(ObjectType parent, OptionProperty optProp, JsonProperty prop)
-	{
-		// did we succeed in determining the item type ?
-		if (optProp.ItemType != null)
-		{
-			return new GenericListType(optProp.ItemType);
-		}
+        AddMappedEnumType(new MappedEnumType("nodeClick", typeof(SunburstNodeClick)), "SunburstSeries");
+        AddMappedEnumType(new MappedEnumType("sort", typeof(SortOrder)), "SunburstSeries");
 
-		// special cases: these are often aliases
-		switch (prop.Name, parent.Name)
-		{
-			case ("nodes", "SankeySeries"):
-				return new GenericListType(new SimpleType("SankeySeriesData"));
-			case ("edges", "SankeySeries"):
-				return new GenericListType(new SimpleType("SankeySeriesLinks"));
-			case ("nodes", "GraphSeries"):
-				return new GenericListType(new SimpleType("GraphSeriesData"));
-			case ("edges", "GraphSeries"):
-				return new GenericListType(new SimpleType("GraphSeriesLinks"));
-		}
+        AddMappedEnumType(new MappedEnumType("symbolRepeatDirection", typeof(StartOrEnd)), "PictorialBarSeries", "PictorialBarSeriesData");
+        AddMappedEnumType(new MappedEnumType("symbolPosition", typeof(StartOrEndOrCenter)), "PictorialBarSeries", "PictorialBarSeriesData");
+        AddMappedEnumType(new MappedEnumType("symbolRepeat", typeof(PictorialSymbolRepeat)), "PictorialBarSeries", "PictorialBarSeriesData");
 
-		//Console.WriteLine($"WARNING: array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>");
-		return new ObjectListType()
-		{
-			TypeWarning = $"array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>"
-		};
-	}
+        AddMappedEnumType(new MappedEnumType("effectType", typeof(ScatterEffectType)), "EffectScatterSeries");
 
-	public bool TryGetMappedEnumType(string name, string parentName, out MappedEnumType? mappedEnumType)
-	{
-		if (enumTypesMappedByName.TryGetValue(name, out var typeDict))
-		{
-			// specific mapping for the parent type
-			if (typeDict.TryGetValue(parentName, out mappedEnumType))
-				return true;
+        AddMappedEnumType(new MappedEnumType("roseType", typeof(PieRoseType)), "PieSeries");
+        AddMappedEnumType(new MappedEnumType("radius", typeof(CircleRadius)), "PieSeries");
+        AddMappedEnumType(new MappedEnumType("center", typeof(CircleCenter)), "PieSeries");
 
-			// non-specific mapping for the parent type
-			if (typeDict.TryGetValue("*", out mappedEnumType))
-				return true;
+        AddMappedEnumType(new MappedEnumType("filterMode", typeof(DataZoomFilterMode)), "InsideDataZoom", "SliderDataZoom");
+        AddMappedEnumType(new MappedEnumType("zoomOnMouseWheel", typeof(DataZoomOnMouse)), "InsideDataZoom");
+        AddMappedEnumType(new MappedEnumType("moveOnMouseMove", typeof(DataZoomOnMouse)), "InsideDataZoom");
+        AddMappedEnumType(new MappedEnumType("moveOnMouseWheel", typeof(DataZoomOnMouse)), "InsideDataZoom");
+    }
 
-			//TODO: sanity check for enum types
-		}
+    public ObjectType ChartOptions => chartOptions;
 
-		mappedEnumType = null;
-		return false;
-	}
+    public IReadOnlyDictionary<string, List<ObjectType>> TypesWithDuplicates => allObjectTypesWithDuplicates;
 
-	public void TrackType(ObjectType objectType)
-	{
-		if (!allObjectTypesWithDuplicates.TryGetValue(objectType.Name, out var list))
-		{
-			list = new List<ObjectType>();
-			allObjectTypesWithDuplicates.Add(objectType.Name, list);
-		}
+    public IEnumerable<ObjectType> ListObjectTypesToGenerate()
+    {
+        yield return chartOptions;
 
-		list.Add(objectType);
-	}
+        foreach (var objectType in objectTypeLookup.Values)
+            yield return objectType;
+    }
 
-	public ObjectType MergeType(ObjectType objectType)
-	{
-		if (!objectTypeLookup.TryGetValue(objectType.Name, out var mergedType))
-		{
-			mergedType = new ObjectType(null, objectType.Name, typeGroup: objectType.TypeGroup); // merged types have many parents, so set parent to null
-			objectTypeLookup.Add(mergedType.Name, mergedType);
-		}
+    public bool TryGetObjectType(string name, out ObjectType? objectType) => objectTypeLookup.TryGetValue(name, out objectType);
 
-		foreach (var property in objectType.Properties)
-		{
-			if (!mergedType.Properties.Any(p => p.Name == property.Name))
-			{
-				mergedType.Properties.Add(property);
-			}
-		}
+    public IPropertyType? MapArrayType(ObjectType parent, OptionProperty optProp, JsonProperty prop)
+    {
+        // FIRST: Check for special cases that should override ItemType determination
+        // These must come before ItemType processing to ensure they take priority
+        // Note: Use parent.DotNetType (not parent.Name which is empty for root)
+        switch (prop.Name, parent.DotNetType)
+        {
+            case ("series", "ChartOptions"):
+                // Use typed list of ISeries for type safety instead of List<object>
+                return new GenericListType(new SimpleType("ISeries"));
+            case ("dataZoom", "ChartOptions"):
+                // Use typed list of IDataZoom for type safety instead of List<object>
+                return new GenericListType(new SimpleType("IDataZoom"));
+            case ("visualMap", "ChartOptions"):
+                // Allow single visualMap object or array of visual maps
+                return new SingleOrArrayType("IVisualMap");
+            case ("dimensions", "Dataset"):
+            case ("dimensions", _) when parent.DotNetType.EndsWith("Series"):
+                // Use string array (full union type support planned for future)
+                return new SimpleType("string[]");
+            case ("text", "ContinuousVisualMap"):
+            case ("text", "PiecewiseVisualMap"):
+                // Use string array for text labels
+                return new SimpleType("string[]");
+            case ("nodes", "SankeySeries"):
+                return new GenericListType(new SimpleType("SankeySeriesData"));
+            case ("edges", "SankeySeries"):
+                return new GenericListType(new SimpleType("SankeySeriesLink"));
+            case ("nodes", "GraphSeries"):
+                return new GenericListType(new SimpleType("GraphSeriesData"));
+            case ("edges", "GraphSeries"):
+                return new GenericListType(new SimpleType("GraphSeriesLink"));
+        }
 
-		return mergedType;
-	}
+        // did we succeed in determining the item type ?
+        if (optProp.ItemType != null)
+        {
+            // For series data properties, use object? for maximum flexibility
+            // ECharts data can be arrays, objects, JavascriptFunction, or dataset references
+            if (prop.Name == "data" && parent.Name.EndsWith("Series"))
+            {
+                return new SimpleType("object");
+            }
+            
+            // Use DataList for axis/legend data properties that need string array support
+            if (prop.Name == "data")
+            {
+                string parentName = parent.Name;
+                // Check for axis types (note: parent.Name is lowercase from JSON)
+                if (parentName == "xAxis" || parentName == "yAxis" || parentName == "angleAxis" || 
+                    parentName == "radiusAxis" || parentName == "parallelAxis" || parentName == "parallelAxisDefault" ||
+                    parentName == "singleAxis")
+                {
+                    return new DataListType(optProp.ItemType);
+                }
+                // Check for legend
+                if (parentName == "legend")
+                {
+                    return new DataListType(optProp.ItemType);
+                }
+            }
+            
+            return new GenericListType(optProp.ItemType);
+        }
 
-	private void AddMappedEnumType(MappedEnumType mappedType, params string[]? specificObjectTypes)
-	{
-		if (!enumTypesMappedByName.TryGetValue(mappedType.Name, out var typeDict))
-		{
-			typeDict = new Dictionary<string, MappedEnumType>();
-			enumTypesMappedByName.Add(mappedType.Name, typeDict);
-		}
+        // no ItemType, fallback to List<object> with warning
+        //Console.WriteLine($"WARNING: array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>");
+        return new ObjectListType()
+        {
+            TypeWarning = $"array type '{prop.Name}' in '{parent.Name}' will be mapped to List<object>"
+        };
+    }
 
-		if (specificObjectTypes == null || specificObjectTypes.Length == 0)
-		{
-			typeDict.Add("*", mappedType);
-		}
-		else
-		{
-			foreach (var specificType in specificObjectTypes)
-			{
-				typeDict.Add(specificType, mappedType);
-			}
-		}
-	}
+    public bool TryGetMappedEnumType(string name, string parentName, out MappedEnumType? mappedEnumType)
+    {
+        if (enumTypesMappedByName.TryGetValue(name, out var typeDict))
+        {
+            // specific mapping for the parent type
+            if (typeDict.TryGetValue(parentName, out mappedEnumType))
+                return true;
+
+            // non-specific mapping for the parent type
+            if (typeDict.TryGetValue("*", out mappedEnumType))
+                return true;
+
+            //TODO: sanity check for enum types
+        }
+
+        mappedEnumType = null;
+        return false;
+    }
+
+    public void TrackType(ObjectType objectType)
+    {
+        if (!allObjectTypesWithDuplicates.TryGetValue(objectType.Name, out var list))
+        {
+            list = new List<ObjectType>();
+            allObjectTypesWithDuplicates.Add(objectType.Name, list);
+        }
+
+        list.Add(objectType);
+    }
+
+    public ObjectType MergeType(ObjectType objectType)
+    {
+        if (!objectTypeLookup.TryGetValue(objectType.Name, out var mergedType))
+        {
+            mergedType = new ObjectType(null, objectType.Name, typeGroup: objectType.TypeGroup); // merged types have many parents, so set parent to null
+            objectTypeLookup.Add(mergedType.Name, mergedType);
+        }
+
+        foreach (var property in objectType.Properties)
+        {
+            if (!mergedType.Properties.Any(p => p.Name == property.Name))
+            {
+                mergedType.Properties.Add(property);
+            }
+        }
+
+        return mergedType;
+    }
+
+    public ObjectType GetOrCreateSharedType(string typeName, string typeGroup)
+    {
+        // Check if shared type already exists
+        if (objectTypeLookup.TryGetValue(typeName, out var existingType))
+        {
+            return existingType;
+        }
+
+        // Create new shared type for hand-coded class
+        var sharedType = new ObjectType(null, typeName, typeGroup: typeGroup);
+        sharedType.IsShared = true; // Mark as shared/hand-coded
+        objectTypeLookup.Add(typeName, sharedType);
+
+        return sharedType;
+    }
+
+    private void AddMappedEnumType(MappedEnumType mappedType, params string[]? specificObjectTypes)
+    {
+        if (!enumTypesMappedByName.TryGetValue(mappedType.Name, out var typeDict))
+        {
+            typeDict = new Dictionary<string, MappedEnumType>();
+            enumTypesMappedByName.Add(mappedType.Name, typeDict);
+        }
+
+        if (specificObjectTypes == null || specificObjectTypes.Length == 0)
+        {
+            typeDict.Add("*", mappedType);
+        }
+        else
+        {
+            foreach (var specificType in specificObjectTypes)
+            {
+                typeDict.Add(specificType, mappedType);
+            }
+        }
+    }
 }

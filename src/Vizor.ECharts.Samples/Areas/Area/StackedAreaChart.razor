@@ -1,4 +1,4 @@
-﻿@using Vizor.ECharts;
+@using Vizor.ECharts;
 
 <Vizor.ECharts.EChart Options="@options" Width="800px" Height="400px" />
 
@@ -26,7 +26,7 @@
 			},
 			Legend = new()
 			{
-				Data = new string[] { "Email", "Union Ads", "Video Ads", "Direct", "Search Engine" }
+				Data = new List<LegendData> { new LegendData() { Name = "Email" }, new LegendData() { Name = "Union Ads" }, new LegendData() { Name = "Video Ads" }, new LegendData() { Name = "Direct" }, new LegendData() { Name = "Search Engine" } }
 			},
 			Toolbox = new()
 			{
@@ -46,7 +46,7 @@
 			{
 				Type = AxisType.Category,
 				BoundaryGap = false,
-				Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
+				Data = new List<AxisData> { new AxisData() { Value = "Mon" }, new AxisData() { Value = "Tue" }, new AxisData() { Value = "Wed" }, new AxisData() { Value = "Thu" }, new AxisData() { Value = "Fri" }, new AxisData() { Value = "Sat" }, new AxisData() { Value = "Sun" } }
 			},
 			YAxis = new()
 			{
@@ -57,7 +57,7 @@
 				new LineSeries()
 				{
 					Name = "Email",
-					Data = new int[] {120, 132, 101, 134, 90, 230, 210 },
+					Data = new List<LineSeriesData> {new LineSeriesData() { Value=120}, new LineSeriesData() { Value=132}, new LineSeriesData() { Value=101}, new LineSeriesData() { Value=134}, new LineSeriesData() { Value=90}, new LineSeriesData() { Value=230}, new LineSeriesData() { Value=210} },
 					Stack = "Total",
 					AreaStyle = new() {},
 					Emphasis = new()

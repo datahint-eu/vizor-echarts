@@ -1,0 +1,42 @@
+{
+  "title": {
+    "text": "Candlestick Chart"
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "2024-01-01",
+      "2024-01-02",
+      "2024-01-03"
+    ]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "type": "candlestick",
+      "name": "Stock",
+      "data": [
+        [
+          20,
+          34,
+          10,
+          38
+        ],
+        [
+          40,
+          35,
+          30,
+          50
+        ],
+        [
+          31,
+          38,
+          33,
+          44
+        ]
+      ]
+    }
+  ]
+}

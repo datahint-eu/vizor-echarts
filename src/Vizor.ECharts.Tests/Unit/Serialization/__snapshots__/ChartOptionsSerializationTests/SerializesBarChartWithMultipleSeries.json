@@ -1,0 +1,41 @@
+{
+  "title": {
+    "text": "Bar Chart"
+  },
+  "legend": {
+    "show": true
+  },
+  "xAxis": {
+    "type": "category",
+    "data": [
+      "Q1",
+      "Q2",
+      "Q3"
+    ]
+  },
+  "yAxis": {
+    "type": "value"
+  },
+  "series": [
+    {
+      "type": "bar",
+      "name": "2019",
+      "stack": "total",
+      "data": [
+        120,
+        132,
+        101
+      ]
+    },
+    {
+      "type": "bar",
+      "name": "2020",
+      "stack": "total",
+      "data": [
+        134,
+        90,
+        230
+      ]
+    }
+  ]
+}

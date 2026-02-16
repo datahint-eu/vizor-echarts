@@ -1,0 +1,25 @@
+// AUTO GENERATED - DO NOT EDIT - All changes will be lost
+// ECharts Version: 5.6.0
+// http://www.datahint.eu/
+
+
+using System.ComponentModel;
+using System.Text.Json.Serialization;
+
+namespace Vizor.ECharts;
+
+public partial class ScaleLimit
+{
+    /// <summary>
+    /// Minimum scaling
+    /// </summary>
+    [JsonPropertyName("min")]
+    public double? Min { get; set; } 
+
+    /// <summary>
+    /// Maximum scaling
+    /// </summary>
+    [JsonPropertyName("max")]
+    public double? Max { get; set; } 
+
+}

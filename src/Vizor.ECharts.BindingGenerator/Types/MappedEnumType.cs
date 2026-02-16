@@ -1,17 +1,17 @@
-﻿namespace Vizor.ECharts.BindingGenerator.Types;
+namespace Vizor.ECharts.BindingGenerator.Types;
 
 internal class MappedEnumType : IPropertyType
 {
-	public MappedEnumType(string name, Type type)
-	{
-		Name = name;
-		EnumType = type;
-	}
+    public MappedEnumType(string name, Type type)
+    {
+        Name = name;
+        EnumType = type;
+    }
 
-	public string Name { get; }
-	public Type EnumType { get; }
+    public string Name { get; }
+    public Type EnumType { get; }
 
-	public string DotNetType => EnumType.Name;
+    public string DotNetType => EnumType.Name;
 
-	public string? TypeWarning { get; set; }
+    public string? TypeWarning { get; set; }
 }

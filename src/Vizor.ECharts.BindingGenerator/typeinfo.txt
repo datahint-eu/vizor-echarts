@@ -1,0 +1,3277 @@
+
+#RichStyleName: 366 (similarity: 366)
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,padding,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.ThemeRiverSeries.select.label.rich.RichStyleName
+	.ThemeRiverSeries.blur.label.rich.RichStyleName
+	.ThemeRiverSeries.emphasis.label.rich.RichStyleName
+	.ThemeRiverSeries.label.rich.RichStyleName
+	.PictorialBarSeries.markArea.blur.label.rich.RichStyleName
+	.PictorialBarSeries.markArea.emphasis.label.rich.RichStyleName
+	.PictorialBarSeries.markArea.label.rich.RichStyleName
+	.PictorialBarSeries.markLine.blur.label.rich.RichStyleName
+	.PictorialBarSeries.markLine.emphasis.label.rich.RichStyleName
+	.PictorialBarSeries.markLine.label.rich.RichStyleName
+	.PictorialBarSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.PictorialBarSeries.markPoint.markPointData.label.rich.RichStyleName
+	.PictorialBarSeries.markPoint.blur.label.rich.RichStyleName
+	.PictorialBarSeries.markPoint.emphasis.label.rich.RichStyleName
+	.PictorialBarSeries.markPoint.label.rich.RichStyleName
+	.PictorialBarSeries.PictorialBarSeriesData.select.label.rich.RichStyleName
+	.PictorialBarSeries.PictorialBarSeriesData.blur.label.rich.RichStyleName
+	.PictorialBarSeries.PictorialBarSeriesData.emphasis.label.rich.RichStyleName
+	.PictorialBarSeries.PictorialBarSeriesData.label.rich.RichStyleName
+	.PictorialBarSeries.select.label.rich.RichStyleName
+	.PictorialBarSeries.blur.label.rich.RichStyleName
+	.PictorialBarSeries.emphasis.label.rich.RichStyleName
+	.PictorialBarSeries.label.rich.RichStyleName
+	.GaugeSeries.markArea.blur.label.rich.RichStyleName
+	.GaugeSeries.markArea.emphasis.label.rich.RichStyleName
+	.GaugeSeries.markArea.label.rich.RichStyleName
+	.GaugeSeries.markLine.blur.label.rich.RichStyleName
+	.GaugeSeries.markLine.emphasis.label.rich.RichStyleName
+	.GaugeSeries.markLine.label.rich.RichStyleName
+	.GaugeSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.GaugeSeries.markPoint.markPointData.label.rich.RichStyleName
+	.GaugeSeries.markPoint.blur.label.rich.RichStyleName
+	.GaugeSeries.markPoint.emphasis.label.rich.RichStyleName
+	.GaugeSeries.markPoint.label.rich.RichStyleName
+	.GaugeSeries.detail.rich.RichStyleName
+	.GaugeSeries.title.rich.RichStyleName
+	.GaugeSeries.axisLabel.rich.RichStyleName
+	.GaugeSeries.GaugeSeriesData.detail.rich.RichStyleName
+	.GaugeSeries.GaugeSeriesData.title.rich.RichStyleName
+	.FunnelSeries.markArea.blur.label.rich.RichStyleName
+	.FunnelSeries.markArea.emphasis.label.rich.RichStyleName
+	.FunnelSeries.markArea.label.rich.RichStyleName
+	.FunnelSeries.markLine.blur.label.rich.RichStyleName
+	.FunnelSeries.markLine.emphasis.label.rich.RichStyleName
+	.FunnelSeries.markLine.label.rich.RichStyleName
+	.FunnelSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.FunnelSeries.markPoint.markPointData.label.rich.RichStyleName
+	.FunnelSeries.markPoint.blur.label.rich.RichStyleName
+	.FunnelSeries.markPoint.emphasis.label.rich.RichStyleName
+	.FunnelSeries.markPoint.label.rich.RichStyleName
+	.FunnelSeries.FunnelSeriesData.select.label.rich.RichStyleName
+	.FunnelSeries.FunnelSeriesData.blur.label.rich.RichStyleName
+	.FunnelSeries.FunnelSeriesData.emphasis.label.rich.RichStyleName
+	.FunnelSeries.FunnelSeriesData.label.rich.RichStyleName
+	.FunnelSeries.select.label.rich.RichStyleName
+	.FunnelSeries.blur.label.rich.RichStyleName
+	.FunnelSeries.emphasis.label.rich.RichStyleName
+	.FunnelSeries.label.rich.RichStyleName
+	.SankeySeries.SankeySeriesLink.select.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLink.blur.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLink.emphasis.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLink.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesData.select.label.rich.RichStyleName
+	.SankeySeries.SankeySeriesData.blur.label.rich.RichStyleName
+	.SankeySeries.SankeySeriesData.emphasis.label.rich.RichStyleName
+	.SankeySeries.SankeySeriesData.label.rich.RichStyleName
+	.SankeySeries.select.edgeLabel.rich.RichStyleName
+	.SankeySeries.select.label.rich.RichStyleName
+	.SankeySeries.blur.edgeLabel.rich.RichStyleName
+	.SankeySeries.blur.label.rich.RichStyleName
+	.SankeySeries.emphasis.edgeLabel.rich.RichStyleName
+	.SankeySeries.emphasis.label.rich.RichStyleName
+	.SankeySeries.label.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.select.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.select.label.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.blur.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.blur.label.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.emphasis.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.emphasis.label.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.edgeLabel.rich.RichStyleName
+	.SankeySeries.SankeySeriesLevel.label.rich.RichStyleName
+	.SankeySeries.edgeLabel.rich.RichStyleName
+	.GraphSeries.markArea.blur.label.rich.RichStyleName
+	.GraphSeries.markArea.emphasis.label.rich.RichStyleName
+	.GraphSeries.markArea.label.rich.RichStyleName
+	.GraphSeries.markLine.blur.label.rich.RichStyleName
+	.GraphSeries.markLine.emphasis.label.rich.RichStyleName
+	.GraphSeries.markLine.label.rich.RichStyleName
+	.GraphSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.GraphSeries.markPoint.markPointData.label.rich.RichStyleName
+	.GraphSeries.markPoint.blur.label.rich.RichStyleName
+	.GraphSeries.markPoint.emphasis.label.rich.RichStyleName
+	.GraphSeries.markPoint.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesLink.select.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesLink.blur.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesLink.emphasis.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesLink.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesData.select.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesData.blur.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesData.emphasis.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesData.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesCategory.select.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesCategory.blur.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesCategory.emphasis.label.rich.RichStyleName
+	.GraphSeries.GraphSeriesCategory.label.rich.RichStyleName
+	.GraphSeries.select.edgeLabel.rich.RichStyleName
+	.GraphSeries.select.label.rich.RichStyleName
+	.GraphSeries.blur.edgeLabel.rich.RichStyleName
+	.GraphSeries.blur.label.rich.RichStyleName
+	.GraphSeries.emphasis.edgeLabel.rich.RichStyleName
+	.GraphSeries.emphasis.label.rich.RichStyleName
+	.GraphSeries.edgeLabel.rich.RichStyleName
+	.GraphSeries.label.rich.RichStyleName
+	.LinesSeries.markArea.blur.label.rich.RichStyleName
+	.LinesSeries.markArea.emphasis.label.rich.RichStyleName
+	.LinesSeries.markArea.label.rich.RichStyleName
+	.LinesSeries.markLine.blur.label.rich.RichStyleName
+	.LinesSeries.markLine.emphasis.label.rich.RichStyleName
+	.LinesSeries.markLine.label.rich.RichStyleName
+	.LinesSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.LinesSeries.markPoint.markPointData.label.rich.RichStyleName
+	.LinesSeries.markPoint.blur.label.rich.RichStyleName
+	.LinesSeries.markPoint.emphasis.label.rich.RichStyleName
+	.LinesSeries.markPoint.label.rich.RichStyleName
+	.LinesSeries.LinesSeriesData.select.label.rich.RichStyleName
+	.LinesSeries.LinesSeriesData.blur.label.rich.RichStyleName
+	.LinesSeries.LinesSeriesData.emphasis.label.rich.RichStyleName
+	.LinesSeries.LinesSeriesData.label.rich.RichStyleName
+	.LinesSeries.select.label.rich.RichStyleName
+	.LinesSeries.blur.label.rich.RichStyleName
+	.LinesSeries.emphasis.label.rich.RichStyleName
+	.LinesSeries.label.rich.RichStyleName
+	.MapSeries.markArea.blur.label.rich.RichStyleName
+	.MapSeries.markArea.emphasis.label.rich.RichStyleName
+	.MapSeries.markArea.label.rich.RichStyleName
+	.MapSeries.markLine.blur.label.rich.RichStyleName
+	.MapSeries.markLine.emphasis.label.rich.RichStyleName
+	.MapSeries.markLine.label.rich.RichStyleName
+	.MapSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.MapSeries.markPoint.markPointData.label.rich.RichStyleName
+	.MapSeries.markPoint.blur.label.rich.RichStyleName
+	.MapSeries.markPoint.emphasis.label.rich.RichStyleName
+	.MapSeries.markPoint.label.rich.RichStyleName
+	.MapSeries.MapSeriesData.select.label.rich.RichStyleName
+	.MapSeries.MapSeriesData.emphasis.label.rich.RichStyleName
+	.MapSeries.MapSeriesData.label.rich.RichStyleName
+	.MapSeries.select.label.rich.RichStyleName
+	.MapSeries.emphasis.label.rich.RichStyleName
+	.MapSeries.label.rich.RichStyleName
+	.HeatmapSeries.markArea.blur.label.rich.RichStyleName
+	.HeatmapSeries.markArea.emphasis.label.rich.RichStyleName
+	.HeatmapSeries.markArea.label.rich.RichStyleName
+	.HeatmapSeries.markLine.blur.label.rich.RichStyleName
+	.HeatmapSeries.markLine.emphasis.label.rich.RichStyleName
+	.HeatmapSeries.markLine.label.rich.RichStyleName
+	.HeatmapSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.HeatmapSeries.markPoint.markPointData.label.rich.RichStyleName
+	.HeatmapSeries.markPoint.blur.label.rich.RichStyleName
+	.HeatmapSeries.markPoint.emphasis.label.rich.RichStyleName
+	.HeatmapSeries.markPoint.label.rich.RichStyleName
+	.HeatmapSeries.HeatmapSeriesData.emphasis.label.rich.RichStyleName
+	.HeatmapSeries.HeatmapSeriesData.label.rich.RichStyleName
+	.HeatmapSeries.select.label.rich.RichStyleName
+	.HeatmapSeries.blur.label.rich.RichStyleName
+	.HeatmapSeries.emphasis.label.rich.RichStyleName
+	.HeatmapSeries.label.rich.RichStyleName
+	.CandlestickSeries.markArea.blur.label.rich.RichStyleName
+	.CandlestickSeries.markArea.emphasis.label.rich.RichStyleName
+	.CandlestickSeries.markArea.label.rich.RichStyleName
+	.CandlestickSeries.markLine.blur.label.rich.RichStyleName
+	.CandlestickSeries.markLine.emphasis.label.rich.RichStyleName
+	.CandlestickSeries.markLine.label.rich.RichStyleName
+	.CandlestickSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.CandlestickSeries.markPoint.markPointData.label.rich.RichStyleName
+	.CandlestickSeries.markPoint.blur.label.rich.RichStyleName
+	.CandlestickSeries.markPoint.emphasis.label.rich.RichStyleName
+	.CandlestickSeries.markPoint.label.rich.RichStyleName
+	.BoxplotSeries.markArea.blur.label.rich.RichStyleName
+	.BoxplotSeries.markArea.emphasis.label.rich.RichStyleName
+	.BoxplotSeries.markArea.label.rich.RichStyleName
+	.BoxplotSeries.markLine.blur.label.rich.RichStyleName
+	.BoxplotSeries.markLine.emphasis.label.rich.RichStyleName
+	.BoxplotSeries.markLine.label.rich.RichStyleName
+	.BoxplotSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.BoxplotSeries.markPoint.markPointData.label.rich.RichStyleName
+	.BoxplotSeries.markPoint.blur.label.rich.RichStyleName
+	.BoxplotSeries.markPoint.emphasis.label.rich.RichStyleName
+	.BoxplotSeries.markPoint.label.rich.RichStyleName
+	.SunburstSeries.SunburstSeriesLevel.label.rich.RichStyleName
+	.SunburstSeries.label.rich.RichStyleName
+	.SunburstSeries.SunburstSeriesData.label.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesData.select.upperLabel.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesData.select.label.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesData.blur.upperLabel.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesData.blur.label.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesData.emphasis.upperLabel.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesData.emphasis.label.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesData.upperLabel.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesData.label.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.select.upperLabel.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.select.label.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.blur.upperLabel.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.blur.label.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.emphasis.upperLabel.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.emphasis.label.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.upperLabel.rich.RichStyleName
+	.TreemapSeries.TreemapSeriesLevel.label.rich.RichStyleName
+	.TreemapSeries.breadcrumb.emphasis.itemStyle.textStyle.rich.RichStyleName
+	.TreemapSeries.breadcrumb.itemStyle.textStyle.rich.RichStyleName
+	.TreemapSeries.select.upperLabel.rich.RichStyleName
+	.TreemapSeries.select.label.rich.RichStyleName
+	.TreemapSeries.blur.upperLabel.rich.RichStyleName
+	.TreemapSeries.blur.label.rich.RichStyleName
+	.TreemapSeries.emphasis.upperLabel.rich.RichStyleName
+	.TreemapSeries.emphasis.label.rich.RichStyleName
+	.TreemapSeries.upperLabel.rich.RichStyleName
+	.TreemapSeries.label.rich.RichStyleName
+	.TreeSeries.leaves.select.label.rich.RichStyleName
+	.TreeSeries.leaves.blur.label.rich.RichStyleName
+	.TreeSeries.leaves.emphasis.label.rich.RichStyleName
+	.TreeSeries.leaves.label.rich.RichStyleName
+	.TreeSeries.select.label.rich.RichStyleName
+	.TreeSeries.blur.label.rich.RichStyleName
+	.TreeSeries.emphasis.label.rich.RichStyleName
+	.TreeSeries.label.rich.RichStyleName
+	.RadarSeries.RadarSeriesData.select.label.rich.RichStyleName
+	.RadarSeries.RadarSeriesData.blur.label.rich.RichStyleName
+	.RadarSeries.RadarSeriesData.emphasis.label.rich.RichStyleName
+	.RadarSeries.RadarSeriesData.label.rich.RichStyleName
+	.RadarSeries.select.label.rich.RichStyleName
+	.RadarSeries.blur.label.rich.RichStyleName
+	.RadarSeries.emphasis.label.rich.RichStyleName
+	.RadarSeries.label.rich.RichStyleName
+	.EffectScatterSeries.markArea.blur.label.rich.RichStyleName
+	.EffectScatterSeries.markArea.emphasis.label.rich.RichStyleName
+	.EffectScatterSeries.markArea.label.rich.RichStyleName
+	.EffectScatterSeries.markLine.blur.label.rich.RichStyleName
+	.EffectScatterSeries.markLine.emphasis.label.rich.RichStyleName
+	.EffectScatterSeries.markLine.label.rich.RichStyleName
+	.EffectScatterSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.EffectScatterSeries.markPoint.markPointData.label.rich.RichStyleName
+	.EffectScatterSeries.markPoint.blur.label.rich.RichStyleName
+	.EffectScatterSeries.markPoint.emphasis.label.rich.RichStyleName
+	.EffectScatterSeries.markPoint.label.rich.RichStyleName
+	.EffectScatterSeries.EffectScatterSeriesData.select.label.rich.RichStyleName
+	.EffectScatterSeries.EffectScatterSeriesData.blur.label.rich.RichStyleName
+	.EffectScatterSeries.EffectScatterSeriesData.emphasis.label.rich.RichStyleName
+	.EffectScatterSeries.EffectScatterSeriesData.label.rich.RichStyleName
+	.EffectScatterSeries.select.label.rich.RichStyleName
+	.EffectScatterSeries.blur.label.rich.RichStyleName
+	.EffectScatterSeries.emphasis.label.rich.RichStyleName
+	.EffectScatterSeries.label.rich.RichStyleName
+	.ScatterSeries.markArea.blur.label.rich.RichStyleName
+	.ScatterSeries.markArea.emphasis.label.rich.RichStyleName
+	.ScatterSeries.markArea.label.rich.RichStyleName
+	.ScatterSeries.markLine.blur.label.rich.RichStyleName
+	.ScatterSeries.markLine.emphasis.label.rich.RichStyleName
+	.ScatterSeries.markLine.label.rich.RichStyleName
+	.ScatterSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.ScatterSeries.markPoint.markPointData.label.rich.RichStyleName
+	.ScatterSeries.markPoint.blur.label.rich.RichStyleName
+	.ScatterSeries.markPoint.emphasis.label.rich.RichStyleName
+	.ScatterSeries.markPoint.label.rich.RichStyleName
+	.ScatterSeries.ScatterSeriesData.select.label.rich.RichStyleName
+	.ScatterSeries.ScatterSeriesData.blur.label.rich.RichStyleName
+	.ScatterSeries.ScatterSeriesData.emphasis.label.rich.RichStyleName
+	.ScatterSeries.ScatterSeriesData.label.rich.RichStyleName
+	.ScatterSeries.select.label.rich.RichStyleName
+	.ScatterSeries.blur.label.rich.RichStyleName
+	.ScatterSeries.emphasis.label.rich.RichStyleName
+	.ScatterSeries.label.rich.RichStyleName
+	.PieSeries.markArea.blur.label.rich.RichStyleName
+	.PieSeries.markArea.emphasis.label.rich.RichStyleName
+	.PieSeries.markArea.label.rich.RichStyleName
+	.PieSeries.markLine.blur.label.rich.RichStyleName
+	.PieSeries.markLine.emphasis.label.rich.RichStyleName
+	.PieSeries.markLine.label.rich.RichStyleName
+	.PieSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.PieSeries.markPoint.markPointData.label.rich.RichStyleName
+	.PieSeries.markPoint.blur.label.rich.RichStyleName
+	.PieSeries.markPoint.emphasis.label.rich.RichStyleName
+	.PieSeries.markPoint.label.rich.RichStyleName
+	.PieSeries.PieSeriesData.select.label.rich.RichStyleName
+	.PieSeries.PieSeriesData.blur.label.rich.RichStyleName
+	.PieSeries.PieSeriesData.emphasis.label.rich.RichStyleName
+	.PieSeries.PieSeriesData.label.rich.RichStyleName
+	.PieSeries.select.label.rich.RichStyleName
+	.PieSeries.blur.label.rich.RichStyleName
+	.PieSeries.emphasis.label.rich.RichStyleName
+	.PieSeries.label.rich.RichStyleName
+	.BarSeries.markArea.blur.label.rich.RichStyleName
+	.BarSeries.markArea.emphasis.label.rich.RichStyleName
+	.BarSeries.markArea.label.rich.RichStyleName
+	.BarSeries.markLine.blur.label.rich.RichStyleName
+	.BarSeries.markLine.emphasis.label.rich.RichStyleName
+	.BarSeries.markLine.label.rich.RichStyleName
+	.BarSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.BarSeries.markPoint.markPointData.label.rich.RichStyleName
+	.BarSeries.markPoint.blur.label.rich.RichStyleName
+	.BarSeries.markPoint.emphasis.label.rich.RichStyleName
+	.BarSeries.markPoint.label.rich.RichStyleName
+	.BarSeries.BarSeriesData.select.label.rich.RichStyleName
+	.BarSeries.BarSeriesData.blur.label.rich.RichStyleName
+	.BarSeries.BarSeriesData.emphasis.label.rich.RichStyleName
+	.BarSeries.BarSeriesData.label.rich.RichStyleName
+	.BarSeries.select.label.rich.RichStyleName
+	.BarSeries.blur.label.rich.RichStyleName
+	.BarSeries.emphasis.label.rich.RichStyleName
+	.BarSeries.label.rich.RichStyleName
+	.LineSeries.markArea.blur.label.rich.RichStyleName
+	.LineSeries.markArea.emphasis.label.rich.RichStyleName
+	.LineSeries.markArea.label.rich.RichStyleName
+	.LineSeries.markLine.blur.label.rich.RichStyleName
+	.LineSeries.markLine.emphasis.label.rich.RichStyleName
+	.LineSeries.markLine.label.rich.RichStyleName
+	.LineSeries.markPoint.markPointData.emphasis.label.rich.RichStyleName
+	.LineSeries.markPoint.markPointData.label.rich.RichStyleName
+	.LineSeries.markPoint.blur.label.rich.RichStyleName
+	.LineSeries.markPoint.emphasis.label.rich.RichStyleName
+	.LineSeries.markPoint.label.rich.RichStyleName
+	.LineSeries.LineSeriesData.select.label.rich.RichStyleName
+	.LineSeries.LineSeriesData.blur.label.rich.RichStyleName
+	.LineSeries.LineSeriesData.emphasis.label.rich.RichStyleName
+	.LineSeries.LineSeriesData.label.rich.RichStyleName
+	.LineSeries.select.endLabel.rich.RichStyleName
+	.LineSeries.select.label.rich.RichStyleName
+	.LineSeries.blur.endLabel.rich.RichStyleName
+	.LineSeries.blur.label.rich.RichStyleName
+	.LineSeries.emphasis.endLabel.rich.RichStyleName
+	.LineSeries.emphasis.label.rich.RichStyleName
+	.LineSeries.endLabel.rich.RichStyleName
+	.LineSeries.label.rich.RichStyleName
+	.calendar.yearLabel.rich.RichStyleName
+	.calendar.monthLabel.rich.RichStyleName
+	.calendar.dayLabel.rich.RichStyleName
+	.timeline.emphasis.label.rich.RichStyleName
+	.timeline.progress.label.rich.RichStyleName
+	.timeline.label.rich.RichStyleName
+	.singleAxis.axisLabel.rich.RichStyleName
+	.singleAxis.nameTextStyle.rich.RichStyleName
+	.parallelAxis.axisLabel.rich.RichStyleName
+	.parallelAxis.nameTextStyle.rich.RichStyleName
+	.parallel.parallelAxisDefault.axisLabel.rich.RichStyleName
+	.parallel.parallelAxisDefault.nameTextStyle.rich.RichStyleName
+	.geo.geoRegion.blur.label.rich.RichStyleName
+	.geo.geoRegion.select.label.rich.RichStyleName
+	.geo.geoRegion.emphasis.label.rich.RichStyleName
+	.geo.geoRegion.label.rich.RichStyleName
+	.geo.blur.label.rich.RichStyleName
+	.geo.select.label.rich.RichStyleName
+	.geo.emphasis.label.rich.RichStyleName
+	.geo.label.rich.RichStyleName
+	.radar.axisLabel.rich.RichStyleName
+	.radar.axisName.rich.RichStyleName
+	.angleAxis.axisLabel.rich.RichStyleName
+	.radiusAxis.axisLabel.rich.RichStyleName
+	.radiusAxis.nameTextStyle.rich.RichStyleName
+	.yAxis.axisLabel.rich.RichStyleName
+	.yAxis.nameTextStyle.rich.RichStyleName
+	.xAxis.axisLabel.rich.RichStyleName
+	.xAxis.nameTextStyle.rich.RichStyleName
+	.legend.selectorLabel.rich.RichStyleName
+	.legend.emphasis.selectorLabel.rich.RichStyleName
+	.legend.textStyle.rich.RichStyleName
+	.title.subtextStyle.rich.RichStyleName
+	.title.textStyle.rich.RichStyleName
+
+
+#rich: 366 (similarity: 366)
+#	RichStyleName
+	.ThemeRiverSeries.select.label.rich
+	.ThemeRiverSeries.blur.label.rich
+	.ThemeRiverSeries.emphasis.label.rich
+	.ThemeRiverSeries.label.rich
+	.PictorialBarSeries.markArea.blur.label.rich
+	.PictorialBarSeries.markArea.emphasis.label.rich
+	.PictorialBarSeries.markArea.label.rich
+	.PictorialBarSeries.markLine.blur.label.rich
+	.PictorialBarSeries.markLine.emphasis.label.rich
+	.PictorialBarSeries.markLine.label.rich
+	.PictorialBarSeries.markPoint.markPointData.emphasis.label.rich
+	.PictorialBarSeries.markPoint.markPointData.label.rich
+	.PictorialBarSeries.markPoint.blur.label.rich
+	.PictorialBarSeries.markPoint.emphasis.label.rich
+	.PictorialBarSeries.markPoint.label.rich
+	.PictorialBarSeries.PictorialBarSeriesData.select.label.rich
+	.PictorialBarSeries.PictorialBarSeriesData.blur.label.rich
+	.PictorialBarSeries.PictorialBarSeriesData.emphasis.label.rich
+	.PictorialBarSeries.PictorialBarSeriesData.label.rich
+	.PictorialBarSeries.select.label.rich
+	.PictorialBarSeries.blur.label.rich
+	.PictorialBarSeries.emphasis.label.rich
+	.PictorialBarSeries.label.rich
+	.GaugeSeries.markArea.blur.label.rich
+	.GaugeSeries.markArea.emphasis.label.rich
+	.GaugeSeries.markArea.label.rich
+	.GaugeSeries.markLine.blur.label.rich
+	.GaugeSeries.markLine.emphasis.label.rich
+	.GaugeSeries.markLine.label.rich
+	.GaugeSeries.markPoint.markPointData.emphasis.label.rich
+	.GaugeSeries.markPoint.markPointData.label.rich
+	.GaugeSeries.markPoint.blur.label.rich
+	.GaugeSeries.markPoint.emphasis.label.rich
+	.GaugeSeries.markPoint.label.rich
+	.GaugeSeries.detail.rich
+	.GaugeSeries.title.rich
+	.GaugeSeries.axisLabel.rich
+	.GaugeSeries.GaugeSeriesData.detail.rich
+	.GaugeSeries.GaugeSeriesData.title.rich
+	.FunnelSeries.markArea.blur.label.rich
+	.FunnelSeries.markArea.emphasis.label.rich
+	.FunnelSeries.markArea.label.rich
+	.FunnelSeries.markLine.blur.label.rich
+	.FunnelSeries.markLine.emphasis.label.rich
+	.FunnelSeries.markLine.label.rich
+	.FunnelSeries.markPoint.markPointData.emphasis.label.rich
+	.FunnelSeries.markPoint.markPointData.label.rich
+	.FunnelSeries.markPoint.blur.label.rich
+	.FunnelSeries.markPoint.emphasis.label.rich
+	.FunnelSeries.markPoint.label.rich
+	.FunnelSeries.FunnelSeriesData.select.label.rich
+	.FunnelSeries.FunnelSeriesData.blur.label.rich
+	.FunnelSeries.FunnelSeriesData.emphasis.label.rich
+	.FunnelSeries.FunnelSeriesData.label.rich
+	.FunnelSeries.select.label.rich
+	.FunnelSeries.blur.label.rich
+	.FunnelSeries.emphasis.label.rich
+	.FunnelSeries.label.rich
+	.SankeySeries.SankeySeriesLink.select.edgeLabel.rich
+	.SankeySeries.SankeySeriesLink.blur.edgeLabel.rich
+	.SankeySeries.SankeySeriesLink.emphasis.edgeLabel.rich
+	.SankeySeries.SankeySeriesLink.edgeLabel.rich
+	.SankeySeries.SankeySeriesData.select.label.rich
+	.SankeySeries.SankeySeriesData.blur.label.rich
+	.SankeySeries.SankeySeriesData.emphasis.label.rich
+	.SankeySeries.SankeySeriesData.label.rich
+	.SankeySeries.select.edgeLabel.rich
+	.SankeySeries.select.label.rich
+	.SankeySeries.blur.edgeLabel.rich
+	.SankeySeries.blur.label.rich
+	.SankeySeries.emphasis.edgeLabel.rich
+	.SankeySeries.emphasis.label.rich
+	.SankeySeries.label.rich
+	.SankeySeries.SankeySeriesLevel.select.edgeLabel.rich
+	.SankeySeries.SankeySeriesLevel.select.label.rich
+	.SankeySeries.SankeySeriesLevel.blur.edgeLabel.rich
+	.SankeySeries.SankeySeriesLevel.blur.label.rich
+	.SankeySeries.SankeySeriesLevel.emphasis.edgeLabel.rich
+	.SankeySeries.SankeySeriesLevel.emphasis.label.rich
+	.SankeySeries.SankeySeriesLevel.edgeLabel.rich
+	.SankeySeries.SankeySeriesLevel.label.rich
+	.SankeySeries.edgeLabel.rich
+	.GraphSeries.markArea.blur.label.rich
+	.GraphSeries.markArea.emphasis.label.rich
+	.GraphSeries.markArea.label.rich
+	.GraphSeries.markLine.blur.label.rich
+	.GraphSeries.markLine.emphasis.label.rich
+	.GraphSeries.markLine.label.rich
+	.GraphSeries.markPoint.markPointData.emphasis.label.rich
+	.GraphSeries.markPoint.markPointData.label.rich
+	.GraphSeries.markPoint.blur.label.rich
+	.GraphSeries.markPoint.emphasis.label.rich
+	.GraphSeries.markPoint.label.rich
+	.GraphSeries.GraphSeriesLink.select.label.rich
+	.GraphSeries.GraphSeriesLink.blur.label.rich
+	.GraphSeries.GraphSeriesLink.emphasis.label.rich
+	.GraphSeries.GraphSeriesLink.label.rich
+	.GraphSeries.GraphSeriesData.select.label.rich
+	.GraphSeries.GraphSeriesData.blur.label.rich
+	.GraphSeries.GraphSeriesData.emphasis.label.rich
+	.GraphSeries.GraphSeriesData.label.rich
+	.GraphSeries.GraphSeriesCategory.select.label.rich
+	.GraphSeries.GraphSeriesCategory.blur.label.rich
+	.GraphSeries.GraphSeriesCategory.emphasis.label.rich
+	.GraphSeries.GraphSeriesCategory.label.rich
+	.GraphSeries.select.edgeLabel.rich
+	.GraphSeries.select.label.rich
+	.GraphSeries.blur.edgeLabel.rich
+	.GraphSeries.blur.label.rich
+	.GraphSeries.emphasis.edgeLabel.rich
+	.GraphSeries.emphasis.label.rich
+	.GraphSeries.edgeLabel.rich
+	.GraphSeries.label.rich
+	.LinesSeries.markArea.blur.label.rich
+	.LinesSeries.markArea.emphasis.label.rich
+	.LinesSeries.markArea.label.rich
+	.LinesSeries.markLine.blur.label.rich
+	.LinesSeries.markLine.emphasis.label.rich
+	.LinesSeries.markLine.label.rich
+	.LinesSeries.markPoint.markPointData.emphasis.label.rich
+	.LinesSeries.markPoint.markPointData.label.rich
+	.LinesSeries.markPoint.blur.label.rich
+	.LinesSeries.markPoint.emphasis.label.rich
+	.LinesSeries.markPoint.label.rich
+	.LinesSeries.LinesSeriesData.select.label.rich
+	.LinesSeries.LinesSeriesData.blur.label.rich
+	.LinesSeries.LinesSeriesData.emphasis.label.rich
+	.LinesSeries.LinesSeriesData.label.rich
+	.LinesSeries.select.label.rich
+	.LinesSeries.blur.label.rich
+	.LinesSeries.emphasis.label.rich
+	.LinesSeries.label.rich
+	.MapSeries.markArea.blur.label.rich
+	.MapSeries.markArea.emphasis.label.rich
+	.MapSeries.markArea.label.rich
+	.MapSeries.markLine.blur.label.rich
+	.MapSeries.markLine.emphasis.label.rich
+	.MapSeries.markLine.label.rich
+	.MapSeries.markPoint.markPointData.emphasis.label.rich
+	.MapSeries.markPoint.markPointData.label.rich
+	.MapSeries.markPoint.blur.label.rich
+	.MapSeries.markPoint.emphasis.label.rich
+	.MapSeries.markPoint.label.rich
+	.MapSeries.MapSeriesData.select.label.rich
+	.MapSeries.MapSeriesData.emphasis.label.rich
+	.MapSeries.MapSeriesData.label.rich
+	.MapSeries.select.label.rich
+	.MapSeries.emphasis.label.rich
+	.MapSeries.label.rich
+	.HeatmapSeries.markArea.blur.label.rich
+	.HeatmapSeries.markArea.emphasis.label.rich
+	.HeatmapSeries.markArea.label.rich
+	.HeatmapSeries.markLine.blur.label.rich
+	.HeatmapSeries.markLine.emphasis.label.rich
+	.HeatmapSeries.markLine.label.rich
+	.HeatmapSeries.markPoint.markPointData.emphasis.label.rich
+	.HeatmapSeries.markPoint.markPointData.label.rich
+	.HeatmapSeries.markPoint.blur.label.rich
+	.HeatmapSeries.markPoint.emphasis.label.rich
+	.HeatmapSeries.markPoint.label.rich
+	.HeatmapSeries.HeatmapSeriesData.emphasis.label.rich
+	.HeatmapSeries.HeatmapSeriesData.label.rich
+	.HeatmapSeries.select.label.rich
+	.HeatmapSeries.blur.label.rich
+	.HeatmapSeries.emphasis.label.rich
+	.HeatmapSeries.label.rich
+	.CandlestickSeries.markArea.blur.label.rich
+	.CandlestickSeries.markArea.emphasis.label.rich
+	.CandlestickSeries.markArea.label.rich
+	.CandlestickSeries.markLine.blur.label.rich
+	.CandlestickSeries.markLine.emphasis.label.rich
+	.CandlestickSeries.markLine.label.rich
+	.CandlestickSeries.markPoint.markPointData.emphasis.label.rich
+	.CandlestickSeries.markPoint.markPointData.label.rich
+	.CandlestickSeries.markPoint.blur.label.rich
+	.CandlestickSeries.markPoint.emphasis.label.rich
+	.CandlestickSeries.markPoint.label.rich
+	.BoxplotSeries.markArea.blur.label.rich
+	.BoxplotSeries.markArea.emphasis.label.rich
+	.BoxplotSeries.markArea.label.rich
+	.BoxplotSeries.markLine.blur.label.rich
+	.BoxplotSeries.markLine.emphasis.label.rich
+	.BoxplotSeries.markLine.label.rich
+	.BoxplotSeries.markPoint.markPointData.emphasis.label.rich
+	.BoxplotSeries.markPoint.markPointData.label.rich
+	.BoxplotSeries.markPoint.blur.label.rich
+	.BoxplotSeries.markPoint.emphasis.label.rich
+	.BoxplotSeries.markPoint.label.rich
+	.SunburstSeries.SunburstSeriesLevel.label.rich
+	.SunburstSeries.label.rich
+	.SunburstSeries.SunburstSeriesData.label.rich
+	.TreemapSeries.TreemapSeriesData.select.upperLabel.rich
+	.TreemapSeries.TreemapSeriesData.select.label.rich
+	.TreemapSeries.TreemapSeriesData.blur.upperLabel.rich
+	.TreemapSeries.TreemapSeriesData.blur.label.rich
+	.TreemapSeries.TreemapSeriesData.emphasis.upperLabel.rich
+	.TreemapSeries.TreemapSeriesData.emphasis.label.rich
+	.TreemapSeries.TreemapSeriesData.upperLabel.rich
+	.TreemapSeries.TreemapSeriesData.label.rich
+	.TreemapSeries.TreemapSeriesLevel.select.upperLabel.rich
+	.TreemapSeries.TreemapSeriesLevel.select.label.rich
+	.TreemapSeries.TreemapSeriesLevel.blur.upperLabel.rich
+	.TreemapSeries.TreemapSeriesLevel.blur.label.rich
+	.TreemapSeries.TreemapSeriesLevel.emphasis.upperLabel.rich
+	.TreemapSeries.TreemapSeriesLevel.emphasis.label.rich
+	.TreemapSeries.TreemapSeriesLevel.upperLabel.rich
+	.TreemapSeries.TreemapSeriesLevel.label.rich
+	.TreemapSeries.breadcrumb.emphasis.itemStyle.textStyle.rich
+	.TreemapSeries.breadcrumb.itemStyle.textStyle.rich
+	.TreemapSeries.select.upperLabel.rich
+	.TreemapSeries.select.label.rich
+	.TreemapSeries.blur.upperLabel.rich
+	.TreemapSeries.blur.label.rich
+	.TreemapSeries.emphasis.upperLabel.rich
+	.TreemapSeries.emphasis.label.rich
+	.TreemapSeries.upperLabel.rich
+	.TreemapSeries.label.rich
+	.TreeSeries.leaves.select.label.rich
+	.TreeSeries.leaves.blur.label.rich
+	.TreeSeries.leaves.emphasis.label.rich
+	.TreeSeries.leaves.label.rich
+	.TreeSeries.select.label.rich
+	.TreeSeries.blur.label.rich
+	.TreeSeries.emphasis.label.rich
+	.TreeSeries.label.rich
+	.RadarSeries.RadarSeriesData.select.label.rich
+	.RadarSeries.RadarSeriesData.blur.label.rich
+	.RadarSeries.RadarSeriesData.emphasis.label.rich
+	.RadarSeries.RadarSeriesData.label.rich
+	.RadarSeries.select.label.rich
+	.RadarSeries.blur.label.rich
+	.RadarSeries.emphasis.label.rich
+	.RadarSeries.label.rich
+	.EffectScatterSeries.markArea.blur.label.rich
+	.EffectScatterSeries.markArea.emphasis.label.rich
+	.EffectScatterSeries.markArea.label.rich
+	.EffectScatterSeries.markLine.blur.label.rich
+	.EffectScatterSeries.markLine.emphasis.label.rich
+	.EffectScatterSeries.markLine.label.rich
+	.EffectScatterSeries.markPoint.markPointData.emphasis.label.rich
+	.EffectScatterSeries.markPoint.markPointData.label.rich
+	.EffectScatterSeries.markPoint.blur.label.rich
+	.EffectScatterSeries.markPoint.emphasis.label.rich
+	.EffectScatterSeries.markPoint.label.rich
+	.EffectScatterSeries.EffectScatterSeriesData.select.label.rich
+	.EffectScatterSeries.EffectScatterSeriesData.blur.label.rich
+	.EffectScatterSeries.EffectScatterSeriesData.emphasis.label.rich
+	.EffectScatterSeries.EffectScatterSeriesData.label.rich
+	.EffectScatterSeries.select.label.rich
+	.EffectScatterSeries.blur.label.rich
+	.EffectScatterSeries.emphasis.label.rich
+	.EffectScatterSeries.label.rich
+	.ScatterSeries.markArea.blur.label.rich
+	.ScatterSeries.markArea.emphasis.label.rich
+	.ScatterSeries.markArea.label.rich
+	.ScatterSeries.markLine.blur.label.rich
+	.ScatterSeries.markLine.emphasis.label.rich
+	.ScatterSeries.markLine.label.rich
+	.ScatterSeries.markPoint.markPointData.emphasis.label.rich
+	.ScatterSeries.markPoint.markPointData.label.rich
+	.ScatterSeries.markPoint.blur.label.rich
+	.ScatterSeries.markPoint.emphasis.label.rich
+	.ScatterSeries.markPoint.label.rich
+	.ScatterSeries.ScatterSeriesData.select.label.rich
+	.ScatterSeries.ScatterSeriesData.blur.label.rich
+	.ScatterSeries.ScatterSeriesData.emphasis.label.rich
+	.ScatterSeries.ScatterSeriesData.label.rich
+	.ScatterSeries.select.label.rich
+	.ScatterSeries.blur.label.rich
+	.ScatterSeries.emphasis.label.rich
+	.ScatterSeries.label.rich
+	.PieSeries.markArea.blur.label.rich
+	.PieSeries.markArea.emphasis.label.rich
+	.PieSeries.markArea.label.rich
+	.PieSeries.markLine.blur.label.rich
+	.PieSeries.markLine.emphasis.label.rich
+	.PieSeries.markLine.label.rich
+	.PieSeries.markPoint.markPointData.emphasis.label.rich
+	.PieSeries.markPoint.markPointData.label.rich
+	.PieSeries.markPoint.blur.label.rich
+	.PieSeries.markPoint.emphasis.label.rich
+	.PieSeries.markPoint.label.rich
+	.PieSeries.PieSeriesData.select.label.rich
+	.PieSeries.PieSeriesData.blur.label.rich
+	.PieSeries.PieSeriesData.emphasis.label.rich
+	.PieSeries.PieSeriesData.label.rich
+	.PieSeries.select.label.rich
+	.PieSeries.blur.label.rich
+	.PieSeries.emphasis.label.rich
+	.PieSeries.label.rich
+	.BarSeries.markArea.blur.label.rich
+	.BarSeries.markArea.emphasis.label.rich
+	.BarSeries.markArea.label.rich
+	.BarSeries.markLine.blur.label.rich
+	.BarSeries.markLine.emphasis.label.rich
+	.BarSeries.markLine.label.rich
+	.BarSeries.markPoint.markPointData.emphasis.label.rich
+	.BarSeries.markPoint.markPointData.label.rich
+	.BarSeries.markPoint.blur.label.rich
+	.BarSeries.markPoint.emphasis.label.rich
+	.BarSeries.markPoint.label.rich
+	.BarSeries.BarSeriesData.select.label.rich
+	.BarSeries.BarSeriesData.blur.label.rich
+	.BarSeries.BarSeriesData.emphasis.label.rich
+	.BarSeries.BarSeriesData.label.rich
+	.BarSeries.select.label.rich
+	.BarSeries.blur.label.rich
+	.BarSeries.emphasis.label.rich
+	.BarSeries.label.rich
+	.LineSeries.markArea.blur.label.rich
+	.LineSeries.markArea.emphasis.label.rich
+	.LineSeries.markArea.label.rich
+	.LineSeries.markLine.blur.label.rich
+	.LineSeries.markLine.emphasis.label.rich
+	.LineSeries.markLine.label.rich
+	.LineSeries.markPoint.markPointData.emphasis.label.rich
+	.LineSeries.markPoint.markPointData.label.rich
+	.LineSeries.markPoint.blur.label.rich
+	.LineSeries.markPoint.emphasis.label.rich
+	.LineSeries.markPoint.label.rich
+	.LineSeries.LineSeriesData.select.label.rich
+	.LineSeries.LineSeriesData.blur.label.rich
+	.LineSeries.LineSeriesData.emphasis.label.rich
+	.LineSeries.LineSeriesData.label.rich
+	.LineSeries.select.endLabel.rich
+	.LineSeries.select.label.rich
+	.LineSeries.blur.endLabel.rich
+	.LineSeries.blur.label.rich
+	.LineSeries.emphasis.endLabel.rich
+	.LineSeries.emphasis.label.rich
+	.LineSeries.endLabel.rich
+	.LineSeries.label.rich
+	.calendar.yearLabel.rich
+	.calendar.monthLabel.rich
+	.calendar.dayLabel.rich
+	.timeline.emphasis.label.rich
+	.timeline.progress.label.rich
+	.timeline.label.rich
+	.singleAxis.axisLabel.rich
+	.singleAxis.nameTextStyle.rich
+	.parallelAxis.axisLabel.rich
+	.parallelAxis.nameTextStyle.rich
+	.parallel.parallelAxisDefault.axisLabel.rich
+	.parallel.parallelAxisDefault.nameTextStyle.rich
+	.geo.geoRegion.blur.label.rich
+	.geo.geoRegion.select.label.rich
+	.geo.geoRegion.emphasis.label.rich
+	.geo.geoRegion.label.rich
+	.geo.blur.label.rich
+	.geo.select.label.rich
+	.geo.emphasis.label.rich
+	.geo.label.rich
+	.radar.axisLabel.rich
+	.radar.axisName.rich
+	.angleAxis.axisLabel.rich
+	.radiusAxis.axisLabel.rich
+	.radiusAxis.nameTextStyle.rich
+	.yAxis.axisLabel.rich
+	.yAxis.nameTextStyle.rich
+	.xAxis.axisLabel.rich
+	.xAxis.nameTextStyle.rich
+	.legend.selectorLabel.rich
+	.legend.emphasis.selectorLabel.rich
+	.legend.textStyle.rich
+	.title.subtextStyle.rich
+	.title.textStyle.rich
+
+
+#textStyle: 55 (similarity: 1,1,51,2)
+#	color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,overflow,rich,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.title.textStyle
+
+#	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,overflow,padding,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.legend.textStyle
+
+#	color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,overflow,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.textStyle
+	.CustomSeries.tooltip.textStyle
+	.CustomSeries.CustomSeriesData.tooltip.textStyle
+	.ThemeRiverSeries.tooltip.textStyle
+	.PictorialBarSeries.tooltip.textStyle
+	.PictorialBarSeries.PictorialBarSeriesData.tooltip.textStyle
+	.GaugeSeries.tooltip.textStyle
+	.FunnelSeries.tooltip.textStyle
+	.FunnelSeries.FunnelSeriesData.tooltip.textStyle
+	.SankeySeries.tooltip.textStyle
+	.SankeySeries.SankeySeriesData.tooltip.textStyle
+	.GraphSeries.tooltip.textStyle
+	.GraphSeries.GraphSeriesData.tooltip.textStyle
+	.LinesSeries.tooltip.textStyle
+	.LinesSeries.LinesSeriesData.tooltip.textStyle
+	.MapSeries.tooltip.textStyle
+	.MapSeries.MapSeriesData.tooltip.textStyle
+	.HeatmapSeries.tooltip.textStyle
+	.CandlestickSeries.tooltip.textStyle
+	.CandlestickSeries.CandlestickSeriesData.tooltip.textStyle
+	.BoxplotSeries.tooltip.textStyle
+	.BoxplotSeries.BoxplotSeriesData.tooltip.textStyle
+	.SunburstSeries.tooltip.textStyle
+	.SunburstSeries.SunburstSeriesData.tooltip.textStyle
+	.TreemapSeries.tooltip.textStyle
+	.TreemapSeries.TreemapSeriesData.tooltip.textStyle
+	.TreeSeries.tooltip.textStyle
+	.RadarSeries.tooltip.textStyle
+	.RadarSeries.RadarSeriesData.tooltip.textStyle
+	.EffectScatterSeries.tooltip.textStyle
+	.EffectScatterSeries.EffectScatterSeriesData.tooltip.textStyle
+	.ScatterSeries.tooltip.textStyle
+	.ScatterSeries.ScatterSeriesData.tooltip.textStyle
+	.PieSeries.tooltip.textStyle
+	.PieSeries.PieSeriesData.tooltip.textStyle
+	.BarSeries.tooltip.textStyle
+	.LineSeries.tooltip.textStyle
+	.LineSeries.LineSeriesData.tooltip.textStyle
+	.singleAxis.tooltip.textStyle
+	.parallelAxis.tooltip.textStyle
+	.parallel.parallelAxisDefault.tooltip.textStyle
+	.geo.tooltip.textStyle
+	.geo.geoRegion.tooltip.textStyle
+	.tooltip.textStyle
+	.angleAxis.tooltip.textStyle
+	.radiusAxis.tooltip.textStyle
+	.polar.tooltip.textStyle
+	.yAxis.tooltip.textStyle
+	.xAxis.tooltip.textStyle
+	.grid.tooltip.textStyle
+	.legend.legendData.textStyle
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,overflow,padding,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.TreemapSeries.breadcrumb.emphasis.itemStyle.textStyle
+	.TreemapSeries.breadcrumb.itemStyle.textStyle
+
+
+#subtextStyle: 1 (similarity: 1)
+#	align,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,overflow,rich,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.title.subtextStyle
+
+
+#title: 6 (similarity: 1,1,1,1,2)
+#	backgroundColor,borderColor,borderRadius,borderWidth,bottom,id,itemGap,left,link,padding,right,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,sublink,subtarget,subtext,subtextStyle,target,text,textAlign,textStyle,textVerticalAlign,top,triggerEvent,z,zlevel
+	.title
+
+#	back,zoom
+	.toolbox.feature.dataZoom.title
+
+#	bar,line,stack,tiled
+	.toolbox.feature.magicType.title
+
+#	clear,keep,lineX,lineY,polygon,rect
+	.toolbox.feature.brush.title
+
+#	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,offsetCenter,overflow,padding,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,valueAnimation,width
+	.GaugeSeries.title
+	.GaugeSeries.GaugeSeriesData.title
+
+
+#decal: 29 (similarity: 29)
+#	backgroundColor,color,dashArrayX,dashArrayY,maxTileHeight,maxTileWidth,rotation,symbol,symbolKeepAspect,symbolSize
+	.CustomSeries.CustomSeriesData.itemStyle.decal
+	.CustomSeries.itemStyle.decal
+	.ThemeRiverSeries.itemStyle.decal
+	.PictorialBarSeries.PictorialBarSeriesData.itemStyle.decal
+	.PictorialBarSeries.itemStyle.decal
+	.GaugeSeries.itemStyle.decal
+	.GaugeSeries.GaugeSeriesData.itemStyle.decal
+	.FunnelSeries.FunnelSeriesData.itemStyle.decal
+	.FunnelSeries.itemStyle.decal
+	.SankeySeries.SankeySeriesData.select.itemStyle.decal
+	.SankeySeries.SankeySeriesData.blur.itemStyle.decal
+	.SankeySeries.SankeySeriesData.emphasis.itemStyle.decal
+	.SankeySeries.SankeySeriesData.itemStyle.decal
+	.SankeySeries.itemStyle.decal
+	.BoxplotSeries.BoxplotSeriesData.itemStyle.decal
+	.BoxplotSeries.itemStyle.decal
+	.SunburstSeries.itemStyle.decal
+	.SunburstSeries.SunburstSeriesData.itemStyle.decal
+	.TreemapSeries.TreemapSeriesData.itemStyle.decal
+	.TreemapSeries.TreemapSeriesLevel.itemStyle.decal
+	.TreemapSeries.itemStyle.decal
+	.RadarSeries.itemStyle.decal
+	.PieSeries.PieSeriesData.itemStyle.decal
+	.PieSeries.itemStyle.decal
+	.BarSeries.BarSeriesData.itemStyle.decal
+	.BarSeries.itemStyle.decal
+	.LineSeries.itemStyle.decal
+	.legend.legendData.itemStyle.decal
+	.legend.itemStyle.decal
+
+
+#itemStyle: 251 (similarity: 17,14,171,2,9,6,9,3,9,2,8,1)
+#	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,decal,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.CustomSeries.CustomSeriesData.itemStyle
+	.CustomSeries.itemStyle
+	.ThemeRiverSeries.itemStyle
+	.PictorialBarSeries.PictorialBarSeriesData.itemStyle
+	.PictorialBarSeries.itemStyle
+	.GaugeSeries.itemStyle
+	.GaugeSeries.GaugeSeriesData.itemStyle
+	.FunnelSeries.itemStyle
+	.SankeySeries.SankeySeriesData.select.itemStyle
+	.SankeySeries.SankeySeriesData.blur.itemStyle
+	.SankeySeries.SankeySeriesData.emphasis.itemStyle
+	.BoxplotSeries.BoxplotSeriesData.itemStyle
+	.BoxplotSeries.itemStyle
+	.RadarSeries.itemStyle
+	.LineSeries.itemStyle
+	.legend.legendData.itemStyle
+	.legend.itemStyle
+
+#	areaColor,borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.MapSeries.MapSeriesData.select.itemStyle
+	.MapSeries.MapSeriesData.emphasis.itemStyle
+	.MapSeries.MapSeriesData.itemStyle
+	.MapSeries.select.itemStyle
+	.MapSeries.emphasis.itemStyle
+	.MapSeries.itemStyle
+	.geo.geoRegion.blur.itemStyle
+	.geo.geoRegion.select.itemStyle
+	.geo.geoRegion.emphasis.itemStyle
+	.geo.geoRegion.itemStyle
+	.geo.blur.itemStyle
+	.geo.select.itemStyle
+	.geo.emphasis.itemStyle
+	.geo.itemStyle
+
+#	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.CustomSeries.CustomSeriesData.emphasis.itemStyle
+	.ThemeRiverSeries.select.itemStyle
+	.ThemeRiverSeries.blur.itemStyle
+	.ThemeRiverSeries.emphasis.itemStyle
+	.PictorialBarSeries.markArea.itemStyle
+	.PictorialBarSeries.markPoint.markPointData.emphasis.itemStyle
+	.PictorialBarSeries.markPoint.markPointData.itemStyle
+	.PictorialBarSeries.markPoint.blur.itemStyle
+	.PictorialBarSeries.markPoint.emphasis.itemStyle
+	.PictorialBarSeries.markPoint.itemStyle
+	.PictorialBarSeries.select.itemStyle
+	.PictorialBarSeries.blur.itemStyle
+	.PictorialBarSeries.emphasis.itemStyle
+	.GaugeSeries.markArea.itemStyle
+	.GaugeSeries.markPoint.markPointData.emphasis.itemStyle
+	.GaugeSeries.markPoint.markPointData.itemStyle
+	.GaugeSeries.markPoint.blur.itemStyle
+	.GaugeSeries.markPoint.emphasis.itemStyle
+	.GaugeSeries.markPoint.itemStyle
+	.GaugeSeries.anchor.itemStyle
+	.GaugeSeries.pointer.itemStyle
+	.GaugeSeries.progress.itemStyle
+	.FunnelSeries.markArea.itemStyle
+	.FunnelSeries.markPoint.markPointData.emphasis.itemStyle
+	.FunnelSeries.markPoint.markPointData.itemStyle
+	.FunnelSeries.markPoint.blur.itemStyle
+	.FunnelSeries.markPoint.emphasis.itemStyle
+	.FunnelSeries.markPoint.itemStyle
+	.FunnelSeries.FunnelSeriesData.select.itemStyle
+	.FunnelSeries.FunnelSeriesData.blur.itemStyle
+	.FunnelSeries.FunnelSeriesData.emphasis.itemStyle
+	.FunnelSeries.select.itemStyle
+	.FunnelSeries.blur.itemStyle
+	.FunnelSeries.emphasis.itemStyle
+	.SankeySeries.select.itemStyle
+	.SankeySeries.blur.itemStyle
+	.SankeySeries.emphasis.itemStyle
+	.SankeySeries.SankeySeriesLevel.select.itemStyle
+	.SankeySeries.SankeySeriesLevel.blur.itemStyle
+	.SankeySeries.SankeySeriesLevel.emphasis.itemStyle
+	.SankeySeries.SankeySeriesLevel.itemStyle
+	.GraphSeries.markArea.itemStyle
+	.GraphSeries.markPoint.markPointData.emphasis.itemStyle
+	.GraphSeries.markPoint.markPointData.itemStyle
+	.GraphSeries.markPoint.blur.itemStyle
+	.GraphSeries.markPoint.emphasis.itemStyle
+	.GraphSeries.markPoint.itemStyle
+	.GraphSeries.GraphSeriesData.select.itemStyle
+	.GraphSeries.GraphSeriesData.blur.itemStyle
+	.GraphSeries.GraphSeriesData.emphasis.itemStyle
+	.GraphSeries.GraphSeriesData.itemStyle
+	.GraphSeries.GraphSeriesCategory.select.itemStyle
+	.GraphSeries.GraphSeriesCategory.blur.itemStyle
+	.GraphSeries.GraphSeriesCategory.emphasis.itemStyle
+	.GraphSeries.GraphSeriesCategory.itemStyle
+	.GraphSeries.select.itemStyle
+	.GraphSeries.blur.itemStyle
+	.GraphSeries.emphasis.itemStyle
+	.GraphSeries.itemStyle
+	.LinesSeries.markArea.itemStyle
+	.LinesSeries.markPoint.markPointData.emphasis.itemStyle
+	.LinesSeries.markPoint.markPointData.itemStyle
+	.LinesSeries.markPoint.blur.itemStyle
+	.LinesSeries.markPoint.emphasis.itemStyle
+	.LinesSeries.markPoint.itemStyle
+	.MapSeries.markArea.itemStyle
+	.MapSeries.markPoint.markPointData.emphasis.itemStyle
+	.MapSeries.markPoint.markPointData.itemStyle
+	.MapSeries.markPoint.blur.itemStyle
+	.MapSeries.markPoint.emphasis.itemStyle
+	.MapSeries.markPoint.itemStyle
+	.HeatmapSeries.markArea.itemStyle
+	.HeatmapSeries.markPoint.markPointData.emphasis.itemStyle
+	.HeatmapSeries.markPoint.markPointData.itemStyle
+	.HeatmapSeries.markPoint.blur.itemStyle
+	.HeatmapSeries.markPoint.emphasis.itemStyle
+	.HeatmapSeries.markPoint.itemStyle
+	.HeatmapSeries.HeatmapSeriesData.emphasis.itemStyle
+	.HeatmapSeries.select.itemStyle
+	.HeatmapSeries.blur.itemStyle
+	.HeatmapSeries.emphasis.itemStyle
+	.CandlestickSeries.markArea.itemStyle
+	.CandlestickSeries.markPoint.markPointData.emphasis.itemStyle
+	.CandlestickSeries.markPoint.markPointData.itemStyle
+	.CandlestickSeries.markPoint.blur.itemStyle
+	.CandlestickSeries.markPoint.emphasis.itemStyle
+	.CandlestickSeries.markPoint.itemStyle
+	.BoxplotSeries.markArea.itemStyle
+	.BoxplotSeries.markPoint.markPointData.emphasis.itemStyle
+	.BoxplotSeries.markPoint.markPointData.itemStyle
+	.BoxplotSeries.markPoint.blur.itemStyle
+	.BoxplotSeries.markPoint.emphasis.itemStyle
+	.BoxplotSeries.markPoint.itemStyle
+	.BoxplotSeries.BoxplotSeriesData.select.itemStyle
+	.BoxplotSeries.BoxplotSeriesData.blur.itemStyle
+	.BoxplotSeries.BoxplotSeriesData.emphasis.itemStyle
+	.BoxplotSeries.select.itemStyle
+	.BoxplotSeries.blur.itemStyle
+	.BoxplotSeries.emphasis.itemStyle
+	.TreeSeries.leaves.select.itemStyle
+	.TreeSeries.leaves.blur.itemStyle
+	.TreeSeries.leaves.emphasis.itemStyle
+	.TreeSeries.leaves.itemStyle
+	.TreeSeries.select.itemStyle
+	.TreeSeries.blur.itemStyle
+	.TreeSeries.emphasis.itemStyle
+	.TreeSeries.itemStyle
+	.RadarSeries.RadarSeriesData.select.itemStyle
+	.RadarSeries.RadarSeriesData.blur.itemStyle
+	.RadarSeries.RadarSeriesData.emphasis.itemStyle
+	.RadarSeries.RadarSeriesData.itemStyle
+	.RadarSeries.select.itemStyle
+	.RadarSeries.blur.itemStyle
+	.RadarSeries.emphasis.itemStyle
+	.EffectScatterSeries.markArea.itemStyle
+	.EffectScatterSeries.markPoint.markPointData.emphasis.itemStyle
+	.EffectScatterSeries.markPoint.markPointData.itemStyle
+	.EffectScatterSeries.markPoint.blur.itemStyle
+	.EffectScatterSeries.markPoint.emphasis.itemStyle
+	.EffectScatterSeries.markPoint.itemStyle
+	.EffectScatterSeries.EffectScatterSeriesData.select.itemStyle
+	.EffectScatterSeries.EffectScatterSeriesData.blur.itemStyle
+	.EffectScatterSeries.EffectScatterSeriesData.emphasis.itemStyle
+	.EffectScatterSeries.EffectScatterSeriesData.itemStyle
+	.EffectScatterSeries.select.itemStyle
+	.EffectScatterSeries.blur.itemStyle
+	.EffectScatterSeries.emphasis.itemStyle
+	.EffectScatterSeries.itemStyle
+	.ScatterSeries.markArea.itemStyle
+	.ScatterSeries.markPoint.markPointData.emphasis.itemStyle
+	.ScatterSeries.markPoint.markPointData.itemStyle
+	.ScatterSeries.markPoint.blur.itemStyle
+	.ScatterSeries.markPoint.emphasis.itemStyle
+	.ScatterSeries.markPoint.itemStyle
+	.ScatterSeries.ScatterSeriesData.select.itemStyle
+	.ScatterSeries.ScatterSeriesData.blur.itemStyle
+	.ScatterSeries.ScatterSeriesData.emphasis.itemStyle
+	.ScatterSeries.ScatterSeriesData.itemStyle
+	.ScatterSeries.select.itemStyle
+	.ScatterSeries.blur.itemStyle
+	.ScatterSeries.emphasis.itemStyle
+	.ScatterSeries.itemStyle
+	.PieSeries.markArea.itemStyle
+	.PieSeries.markPoint.markPointData.emphasis.itemStyle
+	.PieSeries.markPoint.markPointData.itemStyle
+	.PieSeries.markPoint.blur.itemStyle
+	.PieSeries.markPoint.emphasis.itemStyle
+	.PieSeries.markPoint.itemStyle
+	.BarSeries.markArea.itemStyle
+	.BarSeries.markPoint.markPointData.emphasis.itemStyle
+	.BarSeries.markPoint.markPointData.itemStyle
+	.BarSeries.markPoint.blur.itemStyle
+	.BarSeries.markPoint.emphasis.itemStyle
+	.BarSeries.markPoint.itemStyle
+	.LineSeries.markArea.itemStyle
+	.LineSeries.markPoint.markPointData.emphasis.itemStyle
+	.LineSeries.markPoint.markPointData.itemStyle
+	.LineSeries.markPoint.blur.itemStyle
+	.LineSeries.markPoint.emphasis.itemStyle
+	.LineSeries.markPoint.itemStyle
+	.LineSeries.LineSeriesData.select.itemStyle
+	.LineSeries.LineSeriesData.blur.itemStyle
+	.LineSeries.LineSeriesData.emphasis.itemStyle
+	.LineSeries.LineSeriesData.itemStyle
+	.LineSeries.select.itemStyle
+	.LineSeries.blur.itemStyle
+	.LineSeries.emphasis.itemStyle
+	.calendar.itemStyle
+	.timeline.emphasis.itemStyle
+	.timeline.progress.itemStyle
+	.timeline.itemStyle
+
+#	borderColor,borderRadius,borderType,borderWidth,color,decal,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.BarSeries.BarSeriesData.itemStyle
+	.BarSeries.itemStyle
+
+#	borderColor,borderRadius,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.PictorialBarSeries.PictorialBarSeriesData.select.itemStyle
+	.PictorialBarSeries.PictorialBarSeriesData.blur.itemStyle
+	.PictorialBarSeries.PictorialBarSeriesData.emphasis.itemStyle
+	.BarSeries.BarSeriesData.select.itemStyle
+	.BarSeries.BarSeriesData.blur.itemStyle
+	.BarSeries.BarSeriesData.emphasis.itemStyle
+	.BarSeries.select.itemStyle
+	.BarSeries.blur.itemStyle
+	.BarSeries.emphasis.itemStyle
+
+#	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderRadius,borderType,borderWidth,color,decal,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.SankeySeries.SankeySeriesData.itemStyle
+	.SankeySeries.itemStyle
+	.SunburstSeries.itemStyle
+	.SunburstSeries.SunburstSeriesData.itemStyle
+	.PieSeries.PieSeriesData.itemStyle
+	.PieSeries.itemStyle
+
+#	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderRadius,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.HeatmapSeries.HeatmapSeriesData.itemStyle
+	.HeatmapSeries.itemStyle
+	.SunburstSeries.SunburstSeriesLevel.itemStyle
+	.PieSeries.PieSeriesData.select.itemStyle
+	.PieSeries.PieSeriesData.blur.itemStyle
+	.PieSeries.PieSeriesData.emphasis.itemStyle
+	.PieSeries.select.itemStyle
+	.PieSeries.blur.itemStyle
+	.PieSeries.emphasis.itemStyle
+
+#	borderColor,borderColorSaturation,borderRadius,borderWidth,color,decal,gapWidth,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.TreemapSeries.TreemapSeriesData.itemStyle
+	.TreemapSeries.TreemapSeriesLevel.itemStyle
+	.TreemapSeries.itemStyle
+
+#	color
+	.TreemapSeries.TreemapSeriesData.select.itemStyle
+	.TreemapSeries.TreemapSeriesData.blur.itemStyle
+	.TreemapSeries.TreemapSeriesData.emphasis.itemStyle
+	.TreemapSeries.TreemapSeriesLevel.select.itemStyle
+	.TreemapSeries.TreemapSeriesLevel.blur.itemStyle
+	.TreemapSeries.TreemapSeriesLevel.emphasis.itemStyle
+	.TreemapSeries.select.itemStyle
+	.TreemapSeries.blur.itemStyle
+	.TreemapSeries.emphasis.itemStyle
+
+#	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,textStyle
+	.TreemapSeries.breadcrumb.emphasis.itemStyle
+	.TreemapSeries.breadcrumb.itemStyle
+
+#	borderColor,borderColor0,borderColorDoji,borderWidth,color,color0,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.CandlestickSeries.CandlestickSeriesData.select.itemStyle
+	.CandlestickSeries.CandlestickSeriesData.blur.itemStyle
+	.CandlestickSeries.CandlestickSeriesData.emphasis.itemStyle
+	.CandlestickSeries.CandlestickSeriesData.itemStyle
+	.CandlestickSeries.select.itemStyle
+	.CandlestickSeries.blur.itemStyle
+	.CandlestickSeries.emphasis.itemStyle
+	.CandlestickSeries.itemStyle
+
+#	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,decal,height,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.FunnelSeries.FunnelSeriesData.itemStyle
+
+
+#lineStyle: 222 (similarity: 2,175,1,24,7,12,1)
+#	cap,color,dashOffset,inactiveColor,inactiveWidth,join,miterLimit,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,type,width
+	.legend.legendData.lineStyle
+	.legend.lineStyle
+
+#	cap,color,dashOffset,join,miterLimit,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,type,width
+	.CustomSeries.labelLine.lineStyle
+	.ThemeRiverSeries.select.labelLine.lineStyle
+	.ThemeRiverSeries.blur.labelLine.lineStyle
+	.ThemeRiverSeries.emphasis.labelLine.lineStyle
+	.ThemeRiverSeries.labelLine.lineStyle
+	.PictorialBarSeries.markLine.blur.lineStyle
+	.PictorialBarSeries.markLine.emphasis.lineStyle
+	.PictorialBarSeries.PictorialBarSeriesData.select.labelLine.lineStyle
+	.PictorialBarSeries.PictorialBarSeriesData.blur.labelLine.lineStyle
+	.PictorialBarSeries.PictorialBarSeriesData.emphasis.labelLine.lineStyle
+	.PictorialBarSeries.PictorialBarSeriesData.labelLine.lineStyle
+	.PictorialBarSeries.select.labelLine.lineStyle
+	.PictorialBarSeries.blur.labelLine.lineStyle
+	.PictorialBarSeries.emphasis.labelLine.lineStyle
+	.PictorialBarSeries.labelLine.lineStyle
+	.GaugeSeries.markLine.blur.lineStyle
+	.GaugeSeries.markLine.emphasis.lineStyle
+	.GaugeSeries.axisTick.lineStyle
+	.GaugeSeries.splitLine.lineStyle
+	.FunnelSeries.markLine.blur.lineStyle
+	.FunnelSeries.markLine.emphasis.lineStyle
+	.FunnelSeries.FunnelSeriesData.select.labelLine.lineStyle
+	.FunnelSeries.FunnelSeriesData.blur.labelLine.lineStyle
+	.FunnelSeries.FunnelSeriesData.emphasis.labelLine.lineStyle
+	.FunnelSeries.FunnelSeriesData.labelLine.lineStyle
+	.FunnelSeries.select.labelLine.lineStyle
+	.FunnelSeries.blur.labelLine.lineStyle
+	.FunnelSeries.emphasis.labelLine.lineStyle
+	.FunnelSeries.labelLine.lineStyle
+	.GraphSeries.markLine.blur.lineStyle
+	.GraphSeries.markLine.emphasis.lineStyle
+	.LinesSeries.markLine.blur.lineStyle
+	.LinesSeries.markLine.emphasis.lineStyle
+	.LinesSeries.LinesSeriesData.select.lineStyle
+	.LinesSeries.LinesSeriesData.blur.lineStyle
+	.LinesSeries.LinesSeriesData.emphasis.lineStyle
+	.LinesSeries.select.lineStyle
+	.LinesSeries.blur.lineStyle
+	.LinesSeries.emphasis.lineStyle
+	.ParallelSeries.ParallelSeriesData.emphasis.lineStyle
+	.ParallelSeries.ParallelSeriesData.lineStyle
+	.ParallelSeries.emphasis.lineStyle
+	.ParallelSeries.lineStyle
+	.MapSeries.markLine.blur.lineStyle
+	.MapSeries.markLine.emphasis.lineStyle
+	.MapSeries.MapSeriesData.select.labelLine.lineStyle
+	.MapSeries.MapSeriesData.emphasis.labelLine.lineStyle
+	.MapSeries.MapSeriesData.labelLine.lineStyle
+	.MapSeries.labelLine.lineStyle
+	.HeatmapSeries.markLine.blur.lineStyle
+	.HeatmapSeries.markLine.emphasis.lineStyle
+	.CandlestickSeries.markLine.blur.lineStyle
+	.CandlestickSeries.markLine.emphasis.lineStyle
+	.BoxplotSeries.markLine.blur.lineStyle
+	.BoxplotSeries.markLine.emphasis.lineStyle
+	.SunburstSeries.SunburstSeriesLevel.labelLine.lineStyle
+	.SunburstSeries.labelLine.lineStyle
+	.SunburstSeries.SunburstSeriesData.labelLine.lineStyle
+	.TreemapSeries.TreemapSeriesData.select.labelLine.lineStyle
+	.TreemapSeries.TreemapSeriesData.blur.labelLine.lineStyle
+	.TreemapSeries.TreemapSeriesData.emphasis.labelLine.lineStyle
+	.TreemapSeries.TreemapSeriesLevel.select.labelLine.lineStyle
+	.TreemapSeries.TreemapSeriesLevel.blur.labelLine.lineStyle
+	.TreemapSeries.TreemapSeriesLevel.emphasis.labelLine.lineStyle
+	.TreemapSeries.labelLine.lineStyle
+	.TreemapSeries.select.labelLine.lineStyle
+	.TreemapSeries.blur.labelLine.lineStyle
+	.TreemapSeries.emphasis.labelLine.lineStyle
+	.RadarSeries.RadarSeriesData.select.lineStyle
+	.RadarSeries.RadarSeriesData.blur.lineStyle
+	.RadarSeries.RadarSeriesData.emphasis.lineStyle
+	.RadarSeries.RadarSeriesData.lineStyle
+	.RadarSeries.select.lineStyle
+	.RadarSeries.blur.lineStyle
+	.RadarSeries.emphasis.lineStyle
+	.RadarSeries.lineStyle
+	.EffectScatterSeries.markLine.blur.lineStyle
+	.EffectScatterSeries.markLine.emphasis.lineStyle
+	.EffectScatterSeries.EffectScatterSeriesData.select.labelLine.lineStyle
+	.EffectScatterSeries.EffectScatterSeriesData.blur.labelLine.lineStyle
+	.EffectScatterSeries.EffectScatterSeriesData.emphasis.labelLine.lineStyle
+	.EffectScatterSeries.EffectScatterSeriesData.labelLine.lineStyle
+	.EffectScatterSeries.select.labelLine.lineStyle
+	.EffectScatterSeries.blur.labelLine.lineStyle
+	.EffectScatterSeries.emphasis.labelLine.lineStyle
+	.EffectScatterSeries.labelLine.lineStyle
+	.ScatterSeries.markLine.blur.lineStyle
+	.ScatterSeries.markLine.emphasis.lineStyle
+	.ScatterSeries.ScatterSeriesData.select.labelLine.lineStyle
+	.ScatterSeries.ScatterSeriesData.blur.labelLine.lineStyle
+	.ScatterSeries.ScatterSeriesData.emphasis.labelLine.lineStyle
+	.ScatterSeries.ScatterSeriesData.labelLine.lineStyle
+	.ScatterSeries.select.labelLine.lineStyle
+	.ScatterSeries.blur.labelLine.lineStyle
+	.ScatterSeries.emphasis.labelLine.lineStyle
+	.ScatterSeries.labelLine.lineStyle
+	.PieSeries.markLine.blur.lineStyle
+	.PieSeries.markLine.emphasis.lineStyle
+	.PieSeries.PieSeriesData.select.labelLine.lineStyle
+	.PieSeries.PieSeriesData.blur.labelLine.lineStyle
+	.PieSeries.PieSeriesData.emphasis.labelLine.lineStyle
+	.PieSeries.PieSeriesData.labelLine.lineStyle
+	.PieSeries.select.labelLine.lineStyle
+	.PieSeries.blur.labelLine.lineStyle
+	.PieSeries.emphasis.labelLine.lineStyle
+	.PieSeries.labelLine.lineStyle
+	.BarSeries.markLine.blur.lineStyle
+	.BarSeries.markLine.emphasis.lineStyle
+	.BarSeries.BarSeriesData.select.labelLine.lineStyle
+	.BarSeries.BarSeriesData.blur.labelLine.lineStyle
+	.BarSeries.BarSeriesData.emphasis.labelLine.lineStyle
+	.BarSeries.BarSeriesData.labelLine.lineStyle
+	.BarSeries.select.labelLine.lineStyle
+	.BarSeries.blur.labelLine.lineStyle
+	.BarSeries.emphasis.labelLine.lineStyle
+	.BarSeries.labelLine.lineStyle
+	.LineSeries.markLine.blur.lineStyle
+	.LineSeries.markLine.emphasis.lineStyle
+	.LineSeries.LineSeriesData.labelLine.lineStyle
+	.LineSeries.select.lineStyle
+	.LineSeries.select.labelLine.lineStyle
+	.LineSeries.blur.lineStyle
+	.LineSeries.blur.labelLine.lineStyle
+	.LineSeries.emphasis.lineStyle
+	.LineSeries.emphasis.labelLine.lineStyle
+	.LineSeries.lineStyle
+	.LineSeries.labelLine.lineStyle
+	.calendar.splitLine.lineStyle
+	.timeline.progress.lineStyle
+	.singleAxis.tooltip.axisPointer.lineStyle
+	.singleAxis.axisPointer.lineStyle
+	.singleAxis.minorSplitLine.lineStyle
+	.singleAxis.splitLine.lineStyle
+	.singleAxis.minorTick.lineStyle
+	.singleAxis.axisTick.lineStyle
+	.singleAxis.axisLine.lineStyle
+	.parallelAxis.minorTick.lineStyle
+	.parallelAxis.axisTick.lineStyle
+	.parallelAxis.axisLine.lineStyle
+	.parallel.parallelAxisDefault.minorTick.lineStyle
+	.parallel.parallelAxisDefault.axisTick.lineStyle
+	.parallel.parallelAxisDefault.axisLine.lineStyle
+	.axisPointer.lineStyle
+	.tooltip.axisPointer.lineStyle
+	.SliderDataZoom.selectedDataBackground.lineStyle
+	.SliderDataZoom.dataBackground.lineStyle
+	.radar.splitLine.lineStyle
+	.radar.axisTick.lineStyle
+	.radar.axisLine.lineStyle
+	.angleAxis.axisPointer.lineStyle
+	.angleAxis.minorSplitLine.lineStyle
+	.angleAxis.splitLine.lineStyle
+	.angleAxis.minorTick.lineStyle
+	.angleAxis.axisTick.lineStyle
+	.angleAxis.axisLine.lineStyle
+	.radiusAxis.axisPointer.lineStyle
+	.radiusAxis.minorSplitLine.lineStyle
+	.radiusAxis.splitLine.lineStyle
+	.radiusAxis.minorTick.lineStyle
+	.radiusAxis.axisTick.lineStyle
+	.radiusAxis.axisLine.lineStyle
+	.polar.tooltip.axisPointer.lineStyle
+	.yAxis.axisPointer.lineStyle
+	.yAxis.minorSplitLine.lineStyle
+	.yAxis.splitLine.lineStyle
+	.yAxis.minorTick.lineStyle
+	.yAxis.axisTick.lineStyle
+	.yAxis.axisLine.lineStyle
+	.xAxis.axisPointer.lineStyle
+	.xAxis.minorSplitLine.lineStyle
+	.xAxis.splitLine.lineStyle
+	.xAxis.minorTick.lineStyle
+	.xAxis.axisTick.lineStyle
+	.xAxis.axisLine.lineStyle
+	.grid.tooltip.axisPointer.lineStyle
+
+#	cap,color,dashOffset,join,miterLimit,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,type,width
+	.timeline.lineStyle
+
+#	cap,color,curveness,dashOffset,join,miterLimit,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,type,width
+	.PictorialBarSeries.markLine.lineStyle
+	.GaugeSeries.markLine.lineStyle
+	.FunnelSeries.markLine.lineStyle
+	.GraphSeries.markLine.lineStyle
+	.GraphSeries.GraphSeriesLink.select.lineStyle
+	.GraphSeries.GraphSeriesLink.blur.lineStyle
+	.GraphSeries.GraphSeriesLink.emphasis.lineStyle
+	.GraphSeries.GraphSeriesLink.lineStyle
+	.GraphSeries.select.lineStyle
+	.GraphSeries.blur.lineStyle
+	.GraphSeries.emphasis.lineStyle
+	.GraphSeries.lineStyle
+	.LinesSeries.markLine.lineStyle
+	.LinesSeries.LinesSeriesData.lineStyle
+	.LinesSeries.lineStyle
+	.MapSeries.markLine.lineStyle
+	.HeatmapSeries.markLine.lineStyle
+	.CandlestickSeries.markLine.lineStyle
+	.BoxplotSeries.markLine.lineStyle
+	.EffectScatterSeries.markLine.lineStyle
+	.ScatterSeries.markLine.lineStyle
+	.PieSeries.markLine.lineStyle
+	.BarSeries.markLine.lineStyle
+	.LineSeries.markLine.lineStyle
+
+#	color,curveness,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,width
+	.TreeSeries.leaves.select.lineStyle
+	.TreeSeries.leaves.blur.lineStyle
+	.TreeSeries.leaves.emphasis.lineStyle
+	.TreeSeries.select.lineStyle
+	.TreeSeries.blur.lineStyle
+	.TreeSeries.emphasis.lineStyle
+	.TreeSeries.lineStyle
+
+#	color,curveness,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.SankeySeries.SankeySeriesLink.select.lineStyle
+	.SankeySeries.SankeySeriesLink.blur.lineStyle
+	.SankeySeries.SankeySeriesLink.emphasis.lineStyle
+	.SankeySeries.SankeySeriesLink.lineStyle
+	.SankeySeries.select.lineStyle
+	.SankeySeries.blur.lineStyle
+	.SankeySeries.emphasis.lineStyle
+	.SankeySeries.lineStyle
+	.SankeySeries.SankeySeriesLevel.select.lineStyle
+	.SankeySeries.SankeySeriesLevel.blur.lineStyle
+	.SankeySeries.SankeySeriesLevel.emphasis.lineStyle
+	.SankeySeries.SankeySeriesLevel.lineStyle
+
+#	color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,width
+	.GaugeSeries.axisLine.lineStyle
+
+
+#selected: 1 (similarity: 1)
+#	
+	.legend.selected
+
+
+#tooltip: 51 (similarity: 2,3,6,1,2,37)
+#	
+	.toolbox.tooltip
+	.legend.tooltip
+
+#	axisPointer,backgroundColor,borderColor,borderWidth,extraCssText,formatter,padding,position,show,textStyle,trigger,valueFormatter
+	.singleAxis.tooltip
+	.polar.tooltip
+	.grid.tooltip
+
+#	backgroundColor,borderColor,borderWidth,extraCssText,formatter,padding,position,show,textStyle
+	.parallelAxis.tooltip
+	.parallel.parallelAxisDefault.tooltip
+	.angleAxis.tooltip
+	.radiusAxis.tooltip
+	.yAxis.tooltip
+	.xAxis.tooltip
+
+#	alwaysShowContent,appendTo,appendToBody,axisPointer,backgroundColor,borderColor,borderWidth,className,confine,enterable,extraCssText,formatter,hideDelay,order,padding,position,renderMode,show,showContent,showDelay,textStyle,transitionDuration,trigger,triggerOn,valueFormatter
+	.tooltip
+
+#	backgroundColor,borderColor,borderWidth,extraCssText,formatter,padding,position,show,textStyle,valueFormatter
+	.geo.tooltip
+	.geo.geoRegion.tooltip
+
+#	backgroundColor,borderColor,borderWidth,extraCssText,formatter,padding,position,textStyle,valueFormatter
+	.CustomSeries.tooltip
+	.CustomSeries.CustomSeriesData.tooltip
+	.ThemeRiverSeries.tooltip
+	.PictorialBarSeries.tooltip
+	.PictorialBarSeries.PictorialBarSeriesData.tooltip
+	.GaugeSeries.tooltip
+	.FunnelSeries.tooltip
+	.FunnelSeries.FunnelSeriesData.tooltip
+	.SankeySeries.tooltip
+	.SankeySeries.SankeySeriesData.tooltip
+	.GraphSeries.tooltip
+	.GraphSeries.GraphSeriesData.tooltip
+	.LinesSeries.tooltip
+	.LinesSeries.LinesSeriesData.tooltip
+	.MapSeries.tooltip
+	.MapSeries.MapSeriesData.tooltip
+	.HeatmapSeries.tooltip
+	.CandlestickSeries.tooltip
+	.CandlestickSeries.CandlestickSeriesData.tooltip
+	.BoxplotSeries.tooltip
+	.BoxplotSeries.BoxplotSeriesData.tooltip
+	.SunburstSeries.tooltip
+	.SunburstSeries.SunburstSeriesData.tooltip
+	.TreemapSeries.tooltip
+	.TreemapSeries.TreemapSeriesData.tooltip
+	.TreeSeries.tooltip
+	.RadarSeries.tooltip
+	.RadarSeries.RadarSeriesData.tooltip
+	.EffectScatterSeries.tooltip
+	.EffectScatterSeries.EffectScatterSeriesData.tooltip
+	.ScatterSeries.tooltip
+	.ScatterSeries.ScatterSeriesData.tooltip
+	.PieSeries.tooltip
+	.PieSeries.PieSeriesData.tooltip
+	.BarSeries.tooltip
+	.LineSeries.tooltip
+	.LineSeries.LineSeriesData.tooltip
+
+
+#legendData: 1 (similarity: 1)
+#	icon,inactiveBorderColor,inactiveBorderWidth,inactiveColor,itemStyle,lineStyle,name,symbolRotate,textStyle
+	.legend.legendData
+
+
+#pageIcons: 1 (similarity: 1)
+#	horizontal,vertical
+	.legend.pageIcons
+
+
+#pageTextStyle: 1 (similarity: 1)
+#	color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,overflow,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.legend.pageTextStyle
+
+
+#selectorLabel: 2 (similarity: 2)
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,offset,overflow,padding,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.legend.selectorLabel
+	.legend.emphasis.selectorLabel
+
+
+#emphasis: 112 (similarity: 1,1,6,1,1,1,1,48,16,3,6,1,4,1,1,1,1,1,2,2,2,3,1,2,1,1,1,1,1)
+#	selectorLabel
+	.legend.emphasis
+
+#	handleLabel,handleStyle,moveHandleStyle
+	.SliderDataZoom.emphasis
+
+#	iconStyle
+	.toolbox.emphasis
+	.toolbox.feature.magicType.emphasis
+	.toolbox.feature.dataZoom.emphasis
+	.toolbox.feature.dataView.emphasis
+	.toolbox.feature.restore.emphasis
+	.toolbox.feature.saveAsImage.emphasis
+
+#	disabled,focus,itemStyle,label
+	.geo.emphasis
+
+#	itemStyle,label
+	.geo.geoRegion.emphasis
+
+#	checkpointStyle,controlStyle,itemStyle,label
+	.timeline.emphasis
+
+#	areaStyle,blurScope,disabled,endLabel,focus,itemStyle,label,labelLine,lineStyle,scale
+	.LineSeries.emphasis
+
+#	disabled,itemStyle,label
+	.PictorialBarSeries.markArea.emphasis
+	.PictorialBarSeries.markPoint.markPointData.emphasis
+	.PictorialBarSeries.markPoint.emphasis
+	.GaugeSeries.markArea.emphasis
+	.GaugeSeries.markPoint.markPointData.emphasis
+	.GaugeSeries.markPoint.emphasis
+	.FunnelSeries.markArea.emphasis
+	.FunnelSeries.markPoint.markPointData.emphasis
+	.FunnelSeries.markPoint.emphasis
+	.SankeySeries.SankeySeriesData.emphasis
+	.GraphSeries.markArea.emphasis
+	.GraphSeries.markPoint.markPointData.emphasis
+	.GraphSeries.markPoint.emphasis
+	.GraphSeries.GraphSeriesData.emphasis
+	.GraphSeries.GraphSeriesCategory.emphasis
+	.LinesSeries.markArea.emphasis
+	.LinesSeries.markPoint.markPointData.emphasis
+	.LinesSeries.markPoint.emphasis
+	.MapSeries.markArea.emphasis
+	.MapSeries.markPoint.markPointData.emphasis
+	.MapSeries.markPoint.emphasis
+	.MapSeries.emphasis
+	.HeatmapSeries.markArea.emphasis
+	.HeatmapSeries.markPoint.markPointData.emphasis
+	.HeatmapSeries.markPoint.emphasis
+	.HeatmapSeries.HeatmapSeriesData.emphasis
+	.CandlestickSeries.markArea.emphasis
+	.CandlestickSeries.markPoint.markPointData.emphasis
+	.CandlestickSeries.markPoint.emphasis
+	.BoxplotSeries.markArea.emphasis
+	.BoxplotSeries.markPoint.markPointData.emphasis
+	.BoxplotSeries.markPoint.emphasis
+	.EffectScatterSeries.markArea.emphasis
+	.EffectScatterSeries.markPoint.markPointData.emphasis
+	.EffectScatterSeries.markPoint.emphasis
+	.ScatterSeries.markArea.emphasis
+	.ScatterSeries.markPoint.markPointData.emphasis
+	.ScatterSeries.markPoint.emphasis
+	.PieSeries.markArea.emphasis
+	.PieSeries.markPoint.markPointData.emphasis
+	.PieSeries.markPoint.emphasis
+	.BarSeries.markArea.emphasis
+	.BarSeries.markPoint.markPointData.emphasis
+	.BarSeries.markPoint.emphasis
+	.LineSeries.markArea.emphasis
+	.LineSeries.markPoint.markPointData.emphasis
+	.LineSeries.markPoint.emphasis
+	.LineSeries.LineSeriesData.emphasis
+
+#	disabled,label,lineStyle
+	.PictorialBarSeries.markLine.emphasis
+	.GaugeSeries.markLine.emphasis
+	.FunnelSeries.markLine.emphasis
+	.GraphSeries.markLine.emphasis
+	.GraphSeries.GraphSeriesLink.emphasis
+	.LinesSeries.markLine.emphasis
+	.LinesSeries.LinesSeriesData.emphasis
+	.MapSeries.markLine.emphasis
+	.HeatmapSeries.markLine.emphasis
+	.CandlestickSeries.markLine.emphasis
+	.BoxplotSeries.markLine.emphasis
+	.EffectScatterSeries.markLine.emphasis
+	.ScatterSeries.markLine.emphasis
+	.PieSeries.markLine.emphasis
+	.BarSeries.markLine.emphasis
+	.LineSeries.markLine.emphasis
+
+#	blurScope,disabled,focus,itemStyle,label,labelLine
+	.ThemeRiverSeries.emphasis
+	.FunnelSeries.emphasis
+	.BarSeries.emphasis
+
+#	disabled,itemStyle,label,labelLine
+	.FunnelSeries.FunnelSeriesData.emphasis
+	.MapSeries.MapSeriesData.emphasis
+	.EffectScatterSeries.EffectScatterSeriesData.emphasis
+	.ScatterSeries.ScatterSeriesData.emphasis
+	.PieSeries.PieSeriesData.emphasis
+	.BarSeries.BarSeriesData.emphasis
+
+#	blurScope,disabled,focus,itemStyle,label,labelLine,scale,scaleSize
+	.PieSeries.emphasis
+
+#	blurScope,disabled,focus,itemStyle,label,labelLine,scale
+	.PictorialBarSeries.PictorialBarSeriesData.emphasis
+	.PictorialBarSeries.emphasis
+	.EffectScatterSeries.emphasis
+	.ScatterSeries.emphasis
+
+#	areaStyle,blurScope,disabled,focus,itemStyle,label,lineStyle
+	.RadarSeries.emphasis
+
+#	areaStyle,itemStyle,label,lineStyle
+	.RadarSeries.RadarSeriesData.emphasis
+
+#	blurScope,disabled,focus,itemStyle,label,lineStyle
+	.TreeSeries.emphasis
+
+#	disabled,itemStyle,label,lineStyle
+	.TreeSeries.leaves.emphasis
+
+#	blurScope,disabled,focus,itemStyle,label,labelLine,upperLabel
+	.TreemapSeries.emphasis
+
+#	itemStyle
+	.CustomSeries.CustomSeriesData.emphasis
+	.TreemapSeries.breadcrumb.emphasis
+
+#	disabled,itemStyle,label,labelLine,upperLabel
+	.TreemapSeries.TreemapSeriesData.emphasis
+	.TreemapSeries.TreemapSeriesLevel.emphasis
+
+#	blurScope,disabled,focus,itemStyle
+	.CandlestickSeries.emphasis
+	.BoxplotSeries.emphasis
+
+#	disabled,itemStyle
+	.GaugeSeries.emphasis
+	.CandlestickSeries.CandlestickSeriesData.emphasis
+	.BoxplotSeries.BoxplotSeriesData.emphasis
+
+#	blurScope,disabled,focus,itemStyle,label
+	.HeatmapSeries.emphasis
+
+#	disabled,lineStyle
+	.ParallelSeries.ParallelSeriesData.emphasis
+	.ParallelSeries.emphasis
+
+#	blurScope,disabled,focus,label,lineStyle
+	.LinesSeries.emphasis
+
+#	blurScope,disabled,edgeLabel,focus,itemStyle,label,lineStyle,scale
+	.GraphSeries.emphasis
+
+#	disabled,edgeLabel,itemStyle,label,lineStyle
+	.SankeySeries.SankeySeriesLevel.emphasis
+
+#	blurScope,disabled,edgeLabel,focus,itemStyle,label,lineStyle
+	.SankeySeries.emphasis
+
+#	disabled,edgeLabel,lineStyle
+	.SankeySeries.SankeySeriesLink.emphasis
+
+
+#legend: 1 (similarity: 1)
+#	align,animation,animationDurationUpdate,backgroundColor,borderColor,borderRadius,borderWidth,bottom,data,emphasis,formatter,height,icon,id,inactiveBorderColor,inactiveBorderWidth,inactiveColor,itemGap,itemHeight,itemStyle,itemWidth,left,lineStyle,orient,padding,pageButtonGap,pageButtonItemGap,pageButtonPosition,pageFormatter,pageIconColor,pageIconInactiveColor,pageIcons,pageIconSize,pageTextStyle,right,scrollDataIndex,selected,selectedMode,selector,selectorButtonGap,selectorItemGap,selectorLabel,selectorPosition,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,symbolRotate,textStyle,tooltip,top,type,width,z,zlevel
+	.legend
+
+
+#label: 314 (similarity: 10,161,1,2,13,10,40,42,1,3,1,3,2,1,1,2,3,7,6,1,1,3)
+#	backgroundColor,borderColor,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,margin,overflow,padding,precision,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.singleAxis.tooltip.axisPointer.label
+	.singleAxis.axisPointer.label
+	.axisPointer.label
+	.tooltip.axisPointer.label
+	.angleAxis.axisPointer.label
+	.radiusAxis.axisPointer.label
+	.polar.tooltip.axisPointer.label
+	.yAxis.axisPointer.label
+	.xAxis.axisPointer.label
+	.grid.tooltip.axisPointer.label
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,offset,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.PictorialBarSeries.markArea.blur.label
+	.PictorialBarSeries.markArea.emphasis.label
+	.PictorialBarSeries.markArea.label
+	.PictorialBarSeries.markPoint.markPointData.emphasis.label
+	.PictorialBarSeries.markPoint.markPointData.label
+	.PictorialBarSeries.markPoint.blur.label
+	.PictorialBarSeries.markPoint.emphasis.label
+	.PictorialBarSeries.markPoint.label
+	.PictorialBarSeries.select.label
+	.PictorialBarSeries.blur.label
+	.PictorialBarSeries.emphasis.label
+	.GaugeSeries.markArea.blur.label
+	.GaugeSeries.markArea.emphasis.label
+	.GaugeSeries.markArea.label
+	.GaugeSeries.markPoint.markPointData.emphasis.label
+	.GaugeSeries.markPoint.markPointData.label
+	.GaugeSeries.markPoint.blur.label
+	.GaugeSeries.markPoint.emphasis.label
+	.GaugeSeries.markPoint.label
+	.FunnelSeries.markArea.blur.label
+	.FunnelSeries.markArea.emphasis.label
+	.FunnelSeries.markArea.label
+	.FunnelSeries.markPoint.markPointData.emphasis.label
+	.FunnelSeries.markPoint.markPointData.label
+	.FunnelSeries.markPoint.blur.label
+	.FunnelSeries.markPoint.emphasis.label
+	.FunnelSeries.markPoint.label
+	.SankeySeries.select.label
+	.SankeySeries.blur.label
+	.SankeySeries.emphasis.label
+	.SankeySeries.SankeySeriesLevel.label
+	.GraphSeries.markArea.blur.label
+	.GraphSeries.markArea.emphasis.label
+	.GraphSeries.markArea.label
+	.GraphSeries.markPoint.markPointData.emphasis.label
+	.GraphSeries.markPoint.markPointData.label
+	.GraphSeries.markPoint.blur.label
+	.GraphSeries.markPoint.emphasis.label
+	.GraphSeries.markPoint.label
+	.GraphSeries.GraphSeriesCategory.label
+	.GraphSeries.select.label
+	.GraphSeries.blur.label
+	.GraphSeries.emphasis.label
+	.LinesSeries.markArea.blur.label
+	.LinesSeries.markArea.emphasis.label
+	.LinesSeries.markArea.label
+	.LinesSeries.markPoint.markPointData.emphasis.label
+	.LinesSeries.markPoint.markPointData.label
+	.LinesSeries.markPoint.blur.label
+	.LinesSeries.markPoint.emphasis.label
+	.LinesSeries.markPoint.label
+	.MapSeries.markArea.blur.label
+	.MapSeries.markArea.emphasis.label
+	.MapSeries.markArea.label
+	.MapSeries.markPoint.markPointData.emphasis.label
+	.MapSeries.markPoint.markPointData.label
+	.MapSeries.markPoint.blur.label
+	.MapSeries.markPoint.emphasis.label
+	.MapSeries.markPoint.label
+	.MapSeries.select.label
+	.MapSeries.emphasis.label
+	.HeatmapSeries.markArea.blur.label
+	.HeatmapSeries.markArea.emphasis.label
+	.HeatmapSeries.markArea.label
+	.HeatmapSeries.markPoint.markPointData.emphasis.label
+	.HeatmapSeries.markPoint.markPointData.label
+	.HeatmapSeries.markPoint.blur.label
+	.HeatmapSeries.markPoint.emphasis.label
+	.HeatmapSeries.markPoint.label
+	.CandlestickSeries.markArea.blur.label
+	.CandlestickSeries.markArea.emphasis.label
+	.CandlestickSeries.markArea.label
+	.CandlestickSeries.markPoint.markPointData.emphasis.label
+	.CandlestickSeries.markPoint.markPointData.label
+	.CandlestickSeries.markPoint.blur.label
+	.CandlestickSeries.markPoint.emphasis.label
+	.CandlestickSeries.markPoint.label
+	.BoxplotSeries.markArea.blur.label
+	.BoxplotSeries.markArea.emphasis.label
+	.BoxplotSeries.markArea.label
+	.BoxplotSeries.markPoint.markPointData.emphasis.label
+	.BoxplotSeries.markPoint.markPointData.label
+	.BoxplotSeries.markPoint.blur.label
+	.BoxplotSeries.markPoint.emphasis.label
+	.BoxplotSeries.markPoint.label
+	.TreemapSeries.TreemapSeriesData.select.label
+	.TreemapSeries.TreemapSeriesData.blur.label
+	.TreemapSeries.TreemapSeriesData.emphasis.label
+	.TreemapSeries.TreemapSeriesLevel.select.label
+	.TreemapSeries.TreemapSeriesLevel.blur.label
+	.TreemapSeries.TreemapSeriesLevel.emphasis.label
+	.TreemapSeries.select.label
+	.TreemapSeries.blur.label
+	.TreemapSeries.emphasis.label
+	.TreeSeries.leaves.label
+	.TreeSeries.select.label
+	.TreeSeries.blur.label
+	.TreeSeries.emphasis.label
+	.RadarSeries.select.label
+	.RadarSeries.blur.label
+	.RadarSeries.emphasis.label
+	.EffectScatterSeries.markArea.blur.label
+	.EffectScatterSeries.markArea.emphasis.label
+	.EffectScatterSeries.markArea.label
+	.EffectScatterSeries.markPoint.markPointData.emphasis.label
+	.EffectScatterSeries.markPoint.markPointData.label
+	.EffectScatterSeries.markPoint.blur.label
+	.EffectScatterSeries.markPoint.emphasis.label
+	.EffectScatterSeries.markPoint.label
+	.EffectScatterSeries.select.label
+	.EffectScatterSeries.blur.label
+	.EffectScatterSeries.emphasis.label
+	.ScatterSeries.markArea.blur.label
+	.ScatterSeries.markArea.emphasis.label
+	.ScatterSeries.markArea.label
+	.ScatterSeries.markPoint.markPointData.emphasis.label
+	.ScatterSeries.markPoint.markPointData.label
+	.ScatterSeries.markPoint.blur.label
+	.ScatterSeries.markPoint.emphasis.label
+	.ScatterSeries.markPoint.label
+	.ScatterSeries.select.label
+	.ScatterSeries.blur.label
+	.ScatterSeries.emphasis.label
+	.PieSeries.markArea.blur.label
+	.PieSeries.markArea.emphasis.label
+	.PieSeries.markArea.label
+	.PieSeries.markPoint.markPointData.emphasis.label
+	.PieSeries.markPoint.markPointData.label
+	.PieSeries.markPoint.blur.label
+	.PieSeries.markPoint.emphasis.label
+	.PieSeries.markPoint.label
+	.BarSeries.markArea.blur.label
+	.BarSeries.markArea.emphasis.label
+	.BarSeries.markArea.label
+	.BarSeries.markPoint.markPointData.emphasis.label
+	.BarSeries.markPoint.markPointData.label
+	.BarSeries.markPoint.blur.label
+	.BarSeries.markPoint.emphasis.label
+	.BarSeries.markPoint.label
+	.BarSeries.select.label
+	.BarSeries.blur.label
+	.BarSeries.emphasis.label
+	.LineSeries.markArea.blur.label
+	.LineSeries.markArea.emphasis.label
+	.LineSeries.markArea.label
+	.LineSeries.markPoint.markPointData.emphasis.label
+	.LineSeries.markPoint.markPointData.label
+	.LineSeries.markPoint.blur.label
+	.LineSeries.markPoint.emphasis.label
+	.LineSeries.markPoint.label
+	.LineSeries.select.label
+	.LineSeries.blur.label
+	.LineSeries.emphasis.label
+	.geo.geoRegion.blur.label
+	.geo.geoRegion.select.label
+	.geo.geoRegion.emphasis.label
+	.geo.geoRegion.label
+	.geo.blur.label
+	.geo.select.label
+	.geo.emphasis.label
+	.geo.label
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,interval,lineHeight,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.timeline.label
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,interval,lineHeight,overflow,padding,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.timeline.emphasis.label
+	.timeline.progress.label
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,minMargin,offset,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.PictorialBarSeries.label
+	.SankeySeries.label
+	.GraphSeries.label
+	.MapSeries.label
+	.TreemapSeries.TreemapSeriesData.label
+	.TreemapSeries.TreemapSeriesLevel.label
+	.TreemapSeries.label
+	.TreeSeries.label
+	.RadarSeries.label
+	.EffectScatterSeries.label
+	.ScatterSeries.label
+	.BarSeries.label
+	.LineSeries.label
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,minMargin,offset,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.PictorialBarSeries.PictorialBarSeriesData.label
+	.SankeySeries.SankeySeriesData.label
+	.GraphSeries.GraphSeriesData.label
+	.HeatmapSeries.HeatmapSeriesData.label
+	.HeatmapSeries.label
+	.RadarSeries.RadarSeriesData.label
+	.EffectScatterSeries.EffectScatterSeriesData.label
+	.ScatterSeries.ScatterSeriesData.label
+	.BarSeries.BarSeriesData.label
+	.LineSeries.LineSeriesData.label
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,offset,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.PictorialBarSeries.PictorialBarSeriesData.select.label
+	.PictorialBarSeries.PictorialBarSeriesData.blur.label
+	.PictorialBarSeries.PictorialBarSeriesData.emphasis.label
+	.SankeySeries.SankeySeriesData.select.label
+	.SankeySeries.SankeySeriesData.blur.label
+	.SankeySeries.SankeySeriesData.emphasis.label
+	.SankeySeries.SankeySeriesLevel.select.label
+	.SankeySeries.SankeySeriesLevel.blur.label
+	.SankeySeries.SankeySeriesLevel.emphasis.label
+	.GraphSeries.GraphSeriesLink.select.label
+	.GraphSeries.GraphSeriesLink.blur.label
+	.GraphSeries.GraphSeriesLink.emphasis.label
+	.GraphSeries.GraphSeriesData.select.label
+	.GraphSeries.GraphSeriesData.blur.label
+	.GraphSeries.GraphSeriesData.emphasis.label
+	.GraphSeries.GraphSeriesCategory.select.label
+	.GraphSeries.GraphSeriesCategory.blur.label
+	.GraphSeries.GraphSeriesCategory.emphasis.label
+	.HeatmapSeries.HeatmapSeriesData.emphasis.label
+	.HeatmapSeries.select.label
+	.HeatmapSeries.blur.label
+	.HeatmapSeries.emphasis.label
+	.TreeSeries.leaves.select.label
+	.TreeSeries.leaves.blur.label
+	.TreeSeries.leaves.emphasis.label
+	.RadarSeries.RadarSeriesData.select.label
+	.RadarSeries.RadarSeriesData.blur.label
+	.RadarSeries.RadarSeriesData.emphasis.label
+	.EffectScatterSeries.EffectScatterSeriesData.select.label
+	.EffectScatterSeries.EffectScatterSeriesData.blur.label
+	.EffectScatterSeries.EffectScatterSeriesData.emphasis.label
+	.ScatterSeries.ScatterSeriesData.select.label
+	.ScatterSeries.ScatterSeriesData.blur.label
+	.ScatterSeries.ScatterSeriesData.emphasis.label
+	.BarSeries.BarSeriesData.select.label
+	.BarSeries.BarSeriesData.blur.label
+	.BarSeries.BarSeriesData.emphasis.label
+	.LineSeries.LineSeriesData.select.label
+	.LineSeries.LineSeriesData.blur.label
+	.LineSeries.LineSeriesData.emphasis.label
+
+#	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,overflow,padding,position,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.PictorialBarSeries.markLine.blur.label
+	.PictorialBarSeries.markLine.emphasis.label
+	.PictorialBarSeries.markLine.label
+	.GaugeSeries.markLine.blur.label
+	.GaugeSeries.markLine.emphasis.label
+	.GaugeSeries.markLine.label
+	.FunnelSeries.markLine.blur.label
+	.FunnelSeries.markLine.emphasis.label
+	.FunnelSeries.markLine.label
+	.GraphSeries.markLine.blur.label
+	.GraphSeries.markLine.emphasis.label
+	.GraphSeries.markLine.label
+	.LinesSeries.markLine.blur.label
+	.LinesSeries.markLine.emphasis.label
+	.LinesSeries.markLine.label
+	.MapSeries.markLine.blur.label
+	.MapSeries.markLine.emphasis.label
+	.MapSeries.markLine.label
+	.HeatmapSeries.markLine.blur.label
+	.HeatmapSeries.markLine.emphasis.label
+	.HeatmapSeries.markLine.label
+	.CandlestickSeries.markLine.blur.label
+	.CandlestickSeries.markLine.emphasis.label
+	.CandlestickSeries.markLine.label
+	.BoxplotSeries.markLine.blur.label
+	.BoxplotSeries.markLine.emphasis.label
+	.BoxplotSeries.markLine.label
+	.EffectScatterSeries.markLine.blur.label
+	.EffectScatterSeries.markLine.emphasis.label
+	.EffectScatterSeries.markLine.label
+	.ScatterSeries.markLine.blur.label
+	.ScatterSeries.markLine.emphasis.label
+	.ScatterSeries.markLine.label
+	.PieSeries.markLine.blur.label
+	.PieSeries.markLine.emphasis.label
+	.PieSeries.markLine.label
+	.BarSeries.markLine.blur.label
+	.BarSeries.markLine.emphasis.label
+	.BarSeries.markLine.label
+	.LineSeries.markLine.blur.label
+	.LineSeries.markLine.emphasis.label
+	.LineSeries.markLine.label
+
+#	alignTo,backgroundColor,bleedMargin,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distanceToLabelLine,edgeDistance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,minMargin,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.PieSeries.label
+
+#	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,overflow,padding,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.PieSeries.select.label
+	.PieSeries.blur.label
+	.PieSeries.emphasis.label
+
+#	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,minMargin,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.PieSeries.PieSeriesData.label
+
+#	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,overflow,padding,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.PieSeries.PieSeriesData.select.label
+	.PieSeries.PieSeriesData.blur.label
+	.PieSeries.PieSeriesData.emphasis.label
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,minAngle,minMargin,offset,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.SunburstSeries.label
+	.SunburstSeries.SunburstSeriesData.label
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,minAngle,offset,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.SunburstSeries.SunburstSeriesLevel.label
+
+#	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,minMargin,offset,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.MapSeries.MapSeriesData.label
+
+#	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,offset,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.MapSeries.MapSeriesData.select.label
+	.MapSeries.MapSeriesData.emphasis.label
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,minMargin,overflow,padding,position,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.FunnelSeries.label
+	.LinesSeries.LinesSeriesData.label
+	.LinesSeries.label
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,overflow,padding,position,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.GraphSeries.GraphSeriesLink.label
+	.LinesSeries.LinesSeriesData.select.label
+	.LinesSeries.LinesSeriesData.blur.label
+	.LinesSeries.LinesSeriesData.emphasis.label
+	.LinesSeries.select.label
+	.LinesSeries.blur.label
+	.LinesSeries.emphasis.label
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,overflow,padding,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.FunnelSeries.FunnelSeriesData.select.label
+	.FunnelSeries.FunnelSeriesData.blur.label
+	.FunnelSeries.FunnelSeriesData.emphasis.label
+	.FunnelSeries.select.label
+	.FunnelSeries.blur.label
+	.FunnelSeries.emphasis.label
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,minMargin,overflow,padding,position,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.FunnelSeries.FunnelSeriesData.label
+
+#	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,minMargin,offset,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.ThemeRiverSeries.label
+
+#	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,offset,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.ThemeRiverSeries.select.label
+	.ThemeRiverSeries.blur.label
+	.ThemeRiverSeries.emphasis.label
+
+
+#shadowStyle: 10 (similarity: 10)
+#	color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.singleAxis.tooltip.axisPointer.shadowStyle
+	.singleAxis.axisPointer.shadowStyle
+	.axisPointer.shadowStyle
+	.tooltip.axisPointer.shadowStyle
+	.angleAxis.axisPointer.shadowStyle
+	.radiusAxis.axisPointer.shadowStyle
+	.polar.tooltip.axisPointer.shadowStyle
+	.yAxis.axisPointer.shadowStyle
+	.xAxis.axisPointer.shadowStyle
+	.grid.tooltip.axisPointer.shadowStyle
+
+
+#crossStyle: 4 (similarity: 4)
+#	cap,color,dashOffset,join,miterLimit,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,type,width
+	.singleAxis.tooltip.axisPointer.crossStyle
+	.tooltip.axisPointer.crossStyle
+	.polar.tooltip.axisPointer.crossStyle
+	.grid.tooltip.axisPointer.crossStyle
+
+
+#axisPointer: 10 (similarity: 4,5,1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,axis,crossStyle,label,lineStyle,shadowStyle,snap,type,z
+	.singleAxis.tooltip.axisPointer
+	.tooltip.axisPointer
+	.polar.tooltip.axisPointer
+	.grid.tooltip.axisPointer
+
+#	handle,label,lineStyle,shadowStyle,show,snap,status,triggerEmphasis,triggerTooltip,type,value,z
+	.singleAxis.axisPointer
+	.angleAxis.axisPointer
+	.radiusAxis.axisPointer
+	.yAxis.axisPointer
+	.xAxis.axisPointer
+
+#	handle,id,label,lineStyle,link,shadowStyle,show,snap,status,triggerEmphasis,triggerOn,triggerTooltip,type,value,z
+	.axisPointer
+
+
+#grid: 1 (similarity: 1)
+#	backgroundColor,borderColor,borderWidth,bottom,containLabel,height,id,left,right,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,tooltip,top,width,z,zlevel
+	.grid
+
+
+#nameTextStyle: 6 (similarity: 6)
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,overflow,padding,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.singleAxis.nameTextStyle
+	.parallelAxis.nameTextStyle
+	.parallel.parallelAxisDefault.nameTextStyle
+	.radiusAxis.nameTextStyle
+	.yAxis.nameTextStyle
+	.xAxis.nameTextStyle
+
+
+#nameTruncate: 6 (similarity: 6)
+#	ellipsis,maxWidth
+	.singleAxis.nameTruncate
+	.parallelAxis.nameTruncate
+	.parallel.parallelAxisDefault.nameTruncate
+	.radiusAxis.nameTruncate
+	.yAxis.nameTruncate
+	.xAxis.nameTruncate
+
+
+#axisLine: 9 (similarity: 2,6,1)
+#	lineStyle,onZero,onZeroAxisIndex,show,symbol,symbolOffset,symbolSize
+	.yAxis.axisLine
+	.xAxis.axisLine
+
+#	lineStyle,show,symbol,symbolOffset,symbolSize
+	.singleAxis.axisLine
+	.parallelAxis.axisLine
+	.parallel.parallelAxisDefault.axisLine
+	.radar.axisLine
+	.angleAxis.axisLine
+	.radiusAxis.axisLine
+
+#	lineStyle,roundCap,show
+	.GaugeSeries.axisLine
+
+
+#axisTick: 9 (similarity: 7,1,1)
+#	alignWithLabel,customValues,inside,interval,length,lineStyle,show
+	.singleAxis.axisTick
+	.parallelAxis.axisTick
+	.parallel.parallelAxisDefault.axisTick
+	.angleAxis.axisTick
+	.radiusAxis.axisTick
+	.yAxis.axisTick
+	.xAxis.axisTick
+
+#	customValues,length,lineStyle,show
+	.radar.axisTick
+
+#	distance,length,lineStyle,show,splitNumber
+	.GaugeSeries.axisTick
+
+
+#minorTick: 7 (similarity: 7)
+#	length,lineStyle,show,splitNumber
+	.singleAxis.minorTick
+	.parallelAxis.minorTick
+	.parallel.parallelAxisDefault.minorTick
+	.angleAxis.minorTick
+	.radiusAxis.minorTick
+	.yAxis.minorTick
+	.xAxis.minorTick
+
+
+#axisLabel: 9 (similarity: 1,1,4,1,1,1)
+#	align,alignMaxLabel,alignMinLabel,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,customValues,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,hideOverlap,inside,interval,lineHeight,margin,overflow,padding,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,showMaxLabel,showMinLabel,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.xAxis.axisLabel
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,customValues,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,hideOverlap,inside,interval,lineHeight,margin,overflow,padding,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,showMaxLabel,showMinLabel,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,verticalAlignMaxLabel,verticalAlignMinLabel,width
+	.yAxis.axisLabel
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,customValues,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,hideOverlap,inside,interval,lineHeight,margin,overflow,padding,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,showMaxLabel,showMinLabel,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.singleAxis.axisLabel
+	.parallelAxis.axisLabel
+	.parallel.parallelAxisDefault.axisLabel
+	.radiusAxis.axisLabel
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,customValues,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,hideOverlap,inside,interval,lineHeight,margin,overflow,padding,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,showMaxLabel,showMinLabel,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.angleAxis.axisLabel
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,customValues,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,hideOverlap,lineHeight,margin,overflow,padding,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,showMaxLabel,showMinLabel,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.radar.axisLabel
+
+#	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,overflow,padding,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.GaugeSeries.axisLabel
+
+
+#splitLine: 8 (similarity: 5,1,1,1)
+#	interval,lineStyle,show,showMaxLabel,showMinLine
+	.singleAxis.splitLine
+	.angleAxis.splitLine
+	.radiusAxis.splitLine
+	.yAxis.splitLine
+	.xAxis.splitLine
+
+#	lineStyle,show,showMaxLabel,showMinLine
+	.radar.splitLine
+
+#	lineStyle,show
+	.calendar.splitLine
+
+#	distance,length,lineStyle,show
+	.GaugeSeries.splitLine
+
+
+#minorSplitLine: 5 (similarity: 5)
+#	lineStyle,show
+	.singleAxis.minorSplitLine
+	.angleAxis.minorSplitLine
+	.radiusAxis.minorSplitLine
+	.yAxis.minorSplitLine
+	.xAxis.minorSplitLine
+
+
+#areaStyle: 20 (similarity: 19,1)
+#	color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.RadarSeries.RadarSeriesData.select.areaStyle
+	.RadarSeries.RadarSeriesData.blur.areaStyle
+	.RadarSeries.RadarSeriesData.emphasis.areaStyle
+	.RadarSeries.RadarSeriesData.areaStyle
+	.RadarSeries.select.areaStyle
+	.RadarSeries.blur.areaStyle
+	.RadarSeries.emphasis.areaStyle
+	.RadarSeries.areaStyle
+	.LineSeries.select.areaStyle
+	.LineSeries.blur.areaStyle
+	.LineSeries.emphasis.areaStyle
+	.singleAxis.splitArea.areaStyle
+	.SliderDataZoom.selectedDataBackground.areaStyle
+	.SliderDataZoom.dataBackground.areaStyle
+	.radar.splitArea.areaStyle
+	.angleAxis.splitArea.areaStyle
+	.radiusAxis.splitArea.areaStyle
+	.yAxis.splitArea.areaStyle
+	.xAxis.splitArea.areaStyle
+
+#	color,opacity,origin,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.LineSeries.areaStyle
+
+
+#splitArea: 6 (similarity: 5,1)
+#	areaStyle,interval,show
+	.singleAxis.splitArea
+	.angleAxis.splitArea
+	.radiusAxis.splitArea
+	.yAxis.splitArea
+	.xAxis.splitArea
+
+#	areaStyle,show
+	.radar.splitArea
+
+
+#handle: 6 (similarity: 6)
+#	color,icon,margin,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,size,throttle
+	.singleAxis.axisPointer.handle
+	.axisPointer.handle
+	.angleAxis.axisPointer.handle
+	.radiusAxis.axisPointer.handle
+	.yAxis.axisPointer.handle
+	.xAxis.axisPointer.handle
+
+
+#xAxis: 1 (similarity: 1)
+#	alignTicks,animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,axisLabel,axisLine,axisPointer,axisTick,boundaryGap,data,gridIndex,id,interval,inverse,logBase,max,maxInterval,min,minInterval,minorSplitLine,minorTick,name,nameGap,nameLocation,nameRotate,nameTextStyle,nameTruncate,offset,position,scale,show,silent,splitArea,splitLine,splitNumber,startValue,tooltip,triggerEvent,type,z,zlevel
+	.xAxis
+
+
+#yAxis: 1 (similarity: 1)
+#	alignTicks,animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,axisLabel,axisLine,axisPointer,axisTick,boundaryGap,data,gridIndex,id,interval,inverse,logBase,max,maxInterval,min,minInterval,minorSplitLine,minorTick,name,nameGap,nameLocation,nameRotate,nameTextStyle,nameTruncate,offset,position,scale,show,silent,splitArea,splitLine,splitNumber,startValue,tooltip,triggerEvent,type,z,zlevel
+	.yAxis
+
+
+#polar: 1 (similarity: 1)
+#	center,id,radius,tooltip,z,zlevel
+	.polar
+
+
+#radiusAxis: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,axisLabel,axisLine,axisPointer,axisTick,boundaryGap,data,id,interval,inverse,logBase,max,maxInterval,min,minInterval,minorSplitLine,minorTick,name,nameGap,nameLocation,nameRotate,nameTextStyle,nameTruncate,polarIndex,scale,silent,splitArea,splitLine,splitNumber,startValue,tooltip,triggerEvent,type,z,zlevel
+	.radiusAxis
+
+
+#angleAxis: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,axisLabel,axisLine,axisPointer,axisTick,boundaryGap,clockwise,data,endAngle,id,interval,logBase,max,maxInterval,min,minInterval,minorSplitLine,minorTick,polarIndex,scale,silent,splitArea,splitLine,splitNumber,startAngle,startValue,tooltip,triggerEvent,type,z,zlevel
+	.angleAxis
+
+
+#axisName: 1 (similarity: 1)
+#	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,overflow,padding,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,width
+	.radar.axisName
+
+
+#radarIndicator: 1 (similarity: 1)
+#	color,max,min,name
+	.radar.radarIndicator
+
+
+#radar: 1 (similarity: 1)
+#	axisLabel,axisLine,axisName,axisTick,center,id,indicator,nameGap,radius,scale,shape,silent,splitArea,splitLine,splitNumber,startAngle,triggerEvent,z,zlevel
+	.radar
+
+
+#InsideDataZoom: 1 (similarity: 1)
+#	angleAxisIndex,disabled,end,endValue,filterMode,id,maxSpan,maxValueSpan,minSpan,minValueSpan,moveOnMouseMove,moveOnMouseWheel,orient,preventDefaultMouseMove,radiusAxisIndex,rangeMode,start,startValue,throttle,type,xAxisIndex,yAxisIndex,zoomLock,zoomOnMouseWheel
+	.InsideDataZoom
+
+
+#dataBackground: 1 (similarity: 1)
+#	areaStyle,lineStyle
+	.SliderDataZoom.dataBackground
+
+
+#selectedDataBackground: 1 (similarity: 1)
+#	areaStyle,lineStyle
+	.SliderDataZoom.selectedDataBackground
+
+
+#handleStyle: 3 (similarity: 3)
+#	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.ContinuousVisualMap.handleStyle
+	.SliderDataZoom.emphasis.handleStyle
+	.SliderDataZoom.handleStyle
+
+
+#handleLabel: 2 (similarity: 2)
+#	show
+	.SliderDataZoom.emphasis.handleLabel
+	.SliderDataZoom.handleLabel
+
+
+#moveHandleStyle: 2 (similarity: 2)
+#	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.SliderDataZoom.emphasis.moveHandleStyle
+	.SliderDataZoom.moveHandleStyle
+
+
+#brushStyle: 3 (similarity: 2,1)
+#	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.toolbox.feature.dataZoom.brushStyle
+	.SliderDataZoom.brushStyle
+
+#	
+	.brush.brushStyle
+
+
+#SliderDataZoom: 1 (similarity: 1)
+#	angleAxisIndex,backgroundColor,borderColor,borderRadius,bottom,brushSelect,brushStyle,dataBackground,emphasis,end,endValue,fillerColor,filterMode,handleIcon,handleLabel,handleSize,handleStyle,height,id,labelFormatter,labelPrecision,left,maxSpan,maxValueSpan,minSpan,minValueSpan,moveHandleIcon,moveHandleSize,moveHandleStyle,orient,radiusAxisIndex,rangeMode,realtime,right,selectedDataBackground,show,showDataShadow,showDetail,start,startValue,textStyle,throttle,top,type,width,xAxisIndex,yAxisIndex,z,zlevel,zoomLock
+	.SliderDataZoom
+
+
+#inRange: 4 (similarity: 4)
+#	
+	.PiecewiseVisualMap.controller.inRange
+	.PiecewiseVisualMap.inRange
+	.ContinuousVisualMap.controller.inRange
+	.ContinuousVisualMap.inRange
+
+
+#outOfRange: 4 (similarity: 4)
+#	
+	.PiecewiseVisualMap.controller.outOfRange
+	.PiecewiseVisualMap.outOfRange
+	.ContinuousVisualMap.controller.outOfRange
+	.ContinuousVisualMap.outOfRange
+
+
+#controller: 2 (similarity: 2)
+#	inRange,outOfRange
+	.PiecewiseVisualMap.controller
+	.ContinuousVisualMap.controller
+
+
+#indicatorStyle: 1 (similarity: 1)
+#	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.ContinuousVisualMap.indicatorStyle
+
+
+#ContinuousVisualMap: 1 (similarity: 1)
+#	align,backgroundColor,borderColor,borderWidth,bottom,calculable,color,controller,dimension,formatter,handleIcon,handleSize,handleStyle,hoverLink,id,indicatorIcon,indicatorSize,indicatorStyle,inRange,inverse,itemHeight,itemWidth,left,max,min,orient,outOfRange,padding,precision,range,realtime,right,seriesIndex,show,text,textGap,textStyle,top,type,z,zlevel
+	.ContinuousVisualMap
+
+
+#PiecewiseVisualMap: 1 (similarity: 1)
+#	align,backgroundColor,borderColor,borderWidth,bottom,categories,color,controller,dimension,formatter,hoverLink,id,inRange,inverse,itemGap,itemHeight,itemSymbol,itemWidth,left,max,maxOpen,min,minOpen,orient,outOfRange,padding,pieces,precision,right,selectedMode,seriesIndex,show,showLabel,splitNumber,text,textGap,textStyle,top,type,z,zlevel
+	.PiecewiseVisualMap
+
+
+#iconStyle: 12 (similarity: 6,6)
+#	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.toolbox.iconStyle
+	.toolbox.feature.magicType.iconStyle
+	.toolbox.feature.dataZoom.iconStyle
+	.toolbox.feature.dataView.iconStyle
+	.toolbox.feature.restore.iconStyle
+	.toolbox.feature.saveAsImage.iconStyle
+
+#	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,textAlign,textBackgroundColor,textBorderRadius,textFill,textPadding,textPosition
+	.toolbox.emphasis.iconStyle
+	.toolbox.feature.magicType.emphasis.iconStyle
+	.toolbox.feature.dataZoom.emphasis.iconStyle
+	.toolbox.feature.dataView.emphasis.iconStyle
+	.toolbox.feature.restore.emphasis.iconStyle
+	.toolbox.feature.saveAsImage.emphasis.iconStyle
+
+
+#saveAsImage: 1 (similarity: 1)
+#	backgroundColor,connectedBackgroundColor,emphasis,excludeComponents,icon,iconStyle,name,pixelRatio,show,title,type
+	.toolbox.feature.saveAsImage
+
+
+#restore: 1 (similarity: 1)
+#	emphasis,icon,iconStyle,show,title
+	.toolbox.feature.restore
+
+
+#dataView: 1 (similarity: 1)
+#	backgroundColor,buttonColor,buttonTextColor,contentToOption,emphasis,icon,iconStyle,lang,optionToContent,readOnly,show,textareaBorderColor,textareaColor,textColor,title
+	.toolbox.feature.dataView
+
+
+#dataZoom: 1 (similarity: 1)
+#	brushStyle,emphasis,filterMode,icon,iconStyle,show,title,xAxisIndex,yAxisIndex
+	.toolbox.feature.dataZoom
+
+
+#line: 1 (similarity: 1)
+#	
+	.toolbox.feature.magicType.option.line
+
+
+#bar: 1 (similarity: 1)
+#	
+	.toolbox.feature.magicType.option.bar
+
+
+#stack: 1 (similarity: 1)
+#	
+	.toolbox.feature.magicType.option.stack
+
+
+#option: 2 (similarity: 1,1)
+#	bar,line,stack
+	.toolbox.feature.magicType.option
+
+#	
+	.Media.option
+
+
+#seriesIndex: 1 (similarity: 1)
+#	bar,line
+	.toolbox.feature.magicType.seriesIndex
+
+
+#magicType: 1 (similarity: 1)
+#	emphasis,icon,iconStyle,option,seriesIndex,show,title,type
+	.toolbox.feature.magicType
+
+
+#brush: 2 (similarity: 1,1)
+#	icon,title,type
+	.toolbox.feature.brush
+
+#	brushLink,brushMode,brushStyle,brushType,geoIndex,id,inBrush,outOfBrush,removeOnClick,seriesIndex,throttleDelay,throttleType,toolbox,transformable,xAxisIndex,yAxisIndex,z
+	.brush
+
+
+#feature: 1 (similarity: 1)
+#	brush,dataView,dataZoom,magicType,restore,saveAsImage
+	.toolbox.feature
+
+
+#toolbox: 1 (similarity: 1)
+#	bottom,emphasis,feature,height,iconStyle,id,itemGap,itemSize,left,orient,right,show,showTitle,tooltip,top,width,z,zlevel
+	.toolbox
+
+
+#inBrush: 1 (similarity: 1)
+#	
+	.brush.inBrush
+
+
+#outOfBrush: 1 (similarity: 1)
+#	
+	.brush.outOfBrush
+
+
+#projection: 2 (similarity: 2)
+#	project,stream,unproject
+	.MapSeries.projection
+	.geo.projection
+
+
+#scaleLimit: 4 (similarity: 4)
+#	max,min
+	.GraphSeries.scaleLimit
+	.MapSeries.scaleLimit
+	.TreemapSeries.scaleLimit
+	.geo.scaleLimit
+
+
+#nameMap: 2 (similarity: 2)
+#	
+	.MapSeries.nameMap
+	.geo.nameMap
+
+
+#select: 41 (similarity: 7,1,1,14,2,2,3,4,3,3,1)
+#	disabled,itemStyle,label
+	.SankeySeries.SankeySeriesData.select
+	.GraphSeries.GraphSeriesData.select
+	.GraphSeries.GraphSeriesCategory.select
+	.MapSeries.select
+	.HeatmapSeries.select
+	.LineSeries.LineSeriesData.select
+	.geo.select
+
+#	itemStyle,label
+	.geo.geoRegion.select
+
+#	areaStyle,disabled,endLabel,itemStyle,label,labelLine,lineStyle
+	.LineSeries.select
+
+#	disabled,itemStyle,label,labelLine
+	.ThemeRiverSeries.select
+	.PictorialBarSeries.PictorialBarSeriesData.select
+	.PictorialBarSeries.select
+	.FunnelSeries.FunnelSeriesData.select
+	.FunnelSeries.select
+	.MapSeries.MapSeriesData.select
+	.EffectScatterSeries.EffectScatterSeriesData.select
+	.EffectScatterSeries.select
+	.ScatterSeries.ScatterSeriesData.select
+	.ScatterSeries.select
+	.PieSeries.PieSeriesData.select
+	.PieSeries.select
+	.BarSeries.BarSeriesData.select
+	.BarSeries.select
+
+#	areaStyle,disabled,itemStyle,label,lineStyle
+	.RadarSeries.RadarSeriesData.select
+	.RadarSeries.select
+
+#	disabled,itemStyle,label,lineStyle
+	.TreeSeries.leaves.select
+	.TreeSeries.select
+
+#	disabled,itemStyle,label,labelLine,upperLabel
+	.TreemapSeries.TreemapSeriesData.select
+	.TreemapSeries.TreemapSeriesLevel.select
+	.TreemapSeries.select
+
+#	disabled,itemStyle
+	.CandlestickSeries.CandlestickSeriesData.select
+	.CandlestickSeries.select
+	.BoxplotSeries.BoxplotSeriesData.select
+	.BoxplotSeries.select
+
+#	disabled,label,lineStyle
+	.GraphSeries.GraphSeriesLink.select
+	.LinesSeries.LinesSeriesData.select
+	.LinesSeries.select
+
+#	disabled,edgeLabel,itemStyle,label,lineStyle
+	.SankeySeries.select
+	.SankeySeries.SankeySeriesLevel.select
+	.GraphSeries.select
+
+#	disabled,edgeLabel,lineStyle
+	.SankeySeries.SankeySeriesLink.select
+
+
+#blur: 81 (similarity: 35,1,17,13,2,2,3,4,3,1)
+#	itemStyle,label
+	.PictorialBarSeries.markArea.blur
+	.PictorialBarSeries.markPoint.blur
+	.GaugeSeries.markArea.blur
+	.GaugeSeries.markPoint.blur
+	.FunnelSeries.markArea.blur
+	.FunnelSeries.markPoint.blur
+	.SankeySeries.SankeySeriesData.blur
+	.GraphSeries.markArea.blur
+	.GraphSeries.markPoint.blur
+	.GraphSeries.GraphSeriesData.blur
+	.GraphSeries.GraphSeriesCategory.blur
+	.LinesSeries.markArea.blur
+	.LinesSeries.markPoint.blur
+	.MapSeries.markArea.blur
+	.MapSeries.markPoint.blur
+	.HeatmapSeries.markArea.blur
+	.HeatmapSeries.markPoint.blur
+	.HeatmapSeries.blur
+	.CandlestickSeries.markArea.blur
+	.CandlestickSeries.markPoint.blur
+	.BoxplotSeries.markArea.blur
+	.BoxplotSeries.markPoint.blur
+	.EffectScatterSeries.markArea.blur
+	.EffectScatterSeries.markPoint.blur
+	.ScatterSeries.markArea.blur
+	.ScatterSeries.markPoint.blur
+	.PieSeries.markArea.blur
+	.PieSeries.markPoint.blur
+	.BarSeries.markArea.blur
+	.BarSeries.markPoint.blur
+	.LineSeries.markArea.blur
+	.LineSeries.markPoint.blur
+	.LineSeries.LineSeriesData.blur
+	.geo.geoRegion.blur
+	.geo.blur
+
+#	areaStyle,endLabel,itemStyle,label,labelLine,lineStyle
+	.LineSeries.blur
+
+#	label,lineStyle
+	.PictorialBarSeries.markLine.blur
+	.GaugeSeries.markLine.blur
+	.FunnelSeries.markLine.blur
+	.GraphSeries.markLine.blur
+	.GraphSeries.GraphSeriesLink.blur
+	.LinesSeries.markLine.blur
+	.LinesSeries.LinesSeriesData.blur
+	.LinesSeries.blur
+	.MapSeries.markLine.blur
+	.HeatmapSeries.markLine.blur
+	.CandlestickSeries.markLine.blur
+	.BoxplotSeries.markLine.blur
+	.EffectScatterSeries.markLine.blur
+	.ScatterSeries.markLine.blur
+	.PieSeries.markLine.blur
+	.BarSeries.markLine.blur
+	.LineSeries.markLine.blur
+
+#	itemStyle,label,labelLine
+	.ThemeRiverSeries.blur
+	.PictorialBarSeries.PictorialBarSeriesData.blur
+	.PictorialBarSeries.blur
+	.FunnelSeries.FunnelSeriesData.blur
+	.FunnelSeries.blur
+	.EffectScatterSeries.EffectScatterSeriesData.blur
+	.EffectScatterSeries.blur
+	.ScatterSeries.ScatterSeriesData.blur
+	.ScatterSeries.blur
+	.PieSeries.PieSeriesData.blur
+	.PieSeries.blur
+	.BarSeries.BarSeriesData.blur
+	.BarSeries.blur
+
+#	areaStyle,itemStyle,label,lineStyle
+	.RadarSeries.RadarSeriesData.blur
+	.RadarSeries.blur
+
+#	itemStyle,label,lineStyle
+	.TreeSeries.leaves.blur
+	.TreeSeries.blur
+
+#	itemStyle,label,labelLine,upperLabel
+	.TreemapSeries.TreemapSeriesData.blur
+	.TreemapSeries.TreemapSeriesLevel.blur
+	.TreemapSeries.blur
+
+#	itemStyle
+	.CandlestickSeries.CandlestickSeriesData.blur
+	.CandlestickSeries.blur
+	.BoxplotSeries.BoxplotSeriesData.blur
+	.BoxplotSeries.blur
+
+#	edgeLabel,itemStyle,label,lineStyle
+	.SankeySeries.blur
+	.SankeySeries.SankeySeriesLevel.blur
+	.GraphSeries.blur
+
+#	edgeLabel,lineStyle
+	.SankeySeries.SankeySeriesLink.blur
+
+
+#geoRegion: 1 (similarity: 1)
+#	blur,emphasis,itemStyle,label,name,select,selected,silent,tooltip
+	.geo.geoRegion
+
+
+#geo: 1 (similarity: 1)
+#	aspectScale,blur,bottom,boundingCoords,center,emphasis,id,itemStyle,label,layoutCenter,layoutSize,left,map,nameMap,nameProperty,projection,regions,right,roam,scaleLimit,select,selectedMode,show,silent,tooltip,top,z,zlevel,zoom
+	.geo
+
+
+#parallelAxisDefault: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,axisLabel,axisLine,axisTick,boundaryGap,data,interval,inverse,logBase,max,maxInterval,min,minInterval,minorTick,name,nameGap,nameLocation,nameRotate,nameTextStyle,nameTruncate,scale,silent,splitNumber,startValue,tooltip,triggerEvent,type
+	.parallel.parallelAxisDefault
+
+
+#parallel: 1 (similarity: 1)
+#	axisExpandable,axisExpandCenter,axisExpandCount,axisExpandTriggerOn,axisExpandWidth,bottom,height,id,layout,left,parallelAxisDefault,right,top,width,z,zlevel
+	.parallel
+
+
+#areaSelectStyle: 1 (similarity: 1)
+#	borderColor,borderWidth,color,opacity,width
+	.parallelAxis.areaSelectStyle
+
+
+#parallelAxis: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,areaSelectStyle,axisLabel,axisLine,axisTick,boundaryGap,data,dim,id,interval,inverse,logBase,max,maxInterval,min,minInterval,minorTick,name,nameGap,nameLocation,nameRotate,nameTextStyle,nameTruncate,parallelIndex,realtime,scale,silent,splitNumber,startValue,tooltip,triggerEvent,type
+	.parallelAxis
+
+
+#singleAxis: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,axisLabel,axisLine,axisPointer,axisTick,bottom,boundaryGap,data,height,id,interval,inverse,left,logBase,max,maxInterval,min,minInterval,minorSplitLine,minorTick,name,nameGap,nameLocation,nameRotate,nameTextStyle,nameTruncate,orient,right,scale,silent,splitArea,splitLine,splitNumber,startValue,tooltip,top,triggerEvent,type,width,z,zlevel
+	.singleAxis
+
+
+#checkpointStyle: 2 (similarity: 1,1)
+#	animation,animationDuration,animationEasing,borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize
+	.timeline.checkpointStyle
+
+#	
+	.timeline.emphasis.checkpointStyle
+
+
+#controlStyle: 2 (similarity: 1,1)
+#	borderCap,borderColor,borderDashOffset,borderJoin,borderMiterLimit,borderType,borderWidth,color,itemGap,itemSize,nextIcon,opacity,playIcon,position,prevIcon,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,showNextBtn,showPlayBtn,showPrevBtn,stopIcon
+	.timeline.controlStyle
+
+#	
+	.timeline.emphasis.controlStyle
+
+
+#progress: 2 (similarity: 1,1)
+#	itemStyle,label,lineStyle
+	.timeline.progress
+
+#	clip,itemStyle,overlap,roundCap,show,width
+	.GaugeSeries.progress
+
+
+#timeline: 1 (similarity: 1)
+#	autoPlay,axisType,bottom,checkpointStyle,controlPosition,controlStyle,currentIndex,data,emphasis,inverse,itemStyle,label,left,lineStyle,loop,orient,padding,playInterval,progress,realtime,replaceMerge,rewind,right,show,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,top,type,z,zlevel
+	.timeline
+
+
+#dayLabel: 1 (similarity: 1)
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,firstDay,fontFamily,fontSize,fontStyle,fontWeight,height,lineHeight,margin,nameMap,overflow,padding,position,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,silent,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.calendar.dayLabel
+
+
+#monthLabel: 1 (similarity: 1)
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,margin,nameMap,overflow,padding,position,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,silent,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.calendar.monthLabel
+
+
+#yearLabel: 1 (similarity: 1)
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,margin,overflow,padding,position,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,silent,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.calendar.yearLabel
+
+
+#calendar: 1 (similarity: 1)
+#	bottom,cellSize,dayLabel,height,id,itemStyle,left,monthLabel,orient,range,right,silent,splitLine,top,width,yearLabel,z,zlevel
+	.calendar
+
+
+#FilterdatasetTransform: 1 (similarity: 1)
+#	config,print,type
+	.dataset.FilterdatasetTransform
+
+
+#SortdatasetTransform: 1 (similarity: 1)
+#	config,print,type
+	.dataset.SortdatasetTransform
+
+
+#dataset: 1 (similarity: 1)
+#	dimensions,fromDatasetId,fromDatasetIndex,fromTransformResult,id,source,sourceHeader,transform
+	.dataset
+
+
+#endLabel: 4 (similarity: 1,3)
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,minMargin,offset,overflow,padding,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,valueAnimation,verticalAlign,width
+	.LineSeries.endLabel
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,offset,overflow,padding,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.LineSeries.select.endLabel
+	.LineSeries.blur.endLabel
+	.LineSeries.emphasis.endLabel
+
+
+#labelLine: 75 (similarity: 15,56,1,1,2)
+#	length2,lineStyle,minTurnAngle,show,showAbove,smooth
+	.CustomSeries.labelLine
+	.ThemeRiverSeries.labelLine
+	.PictorialBarSeries.PictorialBarSeriesData.labelLine
+	.PictorialBarSeries.labelLine
+	.MapSeries.MapSeriesData.labelLine
+	.MapSeries.labelLine
+	.SunburstSeries.labelLine
+	.SunburstSeries.SunburstSeriesData.labelLine
+	.TreemapSeries.labelLine
+	.EffectScatterSeries.EffectScatterSeriesData.labelLine
+	.EffectScatterSeries.labelLine
+	.ScatterSeries.ScatterSeriesData.labelLine
+	.ScatterSeries.labelLine
+	.LineSeries.LineSeriesData.labelLine
+	.LineSeries.labelLine
+
+#	lineStyle,show
+	.ThemeRiverSeries.select.labelLine
+	.ThemeRiverSeries.blur.labelLine
+	.ThemeRiverSeries.emphasis.labelLine
+	.PictorialBarSeries.PictorialBarSeriesData.select.labelLine
+	.PictorialBarSeries.PictorialBarSeriesData.blur.labelLine
+	.PictorialBarSeries.PictorialBarSeriesData.emphasis.labelLine
+	.PictorialBarSeries.select.labelLine
+	.PictorialBarSeries.blur.labelLine
+	.PictorialBarSeries.emphasis.labelLine
+	.FunnelSeries.FunnelSeriesData.select.labelLine
+	.FunnelSeries.FunnelSeriesData.blur.labelLine
+	.FunnelSeries.FunnelSeriesData.emphasis.labelLine
+	.FunnelSeries.select.labelLine
+	.FunnelSeries.blur.labelLine
+	.FunnelSeries.emphasis.labelLine
+	.MapSeries.MapSeriesData.select.labelLine
+	.MapSeries.MapSeriesData.emphasis.labelLine
+	.SunburstSeries.SunburstSeriesLevel.labelLine
+	.TreemapSeries.TreemapSeriesData.select.labelLine
+	.TreemapSeries.TreemapSeriesData.blur.labelLine
+	.TreemapSeries.TreemapSeriesData.emphasis.labelLine
+	.TreemapSeries.TreemapSeriesLevel.select.labelLine
+	.TreemapSeries.TreemapSeriesLevel.blur.labelLine
+	.TreemapSeries.TreemapSeriesLevel.emphasis.labelLine
+	.TreemapSeries.select.labelLine
+	.TreemapSeries.blur.labelLine
+	.TreemapSeries.emphasis.labelLine
+	.EffectScatterSeries.EffectScatterSeriesData.select.labelLine
+	.EffectScatterSeries.EffectScatterSeriesData.blur.labelLine
+	.EffectScatterSeries.EffectScatterSeriesData.emphasis.labelLine
+	.EffectScatterSeries.select.labelLine
+	.EffectScatterSeries.blur.labelLine
+	.EffectScatterSeries.emphasis.labelLine
+	.ScatterSeries.ScatterSeriesData.select.labelLine
+	.ScatterSeries.ScatterSeriesData.blur.labelLine
+	.ScatterSeries.ScatterSeriesData.emphasis.labelLine
+	.ScatterSeries.select.labelLine
+	.ScatterSeries.blur.labelLine
+	.ScatterSeries.emphasis.labelLine
+	.PieSeries.PieSeriesData.select.labelLine
+	.PieSeries.PieSeriesData.blur.labelLine
+	.PieSeries.PieSeriesData.emphasis.labelLine
+	.PieSeries.select.labelLine
+	.PieSeries.blur.labelLine
+	.PieSeries.emphasis.labelLine
+	.BarSeries.BarSeriesData.select.labelLine
+	.BarSeries.BarSeriesData.blur.labelLine
+	.BarSeries.BarSeriesData.emphasis.labelLine
+	.BarSeries.BarSeriesData.labelLine
+	.BarSeries.select.labelLine
+	.BarSeries.blur.labelLine
+	.BarSeries.emphasis.labelLine
+	.BarSeries.labelLine
+	.LineSeries.select.labelLine
+	.LineSeries.blur.labelLine
+	.LineSeries.emphasis.labelLine
+
+#	length,length2,lineStyle,maxSurfaceAngle,minTurnAngle,show,showAbove,smooth
+	.PieSeries.labelLine
+
+#	length,length2,lineStyle,show,smooth
+	.PieSeries.PieSeriesData.labelLine
+
+#	length,lineStyle,show
+	.FunnelSeries.FunnelSeriesData.labelLine
+	.FunnelSeries.labelLine
+
+
+#encode: 11 (similarity: 11)
+#	
+	.CustomSeries.encode
+	.PictorialBarSeries.encode
+	.FunnelSeries.encode
+	.HeatmapSeries.encode
+	.CandlestickSeries.encode
+	.BoxplotSeries.encode
+	.EffectScatterSeries.encode
+	.ScatterSeries.encode
+	.PieSeries.encode
+	.BarSeries.encode
+	.LineSeries.encode
+
+
+#LineSeriesData: 1 (similarity: 1)
+#	blur,childGroupId,emphasis,groupId,itemStyle,label,labelLine,name,select,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,tooltip,value
+	.LineSeries.LineSeriesData
+
+
+#markPointData: 14 (similarity: 8,5,1)
+#	coord,emphasis,itemStyle,label,name,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,type,value,valueDim,valueIndex,x,y
+	.PictorialBarSeries.markPoint.markPointData
+	.GraphSeries.markPoint.markPointData
+	.CandlestickSeries.markPoint.markPointData
+	.BoxplotSeries.markPoint.markPointData
+	.EffectScatterSeries.markPoint.markPointData
+	.ScatterSeries.markPoint.markPointData
+	.BarSeries.markPoint.markPointData
+	.LineSeries.markPoint.markPointData
+
+#	emphasis,itemStyle,label,name,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,value,x,y
+	.GaugeSeries.markPoint.markPointData
+	.FunnelSeries.markPoint.markPointData
+	.LinesSeries.markPoint.markPointData
+	.HeatmapSeries.markPoint.markPointData
+	.PieSeries.markPoint.markPointData
+
+#	coord,emphasis,itemStyle,label,name,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,value,valueDim,valueIndex,x,y
+	.MapSeries.markPoint.markPointData
+
+
+#markPoint: 14 (similarity: 14)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,blur,data,emphasis,itemStyle,label,silent,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize
+	.PictorialBarSeries.markPoint
+	.GaugeSeries.markPoint
+	.FunnelSeries.markPoint
+	.GraphSeries.markPoint
+	.LinesSeries.markPoint
+	.MapSeries.markPoint
+	.HeatmapSeries.markPoint
+	.CandlestickSeries.markPoint
+	.BoxplotSeries.markPoint
+	.EffectScatterSeries.markPoint
+	.ScatterSeries.markPoint
+	.PieSeries.markPoint
+	.BarSeries.markPoint
+	.LineSeries.markPoint
+
+
+#markLine: 14 (similarity: 14)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,blur,data,emphasis,label,lineStyle,precision,silent,symbol,symbolOffset,symbolSize
+	.PictorialBarSeries.markLine
+	.GaugeSeries.markLine
+	.FunnelSeries.markLine
+	.GraphSeries.markLine
+	.LinesSeries.markLine
+	.MapSeries.markLine
+	.HeatmapSeries.markLine
+	.CandlestickSeries.markLine
+	.BoxplotSeries.markLine
+	.EffectScatterSeries.markLine
+	.ScatterSeries.markLine
+	.PieSeries.markLine
+	.BarSeries.markLine
+	.LineSeries.markLine
+
+
+#markArea: 14 (similarity: 14)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,blur,data,emphasis,itemStyle,label,silent
+	.PictorialBarSeries.markArea
+	.GaugeSeries.markArea
+	.FunnelSeries.markArea
+	.GraphSeries.markArea
+	.LinesSeries.markArea
+	.MapSeries.markArea
+	.HeatmapSeries.markArea
+	.CandlestickSeries.markArea
+	.BoxplotSeries.markArea
+	.EffectScatterSeries.markArea
+	.ScatterSeries.markArea
+	.PieSeries.markArea
+	.BarSeries.markArea
+	.LineSeries.markArea
+
+
+#universalTransition: 13 (similarity: 13)
+#	delay,divideShape,enabled,seriesKey
+	.CustomSeries.universalTransition
+	.PictorialBarSeries.universalTransition
+	.FunnelSeries.universalTransition
+	.LinesSeries.universalTransition
+	.MapSeries.universalTransition
+	.HeatmapSeries.universalTransition
+	.CandlestickSeries.universalTransition
+	.BoxplotSeries.universalTransition
+	.RadarSeries.universalTransition
+	.ScatterSeries.universalTransition
+	.PieSeries.universalTransition
+	.BarSeries.universalTransition
+	.LineSeries.universalTransition
+
+
+#LineSeries: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,areaStyle,blur,clip,colorBy,connectNulls,coordinateSystem,cursor,data,dataGroupId,datasetIndex,dimensions,emphasis,encode,endLabel,id,itemStyle,label,labelLayout,labelLine,legendHoverLink,lineStyle,markArea,markLine,markPoint,name,polarIndex,sampling,select,selectedMode,seriesLayoutBy,showAllSymbol,showSymbol,silent,smooth,smoothMonotone,stack,stackStrategy,step,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,tooltip,triggerLineEvent,type,universalTransition,xAxisIndex,yAxisIndex,z,zlevel
+	.LineSeries
+
+
+#backgroundStyle: 1 (similarity: 1)
+#	borderColor,borderRadius,borderType,borderWidth,color,opacity,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY
+	.BarSeries.backgroundStyle
+
+
+#BarSeriesData: 1 (similarity: 1)
+#	blur,childGroupId,emphasis,groupId,itemStyle,label,labelLine,name,select,value
+	.BarSeries.BarSeriesData
+
+
+#BarSeries: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,backgroundStyle,barCategoryGap,barGap,barMaxWidth,barMinAngle,barMinHeight,barMinWidth,barWidth,blur,clip,colorBy,coordinateSystem,cursor,data,dataGroupId,datasetIndex,dimensions,emphasis,encode,id,itemStyle,label,labelLayout,labelLine,large,largeThreshold,legendHoverLink,markArea,markLine,markPoint,name,polarIndex,progressive,progressiveChunkMode,progressiveThreshold,realtimeSort,roundCap,sampling,select,selectedMode,seriesLayoutBy,showBackground,silent,stack,stackStrategy,tooltip,type,universalTransition,xAxisIndex,yAxisIndex,z,zlevel
+	.BarSeries
+
+
+#PieSeriesData: 1 (similarity: 1)
+#	blur,childGroupId,emphasis,groupId,itemStyle,label,labelLine,name,select,selected,tooltip,value
+	.PieSeries.PieSeriesData
+
+
+#PieSeries: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,animationType,animationTypeUpdate,avoidLabelOverlap,blur,bottom,calendarIndex,center,clockwise,colorBy,coordinateSystem,cursor,data,dataGroupId,datasetIndex,dimensions,emphasis,emptyCircleStyle,encode,endAngle,geoIndex,height,id,itemStyle,label,labelLayout,labelLine,left,legendHoverLink,markArea,markLine,markPoint,minAngle,minShowLabelAngle,name,padAngle,percentPrecision,radius,right,roseType,select,selectedMode,selectedOffset,seriesLayoutBy,showEmptyCircle,silent,startAngle,stillShowZeroSum,tooltip,top,type,universalTransition,width,z,zlevel
+	.PieSeries
+
+
+#ScatterSeriesData: 1 (similarity: 1)
+#	blur,childGroupId,emphasis,groupId,itemStyle,label,labelLine,name,select,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,tooltip,value
+	.ScatterSeries.ScatterSeriesData
+
+
+#ScatterSeries: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,blur,calendarIndex,clip,colorBy,coordinateSystem,cursor,data,dataGroupId,datasetIndex,dimensions,emphasis,encode,geoIndex,id,itemStyle,label,labelLayout,labelLine,large,largeThreshold,legendHoverLink,markArea,markLine,markPoint,name,polarIndex,progressive,progressiveThreshold,select,selectedMode,seriesLayoutBy,silent,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,tooltip,type,universalTransition,xAxisIndex,yAxisIndex,z,zlevel
+	.ScatterSeries
+
+
+#rippleEffect: 1 (similarity: 1)
+#	brushType,color,number,period,scale
+	.EffectScatterSeries.rippleEffect
+
+
+#EffectScatterSeriesData: 1 (similarity: 1)
+#	blur,emphasis,itemStyle,label,labelLine,select,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,tooltip
+	.EffectScatterSeries.EffectScatterSeriesData
+
+
+#EffectScatterSeries: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,blur,calendarIndex,clip,colorBy,coordinateSystem,cursor,data,datasetIndex,dimensions,effectType,emphasis,encode,geoIndex,id,itemStyle,label,labelLayout,labelLine,legendHoverLink,markArea,markLine,markPoint,name,polarIndex,rippleEffect,select,selectedMode,seriesLayoutBy,showEffectOn,silent,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,tooltip,type,xAxisIndex,yAxisIndex,z,zlevel
+	.EffectScatterSeries
+
+
+#RadarSeriesData: 1 (similarity: 1)
+#	areaStyle,blur,childGroupId,emphasis,groupId,itemStyle,label,lineStyle,name,select,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,tooltip,value
+	.RadarSeries.RadarSeriesData
+
+
+#RadarSeries: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,areaStyle,blur,colorBy,data,dataGroupId,emphasis,id,itemStyle,label,labelLayout,lineStyle,name,radarIndex,select,selectedMode,silent,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,tooltip,type,universalTransition,z,zlevel
+	.RadarSeries
+
+
+#leaves: 1 (similarity: 1)
+#	blur,emphasis,itemStyle,label,select
+	.TreeSeries.leaves
+
+
+#TreeSeries: 1 (similarity: 1)
+#	blur,bottom,center,data,edgeForkPosition,edgeShape,emphasis,expandAndCollapse,height,id,initialTreeDepth,itemStyle,label,labelLayout,layout,leaves,left,lineStyle,name,orient,right,roam,select,selectedMode,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,tooltip,top,type,width,z,zlevel,zoom
+	.TreeSeries
+
+
+#upperLabel: 12 (similarity: 12)
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,offset,overflow,padding,position,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.TreemapSeries.TreemapSeriesData.select.upperLabel
+	.TreemapSeries.TreemapSeriesData.blur.upperLabel
+	.TreemapSeries.TreemapSeriesData.emphasis.upperLabel
+	.TreemapSeries.TreemapSeriesData.upperLabel
+	.TreemapSeries.TreemapSeriesLevel.select.upperLabel
+	.TreemapSeries.TreemapSeriesLevel.blur.upperLabel
+	.TreemapSeries.TreemapSeriesLevel.emphasis.upperLabel
+	.TreemapSeries.TreemapSeriesLevel.upperLabel
+	.TreemapSeries.select.upperLabel
+	.TreemapSeries.blur.upperLabel
+	.TreemapSeries.emphasis.upperLabel
+	.TreemapSeries.upperLabel
+
+
+#breadcrumb: 1 (similarity: 1)
+#	bottom,emphasis,emptyItemWidth,height,itemStyle,left,right,show,top
+	.TreemapSeries.breadcrumb
+
+
+#TreemapSeriesLevel: 1 (similarity: 1)
+#	blur,childrenVisibleMin,color,colorAlpha,colorMappingBy,colorSaturation,emphasis,itemStyle,label,select,upperLabel,visibleMin,visualDimension,visualMax,visualMin
+	.TreemapSeries.TreemapSeriesLevel
+
+
+#TreemapSeriesData: 1 (similarity: 1)
+#	blur,children,childrenVisibleMin,color,colorAlpha,colorMappingBy,colorSaturation,cursor,emphasis,id,itemStyle,label,link,name,select,target,tooltip,upperLabel,value,visibleMin,visualDimension,visualMax,visualMin
+	.TreemapSeries.TreemapSeriesData
+
+
+#TreemapSeries: 1 (similarity: 1)
+#	animationDelay,animationDuration,animationEasing,blur,bottom,breadcrumb,childrenVisibleMin,colorAlpha,colorMappingBy,colorSaturation,cursor,data,drillDownIcon,emphasis,height,id,itemStyle,label,labelLayout,labelLine,leafDepth,left,levels,name,nodeClick,right,roam,scaleLimit,select,selectedMode,silent,squareRatio,tooltip,top,type,upperLabel,visibleMin,visualDimension,visualMax,visualMin,width,z,zlevel,zoomToNodeRatio
+	.TreemapSeries
+
+
+#SunburstSeriesData: 1 (similarity: 1)
+#	blur,children,emphasis,itemStyle,label,labelLine,link,name,select,target,tooltip,value
+	.SunburstSeries.SunburstSeriesData
+
+
+#SunburstSeriesLevel: 1 (similarity: 1)
+#	blur,emphasis,itemStyle,label,labelLine,radius,select
+	.SunburstSeries.SunburstSeriesLevel
+
+
+#SunburstSeries: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,blur,center,clockwise,data,emphasis,id,itemStyle,label,labelLayout,labelLine,levels,name,nodeClick,radius,renderLabelForZeroData,select,selectedMode,sort,startAngle,tooltip,type,z,zlevel
+	.SunburstSeries
+
+
+#BoxplotSeriesData: 1 (similarity: 1)
+#	blur,childGroupId,emphasis,groupId,itemStyle,name,select,tooltip,value
+	.BoxplotSeries.BoxplotSeriesData
+
+
+#BoxplotSeries: 1 (similarity: 1)
+#	animationDelay,animationDuration,animationEasing,blur,boxWidth,colorBy,coordinateSystem,data,dataGroupId,dimensions,emphasis,encode,id,itemStyle,layout,legendHoverLink,markArea,markLine,markPoint,name,select,selectedMode,silent,tooltip,type,universalTransition,xAxisIndex,yAxisIndex,z,zlevel
+	.BoxplotSeries
+
+
+#CandlestickSeriesData: 1 (similarity: 1)
+#	blur,childGroupId,emphasis,groupId,itemStyle,name,select,tooltip,value
+	.CandlestickSeries.CandlestickSeriesData
+
+
+#CandlestickSeries: 1 (similarity: 1)
+#	animationDelay,animationDuration,animationEasing,barMaxWidth,barMinWidth,barWidth,blur,clip,colorBy,coordinateSystem,data,dataGroupId,dimensions,emphasis,encode,id,itemStyle,large,largeThreshold,layout,legendHoverLink,markArea,markLine,markPoint,name,progressive,progressiveChunkMode,progressiveThreshold,select,selectedMode,silent,tooltip,type,universalTransition,xAxisIndex,yAxisIndex,z,zlevel
+	.CandlestickSeries
+
+
+#HeatmapSeriesData: 1 (similarity: 1)
+#	childGroupId,emphasis,groupId,itemStyle,label,name,value
+	.HeatmapSeries.HeatmapSeriesData
+
+
+#HeatmapSeries: 1 (similarity: 1)
+#	blur,blurSize,calendarIndex,coordinateSystem,data,dataGroupId,datasetIndex,emphasis,encode,geoIndex,id,itemStyle,label,labelLayout,markArea,markLine,markPoint,maxOpacity,minOpacity,name,pointSize,progressive,progressiveThreshold,select,selectedMode,seriesLayoutBy,silent,tooltip,type,universalTransition,xAxisIndex,yAxisIndex,z,zlevel
+	.HeatmapSeries
+
+
+#MapSeriesData: 1 (similarity: 1)
+#	childGroupId,emphasis,groupId,itemStyle,label,labelLine,name,select,selected,silent,tooltip,value
+	.MapSeries.MapSeriesData
+
+
+#MapSeries: 1 (similarity: 1)
+#	aspectScale,bottom,boundingCoords,center,colorBy,data,dataGroupId,datasetIndex,emphasis,geoIndex,id,itemStyle,label,labelLayout,labelLine,layoutCenter,layoutSize,left,map,mapValueCalculation,markArea,markLine,markPoint,name,nameMap,nameProperty,projection,right,roam,scaleLimit,select,selectedMode,seriesLayoutBy,showLegendSymbol,silent,tooltip,top,type,universalTransition,z,zlevel,zoom
+	.MapSeries
+
+
+#ParallelSeriesData: 1 (similarity: 1)
+#	emphasis,lineStyle,name,value
+	.ParallelSeries.ParallelSeriesData
+
+
+#ParallelSeries: 1 (similarity: 1)
+#	activeOpacity,animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,colorBy,coordinateSystem,data,emphasis,id,inactiveOpacity,lineStyle,name,parallelIndex,progressive,progressiveChunkMode,progressiveThreshold,realtime,silent,smooth,type,z,zlevel
+	.ParallelSeries
+
+
+#effect: 1 (similarity: 1)
+#	color,constantSpeed,delay,loop,period,roundTrip,show,symbol,symbolSize,trailLength
+	.LinesSeries.effect
+
+
+#LinesSeriesData: 1 (similarity: 1)
+#	blur,childGroupId,coords,emphasis,groupId,label,lineStyle,name,select,tooltip
+	.LinesSeries.LinesSeriesData
+
+
+#LinesSeries: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,blur,clip,colorBy,coordinateSystem,data,dataGroupId,effect,emphasis,geoIndex,id,label,labelLayout,large,largeThreshold,lineStyle,markArea,markLine,markPoint,name,polyline,progressive,progressiveThreshold,select,selectedMode,silent,symbol,symbolSize,tooltip,type,universalTransition,xAxisIndex,yAxisIndex,z,zlevel
+	.LinesSeries
+
+
+#circular: 1 (similarity: 1)
+#	rotateLabel
+	.GraphSeries.circular
+
+
+#force: 1 (similarity: 1)
+#	edgeLength,friction,gravity,initLayout,layoutAnimation,repulsion
+	.GraphSeries.force
+
+
+#edgeLabel: 16 (similarity: 4,12)
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,overflow,padding,position,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.GraphSeries.select.edgeLabel
+	.GraphSeries.blur.edgeLabel
+	.GraphSeries.emphasis.edgeLabel
+	.GraphSeries.edgeLabel
+
+#	align,backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,distance,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,offset,overflow,padding,rich,rotate,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,verticalAlign,width
+	.SankeySeries.SankeySeriesLink.select.edgeLabel
+	.SankeySeries.SankeySeriesLink.blur.edgeLabel
+	.SankeySeries.SankeySeriesLink.emphasis.edgeLabel
+	.SankeySeries.SankeySeriesLink.edgeLabel
+	.SankeySeries.select.edgeLabel
+	.SankeySeries.blur.edgeLabel
+	.SankeySeries.emphasis.edgeLabel
+	.SankeySeries.SankeySeriesLevel.select.edgeLabel
+	.SankeySeries.SankeySeriesLevel.blur.edgeLabel
+	.SankeySeries.SankeySeriesLevel.emphasis.edgeLabel
+	.SankeySeries.SankeySeriesLevel.edgeLabel
+	.SankeySeries.edgeLabel
+
+
+#GraphSeriesCategory: 1 (similarity: 1)
+#	blur,emphasis,itemStyle,label,name,select,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize
+	.GraphSeries.GraphSeriesCategory
+
+
+#GraphSeriesData: 1 (similarity: 1)
+#	blur,category,emphasis,fixed,itemStyle,label,name,select,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,tooltip,value,x,y
+	.GraphSeries.GraphSeriesData
+
+
+#GraphSeriesLink: 1 (similarity: 1)
+#	blur,emphasis,ignoreForceLayout,label,lineStyle,select,source,symbol,symbolSize,target,value
+	.GraphSeries.GraphSeriesLink
+
+
+#GraphSeries: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,autoCurveness,blur,bottom,calendarIndex,categories,center,circular,coordinateSystem,cursor,data,draggable,edgeLabel,edges,edgeSymbol,edgeSymbolSize,emphasis,force,geoIndex,height,id,itemStyle,label,labelLayout,layout,left,legendHoverLink,lineStyle,links,markArea,markLine,markPoint,name,nodes,nodeScaleRatio,polarIndex,right,roam,scaleLimit,select,selectedMode,silent,symbol,symbolKeepAspect,symbolOffset,symbolRotate,symbolSize,tooltip,top,type,width,xAxisIndex,yAxisIndex,z,zlevel,zoom
+	.GraphSeries
+
+
+#SankeySeriesLevel: 1 (similarity: 1)
+#	blur,depth,edgeLabel,emphasis,itemStyle,label,lineStyle,select
+	.SankeySeries.SankeySeriesLevel
+
+
+#SankeySeriesData: 1 (similarity: 1)
+#	blur,depth,emphasis,itemStyle,label,name,select,tooltip,value
+	.SankeySeries.SankeySeriesData
+
+
+#SankeySeriesLink: 1 (similarity: 1)
+#	blur,edgeLabel,emphasis,lineStyle,select,source,target,value
+	.SankeySeries.SankeySeriesLink
+
+
+#SankeySeries: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,blur,bottom,data,draggable,edgeLabel,edges,emphasis,height,id,itemStyle,label,labelLayout,layoutIterations,left,levels,lineStyle,links,name,nodeAlign,nodeGap,nodes,nodeWidth,orient,right,select,selectedMode,silent,tooltip,top,type,width,z,zlevel
+	.SankeySeries
+
+
+#FunnelSeriesData: 1 (similarity: 1)
+#	blur,emphasis,itemStyle,label,labelLine,name,select,tooltip,value
+	.FunnelSeries.FunnelSeriesData
+
+
+#FunnelSeries: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,blur,bottom,colorBy,data,dataGroupId,datasetIndex,dimensions,emphasis,encode,funnelAlign,gap,height,id,itemStyle,label,labelLayout,labelLine,left,legendHoverLink,markArea,markLine,markPoint,max,maxSize,min,minSize,name,orient,right,select,selectedMode,seriesLayoutBy,silent,sort,tooltip,top,type,universalTransition,width,z,zlevel
+	.FunnelSeries
+
+
+#detail: 2 (similarity: 2)
+#	backgroundColor,borderColor,borderDashOffset,borderRadius,borderType,borderWidth,color,ellipsis,fontFamily,fontSize,fontStyle,fontWeight,formatter,height,lineHeight,offsetCenter,overflow,padding,rich,shadowBlur,shadowColor,shadowOffsetX,shadowOffsetY,show,textBorderColor,textBorderDashOffset,textBorderType,textBorderWidth,textShadowBlur,textShadowColor,textShadowOffsetX,textShadowOffsetY,valueAnimation,width
+	.GaugeSeries.detail
+	.GaugeSeries.GaugeSeriesData.detail
+
+
+#GaugeSeriesData: 1 (similarity: 1)
+#	detail,itemStyle,name,title,value
+	.GaugeSeries.GaugeSeriesData
+
+
+#pointer: 1 (similarity: 1)
+#	icon,itemStyle,keepAspect,length,offsetCenter,show,showAbove,width
+	.GaugeSeries.pointer
+
+
+#anchor: 1 (similarity: 1)
+#	icon,itemStyle,keepAspect,offsetCenter,show,showAbove,size
+	.GaugeSeries.anchor
+
+
+#GaugeSeries: 1 (similarity: 1)
+#	anchor,animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,axisLabel,axisLine,axisTick,center,clockwise,colorBy,data,detail,emphasis,endAngle,id,itemStyle,legendHoverLink,markArea,markLine,markPoint,max,min,name,pointer,progress,radius,silent,splitLine,splitNumber,startAngle,title,tooltip,type,z,zlevel
+	.GaugeSeries
+
+
+#PictorialBarSeriesData: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,blur,childGroupId,emphasis,groupId,itemStyle,label,labelLine,name,select,symbol,symbolBoundingData,symbolClip,symbolMargin,symbolOffset,symbolPatternSize,symbolPosition,symbolRepeat,symbolRepeatDirection,symbolRotate,symbolSize,tooltip,value,z
+	.PictorialBarSeries.PictorialBarSeriesData
+
+
+#PictorialBarSeries: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,barCategoryGap,barGap,barMaxWidth,barMinAngle,barMinHeight,barMinWidth,barWidth,blur,clip,colorBy,coordinateSystem,cursor,data,dataGroupId,dimensions,emphasis,encode,id,itemStyle,label,labelLayout,labelLine,legendHoverLink,markArea,markLine,markPoint,name,select,selectedMode,silent,symbol,symbolBoundingData,symbolClip,symbolMargin,symbolOffset,symbolPatternSize,symbolPosition,symbolRepeat,symbolRepeatDirection,symbolRotate,symbolSize,tooltip,type,universalTransition,xAxisIndex,yAxisIndex,z,zlevel
+	.PictorialBarSeries
+
+
+#ThemeRiverSeriesData: 1 (similarity: 1)
+#	date,name,value
+	.ThemeRiverSeries.ThemeRiverSeriesData
+
+
+#ThemeRiverSeries: 1 (similarity: 1)
+#	blur,bottom,boundaryGap,colorBy,coordinateSystem,data,emphasis,height,id,itemStyle,label,labelLayout,labelLine,left,name,right,select,selectedMode,singleAxisIndex,tooltip,top,type,width,z,zlevel
+	.ThemeRiverSeries
+
+
+#CustomSeriesData: 1 (similarity: 1)
+#	childGroupId,emphasis,groupId,itemStyle,name,tooltip,value
+	.CustomSeries.CustomSeriesData
+
+
+#CustomSeries: 1 (similarity: 1)
+#	animation,animationDelay,animationDelayUpdate,animationDuration,animationDurationUpdate,animationEasing,animationEasingUpdate,animationThreshold,calendarIndex,clip,colorBy,coordinateSystem,data,dataGroupId,datasetIndex,dimensions,encode,geoIndex,id,itemStyle,labelLayout,labelLine,legendHoverLink,name,polarIndex,renderItem,selectedMode,seriesLayoutBy,silent,tooltip,type,universalTransition,xAxisIndex,yAxisIndex,z,zlevel
+	.CustomSeries
+
+
+#stateAnimation: 1 (similarity: 1)
+#	duration,easing
+	.stateAnimation
+
+
+#query: 1 (similarity: 1)
+#	maxHeight,minAspectRatio,minWidth
+	.Media.query
+
+
+#Media: 1 (similarity: 1)
+#	option,query
+	.Media
+

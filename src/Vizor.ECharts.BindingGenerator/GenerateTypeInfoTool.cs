@@ -1,123 +1,135 @@
-﻿using System.Text.Json;
-using System.Text.Json.Nodes;
-using Vizor.ECharts.BindingGenerator.Types;
-using Vizor.ECharts.BindingGenerator.Generators;
-using Vizor.ECharts.BindingGenerator.Phases;
+using System.Text.Json;
 using System.Data;
+
+using Vizor.ECharts.BindingGenerator.Diagnostics;
+using Vizor.ECharts.BindingGenerator.Types;
+using Vizor.ECharts.BindingGenerator.Phases;
 
 namespace Vizor.ECharts.BindingGenerator;
 
 internal class GenerateTypeInfoTool
 {
-	public int Run(GenerateTypeInfoOptions options)
-	{
-		// check if the input file exists
-		if (!File.Exists(options.InputFile))
-		{
-			Console.WriteLine($"ERROR: file '{options.InputFile}' doesn't exist");
-			return 1;
-		}
+    public int Run(GenerateTypeInfoOptions options)
+    {
+        // check if the input file exists
+        if (!File.Exists(options.InputFile))
+        {
+            Console.WriteLine($"ERROR: file '{options.InputFile}' doesn't exist");
+            return 1;
+        }
 
-		// parse the input JSON
-		var jsonOptions = new JsonDocumentOptions
-		{
-			CommentHandling = JsonCommentHandling.Skip,
-		};
-		using JsonDocument document = JsonDocument.Parse(File.ReadAllText(options.InputFile), jsonOptions);
-		var optionElem = document.RootElement.GetProperty("option");
+        // parse the input JSON
+        var jsonOptions = new JsonDocumentOptions
+        {
+            CommentHandling = JsonCommentHandling.Skip,
+        };
+        using JsonDocument document = JsonDocument.Parse(File.ReadAllText(options.InputFile), jsonOptions);
+        var optionElem = document.RootElement.GetProperty("option");
 
-		// process the input JSON
-		var typeCollection = new TypeCollection();
-		var phases = new List<BasePhase> {
-			new GenerateObjectTypesPhase(typeCollection)
-		};
+        // process the input JSON
+        var typeCollection = new TypeCollection();
+        var diagnosticCollector = new DiagnosticCollector();
+        var phases = new List<BasePhase> {
+            new GenerateObjectTypesPhase(typeCollection, diagnosticCollector)
+        };
 
-		foreach (var phase in phases)
-		{
-			phase.Run(optionElem);
-		}
+        foreach (var phase in phases)
+        {
+            phase.Run(optionElem);
+        }
 
-		// print information about duplicates
-		using var fs = new FileStream("typeinfo.txt", FileMode.Create, FileAccess.Write);
-		using var writer = new StreamWriter(fs);
-		foreach (var pair in typeCollection.TypesWithDuplicates)
-		{
-			var diffs = new Dictionary<string, List<string>>();
-			var similarity = CountSimilarTypes(pair.Value, diffs);
+        // print information about duplicates
+        var outputDirectory = Directory.GetCurrentDirectory();
+        var typeinfoPath = Path.Combine(outputDirectory, "typeinfo.txt");
+        
+        using var fs = new FileStream(typeinfoPath, FileMode.Create, FileAccess.Write);
+        using var writer = new StreamWriter(fs);
+        foreach (var pair in typeCollection.TypesWithDuplicates)
+        {
+            var diffs = new Dictionary<string, List<string>>();
+            var similarity = CountSimilarTypes(pair.Value, diffs);
 
-			writer.WriteLine();
-			writer.WriteLine($"#{pair.Key}: {pair.Value.Count} (similarity: {similarity})");
-			foreach (var diffPair in diffs)
-			{
-				writer.WriteLine($"#\t{diffPair.Key}");
+            writer.WriteLine();
+            writer.WriteLine($"#{pair.Key}: {pair.Value.Count} (similarity: {similarity})");
+            foreach (var diffPair in diffs)
+            {
+                writer.WriteLine($"#\t{diffPair.Key}");
 
-				foreach (var path in diffPair.Value)
-				{
-					writer.WriteLine($"\t{path}");
-				}
-				writer.WriteLine();
-			}
-		}
+                foreach (var path in diffPair.Value)
+                {
+                    writer.WriteLine($"\t{path}");
+                }
+                writer.WriteLine();
+            }
+        }
 
-		Console.WriteLine("done.");
+        // Generate diagnostic report in same folder as typeinfo.txt
+        var report = diagnosticCollector.GenerateReport();
+        var reportPath = Path.Combine(outputDirectory, "TypePatternAnalysisReport.md");
+        File.WriteAllText(reportPath, report.ToMarkdown());
+        
+        var (supported, partial, unsupported, investigation, total) = diagnosticCollector.GetSummary();
+        Console.WriteLine($"Pattern Report: {supported}/{total} supported ({partial} partial, {unsupported} unsupported, {investigation} investigation)");
 
-		return 0;
-	}
+        Console.WriteLine("done.");
 
-	private string CountSimilarTypes(List<ObjectType> list, Dictionary<string, List<string>> diffs)
-	{
-		var remainingIndices = new List<int>(list.Count);
-		for (int i = 0; i < list.Count; ++i)
-			remainingIndices.Add(i);
+        return 0;
+    }
 
-		var similarCount = new List<int>();
+    private string CountSimilarTypes(List<ObjectType> list, Dictionary<string, List<string>> diffs)
+    {
+        var remainingIndices = new List<int>(list.Count);
+        for (int i = 0; i < list.Count; ++i)
+            remainingIndices.Add(i);
 
-		while (remainingIndices.Count > 0)
-		{
-			var similarPaths = new List<string>();
+        var similarCount = new List<int>();
 
-			var current = list[remainingIndices[0]];
-			var count = CountSimilarTo(list, remainingIndices, current, similarPaths);
+        while (remainingIndices.Count > 0)
+        {
+            var similarPaths = new List<string>();
 
-			similarCount.Add(count);
-			diffs.Add(GetPropertyList(current), similarPaths);
-		}
+            var current = list[remainingIndices[0]];
+            var count = CountSimilarTo(list, remainingIndices, current, similarPaths);
 
-		return string.Join(',', similarCount);
-	}
+            similarCount.Add(count);
+            diffs.Add(GetPropertyList(current), similarPaths);
+        }
 
-	private int CountSimilarTo(List<ObjectType> list, List<int> remainingIndices, ObjectType current, List<string> similarPaths)
-	{
-		int count = 0;
+        return string.Join(',', similarCount);
+    }
 
-		for (int i = remainingIndices.Count - 1; i >= 0; --i)
-		{
-			var index = remainingIndices[i];
-			var item = list[index];
+    private int CountSimilarTo(List<ObjectType> list, List<int> remainingIndices, ObjectType current, List<string> similarPaths)
+    {
+        int count = 0;
 
-			if (CompareType(current, item))
-			{
-				remainingIndices.RemoveAt(i);
-				count += 1;
-				similarPaths.Add(item.Path);
-			}
-		}
+        for (int i = remainingIndices.Count - 1; i >= 0; --i)
+        {
+            var index = remainingIndices[i];
+            var item = list[index];
 
-		return count;
-	}
+            if (CompareType(current, item))
+            {
+                remainingIndices.RemoveAt(i);
+                count += 1;
+                similarPaths.Add(item.Path);
+            }
+        }
 
-	private bool CompareType(ObjectType lookupType, ObjectType objType)
-	{
-		var propNamesA = GetPropertyList(lookupType);
-		var propNamesB = GetPropertyList(objType);
+        return count;
+    }
 
-		return propNamesA == propNamesB;
-	}
+    private bool CompareType(ObjectType lookupType, ObjectType objType)
+    {
+        var propNamesA = GetPropertyList(lookupType);
+        var propNamesB = GetPropertyList(objType);
 
-	private string GetPropertyList(ObjectType objectType)
-	{
-		var names = objectType.Properties.Select(p => p.Name).ToList();
-		names.Sort();
-		return string.Join(",", names);
-	}
+        return propNamesA == propNamesB;
+    }
+
+    private string GetPropertyList(ObjectType objectType)
+    {
+        var names = objectType.Properties.Select(p => p.Name).ToList();
+        names.Sort();
+        return string.Join(",", names);
+    }
 }

@@ -33,35 +33,13 @@ public partial class Encode
 	public NumberOrStringArray? SeriesName { get; set; }
 
 	/// <summary>
-	/// Using dimension as the id of each data item. This is useful when dynamically
-	/// update data by `chart.setOption()`, where the new and old data item can be
-	/// corresponded by id, by which the appropriate animation can be performed when updating.
-	/// </summary>
-	[JsonPropertyName("itemId")]
-	public NumberOrStringArray? ItemId { get; set; }
-
-	/// <summary>
-	/// Using dimension as the name of each data item. This is useful in charts like
-	/// 'pie', 'funnel', where data item name can be displayed in legend.
-	/// </summary>
-	[JsonPropertyName("itemName")]
-	public NumberOrStringArray? ItemName { get; set; }
-
-	/// <summary>
-	/// Using dimension as the groupId of each data item. groupId will be used to categorize the data. And to determine
-	/// How the merge and split animation are performed in the universal transition. See universalTransition option for detail.
-	/// </summary>
-	[JsonPropertyName("itemGroupId")]
-	public NumberOrStringArray? ItemGroupId { get; set; }
-
-	/// <summary>
-	/// Only available in polar coordinate system
+	/// Dimensions mapped to radius axis (polar coordinate system)
 	/// </summary>
 	[JsonPropertyName("radius")]
 	public NumberOrStringArray? Radius { get; set; }
 
 	/// <summary>
-	/// Only available in polar coordinate system
+	/// Dimensions mapped to angle axis (polar coordinate system)
 	/// </summary>
 	[JsonPropertyName("angle")]
 	public NumberOrStringArray? Angle { get; set; }

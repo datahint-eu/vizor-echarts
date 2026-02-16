@@ -1,0 +1,8 @@
+# .editorconfig for Tests
+[*.cs]
+indent_style = space
+indent_size = 4
+charset = utf-8
+
+# MSTest analyzer rules
+dotnet_diagnostic.MSTEST0037.severity = warning
