@@ -41,7 +41,7 @@ jobs:
         working-directory: src/Vizor.ECharts
       
       - name: Pack NuGet (Release)
-        run: dotnet pack -c Release src/Vizor.ECharts/Vizor.ECharts.csproj
+        run: dotnet pack -c Release --no-build src/Vizor.ECharts/Vizor.ECharts.csproj
       
       - name: Upload NuGet artifact
         uses: actions/upload-artifact@v4
