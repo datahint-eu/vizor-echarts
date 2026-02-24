@@ -54,6 +54,7 @@ jobs:
         with:
           name: nuget-package
           path: src/Vizor.ECharts/bin/Release/**/*.nupkg
+          if-no-files-found: error
 
       - name: Upload test results
         if: always()
@@ -61,9 +62,11 @@ jobs:
         with:
           name: test-results
           path: artifacts/test-results
+          if-no-files-found: error
       
       - name: Upload JS artifacts
         uses: actions/upload-artifact@v4
         with:
           name: js-bundle
           path: src/Vizor.ECharts/wwwroot/js/*.js
+          if-no-files-found: error
