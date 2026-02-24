@@ -45,6 +45,12 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
         working-directory: src/Vizor.ECharts
+
+      - name: Audit npm vulnerabilities (warn only)
+        if: github.event_name == 'pull_request'
+        run: npm audit --audit-level=high
+        working-directory: src/Vizor.ECharts
+        continue-on-error: true
       
       - name: Build JS bundle with Gulp
         run: npx gulp
