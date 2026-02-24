@@ -40,7 +40,7 @@ internal class TypePatternRegistry
         { "function,number,string", typeof(NumberOrStringOrFunction) },
         // Vector types (new in ECharts 5.6.0) - all represent array of 2 elements
         { "array,vector", typeof(NumberOrNumberArray) },               // can be array or 2-element vector
-        { "array,percentvector", typeof(NumberOrNumberArray) },        // can be array or 2-element percentvector
+        { "array,percentvector", typeof(NumberOrStringArray) },        // can be array or 2-element percentvector
         { "array,number,vector", typeof(NumberOrNumberArray) },        // number or array or vector
         // Icon types - Icon class handles both IconType enum and string URLs
         { "icon,string", typeof(Icon) },                               // icon type or string URL

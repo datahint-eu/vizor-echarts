@@ -1,0 +1,80 @@
+@using Vizor.ECharts;
+
+<Vizor.ECharts.EChart Options="@options" Width="800px" Height="600" />
+
+@code {
+
+	// see https://echarts.apache.org/examples/en/editor.html?c=chord-style
+
+	private ChartOptions options = new()
+		{
+            Tooltip = new Tooltip()
+            {
+                Show = true,
+                @* Trigger = "item",
+                Formatter = "{a} : {b}" *@
+            },
+            Legend = new Legend()
+            {
+                Show = true,
+                @* Data = new string[] { "A", "B", "C", "D", "E", "F" } *@
+            },
+			Series = new()
+			{
+				new ChordSeries()
+				{
+                    PadAngle = 1,
+                    Center = new("50%", "50%"),
+                    Radius = new("70%", "80%"),
+                    Data = new ChordSeriesData[]
+                    {
+                        new ChordSeriesData() { Name = "A" },
+                        new ChordSeriesData() { Name = "B" },
+                        new ChordSeriesData() { Name = "C" },
+                        new ChordSeriesData() { Name = "D" },
+                        new ChordSeriesData() { Name = "E" },
+                        new ChordSeriesData() { Name = "F" }
+                    },
+                    Emphasis = new Emphasis()
+                    {
+                        Focus = "self",
+                    },
+                    Label = new ()
+                    {
+                        Show = true,
+                        Position = LabelPosition.Inside,
+                        FontWeight = FontWeight.Bold,
+                        Color = "#fff"
+                    },
+                    LineStyle = new LineStyle()
+                    {
+                        Color = "gradient",
+                        Opacity = 0.3
+                    },
+                    ItemStyle = new ItemStyle()
+                    {
+                        BorderColor = "#fff",
+                        BorderWidth = 2,
+                        BorderRadius = new BorderRadius(10,15,0,0)
+                    },
+                    Links = new List<ChordSeriesLink>()
+                    {
+                        new ChordSeriesLink() { Source = "A", Target = "B", Value= 14 },
+                        new ChordSeriesLink() { Source = "A", Target = "C", Value = 8 },
+                        new ChordSeriesLink() { Source = "B", Target = "C", Value = 20 },
+                        new ChordSeriesLink() { Source = "B", Target = "E", Value = 15 },
+                        new ChordSeriesLink() { Source = "C", Target = "B", Value = 8 },
+                        new ChordSeriesLink() { Source = "C", Target = "E", Value = 3 },
+                        new ChordSeriesLink() { Source = "D", Target = "A", Value = 12 },
+                        new ChordSeriesLink() { Source = "D", Target = "B", Value = 3 },
+                        new ChordSeriesLink() { Source = "E", Target = "A", Value = 15 },
+                        new ChordSeriesLink() { Source = "E", Target = "C", Value = 5 },
+                        new ChordSeriesLink() { Source = "F", Target = "C", Value = 5 },
+                        new ChordSeriesLink() { Source = "G", Target = "A", Value = 6 },
+                        new ChordSeriesLink() { Source = "G", Target = "B", Value = 8 },
+                        new ChordSeriesLink() { Source = "G", Target = "D", Value = 4 }
+                    }
+				}
+			}
+		};
+}

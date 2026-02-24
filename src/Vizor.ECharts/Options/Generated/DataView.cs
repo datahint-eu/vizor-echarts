@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -18,7 +18,12 @@ public partial class DataView
     public bool? Show { get; set; } 
 
     /// <summary>
-    /// 
+    /// <![CDATA[
+    /// [WARNING]:  dataView panel is implemented using HTML, allowing users to customize certain parts for styling and formatting.
+    /// The title is embedded in the HTML without HTML-escaping, so it should be properly escaped before being passed in.
+    /// Security risks must be considered when using it.
+    /// See document "Security Guidelines" for recommendations on safe usage.
+    /// ]]>
     /// </summary>
     [JsonPropertyName("title")]
     [DefaultValue("data view")]
@@ -67,21 +72,25 @@ public partial class DataView
     /// Define a function to present dataView.
     /// It is used to replace default textarea for richer data editing.
     /// It can return a DOM object, or an HTML string.
+    ///   [WARNING]:  dataView panel is implemented using HTML, allowing users to customize certain parts for styling and formatting.
+    /// The HTML provided by optionToContent is embedded in the panel HTML without HTML-escaping, so it should be properly escaped before being passed in.
+    /// Security risks must be considered when using it.
+    /// See document "Security Guidelines" for recommendations on safe usage.
     ///  
     /// For example:  optionToContent: function(opt) {
     ///     var axisData = opt.xAxis[0].data;
     ///     var series = opt.series;
     ///     var table = '<table style="width:100%;text-align:center"><tbody><tr>'
-    ///                  + '<td>Time:</td>'
-    ///                  + '<td>' + series[0].name + '</td>'
-    ///                  + '<td>' + series[1].name + '</td>'
-    ///                  + '</tr>';
+    ///         + '<td>Time:</td>'
+    ///         + '<td>' + echarts.format.encodeHTML(series[0].name) + '</td>'
+    ///         + '<td>' + echarts.format.encodeHTML(series[1].name) + '</td>'
+    ///         + '</tr>';
     ///     for (var i = 0, l = axisData.length; i < l; i++) {
     ///         table += '<tr>'
-    ///                  + '<td>' + axisData[i] + '</td>'
-    ///                  + '<td>' + series[0].data[i] + '</td>'
-    ///                  + '<td>' + series[1].data[i] + '</td>'
-    ///                  + '</tr>';
+    ///             + '<td>' + echarts.format.encodeHTML(axisData[i]) + '</td>'
+    ///             + '<td>' + echarts.format.encodeHTML(series[0].data[i]) + '</td>'
+    ///             + '<td>' + echarts.format.encodeHTML(series[1].data[i]) + '</td>'
+    ///             + '</tr>';
     ///     }
     ///     table += '</tbody></table>';
     ///     return table;
@@ -103,6 +112,10 @@ public partial class DataView
     /// <summary>
     /// <![CDATA[
     /// There are 3 names in data view, which are ['data view', 'turn off' and 'refresh'] .
+    ///   [WARNING]:  dataView panel is implemented using HTML, allowing users to customize certain parts for styling and formatting.
+    /// The items in lang are embedded in the HTML without HTML-escaping, so it should be properly escaped before being passed in.
+    /// Security risks must be considered when using it.
+    /// See document "Security Guidelines" for recommendations on safe usage.
     /// ]]>
     /// </summary>
     [JsonPropertyName("lang")]

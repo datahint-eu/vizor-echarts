@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -43,9 +43,9 @@ public partial class Calendar
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between calendar component and the left side of the container.
+    /// Distance between undefined component and the left side of the container.
     ///  
-    /// left can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' ; and it can also be 'left' , 'center' , or 'right' .
+    /// left can be a pixel value like 20 ; it can also be a percentage value relative to the container width like '20%' ; and it can also be 'left' , 'center' , or 'right' .
     ///  
     /// If the left value is set to be 'left' , 'center' , or 'right' , then the component will be aligned automatically based on position.
     /// ]]>
@@ -56,9 +56,9 @@ public partial class Calendar
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between calendar component and the top side of the container.
+    /// Distance between undefined component and the top side of the container.
     ///  
-    /// top can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' ; and it can also be 'top' , 'middle' , or 'bottom' .
+    /// top can be a pixel value like 20 ; it can also be a percentage value relative to the container height like '20%' ; and it can also be 'top' , 'middle' , or 'bottom' .
     ///  
     /// If the top value is set to be 'top' , 'middle' , or 'bottom' , then the component will be aligned automatically based on position.
     /// ]]>
@@ -69,9 +69,9 @@ public partial class Calendar
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between calendar component and the right side of the container.
+    /// Distance between undefined component and the right side of the container.
     ///  
-    /// right can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' .
+    /// right can be a pixel value like 20 ; it can also be a percentage value relative to the container width like '20%' .
     ///  
     /// Adaptive by default.
     /// ]]>
@@ -82,9 +82,9 @@ public partial class Calendar
 
     /// <summary>
     /// <![CDATA[
-    /// Distance between calendar component and the bottom side of the container.
+    /// Distance between undefined component and the bottom side of the container.
     ///  
-    /// bottom can be a pixel value like 20 ; it can also be a percentage value relative to container width like '20%' .
+    /// bottom can be a pixel value like 20 ; it can also be a percentage value relative to the container height like '20%' .
     ///  
     /// Adaptive by default.
     /// ]]>

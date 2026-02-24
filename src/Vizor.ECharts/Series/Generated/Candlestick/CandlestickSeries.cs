@@ -1,5 +1,5 @@
 // AUTO GENERATED - DO NOT EDIT - All changes will be lost
-// ECharts Version: 5.6.0
+// ECharts Version: 6.0.0
 // http://www.datahint.eu/
 
 
@@ -19,9 +19,19 @@ public partial class CandlestickSeries : ISeries
 
     /// <summary>
     /// <![CDATA[
-    /// The coordinate used in the series, whose options are:   
+    /// Specifies another coordinate system component on which this series-candlestick is laid out.
+    ///  
+    /// Options:   
     /// 'cartesian2d'  
-    /// Use a two-dimensional rectangular coordinate (also known as Cartesian coordinate), with xAxisIndex and yAxisIndex to assign the corresponding axis component.
+    /// Lay out based on a two-dimensional rectangular coordinate system (also known as Cartesian coordinate system) .
+    /// When multiple xAxis or multiple yAxis exist within an ECharts instance, the corresponding axes should be specified using xAxisIndex and yAxisIndex or xAxisId and yAxisId .
+    ///  
+    /// Note: some commonly used series, such as series-line , series-bar , etc., can not be laid out directly based on matrix coordinate system or calendar coordinate system , but they can be laid out on a grid(Cartesian) , and that grid can be laid out on a matrix or calendar .
+    ///    
+    /// Support for series and component layout on coordinate systems:  
+    /// The leftmost column lists the series and components that will be laid out (coordinate systems themselves are also components), and the topmost row lists the coordinate systems that can be laid out on.
+    ///      no coord sys  grid (cartesian2d)  polar  geo  singleAxis  radar  parallel  calendar  matrix      grid (cartesian2d)  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    polar  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    geo  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    singleAxis  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    calendar  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ❌  ❌    matrix  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ❌  ❌    series-line  ❌  ✅  ✅  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-bar  ❌  ✅  ✅  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-pie  ✅  ✅  ✅  ✅  ✅  ❌  ❌  ✅  ✅    series-scatter  ❌  ✅  ✅  ✅  ✅  ❌  ❌  ✅  ✅    series-effectScatter  ❌  ✅  ✅  ✅  ✅  ❌  ❌  ✅  ✅    series-radar  ❌  ❌  ❌  ❌  ❌  ✅  ❌  ❌ (✅ if via radar coord sys)  ❌ (✅ if via radar coord sys)    series-tree  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-treemap  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-sunburst  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-boxplot  ❌  ✅  ❌  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-candlestick  ❌  ✅  ❌  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-heatmap  ❌  ✅  ❌  ✅  ❌  ❌  ❌  ✅  ✅    series-map  ✅ (create a geo coord sys exclusively)  ❌  ❌  ✅  ❌  ❌  ❌  ✅  ✅    series-parallel  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ❌ (✅ if via parallel coord sys)  ❌ (✅ if via parallel coord sys)    series-lines  ❌  ✅  ✅  ✅  ✅  ❌  ❌  ❌ (✅ if via another coord sys like geo )  ❌ (✅ if via another coord sys like geo )    series-graph  ✅ (create a "view" coord sys exclusively)  ✅  ✅  ✅  ❌  ❌  ❌  ✅  ✅    series-sankey  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-funnel  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-gauge  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    series-pictorialBar  ❌  ✅  ✅  ❌  ❌  ❌  ❌  ❌ (✅ if via another coord sys like grid )  ❌ (✅ if via another coord sys like grid )    series-themeRiver  ❌  ❌  ❌  ❌  ✅  ❌  ❌  ❌ (✅ if via another coord sys like singleAxis )  ❌ (✅ if via another coord sys like singleAxis )    series-chord  ✅  ✅  ✅  ✅  ✅  ❌  ❌  ✅  ✅    title  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    legend  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    dataZoom  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    visualMap  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    toolbox  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    timeline  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅    thumbnail  ✅  ❌  ❌  ❌  ❌  ❌  ❌  ✅  ✅     
+    /// See also series-candlestick.coordinateSystemUsage .
     /// ]]>
     /// </summary>
     [JsonPropertyName("coordinateSystem")]
@@ -29,18 +39,83 @@ public partial class CandlestickSeries : ISeries
     public string? CoordinateSystem { get; set; } 
 
     /// <summary>
-    /// Index of x axis to combine with, which is  useful for multiple x axes in one chart.
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// Specify how to lay out this series-candlestick based on the specified coordinateSystem .
+    ///  
+    /// In most cases, there is no need to specify coordinateSystemUsage , unless the default behavior is unexpected.
+    ///  
+    /// Options:   
+    /// 'data' :  
+    /// Each data item of a series (e.g., each series.data[i] ) is laid out separately based on the specified coordinate system.
+    /// Currently no non-series component supports coordinateSystemUsage: 'data' .
+    ///   
+    /// 'box' : (Not applicable in series-candlestick )  
+    /// The entire series or component is laid out as a whole based on the specified coordinate system - that is, the overall bounding rect or basic anchor point is calculated relative to the system.
+    ///   For example, a grid component can be laid out in a matrix coordinate system or a calendar coordinate system , where its layout rectangle is calculated by the specified series-candlestick.coords in that system.
+    /// See example sparkline in matrix .
+    ///  For example, a pie series or a chord series can be laid out in a geo coordinate system or a cartesian2d coordinate system , where the center is calculated by the specified series-pie.coords or series-pie.center in that system.
+    /// See example pie in geo .
+    ///     
+    /// Only a few series support both coordinateSystemUsage: 'data' and coordinateSystemUsage: 'box' , such as series-graph , series-map .
+    /// For examle, in this example (coordinateSystemUsage: 'data') , each node of a graph series is laid out on a matrix coordinate system, while in this example (coordinateSystemUsage: 'box') , the entire graph series is laid out within a matrix cell.
+    ///  
+    /// Most series only support coordinateSystemUsage: 'data' - such as series-line , series-bar , series-scatter , etc.
+    /// Meanwhile, some series only support coordinateSystemUsage: 'box' - such as series-pie ( example: pie in geo ), series-tree , series-treemap , series-sankey , etc.
+    ///  
+    /// See also series-candlestick.coordinateSystem .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("coordinateSystemUsage")]
+    [DefaultValue("data")]
+    public string? CoordinateSystemUsage { get; set; } 
+
+    /// <summary>
+    /// <![CDATA[
+    /// Since v6.0.0   
+    /// When coordinateSystemUsage is 'box' , coord is used as the input to the coordinate system and calculate the layout rectangle or anchor point.
+    ///  
+    /// Examples: sparkline in matrix , grpah in matrix .
+    ///   
+    /// Note: when coordinateSystemUsage is 'data' , the input of coordinate system is series.data[i] rather than this coord .
+    ///   
+    /// The format this coord is defined by each coordinate system, and it's the same as the second parameter of chart.convertToPixel .
+    /// ]]>
+    /// </summary>
+    [JsonPropertyName("coord")]
+    public NumberOrStringArray? Coord { get; set; } 
+
+    /// <summary>
+    /// The index of the xAxis to base on.
+    /// When mutiple xAxis components exist within an ECharts instance, use this to specify the corresponding xAxis .
     /// </summary>
     [JsonPropertyName("xAxisIndex")]
     [DefaultValue(0)]
     public int? XAxisIndex { get; set; } 
 
     /// <summary>
-    /// Index of y axis to combine with, which is  useful for multiple y axes in one chart.
+    /// The id of the xAxis to base on.
+    /// When mutiple xAxis components exist within an ECharts instance, use this to specify the corresponding xAxis .
+    /// </summary>
+    [JsonPropertyName("xAxisId")]
+    [DefaultValue("undefined")]
+    public double? XAxisId { get; set; } 
+
+    /// <summary>
+    /// The index of the yAxis to base on.
+    /// When mutiple yAxis components exist within an ECharts instance, use this to specify the corresponding yAxis .
     /// </summary>
     [JsonPropertyName("yAxisIndex")]
     [DefaultValue(0)]
     public int? YAxisIndex { get; set; } 
+
+    /// <summary>
+    /// The index of the yAxis to base on.
+    /// When mutiple yAxis components exist within an ECharts instance, use this to specify the corresponding yAxis .
+    /// </summary>
+    [JsonPropertyName("yAxisId")]
+    [DefaultValue("undefined")]
+    public double? YAxisId { get; set; } 
 
     /// <summary>
     /// Series name used for displaying in tooltip and filtering with legend , or updating data and configuration with setOption .
@@ -65,19 +140,6 @@ public partial class CandlestickSeries : ISeries
     [JsonPropertyName("legendHoverLink")]
     [DefaultValue("true")]
     public bool? LegendHoverLink { get; set; } 
-
-    /// <summary>
-    /// <![CDATA[
-    /// Layout method, whose values may be:   
-    /// 'horizontal' : horizontally layout all boxs.
-    ///   
-    /// 'vertical' : vertically layout all boxs.
-    ///    
-    /// The default value is decided by:   if there is a category axis:  if it is horizontal, use 'horizontal' ;  otherwise use 'vertical' ;    otherwise use 'horizontal' .
-    /// ]]>
-    /// </summary>
-    [JsonPropertyName("layout")]
-    public string? Layout { get; set; } 
 
     /// <summary>
     /// <![CDATA[
