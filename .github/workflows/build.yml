@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: 'src/Vizor.ECharts/package-lock.json'
+          cache-dependency-path: 'src/Vizor.ECharts/package.json'
       
       - name: Restore .NET dependencies
         run: dotnet restore src/Vizor.ECharts.Demo.sln
@@ -43,7 +43,7 @@ jobs:
         run: dotnet test --project src/Vizor.ECharts.Tests/Vizor.ECharts.Tests.csproj --no-build --configuration Release --report-trx --results-directory ./artifacts/test-results
       
       - name: Install npm dependencies
-        run: npm ci
+        run: npm install
         working-directory: src/Vizor.ECharts
 
       - name: Audit npm vulnerabilities (warn only)
