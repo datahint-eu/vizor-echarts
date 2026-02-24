@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Vizor.ECharts.Tests.TestFixtures;
 
 namespace Vizor.ECharts.Tests.Unit.Serialization;
@@ -34,11 +35,16 @@ public class ComplexFeaturesTests
             }
         };
 
+        var serializerOptions = new JsonSerializerOptions(CreateOptions())
+        {
+            WriteIndented = true
+        };
+
         SnapshotHelper.AssertJsonSnapshot(
             options,
             nameof(ComplexFeaturesTests),
             nameof(SerializesChartWithDataZoomAndFormatter),
-            CreateOptions(),
+            serializerOptions,
             skipNormalization: true);
     }
 }

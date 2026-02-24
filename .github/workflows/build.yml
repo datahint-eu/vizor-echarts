@@ -27,10 +27,10 @@ jobs:
         run: dotnet restore src/Vizor.ECharts.Demo.sln
       
       - name: Build .NET
-        run: dotnet build src/Vizor.ECharts.Demo.sln --no-restore --configuration Debug
+        run: dotnet build src/Vizor.ECharts.Demo.sln --no-restore --configuration Release
 
       - name: Test .NET
-        run: dotnet test --project src/Vizor.ECharts.Tests/Vizor.ECharts.Tests.csproj --no-build --configuration Debug --report-trx --results-directory ./artifacts/test-results
+        run: dotnet test --project src/Vizor.ECharts.Tests/Vizor.ECharts.Tests.csproj --no-build --configuration Release --report-trx --results-directory ./artifacts/test-results
       
       - name: Install npm dependencies
         run: npm install
