@@ -280,7 +280,7 @@ public partial class GaugeSeries : ISeries
     /// The related configuration about the axis line of gauge chart.
     /// </summary>
     [JsonPropertyName("axisLine")]
-    public AxisLine? AxisLine { get; set; } 
+    public GaugeAxisLine? AxisLine { get; set; } 
 
     /// <summary>
     /// Since v5.0   

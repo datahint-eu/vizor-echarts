@@ -1,0 +1,106 @@
+@using Vizor.ECharts;
+
+@implements IDisposable
+
+<Vizor.ECharts.EChart @ref="chart" Options="@options" Width="800px" Height="400px" />
+
+@code {
+
+	private Timer? timer;
+	private Vizor.ECharts.EChart? chart;
+	private readonly Random rnd = new();
+
+	private readonly ChartOptions options = new()
+	{
+		Series = new()
+		{
+			new GaugeSeries
+			{
+				AxisLine = new()
+				{
+					LineStyle = new()
+					{
+						Width = 30,
+						Color = new (double threshold, string color)[]
+						{
+							(0.3, "#67e0e3"),
+							(0.7, "#37a2da"),
+							(1, "#fd666d")
+						}
+					}
+				},
+				Pointer = new()
+				{
+					ItemStyle = new()
+					{
+						Color = "auto"
+					}
+				},
+				AxisTick = new()
+				{
+					Distance = -30,
+					Length = 8,
+					LineStyle = new()
+					{
+						Color = "#fff",
+						Width = 2
+					}
+				},
+				SplitLine = new()
+				{
+					Distance = -30,
+					Length = 30,
+					LineStyle = new()
+					{
+						Color = "#fff",
+						Width = 4
+					}
+				},
+				AxisLabel = new()
+				{
+					Color = "inherit",
+					Distance = 40,
+					FontSize = 20
+				},
+				Detail = new()
+				{
+					ValueAnimation = true,
+					Formatter = "{value} km/h",
+					Color = "inherit"
+				},
+				Data = new List<GaugeSeriesData>
+				{
+					new()
+					{
+						Value = 70
+					}
+				}
+			}
+		}
+	};
+
+	protected override void OnInitialized()
+	{
+		timer = new Timer(async _ => await UpdateChartAsync(), null, 2000, 2000);
+	}
+
+	private async Task UpdateChartAsync()
+	{
+		if (chart == null)
+			return;
+
+		var randomVal = Math.Round(rnd.NextDouble() * 100, 2);
+
+		if (options.Series?[0] is GaugeSeries gaugeSeries && gaugeSeries.Data is SeriesDataList<GaugeSeriesData> data && data[0] != null)
+		{
+			data[0]!.Value = randomVal;
+		}
+
+		await chart.UpdateAsync();
+	}
+
+	public void Dispose()
+	{
+		timer?.Dispose();
+	}
+}

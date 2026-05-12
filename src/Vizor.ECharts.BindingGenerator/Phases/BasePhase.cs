@@ -42,6 +42,17 @@ internal abstract class BasePhase
     {
         //Console.WriteLine($"OBJECT {prop.Name}");
 
+        // Special case: keep gauge axisLine/lineStyle separate from shared AxisLine/LineStyle
+        // so gauge-specific color typing can support segmented threshold arrays.
+        if (parent?.ParentType?.DotNetType == "GaugeSeries" && propName == "axisLine")
+        {
+            propName = "GaugeAxisLine";
+        }
+        else if (parent?.ParentType?.DotNetType == "GaugeAxisLine" && propName == "lineStyle")
+        {
+            propName = "GaugeAxisLineStyle";
+        }
+
         // special handling for 'anyOf' arrays
         if (value.TryGetProperty("anyOf", out var anyOfElement))
         {
@@ -251,6 +262,15 @@ internal abstract class BasePhase
             var numberOrStringType = new MappedCustomType(typeof(NumberOrString));
             diagnosticCollector.RecordSupported(propertyPath, types, numberOrStringType.DotNetType);
             return numberOrStringType;
+        }
+
+        // Special case: gauge axis line style color supports segmented threshold arrays:
+        // [[0.3, '#67e0e3'], [0.7, '#37a2da'], [1, '#fd666d']]
+        if (prop.Name == "color" && parent.DotNetType == "GaugeAxisLineStyle")
+        {
+            var gaugeAxisLineColor = new MappedCustomType(typeof(GaugeAxisLineColor));
+            diagnosticCollector.RecordSupported(propertyPath, types, gaugeAxisLineColor.DotNetType);
+            return gaugeAxisLineColor;
         }
 
         // Special case: cellSize in Calendar should allow percentage strings
