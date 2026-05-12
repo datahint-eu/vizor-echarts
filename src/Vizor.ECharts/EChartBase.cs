@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.JSInterop;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
@@ -12,9 +13,13 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
     private static JsonSerializerOptions? cachedJsonOpts;
     protected JsonSerializerOptions? jsonOpts;
     protected DotNetObjectReference<EChartBase>? objRef;
+    protected bool dataLoaderNeedsRefresh;
 
     [Inject]
     public IJSRuntime JSRuntime { get; set; } = default!;
+    
+    [Inject]
+    public NavigationManager NavigationManager { get; set; } = default!;
 
     /// <summary>
     /// A unique ID. DO NOT change this value after the chart has been rendered.
@@ -90,6 +95,13 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
     protected override void OnInitialized()
     {
         objRef = DotNetObjectReference.Create(this);
+        NavigationManager.LocationChanged += OnLocationChanged;
+    }
+
+    private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        // Run DataLoader again when the chart becomes active after route transitions.
+        dataLoaderNeedsRefresh = true;
     }
 
     public static string GenerateRandomId() => Guid.NewGuid().ToString("N");
@@ -104,6 +116,7 @@ public abstract class EChartBase : ComponentBase, IAsyncDisposable
 
             // remove the chart from a group (if needed)
             Group?.Remove(this);
+            NavigationManager.LocationChanged -= OnLocationChanged;
 
             await JSRuntime.InvokeVoidAsync("vizorECharts.disposeChart", Id);
         }

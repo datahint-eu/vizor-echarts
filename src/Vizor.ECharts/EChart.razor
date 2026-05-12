@@ -12,14 +12,17 @@
 <div id="@Id" class="@CssClass" style="@Style"></div>
 
 @code {
-
-
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        // echarts.init the very first time the component is rendered
-
         if (!firstRender)
+        {
+            if (DataLoader.HasDelegate && dataLoaderNeedsRefresh)
+            {
+                dataLoaderNeedsRefresh = false;
+                await UpdateAsync(executeDataLoader: true);
+            }
             return;
+        }
 
         if (Options == null)
             throw new ArgumentException("Options property must be set");
@@ -74,6 +77,8 @@
         {
             await JSRuntime.InvokeVoidAsync("vizorECharts.attachClickEvent", Id, objRef);
         }
+
+        dataLoaderNeedsRefresh = false;
     }
 
     public override async Task UpdateAsync(bool executeDataLoader = true)
