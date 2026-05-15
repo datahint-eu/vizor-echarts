@@ -2,7 +2,7 @@
 
 Blazor wrapper for [Apache ECharts](https://echarts.apache.org/en/index.html).
 
- - Supports .NET >= 10.0
+ - Supports .NET >= 8.0
  - Ships with echarts 6.0.0
  - `Apache-2.0` Licensed (same as echarts)
  - Lots of examples in the `Vizor.ECharts.Demo` project
