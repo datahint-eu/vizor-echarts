@@ -2,9 +2,13 @@ name: Build & Pack
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ main ]
   pull_request:
-    branches: [ dev ]
+    branches: [ main ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -17,37 +21,50 @@ jobs:
         uses: actions/setup-dotnet@v5
         with:
           global-json-file: './global.json'
+          cache: true
+          cache-dependency-path: |
+            global.json
+            src/**/*.csproj
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: 'src/Vizor.ECharts/package.json'
       
       - name: Restore .NET dependencies
         run: dotnet restore src/Vizor.ECharts.Demo.sln
       
       - name: Build .NET
-        run: dotnet build src/Vizor.ECharts.Demo.sln --no-restore --configuration Debug
+        run: dotnet build src/Vizor.ECharts.Demo.sln --no-restore --configuration Release
 
       - name: Test .NET
-        run: dotnet test --project src/Vizor.ECharts.Tests/Vizor.ECharts.Tests.csproj --no-build --configuration Debug --report-trx --results-directory ./artifacts/test-results
+        run: dotnet test --project src/Vizor.ECharts.Tests/Vizor.ECharts.Tests.csproj --no-build --configuration Release --report-trx --results-directory ./artifacts/test-results
       
       - name: Install npm dependencies
         run: npm install
         working-directory: src/Vizor.ECharts
+
+      - name: Audit npm vulnerabilities (warn only)
+        if: github.event_name == 'pull_request'
+        run: npm audit --audit-level=high
+        working-directory: src/Vizor.ECharts
+        continue-on-error: true
       
       - name: Build JS bundle with Gulp
-        run: npx gulp
+        run: npx gulp buildJs && npx gulp buildJsBundle
         working-directory: src/Vizor.ECharts
       
       - name: Pack NuGet (Release)
-        run: dotnet pack -c Release src/Vizor.ECharts/Vizor.ECharts.csproj
+        run: dotnet pack -c Release --no-build src/Vizor.ECharts/Vizor.ECharts.csproj
       
       - name: Upload NuGet artifact
         uses: actions/upload-artifact@v4
         with:
           name: nuget-package
           path: src/Vizor.ECharts/bin/Release/**/*.nupkg
+          if-no-files-found: error
 
       - name: Upload test results
         if: always()
@@ -55,9 +72,11 @@ jobs:
         with:
           name: test-results
           path: artifacts/test-results
+          if-no-files-found: error
       
       - name: Upload JS artifacts
         uses: actions/upload-artifact@v4
         with:
           name: js-bundle
           path: src/Vizor.ECharts/wwwroot/js/*.js
+          if-no-files-found: error
